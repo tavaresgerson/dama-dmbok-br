@@ -1041,48 +1041,10 @@ Williams, Branden R., Anton Chuvakin Ph.D. PCI Compliance: Understand and Implem
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[^37]: One survey stated, “70 percent of IT professionals believe the use of unauthorized programs resulted in as many as half of
-their companies’ data loss incidents. This belief was most common in the United States (74 percent), Brazil (75 percent),
-and India (79 percent).” A report from the Ponomon group and Symantic Anti-Virus found that, “human errors and system
-problems caused two-thirds of data breaches in 2012. http://bit.ly/1dGChAz, http://symc.ly/1FzNo5l, http://bit.ly/2sQ68Ba,
-http://bit.ly/2tNEkKY.
+[^37]: One survey stated, “70 percent of IT professionals believe the use of unauthorized programs resulted in as many as half of their companies’ data loss incidents. This belief was most common in the United States (74 percent), Brazil (75 percent), and India (79 percent).” A report from the Ponomon group and Symantic Anti-Virus found that, “human errors and system problems caused two-thirds of data breaches in 2012. http://bit.ly/1dGChAz, http://symc.ly/1FzNo5l, http://bit.ly/2sQ68Ba, http://bit.ly/2tNEkKY.
 [^38]: National Institute of Standards and Technology (US) http://bit.ly/1eQYolG.
 [^39]: http://bit.ly/1FrKWR8, http://bit.ly/2rQQuWJ.
 [^40]: http://tcrn.ch/2rRnsGr (17% globally lack AV), http://bit.ly/2rUE2R4, http://bit.ly/2sPLBN4, http://ubm.io/1157kyO (Windows 8 lack of AV).
 [^41]: http://bit.ly/2tNLO0i (2016 number reaches 2 billion.), http://bit.ly/2rCzDCV, http://bit.ly/2tNpwfg.
-[^42]: Cisco Corporation estimated that “By 2018, there will be 8.2 billion handheld or personal mobile-ready
-devices and 2 billion machine-to-machine connections (e.g., GPS systems in cars, asset tracking systems in
-shipping and manufacturing sectors, or medical applications making patient records and health status more
-readily available.)” http://bit.ly/Msevdw ( future numbers of computers and devices).
+[^42]: Cisco Corporation estimated that “By 2018, there will be 8.2 billion handheld or personal mobile-ready devices and 2 billion machine-to-machine connections (e.g., GPS systems in cars, asset tracking systems in shipping and manufacturing sectors, or medical applications making patient records and health status more readily available.)” http://bit.ly/Msevdw ( future numbers of computers and devices).
 [^43]: The FBI report on Russian Hacking during the 2016 US Presidential Election outlines how these techniques were used in that instance. http://bit.ly/2iKStXO.
