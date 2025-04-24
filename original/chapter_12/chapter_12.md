@@ -196,9 +196,9 @@ The purpose of a business glossary is to document and store an organization’s 
 
 In many organizations, the business glossary is merely a spreadsheet. However, as organizations mature, they often purchase or build glossaries that contain robust information and the capability to manage it over time. As with all data-oriented systems, business glossaries should be architected to account for hardware, software, database, processes, and human resources with differing roles and responsibilities. The business glossary application is structured to meet the functional requirements of the three core audiences:
 
-* Business users: Data analysts, research analysts, management, and executive staff use the business glossary to understand terminology and data.
-* Data Stewards: Data Steward use the business glossary to manage the lifecycle of terms and definitions and to enhance enterprise knowledge by associating data assets with glossary terms; for example, linking terms to business metrics, reports, data quality analysis, or technology components. Data stewards raise terminology and usage issues and help resolve differences across the organization.
-* Technical users: Technical users use the business glossary to make architecture, systems design, and development decisions, and to conduct impact analysis.
+* **Business users:** Data analysts, research analysts, management, and executive staff use the business glossary to understand terminology and data.
+* **Data Stewards:** Data Steward use the business glossary to manage the lifecycle of terms and definitions and to enhance enterprise knowledge by associating data assets with glossary terms; for example, linking terms to business metrics, reports, data quality analysis, or technology components. Data stewards raise terminology and usage issues and help resolve differences across the organization.
+* **Technical users:** Technical users use the business glossary to make architecture, systems design, and development decisions, and to conduct impact analysis.
 
 The business glossary should capture business terms attributes such as:
 
@@ -361,11 +361,11 @@ A Metadata strategy describes how an organization intends to manage its Metadata
 
 The strategy includes defining the organization’s future state enterprise Metadata architecture and the implementation phases required to meet strategic objectives. Steps include:
 
-* Initiate Metadata strategy planning: The goal of initiation and planning is to enable the Metadata strategy team to define its short- and long-term goals. Planning includes drafting a charter, scope, and objectives aligned with overall governance efforts and establishing a communications plan to support the effort. Key stakeholders should be involved in planning.
-* Conduct key stakeholder interviews: Interviews with business and technical stakeholder provide a foundation of knowledge for the Metadata strategy.
-* Assess existing Metadata sources and information architecture: Assessment determines the relative degree of difficulty in solving the Metadata and systems issues identified in the interviews and documentation review. During this stage, conduct detailed interviews of key IT staff and review documentation of the system architectures, data models, etc.
-* Develop future Metadata architecture: Refine and confirm the future vision, and develop the long-term target architecture for the managed Metadata environment in this stage. This phase must account for strategic components, such as organization structure, alignment with data governance andstewardship, managed Metadata architecture, Metadata delivery architecture, technical architecture, and security architecture.
-* Develop a phased implementation plan: Validate, integrate, and prioritize findings from the interviews and data analyses. Document the Metadata strategy and define a phased implementation approach to move from the existing to the future managed Metadata environment.
+* **Initiate Metadata strategy planning:** The goal of initiation and planning is to enable the Metadata strategy team to define its short- and long-term goals. Planning includes drafting a charter, scope, and objectives aligned with overall governance efforts and establishing a communications plan to support the effort. Key stakeholders should be involved in planning.
+* **Conduct key stakeholder interviews:** Interviews with business and technical stakeholder provide a foundation of knowledge for the Metadata strategy.
+* **Assess existing Metadata sources and information architecture:** Assessment determines the relative degree of difficulty in solving the Metadata and systems issues identified in the interviews and documentation review. During this stage, conduct detailed interviews of key IT staff and review documentation of the system architectures, data models, etc.
+* **Develop future Metadata architecture:** Refine and confirm the future vision, and develop the long-term target architecture for the managed Metadata environment in this stage. This phase must account for strategic components, such as organization structure, alignment with data governance andstewardship, managed Metadata architecture, Metadata delivery architecture, technical architecture, and security architecture.
+* **Develop a phased implementation plan:** Validate, integrate, and prioritize findings from the interviews and data analyses. Document the Metadata strategy and define a phased implementation approach to move from the existing to the future managed Metadata environment.
 
 The strategy will evolve over time, as Metadata requirements, the architecture, and the lifecycle of Metadata are better understood.
 
@@ -375,16 +375,16 @@ Metadata requirements start with content: What Metadata is needed and at what le
 
 There are also many functionality-focused requirements associated with a comprehensive Metadata solution:
 
-* Volatility: How frequently Metadata attributes and sets will be updated
-* Synchronization: Timing of updates in relation to source changes
-* History: Whether historical versions of Metadata need to be retained
-* Access rights: Who can access Metadata and how they access, along with specific user interface functionality for access
-* Structure: How Metadata will be modeled for storage
-* Integration: The degree of integration of Metadata from different sources; rules for integration
-* Maintenance: Processes and rules for updating Metadata (logging and referring for approval)
-* Management: Roles and responsibilities for managing Metadata
-* Quality: Metadata quality requirements
-* Security: Some Metadata cannot be exposed because it will reveal the existence of highly protected data
+* **Volatility:** How frequently Metadata attributes and sets will be updated
+* **Synchronization:** Timing of updates in relation to source changes
+* **History:** Whether historical versions of Metadata need to be retained
+* **Access rights:** Who can access Metadata and how they access, along with specific user interface functionality for access
+* **Structure:** How Metadata will be modeled for storage
+* **Integration:** The degree of integration of Metadata from different sources; rules for integration
+* **Maintenance:** Processes and rules for updating Metadata (logging and referring for approval)
+* **Management:** Roles and responsibilities for managing Metadata
+* **Quality:** Metadata quality requirements
+* **Security:** Some Metadata cannot be exposed because it will reveal the existence of highly protected data
 
 ### 2.3 Define Metadata Architecture
 
@@ -446,9 +446,9 @@ As described in Section 1.3.5, Metadata is created through a range of processes 
 
 Several general principles of Metadata management describe the means to manage Metadata for quality:
 
-* Accountability: Recognize that Metadata is often produced through existing processes (data modeling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
-* Standards: Set, enforce, and audit standards for Metadata to simplify integration and enable use.
-* Improvement: Create a feedback mechanism so that consumers can inform the Metadata Management team of metadata that is incorrect or out-of-date.
+* **Accountability:** Recognize that Metadata is often produced through existing processes (data modeling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
+* **Standards:** Set, enforce, and audit standards for Metadata to simplify integration and enable use.
+* **Improvement:** Create a feedback mechanism so that consumers can inform the Metadata Management team of metadata that is incorrect or out-of-date.
 
 Like other data, Metadata can be profiled and inspected for quality. Its maintenance should be scheduled or completed as an auditable part of project work.
 
@@ -458,15 +458,15 @@ Integration processes gather and consolidate Metadata from across the enterprise
 
 Challenges arise in integration that will require governance. Integrating internal data sets, external data such as government statistics, and data sourced from non-electronic forms, such as white papers, articles in magazines, or reports, can raise numerous questions on quality and semantics. Accomplish repository scanning in two distinct approaches.
 
-* Proprietary interface: In a single-step scan and load process, a scanner collects the Metadata from a source system, then directly calls the format-specific loader component to load the Metadata into the repository. In this process, there is no format-specific file output and the collection and loading of Metadata occurs in a single step.
-* Semi-proprietary interface: In a two-step process, a scanner collects the Metadata from a source system and outputs it into a format-specific data file. The scanner only produces a data file that the receiving repository needs to be able to read and load appropriately. The interface is a more open architecture, as the file is readable by many methods.
+* **Proprietary interface:** In a single-step scan and load process, a scanner collects the Metadata from a source system, then directly calls the format-specific loader component to load the Metadata into the repository. In this process, there is no format-specific file output and the collection and loading of Metadata occurs in a single step.
+* **Semi-proprietary interface:** In a two-step process, a scanner collects the Metadata from a source system and outputs it into a format-specific data file. The scanner only produces a data file that the receiving repository needs to be able to read and load appropriately. The interface is a more open architecture, as the file is readable by many methods.
 
 A scanning process uses and produces several types of files during the process.
 
-* Control file: Containing the source structure of the data model
-* Reuse file: Containing the rules for managing reuse of process loads
-* Log files: Produced during each phase of the process, one for each scan or extract and one for each load cycle
-* Temporary and backup files: Use during the process or for traceability
+* **Control file:** Containing the source structure of the data model
+* **Reuse file:** Containing the rules for managing reuse of process loads
+* **Log files:** Produced during each phase of the process, one for each scan or extract and one for each load cycle
+* **Temporary and backup files:** Use during the process or for traceability
 
 Use a non-persistent Metadata staging area to store temporary and backup files. The staging area supports rollback and recovery processes, and provides an interim audit trail to assist repository managers when investigating Metadata source or quality issues. The staging area may take the form of a directory of files or a database.
 
@@ -524,8 +524,8 @@ Figure 90 Sample System Lineage Flow Diagram
 
 As the number of data elements in a system grows, the lineage discovery becomes complex and difficult to manage. In order to successfully achieve the business goals, a strategy for discovering and importing assets into the Metadata repository requires planning and design. Successful lineage discovery needs to account for both business and technical focus:
 
-* Business focus: Limit the lineage discovery to data elements prioritized by the business. Start from the target locations and trace back to the source systems where the specific data originates. By limiting the scanned assets to those that move, transfer, or update the selected data elements, this approach will enable business data consumers to understand what is happening to the specific data element as it moves through systems. If coupled with data quality measurements, lineage can be used to pinpoint where system design adversely impacts the quality of the data.
-* Technical focus: Start at the source systems and identify all the immediate consumers, then identify all the subsequent consumers of the first set identified and keep repeating these steps until all systems are identified. Technology users benefit more from the system discovery strategy in order to help answer the various questions about the data. This approach will enable technology and business users to answer question about discovering data elements across the enterprise, like “Where is social security number?” or generate impact reports like “What systems are impacted if the width of a specific column is changed?” This strategy can, however, be complex to manage.
+* **Business focus:** Limit the lineage discovery to data elements prioritized by the business. Start from the target locations and trace back to the source systems where the specific data originates. By limiting the scanned assets to those that move, transfer, or update the selected data elements, this approach will enable business data consumers to understand what is happening to the specific data element as it moves through systems. If coupled with data quality measurements, lineage can be used to pinpoint where system design adversely impacts the quality of the data.
+* **Technical focus:** Start at the source systems and identify all the immediate consumers, then identify all the subsequent consumers of the first set identified and keep repeating these steps until all systems are identified. Technology users benefit more from the system discovery strategy in order to help answer the various questions about the data. This approach will enable technology and business users to answer question about discovering data elements across the enterprise, like “Where is social security number?” or generate impact reports like “What systems are impacted if the width of a specific column is changed?” This strategy can, however, be complex to manage.
 
 Many data integration tools offer lineage analysis that considers not only the developed population code but the data model and the physical database as well. Some offer business user facing web interfaces to monitor and update definitions. These begin to look like business glossaries.
 
