@@ -1,11 +1,12 @@
 # DAMA-DMBOK 2ª Edição
 
-## Construção de e-book
+## Construção do e-book
 
 Abaixo há os comando para gerar o documento em formato digital usando o pandoc (certifique-se de tê-lo instalado):
 
 ```sh
-pandoc metadata.yaml --resource-path=src/assets \
+pandoc metadata.yaml --epub-cover-image=cover.jpg --resource-path=src/assets \
+src/docs/preface.md \
 src/docs/chapter_1/chapter_1.md \
 src/docs/chapter_2/chapter_2.md \
 src/docs/chapter_3/chapter_3.md \
@@ -23,11 +24,11 @@ src/docs/chapter_14/chapter_14.md \
 src/docs/chapter_15/chapter_15.md \
 src/docs/chapter_16/chapter_16.md \
 src/docs/chapter_17/chapter_17.md \
- -o dama-dmbok-2.epub
+-o dama-dmbok-2.epub
 ```
 
-Para converter em .mobi utilize o calibre com o comando abaixo:
+Para converter em .azw3 utilize o calibre com o comando abaixo:
 
 ```sh
-ebook-convert dama-dmbok-2.epub dama-dmbok-2.mobi
+ebook-convert dama-dmbok-2.epub dama-dmbok-2.azw3
 ```

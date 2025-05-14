@@ -1,190 +1,265 @@
-# Reference and Master Data
+# Dados de Referência e Mestres
 
 ![](chapter_10.png)
 
-## 1. Introduction
+## 1. Introdução
 
-In any organization, certain data is required across business areas, processes, and systems. The overall organization and its customers benefit if this data is shared and all business units can access the same customer lists, geographic location codes, business unit lists, delivery options, part lists, accounting cost center codes, governmental tax codes, and other data used to run the business. People using data generally assume a level of consistency exists across the organization, until they see disparate data.
+Em qualquer organização, determinados dados são necessários em todas as áreas de negócios, processos e sistemas. A organização como um todo e seus clientes se beneficiam se esses dados forem compartilhados e todas as unidades de negócios puderem acessar as mesmas listas de clientes, códigos de localização geográfica, listas de unidades de negócios, opções de entrega, listas de peças, códigos de centros de custo contábeis, códigos tributários governamentais e outros dados usados ​​para administrar o negócio. Pessoas que utilizam dados geralmente presumem que existe um nível de consistência em toda a organização, até que se deparem com dados díspares.
 
-In most organizations, systems and data evolve more organically than data management professionals would like. Particularly in large organizations, various projects and initiatives, mergers and acquisitions, and other business activities result in multiple systems executing essentially the same functions, isolated from each other. These conditions inevitably lead to inconsistencies in data structure and data values between systems. This variability increases costs and risks. Both can be reduced through the management of Master Data and Reference Data.
+Na maioria das organizações, os sistemas e os dados evoluem de forma mais orgânica do que os profissionais de gestão de dados gostariam. Particularmente em grandes organizações, vários projetos e iniciativas, fusões e aquisições e outras atividades de negócios resultam em múltiplos sistemas executando essencialmente as mesmas funções, isolados uns dos outros. Essas condições inevitavelmente levam a inconsistências na estrutura e nos valores dos dados entre os sistemas. Essa variabilidade aumenta os custos e os riscos. Ambos podem ser reduzidos por meio do gerenciamento de Dados Mestres e Dados de Referência.
 
-![Figure 75 Context Diagram: Reference and Master Data](figure_75.png)
-Figure 75 Context Diagram: Reference and Master Data
+![Figura 75 Diagrama de Contexto: Dados de Referência e Mestres](figure_75.png)
+Figura 75 Diagrama de Contexto: Dados de Referência e Mestres
 
-### 1.1 Business Drivers
+### 1.1 Motivadores de Negócios
 
-The most common drivers for initiating a Master Data Management program are:
+Os motivadores mais comuns para iniciar um programa de Gestão de Dados Mestres são:
 
-* **Meeting organizational data requirements:** Multiple areas within an organization need access to the same data sets, with the confidence that the data sets are complete, current, and consistent. Master Data often form the basis of these data sets (e.g., determining whether an analysis includes all customers depends on having a consistently applied definition of a customer).
-* **Managing data quality:** Data inconsistencies, quality issues, and gaps, lead to incorrect decisions or lost opportunities; Master Data Management reduces these risks by enabling a consistent representation of the entities critical to the organization.
-* **Managing the costs of data integration:** The cost of integrating new data sources into an already complex environment are higher in the absence of Master Data, which reduces variation in how critical entities are defined and identified.
-* **Reducing risk:** Master Data can enable simplification of data sharing architecture to reduce costs and risk associated with a complex environment.
+* **Atender aos requisitos de dados organizacionais:** Várias áreas dentro de uma organização precisam acessar os mesmos conjuntos de dados, com a certeza de que eles estão completos, atualizados e consistentes. Os Dados Mestres frequentemente formam a base desses conjuntos de dados (por exemplo, determinar se uma análise inclui todos os clientes depende de ter uma definição de cliente aplicada de forma consistente).
+* **Gerenciando a qualidade dos dados:** Inconsistências, problemas de qualidade e lacunas nos dados levam a decisões incorretas ou perda de oportunidades; a Gestão de Dados Mestres reduz esses riscos, permitindo uma representação consistente das entidades críticas para a organização.
+* **Gerenciando os custos de integração de dados:** O custo de integrar novas fontes de dados em um ambiente já complexo é maior na ausência de Dados Mestres, o que reduz a variação na forma como as entidades críticas são definidas e identificadas.
 
-The drivers for managing Reference Data are similar. Centrally managed Reference Data enables organizations
-to:
+* **Gerenciando os custos de integração de dados:** O custo de integrar novas fontes de dados em um ambiente já complexo é maior na ausência de Dados Mestres, o que reduz a variação na forma como as entidades críticas são definidas e identificadas. * **Redução de riscos:** Dados Mestres podem simplificar a arquitetura de compartilhamento de dados para reduzir custos e riscos associados a um ambiente complexo.
 
-* Meet data requirements for multiple initiatives and reduce the risks and costs of data integration through use of consistent Reference Data
-* Manage the quality of Reference Data
+Os motivadores para o gerenciamento de Dados de Referência são semelhantes. Dados de Referência gerenciados centralmente permitem que as organizações
+a:
 
-While data-driven organizational initiatives focus on transactional data (increasing sales or market share, reducing costs, demonstrating compliance), the ability to leverage such transactional data is highly dependent on the availability and quality of Reference and Master Data. Improving the availability and quality of Reference and Master Data has a dramatic impact on overall quality of the data and business confidence in data. These processes have additional benefits to an organization, including simplification of IT landscape, improved efficiency and productivity, and with these, the potential to improve the customer experience.
+* Atender aos requisitos de dados para diversas iniciativas e reduzir os riscos e custos da integração de dados por meio do uso de Dados de Referência consistentes
+* Gerenciar a qualidade dos Dados de Referência
 
-### 1.2 Goals and Principles
+Embora as iniciativas organizacionais baseadas em dados se concentrem em dados transacionais (aumento de vendas ou participação de mercado, redução de custos, demonstração de conformidade), a capacidade de alavancar esses dados transacionais depende fortemente da disponibilidade e da qualidade dos Dados Mestres e de Referência. Melhorar a disponibilidade e a qualidade dos Dados Mestres e de Referência tem um impacto significativo na qualidade geral dos dados e na confiança da empresa nos dados. Esses processos trazem benefícios adicionais para uma organização, incluindo a simplificação do cenário de TI, maior eficiência e produtividade e, com isso, o potencial de aprimorar a experiência do cliente.
 
-The goals of a Reference and Master Data Management program include:
+### 1.2 Objetivos e Princípios
 
-* Ensuring the organization has complete, consistent, current, authoritative Master and Reference Data across organizational processes
-* Enabling Master and Reference Data to be shared across enterprise functions and applications
-* Lowering the cost and reducing the complexity of data usage and integration through standards, common data models, and integration patterns
+Os objetivos de um programa de Gestão de Dados Mestres e de Referência incluem:
 
-Reference and Master Data Management follow these guiding principles:
+* Garantir que a organização tenha Dados Mestres e de Referência completos, consistentes, atuais e confiáveis ​​em todos os processos organizacionais
+* Permitir que Dados Mestres e de Referência sejam compartilhados entre funções e aplicativos corporativos
+* Reduzir o custo e a complexidade do uso e integração de dados por meio de padrões, modelos de dados comuns e padrões de integração
 
-* **Shared Data:** Reference and Master Data must be managed so that they are shareable across the organization.
-* **Ownership:** Reference and Master Data belong to the organization, not to a particular application or department. Because they are widely shared, they require a high level of stewardship.
-* **Quality:** Reference and Master Data Management require ongoing Data Quality monitoring and governance.
-* **Stewardship:** Business Data Stewards are accountable for controlling and ensuring the quality of Reference Data.
-* **Controlled Change:**
-  * At a given point of time, Master Data values should represent the organization’s best understanding of what is accurate and current. Matching rules that change values should be applied with caution and oversight. Any identifier merged or split should be reversible.
-  * Changes to Reference Data values should follow a defined process; changes should be approved and communicated before they are implemented.
-* **Authority:** Master Data values should be replicated only from the system of record. A system of reference may be required to enable sharing of Master Data across an organization.
+A Gestão de Dados Mestres e de Referência segue os seguintes princípios orientadores:
 
-### 1.3 Essential Concepts
+* **Dados Compartilhados:** Dados Mestres e de Referência devem ser gerenciados de forma que sejam compartilháveis ​​por toda a organização.
+* **Propriedade:** Dados Mestres e de Referência pertencem à organização, não a um aplicativo ou departamento específico. Por serem amplamente compartilhados, exigem um alto nível de administração.
+* **Qualidade:** A Gestão de Dados Mestres e de Referência exige monitoramento e governança contínuos da Qualidade dos Dados.
+* **Administração:** Administradores de Dados Corporativos são responsáveis ​​por controlar e garantir a qualidade dos Dados de Referência.
 
-#### 1.3.1 Differences Between Master and Reference Data
+* **Alteração Controlada:**
+* Em um determinado momento, os valores dos Dados Mestres devem representar a melhor compreensão da organização sobre o que é preciso e atual. Regras de correspondência que alteram valores devem ser aplicadas com cautela e supervisão. Qualquer identificador mesclado ou dividido deve ser reversível.
+* Alterações nos valores dos Dados de Referência devem seguir um processo definido; as alterações devem ser aprovadas e comunicadas antes de serem implementadas.
+* **Autoridade:** Os valores dos Dados Mestres devem ser replicados apenas a partir do sistema de registro. Um sistema de referência pode ser necessário para permitir o compartilhamento dos Dados Mestres em uma organização.
 
-Different types of data play different roles within an organization. They also have different management requirements. A distinction is often made between Transaction and Master Data, as well as between Master Data and Reference Data. Malcolm Chisholm has proposed a six-layer taxonomy of data that includes Metadata, Reference Data, enterprise structure data, transaction structure data, transaction activity data, and transaction audit data (Chisholm, 2008; Talburt and Zhou, 2015). Within this taxonomy, he defines Master Data as an aggregation of Reference Data, enterprise structure data, and transaction structure data:
+### 1.3 Conceitos Essenciais
 
-* Reference Data, for example, code and description tables, is data that is used solely to characterize other data in an organization, or solely to relate data in a database to information beyond the boundaries of the organization.
-* Enterprise Structure Data, for example, a chart of accounts, enables reporting of business activity by business responsibility.
-* Transaction Structure Data, for example customer identifiers, describes the things must be present for a transaction to occur: products, customers, vendors.
+#### 1.3.1 Diferenças entre Dados Mestres e de Referência
 
-Chisholm’s definition distinguishes Master Data from transaction activity data that records details about transactions, and from transaction audit data that describes the state of transactions, as well as from Metadata, which describes other data (Chisholm, 2008). In this respect, Chisholm’s definition is similar to the DAMA Dictionary’s definition: Master Data is “the data that provides the context for business activity data in the form of common and abstract concepts that relate to the activity. It includes the details (definitions and identifiers) of internal and external objects involved in business transactions, such as customers, products, employees, vendors, and controlled domains (code values)” (DAMA, 2009).
+Diferentes tipos de dados desempenham papéis diferentes dentro de uma organização. Eles também têm diferentes requisitos de gestão. Frequentemente, é feita uma distinção entre Dados Transacionais e Dados Mestres, bem como entre Dados Mestres e Dados de Referência. Malcolm Chisholm propôs uma taxonomia de dados de seis camadas que inclui Metadados, Dados de Referência, dados de estrutura empresarial, dados de estrutura transacional, dados de atividade transacional e dados de auditoria transacional (Chisholm, 2008; Talburt e Zhou, 2015). Dentro dessa taxonomia, ele define Dados Mestres como uma agregação de Dados de Referência, dados de estrutura empresarial e dados de estrutura transacional:
 
-Many people understand Master Data to include both transaction structure data and enterprise structure data. David Loshin’s definition of Master Data aligns largely with these types. He describes Master Data objects as core business objects used in different applications across an organization, along with their associated Metadata, attributes, definitions, roles, connections, and taxonomies. Master Data objects represent those ‘things’ that matter most to an organization – those that are logged in transactions, reported on, measured, analyzed (Loshin, 2008).
+* Dados de Referência, por exemplo, tabelas de códigos e descrições, são dados usados ​​exclusivamente para caracterizar outros dados em uma organização ou exclusivamente para relacionar dados em um banco de dados a informações além dos limites da organização.
+* Dados de Estrutura Empresarial, por exemplo, um plano de contas, permitem o relato da atividade empresarial por responsabilidade empresarial.
 
-Master Data requires identifying and / or developing a trusted version of truth for each instance of conceptual entities such as product, place, account, person, or organization and maintaining the currency of that version. The primary challenge with Master Data is entity resolution (also called identity management), the process of discerning and managing associations between data from different systems and processes. The entity instances represented by Master Data rows will be represented differently across systems. Master Data Management works to resolve these differences in order to consistently identify individual entity instances (i.e., specific customers, products, etc.) in different contexts. This process must also be managed over time, so that the identifiers for these Master Data entity instances remain consistent. [^56]
+* Dados de Estrutura de Transação, por exemplo, identificadores de clientes, descrevem os elementos que devem estar presentes para que uma transação ocorra: produtos, clientes, fornecedores.
 
-Reference Data and Master Data share conceptually similar purposes. Both provide context critical to the creation and use of transactional data. (Reference Data also provides context for Master Data.) They enable data to be meaningfully understood. Importantly, both are shared resources that should be managed at the enterprise level. Having multiple instances of the same Reference Data is inefficient and inevitably leads to inconsistency between them. Inconsistency leads to ambiguity, and ambiguity introduces risk to an organization. A successful Reference Data or Master Data Management program involves the full range of data management functions (Data Governance, Data Quality, Metadata Management, Data Integration, etc.).
+A definição de Chisholm distingue Dados Mestres dos dados de atividade de transação, que registram detalhes sobre transações, e dos dados de auditoria de transações, que descrevem o estado das transações, bem como dos Metadados, que descrevem outros dados (Chisholm, 2008). Nesse sentido, a definição de Chisholm é semelhante à definição do Dicionário DAMA: Dados Mestres são “os dados que fornecem o contexto para os dados de atividade de negócios na forma de conceitos comuns e abstratos relacionados à atividade. Inclui os detalhes (definições e identificadores) de objetos internos e externos envolvidos em transações de negócios, como clientes, produtos, funcionários, fornecedores e domínios controlados (valores de código)” (DAMA, 2009).
 
-Reference Data also has characteristics that distinguish it from other kinds of Master Data (e.g., enterprise and transactional structure data). It is less volatile. Reference Data sets are generally less complex and smaller than either Transactional or Master Data sets. They have fewer columns and fewer rows. The challenges of entity resolution are not part of Reference Data Management.
+Muitas pessoas entendem que Dados Mestres incluem dados de estrutura de transação e dados de estrutura empresarial. A definição de Dados Mestres de David Loshin se alinha amplamente com esses tipos. Ele descreve os objetos de Dados Mestres como objetos de negócios essenciais usados ​​em diferentes aplicações em uma organização, juntamente com seus Metadados, atributos, definições, funções, conexões e taxonomias associados. Os objetos de Dados Mestres representam as "coisas" mais importantes para uma organização – aquelas que são registradas em transações, relatadas, medidas e analisadas (Loshin, 2008).
 
-The focus of data management differs between Reference and Master Data:
+Os Dados Mestres exigem a identificação e/ou o desenvolvimento de uma versão confiável da verdade para cada instância de entidades conceituais, como produto, local, conta, pessoa ou organização, e a manutenção da vigência dessa versão. O principal desafio dos Dados Mestres é a resolução de entidades (também chamada de gerenciamento de identidades), o processo de discernir e gerenciar associações entre dados de diferentes sistemas e processos. As instâncias de entidades representadas por linhas de Dados Mestres serão representadas de forma diferente entre os sistemas. O Gerenciamento de Dados Mestres trabalha para resolver essas diferenças a fim de identificar consistentemente instâncias de entidades individuais (ou seja, clientes, produtos específicos, etc.) em diferentes contextos. Esse processo também deve ser gerenciado ao longo do tempo, para que os identificadores dessas instâncias de entidades de Dados Mestres permaneçam consistentes. [^56]
 
-* Master Data Management (MDM) entails control over Master Data values and identifiers that enable consistent use, across systems, of the most accurate and timely data about essential business entities. The goals of MDM include ensuring availability of accurate, current values while reducing risks associated with ambiguous identifiers (those identified with more than one instance of an entity and those that refer to more than one entity).
-* Reference Data Management (RDM) entails control over defined domain values and their definitions. The goal of RDM is to ensure the organization has access to a complete set of accurate and current values for each concept represented.
+Dados de Referência e Dados Mestres compartilham propósitos conceitualmente semelhantes. Ambos fornecem contexto crítico para a criação e o uso de dados transacionais. (Dados de Referência também fornecem contexto para Dados Mestres.) Eles permitem que os dados sejam compreendidos de forma significativa. É importante ressaltar que ambos são recursos compartilhados que devem ser gerenciados no nível corporativo. Ter múltiplas instâncias dos mesmos Dados de Referência é ineficiente e inevitavelmente leva à inconsistência entre elas. A inconsistência leva à ambiguidade, e a ambiguidade introduz riscos para uma organização. Um programa bem-sucedido de Gerenciamento de Dados de Referência ou Dados Mestres envolve toda a gama de funções de gerenciamento de dados (Governança de Dados, Qualidade de Dados, Gerenciamento de Metadados, Integração de Dados, etc.).
 
-One challenge of Reference Data Management is that of ownership or responsibility for definition and maintenance. Some Reference Data originates outside of the organizations that use it. Some crosses internal organizational boundaries and may not be owned by a single department. Other Reference Data may be created and maintained within a department but have potential value elsewhere in an organization. Determining responsibility for obtaining data and managing updates is part of RDM. Lack of accountability introduces risk, as differences in Reference Data may cause misunderstanding of data context (as when two business units have different values to classify the same concept).
+Os Dados de Referência também possuem características que os distinguem de outros tipos de Dados Mestres (por exemplo, dados corporativos e de estrutura transacional). São menos voláteis. Os conjuntos de Dados de Referência são geralmente menos complexos e menores do que os conjuntos de Dados Transacionais ou de Dados Mestres. Eles têm menos colunas e menos linhas. Os desafios da resolução de entidades não fazem parte do Gerenciamento de Dados de Referência.
 
-Because Master and Reference Data provide context for transactions, they shape the Transaction data entering an organization during operations (for example, in CRM and ERP systems). They also frame analysis performed on Transaction Data.
+O foco do gerenciamento de dados difere entre Dados de Referência e Dados Mestres:
 
-#### 1.3.2 Reference Data
+* O Gerenciamento de Dados Mestres (MDM) envolve o controle sobre os valores e identificadores dos Dados Mestres, permitindo o uso consistente, em todos os sistemas, dos dados mais precisos e oportunos sobre entidades empresariais essenciais. Os objetivos do MDM incluem garantir a disponibilidade de valores precisos e atuais, reduzindo os riscos associados a identificadores ambíguos (aqueles identificados com mais de uma instância de uma entidade e aqueles que se referem a mais de uma entidade).
+* O Gerenciamento de Dados de Referência (RDM) envolve o controle sobre os valores de domínio definidos e suas definições. O objetivo do RDM é garantir que a organização tenha acesso a um conjunto completo de valores precisos e atuais para cada conceito representado.
 
-As noted, Reference Data is any data used to characterize or classify other data, or to relate data to information external to an organization (Chisholm, 2001). The most basic Reference Data consists of codes and descriptions, but some Reference Data can be more complex and incorporate mappings and hierarchies. Reference Data exists in virtually every data store. Classifications and categories may include statuses or types (e.g., Order Status: New, In Progress, Closed, Cancelled). External information may include geographic or standards information (e.g., Country Code: DE, US, TR).
+Um desafio do Gerenciamento de Dados de Referência é a propriedade ou responsabilidade pela definição e manutenção. Alguns Dados de Referência se originam fora das organizações que os utilizam. Alguns cruzam os limites internos da organização e podem não pertencer a um único departamento. Outros Dados de Referência podem ser criados e mantidos dentro de um departamento, mas têm valor potencial em outras partes da organização. Determinar a responsabilidade pela obtenção de dados e gerenciar atualizações faz parte do RDM. A falta de responsabilização introduz riscos, pois diferenças nos Dados de Referência podem causar mal-entendidos sobre o contexto dos dados (como quando duas unidades de negócios têm valores diferentes para classificar o mesmo conceito).
 
-Reference Data may be stored in different ways to meet the different needs. For example, data integration (e.g., data mappings for standardization or data quality checks), or other application functionality (e.g., synonym rings to enable search and discovery). It may also have device specific user interface considerations (e.g., multiple languages). Common storage techniques use:
+Como os Dados Mestre e de Referência fornecem contexto para as transações, eles moldam os dados de transações que entram em uma organização durante as operações (por exemplo, em sistemas CRM e ERP). Eles também enquadram a análise realizada nos Dados de Transações.
 
-* Code tables in relational databases, linked via foreign keys to other tables to maintain referential integrity functions within the database management system
-* Reference Data Management systems that maintain business entities, allowed, future-state, or deprecated values, and term mapping rules to support broader application and data integration use
-* Object attribute specific Metadata to specify permissible values with a focus on API or user interface access
+#### 1.3.2 Dados de Referência
 
-Reference Data Management entails control and maintenance of defined domain values, definitions, and the relationships within and across domain values. The goal of Reference Data Management is to ensure values are consistent and current across different functions and that the data is accessible to the organization. Like other data, Reference Data requires Metadata. An important Metadata attribute for Reference Data includes its source. For example, the governing body for industry standard Reference Data.
+Conforme observado, Dados de Referência são quaisquer dados usados ​​para caracterizar ou classificar outros dados, ou para relacioná-los com informações externas a uma organização (Chisholm, 2001). Os Dados de Referência mais básicos consistem em códigos e descrições, mas alguns Dados de Referência podem ser mais complexos e incorporar mapeamentos e hierarquias. Dados de Referência existem em praticamente todos os repositórios de dados. Classificações e categorias podem incluir status ou tipos (por exemplo, Status do Pedido: Novo, Em Andamento, Fechado, Cancelado). Informações externas podem incluir informações geográficas ou padronizadas (por exemplo, Código do País: DE, US, TR).
 
-##### 1.3.2.1 Reference Data Structure
+Os Dados de Referência podem ser armazenados de diferentes maneiras para atender a diferentes necessidades. Por exemplo, integração de dados (por exemplo, mapeamentos de dados para padronização ou verificações de qualidade de dados) ou outras funcionalidades de aplicativos (por exemplo, anéis de sinônimos para permitir pesquisa e descoberta). Também pode ter considerações de interface de usuário específicas para cada dispositivo (por exemplo, vários idiomas). Técnicas comuns de armazenamento utilizam:
 
-Depending on the granularity and complexity of what the Reference Data represents, it may be structured as a simple list, a cross-reference, or a taxonomy. The ability to use and maintain Reference Data should be accounted for when structuring it within a database or a Reference Data Management system.
+* Tabelas de código em bancos de dados relacionais, vinculadas por meio de chaves estrangeiras a outras tabelas para manter funções de integridade referencial dentro do sistema de gerenciamento de banco de dados
+* Sistemas de Gerenciamento de Dados de Referência que mantêm entidades de negócios, valores permitidos, de estado futuro ou obsoletos, e regras de mapeamento de termos para oferecer suporte ao uso mais amplo de aplicativos e integração de dados
+* Metadados específicos de atributos de objeto para especificar valores permitidos com foco no acesso à API ou à interface de usuário
 
-###### 1.3.2.1.1 Lists
+O Gerenciamento de Dados de Referência envolve o controle e a manutenção de valores de domínio definidos, definições e os relacionamentos dentro e entre valores de domínio. O objetivo do Gerenciamento de Dados de Referência é garantir que os valores sejam consistentes e atuais em diferentes funções e que os dados sejam acessíveis à organização. Como outros dados, os Dados de Referência requerem Metadados. Um atributo importante de Metadados para Dados de Referência inclui sua fonte. Por exemplo, o órgão regulador para Dados de Referência padrão do setor.
 
-The simplest form of Reference Data pairs a code value with a description in a list, such as in Table 17. The code value is the primary identifier, the short form reference value that appears in other contexts. The description states what the code represents. The description may be displayed in place of the code on screens, pages, drop-down lists, and reports. Note that in this example, the code value for United Kingdom is GB according to international standards, and not UK, even though UK is a common short form used in many forms of communication. Balance between standards compliance and usability when defining Reference Data requirements.
+##### 1.3.2.1 Estrutura de Dados de Referência
 
-Table 17 Simple Reference List
+Dependendo da granularidade e complexidade do que os Dados de Referência representam, eles podem ser estruturados como uma lista simples, uma referência cruzada ou uma taxonomia. A capacidade de usar e manter Dados de Referência deve ser considerada ao estruturá-los em um banco de dados ou em um sistema de Gerenciamento de Dados de Referência.
+
+###### 1.3.2.1.1 Listas
+
+A forma mais simples de Dados de Referência combina um valor de código com uma descrição em uma lista, como na Tabela 17. O valor do código é o identificador principal, o valor de referência de forma abreviada que aparece em outros contextos. A descrição indica o que o código representa. A descrição pode ser exibida no lugar do código em telas, páginas, listas suspensas e relatórios. Observe que, neste exemplo, o valor do código para o Reino Unido é GB, de acordo com os padrões internacionais, e não UK, embora UK seja uma forma abreviada comum usada em muitas formas de comunicação. Equilíbrio entre conformidade com os padrões e usabilidade ao definir os requisitos dos Dados de Referência.
+
+Tabela 17 Lista de Referências Simples
 
 <table>
   <thead>
     <tr>
-      <th>Code Value</th>
-      <th>Description</th>
+      <th>
+        Valor do Código
+      </th>
+      <th>
+        Descrição
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>US</td>
-      <td>United States of America</td>
+      <td>
+        EUA
+      </td>
+      <td>
+        Estados Unidos da América
+      </td>
     </tr>
     <tr>
-      <td>GB</td>
-      <td>United Kingdom (Great Britain)</td>
+      <td>
+        GB
+      </td>
+      <td>
+        Reino Unido (Grã-Bretanha)
+      </td>
     </tr>
   </tbody>
 </table>
 
-Depending on the content and complexity of the Reference Data, additional attributes may be required to define the meaning of the code. Definitions provide information that the label alone does not provide. Definitions rarely appear on reports or drop-down lists. However, they do appear in places like Help functions for applications, which guide the appropriate use of codes in context.
+Dependendo do conteúdo e da complexidade dos Dados de Referência, atributos adicionais podem ser necessários para definir o significado do código. As definições fornecem informações que o rótulo por si só não fornece. Definições raramente aparecem em relatórios ou listas suspensas. No entanto, elas aparecem em locais como funções de Ajuda para aplicativos, que orientam o uso apropriado de códigos em contexto.
 
-Lists, like any Reference Data, must meet the requirements of data consumers, including requirements for the appropriate level of detail. If a list of values is intended to support data classification by casual users, a highly detailed list will likely cause data quality issues and adoption challenges. Similarly, a list of values that is too generic would prevent knowledge workers from capturing sufficient level of detail. To accommodate such cases, it is better to maintain distinct lists that are related vs. attempting to have a single list that is the standard for all user communities. Table 18 provides an example related to status codes for help desk tickets. Without the information provided by the definition, ticket status would be ambiguous to anyone unfamiliar with the system. This differentiation is especially necessary for classifications driving performance metrics or other Business Intelligence analytics.
+As listas, como quaisquer Dados de Referência, devem atender aos requisitos dos consumidores de dados, incluindo os requisitos para o nível de detalhe apropriado. Se uma lista de valores se destina a dar suporte à classificação de dados por usuários casuais, uma lista altamente detalhada provavelmente causará problemas de qualidade dos dados e desafios de adoção. Da mesma forma, uma lista de valores muito genérica impediria que os profissionais do conhecimento capturassem o nível de detalhe suficiente. Para acomodar esses casos, é melhor manter listas distintas e relacionadas em vez de tentar ter uma única lista que seja o padrão para todas as comunidades de usuários. A Tabela 18 fornece um exemplo relacionado aos códigos de status para tickets de help desk. Sem as informações fornecidas pela definição, o status do ticket seria ambíguo para qualquer pessoa não familiarizada com o sistema. Essa diferenciação é especialmente necessária para classificações que direcionam métricas de desempenho ou outras análises de Business Intelligence.
 
-Table 18 Simple Reference List Expanded
+Tabela 18 Lista de Referência Simples Expandida
 
 <table>
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Description</th>
-      <th>Definition</th>
+      <th>
+        Código
+      </th>
+      <th>
+        Descrição
+      </th>
+      <th>
+        Definição
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>New</td>
-      <td>Indicates a newly created ticket without an assigned resource</td>
+      <td>
+        1
+      </td>
+      <td>
+        Novo
+      </td>
+      <td>
+        Indica um ticket recém-criado sem um recurso atribuído
+      </td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>Assigned</td>
-      <td>Indicates a ticket that has a named resource assigned</td>
+      <td>
+        2
+      </td>
+      <td>
+        Atribuído
+      </td>
+      <td>
+        Indica um ticket com um recurso nomeado atribuído
+      </td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>Work In Progress</td>
-      <td>Indicates the assigned resource started working on the ticket</td>
+      <td>
+        3
+      </td>
+      <td>
+        Trabalho em Andamento
+      </td>
+      <td>
+        Indica que o recurso atribuído começou a trabalhar no ticket
+      </td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>Resolved</td>
-      <td>Indicates request is assumed to be fulfilled per the assigned resource</td>
+      <td>
+        4
+      </td>
+      <td>
+        Resolvido
+      </td>
+      <td>
+        Indica que a solicitação foi considerada atendida de acordo com o recurso atribuído
+      </td>
     </tr>
     <tr>
-      <td>5</td>
-      <td>Cancelled</td>
-      <td>Indicates request was cancelled based on requester interaction</td>
+      <td>
+        5
+      </td>
+      <td>
+        Cancelado
+      </td>
+      <td>
+        Indica que a solicitação foi cancelada com base na interação do solicitante
+      </td>
     </tr>
     <tr>
-      <td>6</td>
-      <td>Pending</td>
-      <td>Indicates request cannot proceed without additional information</td>
+      <td>
+        6
+      </td>
+      <td>
+        Pendente
+      </td>
+      <td>
+        Indica que a solicitação não pode prosseguir sem informações adicionais
+      </td>
     </tr>
     <tr>
-      <td>7</td>
-      <td>Fulfilled</td>
-      <td>Indicates request was fulfilled and verified by the requester</td>
+      <td>
+        7
+      </td>
+      <td>
+        Atendido
+      </td>
+      <td>
+        Indica que a solicitação foi atendida e verificada pelo solicitante
+      </td>
     </tr>
   </tbody>
 </table>
 
-###### 1.3.2.1.2 Cross-Reference Lists
+###### 1.3.2.1.2 Listas de Referência Cruzada
 
-Different applications may use different code sets to represent the same concept. These code sets may be at different granularities or the same granularity with different values. Cross-reference data sets translate between codes values. Table 19 presents a US State Code cross-reference (an example of multiple representations at the same level of grain). The US Postal Service State Codes are two character alpha codes. FIPS uses a numeric to express the same concept. The ISO State Code also includes a reference to the country.
+Diferentes aplicações podem usar conjuntos de códigos diferentes para representar o mesmo conceito. Esses conjuntos de códigos podem ter granularidades diferentes ou a mesma granularidade com valores diferentes. Conjuntos de dados de referência cruzada traduzem valores entre códigos. A Tabela 19 apresenta uma referência cruzada do Código de Estado dos EUA (um exemplo de múltiplas representações no mesmo nível de granularidade). Os Códigos de Estado do Serviço Postal dos EUA são códigos alfabéticos de dois caracteres. O FIPS usa um número para expressar o mesmo conceito. O Código de Estado ISO também inclui uma referência ao país.
 
-Table 19 Cross-Reference List
+Tabela 19 Lista de Referência Cruzada
 
 <table>
   <thead>
     <tr>
-      <th>USPS State Code</th>
-      <th>ISO State Code</th>
-      <th>FIPS Numeric State Code</th>
-      <th>State Abbreviation</th>
-      <th>State Name</th>
-      <th>Formal State Name</th>
+      <th>
+        Código Estadual do USPS
+      </th>
+      <th>
+        Código Estadual ISO
+      </th>
+      <th>
+        Código Estadual Numérico FIPS
+      </th>
+      <th>
+        Abreviação do Estado
+      </th>
+      <th>
+        Nome do Estado
+      </th>
+      <th>
+        Nome Formal do Estado
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -194,7 +269,7 @@ Table 19 Cross-Reference List
       <td>06</td>
       <td>Calif.</td>
       <td>California</td>
-      <td>State of California</td>
+      <td>Estado da Califórnia</td>
     </tr>
     <tr>
       <td>KY</td>
@@ -202,7 +277,7 @@ Table 19 Cross-Reference List
       <td>21</td>
       <td>Ky.</td>
       <td>Kentucky</td>
-      <td>Commonwealth of Kentucky</td>
+      <td>Comunidade do Kentucky</td>
     </tr>
     <tr>
       <td>WI</td>
@@ -210,23 +285,33 @@ Table 19 Cross-Reference List
       <td>55</td>
       <td>Wis.</td>
       <td>Wisconsin</td>
-      <td>State of Wisconsin</td>
+      <td>Estado de Wisconsin</td>
     </tr>
   </tbody>
 </table>
 
-Language requirements may affect Reference Data structure. Multi-language lists are a specific instance of a cross-reference list. While code lists provide a standard, machine-readable format, language-specific glossaries provide usable content. Table 20 provides an example from the ISO 3166 standard. There are different ways to handle multi-language lists depending on how many languages and character sets are involved. Lists do not need to be normalized to be effective. The denormalized structure makes it somewhat easier to comprehend the relationships.
+Os requisitos de idioma podem afetar a estrutura dos Dados de Referência. Listas multilíngues são uma instância específica de uma lista de referências cruzadas. Enquanto as listas de códigos fornecem um formato padrão legível por máquina, os glossários específicos de cada idioma fornecem conteúdo utilizável. A Tabela 20 fornece um exemplo da norma ISO 3166. Existem diferentes maneiras de lidar com listas multilíngues, dependendo de quantos idiomas e conjuntos de caracteres estão envolvidos. As listas não precisam ser normalizadas para serem eficazes. A estrutura desnormalizada facilita um pouco a compreensão dos relacionamentos.
 
-Table 20 Multi-Language Reference List
+Tabela 20 Lista de Referências Multilíngues
 
 <table>
   <thead>
     <tr>
-      <th>ISO 3166-1 Alpha 2 Country Code</th>
-      <th>English Name</th>
-      <th>Local Name</th>
-      <th>Local Name Local Alphabet</th>
-      <th>French Name</th>
+      <th>
+        Código de país ISO 3166-1 Alfa 2
+      </th>
+      <th>
+        Nome em inglês
+      </th>
+      <th>
+        Nome local
+      </th>
+      <th>
+        Nome local Alfabeto local
+      </th>
+      <th>
+        Nome em francês
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -240,296 +325,324 @@ Table 20 Multi-Language Reference List
   </tbody>
 </table>
 
-###### 1.3.2.1.3 Taxonomies
+###### 1.3.2.1.3 Taxonomias
 
-Taxonomic Reference Data structures capture information at different levels of specificity. For example, a US ZIP Code may be a meaningful category itself, and it exists within a town, a county, and a state. These relationships can be expressed within reference table and multiple levels of analysis could be done using ZIP code as a driver.
+Estruturas de Dados de Referência Taxonômicos capturam informações em diferentes níveis de especificidade. Por exemplo, um CEP dos EUA pode ser uma categoria significativa por si só e existir dentro de uma cidade, um condado e um estado. Essas relações podem ser expressas em uma tabela de referência e múltiplos níveis de análise podem ser realizados usando o CEP como direcionador.
 
-Taxonomies enable content classification and multi-faceted navigation to support Business Intelligence. Taxonomic Reference Data can be stored in a recursive relationship. Taxonomy management tools also maintain hierarchical information. Table 21 and Table 22 show examples of two common hierarchical taxonomies. In both cases, the hierarchy includes a code, description, and a reference to a parent code that classifies the individual codes. For example, in Table 21, Floral plants (10161600) is a parent code to Roses, Poinsettias, and Orchids. In Table 22, Retail Trade (440000) is the parent to Food and Beverage Stores (445000), which is the parent to Specialty Food Stores (445200).
+As taxonomias permitem a classificação de conteúdo e a navegação multifacetada para dar suporte à Inteligência de Negócios. Os Dados de Referência Taxonômicos podem ser armazenados em um relacionamento recursivo. Ferramentas de gerenciamento de taxonomia também mantêm informações hierárquicas. As Tabelas 21 e 22 mostram exemplos de duas taxonomias hierárquicas comuns. Em ambos os casos, a hierarquia inclui um código, uma descrição e uma referência a um código pai que classifica os códigos individuais. Por exemplo, na Tabela 21, Plantas florais (10161600) é um código pai para Rosas, Poinsétias e Orquídeas. Na Tabela 22, o Comércio Varejista (440000) é o ramo que corresponde às Lojas de Alimentos e Bebidas (445000), que por sua vez corresponde às Lojas de Alimentos Especiais (445200).
 
-Table 21 UNSPSC (Universal Standard Products and Services Classification) [^57]
+Tabela 21 UNSPSC (Classificação Universal Padrão de Produtos e Serviços) [^57]
 
 <table>
   <thead>
     <tr>
-      <th>Code Value</th>
-      <th>Description</th>
-      <th>Parent Code</th>
+      <th>
+        Valor do Código
+      </th>
+      <th>
+        Descrição
+      </th>
+      <th>
+        Código Pai
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>10161600</td>
-      <td>Floral plants</td>
+      <td>Plantas florais</td>
       <td>10160000</td>
     </tr>
     <tr>
       <td>10161601</td>
-      <td>Rose plants</td>
+      <td>Rosas</td>
       <td>10161600</td>
     </tr>
     <tr>
       <td>10161602</td>
-      <td>Poinsettias plants</td>
+      <td>Poinsétias</td>
       <td>10161600</td>
     </tr>
     <tr>
       <td>10161603</td>
-      <td>Orchid plants</td>
+      <td>Orquídeas</td>
       <td>10161600</td>
     </tr>
     <tr>
       <td>10161700</td>
-      <td>Cut flowers</td>
+      <td>Flores de corte</td>
       <td>10160000</td>
     </tr>
     <tr>
       <td>10161705</td>
-      <td>Cut roses</td>
+      <td>Rosas de corte</td>
       <td>10161700</td>
     </tr>
   </tbody>
 </table>
 
-Table 22 NAICS (North America Industry Classification System) [^58]
+Tabela 22 NAICS (Sistema de Classificação Industrial da América do Norte) [^58]
 
 <table>
   <thead>
     <tr>
-      <th>Code Value</th>
-      <th>Description</th>
-      <th>Parent Code</th>
+      <th>Valor do Código</th>
+      <th>Descrição</th>
+      <th>Código Pai</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>440000</td>
-      <td>Retail Trade</td>
+      <td>Comércio Varejista</td>
       <td>440000</td>
     </tr>
     <tr>
       <td>445000</td>
-      <td>Food and Beverage Stores</td>
+      <td>Lojas de Alimentos e Bebidas</td>
       <td>440000</td>
     </tr>
     <tr>
       <td>445200</td>
-      <td>Specialty Food Stores</td>
+      <td>Lojas de Alimentos Especializados</td>
       <td>445000</td>
     </tr>
     <tr>
       <td>445210</td>
-      <td>Meat Markets</td>
+      <td>Açougues</td>
       <td>445200</td>
     </tr>
     <tr>
       <td>445220</td>
-      <td>Fish and Seafood Markets</td>
+      <td>Peixes e Frutos do Mar</td>
       <td>445200</td>
     </tr>
     <tr>
       <td>445290</td>
-      <td>Other Specialty Food Stores</td>
+      <td>Outras Lojas de Alimentos Especializados</td>
       <td>445200</td>
     </tr>
     <tr>
       <td>445291</td>
-      <td>Baked Goods Stores</td>
+      <td>Lojas de Produtos de Panificação</td>
       <td>445290</td>
     </tr>
     <tr>
       <td>445292</td>
-      <td>Confectionary and Nut Stores</td>
+      <td>Confeitarias e Nozes</td>
       <td>445290</td>
     </tr>
   </tbody>
 </table>
 
-###### 1.3.2.1.4 Ontologies
+###### 1.3.2.1.4 Ontologias
 
-Some organizations include ontologies used to manage website content as part of Reference Data. They fit this category in that they are used to characterize other data or to relate organizational data to information beyond the boundaries of the organization. Ontologies can also be understood as a form of Metadata. Ontologies and other complex taxonomies need to be managed in ways similar to how Reference Data is managed. Values need to be complete, current, and clearly defined. Best practices for maintaining ontologies are similar to those for Reference Data Management. One of the primary use cases for ontologies is content management. They are described in more detail in Chapter 9.
+Algumas organizações incluem ontologias usadas para gerenciar o conteúdo de sites como parte dos Dados de Referência. Elas se enquadram nessa categoria, pois são usadas para caracterizar outros dados ou relacionar dados organizacionais a informações além dos limites da organização. Ontologias também podem ser entendidas como uma forma de Metadados. Ontologias e outras taxonomias complexas precisam ser gerenciadas de maneira semelhante à forma como os Dados de Referência são gerenciados. Os valores precisam ser completos, atuais e claramente definidos. As melhores práticas para manter ontologias são semelhantes às do Gerenciamento de Dados de Referência. Um dos principais casos de uso para ontologias é o gerenciamento de conteúdo. Elas são descritas com mais detalhes no Capítulo 9.
 
-##### 1.3.2.2 Proprietary or Internal Reference Data
+##### 1.3.2.2 Dados de Referência Proprietários ou Internos
 
-Many organizations create Reference Data to support internal processes and applications. Often this proprietary reference data often grows organically over time. Part of RDM includes managing these data sets and, ideally, creating consistency between them, where this consistency serves the organization. For example, if different business units use different terms to describe the status of an account, then it is difficult for anyone in the organization to determine overall number of clients it serves at a point in time. In helping manage internal Reference Data sets, Data Stewards must balance between the need to have common words for the same information and the need for flexibility where processes differ from one another.
+Muitas organizações criam Dados de Referência para dar suporte a processos e aplicativos internos. Frequentemente, esses dados de referência proprietários crescem organicamente ao longo do tempo. Parte do RDM inclui o gerenciamento desses conjuntos de dados e, idealmente, a criação de consistência entre eles, onde essa consistência for útil à organização. Por exemplo, se diferentes unidades de negócios usam termos diferentes para descrever o status de uma conta, torna-se difícil para qualquer pessoa na organização determinar o número total de clientes atendidos em um determinado momento. Ao ajudar a gerenciar conjuntos de Dados de Referência internos, os Administradores de Dados devem equilibrar a necessidade de ter palavras comuns para as mesmas informações e a necessidade de flexibilidade quando os processos diferem entre si.
 
-##### 1.3.2.3 Industry Reference Data
+##### 1.3.2.3 Dados de Referência do Setor
 
-Industry Reference Data is a broad term to describe data sets that are created and maintained by industry associations or government bodies, rather than by individual organizations, in order to provide a common standard for codifying important concepts. This codification leads to a common way to understand data, and is a prerequisite for data sharing and interoperability. For example, the International Classification of Diseases (ICD) codes provide a common way to classify health conditions (diagnoses) and treatments (procedures) and thus to have a consistent approach to delivering health care and understanding outcomes. If every doctor and hospital creates their own code set for diseases, it would be virtually impossible to understand trends and patterns.
+Dados de Referência do Setor é um termo amplo para descrever conjuntos de dados criados e mantidos por associações do setor ou órgãos governamentais, em vez de por organizações individuais, a fim de fornecer um padrão comum para a codificação de conceitos importantes. Essa codificação leva a uma maneira comum de entender os dados e é um pré-requisito para o compartilhamento e a interoperabilidade de dados. Por exemplo, os códigos da Classificação Internacional de Doenças (CID) fornecem uma maneira comum de classificar condições de saúde (diagnósticos) e tratamentos (procedimentos) e, assim, ter uma abordagem consistente para a prestação de cuidados de saúde e a compreensão dos resultados. Se cada médico e hospital criasse seu próprio conjunto de códigos para doenças, seria virtualmente impossível entender tendências e padrões.
 
-Industry Reference Data is produced and maintained external to the organizations that use it, but it is required to understand transactions within those organizations. It may be needed to support specific Data Quality Management efforts (e.g., third party business directories), business calculations (e.g., foreign exchange rates), or business data augmentation (e.g., marketing data). These data sets vary widely, depending on the industry and the individual code set. (See Chapter 10.)
+Os Dados de Referência do Setor são produzidos e mantidos externamente às organizações que os utilizam, mas são necessários para compreender as transações dentro dessas organizações. Podem ser necessários para dar suporte a esforços específicos de Gestão da Qualidade de Dados (por exemplo, diretórios comerciais de terceiros), cálculos comerciais (por exemplo, taxas de câmbio) ou ampliação de dados comerciais (por exemplo, dados de marketing). Esses conjuntos de dados variam amplamente, dependendo do setor e do conjunto de códigos individual. (Consulte o Capítulo 10.)
 
-##### 1.3.2.4 Geographic or Geo-statistical Data
+##### 1.3.2.4 Dados Geográficos ou Geoestatísticos
 
-Geographic or geo-statistical reference enables classification or analysis based on geography. For example, census bureau reports describe population density and demographic shifts that support market planning and research. Weather history mapped to strict geographic classification can support inventory management and promotional planning.
+A referência geográfica ou geoestatística permite a classificação ou análise com base na geografia. Por exemplo, relatórios de censos descrevem a densidade populacional e as mudanças demográficas que apoiam o planejamento e a pesquisa de mercado. O histórico meteorológico mapeado para uma classificação geográfica rigorosa pode auxiliar na gestão de estoques e no planejamento promocional.
 
-#### 1.3.2.5 Computational Reference Data
+#### 1.3.2.5 Dados de Referência Computacionais
 
-Many business activities rely on access to common, consistent calculations. For example, foreign exchange calculations rely on managed, time stamped exchange value tables. Computational Reference Data differs from other types because of the frequency with which it changes. Many organizations purchase this kind of data from third parties who ensure that it is complete and accurate. Attempting to maintain this data internally is likely to be fraught with latency issues.
+Muitas atividades comerciais dependem do acesso a cálculos comuns e consistentes. Por exemplo, os cálculos de câmbio dependem de tabelas de valores de câmbio gerenciadas e com registro de data e hora. Dados de Referência Computacionais diferem de outros tipos devido à frequência com que mudam. Muitas organizações adquirem esse tipo de dados de terceiros, que garantem sua integridade e precisão. Tentar manter esses dados internamente provavelmente estará repleto de problemas de latência.
 
-##### 1.3.2.6 Standard Reference Data Set Metadata
+##### 1.3.2.6 Metadados do Conjunto de Dados de Referência Padrão
 
-Reference Data, like other data, can change over time. Given its prevalence within any organization, it is important to maintain key Metadata about Reference Data sets to ensure their lineage and currency are understood and maintained. Table 23 provides examples of this Metadata.
+Os Dados de Referência, assim como outros dados, podem mudar ao longo do tempo. Dada sua prevalência em qualquer organização, é importante manter os Metadados principais sobre os conjuntos de Dados de Referência para garantir que sua linhagem e atualidade sejam compreendidas e mantidas. A Tabela 23 fornece exemplos desses Metadados.
 
-Table 23 Critical Reference Data Metadata Attributes
+Tabela 23 Atributos Críticos dos Metadados dos Dados de Referência
 
 <table>
   <thead>
     <tr>
-      <th>Reference Data Set Key Information</th>
-      <th>Description</th>
+      <th>
+        Informações Principais do Conjunto de Dados de Referência
+      </th>
+      <th>
+        Descrição
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Formal Name</td>
       <td>
-        Official, especially if external name of the Reference Data set (e.g., ISO 3166-1991 Country Code List)
+        Nome Formal
+      </td>
+      <td>
+        Nome oficial, especialmente se externo, do Conjunto de Dados de Referência (por exemplo, Lista de Códigos de Países ISO 3166-1991)
       </td>
     </tr>
     <tr>
-      <td>Internal Name</td>
       <td>
-        Name associated with the data set within the organization (e.g., Country Codes – ISO)
+        Nome Interno
+      </td>
+      <td>
+        Nome associado ao conjunto de dados dentro da organização (por exemplo, Códigos de Países – ISO)
       </td>
     </tr>
     <tr>
-      <td>Data Provider</td>
       <td>
-        The party that provides and maintains the Reference Data set. This can be external (ISO), internal (a specific department), or external – extended (obtained from an external party but then extended and modified internally).
+        Provedor de Dados
+      </td>
+      <td>
+        A parte que fornece e mantém o Conjunto de Dados de Referência. Pode ser externo (ISO), interno (um departamento específico) ou externo – estendido (obtido de uma parte externa, mas posteriormente estendido e modificado internamente).
       </td>
     </tr>
     <tr>
-      <td>Data Provider Data Set Source</td>
       <td>
-        Description of where data provider’s data sets can be obtained. This is likely a Universal Resource Identifier (URI) within or outside of the enterprise network.
+        Provedor de Dados Fonte do Conjunto de Dados
+      </td>
+      <td>
+        Descrição de onde os conjuntos de dados do provedor de dados podem ser obtidos. Provavelmente, trata-se de um Identificador Universal de Recursos (URI) dentro ou fora da rede corporativa.
       </td>
     </tr>
     <tr>
-      <td>Data Provider Latest Version Number</td>
       <td>
-        If available and maintained, this describes the latest version of the external data provider’s data set where information may be added or deprecated from the version in the organization
+        Número da Versão Mais Recente do Provedor de Dados
+      </td>
+      <td>
+        Se disponível e mantido, descreve a versão mais recente do conjunto de dados do provedor de dados externo, onde informações podem ser adicionadas ou descontinuadas da versão na organização.
       </td>
     </tr>
     <tr>
-      <td>Data Provider Latest Version Date</td>
       <td>
-        If available and maintained, this describes when the standard list was last updated
+        Data da Versão Mais Recente do Provedor de Dados
+      </td>
+      <td>
+        Se disponível e mantido, descreve quando a lista de padrões foi atualizada pela última vez.
       </td>
     </tr>
     <tr>
-      <td>Internal Version Number</td>
       <td>
-        Version number of the current Reference Data set or version number of the last update that was applied against the data set
+        Número da Versão Interna
+      </td>
+      <td>
+        Número da versão do conjunto de dados de referência atual ou número da versão da última atualização aplicada ao conjunto de dados.
       </td>
     </tr>
     <tr>
-      <td>Internal Version Reconciliation Date</td>
       <td>
-        Date when data set was last updated based on the external source
+        Data de Reconciliação da Versão Interna
+      </td>
+      <td>
+        Data da última atualização do conjunto de dados com base na fonte externa.
       </td>
     </tr>
     <tr>
-      <td>Internal Version Last Update Date</td>
       <td>
-        Date data set was last changed. This does not mean reconciliation with an external version.
+        Data da Última Atualização da Versão Interna
+      </td>
+      <td>
+        Data da última alteração do conjunto de dados. Isso não significa reconciliação com uma versão externa.
       </td>
     </tr>
   </tbody>
 </table>
 
-#### 1.3.3 Master Data
+#### 1.3.3 Dados Mestres
 
-Master Data is data about the business entities (e.g., employees, customers, products, financial structures, assets, and locations) that provide context for business transactions and analysis. An entity is a real world object (person, organization, place, or thing). Entities are represented by entity instances, in the form of data / records.
+Dados Mestres são dados sobre entidades empresariais (por exemplo, funcionários, clientes, produtos, estruturas financeiras, ativos e localizações) que fornecem contexto para transações e análises comerciais. Uma entidade é um objeto do mundo real (pessoa, organização, lugar ou coisa). Entidades são representadas por instâncias de entidade, na forma de dados/registros.
 
-Master Data should represent the authoritative, most accurate data available about key business entities. When managed well, Master Data values are trusted and can be used with confidence.
+Os Dados Mestres devem representar os dados mais confiáveis ​​e precisos disponíveis sobre as principais entidades empresariais. Quando bem gerenciados, os valores dos Dados Mestres são confiáveis ​​e podem ser usados ​​com segurança.
 
-Business rules typically dictate the format and allowable ranges of Master Data values. Common organizational Master Data includes data about:
+As regras de negócios normalmente determinam o formato e os intervalos permitidos dos valores dos Dados Mestres. Dados Mestres organizacionais comuns incluem dados sobre:
 
-* Parties, made up of individuals and organizations, and their roles, such as customers, citizens, patients, vendors, suppliers, agents, business partners, competitors, employees, or students
-* Products and Services, both internal and external
-* Financial structures, such as contracts, general ledger accounts, cost centers, or profit centers
-* Locations, such as addresses and GPS coordinates
+* Partes, compostas por indivíduos e organizações, e suas funções, como clientes, cidadãos, pacientes, fornecedores, agentes, parceiros de negócios, concorrentes, funcionários ou alunos
+* Produtos e Serviços, internos e externos
+* Estruturas financeiras, como contratos, contas contábeis, centros de custo ou centros de lucro
+* Locais, como endereços e coordenadas de GPS
 
-##### 1.3.3.1 System of Record, System of Reference
+##### 1.3.3.1 Sistema de Registro, Sistema de Referência
 
-When there are potentially different versions of ‘the truth’, it is necessary to distinguish between them. In order to do so, one must know where data originates or is accessed, and which data has been prepared for particular uses. A System of Record is an authoritative system where data is created/captured, and/or maintained through a defined set of rules and expectations (e.g., an ERP system may be the System of Record for sell-to customers). A System of Reference is an authoritative system where data consumers can obtain reliable data to support transactions and analysis, even if the information did not originate in the system of reference. MDM applications, Data Sharing Hubs, and Data Warehouses often serve as systems of reference.
+Quando há versões potencialmente diferentes da "verdade", é necessário distingui-las. Para isso, é preciso saber onde os dados se originam ou são acessados, e quais dados foram preparados para usos específicos. Um Sistema de Registro é um sistema autoritativo onde os dados são criados/capturados e/ou mantidos por meio de um conjunto definido de regras e expectativas (por exemplo, um sistema ERP pode ser o Sistema de Registro para clientes de vendas). Um Sistema de Referência é um sistema autoritativo onde os consumidores de dados podem obter dados confiáveis ​​para apoiar transações e análises, mesmo que as informações não tenham se originado no sistema de referência. Aplicativos MDM, Hubs de Compartilhamento de Dados e Data Warehouses frequentemente servem como sistemas de referência.
 
-##### 1.3.3.2 Trusted Source, Golden Record
+##### 1.3.3.2 Fonte Confiável, Registro Dourado
 
-A Trusted Source is recognized as the ‘best version of the truth’ based on a combination of automated rules and manual stewardship of data content. A trusted source may also be referred to as a Single View, 360° View. Any
+Uma Fonte Confiável é reconhecida como a "melhor versão da verdade" com base em uma combinação de regras automatizadas e administração manual do conteúdo dos dados. Uma fonte confiável também pode ser chamada de Visão Única, Visão 360°. Qualquer
 
-MDM system should be managed so that it is a trusted source. Within a trusted source, records that represent the most accurate data about entity instances can be referred to as Golden Records. The term Golden Record can be misleading. Tech Target defines a Golden Record as “the ‘single version of the truth’, where ‘truth’ is understood to mean the reference to which data users can turn when they want to ensure that they have the correct version of a piece of information. The golden record encompasses all the data in every system of record (SOR) within a particular organization.” [^59]
+sistema MDM deve ser gerenciado para que seja uma fonte confiável. Dentro de uma fonte confiável, os registros que representam os dados mais precisos sobre instâncias de entidades podem ser chamados de Registros Dourados. O termo Registro Dourado pode ser enganoso. A Tech Target define um Registro Dourado como “a ‘versão única da verdade’, onde ‘verdade’ é entendida como a referência à qual os usuários de dados podem recorrer quando desejam garantir que possuem a versão correta de uma informação. O Registro Dourado abrange todos os dados em cada sistema de registro (SOR) dentro de uma determinada organização.” [^59]
 
-However, the two parts of this definition bring the concept into question, as data in different systems may not align into ‘a single version of the truth’.
+No entanto, as duas partes desta definição colocam o conceito em questão, visto que dados em diferentes sistemas podem não se alinhar em ‘uma única versão da verdade’.
 
-Within any Master Data effort, the merging/resolution of data from multiple sources into a ‘Golden Record’ does not mean that it is always a 100% complete and 100% accurate representation of all the entities within the
+Em qualquer esforço de Dados Mestres, a fusão/resolução de dados de múltiplas fontes em um ‘Registro Dourado’ não significa que ele seja sempre uma representação 100% completa e 100% precisa de todas as entidades dentro da
 
-organization (especially in organizations that have multiple SOR’s supplying data to the Master Data environment). Promising that data is ‘Golden’ when it is not can undermine the confidence of data consumers. This is why some prefer the term Trusted Source to refer to the “best version we have” of the Master Data. Doing so puts the emphasis on how data is defined and managed to get to a best version. It also helps different data consumers see the component pieces of the ‘single version’ that are important to them. Finance and Actuarial areas often have a different perspective of ‘single version’ of Customer than does the Marketing area. The Trusted Source provides multiple perspectives of business entities as identified and defined by Data Stewards.
+organização (especialmente em organizações que possuem múltiplos SORs fornecendo dados para o ambiente de Dados Mestres). Prometer que os dados são ‘Ouro’ quando não são pode minar a confiança dos consumidores de dados. É por isso que alguns preferem o termo Fonte Confiável para se referir à “melhor versão que temos” dos Dados Mestres. Isso enfatiza como os dados são definidos e gerenciados para chegar à melhor versão. Também ajuda diferentes consumidores de dados a enxergar os componentes da "versão única" que são importantes para eles. As áreas de Finanças e Atuária frequentemente têm uma perspectiva diferente da "versão única" do Cliente em relação à área de Marketing. A Fonte Confiável fornece múltiplas perspectivas de entidades empresariais, conforme identificadas e definidas pelos Administradores de Dados.
 
-##### 1.3.3.3 Master Data Management
+##### 1.3.3.3 Gestão de Dados Mestres
 
-As described in the chapter introduction, Master Data Management entails control over Master Data values and identifiers that enable consistent use, across systems, of the most accurate and timely data about essential business entities. The goals include ensuring availability of accurate, current values while reducing the risk of ambiguous identifiers.
+Conforme descrito na introdução do capítulo, a Gestão de Dados Mestres envolve o controle sobre os valores e identificadores dos Dados Mestres, permitindo o uso consistente, em todos os sistemas, dos dados mais precisos e oportunos sobre entidades empresariais essenciais. Os objetivos incluem garantir a disponibilidade de valores precisos e atuais, reduzindo o risco de identificadores ambíguos.
 
-Gartner defines Master Data Management as “a technology-enabled discipline in which business and IT work together to ensure the uniformity, accuracy, stewardship, semantic consistency, and accountability of the enterprise’s official shared Master Data assets. Master Data is the consistent and uniform set of identifiers and extended attributes that describes the core entities of the enterprise including customers, prospects, citizens, suppliers, sites, hierarchies, and chart of accounts.” [^60]
+O Gartner define a Gestão de Dados Mestres como “uma disciplina tecnológica na qual os negócios e a TI trabalham juntos para garantir a uniformidade, a precisão, a administração, a consistência semântica e a responsabilização dos ativos oficiais de Dados Mestres compartilhados da empresa. Dados Mestres são o conjunto consistente e uniforme de identificadores e atributos estendidos que descrevem as entidades centrais da empresa, incluindo clientes, clientes em potencial, cidadãos, fornecedores, locais, hierarquias e plano de contas.” [^60]
 
-Gartner’s definition stresses that MDM is a discipline, made up of people, processes, and technology. It is not a specific application solution. Unfortunately, the acronym MDM (Master Data Management) is often used to refer to systems or products used to manage Master Data. 61 MDM applications can facilitate the methods, and sometimes quite effectively, but using an MDM application does not guarantee that Master Data is being managed to meet the organizational needs.
+A definição do Gartner enfatiza que o MDM é uma disciplina, composta por pessoas, processos e tecnologia. Não é uma solução de aplicação específica. Infelizmente, a sigla MDM (Master Data Management) é frequentemente usada para se referir a sistemas ou produtos usados ​​para gerenciar Dados Mestres. [^61] Aplicações de MDM podem facilitar os métodos, e às vezes de forma bastante eficaz, mas o uso de uma aplicação de MDM não garante que os Dados Mestres estejam sendo gerenciados para atender às necessidades da organização.
 
-Assessing an organization’s MDM requirements includes identifying:
+Avaliar os requisitos de MDM de uma organização inclui identificar:
 
-* Which roles, organizations, places, and things are referenced repeatedly
-* What data is used to describe people, organizations, places, and things
-* How the data is defined and structured, including the granularity of the data
-* Where the data is created/sourced, stored, made available, and accessed
-* How the data changes as it moves through systems within the organization
-* Who uses the data and for what purposes
-* What criteria are used to understand the quality and reliability of the data and its sources
+* Quais funções, organizações, lugares e coisas são referenciados repetidamente
+* Quais dados são usados ​​para descrever pessoas, organizações, lugares e coisas
+* Como os dados são definidos e estruturados, incluindo a granularidade dos dados
+* Onde os dados são criados/originados, armazenados, disponibilizados e acessados
+* Como os dados mudam à medida que se movem pelos sistemas dentro da organização
+* Quem usa os dados e para quais finalidades
+* Quais critérios são usados ​​para entender a qualidade e a confiabilidade dos dados e suas fontes
 
-Master Data Management is challenging. It illustrates a fundamental challenge with data: People choose different ways to represent similar concepts and reconciliation between these representations is not always straightforward; as importantly, information changes over time and systematically accounting for these changes takes planning, data knowledge, and technical skills. In short, it takes work.
+A Gestão de Dados Mestres é desafiadora. Ela ilustra um desafio fundamental com dados: as pessoas escolhem maneiras diferentes de representar conceitos semelhantes e a reconciliação entre essas representações nem sempre é simples; igualmente importante, as informações mudam ao longo do tempo e a contabilização sistemática dessas mudanças exige planejamento, conhecimento de dados e habilidades técnicas. Em suma, exige trabalho.
 
-Any organization that has recognized the need for MDM probably already has a complex system landscape, with multiple ways of capturing and storing references to real world entities. Because of both organic growth over time or from mergers and acquisitions, the systems that provided input to the MDM process may have different definitions of the entities themselves and very likely have different standards for Data Quality. Because of this complexity, it is best to approach Master Data Management one data domain at a time. Start small, with a handful of attributes, and build out over time.
+Qualquer organização que tenha reconhecido a necessidade do MDM provavelmente já possui um cenário de sistemas complexo, com múltiplas maneiras de capturar e armazenar referências a entidades do mundo real. Devido ao crescimento orgânico ao longo do tempo ou a fusões e aquisições, os sistemas que forneceram informações para o processo de MDM podem ter diferentes definições das próprias entidades e, muito provavelmente, diferentes padrões de Qualidade de Dados. Devido a essa complexidade, é melhor abordar o Gerenciamento de Dados Mestres (MDM) em um domínio de dados por vez. Comece pequeno, com alguns atributos, e expanda ao longo do tempo.
 
-Planning for Master Data Management includes several basic steps. Within a domain:
+O planejamento para o Gerenciamento de Dados Mestres inclui várias etapas básicas. Dentro de um domínio:
 
-* Identify candidate sources that will provide a comprehensive view of the Master Data entities
-* Develop rules for accurately matching and merging entity instances
-* Establish an approach to identify and restore inappropriately matched and merged data
-* Establish an approach to distribute trusted data to systems across the enterprise
+* Identificar fontes candidatas que fornecerão uma visão abrangente das entidades de Dados Mestres
+* Desenvolver regras para a correspondência e mesclagem precisas de instâncias de entidades
+* Estabelecer uma abordagem para identificar e restaurar dados correspondidos e mesclados inadequadamente
+* Estabelecer uma abordagem para distribuir dados confiáveis ​​para sistemas em toda a empresa
 
-Executing the process, though, is not as simple as these steps imply, as MDM is a lifecycle management process. Activities critical to the lifecycle include:
+Executar o processo, no entanto, não é tão simples quanto essas etapas sugerem, pois o MDM é um processo de gerenciamento de ciclo de vida. As atividades críticas para o ciclo de vida incluem:
 
-* Establishing the context of Master Data entities, including definitions of associated attributes and the conditions of their use. This process requires governance.
-* Identifying multiple instances of the same entity represented within and across data sources; building and maintaining identifiers and cross-references to enable information integration.
-* Reconciling and consolidating data across sources to provide a master record or the best version of the truth. Consolidated records provide a merged view of information across systems and seek to address attribute naming and data value inconsistencies.
-* Identifying improperly matched or merged instances and ensuring they are resolved and correctly associated with identifiers.
-* Provisioning of access to trusted data across applications, either through direct reads, data services, or by replication feeds to transactional, warehousing or analytical data stores.
-* Enforcing the use of Master Data values within the organization. This process also requires governance and change management to assure a shared enterprise perspective.
+* Estabelecer o contexto das entidades de Dados Mestres, incluindo definições de atributos associados e as condições de seu uso. Este processo requer governança.
+* Identificar múltiplas instâncias da mesma entidade representadas dentro e entre fontes de dados; construir e manter identificadores e referências cruzadas para permitir a integração de informações.
+* Reconciliar e consolidar dados entre fontes para fornecer um registro mestre ou a melhor versão da verdade. Registros consolidados fornecem uma visão mesclada das informações entre sistemas e buscam resolver inconsistências na nomenclatura de atributos e no valor dos dados.
+* Identificar instâncias incorretamente correspondidas ou mescladas e garantir que sejam resolvidas e corretamente associadas aos identificadores.
+* Provisionar acesso a dados confiáveis ​​entre aplicativos, seja por meio de leituras diretas, serviços de dados ou por feeds de replicação para armazenamentos de dados transacionais, de armazenamento ou analíticos.
+* Aplicar o uso dos valores de Dados Mestres dentro da organização. Este processo também requer governança e gerenciamento de mudanças para garantir uma perspectiva corporativa compartilhada.
 
-##### 1.3.3.4 Master Data Management Key Processing Steps
+##### 1.3.3.4 Etapas Principais de Processamento do Gerenciamento de Dados Mestres
 
-Key processing steps for MDM are illustrated in Figure 76. They include data model management; data acquisition; data validation, standardization, and enrichment; entity resolution; and stewardship and sharing. In a comprehensive MDM environment, the logical data model will be physically instantiated in multiple platforms. It guides the implementation of the MDM solution, providing the basis of data integration services. It should guide how applications are configured to take advantage of data reconciliation and data quality verification capabilities.
+As etapas principais de processamento para o MDM são ilustradas na Figura 76. Elas incluem gerenciamento do modelo de dados; aquisição de dados; validação, padronização e enriquecimento de dados; resolução de entidades; e administração e compartilhamento. Em um ambiente MDM abrangente, o modelo lógico de dados será fisicamente instanciado em múltiplas plataformas. Ele orienta a implementação da solução MDM, fornecendo a base para os serviços de integração de dados. Ele deve orientar como os aplicativos são configurados para aproveitar os recursos de reconciliação e verificação da qualidade dos dados.
 
-![Figure 76 Key Processing Steps for MDM](figure_76.png)
-Figure 76 Key Processing Steps for MDM
+![Figura 76 Etapas Principais de Processamento para o MDM](figure_76.png)
+Figura 76 Etapas Principais de Processamento para o MDM
 
-###### 1.3.3.4.1 Data Model Management
+###### 1.3.3.4.1 Gerenciamento do Modelo de Dados
 
-Master Data work brings to light the importance of clear and consistent logical data definitions. The model should help the organization overcome ‘system speak’. Terms and definitions used within a source system may make sense within the confines of that system but they do not always make sense at an enterprise level. For Master Data, terms and definitions used at an enterprise level should be in context of the business conducted across the organization and not necessarily dependent on the source system contributing data values.
+O trabalho com Dados Mestres destaca a importância de definições de dados lógicos claras e consistentes. O modelo deve ajudar a organização a superar a "linguagem sistêmica". Termos e definições usados ​​em um sistema de origem podem fazer sentido dentro dos limites desse sistema, mas nem sempre fazem sentido em nível corporativo. Para Dados Mestres, os termos e definições usados ​​em nível empresarial devem estar no contexto dos negócios conduzidos em toda a organização e não necessariamente dependentes dos valores de dados contribuídos pelo sistema de origem.
 
-For attributes that make up Master Data, the granularity of the definition and associated data values must also make sense across the organization. Source systems may present the identical attribute name but the data values are in completely different contexts at the enterprise level. Similarly, source systems may present differently named attributes that at the enterprise level coalesce to a single attribute and the data values are in the proper context. Sometimes multiple attributes are presented from a single source and their respective data values are used to derive a single data value for an attribute defined at the enterprise level.
+Para atributos que compõem Dados Mestres, a granularidade da definição e os valores de dados associados também devem fazer sentido em toda a organização. Os sistemas de origem podem apresentar o mesmo nome de atributo, mas os valores de dados estão em contextos completamente diferentes no nível empresarial. Da mesma forma, os sistemas de origem podem apresentar atributos com nomes diferentes que, no nível empresarial, se fundem em um único atributo e os valores de dados estão no contexto apropriado. Às vezes, vários atributos são apresentados a partir de uma única fonte e seus respectivos valores de dados são usados ​​para derivar um único valor de dados para um atributo definido no nível empresarial.
 
-###### 1.3.3.4.2 Data Acquisition
+###### 1.3.3.4.2 Aquisição de Dados
 
-Even within a given source, data representing the same entity instance can look different, as illustrated in Table 24, where there are inconsistencies in how names, addresses, and telephone numbers are presented. This example will be referenced again later in the chapter.
+Mesmo dentro de uma determinada fonte, os dados que representam a mesma instância de entidade podem parecer diferentes, conforme ilustrado na Tabela 24, onde há inconsistências na forma como nomes, endereços e números de telefone são apresentados. Este exemplo será referenciado novamente mais adiante neste capítulo.
 
-Table 24 Source Data as Received by the MDM System
+Tabela 24 Dados de origem recebidos pelo sistema MDM
 
 <table>
   <thead>
     <tr>
-      <th>Source ID</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Telephone</th>
+      <th>ID da Fonte</th>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Telefone</th>
     </tr>
   </thead>
   <tbody>
@@ -554,35 +667,35 @@ Table 24 Source Data as Received by the MDM System
   </tbody>
 </table>
 
-Planning for, evaluating, and incorporating new data sources into the Master Data Management solution must be a reliable, repeatable process. Data acquisition activities involve:
+O planejamento, a avaliação e a incorporação de novas fontes de dados à solução de Gerenciamento de Dados Mestres devem ser um processo confiável e repetível. As atividades de aquisição de dados envolvem:
 
-* Receiving and responding to new data source acquisition requests
-* Performing rapid, ad-hoc, match and high-level data quality assessments using data cleansing and data profiling tools
-* Assessing and communicating complexity of data integration to the requesters to help them with their cost-benefit analysis
-* Piloting acquisition of data and its impact on match rules
-* Finalizing data quality metrics for the new data source
-* Determining who will be responsible for monitoring and maintaining the quality of a new source’s data
-* Completing integration into the overall data management environment
+* Receber e responder a novas solicitações de aquisição de fontes de dados
+* Realizar avaliações rápidas, ad hoc, de correspondência e de alto nível da qualidade dos dados, utilizando ferramentas de limpeza e criação de perfil de dados
+* Avaliar e comunicar a complexidade da integração de dados aos solicitantes para auxiliá-los na análise de custo-benefício
+* Testar a aquisição de dados e seu impacto nas regras de correspondência
+* Finalizar as métricas de qualidade dos dados para a nova fonte de dados
+* Determinar quem será responsável por monitorar e manter a qualidade dos dados de uma nova fonte
+* Concluir a integração com o ambiente geral de gerenciamento de dados
 
-###### 1.3.3.4.3 Data Validation, Standardization, and Enrichment
+###### 1.3.3.4.3 Validação, Padronização e Enriquecimento de Dados
 
-To enable entity resolution, data must be made as consistent as possible. This entails, at a minimum, reducing variation in format and reconciling values. Consistent input data reduces the chance or errors in associating records. Preparation processes include:
+Para permitir a resolução de entidades, os dados devem ser o mais consistentes possível. Isso implica, no mínimo, na redução da variação no formato e na reconciliação de valores. Dados de entrada consistentes reduzem a chance de erros na associação de registros. Os processos de preparação incluem:
 
-* Validation: Identifying data prove-ably erroneous or likely incorrect or defaulted (for example, removal of clearly fake email addresses)
-* Standardization: Ensuring data content conforms to standard Reference Data values (e.g., country codes), formats (e.g., telephone numbers) or fields (e.g., addresses)
-* Enrichment: Adding attributes that can improve entity resolution services (e.g., Dunn and Bradstreet DUNS Number and Ultimate DUNS Number for relating company records, Acxiom or Experian Consumer IDs for individual records)
+* Validação: Identificar dados comprovadamente errôneos, provavelmente incorretos ou inadimplentes (por exemplo, remoção de endereços de e-mail claramente falsos)
+* Padronização: Garantir que o conteúdo dos dados esteja em conformidade com os valores padrão dos Dados de Referência (por exemplo, códigos de país), formatos (por exemplo, números de telefone) ou campos (por exemplo, endereços)
+* Enriquecimento: Adicionar atributos que possam aprimorar os serviços de resolução de entidades (por exemplo, Número DUNS da Dunn and Bradstreet e Número DUNS Final para registros de empresas relacionadas, IDs de Consumidor da Acxiom ou Experian para registros individuais)
 
-Table 25 illustrates the results of the cleansing and standardization process on the example from Table 24. Addresses that had had different formats are now recognizably the same. Phone numbers include standard formatting.
+A Tabela 25 ilustra os resultados do processo de limpeza e padronização no exemplo da Tabela 24. Endereços que tinham formatos diferentes agora são reconhecidamente os mesmos. Os números de telefone incluem a formatação padrão.
 
-Table 25 Standardized and Enriched Input Data
+Tabela 25 Dados de Entrada Padronizados e Enriquecidos
 
 <table>
   <thead>
     <tr>
-      <th>Source ID</th>
-      <th>Name</th>
-      <th>Address (Cleansed)</th>
-      <th>Telephone (Cleansed)</th>
+      <th>ID da Fonte</th>
+      <th>Nome</th>
+      <th>Endereço (Limpo)</th>
+      <th>Telefone (Limpo)</th>
     </tr>
   </thead>
   <tbody>
@@ -607,45 +720,45 @@ Table 25 Standardized and Enriched Input Data
   </tbody>
 </table>
 
-###### 1.3.3.4.4 Entity Resolution and Identifier Management
+###### 1.3.3.4.4 Resolução de Entidades e Gerenciamento de Identificadores
 
-Entity resolution is the process of determining whether two references to real world objects refer to the same object or to different objects (Talburt, 2011). Entity resolution is a decision-making process. Models for executing the process differ based on the approach they take to determining similarity between two references. While resolution always takes place between pairs of references, the process can be systematically extended to include large data sets. Entity resolution is critical to MDM, as the process of matching and merging records enables the construction of the Master Data set.
+Resolução de entidades é o processo de determinar se duas referências a objetos do mundo real se referem ao mesmo objeto ou a objetos diferentes (Talburt, 2011). A resolução de entidades é um processo de tomada de decisão. Os modelos para executar o processo diferem com base na abordagem adotada para determinar a similaridade entre duas referências. Embora a resolução sempre ocorra entre pares de referências, o processo pode ser sistematicamente estendido para incluir grandes conjuntos de dados. A resolução de entidades é fundamental para o MDM, pois o processo de correspondência e mesclagem de registros permite a construção do conjunto de Dados Mestres.
 
-Entity resolution includes a set of activities (reference extraction, reference preparation, reference resolution, identity management, relationship analysis) that enable the identity of entity instances and the relationship between entity instances, to be managed over time. Within the process of reference resolution, two references may be identified as representing the same entity, through the process of determining equivalency. These references can then be linked through a value (a global identifier) that indicates that they are equivalent (Talburt, 2011).
+A resolução de entidades inclui um conjunto de atividades (extração de referências, preparação de referências, resolução de referências, gerenciamento de identidades, análise de relacionamentos) que permitem que a identidade das instâncias de entidades e o relacionamento entre elas sejam gerenciados ao longo do tempo. Dentro do processo de resolução de referências, duas referências podem ser identificadas como representando a mesma entidade, por meio do processo de determinação de equivalência. Essas referências podem então ser vinculadas por meio de um valor (um identificador global) que indica que são equivalentes (Talburt, 2011).
 
-###### 1.3.3.4.4.1 Matching
+###### 1.3.3.4.4.1 Correspondência
 
-Matching, or candidate identification, is the process of identifying how different records may relate to a single entity. The risks with this process are:
+A correspondência, ou identificação de candidatos, é o processo de identificar como diferentes registros podem se relacionar a uma única entidade. Os riscos desse processo são:
 
-* False positives: Two references that do not represent the same entity are linked with a single identifier. This results in one identifier that refers to more than one real-world entity instance.
-* False negatives: Two references represent the same entity but they are not linked with a single identifier. This results in multiple identifiers that refer to the same real-world entity when each instance is expected to have one-and-only-one identifier.
+* Falsos positivos: Duas referências que não representam a mesma entidade são vinculadas a um único identificador. Isso resulta em um identificador que se refere a mais de uma instância de entidade do mundo real.
+* Falsos negativos: Duas referências representam a mesma entidade, mas não estão vinculadas a um único identificador. Isso resulta em múltiplos identificadores que se referem à mesma entidade do mundo real, quando se espera que cada instância tenha apenas um identificador.
 
-Both situations are addressed through a process called similarity analysis or matching, in which the degree of similarity between any two records is scored, often based on weighted approximate matching between corresponding attribute values. If the score is above a specified threshold, the two records are considered to represent the same entity (a match). Through similarity analysis, slight variations in data can be recognized and data values can be consolidated. Two basic approaches, which can be used together, are deterministic and probabilistic:
+Ambas as situações são abordadas por meio de um processo chamado análise de similaridade ou correspondência, no qual o grau de similaridade entre dois registros é pontuado, geralmente com base na correspondência aproximada ponderada entre os valores de atributos correspondentes. Se a pontuação estiver acima de um limite especificado, os dois registros são considerados como representando a mesma entidade (uma correspondência). Por meio da análise de similaridade, pequenas variações nos dados podem ser reconhecidas e os valores dos dados podem ser consolidados. Duas abordagens básicas, que podem ser usadas em conjunto, são determinística e probabilística:
 
-* Deterministic algorithms, like parsing and standardization, rely on defined patterns and rules for assigning weights and scores for determining similarity. Deterministic algorithms are predictable in that the patterns matched and the rules applied will always yield the same results. This type of matching works out-of-the-box with relatively good performance, but it is only as good as the situations anticipated by the people who developed the rules.
-* Probabilistic algorithms rely on statistical techniques for assessing the probability that any pair of records represents the same entity. This relies on the ability to take data samples for training purposes by looking at the expected results for a subset of the records and tuning the matcher to self-adjust based on statistical analysis. These matchers are not reliant on rules, so the results may be nondeterministic. However, because the probabilities can be refined based on experience, probabilistic matchers are able to improve their matching precision as more data is analyzed.
+* Algoritmos determinísticos, como análise sintática e padronização, baseiam-se em padrões e regras definidos para atribuir pesos e pontuações para determinar a similaridade. Algoritmos determinísticos são previsíveis, pois os padrões correspondidos e as regras aplicadas sempre produzirão os mesmos resultados. Esse tipo de correspondência funciona imediatamente com um desempenho relativamente bom, mas é tão bom quanto as situações previstas pelas pessoas que desenvolveram as regras.
+* Algoritmos probabilísticos baseiam-se em técnicas estatísticas para avaliar a probabilidade de qualquer par de registros representar a mesma entidade. Isso se baseia na capacidade de coletar amostras de dados para fins de treinamento, observando os resultados esperados para um subconjunto de registros e ajustando o comparador para se autoajustar com base na análise estatística. Esses comparadores não dependem de regras, portanto, os resultados podem ser não determinísticos. No entanto, como as probabilidades podem ser refinadas com base na experiência, os comparadores probabilísticos conseguem melhorar sua precisão de correspondência à medida que mais dados são analisados.
 
-###### 1.3.3.4.4.2 Identity Resolution
+###### 1.3.3.4.4.2 Resolução de Identidade
 
-Some matches occur with great confidence, based on exact data matches across multiple fields. Other matches are suggested with less confidence due to conflicting values. For example:
+Algumas correspondências ocorrem com grande confiança, com base em correspondências exatas de dados em vários campos. Outras correspondências são sugeridas com menos confiança devido a valores conflitantes. Por exemplo:
 
-* If two records share the same last name, first name, birth date, and social security number, but the street address differs, is it safe to assume they refer to the same person who has changed their mailing address?
-* If two records share the same social security number, street address, and first name, but the last name differs, is it safe to assume they refer to the same person who has changed their last name? Would the likelihood be increased or decreased based on gender and age?
-* How do these examples change if the social security number is unknown for one record? What other identifiers are useful to determine the likelihood of a match? How much confidence is required for the organization to assert a match?
+* Se dois registros compartilham o mesmo sobrenome, nome, data de nascimento e número do Seguro Social, mas o endereço é diferente, é seguro presumir que se referem à mesma pessoa que mudou seu endereço postal?
+* Se dois registros compartilham o mesmo número do Seguro Social, endereço e nome, mas o sobrenome é diferente, é seguro presumir que se referem à mesma pessoa que mudou seu sobrenome? A probabilidade aumentaria ou diminuiria com base no sexo e na idade?
+* Como esses exemplos mudam se o número do Seguro Social for desconhecido para um registro? Quais outros identificadores são úteis para determinar a probabilidade de uma correspondência? Qual o nível de confiança necessário para que a organização afirme uma correspondência?
 
-Table 26 illustrates the conclusion of the process for the sample records in Table 24 and Table 25. Here the second two entity instances (Source ID 234 and 345) are determined to represent the same person (Jane Smith), while the first one (Source ID 123) is identified as representing a different person (John Smith).
+A Tabela 26 ilustra a conclusão do processo para os registros de amostra nas Tabelas 24 e 25. Aqui, as duas segundas instâncias de entidade (ID de origem 234 e 345) são determinadas como representando a mesma pessoa (Jane Smith), enquanto a primeira (ID de origem 123) é identificada como representando uma pessoa diferente (John Smith).
 
-Table 26 Candidate Identification and Identity Resolution
+Tabela 26 Identificação do Candidato e Resolução de Identidade
 
 <table>
   <thead>
     <tr>
-      <th>Source ID</th>
-      <th>Name</th>
-      <th>Address (Cleansed)</th>
-      <th>Telephone (Cleansed)</th>
-      <th>Candidate ID</th>
-      <th>Party ID</th>
+      <th>ID da Fonte</th>
+      <th>Nome</th>
+      <th>Endereço (Limpo)</th>
+      <th>Telefone (Limpo)</th>
+      <th>ID do Candidato</th>
+      <th>ID do Partido</th>
     </tr>
   </thead>
   <tbody>
@@ -676,296 +789,300 @@ Table 26 Candidate Identification and Identity Resolution
   </tbody>
 </table>
 
-Despite the best efforts, match decisions sometimes prove to be incorrect. It is essential to maintain the history of matches so that matches can be undone when discovered to be incorrect. Match rate metrics enable organizations to monitor the impact and effectiveness of their matching inference rules. Reprocessing of match rules can help identify better match candidates as new information is received by the entity resolution process.
+Apesar dos melhores esforços, as decisões de correspondência às vezes se mostram incorretas. É essencial manter o histórico de correspondências para que elas possam ser desfeitas quando forem descobertas incorretas. As métricas de taxa de correspondência permitem que as organizações monitorem o impacto e a eficácia de suas regras de inferência de correspondência. O reprocessamento das regras de correspondência pode ajudar a identificar melhores candidatos à correspondência à medida que novas informações são recebidas pelo processo de resolução de entidades.
 
-###### 1.3.3.4.4.3 Matching Workflows / Reconciliation Types
+###### 1.3.3.4.4.3 Fluxos de Trabalho de Correspondência / Tipos de Reconciliação
 
-Match rules for different scenarios require different workflows:
+Regras de correspondência para diferentes cenários exigem fluxos de trabalho diferentes:
 
-* Duplicate identification match rules focus on a specific set of data elements that uniquely identify an entity and identify merge opportunities without taking automatic action. Business Data Stewards can review these occurrences and decide to take action on a case-by-case basis.
-* Match-link rules identify and cross-reference records that appear to relate to a master record without updating the content of the cross-referenced record. Match-link rules are easier to implement and much easier to reverse.
-* Match-merge rules match records and merge the data from these records into a single, unified, reconciled, and comprehensive record. If the rules apply across data sources, create a single, unique, and comprehensive record in each data store. Minimally, use trusted data from one data store to supplement data in other data stores, replacing missing values or values thought to be inaccurate.
+* As regras de correspondência de identificação de duplicatas focam em um conjunto específico de elementos de dados que identificam exclusivamente uma entidade e identificam oportunidades de mesclagem sem tomar medidas automáticas. Os Administradores de Dados Corporativos podem revisar essas ocorrências e decidir tomar medidas caso a caso.
+* As regras de link de correspondência identificam e fazem referência cruzada a registros que parecem estar relacionados a um registro mestre sem atualizar o conteúdo do registro com referência cruzada. As regras de link de correspondência são mais fáceis de implementar e muito mais fáceis de reverter.
 
-Match-merge rules are complex, and seek to provide the unified, reconciled version of information across multiple records and data sources. The complexity is due to the need to identify which field from which source can be trusted based on a series of rules. The introduction of each new source can change these rules over time. The challenges with match-merge rules include the operational complexity of reconciling the data and the cost of reversing the operation if there is a false merge.
+* As regras de correspondência e mesclagem combinam registros e mesclam os dados desses registros em um único registro unificado, reconciliado e abrangente. Se as regras se aplicarem a todas as fontes de dados, crie um registro único, exclusivo e abrangente em cada repositório de dados. No mínimo, use dados confiáveis ​​de um repositório de dados para complementar dados em outros repositórios de dados, substituindo valores ausentes ou valores considerados imprecisos.
 
-Match-link is a simpler operation, as it acts on the cross-reference registry and not the individual attributes of the merged Master Data record, even though it may be more difficult to present comprehensive information from multiple records.
+As regras de correspondência e mesclagem são complexas e buscam fornecer uma versão unificada e reconciliada das informações em vários registros e fontes de dados. A complexidade se deve à necessidade de identificar qual campo de qual fonte pode ser confiável com base em uma série de regras. A introdução de cada nova fonte pode alterar essas regras ao longo do tempo. Os desafios das regras de correspondência e mesclagem incluem a complexidade operacional da reconciliação dos dados e o custo de reverter a operação em caso de uma mesclagem incorreta.
 
-Periodically re-evaluate match-merge and match-link rules because confidence levels change over time. Many data matching engines provide statistical correlations of data values to help establish confidence levels. (See Chapter 13.)
+A vinculação de correspondência é uma operação mais simples, pois atua no registro de referência cruzada e não nos atributos individuais do registro de Dados Mestres mesclado, embora possa ser mais difícil apresentar informações abrangentes de vários registros.
 
-###### 1.3.3.4.4.4 Master Data ID Management
+Reavalie periodicamente as regras de correspondência-mesclagem e de vinculação de correspondência, pois os níveis de confiança mudam com o tempo. Muitos mecanismos de correspondência de dados fornecem correlações estatísticas de valores de dados para ajudar a estabelecer níveis de confiança. (Consulte o Capítulo 13.)
 
-Managing Master Data involves managing identifiers. There are two types of identifiers that need to be managed across data sources in an MDM environment: Global IDs and Cross-Reference (x-Ref) information.
+###### 1.3.3.4.4.4 Gerenciamento de IDs de Dados Mestres
 
-A Global ID is the MDM solution-assigned and -maintained unique identifier attached to reconciled records. Its purpose is to uniquely identify the entity instance. In the example in Table 26, when multiple records were determined to represent the same entity instance, the value ‘ABC’ was assigned to both as a candidate ID. The records were resolved to the single Party ID of ‘2’.
+Gerenciar Dados Mestres envolve o gerenciamento de identificadores. Existem dois tipos de identificadores que precisam ser gerenciados entre fontes de dados em um ambiente MDM: IDs Globais e informações de Referência Cruzada (x-Ref).
 
-Global IDs should be generated by only one authorized solution, regardless of which technology is performing Master Data integration activities, to avoid any risk of duplicate values. Global IDs can be numbers or GUIDs (Global Unique Identifiers), as long as uniqueness can be maintained. The key complexity that needs to be handled for Global ID generation is to how to maintain the right global ID (to perform appropriate downstream data updates) due to an unmerge-remerge. X-Ref Management is management of the relationship between source IDs and the Global ID. X-Ref management should include capabilities to maintain history of such mappings to support match rate metrics, and to expose lookup services to enable data integration.
+Um ID Global é o identificador exclusivo atribuído e mantido pela solução MDM, anexado aos registros reconciliados. Sua finalidade é identificar exclusivamente a instância da entidade. No exemplo da Tabela 26, quando vários registros foram determinados como representando a mesma instância de entidade, o valor "ABC" foi atribuído a ambos como ID candidato. Os registros foram resolvidos para o ID de Parte único "2".
 
-###### 1.3.3.4.4.5 Affiliation Management
+Os IDs Globais devem ser gerados por apenas uma solução autorizada, independentemente da tecnologia que esteja executando as atividades de integração de Dados Mestres, para evitar qualquer risco de valores duplicados. Os IDs globais podem ser números ou GUIDs (Identificadores Globais Únicos), desde que a exclusividade possa ser mantida. A principal complexidade que precisa ser tratada para a geração de IDs globais é como manter o ID global correto (para realizar atualizações de dados posteriores apropriadas) devido a uma unmerge-remerge. O Gerenciamento de Referências Externas (X-Ref) é o gerenciamento do relacionamento entre os IDs de origem e o ID global. O gerenciamento de Referências Externas deve incluir recursos para manter o histórico desses mapeamentos para suportar métricas de taxa de correspondência e para expor serviços de pesquisa para permitir a integração de dados.
 
-Affiliation Management is establishing and maintaining relationships between Master Data records of entities that have real-world relationships. Examples include ownership affiliations (e.g., Company X is a subsidiary of Company Y, a parent-child relationship) or other associations (e.g., Person XYZ works at Company X).
+###### 1.3.3.4.4.5 Gerenciamento de Afiliações
 
-Data architecture design of an MDM solution must resolve whether to leverage parent-child relationships, affiliation relationships, or both for a given entity.
+O Gerenciamento de Afiliações consiste em estabelecer e manter relacionamentos entre registros de Dados Mestres de entidades que possuem relacionamentos reais. Exemplos incluem afiliações de propriedade (por exemplo, a Empresa X é uma subsidiária da Empresa Y, um relacionamento pai-filho) ou outras associações (por exemplo, a Pessoa XYZ trabalha na Empresa X).
 
-* Affiliation relationships provide the greatest flexibility through programming logic. The relationships type can be used to expose such data in a parent-child hierarchy. Many downstream solutions, such as reporting or account navigation tools would want to see a hierarchical view of the information.
-* Parent-Child relationships require less programming logic as the navigation structure is implied. However, if the relationship changes and there isn’t an available affiliation structure, this may influence the quality of the data and Business Intelligence dimensions.
+O projeto de arquitetura de dados de uma solução MDM deve decidir se deve utilizar relacionamentos pai-filho, relacionamentos de afiliação ou ambos para uma determinada entidade.
 
-###### 1.3.3.4.5 Data Sharing and Stewardship
+* Os relacionamentos de afiliação oferecem a maior flexibilidade por meio da lógica de programação. O tipo de relacionamento pode ser usado para expor esses dados em uma hierarquia pai-filho. Muitas soluções posteriores, como ferramentas de relatórios ou navegação de contas, desejam uma visão hierárquica das informações.
+* Os relacionamentos pai-filho exigem menos lógica de programação, pois a estrutura de navegação é implícita. No entanto, se o relacionamento mudar e não houver uma estrutura de afiliação disponível, isso poderá influenciar a qualidade dos dados e as dimensões de Business Intelligence.
 
-Although much of the work of Master Data Management can be automated through tools that enable processing of large numbers of records, it still requires stewardship to resolve situations where data is incorrectly matched. Ideally, lessons learned from the stewardship process can be used to improve matching algorithms and reduce instances of manual work. (See Chapters 3 and 8.)
+###### 1.3.3.4.5 Compartilhamento e Administração de Dados
 
-##### 1.3.3.5 Party Master Data
+Embora grande parte do trabalho de Gestão de Dados Mestres possa ser automatizado por meio de ferramentas que permitem o processamento de um grande número de registros, ainda é necessária administração para resolver situações em que os dados são correspondidos incorretamente. Idealmente, as lições aprendidas com o processo de administração podem ser usadas para aprimorar algoritmos de correspondência e reduzir o trabalho manual. (Consulte os Capítulos 3 e 8.)
 
-Party Master Data includes data about individuals, organizations, and the roles they play in business relationships. In the commercial environment, parties include customers, employees, vendors, partners, and competitors. In the public sector, parties are usually citizens. Law enforcement focuses on suspects, witnesses, and victims. Not-for-profit organizations focus on members and donors. While in healthcare, the focus is on patients and providers; in education, it is on students and faculty.
+##### 1.3.3.5 Dados Mestres de Partes
 
-Customer Relationship Management (CRM) systems manage Master Data about customers. The goal of CRM is to provide complete and accurate information about each and every customer.
+Os Dados Mestres de Partes incluem dados sobre indivíduos, organizações e os papéis que desempenham nas relações comerciais. No ambiente comercial, as partes incluem clientes, funcionários, fornecedores, parceiros e concorrentes. No setor público, as partes geralmente são cidadãos. A aplicação da lei se concentra em suspeitos, testemunhas e vítimas. Organizações sem fins lucrativos se concentram em membros e doadores. Enquanto na área da saúde, o foco está em pacientes e provedores; na educação, em alunos e professores.
 
-An essential aspect of CRM is identifying duplicate, redundant, or conflicting data from different systems and determining whether the data represents one or more than one customer. CRM must be able to resolve conflicting values, reconcile differences, and accurately represent current knowledge of the customer. This process requires robust rules as well as knowledge of the structure, granularity, lineage, and quality of data sources.
+Os sistemas de Gestão de Relacionamento com o Cliente (CRM) gerenciam os Dados Mestres sobre os clientes. O objetivo do CRM é fornecer informações completas e precisas sobre cada cliente.
 
-Specialized MDM systems perform similar functions for individuals, organizations and their roles, employees, and vendors. Regardless of industry or focus, managing business party Master Data poses unique challenges:
+Um aspecto essencial do CRM é identificar dados duplicados, redundantes ou conflitantes de diferentes sistemas e determinar se os dados representam um ou mais clientes. O CRM deve ser capaz de resolver valores conflitantes, reconciliar diferenças e representar com precisão o conhecimento atual do cliente. Esse processo requer regras robustas, bem como conhecimento da estrutura, granularidade, linhagem e qualidade das fontes de dados.
 
-* The complexity of roles and relationships played by individuals and organizations
-* Difficulties in unique identification
-* The number of data sources and the differences between them
-* The multiple mobile and social communications channels
-* The importance of the data
-* The expectations of how customers want to be engaged
+Sistemas MDM especializados desempenham funções semelhantes para indivíduos, organizações e suas funções, funcionários e fornecedores. Independentemente do setor ou foco, o gerenciamento de Dados Mestres de partes comerciais apresenta desafios únicos:
 
-Master Data is particularly challenging for parties playing multiple roles across an organization (e.g., an employee who is also a customer) and utilizing differing points of contact or engagement methods (e.g., interaction via mobile device application that is tied to a social media site).
+* A complexidade das funções e relacionamentos desempenhados por indivíduos e organizações
+* Dificuldades na identificação exclusiva
+* O número de fontes de dados e as diferenças entre elas
+* Os múltiplos canais de comunicação móvel e social
+* A importância dos dados
+* As expectativas de como os clientes desejam se engajar
 
-##### 1.3.3.6 Financial Master Data
+Os Dados Mestres são particularmente desafiadores para partes que desempenham múltiplas funções em uma organização (por exemplo, um funcionário que também é cliente) e utilizam diferentes pontos de contato ou métodos de engajamento (por exemplo, interação por meio de aplicativo para dispositivos móveis vinculado a uma rede social).
 
-Financial Master Data includes data about business units, cost centers, profit centers, general ledger accounts, budgets, projections, and projects. Typically, an Enterprise Resource Planning (ERP) system serves as the central hub for financial Master Data (chart of accounts), with project details and transactions created and maintained in one or more spoke applications. This is especially common in organizations with distributed back-office functions.
+##### 1.3.3.6 Dados Mestres Financeiros
 
-Financial Master Data solutions not only create, maintain, and share information; many can also simulate how changes to existing financial data may affect the organization’s bottom line. Financial Master Data simulations are often part of Business Intelligence reporting, analysis, and planning modules, as well as more straightforward budgeting and projecting. Through these applications, versions of financial structures can be modeled to understand potential financial impacts. Once a decision is made, the agreed upon structural changes can be disseminated to all appropriate systems.
+Os Dados Mestres Financeiros incluem dados sobre unidades de negócios, centros de custo, centros de lucro, contas contábeis, orçamentos, projeções e projetos. Normalmente, um sistema de Planejamento de Recursos Empresariais (ERP) serve como central para os Dados Mestres Financeiros (plano de contas), com detalhes de projetos e transações criados e mantidos em um ou mais aplicativos de suporte. Isso é especialmente comum em organizações com funções de back-office distribuídas.
 
-##### 1.3.3.7 Legal Master Data
+As soluções de Dados Mestres Financeiros não apenas criam, mantêm e compartilham informações; muitas também podem simular como as alterações nos dados financeiros existentes podem afetar os resultados da organização. As simulações de Dados Mestres Financeiros costumam fazer parte dos módulos de relatórios, análises e planejamento de Business Intelligence, bem como de orçamentos e projeções mais simples. Por meio desses aplicativos, versões de estruturas financeiras podem ser modeladas para compreender os potenciais impactos financeiros. Uma vez tomada a decisão, as mudanças estruturais acordadas podem ser disseminadas para todos os sistemas apropriados.
 
-Legal Master Data includes data about contracts, regulations, and other legal matters. Legal Master Data allows analysis of contracts for different entities providing the same products or services, to enable better negotiation or to combine contracts into Master Agreements.
+##### 1.3.3.7 Dados Mestres Legais
 
-##### 1.3.3.8 Product Master Data
+Os Dados Mestres Legais incluem dados sobre contratos, regulamentações e outras questões jurídicas. Os Dados Mestres Legais permitem a análise de contratos de diferentes entidades que fornecem os mesmos produtos ou serviços, permitindo uma melhor negociação ou a combinação de contratos em Contratos Mestres.
 
-Product Master Data can focus on an organization’s internal products and services or on industry-wide (including competitor) products and services. Different types of product Master Data solutions support different business functions.
+##### 1.3.3.8 Dados Mestres de Produto
 
-* Product Lifecycle Management (PLM) focuses on managing the lifecycle of a product or service from conception, through development, manufacturing, sale / delivery, service, and disposal. Organizations implement PLM systems to reduce time to market. In industries with long product development cycles (as much as 8 to 12 years in the pharmaceutical industry), PLM systems enable organizations to track cross-process cost and legal agreements as product concepts evolve from ideas to potential products under different names and potentially different licensing agreements.
-* Product Data Management (PDM) supports engineering and manufacturing functions by capturing and enabling secure sharing of product information such as design documents (e.g., CAD drawings), recipes (manufacturing instructions), standard operating procedures, and bills of materials. PDM functionality can be enabled through specialized systems or ERP applications.
-* Product data in Enterprise Resource Planning (ERP) systems focuses on SKUs to support order entry down to inventory level, where individual units can be identified through a variety of techniques.
-* Product data in Manufacturing Execution Systems (MES) focus on raw inventory, semi-finished goods, and finished goods, where finished goods tie to products that can be stored and ordered through the ERP system. This data is also important across the supply chain and logistics systems.
-* Product data in a Customer Relationship Management (CRM) system that supports marketing, sales, and support interactions can include product family and brands, sales rep association, and customer territory management, as well as marketing campaigns.
+Os Dados Mestres de Produto podem se concentrar nos produtos e serviços internos de uma organização ou em produtos e serviços de todo o setor (incluindo concorrentes). Diferentes tipos de soluções de Dados Mestres de Produto oferecem suporte a diferentes funções de negócios.
 
-Many product masters closely tie to Reference Data Management systems.
+* O Gerenciamento do Ciclo de Vida do Produto (PLM) concentra-se no gerenciamento do ciclo de vida de um produto ou serviço, desde a concepção, passando pelo desenvolvimento, fabricação, venda/entrega, serviço e descarte. As organizações implementam sistemas de PLM para reduzir o tempo de lançamento no mercado. Em setores com longos ciclos de desenvolvimento de produtos (de 8 a 12 anos na indústria farmacêutica), os sistemas de PLM permitem que as organizações acompanhem os custos entre processos e os acordos legais, à medida que os conceitos do produto evoluem de ideias para produtos potenciais com nomes diferentes e potencialmente diferentes contratos de licenciamento.
+* O Gerenciamento de Dados de Produto (PDM) oferece suporte às funções de engenharia e manufatura, capturando e permitindo o compartilhamento seguro de informações do produto, como documentos de projeto (por exemplo, desenhos CAD), receitas (instruções de fabricação), procedimentos operacionais padrão e listas de materiais. A funcionalidade do PDM pode ser habilitada por meio de sistemas especializados ou aplicativos ERP.
 
-##### 1.3.3.9 Location Master Data
+* Os dados de produtos em sistemas de Planejamento de Recursos Empresariais (ERP) concentram-se em SKUs para dar suporte à entrada de pedidos até o nível de estoque, onde unidades individuais podem ser identificadas por meio de diversas técnicas.
+* Os dados de produtos em Sistemas de Execução de Manufatura (MES) concentram-se em estoque bruto, produtos semiacabados e produtos acabados, onde os produtos acabados se vinculam a produtos que podem ser armazenados e pedidos por meio do sistema ERP. Esses dados também são importantes em toda a cadeia de suprimentos e sistemas de logística.
+* Os dados de produtos em um sistema de Gestão de Relacionamento com o Cliente (CRM) que oferece suporte a interações de marketing, vendas e suporte podem incluir famílias e marcas de produtos, associação de representantes de vendas e gestão de territórios de clientes, bem como campanhas de marketing.
 
-Location Master Data provides the ability to track and share geographic information and to create hierarchical relationships or territories based on geographic information. The distinction between reference and Master Data blurs for location data. Here is the difference:
+Muitos dados mestres de produtos estão intimamente ligados a sistemas de Gestão de Dados de Referência.
 
-* Location Reference Data typically includes geopolitical data, such as countries, states or provinces, counties, cities or towns, postal codes, and geographic positioning coordinates, such as latitude, longitude, and altitude. This data rarely changes, and changes are handled by external organizations. Location Reference Data may also include geographic regions and sales territories as defined by the organization.
-* Location Master Data includes business party addresses and business party location, as well as facility addresses for locations owned by the organization. As organizations grow or contract, these addresses change more frequently than other Location Reference Data.
+##### 1.3.3.9 Dados Mestres de Localização
 
-Different industries require specialized earth science data (geographic data about seismic faults, flood plains, soil, annual rainfall, and severe weather risk areas) and related sociological data (population, ethnicity, income, and terrorism risk), usually supplied from external sources.
+Os Dados Mestres de Localização permitem rastrear e compartilhar informações geográficas e criar relacionamentos hierárquicos ou territórios com base em informações geográficas. A distinção entre Dados Mestres e de referência se torna tênue para dados de localização. Aqui está a diferença:
 
-#### 1.3.3.10 Industry Master Data – Reference Directories
+* Os Dados de Referência de Localização geralmente incluem dados geopolíticos, como países, estados ou províncias, condados, cidades ou vilas, códigos postais e coordenadas de posicionamento geográfico, como latitude, longitude e altitude. Esses dados raramente mudam e as alterações são gerenciadas por organizações externas. Os Dados de Referência de Localização também podem incluir regiões geográficas e territórios de vendas, conforme definido pela organização.
+* Os Dados Mestres de Localização incluem endereços de partes comerciais e a localização das partes comerciais, bem como endereços de instalações para locais de propriedade da organização. À medida que as organizações crescem ou diminuem, esses endereços mudam com mais frequência do que outros Dados de Referência de Localização.
 
-Reference Directories are authoritative listings of Master Data entities (companies, people, products, etc.) that organizations can purchase and use as the basis of their transactions. While reference directories are created by external organizations, a managed and reconciled version of the information is maintained in the organization’s own systems.
+Diferentes setores exigem dados especializados em ciências da terra (dados geográficos sobre falhas sísmicas, planícies de inundação, solo, precipitação anual e áreas de risco de clima severo) e dados sociológicos relacionados (população, etnia, renda e risco de terrorismo), geralmente fornecidos por fontes externas.
 
-Examples of licensed reference directories include Dun and Bradstreet’s (D&B) Company Directory of worldwide Company Headquarters, Subsidiaries, and Branch locations, and the American Medical Association’s Prescriber Database.
+#### 1.3.3.10 Dados Mestres do Setor – Diretórios de Referência
 
-Reference directories enable Master Data use by:
+Diretórios de Referência são listagens oficiais de entidades de Dados Mestres (empresas, pessoas, produtos, etc.) que as organizações podem adquirir e utilizar como base para suas transações. Embora os diretórios de referência sejam criados por organizações externas, uma versão gerenciada e reconciliada das informações é mantida nos sistemas da própria organização.
 
-* Providing a starting point for matching and linking new records. For example, in an environment with five data sources, each source can be compared against the directory (5 comparison points) vs. against each other (10 comparison points).
-* Providing additional data elements that may not be as easily available at the time of record creation (e.g., for a physician, this may include medical license status; for a company, this may include a six digit NAICS industry classification).
+Exemplos de diretórios de referência licenciados incluem o Diretório de Empresas da Dun and Bradstreet (D&B), com sedes, subsidiárias e filiais em todo o mundo, e o Banco de Dados de Prescritores da Associação Médica Americana.
 
-As an organization’s records match and reconcile with the reference directories, the trusted record will deviate from the reference directory with traceability to other source records, contributing attributes, and transformation rules.
+Os diretórios de referência permitem o uso de Dados Mestres por meio de:
 
-#### 1.3.4 Data Sharing Architecture
+* Fornecer um ponto de partida para a correspondência e vinculação de novos registros. Por exemplo, em um ambiente com cinco fontes de dados, cada fonte pode ser comparada com o diretório (5 pontos de comparação) e entre si (10 pontos de comparação).
 
-There are several basic architectural approaches to reference and Master Data integration. Each Master Data subject area will likely have its own system of record. For example, the human resource system usually serves as the system of record for employee data. A CRM system might serve as the system of record for customer data, while an ERP system might serve as the system of record for financial and product data.
+* Fornecer elementos de dados adicionais que podem não estar tão facilmente disponíveis no momento da criação do registro (por exemplo, para um médico, isso pode incluir o status da licença médica; para uma empresa, isso pode incluir uma classificação de seis dígitos do setor NAICS).
 
-The data sharing hub architecture model shown in Figure 77 represents a hub-and-spoke architecture for Master Data. The Master Data hub can handle interactions with spoke items such as source systems, business applications, and data stores while minimizing the number of integration points. A local data hub can extend and scale the Master Data hub. (See Chapter 8.)
+À medida que os registros de uma organização correspondem e se reconciliam com os diretórios de referência, o registro confiável se desviará do diretório de referência com rastreabilidade para outros registros de origem, atributos contribuintes e regras de transformação.
 
-Each of the three basic approaches to implementing a Master Data hub environment has pros and cons:
+#### 1.3.4 Arquitetura de Compartilhamento de Dados
 
-* A Registry is an index that points to Master Data in the various systems of record. The systems of record manage Master Data local to their applications. Access to Master Data comes from the master index. A registry is relatively easy to implement because it requires few changes in the systems of record. But often, complex queries are required to assemble Master Data from multiple systems. Moreover, multiple business rules need to be implemented to address semantic differences across systems in multiple places.
-* In a Transaction Hub, applications interface with the hub to access and update Master Data. The Master Data exists within the Transaction Hub and not within any other applications. The Transaction Hub is the system of record for Master Data. Transaction Hubs enable better governance and provide a consistent source of Master Data. However, it is costly to remove the functionality to update Master Data from existing systems of record. Business rules are implemented in a single system: the Hub.
-* A Consolidated approach is a hybrid of Registry and Transaction Hub. The systems of record manage Master Data local to their applications. Master Data is consolidated within a common repository and made available from a data-sharing hub, the system of reference for Master Data. This eliminates the need to access directly from the systems of record. The Consolidated approach provides an enterprise view with limited impact on systems of record. However, it entails replication of data and there will be latency between the hub and the systems of record.
+Existem várias abordagens arquitetônicas básicas para referência e integração de Dados Mestres. Cada área temática de Dados Mestres provavelmente terá seu próprio sistema de registro. Por exemplo, o sistema de recursos humanos geralmente serve como sistema de registro para dados de funcionários. Um sistema de CRM pode servir como sistema de registro para dados de clientes, enquanto um sistema de ERP pode servir como sistema de registro para dados financeiros e de produtos.
 
-![Figure 77 Master Data Sharing Architecture Example](figure_77.png)
-Figure 77 Master Data Sharing Architecture Example
+O modelo de arquitetura de hub de compartilhamento de dados mostrado na Figura 77 representa uma arquitetura hub-and-spoke para Dados Mestres. O hub de Dados Mestres pode lidar com interações com itens spoke, como sistemas de origem, aplicativos de negócios e armazenamentos de dados, minimizando o número de pontos de integração. Um hub de dados local pode estender e escalar o hub de Dados Mestres. (Consulte o Capítulo 8.)
 
-## 2. Activities
+Cada uma das três abordagens básicas para implementar um ambiente de hub de Dados Mestres tem prós e contras:
 
-As emphasized in Section 1.3.1, Master Data and Reference Data share certain characteristics (they are shared resources that provide context and meaning for other data and should be managed at the enterprise level), but they also differ in important ways (Reference Data sets are smaller, less volatile, do not require matching, merging, and linking, etc.). The activities section will first describe activities associated with MDM, and then describe those related to Reference Data.
+* Um Registro é um índice que aponta para Dados Mestres nos vários sistemas de registro. Os sistemas de registro gerenciam Dados Mestres locais para seus aplicativos. O acesso aos Dados Mestres vem do índice mestre. Um registro é relativamente fácil de implementar porque requer poucas alterações nos sistemas de registro. No entanto, frequentemente, consultas complexas são necessárias para reunir Dados Mestres de vários sistemas. Além disso, várias regras de negócios precisam ser implementadas para lidar com diferenças semânticas entre sistemas em vários locais.
+* Em um Hub de Transações, os aplicativos interagem com o hub para acessar e atualizar Dados Mestres. Os Dados Mestres existem dentro do Hub de Transações e não em nenhum outro aplicativo. O Hub de Transações é o sistema de registro para Dados Mestres. Os Hubs de Transações permitem melhor governança e fornecem uma fonte consistente de Dados Mestres. No entanto, é custoso remover a funcionalidade de atualização de Dados Mestres dos sistemas de registro existentes. As regras de negócios são implementadas em um único sistema: o Hub.
+* Uma abordagem consolidada é um híbrido de Registro e Hub de Transações. Os sistemas de registro gerenciam Dados Mestres localmente em seus aplicativos. Os Dados Mestres são consolidados em um repositório comum e disponibilizados a partir de um hub de compartilhamento de dados, o sistema de referência para Dados Mestres. Isso elimina a necessidade de acesso direto dos sistemas de registro. A abordagem consolidada fornece uma visão corporativa com impacto limitado nos sistemas de registro. No entanto, isso implica na replicação de dados e haverá latência entre o hub e os sistemas de registro.
 
-### 2.1 MDM Activities
+![Figura 77 Exemplo de Arquitetura de Compartilhamento de Dados Mestres](figure_77.png)
+Figura 77 Exemplo de Arquitetura de Compartilhamento de Dados Mestres
 
-#### 2.1.1 Define MDM Drivers and Requirements
+## 2. Atividades
 
-Each organization has different MDM drivers and obstacles, influenced by the number and type of systems, their age, the business processes they support, and how data is used for both transactions and analytics. Drivers often include opportunities to improve customer service and/or operational efficiency, as well as to reduce risks related to privacy and compliance. Obstacles include differences in data meaning and structure between systems. These are often tied to cultural barriers – some business units may not want to incur the costs of changing their processes, even if change is presented as good for the enterprise as a whole.
+Conforme enfatizado na Seção 1.3.1, Dados Mestres e Dados de Referência compartilham certas características (são recursos compartilhados que fornecem contexto e significado para outros dados e devem ser gerenciados no nível corporativo), mas também diferem em aspectos importantes (conjuntos de Dados de Referência são menores, menos voláteis, não requerem correspondência, mesclagem e vinculação, etc.). A seção de atividades descreverá primeiro as atividades associadas ao MDM e, em seguida, aquelas relacionadas aos Dados de Referência.
 
-It is relatively easy to define requirements for Master Data within an application. It is more difficult to define standard requirements across applications. Most organizations will want to approach one Master Data subject area, or even one entity, at a time. Prioritize Master Data efforts based on cost / benefit of proposed improvements and on the relative complexity of the Master Data subject area. Start with the simplest category in order to learn from the process.
+### 2.1 Atividades do MDM
 
-#### 2.1.2 Evaluate and Assess Data Sources
+#### 2.1.1 Definir os Drivers e Requisitos do MDM
 
-Data in existing applications forms the basis of a Master Data Management effort. It is important to understand the structure and content of this data and the processes through which it is collected or created. One outcome from an MDM effort can be improvements in Metadata generated through the effort to assess the quality of existing data. One goal of assessment is to understand how complete data is with respect to the attributes that comprise Master Data. This process includes clarifying the definitions and granularity of those attributes. Semantic issues will arise at some point when defining and describing attributes. The Data Stewards will need to collaborate with the business areas on reconciliation and agreement on attribute naming and enterprise level definitions. (See Chapters 3 and 13.)
+Cada organização tem diferentes drivers e obstáculos do MDM, influenciados pelo número e tipo de sistemas, sua idade, os processos de negócios que suportam e como os dados são usados ​​para transações e análises. Os impulsionadores geralmente incluem oportunidades para melhorar o atendimento ao cliente e/ou a eficiência operacional, bem como para reduzir riscos relacionados à privacidade e conformidade. Os obstáculos incluem diferenças no significado e na estrutura dos dados entre os sistemas. Esses obstáculos geralmente estão vinculados a barreiras culturais – algumas unidades de negócios podem não querer incorrer nos custos de alterar seus processos, mesmo que a mudança seja apresentada como benéfica para a empresa como um todo.
 
-The other part of assessing sources is to understand the quality of the data. Data quality problems will complicate a Master Data project, so the assessment process should include addressing root causes of data issues. Never assume that data will be of high quality – it is safer to assume that is it not of high quality. Always assess its quality and suitability for a Master Data environment.
+É relativamente fácil definir requisitos para Dados Mestres em uma aplicação. É mais difícil definir requisitos padrão para todas as aplicações. A maioria das organizações desejará abordar uma área temática de Dados Mestres, ou mesmo uma entidade, por vez. Priorize os esforços de Dados Mestres com base no custo/benefício das melhorias propostas e na complexidade relativa da área temática de Dados Mestres. Comece com a categoria mais simples para aprender com o processo.
 
-The biggest challenge, as noted, will be disparity between sources. Data may be of high quality within any given source, but still not fit together with data from other sources, due to structural differences and differences in the values by which similar attributes are represented. Master Data initiatives provide the opportunity to define and implement standards in applications in which data is created or collected.
+#### 2.1.2 Avaliar e Analisar as Fontes de Dados
 
-For some Master Data entities, such as client, customer, or vendor, it is possible to purchase standardized data (such as Reference Directories) to enable the MDM effort. Several vendors have services that will supply cleansed data related to individual people or business entities or professions (e.g., health care professionals), that can be compared to an organization’s internal data to improve contact information, addresses, and names (see Chapter 10). In addition to assessing the quality of existing data, it also necessary to understand the technology that supports the collection of inputs to an MDM effort. Existing technology will influence the architectural approach to MDM.
+Os dados em aplicações existentes constituem a base de um esforço de Gestão de Dados Mestres. É importante compreender a estrutura e o conteúdo desses dados e os processos pelos quais são coletados ou criados. Um resultado de um esforço de Gestão de Dados Mestres pode ser a melhoria dos Metadados gerados por meio do esforço de avaliar a qualidade dos dados existentes. Um dos objetivos da avaliação é compreender o quão completos os dados estão em relação aos atributos que compõem os Dados Mestres. Esse processo inclui o esclarecimento das definições e da granularidade desses atributos. Problemas semânticos surgirão em algum momento ao definir e descrever atributos. Os Administradores de Dados precisarão colaborar com as áreas de negócios na reconciliação e no acordo sobre a nomenclatura de atributos e as definições em nível corporativo. (Consulte os Capítulos 3 e 13.)
 
-#### 2.1.3 Define Architectural Approach
+A outra parte da avaliação das fontes é compreender a qualidade dos dados. Problemas de qualidade de dados complicarão um projeto de Dados Mestres, portanto, o processo de avaliação deve incluir o tratamento das causas-raízes dos problemas de dados. Nunca presuma que os dados serão de alta qualidade – é mais seguro presumir que não são de alta qualidade. Avalie sempre sua qualidade e adequação a um ambiente de Dados Mestres.
 
-The architectural approach to MDM depends on business strategy, the platforms of existing data sources, and the data itself, particularly its lineage and volatility, and the implications of high or low latency. Architecture must account for data consumption and sharing models. Tooling for maintenance depends on both business requirements and architecture options. Tooling helps define and is dependent on the approach to stewardship and maintenance.
+O maior desafio, como observado, será a disparidade entre as fontes. Os dados podem ser de alta qualidade em qualquer fonte, mas ainda assim não se encaixarem com dados de outras fontes, devido a diferenças estruturais e diferenças nos valores pelos quais atributos semelhantes são representados. As iniciativas de Dados Mestres oferecem a oportunidade de definir e implementar padrões em aplicativos nos quais os dados são criados ou coletados.
 
-The number of source systems to be integrated into the Master Data solution and the platforms of those systems need to be accounted for when determining the approach to integration. The size and geographic spread of an organization will also influence the integration approach. Small organizations may effectively utilize a transaction hub whereas a global organization with multiple systems is more likely to utilize a registry. An organization with ‘siloed’ business units and various source systems may decide that a consolidated approach is the correct path to follow. Business domain experts, Data Architects, and Enterprise Architects should provide perspective on approach.
+Para algumas entidades de Dados Mestres, como clientes ou fornecedores, é possível adquirir dados padronizados (como Diretórios de Referência) para viabilizar o esforço de MDM. Vários fornecedores oferecem serviços que fornecem dados limpos relacionados a pessoas, entidades comerciais ou profissões (por exemplo, profissionais de saúde), que podem ser comparados aos dados internos de uma organização para aprimorar informações de contato, endereços e nomes (consulte o Capítulo 10). Além de avaliar a qualidade dos dados existentes, também é necessário entender a tecnologia que suporta a coleta de dados para um esforço de MDM. A tecnologia existente influenciará a abordagem arquitetônica do MDM.
 
-The data sharing hub architecture is particularly useful when there is no clear system of record for Master Data. In this case, multiple systems supply data. New data or updates from one system can be reconciled with data already supplied by another system. The data-sharing hub becomes the source of Master Data content for data warehouses or marts, reducing the complexity of extracts and the processing time for data transformation, remediation, and reconciliation. Of course, data warehouses must reflect changes made to the data-sharing hub for historical purposes, while the data-sharing hub itself may need to reflect just the current state.
+#### 2.1.3 Definir a Abordagem Arquitetônica
 
-#### 2.1.4 Model Master Data
+A abordagem arquitetônica para o MDM depende da estratégia de negócios, das plataformas das fontes de dados existentes e dos próprios dados, particularmente sua linhagem e volatilidade, e as implicações de alta ou baixa latência. A arquitetura deve levar em conta os modelos de consumo e compartilhamento de dados. As ferramentas para manutenção dependem tanto dos requisitos de negócios quanto das opções de arquitetura. As ferramentas ajudam a definir e dependem da abordagem de administração e manutenção.
 
-Master Data Management is a data integration process. To achieve consistent results and to manage the integration of new sources as an organization expands, it is necessary to model the data within subject areas. A logical or canonical model can be defined over the subject areas within the data-sharing hub. This would allow establishment of enterprise level definitions of subject area entities and attributes. (See Chapters 5 and 8.)
+O número de sistemas de origem a serem integrados à solução de Dados Mestres e as plataformas desses sistemas precisam ser considerados ao determinar a abordagem de integração. O tamanho e a distribuição geográfica de uma organização também influenciarão a abordagem de integração. Pequenas organizações podem utilizar efetivamente um hub de transações, enquanto uma organização global com múltiplos sistemas tem maior probabilidade de utilizar um registro. Uma organização com unidades de negócios isoladas e vários sistemas de origem pode decidir que uma abordagem consolidada é o caminho correto a seguir. Especialistas em domínio de negócios, Arquitetos de Dados e Arquitetos Corporativos devem fornecer uma perspectiva sobre a abordagem.
 
-#### 2.1.5 Define Stewardship and Maintenance Processes
+A arquitetura do hub de compartilhamento de dados é particularmente útil quando não há um sistema claro de registro para Dados Mestres. Nesse caso, vários sistemas fornecem dados. Novos dados ou atualizações de um sistema podem ser reconciliados com dados já fornecidos por outro sistema. O hub de compartilhamento de dados torna-se a fonte de conteúdo de Dados Mestres para data warehouses ou marts, reduzindo a complexidade das extrações e o tempo de processamento para transformação, correção e reconciliação de dados. Obviamente, os data warehouses devem refletir as alterações feitas no hub de compartilhamento de dados para fins históricos, enquanto o próprio hub de compartilhamento de dados pode precisar refletir apenas o estado atual.
 
-Technical solutions can do remarkable work matching, merging, and managing identifiers for master records. However, the process also requires stewardship, not only to address records that fall out of the process, but also to remediate and improve the processes that cause them to fall out in the first place. MDM projects should account for resources required to support the ongoing quality of Master Data. There is a need to analyze records, provide feedback to source systems, and provide input that can be used to tune and improve the algorithms that drive the MDM solution.
+#### 2.1.4 Modelar Dados Mestres
 
-#### 2.1.6 Establish Governance Policies to Enforce Use of Master Data
+O Gerenciamento de Dados Mestres é um processo de integração de dados. Para obter resultados consistentes e gerenciar a integração de novas fontes à medida que uma organização se expande, é necessário modelar os dados dentro das áreas temáticas. Um modelo lógico ou canônico pode ser definido sobre as áreas temáticas dentro do hub de compartilhamento de dados. Isso permitiria o estabelecimento de definições em nível empresarial de entidades e atributos das áreas temáticas. (Consulte os Capítulos 5 e 8.)
 
-The initial launch of a Master Data effort is challenging and takes a lot of focus. The real benefits (operational efficiency, higher quality, better customer service) come once people and systems start using the Master Data. The overall effort has to include a roadmap for systems to adopt master values and identifiers as input to processes. Establish unidirectional closed loops between systems to maintain consistency of values across systems.
+#### 2.1.5 Definir Processos de Administração e Manutenção
 
-### 2.2 Reference Data Activities
+Soluções técnicas podem realizar um trabalho notável na correspondência, fusão e gerenciamento de identificadores para registros mestres. No entanto, o processo também requer administração, não apenas para lidar com registros que não são incluídos no processo, mas também para remediar e aprimorar os processos que os causam. Os projetos de MDM devem considerar os recursos necessários para manter a qualidade contínua dos Dados Mestres. É necessário analisar registros, fornecer feedback aos sistemas de origem e fornecer informações que possam ser usadas para ajustar e aprimorar os algoritmos que orientam a solução de MDM.
 
-#### 2.2.1 Define Drivers and Requirements
+#### 2.1.6 Estabelecer Políticas de Governança para Fiscalizar o Uso de Dados Mestres
 
-The primary drivers for Reference Data Management are operational efficiency and higher data quality. Managing Reference Data centrally is more cost effective than having multiple business units maintain their own data sets. It also reduces the risk of inconsistency between systems. That said, some Reference Data sets are more important than others; complex Reference Data sets take more work to set up and maintain than do simple ones. The most important Reference Data sets should drive requirements for a Reference Data Management system. Once such a system is in place, new Reference Data sets can be set up as part of projects. Existing Reference Data sets should be maintained based on a published schedule.
+O lançamento inicial de um projeto de Dados Mestres é desafiador e exige muito foco. Os benefícios reais (eficiência operacional, maior qualidade, melhor atendimento ao cliente) surgem quando as pessoas e os sistemas começam a usar os Dados Mestres. O esforço geral deve incluir um roteiro para que os sistemas adotem valores mestres e identificadores como entrada para os processos. Estabeleça ciclos fechados unidirecionais entre os sistemas para manter a consistência dos valores entre eles.
 
-#### 2.2.2 Assess Data Sources
+### 2.2 Atividades de Dados de Referência
 
-Most industry standard Reference Data sets can be obtained from the organizations that create and maintain them. Some organizations supply such data free of charge. Others charge a fee. Intermediaries also package and sell Reference Data, often with value-added features. Depending on the number and type of Reference Data sets needed by an organization, it may be better to purchase from a vendor, especially if that vendor will guarantee the delivery of updates on a set schedule and will perform basic quality control on the data.
+#### 2.2.1 Definir Drivers e Requisitos
 
-Most organizations also rely on Reference Data that is internally created and maintained. Determining the source for internal or local reference data is often more challenging than doing so for industry standard Reference Data. As is the case with Master Data, internal sources for Reference Data must be identified, compared, and assessed. Owners of existing data must understand the benefits of central management and agree to support processes to steward the data for the good of the enterprise.
+Os principais drivers para o Gerenciamento de Dados de Referência são a eficiência operacional e a maior qualidade dos dados. Gerenciar Dados de Referência centralmente é mais econômico do que ter várias unidades de negócios mantendo seus próprios conjuntos de dados. Também reduz o risco de inconsistência entre os sistemas. Dito isso, alguns conjuntos de Dados de Referência são mais importantes do que outros; conjuntos de Dados de Referência complexos exigem mais trabalho para configurar e manter do que conjuntos simples. Os conjuntos de Dados de Referência mais importantes devem orientar os requisitos para um sistema de Gerenciamento de Dados de Referência. Uma vez que tal sistema esteja implementado, novos conjuntos de Dados de Referência podem ser configurados como parte dos projetos. Os conjuntos de Dados de Referência existentes devem ser mantidos com base em um cronograma publicado.
 
-#### 2.2.3 Define Architectural Approach
+#### 2.2.2 Avaliar Fontes de Dados
 
-Before purchasing or building a tool to manage Reference Data, it is critical to account for requirements and for the challenges posed by the Reference Data to be managed. For example, the volatility of data (most Reference Data is relatively static, but some is quite volatile), the frequency of updates, and the consumption models. Determine whether it is required to keep historical data on changes to the values or the definitions of the values. If the organization will purchase data from a vendor, account for the delivery and integration method.
+A maioria dos conjuntos de Dados de Referência padrão do setor pode ser obtida das organizações que os criam e mantêm. Algumas organizações fornecem esses dados gratuitamente. Outras cobram uma taxa. Intermediários também empacotam e vendem Dados de Referência, geralmente com recursos de valor agregado. Dependendo do número e do tipo de conjuntos de Dados de Referência necessários para uma organização, pode ser melhor adquirir de um fornecedor, especialmente se esse fornecedor garantir a entrega de atualizações em um cronograma definido e realizar o controle de qualidade básico dos dados.
 
-The architectural approach needs to recognize that, invariably, some Reference Data will need to be updated manually. Ensure that the interface for updates is straightforward and can be configured to enforce basic data entry rules, such as ensuring parent/child relationships are maintained in Reference Data that includes hierarchies. The RDM tool should enable Stewards to make ad hoc updates without the need for technical support and should include workflows to ensure approvals and notifications are automated. Data Stewards should schedule known updates to align with the publication of new codes. Data consumers should be informed of all changes. In cases where Reference Data drives programming logic, the potential impact of changes should be assessed and accounted for before the changes are introduced.
+A maioria das organizações também depende de Dados de Referência criados e mantidos internamente. Determinar a fonte de dados de referência internos ou locais costuma ser mais desafiador do que determinar a origem de Dados de Referência padrão do setor. Como no caso dos Dados Mestres, as fontes internas de Dados de Referência devem ser identificadas, comparadas e avaliadas. Os proprietários dos dados existentes devem compreender os benefícios do gerenciamento centralizado e concordar em apoiar processos para administrar os dados em benefício da empresa.
 
-#### 2.2.4 Model Reference Data Sets
+#### 2.2.3 Definir a Abordagem Arquitetural
 
-Many people think of Reference Data as simply codes and descriptions. However, much Reference Data is more complicated than that. For example, a ZIP Code data set will usually include information on state and county, as well as other geo-political attributes. For purposes of enabling long-term usage and establishing accurate Metadata, as well as for the maintenance process itself, it is valuable to create data models of Reference Data sets. Models help data consumers understand the relationships within the Reference Data set and they can be used to establish data quality rules.
+Antes de adquirir ou desenvolver uma ferramenta para gerenciar Dados de Referência, é fundamental considerar os requisitos e os desafios impostos pelos Dados de Referência a serem gerenciados. Por exemplo, a volatilidade dos dados (a maioria dos Dados de Referência é relativamente estática, mas alguns são bastante voláteis), a frequência das atualizações e os modelos de consumo. Determine se é necessário manter dados históricos sobre alterações nos valores ou nas definições dos valores. Se a organização adquirir dados de um fornecedor, considere o método de entrega e integração.
 
-#### 2.2.5 Define Stewardship and Maintenance Processes
+A abordagem arquitetônica precisa reconhecer que, invariavelmente, alguns Dados de Referência precisarão ser atualizados manualmente. Certifique-se de que a interface para atualizações seja simples e possa ser configurada para aplicar regras básicas de entrada de dados, como garantir que os relacionamentos pai/filho sejam mantidos nos Dados de Referência que incluem hierarquias. A ferramenta RDM deve permitir que os Administradores de Dados façam atualizações ad hoc sem a necessidade de suporte técnico e deve incluir fluxos de trabalho para garantir que as aprovações e notificações sejam automatizadas. Os Administradores de Dados devem agendar atualizações conhecidas para alinhá-las à publicação de novos códigos. Os consumidores de dados devem ser informados de todas as alterações. Nos casos em que os Dados de Referência direcionam a lógica de programação, o impacto potencial das alterações deve ser avaliado e contabilizado antes que elas sejam introduzidas.
 
-Reference Data requires stewardship to ensure that values are complete and current and that definitions are clear and understandable. In some cases, stewards will be directly responsible for hands-on maintenance of Reference Data; in other cases, they may facilitate the process. For example, if several different business units require Reference Data to support the same concept, a steward may facilitate discussions that define common values in a crosswalk.
+#### 2.2.4 Conjuntos de Dados de Referência de Modelo
 
-As part of the stewardship process, it is helpful to capture basic Metadata about each Reference Data set. This could include: steward name, originating organization, expected frequency of updates, schedule for updates, processes using the Reference Data, whether historical versions of the data need to be retained, and more (see Section 1.3.2.6). Documenting what processes use Reference Data will enable more effective communication regarding changes to the data.
+Muitas pessoas pensam em Dados de Referência como meros códigos e descrições. No entanto, muitos Dados de Referência são mais complexos do que isso. Por exemplo, um conjunto de dados de CEP geralmente inclui informações sobre estado e município, bem como outros atributos geopolíticos. Para fins de permitir o uso a longo prazo e estabelecer Metadados precisos, bem como para o próprio processo de manutenção, é valioso criar modelos de dados de conjuntos de Dados de Referência. Os modelos ajudam os consumidores de dados a entender as relações dentro do conjunto de Dados de Referência e podem ser usados ​​para estabelecer regras de qualidade de dados.
 
-Many Reference Data Management tools include workflows to manage review and approval of changes to Reference Data. These workflows themselves depend on identifying who within an organization is responsible for Reference Data content.
+#### 2.2.5 Definir Processos de Administração e Manutenção
 
-#### 2.2.6 Establish Reference Data Governance Policies
+Os Dados de Referência exigem administração para garantir que os valores estejam completos e atualizados e que as definições sejam claras e compreensíveis. Em alguns casos, os administradores serão diretamente responsáveis ​​pela manutenção prática dos Dados de Referência; em outros casos, eles podem facilitar o processo. Por exemplo, se várias unidades de negócios diferentes exigirem Dados de Referência para apoiar o mesmo conceito, um administrador pode facilitar discussões que definam valores comuns em um cruzamento.
 
-An organization only gets value from a centrally-managed Reference Data repository if people actually use the data from that repository. It is important to have policies in place that govern the quality and mandate the use of Reference Data from that repository, whether directly through publication from that repository or indirectly from a system of reference that is populated with data from the central repository.
+Como parte do processo de administração, é útil capturar Metadados básicos sobre cada conjunto de Dados de Referência. Isso pode incluir: nome do administrador, organização de origem, frequência esperada de atualizações, cronograma de atualizações, processos que utilizam os Dados de Referência, se versões históricas dos dados precisam ser retidas e muito mais (consulte a Seção 1.3.2.6). Documentar quais processos utilizam os Dados de Referência permitirá uma comunicação mais eficaz sobre alterações nos dados.
 
-## 3. Tools and Techniques
+Muitas ferramentas de Gerenciamento de Dados de Referência incluem fluxos de trabalho para gerenciar a revisão e a aprovação de alterações nos Dados de Referência. Esses fluxos de trabalho dependem da identificação de quem, dentro de uma organização, é responsável pelo conteúdo dos Dados de Referência.
 
-MDM requires tooling specifically designed to enable identity management. Master Data Management can be implemented through data integration tools, data remediation tools, operational data stores (ODS), data sharing hubs (DSH) or specialized MDM applications. Several vendors offer solutions that can cover one or more Master Data subject areas. Other vendors promote use of their data integration software products and implementation services to create custom Master Data solutions.
+#### 2.2.6 Estabelecer Políticas de Governança de Dados de Referência
 
-Packaged solutions for product, account and party as well as packaged data quality check services can jumpstart large programs. Incorporation of such services can enable organizations to use best-of-breed solutions, while integrating them to their overall business architecture to meet specific needs.
+Uma organização só obtém valor de um repositório de Dados de Referência gerenciado centralmente se as pessoas realmente utilizarem os dados desse repositório. É importante ter políticas em vigor que governem a qualidade e imponham o uso dos Dados de Referência desse repositório, seja diretamente por meio da publicação desse repositório ou indiretamente por meio de um sistema de referência preenchido com dados do repositório central.
 
-## 4. Implementation Guidelines
+## 3. Ferramentas e Técnicas
 
-Master and Reference Data Management are forms of data integration. The implementation principles that apply to data integration and interoperability apply to MDM and RDM. (See Chapter 8.)
+O MDM requer ferramentas projetadas especificamente para permitir o gerenciamento de identidades. O Gerenciamento de Dados Mestres pode ser implementado por meio de ferramentas de integração de dados, ferramentas de remediação de dados, repositórios de dados operacionais (ODS), hubs de compartilhamento de dados (DSH) ou aplicativos MDM especializados. Vários fornecedores oferecem soluções que podem abranger uma ou mais áreas temáticas de Dados Mestres. Outros fornecedores promovem o uso de seus produtos de software de integração de dados e serviços de implementação para criar soluções personalizadas de Dados Mestres.
 
-MDM and RDM capabilities cannot be implemented overnight. Solutions require specialized business and technical knowledge. Organizations should expect to implement Reference and Master Data solutions incrementally through a series of projects defined in an implementation roadmap, prioritized based on business needs and guided by an overall architecture.
+Soluções em pacote para produtos, contas e partes, bem como serviços de verificação da qualidade de dados em pacote, podem impulsionar grandes programas. A incorporação desses serviços pode permitir que as organizações utilizem as melhores soluções, integrando-as à sua arquitetura geral de negócios para atender a necessidades específicas.
 
-Note that MDM programs will fail without proper governance. Data governance professionals must understand the challenges of MDM and RDM and assess the organization’s maturity and ability to meet them. (See Chapter 15.)
+## 4. Diretrizes de Implementação
 
-### 4.1 Adhere to Master Data Architecture
+O Gerenciamento de Dados Mestres e de Referência são formas de integração de dados. Os princípios de implementação que se aplicam à integração e interoperabilidade de dados aplicam-se ao MDM e ao RDM. (Consulte o Capítulo 8.)
 
-Establishing and following proper reference architecture is critical to managing and sharing Master Data across an organization. The integration approach should take into account the organizational structure of the business, the number of distinct systems of record, the data governance implementation, the importance of access and latency of data values, and the number of consuming systems and applications.
+Os recursos de MDM e RDM não podem ser implementados da noite para o dia. As soluções exigem conhecimento técnico e comercial especializado. As organizações devem esperar implementar soluções de Dados Mestres e de Referência de forma incremental por meio de uma série de projetos definidos em um roteiro de implementação, priorizados com base nas necessidades do negócio e guiados por uma arquitetura geral.
 
-### 4.2 Monitor Data Movement
+Observe que os programas de MDM falharão sem uma governança adequada. Os profissionais de governança de dados devem compreender os desafios do MDM e do RDM e avaliar a maturidade e a capacidade da organização de enfrentá-los. (Consulte o Capítulo 15.)
 
-Data integration processes for Master and Reference Data should be designed to ensure timely extraction and distribution of data across the organization. As data flows within a Reference or Master Data sharing environment, data flow should be monitored in order to:
+### 4.1 Aderir à Arquitetura de Dados Mestres
 
-* Show how data is shared and used across the organization
-* Identify data lineage from / to administrative systems and applications
-* Assist root cause analysis of issues
-* Show effectiveness of data ingestion and consumption integration techniques
-* Denote latency of data values from source systems through consumption
-* Determine validity of business rules and transformations executed within integration components
+Estabelecer e seguir uma arquitetura de referência adequada é fundamental para gerenciar e compartilhar Dados Mestres em uma organização. A abordagem de integração deve levar em consideração a estrutura organizacional da empresa, o número de sistemas de registro distintos, a implementação da governança de dados, a importância do acesso e da latência dos valores de dados e o número de sistemas e aplicativos consumidores.
 
-### 4.3 Manage Reference Data Change
+### 4.2 Monitorar a Movimentação de Dados
 
-Since Reference Data is a shared resource, it cannot be changed arbitrarily. The key to successful Reference Data Management is organizational willingness to relinquish local control of shared data. To sustain this support, provide channels to receive and respond to requests for changes to Reference Data. The Data Governance Council should ensure that policies and procedures are implemented to handle changes to data within reference and Master Data environments.
+Os processos de integração de dados para Dados Mestres e de Referência devem ser projetados para garantir a extração e a distribuição oportunas de dados por toda a organização. À medida que os dados fluem dentro de um ambiente de compartilhamento de Dados Mestres ou de Referência, o fluxo de dados deve ser monitorado para:
 
-Changes to Reference Data will need to be managed. Minor changes may affect a few rows of data. For example, when the Soviet Union broke into independent states, the term Soviet Union was deprecated and new codes were added. In the healthcare industry, procedure and diagnosis codes are updated annually to account for refinement of existing codes, obsoleting of codes, and the introduction of new codes. Major revisions to Reference Data impact data structure. For example, ICD-10 Diagnostic Codes are structured in ways very different from ICD-9. ICD10 has a different format. There are different values for the same concepts. More importantly, ICD-10 has additional principles of organization. ICD10 codes have a different granularity and are much more specific, so more information is conveyed in a single code. Consequently, there are many more of them (as of 2015, there were 68,000 ICD-10 codes, compared with 13,000 ICD-9s). [^62]
+* Demonstrar como os dados são compartilhados e utilizados em toda a organização
+* Identificar a linhagem dos dados de/para sistemas e aplicativos administrativos
+* Auxiliar na análise da causa raiz dos problemas
+* Demonstrar a eficácia das técnicas de integração de ingestão e consumo de dados
+* Denotar a latência dos valores de dados dos sistemas de origem até o consumo
+* Determinar a validade das regras de negócios e transformações executadas nos componentes de integração
 
-The mandated use of ICD-10 codes in the US in 2015 required significant planning. Healthcare companies needed to make system changes as well as adjustments to impacted reporting to account for the new standard.
+### 4.3 Gerenciar Alterações nos Dados de Referência
 
-Types of changes include:
+Como os Dados de Referência são um recurso compartilhado, eles não podem ser alterados arbitrariamente. A chave para o sucesso do Gerenciamento de Dados de Referência é a disposição da organização em abrir mão do controle local dos dados compartilhados. Para sustentar esse suporte, forneça canais para receber e responder às solicitações de alterações nos Dados de Referência. O Conselho de Governança de Dados deve garantir que políticas e procedimentos sejam implementados para lidar com alterações nos dados dentro dos ambientes de Dados Mestres e de Referência.
 
-* Row level changes to external Reference Data sets
-* Structural changes to external Reference Data sets
-* Row level changes to internal Reference Data sets
-* Structural changes to internal Reference Data sets
-* Creation of new Reference Data sets
+Alterações nos Dados de Referência precisarão ser gerenciadas. Pequenas alterações podem afetar algumas linhas de dados. Por exemplo, quando a União Soviética se dividiu em estados independentes, o termo "União Soviética" foi descontinuado e novos códigos foram adicionados. No setor de saúde, os códigos de procedimento e diagnóstico são atualizados anualmente para levar em conta o refinamento dos códigos existentes, a obsolescência de códigos e a introdução de novos códigos. Revisões importantes nos Dados de Referência impactam a estrutura dos dados. Por exemplo, os Códigos de Diagnóstico da CID-10 são estruturados de maneiras muito diferentes da CID-9. A CID-10 tem um formato diferente. Há valores diferentes para os mesmos conceitos. Mais importante ainda, a CID-10 possui princípios adicionais de organização. Os códigos da CID-10 têm uma granularidade diferente e são muito mais específicos, portanto, mais informações são transmitidas em um único código. Consequentemente, há muito mais deles (em 2015, havia 68.000 códigos da CID-10, em comparação com 13.000 da CID-9). [^62]
 
-Changes can be planned / scheduled or ad hoc. Planned changes, such as monthly or annual updates to industry standard codes, require less governance than ad hoc updates. The process to request new Reference Data sets should account for potential uses beyond those of the original requestor.
+O uso obrigatório dos códigos da CID-10 nos EUA em 2015 exigiu um planejamento significativo. As empresas de saúde precisaram fazer alterações no sistema, bem como ajustes nos relatórios impactados, para levar em conta o novo padrão.
 
-Change requests should follow a defined process, as illustrated in Figure 78. When requests are received, stakeholders should be notified so that impacts can be assessed. If changes need approval, discussions should be held to get that approval. Changes should be communicated.
+Os tipos de alterações incluem:
 
-![Figure 78 Reference Data Change Request Process](figure_78.png)
-Figure 78 Reference Data Change Request Process
+* Alterações em nível de linha em conjuntos de dados de referência externos
+* Alterações estruturais em conjuntos de dados de referência externos
+* Alterações em nível de linha em conjuntos de dados de referência internos
+* Alterações estruturais em conjuntos de dados de referência internos
+* Criação de novos conjuntos de dados de referência
 
-### 4.4 Data Sharing Agreements
+As alterações podem ser planejadas/agendadas ou ad hoc. Alterações planejadas, como atualizações mensais ou anuais em códigos padrão do setor, exigem menos governança do que atualizações ad hoc. O processo para solicitar novos conjuntos de dados de referência deve levar em conta usos potenciais além daqueles do solicitante original.
 
-Sharing and using Reference and Master Data across an organization requires collaboration between multiple parties internal to the organization and sometimes with parties external to it. To assure proper access and use, establish sharing agreements that stipulate what data can be shared and under what conditions. Having these agreements in place will help when issues arise regarding the availability of data within or quality of data brought into the data-sharing environment. This effort should be driven by the Data Governance program. It may involve Data Architects, Data Providers, Data Stewards, Application Developers, Business Analysts as well as Compliance / Privacy Officers and Security Officers.
+As solicitações de alteração devem seguir um processo definido, conforme ilustrado na Figura 78. Quando as solicitações são recebidas, as partes interessadas devem ser notificadas para que os impactos possam ser avaliados. Se as alterações precisarem de aprovação, discussões devem ser realizadas para obtê-la. As alterações devem ser comunicadas.
 
-Those responsible for the data-sharing environment have an obligation to downstream data consumers to provide high quality data. To fulfill this responsibility, they are dependent on upstream systems. SLA’s and metrics should be established to measure the availability and quality of shared data. Processes should be put in place to address the root causes of issues with data quality or availability. A standard approach to communications should be put in place to keep all affected parties informed about the existence of issues and the status of remediation efforts. (See Chapter 8.)
+![Figura 78 Processo de Solicitação de Alteração de Dados de Referência](figure_78.png)
+Figura 78 Processo de Solicitação de Alteração de Dados de Referência
 
-## 5. Organization and Cultural Change
+### 4.4 Acordos de Compartilhamento de Dados
 
-Reference and Master Data Management require people to relinquish control of some of their data and processes in order to create shared resources. It is not always easy to do this. While data management professionals can see that locally managed data is risky, the people who manage it locally need to get their work done and they may perceive MDM or RDM efforts as adding complication to their processes.
+Compartilhar e usar Dados de Referência e Dados Mestres em uma organização requer colaboração entre várias partes internas à organização e, às vezes, com partes externas a ela. Para garantir o acesso e o uso adequados, estabeleça acordos de compartilhamento que estipulem quais dados podem ser compartilhados e sob quais condições. Ter esses acordos em vigor ajudará quando surgirem problemas relacionados à disponibilidade ou à qualidade dos dados inseridos no ambiente de compartilhamento de dados. Esse esforço deve ser conduzido pelo programa de Governança de Dados. Ele pode envolver Arquitetos de Dados, Provedores de Dados, Administradores de Dados, Desenvolvedores de Aplicativos, Analistas de Negócios, bem como Diretores de Conformidade/Privacidade e Diretores de Segurança.
 
-Fortunately, most people recognize that these efforts make fundamental sense. It is better to have one accurate and complete view of a single customer than to have multiple partial views.
+Os responsáveis ​​pelo ambiente de compartilhamento de dados têm a obrigação, perante os consumidores de dados a jusante, de fornecer dados de alta qualidade. Para cumprir essa responsabilidade, eles dependem dos sistemas a montante. SLAs e métricas devem ser estabelecidos para mensurar a disponibilidade e a qualidade dos dados compartilhados. Devem ser implementados processos para abordar as causas-raiz dos problemas com a qualidade ou disponibilidade dos dados. Uma abordagem padrão de comunicação deve ser implementada para manter todas as partes afetadas informadas sobre a existência de problemas e o andamento dos esforços de correção. (Ver Capítulo 8.)
 
-Improving the availability and quality of reference and Master Data will undoubtedly require changes to procedures and traditional practices. Solutions should be scoped and implemented based on current organizational readiness and future needs tied to the organization’s mission and vision.
+## 5. Mudança Organizacional e Cultural
 
-Perhaps the most challenging cultural change is central to governance: Determining which individuals are accountable for which decisions – business Data Stewards, Architects, Managers, and Executives – and which decisions data stewardship teams, program steering committees, and the Data Governance Council should make collaboratively.
+A Gestão de Dados Mestres e de Referência exige que as pessoas abram mão do controle de alguns de seus dados e processos para criar recursos compartilhados. Nem sempre é fácil fazer isso. Embora os profissionais de gestão de dados percebam que dados gerenciados localmente são arriscados, as pessoas que os gerenciam localmente precisam realizar seu trabalho e podem perceber os esforços de MDM ou RDM como uma complicação adicional aos seus processos.
 
-## 6. Reference and Master Data Governance
+Felizmente, a maioria das pessoas reconhece que esses esforços fazem sentido fundamental. É melhor ter uma visão precisa e completa de um único cliente do que ter várias visões parciais.
 
-Because they are shared resources, Reference and Master Data require governance and stewardship. Not all data inconsistencies can be resolved through automation. Some require that people talk to each other. Without governance, Reference and Master Data solutions will just be additional data integration utilities, unable to deliver their full potential.
+Melhorar a disponibilidade e a qualidade dos Dados Mestres e de Referência, sem dúvida, exigirá mudanças nos procedimentos e práticas tradicionais. As soluções devem ser delimitadas e implementadas com base na prontidão organizacional atual e nas necessidades futuras vinculadas à missão e visão da organização.
 
-Governance processes will determine:
+Talvez a mudança cultural mais desafiadora seja central para a governança: determinar quais indivíduos são responsáveis ​​por quais decisões – Administradores de Dados, Arquitetos, Gerentes e Executivos de Negócios – e quais decisões as equipes de administração de dados, os comitês de direção de programas e o Conselho de Governança de Dados devem tomar em colaboração.
 
-* The data sources to be integrated
-* The data quality rules to be enforced
-* The conditions of use rules to be followed
-* The activities to be monitored and the frequency of monitoring
-* The priority and response levels of data stewardships efforts
-* How information is to be represented to meet stakeholder needs
-* Standard approval gates, expectations in RDM and MDM deployment
+## 6. Governança de Dados de Referência e Mestres
 
-Governance processes also bring compliance and legal stakeholders together with information consumers to ensure organizational risks are mitigated through definition and incorporation of privacy, security, and retention policies.
+Por serem recursos compartilhados, Dados de Referência e Mestres exigem governança e administração. Nem todas as inconsistências de dados podem ser resolvidas por meio da automação. Algumas exigem que as pessoas conversem entre si. Sem governança, as soluções de Dados de Referência e Mestres serão apenas utilitários adicionais de integração de dados, incapazes de atingir todo o seu potencial.
 
-As an ongoing process, data governance must have the ability to review, receive, and consider new requirements and changes to existing rules, while making principles, rules, and guidelines available to those using Reference and Master Data.
+Os processos de governança determinarão:
 
-### 6.1 Metrics
+* As fontes de dados a serem integradas
+* As regras de qualidade de dados a serem aplicadas
+* As regras de condições de uso a serem seguidas
+* As atividades a serem monitoradas e a frequência do monitoramento
+* Os níveis de prioridade e resposta dos esforços de administração de dados
+* Como as informações devem ser representadas para atender às necessidades das partes interessadas
+* Portões de aprovação padrão, expectativas na implantação de RDM e MDM
 
-Certain metrics can be tied to Reference and Master Data quality and the processes that support these efforts:
+Os processos de governança também reúnem as partes interessadas em conformidade e questões legais com os consumidores de informações para garantir que os riscos organizacionais sejam mitigados por meio da definição e incorporação de políticas de privacidade, segurança e retenção.
 
-* **Data quality and compliance:** DQ dashboards can describe the quality of Reference and Master Data. These metrics should denote the confidence (as a percentage) of a subject area entity or associated attribute and its fit-for-purpose for use across the organization.
-* **Data change activity:** Auditing the lineage of trusted data is imperative to improving data quality in a data-sharing environment. Metrics should denote the rate of change of data values. These metrics will provide insight to the systems supplying data to the sharing environment, and can be used to tune algorithms in MDM processes.
-* **Data ingestion and consumption:** Data is supplied by upstream systems and used by downstream systems and processes. These metrics should denote and track what systems are contributing data and what business areas are subscribing data from the sharing environment.
-* **Service Level Agreements:** SLAs should be established and communicated to contributors and subscribers to ensure usage and adoption of the data-sharing environment. The level of adherence to SLAs can provide insight into both support processes and the technical and data problems that might slow down the MDM application.
-* **Data Steward coverage:** These metrics should note the name or group responsible for data content, and how often the coverage is evaluated. They can be used to identify gaps in support.
-* **Total Cost of Ownership:** There are multiple factors of this metric and different ways to represent it. From a solution view, costs can include environment infrastructure, software licenses, support staff, consulting fees, training, etc. Effectiveness of this metric is largely based on its consistent application across the organization.
-* **Data sharing volume and usage:** Data ingestion and consumption volumes need to be tracked to determine the effectiveness of the data-sharing environment. These metrics should denote the volume and velocity of data defined, ingested, and subscribed to and from the data-sharing environment.
+Como um processo contínuo, a governança de dados deve ter a capacidade de revisar, receber e considerar novos requisitos e alterações nas regras existentes, ao mesmo tempo em que disponibiliza princípios, regras e diretrizes para aqueles que utilizam Dados de Referência e Dados Mestres.
 
-## 7. Works Cited / Recommended
+### 6.1 Métricas
+
+Certas métricas podem ser vinculadas à qualidade dos Dados de Referência e Dados Mestres e aos processos que apoiam esses esforços:
+
+* **Qualidade e conformidade dos dados:** Os painéis de controle de qualidade (DQ) podem descrever a qualidade dos Dados de Referência e Dados Mestres. Essas métricas devem denotar a confiança (em porcentagem) de uma entidade de área temática ou atributo associado e sua adequação para uso em toda a organização.
+* **Atividade de alteração de dados:** Auditar a linhagem de dados confiáveis ​​é fundamental para melhorar a qualidade dos dados em um ambiente de compartilhamento de dados. As métricas devem denotar a taxa de alteração dos valores dos dados. Essas métricas fornecerão insights aos sistemas que fornecem dados ao ambiente de compartilhamento e podem ser usadas para ajustar algoritmos em processos de MDM.
+* **Ingestão e consumo de dados:** Os dados são fornecidos por sistemas upstream e usados ​​por sistemas e processos downstream. Essas métricas devem denotar e rastrear quais sistemas estão contribuindo com dados e quais áreas de negócios estão assinando dados do ambiente de compartilhamento.
+* **Acordos de Nível de Serviço:** Os SLAs devem ser estabelecidos e comunicados aos contribuidores e assinantes para garantir o uso e a adoção do ambiente de compartilhamento de dados. O nível de adesão aos SLAs pode fornecer insights tanto sobre os processos de suporte quanto sobre os problemas técnicos e de dados que podem atrasar a aplicação do MDM.
+
+* **Cobertura do Data Steward:** Essas métricas devem indicar o nome ou grupo responsável pelo conteúdo dos dados e a frequência com que a cobertura é avaliada. Elas podem ser usadas para identificar lacunas no suporte.
+* **Custo Total de Propriedade:** Existem vários fatores para essa métrica e diferentes maneiras de representá-la. Do ponto de vista da solução, os custos podem incluir infraestrutura do ambiente, licenças de software, equipe de suporte, honorários de consultoria, treinamento, etc. A eficácia dessa métrica se baseia amplamente em sua aplicação consistente em toda a organização.
+* **Volume e uso de compartilhamento de dados:** Os volumes de ingestão e consumo de dados precisam ser monitorados para determinar a eficácia do ambiente de compartilhamento de dados. Essas métricas devem indicar o volume e a velocidade dos dados definidos, ingeridos e assinados de e para o ambiente de compartilhamento de dados.
+
+## 7. Trabalhos Citados / Recomendados
 
 Abbas, June. Structures for Organizing Knowledge: Exploring Taxonomies, Ontologies, and Other Schema. Neal-Schuman
 Publishers, 2010. Print.
@@ -1019,54 +1136,10 @@ Talburt, John and Yinle Zhou. Entity Information Management Lifecycle for Big Da
 Talburt, John. Entity Resolution and Information Quality. Morgan Kaufmann, 2011. Print.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[^56]: John Talburt and Yinle Zhou (2015) describe the two step process in ER: first, determine whether two records refer to the
-same entity, then merge and reconcile data in the records in order to create a master record. They refer to Entity Identity
-Information Management (EIIM) as the process of ensuring that “an entity under management in the MDM system is
-consistently labeled with the same unique identifier from process to process.”
+[^56]: John Talburt e Yinle Zhou (2015) descrevem o processo de duas etapas na ER: primeiro, determinar se dois registros se referem à mesma entidade e, em seguida, mesclar e reconciliar os dados nos registros para criar um registro mestre. Eles se referem ao Gerenciamento de Informações de Identidade da Entidade (EIIM) como o processo de garantir que "uma entidade sob gerenciamento no sistema MDM seja consistentemente rotulada com o mesmo identificador exclusivo de processo para processo".
 [^57]: http://bit.ly/2sAMU06
 [^58]: http://bit.ly/1mWACqg
 [^59]: http://bit.ly/2rRJI3b
 [^60]: http://gtnr.it/2rQOT33.
-[^61]: Note that, throughout the DAMA-DMBOK, MDM refers to the overall process of managing Master Data, rather than to just the tools used to manage this data.
-[^62]: http://bit.ly/1SSpds9 (accessed 8/13/16)
+[^61]: Observe que, em todo o DAMA-DMBOK, MDM se refere ao processo geral de gerenciamento de Dados Mestres, e não apenas às ferramentas utilizadas para gerenciar esses dados.
+[^62]: http://bit.ly/1SSpds9 (acessado em 13/08/2016)

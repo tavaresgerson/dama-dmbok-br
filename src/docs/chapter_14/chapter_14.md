@@ -1,573 +1,574 @@
-# Big Data and Data Science
+# Big Data e Ciência de Dados
 
-## 1. Introduction
+## 1. Introdução
 
-Since the early 2000s, the terms Big Data and Data Science have, unfortunately, been bandied about as buzzwords. The concepts and their implications are misunderstood – or, at least, there is limited consensus on their meaning. Even the meaning of ‘Big’ is relative. That said, both Big Data and Data Science are connected to significant technological changes that have allowed people to generate, store, and analyze larger and larger amounts of data. More importantly, people can use that data to predict and influence behavior, as well as to gain insight on a range of important subjects, such as health care practices, natural resource management, and economic development.
+Desde o início dos anos 2000, os termos Big Data e Ciência de Dados têm sido, infelizmente, usados ​​como chavões. Os conceitos e suas implicações são mal compreendidos – ou, pelo menos, há um consenso limitado sobre seu significado. Até mesmo o significado de "Big" é relativo. Dito isso, tanto Big Data quanto Ciência de Dados estão conectados a mudanças tecnológicas significativas que permitiram às pessoas gerar, armazenar e analisar quantidades cada vez maiores de dados. Mais importante ainda, as pessoas podem usar esses dados para prever e influenciar comportamentos, bem como para obter insights sobre uma variedade de assuntos importantes, como práticas de saúde, gestão de recursos naturais e desenvolvimento econômico.
 
-Big Data refers not only to the volume of data, but also to its variety (structured and unstructured, documents, files, audio, video, and streaming data, etc.), and the speed at which it is produced (velocity). People who mine and develop predictive, machine learning, and prescriptive models and analytics from these and deploy results for analysis by interested parties are called Data Scientists.
+Big Data se refere não apenas ao volume de dados, mas também à sua variedade (estruturados e não estruturados, documentos, arquivos, dados de áudio, vídeo e streaming, etc.) e à velocidade com que são produzidos (velocidade). Pessoas que exploram e desenvolvem modelos e análises preditivas, de aprendizado de máquina e prescritivas a partir desses dados e os disponibilizam para análise pelas partes interessadas são chamadas de Cientistas de Dados.
 
-Data Science has existed for a long time; it used to be called ‘applied statistics’. But the capability to explore data patterns has quickly evolved in the twenty-first century with the advent of Big Data and the technologies that support it. Traditional Business Intelligence provides ‘rear-view mirror’ reporting – analysis of structured data to describe past trends. In some cases, BI patterns are used to predict future behavior, but not with high confidence. Until recently, in-depth analysis of enormous data sets has been limited by technology. Analyses have relied on sampling or other means of abstraction to approximate patterns. As the capacity to collect and analyze large data sets has grown, Data Scientists have integrated methods from mathematics, statistics, computer science, signal processing, probability modeling, pattern recognition, machine learning, uncertainty modeling, and data visualization in order to gain insight and predict behaviors based on Big Data sets. In short, Data Science has found new ways to analyze and get value from data.
+A Ciência de Dados existe há muito tempo; costumava ser chamada de "estatística aplicada". Mas a capacidade de explorar padrões de dados evoluiu rapidamente no século XXI com o advento do Big Data e das tecnologias que o suportam. O Business Intelligence tradicional fornece relatórios "de espelho retrovisor" – análises de dados estruturados para descrever tendências passadas. Em alguns casos, padrões de BI são usados ​​para prever comportamentos futuros, mas não com alta confiança. Até recentemente, a análise aprofundada de enormes conjuntos de dados era limitada pela tecnologia. As análises dependiam de amostragem ou outros meios de abstração para aproximar padrões. À medida que a capacidade de coletar e analisar grandes conjuntos de dados crescia, os Cientistas de Dados integravam métodos de matemática, estatística, ciência da computação, processamento de sinais, modelagem de probabilidade, reconhecimento de padrões, aprendizado de máquina, modelagem de incertezas e visualização de dados para obter insights e prever comportamentos com base em conjuntos de Big Data. Em suma, a Ciência de Dados encontrou novas maneiras de analisar e extrair valor dos dados.
 
-As Big Data has been brought into data warehousing and Business Intelligence environments, Data Science techniques are used to provide a forward-looking (‘windshield’) view of the organization. Predictive capabilities, real-time and model-based, using different types of data sources, offer organizations better insight into where they are heading. (See Figure 96.)
+À medida que o Big Data foi incorporado aos ambientes de data warehouse e Business Intelligence, técnicas de Ciência de Dados são utilizadas para fornecer uma visão prospectiva (ou "para-brisa") da organização. Recursos preditivos, em tempo real e baseados em modelos, utilizando diferentes tipos de fontes de dados, oferecem às organizações uma melhor compreensão de para onde estão se direcionando. (Ver Figura 96.)
 
-![Figure 96 Abate Information Triangle](figure_96.png)
-Figure 96 Abate Information Triangle
+![Figura 96 ​​Triângulo de Informações de Redução](figure_96.png)
+Figura 96 ​​Triângulo de Informações de Redução
 
-To take advantage of Big Data, however, requires change in the way that data is managed. Most data warehouses are based on relational models. Big Data is not generally organized in a relational model. Most data warehousing depends on the concept of ETL (Extract, Transform, and Load). Big Data solutions, like data lakes, depend on the concept of ELT – loading and then transforming. As importantly, the speed and volume of data present challenges that require different approaches to critical aspects of data management, such as integration, Metadata Management, and Data Quality assessment.
+Para aproveitar as vantagens do Big Data, no entanto, é necessária uma mudança na forma como os dados são gerenciados. A maioria dos data warehouses é baseada em modelos relacionais. O Big Data geralmente não é organizado em um modelo relacional. A maioria dos data warehouses depende do conceito de ETL (Extração, Transformação e Carregamento). Soluções de Big Data, como data lakes, dependem do conceito de ELT – carregamento e, em seguida, transformação. Igualmente importante, a velocidade e o volume de dados apresentam desafios que exigem abordagens diferentes para aspectos críticos do gerenciamento de dados, como integração, Gerenciamento de Metadados e avaliação da Qualidade dos Dados.
 
-### 1.1 Business Drivers
+### 1.1 Impulsionadores de Negócios
 
-The biggest business driver for developing organizational capabilities around Big Data and Data Science is the desire to find and act on business opportunities that may be discovered through data sets generated through a diversified range of processes. Big Data can stimulate innovation by making more and larger data sets available for exploration. This data can be used to define predictive models that anticipate customer needs and enable personalized presentation of products and services. Data Science can improve operations. Machine learning algorithms can automate complex time-consuming activities, thus improving organizational efficiency, reducing costs, and mitigating risks.
+O maior impulsionador de negócios para o desenvolvimento de capacidades organizacionais em torno de Big Data e Ciência de Dados é o desejo de encontrar e aproveitar oportunidades de negócios que podem ser descobertas por meio de conjuntos de dados gerados por meio de uma gama diversificada de processos. O Big Data pode estimular a inovação, disponibilizando conjuntos de dados maiores e em maior quantidade para exploração. Esses dados podem ser usados ​​para definir modelos preditivos que antecipam as necessidades dos clientes e permitem a apresentação personalizada de produtos e serviços. A Ciência de Dados pode aprimorar as operações. Algoritmos de aprendizado de máquina podem automatizar atividades complexas e demoradas, melhorando assim a eficiência organizacional, reduzindo custos e mitigando riscos.
 
-![Figure 97 Context Diagram: Big Data and Data Science](figure_97.png)
-Figure 97 Context Diagram: Big Data and Data Science
+![Figura 97 Diagrama de Contexto: Big Data e Ciência de Dados](figure_97.png)
+Figura 97 Diagrama de Contexto: Big Data e Ciência de Dados
 
-### 1.2 Principles
+### 1.2 Princípios
 
-The promise of Big Data – that it will provide a different kind of insight – depends on being able to manage Big Data. In many ways, because of the wide variation in sources and formats, Big Data management will require more discipline than relational data management. Principles related to Big Data management have yet to fully form, but one is very clear: Organizations should carefully manage Metadata related to Big Data sources in order to have an accurate inventory of data files, their origins, and their value.
+A promessa do Big Data – de que fornecerá um tipo diferente de insight – depende da capacidade de gerenciar Big Data. De muitas maneiras, devido à ampla variação de fontes e formatos, o gerenciamento de Big Data exigirá mais disciplina do que o gerenciamento de dados relacionais. Os princípios relacionados ao gerenciamento de Big Data ainda não estão totalmente definidos, mas um é muito claro: as organizações devem gerenciar cuidadosamente os metadados relacionados às fontes de Big Data para obter um inventário preciso dos arquivos de dados, suas origens e seu valor.
 
-### 1.3 Essential Concepts
+### 1.3 Conceitos Essenciais
 
-#### 1.3.1 Data Science
+#### 1.3.1 Ciência de Dados
 
-As noted in the chapter introduction, Data Science merges data mining, statistical analysis, and machine learning with data integration and data modeling capabilities, to build predictive models that explore data content patterns. Developing predictive models is sometimes called Data Science because the data analyst, or data scientist, uses the scientific method to develop and assess a model.
+Conforme observado na introdução do capítulo, a Ciência de Dados combina mineração de dados, análise estatística e aprendizado de máquina com recursos de integração e modelagem de dados para construir modelos preditivos que exploram padrões de conteúdo de dados. O desenvolvimento de modelos preditivos às vezes é chamado de Ciência de Dados porque o analista de dados, ou cientista de dados, usa o método científico para desenvolver e avaliar um modelo.
 
-The data scientist develops a hypothesis about behavior that can be observed in the data prior to a particular action. For example, the purchase of one type of item is usually followed by the purchase of another type of item (the purchase of a house is usually followed by the purchase of furniture). Then, the data scientist analyzes large amounts of historical data to determine how frequently the hypothesis has been true in the past and to statistically verify the probable accuracy of the model. If a hypothesis is valid with sufficient frequency, and if the behavior it predicts is useful, then the model may become the basis for an operational intelligence process to predict future behavior, even possibly in real time such as suggestive selling advertisements.
+O cientista de dados desenvolve uma hipótese sobre o comportamento que pode ser observado nos dados antes de uma ação específica. Por exemplo, a compra de um tipo de item geralmente é seguida pela compra de outro tipo de item (a compra de uma casa geralmente é seguida pela compra de móveis). Em seguida, o cientista de dados analisa grandes quantidades de dados históricos para determinar com que frequência a hipótese se mostrou verdadeira no passado e para verificar estatisticamente a provável precisão do modelo. Se uma hipótese for válida com frequência suficiente e se o comportamento que ela prevê for útil, o modelo pode se tornar a base para um processo de inteligência operacional para prever comportamentos futuros, possivelmente até mesmo em tempo real, como em anúncios de vendas sugestivos.
 
-Developing Data Science solutions involves the iterative inclusion of data sources into models that develop insights. Data Science depends on:
+O desenvolvimento de soluções de Ciência de Dados envolve a inclusão iterativa de fontes de dados em modelos que geram insights. A Ciência de Dados depende de:
 
-* **Rich data sources:** Data with the potential to show otherwise invisible patterns in organizational or customer behavior
-* **Information alignment and analysis:** Techniques to understand data content and combine data sets to hypothesize and test meaningful patterns
-* **Information delivery:** Running models and mathematical algorithms against the data and producing visualizations and other output to gain insight into behavior
-* **Presentation of findings and data insights:** Analysis and presentation of findings so that insights can be shared
+* **Fontes de dados ricas:** Dados com potencial para mostrar padrões de comportamento organizacional ou do cliente que, de outra forma, seriam invisíveis
+* **Alinhamento e análise de informações:** Técnicas para compreender o conteúdo dos dados e combinar conjuntos de dados para formular hipóteses e testar padrões significativos
+* **Entrega de informações:** Executar modelos e algoritmos matemáticos com os dados e produzir visualizações e outros resultados para obter insights sobre o comportamento
+* **Apresentação de descobertas e insights de dados:** Análise e apresentação de descobertas para que os insights possam ser compartilhados
 
-Table 32 compares the role of traditional DW/BI to predictive and prescriptive analytics that can be achieved through Data Science techniques.
+A Tabela 32 compara o papel do DW/BI tradicional com a análise preditiva e prescritiva que pode ser alcançada por meio de técnicas de Ciência de Dados.
 
 <table>
   <thead>
     <tr>
-      <th>DW / Traditional BI</th>
-      <th colspan="2">Data Science</th>
+      <th>DW / BI Tradicional</th>
+      <th colspan="2">Ciência de Dados</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Descriptive</td>
-      <td>Predictive</td>
-      <td>Prescriptive</td>
+      <td>Descritivo</td>
+      <td>Preditivo</td>
+      <td>Prescritivo</td>
     </tr>
     <tr>
-      <td>Hindsight</td>
+      <td>Retrospectivo</td>
       <td>Insight</td>
-      <td>Foresight</td>
+      <td>Prospectivo</td>
     </tr>
     <tr>
       <td>
-        Based on history: What happened? Why did it happen?
+        Com base no histórico: O que aconteceu? Por que aconteceu?
       </td>
       <td>
-        Based on predictive models: What is likely to happen?
+        Com base em modelos preditivos: O que é provável que aconteça?
       </td>
       <td>
-        Based on scenarios: What should we do to make things happen?
+        Com base em cenários: O que devemos fazer para que as coisas aconteçam?
       </td>
     </tr>
   </tbody>
 </table>
 
-#### 1.3.2 The Data Science Process
+#### 1.3.2 O Processo de Ciência de Dados
 
-Figure 98 illustrates the iterative phases of the Data Science process. The outputs of each step become the inputs into the next. (See Section 2.)
+A Figura 98 ilustra as fases iterativas do processo de Ciência de Dados. As saídas de cada etapa tornam-se as entradas para a próxima. (Consulte a Seção 2.)
 
-![Figure 98 Data Science Process](figure_98.png)
-Figure 98 Data Science Process
+![Figura 98 Processo de Ciência de Dados](figure_98.png)
+Figura 98 Processo de Ciência de Dados
 
-The Data Science process follows the scientific method of refining knowledge by making observations, formulating and testing hypotheses, observing results, and formulating general theories that explain results. Within Data Science, this process takes the form of observing data and creating and evaluating models of behavior:
+O processo de Ciência de Dados segue o método científico de refinar o conhecimento por meio de observações, formulação e teste de hipóteses, observação de resultados e formulação de teorias gerais que explicam os resultados. Na Ciência de Dados, esse processo se dá por meio da observação de dados e da criação e avaliação de modelos de comportamento:
 
-* **Define Big Data strategy and business needs:** Define the requirements that identify desired outcomes with measurable tangible benefits.
-* **Choose data sources:** Identify gaps in the current data asset base and find data sources to fill those gaps.
-* **Acquire and ingest data sources:** Obtain data sets and onboard them.
-* **Develop Data Science hypotheses and methods:** Explore data sources via profiling, visualization, mining, etc.; refine requirements. Define model algorithm inputs, types, or model hypotheses and methods of analysis (i.e., groupings of data found by clustering, etc.).
-* **Integrate and align data for analysis:** Model feasibility depends in part on the quality of the source data. Leverage trusted and credible sources. Apply appropriate data integration and cleansing techniques to increase quality and usefulness of provisioned data sets.
-* **Explore data using models:** Apply statistical analysis and machine learning algorithms against the integrated data. Validate, train, and over time, evolve the model. Training entails repeated runs of the model against actual data to verify assumptions and make adjustments, such as identifying outliers. Through this process, requirements will be refined. Initial feasibility metrics guide evolution of the model. New hypotheses may be introduced that require additional data sets and results of this exploration will shape the future modeling and outputs (even changing the requirements).
-* **Deploy and monitor:** Those models that produce useful information can be deployed to production for ongoing monitoring of value and effectiveness. Often Data Science projects turn into data warehousing projects where more vigorous development processes are put in place (ETL, DQ, Master Data, etc.).
+* **Definir a estratégia de Big Data e as necessidades de negócios:** Definir os requisitos que identificam os resultados desejados com benefícios tangíveis e mensuráveis.
+* **Escolher fontes de dados:** Identificar lacunas na base de ativos de dados atual e encontrar fontes de dados para preenchê-las.
+* **Adquirir e ingerir fontes de dados:** Obter conjuntos de dados e integrá-los.
+
+* **Desenvolver hipóteses e métodos de Ciência de Dados:** Explorar fontes de dados por meio de criação de perfil, visualização, mineração, etc.; refinar requisitos. Definir entradas, tipos ou hipóteses de algoritmos de modelo e métodos de análise (por exemplo, agrupamentos de dados encontrados por clustering, etc.).
+* **Integrar e alinhar dados para análise:** A viabilidade do modelo depende, em parte, da qualidade dos dados de origem. Utilizar fontes confiáveis ​​e credíveis. Aplicar técnicas adequadas de integração e limpeza de dados para aumentar a qualidade e a utilidade dos conjuntos de dados provisionados.
+* **Explorar dados usando modelos:** Aplicar análise estatística e algoritmos de aprendizado de máquina aos dados integrados. Validar, treinar e, ao longo do tempo, evoluir o modelo. O treinamento envolve execuções repetidas do modelo em relação a dados reais para verificar suposições e fazer ajustes, como identificar outliers. Por meio desse processo, os requisitos serão refinados. Métricas iniciais de viabilidade guiam a evolução do modelo. Novas hipóteses podem ser introduzidas, exigindo conjuntos de dados adicionais, e os resultados dessa exploração moldarão a modelagem e os resultados futuros (até mesmo alterando os requisitos).
+* **Implantar e monitorar:** Os modelos que produzem informações úteis podem ser implantados na produção para monitoramento contínuo de valor e eficácia. Frequentemente, projetos de Ciência de Dados se transformam em projetos de data warehouse, onde processos de desenvolvimento mais rigorosos são implementados (ETL, DQ, Dados Mestres, etc.).
 
 #### 1.3.3 Big Data
 
-Early efforts to define the meaning of Big Data characterized it in terms of the Three V’s: Volume, Velocity, Variety (Laney, 2001). As more organizations start to leverage the potential of Big Data, the list of V’s has expanded:
+Os primeiros esforços para definir o significado de Big Data o caracterizaram em termos dos Três Vs: Volume, Velocidade e Variedade (Laney, 2001). À medida que mais organizações começam a aproveitar o potencial do Big Data, a lista de Vs se expande:
 
-* **Volume:** Refers to the amount of data. Big Data often has thousands of entities or elements in billions of records.
-* **Velocity:** Refers to the speed at which data is captured, generated, or shared. Big Data is often generated and can also be distributed and even analyzed in real-time.
-* **Variety / Variability:** Refers to the forms in which data is captured or delivered. Big Data requires storage of multiple formats; data structure is often inconsistent within or across data sets.
-* **Viscosity:** Refers to how difficult the data is to use or integrate.
-* **Volatility:** Refers to how often data changes occur and therefore how long the data is useful.
-* **Veracity:** Refers to how trustworthy the data is.
+* **Volume:** Refere-se à quantidade de dados. O Big Data geralmente possui milhares de entidades ou elementos em bilhões de registros.
+* **Velocidade:** Refere-se à velocidade com que os dados são capturados, gerados ou compartilhados. O Big Data é frequentemente gerado e também pode ser distribuído e até analisado em tempo real.
+* **Variedade/Variabilidade:** Refere-se às formas em que os dados são capturados ou entregues. O Big Data exige o armazenamento de múltiplos formatos; a estrutura dos dados costuma ser inconsistente dentro ou entre conjuntos de dados.
+* **Viscosidade:** Refere-se à dificuldade de uso ou integração dos dados.
+* **Volatilidade:** Refere-se à frequência com que ocorrem alterações nos dados e, portanto, por quanto tempo os dados são úteis.
+* **Veracidade:** Refere-se à confiabilidade dos dados.
 
-Big Data volumes are exceptionally large (greater than 100 Terabyte and often in the Petabyte and Exabyte range). In warehousing and analytic solutions, very large volumes of data pose challenges to data loading, modeling, cleansing, and analytics. These challenges are often solved using massively parallel processing, or parallel processing and distributed data solutions. However, they have much wider implications. The size of data sets requires changes in the overall way that data is stored and accessed, as well as in how data is understood (e.g., much of our current way of thinking about data is based on relational database structures), as well as how data is managed (Adams, 2009). Figure 99 presents a visual summary of the range of data that has become available through Big Data technologies and the implications on data storage options.
+Os volumes de Big Data são excepcionalmente grandes (maiores que 100 Terabytes e frequentemente na faixa de Petabytes e Exabytes). Em soluções de armazenamento e análise, volumes muito grandes de dados representam desafios para o carregamento, a modelagem, a limpeza e a análise de dados. Esses desafios costumam ser resolvidos por meio de processamento paralelo massivo ou processamento paralelo e soluções de dados distribuídos. No entanto, eles têm implicações muito mais amplas. O tamanho dos conjuntos de dados exige mudanças na forma como os dados são armazenados e acessados, bem como na forma como os dados são compreendidos (por exemplo, grande parte da nossa forma atual de pensar sobre dados baseia-se em estruturas de bancos de dados relacionais) e na forma como os dados são gerenciados (Adams, 2009). A Figura 99 apresenta um resumo visual da gama de dados que se tornou disponível por meio de tecnologias de Big Data e as implicações nas opções de armazenamento de dados.
 
-![Figure 99 Data Storage Challenges](figure_99.png)
-Figure 99 Data Storage Challenges [^88]
+![Figura 99 Desafios de Armazenamento de Dados](figure_99.png)
+Figura 99 Desafios de Armazenamento de Dados [^88]
 
-#### 1.3.4 Big Data Architecture Components
+#### 1.3.4 Componentes da Arquitetura de Big Data
 
-The selection, installation, and configuration of a Big Data and Data Science environment require specialized expertise. End-to-end architectures must be developed and rationalized against existing data exploratory tools and new acquisitions.
+A seleção, instalação e configuração de um ambiente de Big Data e Ciência de Dados exigem conhecimento especializado. Arquiteturas ponta a ponta devem ser desenvolvidas e racionalizadas em relação às ferramentas de exploração de dados existentes e às novas aquisições.
 
-Figure 100 describes the DW/BI and Big Data Architecture. (Details about DW/BI components are described in Chapter 11.) The biggest difference between DW/BI and Big Data processing is that in a traditional data warehouse, data is integrated as it is brought into the warehouse (extract, TRANSFORM, load); while in a Big Data environment, data is ingested and loaded before it is integrated (extract, LOAD, transform). In some cases, data may not be integrated at all, in the traditional sense. Instead of being integrated in preparation for use, it is often integrated through particular uses (e.g., the process of building predictive models drives the integration of particular data sets).
+A Figura 100 descreve a Arquitetura de DW/BI e Big Data. (Detalhes sobre os componentes de DW/BI são descritos no Capítulo 11.) A maior diferença entre o processamento de DW/BI e Big Data é que, em um data warehouse tradicional, os dados são integrados à medida que são trazidos para o data warehouse (extração, TRANSFORMAÇÃO, carregamento); enquanto em um ambiente de Big Data, os dados são ingeridos e carregados antes de serem integrados (extração, CARREGAMENTO, transformação). Em alguns casos, os dados podem não ser integrados de forma alguma, no sentido tradicional. Em vez de serem integrados na preparação para o uso, eles são frequentemente integrados por meio de usos específicos (por exemplo, o processo de construção de modelos preditivos impulsiona a integração de conjuntos de dados específicos).
 
-![Figure 100 Conceptual DW/BI and Big Data Architecture](figure_100.png)
-Figure 100 Conceptual DW/BI and Big Data Architecture
+![Figura 100 - Arquitetura Conceitual de DW/BI e Big Data](figure_100.png)
+Figura 100 - Arquitetura Conceitual de DW/BI e Big Data
 
-The difference between ETL and ELT has significant implications for how data is managed. For example, the integration process does not necessarily rely on or produce an enterprise data model. The risk is that much knowledge about data can be lost if processes for ingestion and use are executed in an ad hoc way. There is a need to collect and manage Metadata related to these processes, if they are to be understood and leveraged overtime.
+A diferença entre ETL e ELT tem implicações significativas na forma como os dados são gerenciados. Por exemplo, o processo de integração não depende necessariamente de um modelo de dados corporativo ou o produz. O risco é que muito conhecimento sobre os dados possa ser perdido se os processos de ingestão e uso forem executados de forma ad hoc. Há a necessidade de coletar e gerenciar metadados relacionados a esses processos, para que eles sejam compreendidos e aproveitados ao longo do tempo.
 
-The following sections will describe Big Data Sources and the Data Lake construct. The activities (Ingest, Integrate, Explore, Evaluate Model) are explored under the Activities section.
+As seções a seguir descreverão as Fontes de Big Data e a construção do Data Lake. As atividades (Ingestão, Integração, Exploração e Avaliação do Modelo) são exploradas na seção Atividades.
 
-#### 1.3.5 Sources of Big Data
+#### 1.3.5 Fontes de Big Data
 
-Because so much of human activity is executed electronically, massive amounts of data are accumulating every day as we move through the world, interact with each other, and transact business. Big Data is produced through email, social media, online orders, and even online video games. Data is generated not only by phones and point-of-sale devices, but also by surveillance systems, sensors in transportation systems, medical monitoring systems, industrial and utility monitoring systems, satellites, and military equipment. For example, one airline flight can generate a terabyte of data. Devices that interact directly with the Internet generate a large portion of Big Data. The connections between devices and the Internet are sometimes called the Internet of Things (IoT).
+Como grande parte da atividade humana é executada eletronicamente, enormes quantidades de dados se acumulam todos os dias à medida que nos movemos pelo mundo, interagimos uns com os outros e realizamos transações comerciais. O Big Data é produzido por e-mail, mídias sociais, pedidos online e até mesmo videogames online. Os dados são gerados não apenas por telefones e dispositivos de ponto de venda, mas também por sistemas de vigilância, sensores em sistemas de transporte, sistemas de monitoramento médico, sistemas de monitoramento industrial e de serviços públicos, satélites e equipamentos militares. Por exemplo, um voo pode gerar um terabyte de dados. Dispositivos que interagem diretamente com a internet geram uma grande parcela de Big Data. As conexões entre dispositivos e a internet são às vezes chamadas de Internet das Coisas (IoT).
 
-#### 1.3.6 Data Lake
+#### 1.3.6 Lago de Dados
 
-A data lake is an environment where a vast amount of data of various types and structures can be ingested, stored, assessed, and analyzed. Data lakes can serve many purposes. For example, providing
+Um lago de dados é um ambiente onde uma grande quantidade de dados de vários tipos e estruturas pode ser ingerida, armazenada, avaliada e analisada. Lagos de dados podem servir a muitas finalidades. Por exemplo, fornecendo
 
-* An environment for Data Scientists to mine and analyze data
-* A central storage area for raw data, with minimal, if any, transformation
-* Alternate storage for detailed historical data warehouse data
-* An online archive for records
-* An environment to ingest streaming data with automated pattern identification
+* Um ambiente para Cientistas de Dados minerarem e analisarem dados
+* Uma área de armazenamento central para dados brutos, com transformação mínima, se houver,
+* Armazenamento alternativo para dados históricos detalhados de data warehouse
+* Um arquivo online para registros
+* Um ambiente para ingestão de dados em streaming com identificação automatizada de padrões
 
-A data lake can be implemented as a complex configuration of data handling tools including Hadoop or other data storage systems, cluster services, data transformation, and data integration. These handlers have facilitated cross-infrastructure, analytic facilitation software to bring the configuration together.
+Um data lake pode ser implementado como uma configuração complexa de ferramentas de tratamento de dados, incluindo Hadoop ou outros sistemas de armazenamento de dados, serviços de cluster, transformação e integração de dados. Esses manipuladores têm facilitado a integração entre infraestruturas e softwares de facilitação analítica para unir a configuração.
 
-The risk of a data lake is that it can quickly become a data swamp – messy, unclean, and inconsistent. In order to establish an inventory of what is in a data lake, it is critical to manage Metadata as the data is ingested. In order to understand how the data in a data lake is associated or connected, data architects or data engineers often use unique keys or other techniques (semantic models, data models, etc.) so that data scientists and other visualization developers know how to use the information stored within the data lake. (See Chapter 9.)
+O risco de um data lake é que ele pode rapidamente se tornar um pântano de dados – confuso, sujo e inconsistente. Para estabelecer um inventário do que está em um data lake, é fundamental gerenciar os Metadados à medida que os dados são ingeridos. Para entender como os dados em um data lake estão associados ou conectados, arquitetos ou engenheiros de dados frequentemente usam chaves exclusivas ou outras técnicas (modelos semânticos, modelos de dados, etc.) para que cientistas de dados e outros desenvolvedores de visualização saibam como usar as informações armazenadas no data lake. (Veja Capítulo 9.)
 
-#### 1.3.7 Services-Based Architecture
+#### 1.3.7 Arquitetura Baseada em Serviços
 
-Services-based architecture (SBA) is emerging as a way to provide immediate (if not completely accurate or complete) data, as well as update a complete, accurate historical data set, using the same source (Abate, Aiken, Burke, 1997). The SBA architecture is similar to the DW architectures which send data directly to an ODS for immediate access, as well as to the DW for historical accumulation. SBA architectures have three main components, a batch layer, a speed layer, and a serving layer. (See Figure 101.)
+A arquitetura baseada em serviços (SBA) está emergindo como uma forma de fornecer dados imediatos (mesmo que não completamente precisos ou completos), bem como atualizar um conjunto de dados históricos completo e preciso, usando a mesma fonte (Abate, Aiken, Burke, 1997). A arquitetura SBA é semelhante às arquiteturas DW, que enviam dados diretamente para um ODS para acesso imediato, bem como para o DW para acumulação histórica. As arquiteturas SBA têm três componentes principais: uma camada de lote, uma camada de velocidade e uma camada de serviço. (Veja a Figura 101.)
 
-* **Batch layer:** A data lake serves as the batch layer, containing both recent and historical data
-* **Speed layer:** Contains only real-time data
-* **Serving layer:** Provides an interface to join data from the batch and speed layers
+* **Camada de lote:** Um data lake serve como camada de lote, contendo dados recentes e históricos
+* **Camada de velocidade:** Contém apenas dados em tempo real
+* **Camada de serviço:** Fornece uma interface para unir dados das camadas de lote e de velocidade
 
-Data is loaded into both the batch and speed layers. All analytic computations are performed on data in both the batch and speed layers, which most likely requires implementation in two separate systems. Organizations address synchronization issues through trade-offs between completeness, latency, and complexity of merged views defined in the serving layer. Cost/benefit assessment is required to determine whether reducing latency or improving data completeness is worth the associated cost and complexity.
+Os dados são carregados nas camadas de lote e de velocidade. Todos os cálculos analíticos são realizados com dados nas camadas de lote e de velocidade, o que provavelmente requer implementação em dois sistemas separados. As organizações abordam problemas de sincronização por meio de compensações entre completude, latência e complexidade das visualizações mescladas definidas na camada de serviço. Uma avaliação de custo/benefício é necessária para determinar se a redução da latência ou a melhoria da completude dos dados compensam o custo e a complexidade associados.
 
-The batch layer is often referred to as the structure-over-time component (here every transaction is an insert), whereas in the speed layer (often referred to as an Operational Data Store or ODS), all transactions are updates (or inserts only if required). In this manner, the architecture prevents synchronization issues while simultaneously creating a current state and a history layer. This architecture usually provides its data through a serving or data services layer that abstracts the data utilizing Metadata. This services layer determines where the data is to be ‘served’ from and appropriately provides the data requested.
+A camada de lote é frequentemente chamada de componente de estrutura ao longo do tempo (aqui, cada transação é uma inserção), enquanto na camada de velocidade (frequentemente chamada de Armazenamento de Dados Operacionais ou ODS), todas as transações são atualizações (ou inserções, somente se necessário). Dessa forma, a arquitetura evita problemas de sincronização e, ao mesmo tempo, cria uma camada de estado atual e uma camada de histórico. Essa arquitetura geralmente fornece seus dados por meio de uma camada de serviço ou de serviços de dados que abstrai os dados utilizando Metadados. Essa camada de serviços determina de onde os dados devem ser "servidos" e fornece adequadamente os dados solicitados.
 
-![Figure 101 Services-based Architecture](figure_101.png)
-Figure 101 Services-based Architecture
+![Figura 101 Arquitetura Baseada em Serviços](figure_101.png)
+Figura 101 Arquitetura Baseada em Serviços
 
-#### 1.3.8 Machine Learning
+#### 1.3.8 Aprendizado de Máquina
 
-Machine Learning explores the construction and study of learning algorithms. It can be viewed as a union of unsupervised learning methods, more commonly referred to as data mining, and supervised learning methods deeply rooted in mathematical theory, specifically statistics, combinatorics, and optimization. A third branch is now forming called reinforcement learning, where goal performance is earned but not specifically teacher recognized – driving a vehicle for example. Programming machines to quickly learn from queries and adapt to changing data sets led to a completely new field within Big Data referred to as machine learning. [^89] Processes run, and results are stored that are then used in subsequent runs to iteratively inform the process and refine the results.
+O Aprendizado de Máquina explora a construção e o estudo de algoritmos de aprendizagem. Pode ser visto como uma união de métodos de aprendizagem não supervisionada, mais comumente chamados de mineração de dados, e métodos de aprendizagem supervisionada profundamente enraizados na teoria matemática, especificamente estatística, combinatória e otimização. Um terceiro ramo está se formando, chamado aprendizado por reforço, onde o desempenho das metas é alcançado, mas não reconhecido especificamente pelo professor – dirigir um veículo, por exemplo. Programar máquinas para aprender rapidamente com consultas e se adaptar a conjuntos de dados em constante mudança levou a um campo completamente novo dentro do Big Data, conhecido como aprendizado de máquina. [^89] Os processos são executados e os resultados são armazenados, sendo então usados ​​em execuções subsequentes para informar iterativamente o processo e refinar os resultados.
 
-Machine Learning explores the construction and study of learning algorithms. These algorithms fall into three types:
+O Aprendizado de Máquina explora a construção e o estudo de algoritmos de aprendizagem. Esses algoritmos se dividem em três tipos:
 
-* **Supervised learning:** Based on generalized rules; for example, separating SPAM from non-SPAM email
-* **Unsupervised learning:** Based on identifying hidden patterns (i.e., data mining)
-* **Reinforcement learning:** Based on achieving a goal (e.g., beating an opponent at chess)
+* **Aprendizagem supervisionada:** Baseada em regras generalizadas; Por exemplo, separando SPAM de e-mails não SPAM
+* **Aprendizagem não supervisionada:** Baseada na identificação de padrões ocultos (por exemplo, mineração de dados)
+* **Aprendizagem por reforço:** Baseada no alcance de um objetivo (por exemplo, derrotar um oponente no xadrez)
 
-Statistical modeling and machine learning have been employed to automate otherwise costly research and development projects, by performing several trial and error passes on a vast set of data, repeating trials with the results collected, analyzed, and errors corrected. This approach can reduce time to answer dramatically and guide organizational initiatives with insights based on cost effective repeatable processes. For example, CIVDDD uses machine learning and complex scientific data visualization techniques to help government agencies and peacekeepers meet the challenge of dealing with the masses of threat-related information. 90
+Modelagem estatística e aprendizado de máquina têm sido empregados para automatizar projetos de pesquisa e desenvolvimento, que de outra forma seriam custosos, realizando várias tentativas e erros em um vasto conjunto de dados, repetindo os testes com os resultados coletados, analisados ​​e corrigidos os erros. Essa abordagem pode reduzir drasticamente o tempo de resposta e orientar iniciativas organizacionais com insights baseados em processos repetíveis e com boa relação custo-benefício. Por exemplo, o CIVDDD utiliza aprendizado de máquina e técnicas complexas de visualização de dados científicos para ajudar agências governamentais e forças de manutenção da paz a enfrentar o desafio de lidar com a grande quantidade de informações relacionadas a ameaças. [^90]
 
-While it taps into data in new ways, machine learning has ethical implications, especially with respect to the principle of transparency. Evidence shows that deep learning neural networks (DLNN) work. They learn things. However, it is not always clear how they learn. As the algorithms that drive these processes become more complex, they also become more opaque, functioning as ‘black boxes’. As they account for a greater number of variables and as those variables themselves are more abstract, algorithms test the limits of human ability to interpret the machine (Davenport, 2017). The need for transparency – the ability to see how decisions are made – will likely increase as this functionality evolves and is put to use in a wider array of situations. (See Chapter 2.)
+Embora explore dados de novas maneiras, o aprendizado de máquina tem implicações éticas, especialmente no que diz respeito ao princípio da transparência. Evidências mostram que redes neurais de aprendizado profundo (DLNN) funcionam. Elas aprendem coisas. No entanto, nem sempre fica claro como elas aprendem. À medida que os algoritmos que impulsionam esses processos se tornam mais complexos, eles também se tornam mais opacos, funcionando como "caixas-pretas". Como consideram um número maior de variáveis ​​e essas próprias variáveis ​​são mais abstratas, os algoritmos testam os limites da capacidade humana de interpretar a máquina (Davenport, 2017). A necessidade de transparência – a capacidade de ver como as decisões são tomadas – provavelmente aumentará à medida que essa funcionalidade evolui e é utilizada em uma gama mais ampla de situações. (Ver Capítulo 2.)
 
-#### 1.3.9 Sentiment Analysis
+#### 1.3.9 Análise de Sentimentos
 
-Media monitoring and text analysis are automated methods for retrieving insights from large unstructured or semi-structured data, such as transaction data, social media, blogs, and web news sites. This is used to understand what people say and feel about brands, products, or services, or other types of topics. Using Natural Language Processing (NLP) or by parsing phrases or sentences, semantic analysis can detect sentiment and also reveal changes in sentiment to predict possible scenarios.
+Monitoramento de mídia e análise de texto são métodos automatizados para extrair insights de grandes volumes de dados não estruturados ou semiestruturados, como dados de transações, mídias sociais, blogs e sites de notícias. Isso é usado para entender o que as pessoas dizem e sentem sobre marcas, produtos, serviços ou outros tipos de tópicos. Usando Processamento de Linguagem Natural (PLN) ou analisando frases ou sentenças, a análise semântica pode detectar sentimentos e também revelar mudanças nos sentimentos para prever possíveis cenários.
 
-Consider the case of looking for key words in a posting. If the words good or great are present, this might be a positive response, versus seeing awful or bad might be signs that this could be a negative response.
+Considere o caso de procurar palavras-chave em uma publicação. Se as palavras "bom" ou "ótimo" estiverem presentes, essa pode ser uma resposta positiva, enquanto ver "péssimo" ou "ruim" pode ser um sinal de que essa pode ser uma resposta negativa.
 
-Categorizing the data into the types of responses, the ‘sentiment’ of the whole community or posting (social media such as Twitter, blogs, etc.) is exposed. That said, sentiment is not easily gained, as the words by themselves do not tell the whole story (i.e., I had a Great problem with their customer service). Sentiment must interpret words in context. This requires an understanding of the meaning of the post – this interpretation often requires work using NLP functions found in such systems as IBM’s Watson.
+Ao categorizar os dados de acordo com os tipos de respostas, o "sentimento" de toda a comunidade ou publicação (mídias sociais como Twitter, blogs etc.) é exposto. Dito isso, o sentimento não é facilmente obtido, pois as palavras por si só não contam toda a história (por exemplo, "Tive um ótimo problema com o atendimento ao cliente"). O sentimento deve interpretar as palavras em contexto. Isso requer a compreensão do significado da publicação – essa interpretação frequentemente requer trabalho com funções de PLN encontradas em sistemas como o Watson da IBM.
 
-#### 1.3.10 Data and Text Mining
+#### 1.3.10 Mineração de Dados e Texto
 
-Data mining is a particular kind of analysis that reveals patterns in data using various algorithms. It began as an offshoot from Machine Learning, a subfield of Artificial Intelligence. The theory is a subset of statistical analysis known as unsupervised learning where algorithms are applied to a data set without knowledge or intent of the desired outcome. While standard query and reporting tools ask specific questions, data mining tools help discover unknown relationships by revealing patterns. Data mining is a key activity during the exploration phase as it facilitates rapid identification of studied data elements, identifies new relationships previously unknown, unclear, or unclassified, and provides structure for the classification of studied data elements.
+A mineração de dados é um tipo específico de análise que revela padrões em dados usando vários algoritmos. Ela surgiu como um desdobramento do Aprendizado de Máquina, um subcampo da Inteligência Artificial. A teoria é um subconjunto da análise estatística conhecida como aprendizado não supervisionado, em que algoritmos são aplicados a um conjunto de dados sem conhecimento ou intenção do resultado desejado. Enquanto as ferramentas padrão de consulta e geração de relatórios fazem perguntas específicas, as ferramentas de mineração de dados ajudam a descobrir relações desconhecidas, revelando padrões. A mineração de dados é uma atividade fundamental durante a fase de exploração, pois facilita a identificação rápida dos elementos de dados estudados, identifica novas relações anteriormente desconhecidas, pouco claras ou não classificadas e fornece estrutura para a classificação dos elementos de dados estudados.
 
-Text mining analyzes documents with text analysis and data mining techniques to classify content automatically into workflow-guided and SME-directed ontologies. Thus, electronic text media can be analyzed without restructuring or reformatting. Ontologies can be linked into search engines, allowing for web-enabled querying against these documents. (See Chapter 9.)
+A mineração de texto analisa documentos com técnicas de análise de texto e mineração de dados para classificar o conteúdo automaticamente em ontologias guiadas por fluxo de trabalho e direcionadas por PMEs. Assim, a mídia de texto eletrônico pode ser analisada sem reestruturação ou reformatação. Ontologias podem ser vinculadas a mecanismos de busca, permitindo consultas via web nesses documentos. (Consulte o Capítulo 9.)
 
-Data and text mining use a range of techniques, including:
+A mineração de dados e texto utiliza uma variedade de técnicas, incluindo:
 
-* **Profiling:** Profiling attempts to characterize the typical behavior of an individual, group, or population. Profiling is used to establish behavioral norms for anomaly detection applications, such as fraud detection and monitoring for intrusions to computer systems. Profile results are inputs for many unsupervised learning components.
-* **Data reduction:** Data reduction replaces a large data set with a smaller set of data that contains much of the important information in the larger set. The smaller data set may be easier to analyze or process.
-* **Association:** Association is an unsupervised learning process to find relationships between studied elements based on transactions involving them. Examples of association include: Frequent item set mining, rule discovery, and market-based analysis. Recommendation systems on the internet use this process as well.
-* **Clustering:** Clustering group elements in a study together by their shared characteristics. Customer segmentation is an example of clustering.
-* **Self-organizing maps:** Self-organizing maps are a neural network method of cluster analysis. Sometimes referred to as Kohonen Maps, or topologically ordered maps, they aim to reduce the dimensionality in the evaluation space while preserving distance and proximity relationships as much as possible, akin to multi-dimension scaling. Reducing the dimensionality is like removing one variable from the equation without violating the outcome. This makes it easier to solve and visualize.
+* **Criação de perfil:** A criação de perfil tenta caracterizar o comportamento típico de um indivíduo, grupo ou população. A criação de perfil é usada para estabelecer normas comportamentais para aplicações de detecção de anomalias, como detecção de fraudes e monitoramento de intrusões em sistemas computacionais. Os resultados do perfil são entradas para muitos componentes de aprendizado não supervisionado.
+* **Redução de dados:** A redução de dados substitui um grande conjunto de dados por um conjunto menor de dados que contém muitas das informações importantes do conjunto maior. O conjunto menor de dados pode ser mais fácil de analisar ou processar.
+* **Associação:** A associação é um processo de aprendizado não supervisionado para encontrar relações entre os elementos estudados com base nas transações que os envolvem. Exemplos de associação incluem: mineração frequente de conjuntos de itens, descoberta de regras e análise baseada em mercado. Sistemas de recomendação na internet também utilizam esse processo.
+* **Agrupamento:** Agrupar elementos de um estudo por suas características compartilhadas. A segmentação de clientes é um exemplo de agrupamento.
+* **Mapas auto-organizáveis:** Mapas auto-organizáveis ​​são um método de rede neural para análise de agrupamentos. Às vezes chamados de Mapas de Kohonen, ou mapas topologicamente ordenados, eles visam reduzir a dimensionalidade no espaço de avaliação, preservando ao máximo as relações de distância e proximidade, semelhante à escala multidimensional. Reduzir a dimensionalidade é como remover uma variável da equação sem violar o resultado. Isso facilita a resolução e a visualização.
 
-#### 1.3.11 Predictive Analytics
+#### 1.3.11 Análise Preditiva
 
-Predictive Analytics is the sub-field of supervised learning where users attempt to model data elements and predict future outcomes through evaluation of probability estimates. Rooted deeply in mathematics specifically statistics, predictive analytics shares many components with unsupervised learning, with the prescribed difference to the measurement of a desired predictive outcome.
+A Análise Preditiva é o subcampo da aprendizagem supervisionada em que os usuários tentam modelar elementos de dados e prever resultados futuros por meio da avaliação de estimativas de probabilidade. Profundamente enraizada na matemática, especificamente na estatística, a análise preditiva compartilha muitos componentes com a aprendizagem não supervisionada, com a diferença prescrita para a mensuração de um resultado preditivo desejado.
 
-Predictive Analytics is the development of probability models based on variables, including historical data, related to possible events (purchases, changes in price, etc.). When it receives other pieces of information, the model triggers a reaction by the organization. The triggering factor may be an event, such as a customer adding a product to an on-line shopping basket, or it may be data in a data stream, such as a news feed or utility sensor data, or an increased volume of service requests. The triggering factor may be an external event. News being reported about a company is a big predictor of a change in stock price. Predicting stock movement should include monitoring news and determining if news about a company is likely to be good or bad for the stock price.
+A Análise Preditiva é o desenvolvimento de modelos de probabilidade baseados em variáveis, incluindo dados históricos, relacionados a possíveis eventos (compras, variações de preço, etc.). Ao receber outras informações, o modelo desencadeia uma reação da organização. O fator desencadeador pode ser um evento, como um cliente adicionando um produto a uma cesta de compras online, ou podem ser dados em um fluxo de dados, como um feed de notícias ou dados de sensores de serviços públicos, ou um aumento no volume de solicitações de serviço. O fator desencadeador pode ser um evento externo. Notícias divulgadas sobre uma empresa são um grande preditor de uma variação no preço das ações. A previsão do movimento das ações deve incluir o monitoramento de notícias e a determinação da probabilidade de notícias sobre uma empresa serem boas ou ruins para o preço das ações.
 
-Frequently, the triggering factor is the accumulation of a large volume of real-time data, such as an extremely high number of trades or requests for service or volatility of the environment. Monitoring a data event stream includes incrementally building on the populated models until a threshold is reached as defined in the model. The amount of time that a predictive model provides between the prediction and event predicted is frequently very small (seconds or less than a second). Investment in very low latency technology solutions, such as in-memory databases, high-speed networks, and even physically proximity to the source of the data, optimizes an organization’s ability to react to the prediction.
+Frequentemente, o fator desencadeador é o acúmulo de um grande volume de dados em tempo real, como um número extremamente alto de negociações ou solicitações de serviço ou a volatilidade do ambiente. O monitoramento de um fluxo de eventos de dados inclui a construção incremental nos modelos preenchidos até que um limite seja atingido, conforme definido no modelo. O tempo que um modelo preditivo fornece entre a previsão e o evento previsto é frequentemente muito pequeno (segundos ou menos de um segundo). O investimento em soluções tecnológicas de latência muito baixa, como bancos de dados em memória, redes de alta velocidade e até mesmo a proximidade física da fonte dos dados, otimiza a capacidade de uma organização de reagir à previsão.
 
-The simplest form of predictive model is the forecast. Many techniques exist for trending or forecasting based on regression analysis and benefit from smoothing. The simplest way to smooth data is through a moving average, or even a weighted moving average. More advanced techniques can be useful, like the exponential moving average, which introduces a smoothing factor to be applied. Minimizing the error residual from the least squares can be a starting point, but several runs are necessary to determine and optimize the smoothing factor. Double and triple exponential smoothing models exist to address trend and seasonality components.
+A forma mais simples de modelo preditivo é a previsão. Existem muitas técnicas para tendências ou previsões baseadas em análise de regressão e se beneficiam da suavização. A maneira mais simples de suavizar dados é por meio de uma média móvel, ou mesmo uma média móvel ponderada. Técnicas mais avançadas podem ser úteis, como a média móvel exponencial, que introduz um fator de suavização a ser aplicado. Minimizar o resíduo de erro dos mínimos quadrados pode ser um ponto de partida, mas várias execuções são necessárias para determinar e otimizar o fator de suavização. Existem modelos de suavização exponencial dupla e tripla para abordar componentes de tendência e sazonalidade.
 
-#### 1.3.12 Prescriptive Analytics
+#### 1.3.12 Análise Prescritiva
 
-Prescriptive analytics take predictive analytics a step farther to define actions that will affect outcomes, rather than just predicting the outcomes from actions that have occurred. Prescriptive analytics anticipates what will happen, when it will happen, and implies why it will happen. Because prescriptive analytics can show the implications of various decisions, it can suggest how to take advantage of an opportunity or avoid a risk. Prescriptive analytics can continually take in new data to re-predict and re-prescribe. This process can improve prediction accuracy and result in better prescriptions.
+A análise prescritiva leva a análise preditiva um passo adiante para definir ações que afetarão os resultados, em vez de apenas prever os resultados de ações já ocorridas. A análise prescritiva antecipa o que acontecerá, quando acontecerá e sugere por que acontecerá. Como a análise prescritiva pode mostrar as implicações de várias decisões, ela pode sugerir como aproveitar uma oportunidade ou evitar um risco. A análise prescritiva pode continuamente absorver novos dados para repredizer e represcrever. Esse processo pode melhorar a precisão da previsão e resultar em melhores prescrições.
 
-#### 1.3.13 Unstructured Data Analytics
+#### 1.3.13 Análise de Dados Não Estruturados
 
-Unstructured data analytics combines text mining, association, clustering, and other unsupervised learning techniques to codify large data sets. Supervised learning techniques can also be applied to provide orientation, oversight, and guidance in the coding process leveraging human intervention to resolve ambiguity when necessary.
+A análise de dados não estruturados combina mineração de texto, associação, agrupamento e outras técnicas de aprendizado não supervisionado para codificar grandes conjuntos de dados. Técnicas de aprendizado supervisionado também podem ser aplicadas para fornecer orientação, supervisão e direcionamento no processo de codificação, aproveitando a intervenção humana para resolver ambiguidades quando necessário.
 
-Unstructured data analytics is becoming more important as more unstructured data is generated. Some analysis is impossible without the ability to incorporate unstructured data into analytical models. However, unstructured data is difficult to analyze without some way to isolate the elements of interest from extraneous elements. Scanning and tagging is one way to add ‘hooks’ to unstructured data that allow filtering and linking to related structured data. However, knowing what tags to generate based on what conditions is difficult. It is an iterative process, from when proposed tag conditions are identified, tags are assigned as data is ingested, then analytics uses those tags to validate the tag condition, and analyze the tagged data, which then leads to potentially changed tag conditions, or more tags.
+A análise de dados não estruturados está se tornando cada vez mais importante à medida que mais dados não estruturados são gerados. Algumas análises são impossíveis sem a capacidade de incorporar dados não estruturados em modelos analíticos. No entanto, dados não estruturados são difíceis de analisar sem alguma maneira de isolar os elementos de interesse dos elementos estranhos. A varredura e a marcação são uma maneira de adicionar "ganchos" a dados não estruturados que permitem a filtragem e a vinculação a dados estruturados relacionados. No entanto, saber quais tags gerar com base em quais condições é difícil. É um processo iterativo, desde o momento em que as condições propostas para as tags são identificadas, as tags são atribuídas à medida que os dados são ingeridos, e então a análise usa essas tags para validar a condição da tag e analisar os dados marcados, o que leva a condições de tag potencialmente alteradas ou a mais tags.
 
-#### 1.3.14 Operational Analytics
+#### 1.3.14 Análise Operacional
 
-The concept of operational analytics (also known as operational BI or streaming analytics) has emerged from the integration of real-time analytics into operations. Operational analytics includes activities like user segmentation, sentiment analysis, geocoding, and other techniques applied to data sets for marketing campaign analysis, sales penetration, product adoption, asset optimization, and risk management.
+O conceito de análise operacional (também conhecido como BI operacional ou análise de streaming) surgiu da integração da análise em tempo real às operações. A análise operacional inclui atividades como segmentação de usuários, análise de sentimentos, geocodificação e outras técnicas aplicadas a conjuntos de dados para análise de campanhas de marketing, penetração de vendas, adoção de produtos, otimização de ativos e gestão de riscos.
 
-Operational analytics involves tracking and integrating real-time streams of information, deriving conclusions based on predictive models of behavior, and triggering automatic responses and alerts. Designing the model, triggers, and responses required for successful analysis takes more analysis on the data itself. An operational analytics solution includes the preparation of historical data for pre-population of the models of behavior. For example, in a retail product model, populating a shopping basket analysis that identifies products often purchased together. In predicting behavior of financial markets, historical price information and historical price rate of change are regularly used. Pre-population calculations are usually performed in advance to enable timely responses to triggering events.
+A análise operacional envolve o rastreamento e a integração de fluxos de informações em tempo real, a obtenção de conclusões com base em modelos preditivos de comportamento e o disparo de respostas e alertas automáticos. Projetar o modelo, os gatilhos e as respostas necessários para uma análise bem-sucedida exige uma análise mais aprofundada dos dados em si. Uma solução de análise operacional inclui a preparação de dados históricos para o pré-preenchimento dos modelos de comportamento. Por exemplo, em um modelo de produto de varejo, o preenchimento de uma análise de carrinho de compras que identifica produtos frequentemente comprados juntos. Na previsão do comportamento dos mercados financeiros, informações históricas de preços e a taxa histórica de variação de preços são usadas regularmente. Os cálculos de pré-preenchimento geralmente são realizados com antecedência para permitir respostas oportunas aos eventos desencadeadores.
 
-Once predictive models have been determined to be both useful and cost effective, solutions which integrate historical and current data (including real-time and streaming data, structured and unstructured) are implemented to populate the predictive models and trigger actions based on the predictions. The solution must ensure real-time data streams using the model rules are processed correctly and automated responses to meaningful events in the data are generated correctly.
+Uma vez que os modelos preditivos tenham sido determinados como úteis e econômicos, soluções que integram dados históricos e atuais (incluindo dados em tempo real e em streaming, estruturados e não estruturados) são implementadas para preencher os modelos preditivos e desencadear ações com base nas previsões. A solução deve garantir que os fluxos de dados em tempo real que utilizam as regras do modelo sejam processados ​​corretamente e que as respostas automatizadas a eventos significativos nos dados sejam geradas corretamente.
 
-#### 1.3.15 Data Visualization [^91]
+#### 1.3.15 Visualização de Dados [^91]
 
-Visualization is the process of interpreting concepts, ideas, and facts by using pictures or graphical representations. Data visualization facilitates understanding of the underlying data by presenting it in a visual summary, such as a chart or graph. Data visualizations condense and encapsulate characteristics data, making them easier to see. In doing so, they can surface opportunities, identify risks, or highlight messages. Data visualizations can be delivered in a static format, such as a published report, or a more interactive on-line format; and some support end-user interaction where drilling or filtering capabilities facilitate analysis of data within the visualization. Others allow the visualization to be changed by the user on demand through innovative displays, such as data maps and moving landscapes of data over time.
+Visualização é o processo de interpretar conceitos, ideias e fatos por meio de imagens ou representações gráficas. A visualização de dados facilita a compreensão dos dados subjacentes, apresentando-os em um resumo visual, como um gráfico. As visualizações de dados condensam e encapsulam dados característicos, tornando-os mais fáceis de visualizar. Ao fazer isso, podem revelar oportunidades, identificar riscos ou destacar mensagens. As visualizações de dados podem ser entregues em um formato estático, como um relatório publicado, ou em um formato online mais interativo; e algumas oferecem suporte à interação do usuário final, onde recursos de detalhamento ou filtragem facilitam a análise dos dados dentro da visualização. Outros permitem que a visualização seja alterada pelo usuário sob demanda por meio de exibições inovadoras, como mapas de dados e paisagens móveis de dados ao longo do tempo.
 
-Visualization has long been critical to data analysis. Traditional BI tools include visualization options such as tables, pie charts, lines charts, area charts, bar charts, histograms, and turnkey boxes (candlesticks). To meet the growing need to understand data, the number of visualization tools has increased and techniques have improved.
+A visualização tem sido fundamental para a análise de dados há muito tempo. As ferramentas tradicionais de BI incluem opções de visualização como tabelas, gráficos de pizza, gráficos de linhas, gráficos de área, gráficos de barras, histogramas e caixas prontas para uso (candlesticks). Para atender à crescente necessidade de compreensão dos dados, o número de ferramentas de visualização aumentou e as técnicas foram aprimoradas.
 
-As data analytics matures, visualizing data in new ways will offer strategic advantages. Seeing new patterns in data can result in new business opportunities. As data visualization continues to evolve, organizations will have to grow their Business Intelligence teams to compete in an increasingly data-driven world. Business analytical departments will seek data experts with visualization skills, including data scientists, data artists, and data vision experts, in addition to traditional information architects and data modelers, especially given the risks associated with misleading visualization. (See Chapter 2.)
+À medida que a análise de dados amadurece, a visualização de dados de novas maneiras oferecerá vantagens estratégicas. Identificar novos padrões nos dados pode resultar em novas oportunidades de negócios. À medida que a visualização de dados continua a evoluir, as organizações precisarão expandir suas equipes de Business Intelligence para competir em um mundo cada vez mais orientado por dados. Os departamentos de análise de negócios buscarão especialistas em dados com habilidades de visualização, incluindo cientistas de dados, artistas de dados e especialistas em visão de dados, além dos tradicionais arquitetos de informação e modeladores de dados, especialmente considerando os riscos associados à visualização enganosa. (Ver Capítulo 2.)
 
-#### 1.3.16 Data Mashups
+#### 1.3.16 Mashups de Dados
 
-Mashups combine data and services to create visualization for insight or analysis. Many virtualization tools enable mashups through functionality that relates data sources by common data elements, originally used to relate a name or descriptive text to a stored code. This client presentation mashup technique is ideal during discovery or exploration phases as they provide immediate benefits. This technique can be readily applied to the web where secured data mashups enable sharing of personal or confidential information across suppliers or providers. These can couple with artificial intelligence learning algorithms to expose internet-based services with natural language interfaces.
+Mashups combinam dados e serviços para criar visualizações para insights ou análises. Muitas ferramentas de virtualização permitem mashups por meio de funcionalidades que relacionam fontes de dados por elementos de dados comuns, originalmente usados ​​para relacionar um nome ou texto descritivo a um código armazenado. Essa técnica de mashup de apresentação ao cliente é ideal durante as fases de descoberta ou exploração, pois proporciona benefícios imediatos. Essa técnica pode ser facilmente aplicada à web, onde mashups de dados seguros permitem o compartilhamento de informações pessoais ou confidenciais entre fornecedores ou provedores. Eles podem ser combinados com algoritmos de aprendizado de inteligência artificial para expor serviços baseados na internet com interfaces de linguagem natural.
 
-## 2. Activities
+## 2. Atividades
 
-### 2.1 Define Big Data Strategy and Business Needs
+### 2.1 Definir a Estratégia de Big Data e as Necessidades de Negócio
 
-An organization’s Big Data strategy needs to be aligned with and support its overall business strategy and business requirements and be part of its data strategy. A Big Data strategy must include criteria to evaluate:
+A estratégia de Big Data de uma organização precisa estar alinhada e apoiar sua estratégia geral de negócios e requisitos de negócio, além de fazer parte de sua estratégia de dados. Uma estratégia de Big Data deve incluir critérios para avaliar:
 
-* What problems the organization is trying to solve. What it needs analytics for: While one advantage of Data Science is that it can provide a new perspective on an organization, the organization still needs to have a starting point. An organization may determine that the data is to be used to understand the business or the business environment; to prove ideas about the value of new products; to explore something that is unknown; or to invent a new way to do business. It is important to establish a gating process to evaluate these initiatives at several phases during the implementation. The value and feasibility of initiatives need to be evaluated at several points in time.
-* What data sources to use or acquire: Internal sources may be easy to use, but may also be limited in scope. External sources may be useful, but are outside operational control (managed by others, or not controlled by anyone, as in the case of social media). Many vendors are competing in this space and often multiple sources exist for the desired data elements or sets. Acquiring data that integrates with existing ingestion items can reduce overall investment costs.
-* The timeliness and scope of the data to provision: Many elements can be provided in real-time feeds, snapshots at a point in time, or even integrated and summarized. Low latency data is ideal, but often comes at the expense of machine learning capabilities – there is a huge difference between computational algorithms directed to data-at-rest versus streaming. Do not minimize the level of integration required for downstream usage.
-* The impact on and relation to other data structures: There may need to be structure or content changes in other data structures to make them suitable for integration with Big Data sets.
-* Influences to existing modeled data: Including extending the knowledge on customers, products, and marketing approaches.
+* Quais problemas a organização está tentando resolver. Para que ela precisa de análise: Embora uma vantagem da Ciência de Dados seja que ela pode fornecer uma nova perspectiva sobre uma organização, a organização ainda precisa ter um ponto de partida. Uma organização pode determinar que os dados sejam usados ​​para entender o negócio ou o ambiente de negócios; para comprovar ideias sobre o valor de novos produtos; para explorar algo desconhecido; ou para inventar uma nova maneira de fazer negócios. É importante estabelecer um processo de seleção para avaliar essas iniciativas em várias fases durante a implementação. O valor e a viabilidade das iniciativas precisam ser avaliados em vários momentos.
+* Quais fontes de dados usar ou adquirir: Fontes internas podem ser fáceis de usar, mas também podem ter escopo limitado. Fontes externas podem ser úteis, mas estão fora do controle operacional (gerenciadas por terceiros ou não controladas por ninguém, como no caso das mídias sociais). Muitos fornecedores competem nesse segmento e, frequentemente, existem múltiplas fontes para os elementos ou conjuntos de dados desejados. A aquisição de dados que se integram aos itens de ingestão existentes pode reduzir os custos gerais de investimento.
+* A pontualidade e o escopo dos dados a serem provisionados: Muitos elementos podem ser fornecidos em feeds em tempo real, snapshots em um determinado momento ou até mesmo integrados e resumidos. Dados de baixa latência são ideais, mas frequentemente comprometem os recursos de aprendizado de máquina – há uma enorme diferença entre algoritmos computacionais direcionados a dados em repouso e streaming. Não minimize o nível de integração necessário para uso posterior.
+* O impacto e a relação com outras estruturas de dados: Pode ser necessário fazer alterações na estrutura ou no conteúdo de outras estruturas de dados para torná-las adequadas para integração com conjuntos de Big Data.
+* Influências sobre dados modelados existentes: Incluindo a ampliação do conhecimento sobre clientes, produtos e abordagens de marketing.
 
-The strategy will drive the scope and timing of an organization’s Big Data capability roadmap.
+A estratégia determinará o escopo e o cronograma do roteiro de capacidades de Big Data de uma organização.
 
-### 2.2 Choose Data Sources
+### 2.2 Escolha das Fontes de Dados
 
-As with any development project, the choice of data sources for Data Science work must be driven by the problems the organization is trying to solve. The difference with Big Data / Data Science development is that the range of data sources is wider. It is not limited by format and can include data both external to and internal to an organization. The ability to incorporate this data into a solution also comes with risks. The quality and reliability of the data needs to be evaluated and a plan for use over time needs to be put into place. Big Data environments make it possible to quickly ingest lots of data, but to use that data and manage it over time, it is still necessary to know basic facts:
+Como em qualquer projeto de desenvolvimento, a escolha das fontes de dados para o trabalho de Ciência de Dados deve ser orientada pelos problemas que a organização está tentando resolver. A diferença com o desenvolvimento de Big Data/Ciência de Dados é que a gama de fontes de dados é mais ampla. Ela não é limitada pelo formato e pode incluir dados externos e internos à organização. A capacidade de incorporar esses dados em uma solução também traz riscos. A qualidade e a confiabilidade dos dados precisam ser avaliadas e um plano de uso ao longo do tempo precisa ser implementado. Ambientes de Big Data permitem a ingestão rápida de grandes quantidades de dados, mas para utilizá-los e gerenciá-los ao longo do tempo, ainda é necessário conhecer os fatos básicos:
 
-* Its origin
-* Its format
-* What the data elements represent
-* How it connects to other data
-* How frequently it will be updated
+* Sua origem
+* Seu formato
+* O que os elementos de dados representam
+* Como se conectam a outros dados
+* Com que frequência serão atualizados
 
-As more data becomes available (like US Census Bureau Statistics, shopping demographics, weather satellite data, research data sets), data needs to be evaluated for worth and reliability. Review the available data sources, and the processes that create those sources and manage the plan for new sources.
+À medida que mais dados se tornam disponíveis (como Estatísticas do US Census Bureau, dados demográficos de compras, dados de satélites meteorológicos, conjuntos de dados de pesquisa), os dados precisam ser avaliados quanto ao seu valor e confiabilidade. Revise as fontes de dados disponíveis e os processos que as criam e gerencie o plano para novas fontes.
 
-* **Foundational data:** Consider foundational data components such as POS (Point of Sale) in a sales analysis.
-* **Granularity:** Ideally, obtain data in its most granular form (not aggregated). That way it can be aggregated for a range of purposes.
-* **Consistency:** If possible, select data that will appear appropriately and consistently across visualizations, or recognize limitations.
-* **Reliability:** Choose data sources that are meaningful and credible over time. Use trusted, authoritative sources.
-* **Inspect/profile new sources:** Test changes before adding new data sets. Unexpected material or significant changes in visualization outcomes can occur with the inclusion of new data sources.
+* **Dados fundamentais:** Considere componentes de dados fundamentais, como PDV (Ponto de Venda), em uma análise de vendas.
+* **Granularidade:** O ideal é obter os dados em sua forma mais granular (não agregada). Dessa forma, eles podem ser agregados para diversas finalidades.
+* **Consistência:** Se possível, selecione dados que apareçam de forma adequada e consistente em todas as visualizações ou reconheça as limitações.
 
-Risks associated with data sources include privacy concerns. The ability to rapidly ingest and integrate data from a variety of sources at scale affords communities the ability to recombine data sets that were otherwise secured. Similarly, the published analysis may describe, through summary, aggregate, or modeled state, a sub-set of the public that make it suddenly identifiable; this is a side effect of the ability to perform mass computation on very large populations, but publish to a very specific local or region. For example, when demographics computed at a national or country level quickly become non-identifiable, but not when published after filtering for a postal code or household level. [^92]
+* **Confiabilidade:** Escolha fontes de dados que sejam significativas e confiáveis ​​ao longo do tempo. Utilize fontes confiáveis ​​e autorizadas.
+* **Inspecione/perfile novas fontes:** Teste as alterações antes de adicionar novos conjuntos de dados. Material inesperado ou alterações significativas nos resultados da visualização podem ocorrer com a inclusão de novas fontes de dados.
 
-Criteria used to select or filter data also pose a risk. These criteria should be objectively managed to avoid biases or skews. Filtering can have a material impact on visualization. Discretion is necessary when removing outliers, restricting data sets to a limited domain, or dropping sparse elements. It is common practice to focus the provisioned data to emphasize isolation results, but it must be done objectively and uniformly. 93 (See Chapter 2.)
+Os riscos associados às fontes de dados incluem preocupações com a privacidade. A capacidade de ingerir e integrar rapidamente dados de uma variedade de fontes em escala oferece às comunidades a capacidade de recombinar conjuntos de dados que, de outra forma, seriam protegidos. Da mesma forma, a análise publicada pode descrever, por meio de resumo, agregação ou estado modelado, um subconjunto do público que o torna repentinamente identificável; este é um efeito colateral da capacidade de realizar cálculos em massa em populações muito grandes, mas publicar para um local ou região muito específico. Por exemplo, quando dados demográficos computados em nível nacional ou de país rapidamente se tornam não identificáveis, mas não quando publicados após a filtragem por código postal ou nível de domicílio. [^92]
 
-### 2.3 Acquire and Ingest Data Sources
+Os critérios utilizados para selecionar ou filtrar dados também representam um risco. Esses critérios devem ser gerenciados objetivamente para evitar vieses ou distorções. A filtragem pode ter um impacto significativo na visualização. É necessário critério ao remover valores discrepantes, restringir conjuntos de dados a um domínio limitado ou descartar elementos esparsos. É prática comum concentrar os dados provisionados para enfatizar os resultados de isolamento, mas isso deve ser feito de forma objetiva e uniforme. [^93] (Consulte o Capítulo 2.)
 
-Once the sources are identified, they need to be found, sometimes purchased, and ingested (loaded) into the Big Data environment. During this process, capture critical Metadata about the source, such as its origin, size, currency, and additional knowledge about content. Many ingestion engines profile data as it is ingested, providing analysts with at least partial Metadata. Once the data is in a data lake, it can be assessed for suitability for multiple analysis efforts. Because building Data Science models is an iterative process, so is data ingestion. Iteratively identify gaps in the current data asset base and onboard those sources. Explore these data sources using profiling, visualization, mining, or other Data Science methods to define model algorithm inputs, or model hypotheses.
+### 2.3 Aquisição e Ingestão de Fontes de Dados
 
-Before integrating the data, assess its quality. Assessment can be as simple querying to find out how many fields contain null values, or as complex as running a data quality toolset or data analytic utility against the data to profile, classify, and identify relationships between data elements. Such assessment provides insight into whether the data provides a valid sample from which to work, and, if so, how the data can be stored and accessed (scattered across logical processing units [MPP], federated, distributed by key, etc.). This work involves SMEs (usually the data scientists themselves) and platform engineers.
+Uma vez identificadas as fontes, elas precisam ser encontradas, às vezes adquiridas e ingeridas (carregadas) no ambiente de Big Data. Durante esse processo, capture Metadados críticos sobre a fonte, como sua origem, tamanho, atualidade e conhecimento adicional sobre o conteúdo. Muitos mecanismos de ingestão criam perfis de dados à medida que são ingeridos, fornecendo aos analistas pelo menos Metadados parciais. Uma vez que os dados estejam em um data lake, eles podem ser avaliados quanto à sua adequação para múltiplos esforços de análise. Como a construção de modelos de Ciência de Dados é um processo iterativo, a ingestão de dados também o é. Identifique iterativamente lacunas na base atual de ativos de dados e integre essas fontes. Explore essas fontes de dados usando criação de perfil, visualização, mineração ou outros métodos de Ciência de Dados para definir entradas de algoritmos de modelo ou hipóteses de modelo.
 
-The assessment process provides valuable insight into how the data can be integrated with other data sets, such as Master Data or historical warehouse data. It also provides information that can be used in model training sets and validation activities.
+Antes de integrar os dados, avalie sua qualidade. A avaliação pode ser tão simples quanto uma consulta para descobrir quantos campos contêm valores nulos, ou tão complexa quanto executar um conjunto de ferramentas de qualidade de dados ou um utilitário de análise de dados para criar um perfil, classificar e identificar relacionamentos entre os elementos de dados. Essa avaliação fornece insights sobre se os dados fornecem uma amostra válida para trabalhar e, em caso afirmativo, como os dados podem ser armazenados e acessados ​​(dispersos por unidades lógicas de processamento [MPP], federados, distribuídos por chave, etc.). Esse trabalho envolve especialistas (geralmente os próprios cientistas de dados) e engenheiros de plataforma.
 
-### 2.4 Develop Data Hypotheses and Methods
+O processo de avaliação fornece insights valiosos sobre como os dados podem ser integrados a outros conjuntos de dados, como Dados Mestres ou dados históricos de warehouse. Também fornece informações que podem ser usadas em conjuntos de treinamento de modelos e atividades de validação.
 
-Data Science is about building answer sets that can find meaning or insights within the data. The development of Data Science solutions entails building statistical models that find correlations and trends within and between data elements and data sets. There will be multiple answers to a question based upon inputs to a model. For example, one must choose a rate of return to calculate the future value of a financial portfolio. Models often have more than one variable so the best practice is to find deterministic outcomes – or in other words, use best guesses as to the values to be expected. However, best guesses themselves should be educated. Each model will operate depending on the analysis method chosen. It should be tested for a range of outcomes, even the ones that appear least probable.
+### 2.4 Desenvolver Hipóteses e Métodos de Dados
 
-Models depend on both the quality of input data and the soundness of the model itself. Data models can often give insight into how to correlate the information found. An example of this is using K-Means clustering to determine the number of groupings of data to analyze further. (See Chapter 13.)
+Ciência de Dados consiste em construir conjuntos de respostas que possam encontrar significado ou insights dentro dos dados. O desenvolvimento de soluções de Ciência de Dados envolve a construção de modelos estatísticos que encontrem correlações e tendências dentro e entre elementos de dados e conjuntos de dados. Haverá múltiplas respostas para uma pergunta com base nas entradas de um modelo. Por exemplo, é preciso escolher uma taxa de retorno para calcular o valor futuro de uma carteira financeira. Os modelos geralmente têm mais de uma variável, portanto, a melhor prática é encontrar resultados determinísticos – ou, em outras palavras, usar as melhores estimativas quanto aos valores esperados. No entanto, as melhores estimativas em si devem ser fundamentadas. Cada modelo operará dependendo do método de análise escolhido. Ele deve ser testado para uma gama de resultados, mesmo aqueles que parecem menos prováveis.
 
-### 2.5 Integrate / Align Data for Analysis
+Os modelos dependem tanto da qualidade dos dados de entrada quanto da solidez do próprio modelo. Os modelos de dados geralmente podem fornecer insights sobre como correlacionar as informações encontradas. Um exemplo disso é o uso do agrupamento K-Means para determinar o número de agrupamentos de dados a serem analisados ​​posteriormente. (Ver Capítulo 13.)
 
-Preparing the data for analysis involves understanding what is in the data, finding links between data from the various sources, and aligning common data for use.
+### 2.5 Integrar/Alinhar Dados para Análise
 
-In many cases, joining data sources is more an art than a science. For example, consider one data set based upon daily updates and another based upon monthly updates. The daily data, in order to be aligned, would have to be aggregated so that there would be an alignment pattern that could be used in the Data Science investigation. One method is to use a common model that integrates the data using a common key. Another way is to scan and join data using indexes within the database engines for similarity and record linkage algorithms and methods. Often data is inspected during the initial phases to understand how the data could be analyzed. Clustering helps determine the grouping of the data outputs. Other methods can find correlations that will be used to build the model to display results. Consider using techniques during the initial phases that will aide in understanding how the model will show results once published.
+Preparar os dados para análise envolve entender o que está nos dados, encontrar conexões entre os dados das diversas fontes e alinhar os dados comuns para uso.
 
-Most solutions require the integration of Master Data and Reference Data in order to interpret results of the analytics. (See Chapter 10.)
+Em muitos casos, unir fontes de dados é mais uma arte do que uma ciência. Por exemplo, considere um conjunto de dados baseado em atualizações diárias e outro baseado em atualizações mensais. Os dados diários, para serem alinhados, teriam que ser agregados para que houvesse um padrão de alinhamento que pudesse ser usado na investigação de Ciência de Dados. Um método é usar um modelo comum que integra os dados usando uma chave comum. Outra maneira é varrer e unir os dados usando índices dentro dos mecanismos de banco de dados para similaridade e algoritmos e métodos de vinculação de registros. Frequentemente, os dados são inspecionados durante as fases iniciais para entender como podem ser analisados. A agregação ajuda a determinar o agrupamento das saídas de dados. Outros métodos podem encontrar correlações que serão usadas para construir o modelo e exibir os resultados. Considere o uso de técnicas durante as fases iniciais que ajudarão a entender como o modelo apresentará resultados após a publicação.
 
-### 2.6 Explore Data Using Models
+A maioria das soluções exige a integração de Dados Mestres e Dados de Referência para interpretar os resultados da análise. (Consulte o Capítulo 10.)
 
-#### 2.6.1 Populate Predictive Model
+### 2.6 Explorar Dados Usando Modelos
 
-Configuring predictive models includes pre-populating the model with historical information concerning the customer, market, products, or other factors that are included in the model other than the triggering factor. Pre-population calculations are usually performed in advance to enable the fastest response to triggering events. For example, customer purchase history would be needed to pre-populate a retail market-basket recommendation model. In predicting behavior of retail markets, historical price and price change information are combined with customer, demographic, and weather information.
+#### 2.6.1 Preencher Modelo Preditivo
 
-### 2.6.2 Train the Model
+A configuração de modelos preditivos inclui o pré-preenchimento do modelo com informações históricas sobre o cliente, mercado, produtos ou outros fatores incluídos no modelo, além do fator desencadeante. Os cálculos de pré-preenchimento geralmente são realizados com antecedência para permitir uma resposta mais rápida aos eventos desencadeantes. Por exemplo, o histórico de compras do cliente seria necessário para pré-preencher um modelo de recomendação de cesta de compras do mercado varejista. Na previsão do comportamento dos mercados varejistas, informações históricas de preços e variações de preços são combinadas com informações do cliente, demográficas e climáticas.
 
-Execute the model against the data in order to ‘train’ the model. Training includes repeated runs of the model against the data to verify assumptions. Training will result in changes to the model. Training requires balance. Avoid over-fitting by training against a limited data fold.
+### 2.6.2 Treinar o Modelo
 
-Model validation must be complete before transitioning to production. Address any population imbalances or data biases with model offsets that are trained and validated; this can be tweaked in production as the initial offset is gradually adjusted through actual population interactions. Optimizing feature mix can be accomplished with Bayesian co-selection, classifier inversion, or rule induction. Models can also be combined for ensemble learning where the predictor model is built by combining the collected strengths of simpler models. Identifying outliers or anomalies (data objects that do not comply with the general behavior exhibited by the studied elements) is critical to the evaluating the model. For more volatile datasets, apply a variance test based on the average and standard deviation. Both tests can be readily applied on profiled results. It may be that the outliers are the target of the exercise, as opposed to finding and validating trends in the majority of the data. For predictive analytics, use a real-time data stream to finish the population of the predictive model and trigger a response, which might be an alert or an event. The data stream may require special focus on design and development of an extreme low latency processing capability. In some models, the difference in value of the predictions between fractions of a second is extreme and solutions may require innovative technology with speed of light limitations.
+Executar o modelo em relação aos dados para "treiná-lo". O treinamento inclui execuções repetidas do modelo em relação aos dados para verificar as premissas. O treinamento resultará em alterações no modelo. O treinamento requer equilíbrio. Evite o sobreajuste treinando em uma base de dados limitada.
 
-Models can use many statistical functions and techniques that are available in open source libraries, one of which is ‘R.’ The R Project for Statistical Computing is a free software environment for statistical computing; it contains many functions as service calls. [^94] Custom functions can be developed leveraging the scripting language and shared across tools, platforms, and organizations.
+A validação do modelo deve ser concluída antes da transição para a produção. Corrigir quaisquer desequilíbrios populacionais ou vieses de dados com compensações do modelo treinadas e validadas; Isso pode ser ajustado na produção, à medida que o deslocamento inicial é gradualmente ajustado por meio de interações populacionais reais. A otimização da combinação de recursos pode ser realizada com cosseleção bayesiana, inversão de classificador ou indução de regras. Os modelos também podem ser combinados para aprendizado conjunto, onde o modelo preditor é construído combinando os pontos fortes coletados de modelos mais simples. Identificar outliers ou anomalias (objetos de dados que não estão em conformidade com o comportamento geral exibido pelos elementos estudados) é fundamental para a avaliação do modelo. Para conjuntos de dados mais voláteis, aplique um teste de variância baseado na média e no desvio padrão. Ambos os testes podem ser facilmente aplicados em resultados perfilados. Pode ser que os outliers sejam o alvo do exercício, em vez de encontrar e validar tendências na maioria dos dados. Para análise preditiva, use um fluxo de dados em tempo real para finalizar a população do modelo preditivo e disparar uma resposta, que pode ser um alerta ou um evento. O fluxo de dados pode exigir foco especial no projeto e desenvolvimento de uma capacidade de processamento de latência extremamente baixa. Em alguns modelos, a diferença no valor das previsões entre frações de segundo é extrema e as soluções podem exigir tecnologia inovadora com limitações de velocidade da luz.
 
-Once the solution design has been created and development and operation estimated, the organization may decide whether to develop the solution to predict behavior. Real-time operational analytics solutions frequently require substantial amounts of new architecture and development and could possibly not be cost effective.
+Os modelos podem utilizar diversas funções e técnicas estatísticas disponíveis em bibliotecas de código aberto, uma delas é o "R". O Projeto R para Computação Estatística é um ambiente de software livre para computação estatística; ele contém diversas funções como chamadas de serviço. [^94] Funções personalizadas podem ser desenvolvidas utilizando a linguagem de script e compartilhadas entre ferramentas, plataformas e organizações.
 
-#### 2.6.3 Evaluate Model
+Uma vez que o design da solução tenha sido criado e o desenvolvimento e a operação estimados, a organização pode decidir se desenvolverá a solução para prever o comportamento. Soluções de análise operacional em tempo real frequentemente exigem quantidades substanciais de nova arquitetura e desenvolvimento e podem não ser economicamente viáveis.
 
-Once the data is placed onto a platform and ready for analysis, the Data Science begins. The model is constructed, evaluated against training sets, and validated. Refinements to the business requirements are expected at this point and early feasibility metrics can guide the management efforts towards further processing or discarding. It is entirely possible that testing a new hypothesis will require additional data sets. Data scientists run queries and algorithms against the data to see if any insights become apparent. Often times a number of different mathematical functions will be run to see if any insight is found (clusters in the data, patterns that start to emerge between data element periods, etc.). During this period, data scientists are often building upon insights found in iterative batches. From these, models can be developed that display the correlation between data elements and insights.
+#### 2.6.3 Avaliar o Modelo
 
-There is an ethical component to practicing Data Science and it needs to be applied when evaluating models. Models can have unexpected results or unintentionally reflect the assumptions and biases of the people who create them. Ethical training should be required for all artificial intelligence (AI) practitioners. Ideally, the curriculum for every student learning AI, computer science, or Data Science should include ethics and security topics. However, ethics alone is not sufficient. Ethics can help practitioners understand their responsibilities to all stakeholders, but ethical training needs to be augmented with the technical capability to put good intentions into practice by taking technical precautions as a system is built and tested (Executive Office, 2016). (See Chapter 2.)
+Assim que os dados são colocados em uma plataforma e estão prontos para análise, a Ciência de Dados começa. O modelo é construído, avaliado em relação a conjuntos de treinamento e validado. Refinamentos nos requisitos de negócios são esperados neste momento, e métricas de viabilidade iniciais podem orientar os esforços da gestão para processamento posterior ou descarte. É perfeitamente possível que testar uma nova hipótese exija conjuntos de dados adicionais. Cientistas de dados executam consultas e algoritmos nos dados para verificar se algum insight se torna aparente. Muitas vezes, diversas funções matemáticas diferentes são executadas para verificar se algum insight é encontrado (agrupamentos nos dados, padrões que começam a emergir entre os períodos dos elementos de dados, etc.). Durante esse período, os cientistas de dados frequentemente desenvolvem insights encontrados em lotes iterativos. A partir deles, podem ser desenvolvidos modelos que demonstram a correlação entre os elementos de dados e os insights.
 
-#### 2.6.4 Create Data Visualizations
+Há um componente ético na prática da Ciência de Dados e ele precisa ser aplicado na avaliação de modelos. Modelos podem ter resultados inesperados ou refletir involuntariamente as suposições e vieses das pessoas que os criam. Treinamento ético deve ser obrigatório para todos os profissionais de inteligência artificial (IA). Idealmente, o currículo de todos os alunos que estudam IA, ciência da computação ou Ciência de Dados deve incluir tópicos de ética e segurança. No entanto, a ética por si só não é suficiente. A ética pode ajudar os profissionais a compreender suas responsabilidades para com todas as partes interessadas, mas o treinamento ético precisa ser complementado com a capacidade técnica para colocar boas intenções em prática, tomando precauções técnicas à medida que um sistema é construído e testado (Escritório Executivo, 2016). (Ver Capítulo 2.)
 
-Data visualization based on the model must meet the specific needs related to the purpose of the model. Each visualization should answer a question or provide an insight. Establish the purpose and parameters for the visualization: a point in time status, trends vs. exceptions, relationships between moving parts, geographical differences, or some other point.
+#### 2.6.4 Crie Visualizações de Dados
 
-Select the appropriate visual to fulfill that purpose. Ensure that the visualization addresses an audience; adjust the layout and complexity to highlight and simplify accordingly. Not all audiences are ready for a complex interactive chart. Support visualizations with explanatory text.
+A visualização de dados baseada no modelo deve atender às necessidades específicas relacionadas à finalidade do modelo. Cada visualização deve responder a uma pergunta ou fornecer um insight. Estabeleça a finalidade e os parâmetros para a visualização: um status pontual, tendências versus exceções, relacionamentos entre partes móveis, diferenças geográficas ou algum outro ponto.
 
-Visualizations should tell a story. Data ‘story telling’ can link new questions to the context of data exploration. Data stories must be supported by related data visualizations to have the best effect.
+Selecione o visual apropriado para atender a essa finalidade. Certifique-se de que a visualização seja direcionada a um público-alvo; ajuste o layout e a complexidade para destacar e simplificar adequadamente. Nem todos os públicos estão prontos para um gráfico interativo complexo. Apoie as visualizações com texto explicativo.
 
-### 2.7 Deploy and Monitor
+As visualizações devem contar uma história. A "narrativa" de dados pode conectar novas perguntas ao contexto da exploração de dados. As histórias de dados devem ser apoiadas por visualizações de dados relacionadas para obter o melhor efeito.
 
-A model that meets business needs in a feasible manner can be deployed to production for ongoing monitoring. Such models will require refinement and maintenance. Several modeling techniques are available for implementation. Models can serve batch processes as well as real-time integration messages. They can also be embedded into analytics software as input into decision management systems, historical analysis, or performance management dashboards.
+### 2.7 Implantar e Monitorar
 
-#### 2.7.1 Expose Insights and Findings
+Um modelo que atenda às necessidades do negócio de maneira viável pode ser implantado em produção para monitoramento contínuo. Tais modelos exigirão refinamento e manutenção. Diversas técnicas de modelagem estão disponíveis para implementação. Os modelos podem atender a processos em lote, bem como a mensagens de integração em tempo real. Eles também podem ser incorporados a softwares analíticos como entrada para sistemas de gestão de decisões, análise histórica ou painéis de gestão de desempenho.
 
-The presentation of findings and data insights, usually through data visualization, is the final step in a Data Science investigation. Insights should be connected to action items so that the organization benefits from the Data Science work.
+#### 2.7.1 Expor Insights e Descobertas
 
-New relationships may be explored through data visualization techniques. As a model is used, changes in the underlying data and relationships may surface, telling a new story about the data.
+A apresentação de descobertas e insights de dados, geralmente por meio de visualização de dados, é a etapa final de uma investigação de Ciência de Dados. Os insights devem ser conectados a itens de ação para que a organização se beneficie do trabalho de Ciência de Dados.
 
-#### 2.7.2 Iterate with Additional Data Sources
+Novos relacionamentos podem ser explorados por meio de técnicas de visualização de dados. À medida que um modelo é utilizado, mudanças nos dados e relacionamentos subjacentes podem surgir, contando uma nova história sobre os dados.
 
-The presentation of findings and data insights usually generates questions that start a new process of research. Data Science is iterative, so Big Data development is iterative to support it. This process of learning from a specific set of data sources often leads to the need for different or additional data sources to both support the conclusions found and to add insights to the existing model(s).
+#### 2.7.2 Iterar com Fontes de Dados Adicionais
 
-## 3. Tools
+A apresentação de descobertas e insights de dados geralmente gera perguntas que iniciam um novo processo de pesquisa. A Ciência de Dados é iterativa, portanto, o desenvolvimento de Big Data é iterativo para apoiá-la. Esse processo de aprendizado a partir de um conjunto específico de fontes de dados frequentemente leva à necessidade de fontes de dados diferentes ou adicionais para apoiar as conclusões encontradas e adicionar insights ao(s) modelo(s) existente(s).
 
-Advances in technology (Moore’s Law, the proliferation of hand held devices, IOT, to name a few) have created the Big Data and Data Science industry. To understand the industry, one must understand its drivers. This section will explain the tools and technologies that have enabled Big Data Science to emerge.
+## 3. Ferramentas
 
-The advent of Massively Parallel Processing (MPP) was one of the first enablers to Big Data and Data Science as it provided the means to analyze huge volumes of information in relatively short amounts of time. Finding the needle in the haystack of information, or using machinery to plow through tons of dirt to find the gold nuggets is what we are doing today. This trend will continue.
+Avanços tecnológicos (Lei de Moore, proliferação de dispositivos portáteis, IoT, para citar alguns) criaram a indústria de Big Data e Ciência de Dados. Para entender a indústria, é preciso entender seus impulsionadores. Esta seção explicará as ferramentas e tecnologias que possibilitaram o surgimento da Ciência de Big Data.
 
-Other advances that have changed the way we look at data and information include:
+O advento do Processamento Paralelo Massivo (MPP) foi um dos primeiros facilitadores do Big Data e da Ciência de Dados, pois forneceu os meios para analisar enormes volumes de informação em períodos relativamente curtos. Encontrar a agulha no palheiro de informações ou usar máquinas para vasculhar toneladas de terra em busca de pepitas de ouro é o que fazemos hoje. Essa tendência continuará.
 
-* Advanced in-database analytics
-* Analytics on unstructured data (Hadoop, MapReduce)
-* Integration of analytic results with operational systems
-* Data visualizations across multiple media and devices
-* Linking structured and unstructured information using semantics
-* New data sources using IOT
-* Advanced visualization capabilities
-* Data enrichment capabilities
-* Collaboration technologies and toolsets
+Outros avanços que mudaram a forma como olhamos para dados e informações incluem:
 
-Existing data warehouses, data marts, and operational data stores (ODS) are being augmented to carry Big Data workload. NoSQL technologies allow storage and query of unstructured and semi-structured data.
+* Análise avançada em banco de dados
+* Análise de dados não estruturados (Hadoop, MapReduce)
+* Integração de resultados analíticos com sistemas operacionais
+* Visualizações de dados em diversas mídias e dispositivos
+* Vinculação de informações estruturadas e não estruturadas usando semântica
+* Novas fontes de dados usando IoT
+* Recursos avançados de visualização
+* Recursos de enriquecimento de dados
+* Tecnologias e conjuntos de ferramentas de colaboração
 
-Access to unstructured data used to occur largely through a batch query interface that resulted in slow scheduled execution and poor response times. Several NoSQL databases are now available with designs that address specific limitations in this acquisition process. Scalable distributed databases automatically provide sharding capabilities (the ability to scale across servers natively) for parallel query execution. Of course, as with any other database, structural definition and mapping to unstructured data sets remain largely manual processes. Immediate query, reporting, and analysis capabilities can be satisfied with Big Data in-memory technologies that allow end users to construct SQL-like queries to access unstructured data. There are also adaptors to SQL for some tools that will transmit a NoSQL process and return a SQL compliant query – with limitations and caveats. Adaptor technologies can allow existing tools to be used for unstructured data query.
+Data warehouses, data marts e armazenamentos de dados operacionais (ODS) existentes estão sendo ampliados para suportar a carga de trabalho de Big Data. As tecnologias NoSQL permitem o armazenamento e a consulta de dados não estruturados e semiestruturados.
 
-Decision criteria tool sets, process implementation tools, and professional services offerings can both facilitate and expedite the process of choosing an initial set of tools. As when acquiring BI tools, it is critical to evaluate all options: build, buy, or rent (provisioned as software-as-a-service). As noted in Chapter 11, cloud sourcing tools and the associated expertise should be weighed against the cost of building from scratch or deploying purchased products from vendors. Ongoing upgrade and potential replacement costs must be considered as well. Alignment to a set OLA can bridge forecasted costs and provide input into setting compelling fees and penalties for term violations.
+O acesso a dados não estruturados costumava ocorrer em grande parte por meio de uma interface de consulta em lote, o que resultava em execução agendada lenta e tempos de resposta insatisfatórios. Diversos bancos de dados NoSQL estão agora disponíveis com designs que abordam limitações específicas nesse processo de aquisição. Bancos de dados distribuídos escaláveis ​​fornecem automaticamente recursos de fragmentação (a capacidade de escalar entre servidores nativamente) para execução paralela de consultas. É claro que, como em qualquer outro banco de dados, a definição estrutural e o mapeamento para conjuntos de dados não estruturados continuam sendo processos em grande parte manuais. Recursos imediatos de consulta, geração de relatórios e análise podem ser atendidos com tecnologias de Big Data em memória, que permitem aos usuários finais construir consultas semelhantes a SQL para acessar dados não estruturados. Também existem adaptadores para SQL para algumas ferramentas que transmitem um processo NoSQL e retornam uma consulta compatível com SQL – com limitações e ressalvas. Tecnologias de adaptadores podem permitir o uso de ferramentas existentes para consultas de dados não estruturados.
 
-### 3.1 MPP Shared-nothing Technologies and Architecture
+Conjuntos de ferramentas de critérios de decisão, ferramentas de implementação de processos e ofertas de serviços profissionais podem facilitar e agilizar o processo de escolha de um conjunto inicial de ferramentas. Assim como na aquisição de ferramentas de BI, é fundamental avaliar todas as opções: construir, comprar ou alugar (provisionado como software como serviço). Conforme observado no Capítulo 11, as ferramentas de terceirização em nuvem e a expertise associada devem ser ponderadas em relação ao custo de construir do zero ou implantar produtos adquiridos de fornecedores. Os custos contínuos de atualização e possíveis substituições também devem ser considerados. O alinhamento a um OLA definido pode reduzir os custos previstos e fornecer informações para definir taxas e penalidades atraentes para violações de termos.
 
-Massively Parallel Processing (MPP) Shared-nothing Database technologies have become the standard platform for Data Science-oriented analysis of Big Data sets. In MPP databases, data is partitioned (logically distributed) across multiple processing servers (computational nodes), with each server having its own dedicated memory to process data locally. Communication between processing servers is usually controlled by a master host and occurs over a network interconnect. There is no disk sharing or memory contention, hence the name, ‘shared-nothing’.
+### 3.1 Tecnologias e Arquitetura MPP Shared-nothing
 
-MPP has evolved because traditional computing paradigms (indexes, distributed data sets, etc.) did not provide acceptable response times on massive tables. Even the most powerful of computing platforms (Cray computer) would take many hours or even days to compute a complex algorithm against a trillion-row table.
+Processamento Massivamente Paralelo (MPP) As tecnologias de banco de dados Shared-nothing tornaram-se a plataforma padrão para análises de conjuntos de Big Data orientadas para a Ciência de Dados. Em bancos de dados MPP, os dados são particionados (distribuídos logicamente) entre múltiplos servidores de processamento (nós computacionais), com cada servidor tendo sua própria memória dedicada para processar os dados localmente. A comunicação entre os servidores de processamento geralmente é controlada por um host mestre e ocorre por meio de uma interconexão de rede. Não há compartilhamento de disco ou contenção de memória, daí o nome "shared-nothing".
 
-Consider now a number of commodity hardware servers, all lined up in a row and controlled via a host. Each is sent part of the query to run against this segmented or distributed trillion-row table. If there are, for example, 1000 processing servers, the query changes from accessing a trillion rows in one table to accessing 1000 billion-row tables. This type of computing architecture is linearly scalable, which adds to the appeal for data scientist and Big Data users requiring a scalable platform to incorporate growth.
+O MPP evoluiu porque os paradigmas tradicionais de computação (índices, conjuntos de dados distribuídos, etc.) não forneciam tempos de resposta aceitáveis ​​em tabelas massivas. Mesmo a mais poderosa das plataformas de computação (computador Cray) levaria muitas horas ou até dias para computar um algoritmo complexo em uma tabela de trilhões de linhas.
 
-This technology also enabled in-database analytical functions – the ability to execute analytical functions (like K-means Clustering, Regression, etc.) at the processor level. Distribution of workload to the processor level greatly speeds up analytical queries – thereby fueling innovation in Data Science. A system that automatically distributes data and parallelizes query workloads across all available (localized) hardware is the optimum solution for Big Data analytics.
+Considere agora vários servidores de hardware comuns, todos alinhados em uma fileira e controlados por um host. Cada um recebe parte da consulta para ser executada nessa tabela segmentada ou distribuída de trilhões de linhas. Se houver, por exemplo, 1.000 servidores de processamento, a consulta passa de acessar um trilhão de linhas em uma tabela para acessar tabelas com 1.000 bilhões de linhas. Esse tipo de arquitetura computacional é linearmente escalável, o que aumenta o apelo para cientistas de dados e usuários de Big Data que precisam de uma plataforma escalável para incorporar o crescimento.
 
-![Figure 102 Columnar Appliance Architecture](figure_102.png)
-Figure 102 Columnar Appliance Architecture [^95]
+Essa tecnologia também possibilitou funções analíticas no banco de dados – a capacidade de executar funções analíticas (como Clusterização K-means, Regressão, etc.) no nível do processador. A distribuição da carga de trabalho no nível do processador acelera significativamente as consultas analíticas – impulsionando, assim, a inovação em Ciência de Dados. Um sistema que distribui dados automaticamente e paraleliza as cargas de trabalho de consulta em todo o hardware disponível (localizado) é a solução ideal para análises de Big Data.
 
-Data volumes are growing fast. Companies can grow the capacity and performance of their systems over time by adding new nodes. MPP makes it easy to expand the parallelism of hundreds or thousands of cores across an ever-growing pool of machines. A massively parallel, shared-nothing architecture fully uses each core, with linear scalability and increased processing performance on large data sets.
+![Figura 102 Arquitetura de Appliance em Coluna](figure_102.png)
+Figura 102 Arquitetura de Appliance em Coluna [^95]
 
-### 3.2 Distributed File-based Databases
+Os volumes de dados estão crescendo rapidamente. As empresas podem aumentar a capacidade e o desempenho de seus sistemas ao longo do tempo, adicionando novos nós. O MPP facilita a expansão do paralelismo de centenas ou milhares de núcleos em um conjunto cada vez maior de máquinas. Uma arquitetura massivamente paralela e sem compartilhamento utiliza totalmente cada núcleo, com escalabilidade linear e desempenho de processamento aprimorado em grandes conjuntos de dados.
 
-Distributed file-based solutions technologies, such as the open source Hadoop, are an inexpensive way to store large amounts of data in different formats. Hadoop stores files of any type – structured, semi-structured, and unstructured. Using a configuration similar to MPP Shared-nothing (an MPP foundation for file storage), it shares files across processing servers. It is ideal for storing data securely (as many copies are made), but has challenges when trying to allow access to data via structured or analytical mechanism (like SQL).
+### 3.2 Bancos de Dados Distribuídos Baseados em Arquivos
 
-Due to its relatively low cost, Hadoop has become the landing zone of choice for many organizations. From Hadoop, data can be moved to MPP Shared-nothing databases to have algorithms run against it. Some organizations run complex Data Science queries in Hadoop, and are not concerned with response times in the order of hours and days (rather than minutes for the former architecture).
+Tecnologias de soluções distribuídas baseadas em arquivos, como o Hadoop de código aberto, são uma maneira barata de armazenar grandes quantidades de dados em diferentes formatos. O Hadoop armazena arquivos de qualquer tipo – estruturados, semiestruturados e não estruturados. Usando uma configuração semelhante ao MPP sem compartilhamento (uma base MPP para armazenamento de arquivos), ele compartilha arquivos entre servidores de processamento. É ideal para armazenar dados com segurança (já que muitas cópias são feitas), mas apresenta desafios ao tentar permitir o acesso aos dados por meio de mecanismos estruturados ou analíticos (como SQL).
 
-The language used in file-based solutions is called MapReduce. This language has three main steps:
+Devido ao seu custo relativamente baixo, o Hadoop se tornou a zona de pouso preferida de muitas organizações. A partir do Hadoop, os dados podem ser movidos para bancos de dados MPP sem compartilhamento para que algoritmos sejam executados neles. Algumas organizações executam consultas complexas de Ciência de Dados em Hadoop e não se preocupam com tempos de resposta da ordem de horas e dias (em vez de minutos para a arquitetura anterior).
 
-* **Map:** Identify and obtain the data to be analyzed
-* **Shuffle:** Combine the data according to the analytical patterns desired
-* **Reduce:** Remove duplication or perform aggregation in order to reduce the size of the resulting data set to only what is required
+A linguagem usada em soluções baseadas em arquivos é chamada MapReduce. Essa linguagem possui três etapas principais:
 
-These steps can be combined in many different tools in different ways, both in sequence and in parallel, to do complex manipulations.
+* **Mapear:** Identificar e obter os dados a serem analisados
+* **Embaralhar:** Combinar os dados de acordo com os padrões analíticos desejados
+* **Reduzir:** Remover duplicações ou realizar agregação para reduzir o tamanho do conjunto de dados resultante para apenas o necessário
 
-### 3.3 In-database Algorithms
+Essas etapas podem ser combinadas em diversas ferramentas de diferentes maneiras, tanto em sequência quanto em paralelo, para realizar manipulações complexas.
 
-An in-database algorithm uses the principle that each of the processors in a MPP Shared-nothing platform can run queries independently, so a new form of analytics processing could be accomplished by providing mathematical and statistical functions at the computing node level. Open-source libraries of scalable in-database algorithms for machine learning, statistics, and other analytical tasks were designed both for in- and out-of-core execution, and for the shared-nothing parallelism offered by modern parallel database engines, ensuring that computation is done close to the data. By moving the computation closer to the data, the computing time is dramatically reduced for complex algorithms (such as K-means Clustering, Logistic or Linear regression, Mann-Whitney U Test, Conjugate Gradient, Cohort Analysis, etc.).
+### 3.3 Algoritmos em Banco de Dados
 
-### 3.4 Big Data Cloud Solutions
+Um algoritmo em Banco de Dados utiliza o princípio de que cada um dos processadores em uma plataforma MPP Shared-nothing pode executar consultas de forma independente, de modo que uma nova forma de processamento analítico poderia ser alcançada fornecendo funções matemáticas e estatísticas no nível do nó de computação. Bibliotecas de código aberto com algoritmos escaláveis ​​em banco de dados para aprendizado de máquina, estatística e outras tarefas analíticas foram projetadas tanto para execução dentro quanto fora do núcleo, e para o paralelismo sem compartilhamento oferecido pelos modernos mecanismos de banco de dados paralelos, garantindo que a computação seja realizada próxima aos dados. Ao aproximar a computação dos dados, o tempo de computação é drasticamente reduzido para algoritmos complexos (como agrupamento de K-means, regressão logística ou linear, teste U de Mann-Whitney, gradiente conjugado, análise de coorte, etc.).
 
-There are vendors who provide cloud storage and integration for Big Data, including analytic capabilities. Based on defined standards, customers load their data a cloud environment. The vendor enhances the data, either as open data sets or as provided by other organizations. The customer can do analytics and Data Science using the combined data set. One application uses retail offers as the subject for the data, combines it with geographic and sales data, and offers airline miles for customers who agree to have their data used in this way.
+### 3.4 Soluções em Nuvem para Big Data
 
-### 3.5 Statistical Computing and Graphical Languages
+Existem fornecedores que oferecem armazenamento em nuvem e integração para Big Data, incluindo recursos analíticos. Com base em padrões definidos, os clientes carregam seus dados em um ambiente de nuvem. O fornecedor aprimora os dados, seja como conjuntos de dados abertos ou conforme fornecidos por outras organizações. O cliente pode realizar análises e Ciência de Dados usando o conjunto de dados combinado. Uma aplicação utiliza ofertas de varejo como objeto dos dados, combina-as com dados geográficos e de vendas e oferece milhas aéreas para clientes que concordam que seus dados sejam utilizados dessa forma.
 
-R is an open source scripting language and environment for statistical computing and graphics. It provides a wide variety of statistical techniques such as linear and nonlinear modeling, classical statistical tests, time-series analysis, classification, and clustering. Because it is a scripting language, models developed in R can be implemented in a variety of environments, differing platforms and collaborated development across multiple geographic and organizational boundaries. The R environment can also produce publication-quality plots, including mathematical symbols and formulae, within the control of the end user.
+### 3.5 Computação Estatística e Linguagens Gráficas
 
-### 3.6 Data Visualization Tools
+R é uma linguagem de script e ambiente de código aberto para computação estatística e gráficos. Ela fornece uma ampla variedade de técnicas estatísticas, como modelagem linear e não linear, testes estatísticos clássicos, análise de séries temporais, classificação e agrupamento. Por ser uma linguagem de script, os modelos desenvolvidos em R podem ser implementados em uma variedade de ambientes, diferentes plataformas e desenvolvimento colaborativo em múltiplas fronteiras geográficas e organizacionais. O ambiente R também pode produzir gráficos com qualidade de publicação, incluindo símbolos matemáticos e fórmulas, sob o controle do usuário final.
 
-Traditional tools in data visualization have both a data and a graphical component. Advanced visualization and discovery tools use in-memory architecture to allow users to interact with the data. Patterns in a large data set can be difficult to recognize in a numbers display. A visual pattern can be picked up quickly when thousands of data points are loaded into a sophisticated display.
+### 3.6 Ferramentas de Visualização de Dados
 
-Information graphics or infographics are graphical representations stylized for effective interaction and comprehension. Marketing adopted these to provide visual appeal to presentations. Journalists, bloggers, and teachers found infographics useful for trend analysis, presentation, and distribution. Information visualization methods like radar charts, parallel coordinate plots, tag charts, heat maps, and data maps are now supported by many toolsets. These allow users to rapidly discern changes in data over time, gain insights into related items, and understand potential cause and effect relationships before impacts occur. These tools have several benefits over traditional visualization tools:
+Ferramentas tradicionais de visualização de dados possuem um componente de dados e um componente gráfico. Ferramentas avançadas de visualização e descoberta utilizam arquitetura em memória para permitir que os usuários interajam com os dados. Padrões em um grande conjunto de dados podem ser difíceis de reconhecer em uma exibição numérica. Um padrão visual pode ser captado rapidamente quando milhares de pontos de dados são carregados em uma exibição sofisticada.
 
-* Sophisticated analysis and visualization types, such as small multiples, spark lines, heat maps, histograms, waterfall charts, and bullet graphs
-* Built-in adherence to visualization best practices
-* Interactivity enabling visual discovery
+Infográficos ou infográficos são representações gráficas estilizadas para interação e compreensão eficazes. O marketing os adotou para fornecer apelo visual às apresentações. Jornalistas, blogueiros e professores consideraram os infográficos úteis para análise de tendências, apresentação e distribuição. Métodos de visualização de informações, como gráficos de radar, gráficos de coordenadas paralelas, gráficos de tags, mapas de calor e mapas de dados, agora são suportados por muitos conjuntos de ferramentas. Eles permitem que os usuários identifiquem rapidamente mudanças nos dados ao longo do tempo, obtenham insights sobre itens relacionados e entendam potenciais relações de causa e efeito antes que os impactos ocorram. Essas ferramentas apresentam diversos benefícios em relação às ferramentas de visualização tradicionais:
 
-## 4. Techniques
+* Tipos sofisticados de análise e visualização, como múltiplos pequenos, linhas de faísca, mapas de calor, histogramas, gráficos em cascata e gráficos de marcadores
+* Adesão integrada às melhores práticas de visualização
+* Interatividade que permite a descoberta visual
 
-### 4.1 Analytic Modeling
+## 4. Técnicas
 
-Several open source tools are available for development, as well as cloud data processing for model development, for visual development process, for web scraping, and for linear programming optimization. To share and execute models by other applications, look for tools that support the predictive model markup language (PMML), an XML-based file format.
+### 4.1 Modelagem Analítica
 
-Real-time access can resolve many latency issues from batch processing. The Apache Mahout is an open source project aimed at creating a machine-learning library. Mahout is positioned to automate Big Data exploration through recommendation mining, document classification, and item clustering. This branch of development efforts bypasses the traditional batch query MapReduce data access techniques. Leveraging an API interface directly into the storage layer HDFS, a variety of data access techniques can be provided such as SQL, content streaming, machine learning, and graphics libraries for data visualization.
+Diversas ferramentas de código aberto estão disponíveis para desenvolvimento, bem como processamento de dados em nuvem para desenvolvimento de modelos, processos de desenvolvimento visual, web scraping e otimização de programação linear. Para compartilhar e executar modelos por outros aplicativos, procure ferramentas que suportem a linguagem de marcação de modelos preditivos (PMML), um formato de arquivo baseado em XML.
 
-Analytic models are associated with different depths of analysis:
+O acesso em tempo real pode resolver muitos problemas de latência do processamento em lote. O Apache Mahout é um projeto de código aberto que visa criar uma biblioteca de aprendizado de máquina. O Mahout está posicionado para automatizar a exploração de Big Data por meio de mineração de recomendações, classificação de documentos e agrupamento de itens. Este ramo de esforços de desenvolvimento ignora as técnicas tradicionais de acesso a dados MapReduce de consulta em lote. Aproveitando uma interface de API diretamente na camada de armazenamento HDFS, uma variedade de técnicas de acesso a dados pode ser fornecida, como SQL, streaming de conteúdo, aprendizado de máquina e bibliotecas gráficas para visualização de dados.
 
-* Descriptive modeling summarizes or represents the data structures in a compact manner. This approach does not always validate a causal hypothesis or predict outcomes. However, it does use algorithms to define or refine relationships across variables in a way that could provide input to such analysis.
-* Explanatory modeling is the application of statistical models to data for testing causal hypothesis about theoretical constructs. While it uses techniques similar to data mining and predictive analytics, its purpose is different. It does not predict outcomes; it seeks to match model results only with existing data.
+Modelos analíticos estão associados a diferentes profundidades de análise:
 
-Key to predictive analytics is to learn by example through training the model. Performance of a learning method relates its predictive abilities on independent test data. Assessment guides the choice of learning and measures the quality of the chosen model. Model selection estimates performance where assessment evaluates the generalization error on new data.
+* A modelagem descritiva resume ou representa as estruturas de dados de forma compacta. Essa abordagem nem sempre valida uma hipótese causal ou prevê resultados. No entanto, utiliza algoritmos para definir ou refinar relações entre variáveis ​​de forma a fornecer subsídios para essa análise.
+* Modelagem explicativa é a aplicação de modelos estatísticos a dados para testar hipóteses causais sobre construtos teóricos. Embora utilize técnicas semelhantes à mineração de dados e à análise preditiva, seu propósito é diferente. Ela não prevê resultados; busca comparar os resultados do modelo apenas com os dados existentes.
 
-Avoid over-fitting – a situation that occurs when the model is trained against non-representative datasets, is overly complex in relation to its data, or has described noise instead of the underlying relationship(s). Use additional techniques such as K-fold validation to indicate when training is no longer resulting in better generalization.
+A chave para a análise preditiva é aprender por meio do exemplo, treinando o modelo. O desempenho de um método de aprendizado relaciona suas habilidades preditivas com dados de teste independentes. A avaliação orienta a escolha do aprendizado e mede a qualidade do modelo escolhido. A seleção do modelo estima o desempenho, enquanto a avaliação avalia o erro de generalização em novos dados.
 
-Training error consistently decrease with model complexity and can drop off to zero. Therefore, it is not a useful estimate of the test error. Randomly divide the data set into three parts to form training, testing, and validation sets. The training set is used to fit the model, the validation set is used to predict error for selection, and the test set is used for assessment of the generalization error of the final model.
+Evite o sobreajuste – uma situação que ocorre quando o modelo é treinado com conjuntos de dados não representativos, é excessivamente complexo em relação aos seus dados ou apresenta ruído descrito em vez da(s) relação(ões) subjacente(s). Use técnicas adicionais, como a validação K-fold, para indicar quando o treinamento não está mais resultando em uma melhor generalização.
 
-Reusing the same test-set repeatedly can underestimate the true test error. Ideally, perform cross-validation by randomly dividing the data set into a set of K-folds or cross-validation groups. Perform training on all but one set of data based on strongly correlated predictor variables. Test the model on the remaining piece and determine generalization error based on all K-folds. Several statistical tests can be applied and performed to numerically assess contextual model validity.
+O erro de treinamento diminui consistentemente com a complexidade do modelo e pode chegar a zero. Portanto, não é uma estimativa útil do erro de teste. Divida aleatoriamente o conjunto de dados em três partes para formar conjuntos de treinamento, teste e validação. O conjunto de treinamento é usado para ajustar o modelo, o conjunto de validação é usado para prever o erro de seleção e o conjunto de teste é usado para avaliar o erro de generalização do modelo final.
 
-### 4.2 Big Data Modeling
+Reutilizar o mesmo conjunto de teste repetidamente pode subestimar o erro real do teste. Idealmente, realize a validação cruzada dividindo aleatoriamente o conjunto de dados em um conjunto de K-folds ou grupos de validação cruzada. Realize o treinamento em todos os conjuntos de dados, exceto um, com base em variáveis ​​preditoras fortemente correlacionadas. Teste o modelo na parte restante e determine o erro de generalização com base em todos os K-folds. Vários testes estatísticos podem ser aplicados e realizados para avaliar numericamente a validade contextual do modelo.
 
-Modeling Big Data is a technical challenge but critical if an organization that wants to describe and govern its data. Traditional Enterprise Data Architecture principles do apply; data needs to be integrated, specified, and managed.
+### 4.2 Modelagem de Big Data
 
-The main driver to physically model a data warehouse is to enable population of data for query performance. This driver is not in play for Big Data. This is not an excuse to abandon the modeling process or to hand it off to a developer. The value of modeling the data is that it enables people to understand data content. Apply proven data modeling techniques while accounting for the variety of sources. Develop the subject area model, at least in a summarized way, so it can be related to proper contextual entities and placed into the overall roadmap, just like any other kind of data. The challenge is to make an understandable and useful picture out of these large data sets, and for a justifiable cost.
+A modelagem de Big Data é um desafio técnico, mas crucial para uma organização que deseja descrever e governar seus dados. Os princípios tradicionais da Arquitetura de Dados Corporativos se aplicam; Os dados precisam ser integrados, especificados e gerenciados.
 
-Understand how the data links between data sets. For data of different granularity, prevent combinations that count data elements or values more than once; for example, don’t combine atomic and aggregate sets.
+O principal fator para modelar fisicamente um data warehouse é permitir o preenchimento de dados para o desempenho das consultas. Esse fator não se aplica ao Big Data. Isso não é desculpa para abandonar o processo de modelagem ou delegá-lo a um desenvolvedor. O valor da modelagem de dados reside no fato de permitir que as pessoas entendam o conteúdo dos dados. Aplique técnicas comprovadas de modelagem de dados, considerando a variedade de fontes. Desenvolva o modelo da área temática, pelo menos de forma resumida, para que possa ser relacionado às entidades contextuais adequadas e inserido no roteiro geral, assim como qualquer outro tipo de dado. O desafio é criar uma imagem compreensível e útil desses grandes conjuntos de dados, com um custo justificável.
 
-## 5. Implementation Guidelines
+Entenda como os dados se conectam entre si. Para dados com granularidade diferente, evite combinações que contem elementos ou valores de dados mais de uma vez; por exemplo, não combine conjuntos atômicos e agregados.
 
-Many of the general principles of managing warehouse data apply to managing Big Data: ensuring that the data sources are reliable, having sufficient Metadata to enable data use, managing the quality of data, figuring out how to integrate data from different sources, and ensuring that data is secure and protected. (See Chapters 6, 7, and 8.) The differences in implementing a Big Data environment are connected to a set of unknowns: how the data will be used, which data will be valuable, how long it needs to be retained.
+## 5. Diretrizes de Implementação
 
-Data velocity may lead people to think they do not have time to implement controls. This is a dangerous assumption. With larger data sets, managing ingestion and inventorying data in a lake is critical to preventing it from becoming a swamp.
+Muitos dos princípios gerais de gerenciamento de dados de warehouse se aplicam ao gerenciamento de Big Data: garantir que as fontes de dados sejam confiáveis, ter metadados suficientes para permitir o uso dos dados, gerenciar a qualidade dos dados, descobrir como integrar dados de diferentes fontes e garantir que os dados estejam seguros e protegidos. (Consulte os Capítulos 6, 7 e 8.) As diferenças na implementação de um ambiente de Big Data estão conectadas a um conjunto de incógnitas: como os dados serão usados, quais dados serão valiosos e por quanto tempo precisam ser retidos.
 
-Ingestion may not always require organizational ownership or commitment to the data set being studied. Consider leasing a Big Data platform for finite periods to explore data of interest. Exploration can quickly determine which areas show potential value. Do this before ingesting into the organizational data lake, data store, or data staging area; once landed, it can be awkward to remove.
+A velocidade dos dados pode levar as pessoas a pensar que não têm tempo para implementar controles. Essa é uma suposição perigosa. Com conjuntos de dados maiores, gerenciar a ingestão e o inventário de dados em um lago é fundamental para evitar que ele se torne um pântano.
 
-### 5.1 Strategy Alignment
+A ingestão nem sempre exige propriedade organizacional ou comprometimento com o conjunto de dados em estudo. Considere alugar uma plataforma de Big Data por períodos limitados para explorar dados de interesse. A exploração pode determinar rapidamente quais áreas apresentam valor potencial. Faça isso antes de ingerir dados no lago de dados, armazenamento de dados ou área de preparação de dados da organização; Uma vez implantado, pode ser difícil removê-lo.
 
-Any Big Data / Data Science program should be strategically aligned with organizational objectives. Establishing a Big Data strategy drives activities related to user community, data security, Metadata management, including lineage, and Data Quality Management.
+### 5.1 Alinhamento Estratégico
 
-The strategy should document goals, approach, and governance principles. The ability to leverage Big Data requires building organizational skills and capabilities. Use capability management to align business and IT initiatives and project a roadmap. Strategy deliverables should account for managing:
+Qualquer programa de Big Data/Ciência de Dados deve estar estrategicamente alinhado com os objetivos organizacionais. Estabelecer uma estratégia de Big Data impulsiona atividades relacionadas à comunidade de usuários, segurança de dados, gerenciamento de metadados, incluindo linhagem, e Gestão da Qualidade de Dados.
 
-* Information lifecycle
-* Metadata
-* Data quality
-* Data acquisition
-* Data access and security
-* Data governance
-* Data privacy
-* Learning and adoption
-* Operations
+A estratégia deve documentar metas, abordagem e princípios de governança. A capacidade de alavancar Big Data requer o desenvolvimento de habilidades e capacidades organizacionais. Use a gestão de capacidades para alinhar as iniciativas de negócios e de TI e projetar um roteiro. As entregas da estratégia devem levar em conta o gerenciamento de:
 
-### 5.2 Readiness Assessment / Risk Assessment
+* Ciclo de vida da informação
+* Metadados
+* Qualidade dos dados
+* Aquisição de dados
+* Acesso e segurança de dados
+* Governança de dados
+* Privacidade de dados
+* Aprendizado e adoção
+* Operações
 
-As with any development project, implementation of a Big Data or Data Science initiative should align with real business needs. Assess organizational readiness in relation to critical success factors:
+### 5.2 Avaliação de Prontidão/Avaliação de Riscos
 
-* **Business relevance:** How well do the Big Data / Data Science initiatives and their corresponding use cases align with the company’s business? To succeed, they must strongly enforce a business function or process.
-* **Business readiness:** Is the business partner prepared for a long-term incremental delivery? Have they committed themselves to establishing centers of excellence to sustain the product in future releases? How broad is the average knowledge or skill gap within the target community and can that be crossed within a single increment?
-* **Economic viability:** Has the proposed solution considered conservatively the tangible and intangible benefits? Has assessment of ownership costs accounted for the option of buying or leasing items versus building from scratch?
-* **Prototype:** Can the proposed solution be prototyped for a subset of the end user community for a finite timeframe to demonstrate proposed value? Big bang implementations can cause big dollar impacts and a proving ground can mitigate these delivery risks.
+Como em qualquer projeto de desenvolvimento, a implementação de uma iniciativa de Big Data ou Ciência de Dados deve estar alinhada às necessidades reais do negócio. Avalie a prontidão organizacional em relação aos fatores críticos de sucesso:
 
-Likely the most challenging decisions will be around data procurement, platform development, and resourcing.
+* **Relevância para os negócios:** Quão bem as iniciativas de Big Data/Ciência de Dados e seus respectivos casos de uso se alinham aos negócios da empresa? Para ter sucesso, elas devem implementar rigorosamente uma função ou processo de negócios.
+* **Prontidão para os negócios:** O parceiro de negócios está preparado para uma entrega incremental de longo prazo? Ele se comprometeu a estabelecer centros de excelência para sustentar o produto em lançamentos futuros? Qual é a amplitude da lacuna média de conhecimento ou habilidades dentro da comunidade-alvo e ela pode ser superada com um único incremento?
+* **Viabilidade econômica:** A solução proposta considerou de forma conservadora os benefícios tangíveis e intangíveis? A avaliação dos custos de propriedade levou em conta a opção de comprar ou alugar itens em vez de construir do zero?
+* **Protótipo:** A solução proposta pode ser prototipada para um subconjunto da comunidade de usuários finais por um prazo finito para demonstrar o valor proposto? Implementações big bang podem causar grandes impactos financeiros e um campo de provas pode mitigar esses riscos de entrega.
 
-* Many sources exist for digital data stores and not all need to be in-house owned and operated. Some can be procured while others can be leased.
-* Multiple tools and techniques are on the market; matching to general needs will be a challenge.
-* Securing staff with specific skills in a timely manner and retaining top talent during an implementation may require consideration of alternatives including professional services, cloud sourcing or collaborating.
-* The time to build in-house talent may well exceed the delivery window.
+Provavelmente, as decisões mais desafiadoras serão em relação à aquisição de dados, desenvolvimento de plataforma e recursos.
 
-### 5.3 Organization and Cultural Change
+* Existem muitas fontes de armazenamento de dados digitais e nem todas precisam ser de propriedade e operadas internamente. Algumas podem ser adquiridas, enquanto outras podem ser alugadas.
+* Diversas ferramentas e técnicas estão disponíveis no mercado; adequá-las às necessidades gerais será um desafio.
+* Garantir a contratação de pessoal com habilidades específicas em tempo hábil e reter os melhores talentos durante uma implementação pode exigir a consideração de alternativas, incluindo serviços profissionais, terceirização em nuvem ou colaboração.
+* O tempo para desenvolver talentos internos pode muito bem exceder a janela de entrega.
 
-Business people must be fully engaged in order to realize benefits from the advanced analytics. A communications and education program is required to affect this. A Center of Excellence can provide training, start-up sets, design best practices, data source tips and tricks, and other point solutions or artifacts to help empower business users towards a self-service model. In addition to knowledge management, this center can provide timely communications across the developer, designer, analyst, and data consumer communities. As with DW/BI, a Big Data implementation will bring together of a number of key cross-functional roles, including:
+### 5.3 Organização e Mudança Cultural
 
-* **Big Data Platform Architect:** Hardware, operating systems, filesystems, and services.
-* **Ingestion Architect:** Data analysis, systems of record, data modeling, and data mapping. Provides or supports mapping of sources to the Hadoop cluster for query and analysis.
-* **Metadata Specialist:** Metadata interfaces, Metadata architecture, and contents.
-* **Analytic Design Lead:** End user analytic design, best practice guidance implementation in related toolsets, and end user result set facilitation.
-* **Data Scientist:** Provides architecture and model design consultation based on theoretical knowledge of statistics and computability, delivery on appropriate tools and technical application to functional requirements.
+Os executivos devem estar totalmente engajados para obter os benefícios da análise avançada. Um programa de comunicação e educação é necessário para isso. Um Centro de Excelência pode fornecer treinamento, conjuntos de inicialização, melhores práticas de design, dicas e truques sobre fontes de dados e outras soluções pontuais ou artefatos para ajudar a capacitar os usuários corporativos em direção a um modelo de autoatendimento. Além da gestão do conhecimento, este centro pode fornecer comunicações oportunas entre as comunidades de desenvolvedores, designers, analistas e consumidores de dados. Assim como com DW/BI, uma implementação de Big Data reunirá uma série de funções multifuncionais importantes, incluindo:
 
-## 6. Big Data and Data Science Governance
+* **Arquiteto de Plataforma de Big Data:** Hardware, sistemas operacionais, sistemas de arquivos e serviços.
+* **Arquiteto de Ingestão:** Análise de dados, sistemas de registro, modelagem de dados e mapeamento de dados. Fornece ou oferece suporte ao mapeamento de fontes para o cluster Hadoop para consulta e análise.
+* **Especialista em Metadados:** Interfaces de metadados, arquitetura de metadados e conteúdo. ... * **Líder de Design Analítico:** Design analítico para o usuário final, implementação de diretrizes de melhores práticas em conjuntos de ferramentas relacionadas e facilitação de conjuntos de resultados para o usuário final.
+* **Cientista de Dados:** Fornece consultoria em design de arquitetura e modelo com base em conhecimento teórico de estatística e computabilidade, entrega de ferramentas apropriadas e aplicação técnica aos requisitos funcionais.
 
-Big Data, like other data, requires governance. Sourcing, source analysis, ingestion, enrichment, and publishing processes require business as well as technical controls, addressing such questions as:
+## 6. Governança de Big Data e Ciência de Dados
 
-* **Sourcing:** What to source, when to source, what is the best source of data for particular study
-* **Sharing:** What data sharing agreements and contracts to enter into, terms and conditions both inside and outside the organization
-* **Metadata:** What the data means on the source side, how to interpret the results on the output side
-* **Enrichment:** Whether to enrich the data, how to enrich the data, and the benefits of enriching the data
-* **Access:** What to publish, to whom, how, and when
+Big Data, assim como outros dados, requer governança. Os processos de sourcing, análise de fontes, ingestão, enriquecimento e publicação exigem controles comerciais e técnicos, abordando questões como:
 
-An enterprise view of data should drive decisions on data handling.
+* **Sourcing:** O que sourcing, quando sourcing, qual a melhor fonte de dados para um estudo específico
+* **Compartilhamento:** Quais acordos e contratos de compartilhamento de dados firmar, termos e condições dentro e fora da organização
+* **Metadados:** O que os dados significam do lado da fonte, como interpretar os resultados do lado da saída
+* **Enriquecimento:** Se os dados devem ser enriquecidos, como enriquecê-los e os benefícios de enriquecê-los
+* **Acesso:** O que publicar, para quem, como e quando
 
-### 6.1 Visualization Channels Management
+Uma visão corporativa dos dados deve orientar as decisões sobre o manuseio de dados.
 
-A critical success factor in implementing a Data Science approach is the alignment of the appropriate visualization tools to the user community. Depending on the size and nature of the organization, there are likely many different visualization tools being applied in a variety of processes. Ensure that users understand the relative complexity of the visualization tools. Sophisticated users will have increasingly complex demands. Coordination between enterprise architecture, portfolio management, and maintenance teams will be necessary to control visualization channels within and across the portfolio. Be aware that changing data providers or selection criteria will likely have downstream impacts to the elements available for visualization, which can impact the effectiveness of tools.
+### 6.1 Gerenciamento de Canais de Visualização
 
-### 6.2 Data Science and Visualization Standards
+Um fator crítico de sucesso na implementação de uma abordagem de Ciência de Dados é o alinhamento das ferramentas de visualização apropriadas com a comunidade de usuários. Dependendo do tamanho e da natureza da organização, é provável que existam muitas ferramentas de visualização diferentes sendo aplicadas em diversos processos. Certifique-se de que os usuários compreendam a relativa complexidade das ferramentas de visualização. Usuários sofisticados terão demandas cada vez mais complexas. A coordenação entre as equipes de arquitetura corporativa, gestão de portfólio e manutenção será necessária para controlar os canais de visualização dentro e fora do portfólio. Esteja ciente de que a alteração de provedores de dados ou critérios de seleção provavelmente terá impactos posteriores nos elementos disponíveis para visualização, o que pode afetar a eficácia das ferramentas.
 
-It is a best practice to establish a community that defines and publishes visualization standards and guidelines and reviews artifacts within a specified delivery method; this is particularly vital for customer and regulatory facing content. Standards may include:
+### 6.2 Padrões de Ciência de Dados e Visualização
 
-* Tools standards by analytic paradigm, user community, subject area
-* Requests for new data
-* Data set process standard
-* Processes for neutral and expert presentation to avoid biased results, and to ensure that all elements included have been done so in a fair and consistent manner including:
-  * Data inclusion and exclusion
-  * Assumptions in the models
-  * Statistical validity of results
-  * Validity of interpretation of results
-  * Appropriate methods applied
+É uma prática recomendada estabelecer uma comunidade que defina e publique padrões e diretrizes de visualização e revise artefatos dentro de um método de entrega especificado; isso é particularmente vital para conteúdo voltado para clientes e órgãos reguladores. Os padrões podem incluir:
 
-### 6.3 Data Security
+* Padrões de ferramentas por paradigma analítico, comunidade de usuários e área temática
+* Solicitações de novos dados
+* Padrão de processo para conjunto de dados
+* Processos para apresentação neutra e especializada, a fim de evitar resultados tendenciosos e garantir que todos os elementos incluídos tenham sido feitos de forma justa e consistente, incluindo:
+  * Inclusão e exclusão de dados
+  * Suposições nos modelos
+  * Validade estatística dos resultados
+  * Validade da interpretação dos resultados
+  * Métodos apropriados aplicados
 
-Having a reliable process to secure data is itself an organizational asset. Policies for handling and securing Big Data should be established and monitored. These policies should account for how to prevent misuse of personal data and to secure it through its overall lifecycle.
+### 6.3 Segurança de Dados
 
-Securely provision appropriate levels of data for authorized personnel and make subscription data accessible according to agreed-upon levels. Align services to user communities so that special services can be created to provision private data for those communities allowed to ingest it, and mask the data for others. Often organizations create policies for access to information that are not to be violated (such as no access by name, address, or phone number). In order to secure information that is highly sensitive (social security number, credit card numbers, etc.), data will be stored using encryption techniques that obfuscate the information. Encryption can be chosen that, for example, has the same ‘content’ when encrypted, so that patterns may be exposed without knowing the actual values.
+Ter um processo confiável para proteger dados é, em si, um ativo organizacional. Políticas para lidar e proteger Big Data devem ser estabelecidas e monitoradas. Essas políticas devem considerar como prevenir o uso indevido de dados pessoais e protegê-los durante todo o seu ciclo de vida.
 
-Recombination measures the ability to reconstitute sensitive or private data. This capability must be managed as part of the Big Data security practice. The outcomes of the analysis may violate privacy, even though the actual data elements can only be inferred. Understanding the outcomes at the Metadata Management level is critical to avoid this and other potential security violations. This requires knowledge of the intended consumption or analysis to be performed and by what role. Some trusted persons within the organization will be granted the ability to read this data when necessary, but not everyone, and certainly not for deep analysis. (See Chapters 2 and 7.)
+Provisione com segurança níveis apropriados de dados para pessoal autorizado e torne os dados de assinatura acessíveis de acordo com os níveis acordados. Alinhe os serviços às comunidades de usuários para que serviços especiais possam ser criados para provisionar dados privados para as comunidades autorizadas a ingeri-los e mascarar os dados para outras. Frequentemente, as organizações criam políticas de acesso a informações que não devem ser violadas (como a proibição de acesso por nome, endereço ou número de telefone). Para proteger informações altamente sensíveis (número de seguridade social, números de cartão de crédito, etc.), os dados serão armazenados usando técnicas de criptografia que ofuscam as informações. Pode-se escolher uma criptografia que, por exemplo, tenha o mesmo "conteúdo" quando criptografada, de modo que os padrões possam ser expostos sem o conhecimento dos valores reais.
 
-### 6.4 Metadata
+A recombinação mede a capacidade de reconstituir dados sensíveis ou privados. Essa capacidade deve ser gerenciada como parte da prática de segurança de Big Data. Os resultados da análise podem violar a privacidade, mesmo que os elementos de dados reais possam apenas ser inferidos. Compreender os resultados no nível de Gerenciamento de Metadados é fundamental para evitar essa e outras potenciais violações de segurança. Isso requer conhecimento do consumo ou análise pretendidos a serem realizados e por qual função. Algumas pessoas de confiança dentro da organização terão a capacidade de ler esses dados quando necessário, mas não todos, e certamente não para análises aprofundadas. (Consulte os Capítulos 2 e 7.)
 
-As part of a Big Data initiative, an organization will bring together data sets that were created using different approaches and standards. Integration of such data is challenging. Metadata related to these data sets is critical to their successful use. Metadata needs to be carefully managed as part of data ingestion, or the data lake will quickly become a data swamp. The user community must have tools that enable them to create a master list of data sets with Metadata that characterizes the structure, content, and quality of the data, including the source and lineage of the data and the definition and intended uses of entities and data elements. Technical Metadata can be harvested from a variety of Big Data tools including data storage layers, data integration, MDM, and even the source filesystems. Consideration of real-time feeds versus data at rest versus computational data elements is necessary to complete the source side lineage.
+### 6.4 Metadados
 
-### 6.5 Data Quality
+Como parte de uma iniciativa de Big Data, uma organização reunirá conjuntos de dados criados com diferentes abordagens e padrões. A integração desses dados é desafiadora. Os metadados relacionados a esses conjuntos de dados são essenciais para seu uso bem-sucedido. Os metadados precisam ser gerenciados cuidadosamente como parte da ingestão de dados, ou o data lake rapidamente se tornará um pântano de dados. A comunidade de usuários deve ter ferramentas que permitam criar uma lista mestre de conjuntos de dados com metadados que caracterizem a estrutura, o conteúdo e a qualidade dos dados, incluindo a origem e a linhagem dos dados e a definição e os usos pretendidos de entidades e elementos de dados. Metadados técnicos podem ser coletados de uma variedade de ferramentas de Big Data, incluindo camadas de armazenamento de dados, integração de dados, MDM e até mesmo os sistemas de arquivos de origem. Considerar feeds em tempo real versus dados em repouso versus elementos de dados computacionais é necessário para completar a linhagem do lado da origem.
 
-Data Quality is a measure of deviation from an expected result: the smaller the difference, the better the data meets expectation, and the higher the quality. In an engineered environment, standards for quality should be easy to define (though practice shows that they are not or that many organizations do not take the time to define them). Some people have raised the question of whether data quality even matters for Big Data. Common sense says it does. For analytics to be reliable, the underlying data must be reliable. In Big Data projects, it may seem very difficult to determine the quality of data, but an effort needs to be made to assess quality in order to have confidence in the analysis. This can be done through an initial assessment, which is necessary to understand the data, and through that, the identification of measurements for subsequent instances of the data set. Data quality assessment will produce valuable Metadata that will be necessary input to any effort to integrate data. Consider that most mature Big Data organizations scan data input sources using data quality toolsets to understand the information contained within. Most advanced data quality toolsets offer functionality that enables an organization to test assumptions and build knowledge about its data. For example:
+### 6.5 Qualidade dos Dados
 
-* **Discovery:** Where information resides within the data set
-* **Classification:** What types of information are present based upon standardized patterns
-* **Profiling:** How the data is populated and structured
-* **Mapping:** What other data sets can be matched to these values
+A Qualidade dos Dados é uma medida do desvio de um resultado esperado: quanto menor a diferença, melhor os dados atendem às expectativas e maior a qualidade. Em um ambiente de engenharia, os padrões de qualidade devem ser fáceis de definir (embora a prática mostre que não são ou que muitas organizações não se dão ao trabalho de defini-los). Algumas pessoas levantaram a questão de se a qualidade dos dados realmente importa para o Big Data. O senso comum diz que sim. Para que a análise seja confiável, os dados subjacentes devem ser confiáveis. Em projetos de Big Data, pode parecer muito difícil determinar a qualidade dos dados, mas é preciso um esforço para avaliar a qualidade a fim de garantir a confiança na análise. Isso pode ser feito por meio de uma avaliação inicial, necessária para a compreensão dos dados, e, por meio dela, da identificação de medições para instâncias subsequentes do conjunto de dados. A avaliação da qualidade dos dados produzirá metadados valiosos que serão uma contribuição necessária para qualquer esforço de integração de dados. Considere que a maioria das organizações de Big Data maduras examina as fontes de entrada de dados usando conjuntos de ferramentas de qualidade de dados para entender as informações nelas contidas. Os conjuntos de ferramentas de qualidade de dados mais avançados oferecem funcionalidades que permitem a uma organização testar suposições e construir conhecimento sobre seus dados. Por exemplo:
 
-Just as in DW/BI, it is tempting to put data quality assessment last. Without it, though, it may be difficult to know what Big Data represents or how to make connections between data sets. Integration will be necessary, and the likelihood that data feeds will be provisioned with identical structures and elements is very nearly zero.
+* **Descoberta:** Onde as informações residem no conjunto de dados
+* **Classificação:** Quais tipos de informações estão presentes com base em padrões padronizados
+* **Criação de perfil:** Como os dados são preenchidos e estruturados
+* **Mapeamento:** Quais outros conjuntos de dados podem ser correspondidos a esses valores
 
-This means for example, codes and other potential linking data will likely vary from data provider to data provider. Without initial assessment, such conditions will go unnoticed until an analytic need is expressed that attempts to merge or combine those providers.
+Assim como em DW/BI, é tentador colocar a avaliação da qualidade dos dados em último lugar. Sem isso, porém, pode ser difícil saber o que Big Data representa ou como estabelecer conexões entre conjuntos de dados. A integração será necessária, e a probabilidade de que os feeds de dados sejam provisionados com estruturas e elementos idênticos é praticamente nula.
 
-### 6.6 Metrics
+Isso significa, por exemplo, que códigos e outros dados de vinculação potenciais provavelmente variarão de provedor de dados para provedor de dados. Sem uma avaliação inicial, tais condições passarão despercebidas até que seja expressa uma necessidade analítica que tente mesclar ou combinar esses provedores.
 
-Metrics are vital to any management process; they not only quantify activity, but can define the variation between what is observed and what is desired.
+### 6.6 Métricas
 
-#### 6.6.1 Technical Usage Metrics
+As métricas são vitais para qualquer processo de gestão; elas não apenas quantificam a atividade, mas também podem definir a variação entre o que é observado e o que é desejado.
 
-Many of the Big Data tools offer insightful administrator reporting capabilities that interact directly with the contents queried by the user community. Technical usage analysis looks for data hot spots (most frequently accessed data) in order to manage data distribution and preserve performance. Growth rates also feed into capacity planning.
+#### 6.6.1 Métricas de Uso Técnico
 
-#### 6.6.2 Loading and Scanning Metrics
+Muitas ferramentas de Big Data oferecem recursos de relatórios gerenciais detalhados que interagem diretamente com o conteúdo consultado pela comunidade de usuários. A análise de uso técnico busca pontos críticos de dados (dados acessados ​​com mais frequência) para gerenciar a distribuição de dados e preservar o desempenho. As taxas de crescimento também contribuem para o planejamento de capacidade.
 
-Loading and scanning metrics define the ingestion rate and interaction with the user community. As each new data source is acquired, loading metrics are expected to spike and then level as that source is fully ingested. Real-time feeds may be served through service queries, but can also appear as scheduled extracts are processed; for these feeds, expect a constant increase in data loading.
+#### 6.6.2 Métricas de Carregamento e Varredura
 
-The application layer(s) would likely provide the best data usage metrics from execution logs. Monitor the consumption or access through available Metadata, which can guide usage analysis by showing query execution plans that have occurred most frequently.
+As métricas de carregamento e varredura definem a taxa de ingestão e a interação com a comunidade de usuários. À medida que cada nova fonte de dados é adquirida, espera-se que as métricas de carregamento aumentem e se estabilizem à medida que a fonte for totalmente ingerida. Feeds em tempo real podem ser fornecidos por meio de consultas de serviço, mas também podem aparecer à medida que extrações agendadas são processadas; para esses feeds, espere um aumento constante no carregamento de dados.
 
-Scanning metrics should be combined with any query processing that may occur outside of the analytical processing itself. Administrative tools should be able to provide this level of reporting, as well as overall service health.
+A(s) camada(s) de aplicação provavelmente fornecerão as melhores métricas de uso de dados a partir dos logs de execução. Monitore o consumo ou o acesso por meio de metadados disponíveis, que podem orientar a análise de uso, mostrando os planos de execução de consultas que ocorreram com mais frequência.
 
-#### 6.6.3 Learnings and Stories
+As métricas de varredura devem ser combinadas com qualquer processamento de consulta que possa ocorrer fora do próprio processamento analítico. Ferramentas administrativas devem ser capazes de fornecer esse nível de relatório, bem como a saúde geral do serviço.
 
-In order to show value, the Big Data / Data Science program must measure tangible outcomes that justify the cost of developing solutions and managing process changes. Metrics can include quantification of benefits, cost prevention or avoidance, as well as length of time between initiation and realized benefits. Common measurements include
+#### 6.6.3 Aprendizados e Histórias
 
-* Counts and accuracy of models and patterns developed
-* Revenue realization from identified opportunities
-* Cost reduction from avoiding identified threats
+Para demonstrar valor, o programa de Big Data/Ciência de Dados deve mensurar resultados tangíveis que justifiquem o custo do desenvolvimento de soluções e do gerenciamento de mudanças de processo. As métricas podem incluir a quantificação de benefícios, a prevenção ou a eliminação de custos, bem como o tempo entre o início e a obtenção dos benefícios. Medições comuns incluem:
 
-Sometimes, the outcomes of the analytics tell stories that can lead to organization re-direction, re-vitalization, and new opportunity. One measurement can be a count of new projects and initiatives generated by marketing and senior executives.
+* Contagens e precisão de modelos e padrões desenvolvidos
+* Realização de receita a partir de oportunidades identificadas
+* Redução de custos ao evitar ameaças identificadas
 
-## 7. Works Cited / Recommended
+Às vezes, os resultados da análise contam histórias que podem levar à reorientação, revitalização e novas oportunidades da organização. Uma mensuração pode ser a contagem de novos projetos e iniciativas gerados por executivos seniores e de marketing.
+
+## 7. Trabalhos Citados / Recomendados
 
 Abate, Robert, Peter Aiken and Joseph Burke. Integrating Enterprise Applications Utilizing A Services Based Architecture. John Wiley and Sons, 1997. Print.
 
@@ -629,11 +630,11 @@ van Rijmenam, Mark. Think Bigger: Developing a Successful Big Data Strategy for 
 
 
 
-[^88]: Sourced and used with permission from Robert Abate / EMC Corporation.
-[^89]: Refer to the Machine Learning resources periodic table at http://bit.ly/1DpTrHC for an interactive guide to the differing platforms available for the machine learning developer, scientist, and practitioner.
-[^90]: CIVDDD, the Centre for Innovation in Information and Data-Driven Design, is a research grant in big data analytics and visualization to develop next generation data discovery, design, and visualization techniques for new computational tools, representational strategies, and interfaces.
-[^91]: Data visualization is an evolving field. Principles applied in data visualization are based on design principles. See Tufte, 2001 and McCandless 2012. Numerous web-based resources exist with examples and counter examples. See the Periodic Table of Visualization Methods at Visual Literacy.Org http://bit.ly/IX1bvI.
-[^92]: See Martin Fowler, Datensparsamkeit. Blog, 12 December 2013. Fowler brings into question the assumption that we should always capture as much data as possible. He points out that the “capture it all” approach brings up privacy risks. In its place, he puts forth the idea of data minimization or data sparsity (from the German term Datensparsamkeit) http://bit.ly/1f9Nq8K.
-[^93]: For more information on the impact of bias, which can profoundly affect the interpretation of scientific results, consult the following websites: INFORMS is the leading international association for Operations Research and Analytics professionals. http://bit.ly/2sANQRW, Statistical Society of Canada: http://bit.ly/2oz2o5H and American Statistical Association: http://bit.ly/1rjAmHX.
-[^94]: For more information, visit the R-Project website: http://bit.ly/19WExR5.
-[^95]: Image Source: “Greenplum Database 4.0: Critical Mass Innovation”, White Paper, August 2010.
+[^88]: Fonte e uso com permissão de Robert Abate/EMC Corporation.
+[^89]: Consulte a tabela periódica de recursos de Aprendizado de Máquina em http://bit.ly/1DpTrHC para um guia interativo sobre as diferentes plataformas disponíveis para desenvolvedores, cientistas e profissionais de aprendizado de máquina.
+[^90]: O CIVDDD, Centro de Inovação em Design Orientado a Informação e Dados, é uma bolsa de pesquisa em análise e visualização de big data para desenvolver técnicas de descoberta, design e visualização de dados de última geração para novas ferramentas computacionais, estratégias de representação e interfaces.
+[^91]: A visualização de dados é um campo em evolução. Os princípios aplicados na visualização de dados são baseados em princípios de design. Consulte Tufte, 2001 e McCandless, 2012. Existem inúmeros recursos online com exemplos e contraexemplos. Consulte a Tabela Periódica de Métodos de Visualização em Visual Literacy.Org http://bit.ly/IX1bvI.
+[^92]: Consulte Martin Fowler, Datensparsamkeit. Blog, 12 de dezembro de 2013. Fowler questiona a premissa de que devemos sempre capturar o máximo de dados possível. Ele ressalta que a abordagem de "capturar tudo" traz riscos à privacidade. Em seu lugar, ele propõe a ideia de minimização de dados ou escassez de dados (do termo alemão Datensparsamkeit) http://bit.ly/1f9Nq8K.
+[^93]: Para mais informações sobre o impacto do viés, que pode afetar profundamente a interpretação de resultados científicos, consulte os seguintes sites: INFORMS é a principal associação internacional para profissionais de Pesquisa Operacional e Análise de Dados. http://bit.ly/2sANQRW, Statistical Society of Canada: http://bit.ly/2oz2o5H e American Statistical Association: http://bit.ly/1rjAmHX.
+[^94]: Para mais informações, visite o site do R-Project: http://bit.ly/19WExR5.
+[^95]: Fonte da imagem: “Greenplum Database 4.0: Critical Mass Innovation”, White Paper, agosto de 2010.

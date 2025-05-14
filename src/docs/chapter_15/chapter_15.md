@@ -1,420 +1,421 @@
-# Data Management Maturity Assessment
+# Avaliação de Maturidade em Gestão de Dados
 
-## 1. Introduction
+## 1. Introdução
 
-Capability Maturity Assessment (CMA) is an approach to process improvement based on a framework – a Capability Maturity Model (CMM) – that describes how characteristics of a process evolve from ad hoc to optimal. The CMA concept grew out of efforts by the United States Department of Defense to establish criteria through which to evaluate software contractors. In the mid-1980s, the Capability Maturity Model for Software was published by the Software Engineering Institute of Carnegie-Mellon University. While first applied to software development, CMMs have been developed for a range of other fields, including data management.
+A Avaliação de Maturidade de Capacidades (CMA) é uma abordagem para melhoria de processos baseada em uma estrutura – um Modelo de Maturidade de Capacidades (CMM) – que descreve como as características de um processo evoluem de ad hoc para ótimo. O conceito de CMA surgiu dos esforços do Departamento de Defesa dos Estados Unidos para estabelecer critérios para avaliar fornecedores de software. Em meados da década de 1980, o Modelo de Maturidade de Capacidades para Software foi publicado pelo Instituto de Engenharia de Software da Universidade Carnegie-Mellon. Embora inicialmente aplicados ao desenvolvimento de software, os CMMs foram desenvolvidos para uma variedade de outras áreas, incluindo a gestão de dados.
 
-Maturity models are defined in terms of a progression through levels that describe process characteristics. When an organization gains an understanding of process characteristics, it can evaluate its level of maturity and put in place a plan to improve its capabilities. It can also measure improvement and compare itself to competitors or partners, guided by the levels of the model. With each new level, process execution becomes more consistent, predictable, and reliable. Processes improve as they take on characteristics of the levels. Progression happens in a set order. No level can be skipped. Levels commonly include: [^96]
+Os modelos de maturidade são definidos em termos de uma progressão por níveis que descrevem as características do processo. Quando uma organização adquire uma compreensão das características do processo, ela pode avaliar seu nível de maturidade e implementar um plano para aprimorar suas capacidades. Ela também pode mensurar a melhoria e se comparar com concorrentes ou parceiros, guiada pelos níveis do modelo. A cada novo nível, a execução do processo se torna mais consistente, previsível e confiável. Os processos melhoram à medida que assumem as características dos níveis. A progressão ocorre em uma ordem definida. Nenhum nível pode ser pulado. Os níveis geralmente incluem: [^96]
 
-* **Level 0:** Absence of capability
-* **Level 1:** Initial or Ad Hoc: Success depends on the competence of individuals
-* **Level 2:** Repeatable: Minimum process discipline is in place
-* **Level 3:** Defined: Standards are set and used
-* **Level 4:** Managed: Processes are quantified and controlled
-* **Level 5:** Optimized: Process improvement goals are quantified
+* **Nível 0:** Ausência de capacidade
+* **Nível 1:** Inicial ou Ad Hoc: O sucesso depende da competência dos indivíduos
+* **Nível 2:** Repetível: Disciplina mínima de processo em vigor
+* **Nível 3:** Definido: Padrões são definidos e utilizados
+* **Nível 4:** Gerenciado: Processos são quantificados e controlados
+* **Nível 5:** Otimizado: Metas de melhoria de processo são quantificadas
 
-Within each level, criteria are described across process features. For example, a maturity model may include criteria related to how processes are executed, including the level of automation of those processes. It may focus on policies and controls, as well as process details.
+Dentro de cada nível, os critérios são descritos em todas as características do processo. Por exemplo, um modelo de maturidade pode incluir critérios relacionados à forma como os processos são executados, incluindo o nível de automação desses processos. Ele pode se concentrar em políticas e controles, bem como em detalhes do processo.
 
-Such an assessment helps identify what is working well, what is not working well, and where an organization has gaps. Based on the findings, the organization can develop a roadmap to target:
+Essa avaliação ajuda a identificar o que está funcionando bem, o que não está funcionando bem e onde uma organização apresenta lacunas. Com base nas descobertas, a organização pode desenvolver um roteiro para atingir:
 
-* High-value improvement opportunities related to processes, methods, resources, and automation
-* Capabilities that align with business strategy
-* Governance processes for periodic evaluation of organizational progress based on characteristics in the model
+* Oportunidades de melhoria de alto valor relacionadas a processos, métodos, recursos e automação
+* Capacidades alinhadas à estratégia de negócios
+* Processos de governança para avaliação periódica do progresso organizacional com base nas características do modelo
 
-A Data Management Maturity Assessment (DMMA) can be used to evaluate data management overall, or it can be used to focus on a single Knowledge Area or even a single process. Whatever the focus, a DMMA can help bridge the gap between business and IT perspectives on the health and effectiveness of data management practices. A DMMA provides a common language for depicting what progress looks like across Data Management Knowledge Areas and offers a stage-based path to improvement, which can be tailored to an organization’s strategic priorities. [^97] Thus, it can be used both to set and to measure organizational goals, as well as to compare one’s organization against other organizations or industry benchmarks.
+Uma Avaliação de Maturidade em Gestão de Dados (DMMA) pode ser usada para avaliar a gestão de dados como um todo ou para focar em uma única Área de Conhecimento ou até mesmo em um único processo. Seja qual for o foco, uma DMMA pode ajudar a preencher a lacuna entre as perspectivas de negócios e de TI sobre a saúde e a eficácia das práticas de gestão de dados. Uma DMMA fornece uma linguagem comum para descrever o progresso em todas as Áreas de Conhecimento em Gestão de Dados e oferece um caminho para a melhoria baseado em estágios, que pode ser adaptado às prioridades estratégicas de uma organização. [^97] Portanto, pode ser usada tanto para definir quanto para mensurar metas organizacionais, bem como para comparar a organização com outras organizações ou benchmarks do setor.
 
-Before beginning any DMMA, an organization has to establish a baseline understanding of its current state capabilities, assets, goals, and priorities. A certain level of organizational maturity is required to conduct the assessment in the first place, as well as to effectively respond to the assessment results by setting targets, establishing a roadmap, and monitoring progress.
+Antes de iniciar qualquer DMMA, uma organização precisa estabelecer uma compreensão básica de seu estado atual de capacidades, ativos, metas e prioridades. Um certo nível de maturidade organizacional é necessário para conduzir a avaliação em primeiro lugar, bem como para responder efetivamente aos resultados da avaliação definindo metas, estabelecendo um roteiro e monitorando o progresso.
 
-### 1.1 Business Drivers
+### 1.1 Impulsionadores de Negócios
 
-Organizations conduct capability maturity assessments for a number of reasons:
+As organizações realizam avaliações de maturidade de capacidade por diversos motivos:
 
-* Regulation: Regulatory oversight requires minimum levels of maturity in data management.
-* Data Governance: The data governance function requires a maturity assessment for planning and compliance purposes.
-* Organizational readiness for process improvement: An organization recognizes a need to improve its practices and begins by assessing its current state. For example, it makes a commitment to manage Master Data and needs to assess its readiness to deploy MDM processes and tools.
-* Organizational change: An organizational change, such as a merger, presents data management challenges. A DMMA provides input for planning to meet these challenges.
-* New technology: Advancements in technology offers new ways to manage and use data. The organization wants to understand the likelihood of successful adoption.
-* Data management issues: There is need to address data quality issues or other data management challenges and the organization wants to baseline its current state in order to make better decisions about how to implement change.
+* Regulamentação: A supervisão regulatória exige níveis mínimos de maturidade em gerenciamento de dados.
+* Governança de Dados: A função de governança de dados exige uma avaliação de maturidade para fins de planejamento e conformidade.
+* Prontidão organizacional para melhoria de processos: Uma organização reconhece a necessidade de aprimorar suas práticas e começa avaliando seu estado atual. Por exemplo, ela se compromete a gerenciar Dados Mestres e precisa avaliar sua prontidão para implantar processos e ferramentas de MDM.
+* Mudança organizacional: Uma mudança organizacional, como uma fusão, apresenta desafios de gerenciamento de dados. Uma DMMA fornece informações para o planejamento para enfrentar esses desafios.
+* Novas tecnologias: Os avanços tecnológicos oferecem novas maneiras de gerenciar e usar dados. A organização deseja entender a probabilidade de adoção bem-sucedida.
+* Problemas de gerenciamento de dados: Há necessidade de abordar problemas de qualidade de dados ou outros desafios de gerenciamento de dados, e a organização deseja estabelecer uma linha de base para seu estado atual a fim de tomar melhores decisões sobre como implementar a mudança.
 
-![Figure 103 Context Diagram: Data Management Maturity Assessment](figure_103.png)
-Figure 103 Context Diagram: Data Management Maturity Assessment
+![Figura 103 Diagrama de Contexto: Avaliação de Maturidade em Gestão de Dados](figure_103.png)
+Figura 103 Diagrama de Contexto: Avaliação de Maturidade em Gestão de Dados
 
-### 1.2 Goals and Principles
+### 1.2 Metas e Princípios
 
-The primary goal of a data management capability assessment is to evaluate the current state of critical data management activities in order to plan for improvement. The evaluation places the organization on the maturity scale by clarifying specific strengths and weaknesses. It helps the organization identify, prioritize, and implement improvement opportunities.
+O principal objetivo de uma avaliação de capacidade de gestão de dados é avaliar o estado atual das atividades críticas de gestão de dados para planejar melhorias. A avaliação coloca a organização na escala de maturidade, esclarecendo pontos fortes e fracos específicos. Ela ajuda a organização a identificar, priorizar e implementar oportunidades de melhoria.
 
-In meeting its primary goal, a DMMA can have a positive impact on culture. It helps:
+Ao atingir seu objetivo principal, uma DMMA pode ter um impacto positivo na cultura. Ela ajuda a:
 
-* Educate stakeholders about data management concepts, principles, and practices
-* Clarify stakeholder roles and responsibilities in relation to organizational data
-* Highlight the need to manage data as a critical asset
-* Broaden recognition of data management activities across the organization
-* Contribute to improving the collaboration necessary for effective data governance
+* Educar as partes interessadas sobre os conceitos, princípios e práticas de gestão de dados
+* Esclarecer as funções e responsabilidades das partes interessadas em relação aos dados organizacionais
+* Destacar a necessidade de gerenciar dados como um ativo crítico
+* Ampliar o reconhecimento das atividades de gestão de dados em toda a organização
+* Contribuir para melhorar a colaboração necessária para uma governança de dados eficaz
 
-Based on assessment results, an organization can enhance its Data Management program so it supports the organization’s operational and strategic direction. Typically, Data Management programs develop in organizational silos. They rarely begin with an enterprise view of the data. A DMMA can equip the organization to develop a cohesive vision that supports overall organizational strategy. A DMMA enables the organization to clarify priorities, crystalize objectives, and develop an integrated plan for improvement.
+Com base nos resultados da avaliação, uma organização pode aprimorar seu programa de Gestão de Dados para que ele apoie a direção operacional e estratégica da organização. Normalmente, os programas de Gestão de Dados se desenvolvem em silos organizacionais. Raramente começam com uma visão corporativa dos dados. Uma DMMA pode equipar a organização para desenvolver uma visão coesa que suporte a estratégia organizacional geral. Uma DMMA permite que a organização esclareça prioridades, cristalize objetivos e desenvolva um plano integrado de melhorias.
 
-### 1.3 Essential Concepts
+### 1.3 Conceitos Essenciais
 
-#### 1.3.1 Assessment Levels and Characteristics
+#### 1.3.1 Níveis e Características da Avaliação
 
-CMMs usually define five or six levels of maturity, each with its own characteristics that span from non-existent or ad hoc to optimized or high performance. See Figure 104 for a sample visualization. The following is a generic summary of macro states of data management maturity. A detailed assessment would include criteria for sub-categories like strategy, policy, standards, role definition, etc. within each of the Knowledge Areas.
+Os CMMs geralmente definem cinco ou seis níveis de maturidade, cada um com suas próprias características, que vão desde inexistente ou ad hoc até otimizado ou de alto desempenho. Veja a Figura 104 para uma visualização de exemplo. A seguir, um resumo genérico dos macroestados de maturidade da gestão de dados. Uma avaliação detalhada incluiria critérios para subcategorias como estratégia, política, padrões, definição de papéis, etc., dentro de cada uma das Áreas de Conhecimento.
 
-* **Level 0: No Capability:** No organized data management practices or formal enterprise processes for managing data. Very few organizations exist at a Level 0. This level is acknowledged in a maturity model for purposes of definition.
-* **Level 1 Initial / Ad Hoc:** General-purpose data management using a limited tool set, with little or no governance. Data handling is highly reliant on a few experts. Roles and responsibilities are defined within silos. Each data owner receives, generates, and sends data autonomously. Controls, if they exist, are applied inconsistently. Solutions for managing data are limited. Data quality issues are pervasive but not addressed. Infrastructure supports are at the business unit level.
+* **Nível 0: Sem Capacidade:** Não há práticas organizadas de gestão de dados ou processos corporativos formais para gerenciar dados. Existem muito poucas organizações no Nível 0. Este nível é reconhecido em um modelo de maturidade para fins de definição.
 
-![Figure 104 Data Management Maturity Model Example](figure_104.png)
-Figure 104 Data Management Maturity Model Example
+* **Nível 1 Inicial / Ad Hoc:** Gerenciamento de dados de uso geral, utilizando um conjunto limitado de ferramentas, com pouca ou nenhuma governança. O tratamento de dados depende fortemente de poucos especialistas. Funções e responsabilidades são definidas em silos. Cada proprietário de dados recebe, gera e envia dados de forma autônoma. Os controles, se existentes, são aplicados de forma inconsistente. As soluções para o gerenciamento de dados são limitadas. Problemas de qualidade de dados são generalizados, mas não são resolvidos. Os suportes de infraestrutura estão no nível da unidade de negócios.
 
-Assessment criteria may include the presence of any process controls, such as logging of data quality issues.
+![Figura 104 Exemplo de Modelo de Maturidade em Gerenciamento de Dados](figure_104.png)
+Figura 104 Exemplo de Modelo de Maturidade em Gerenciamento de Dados
 
-* **Level 2 Repeatable:** Emergence of consistent tools and role definition to support process execution. In Level 2, the organization begins to use centralized tools and to provide more oversight for data management. Roles are defined and processes are not dependent solely on specific experts. There is organizational awareness of data quality issues and concepts. Concepts of Master and Reference Data begin to be recognized.
+Os critérios de avaliação podem incluir a presença de quaisquer controles de processo, como o registro de problemas de qualidade de dados.
 
-Assessment criteria might include formal role definition in artifacts like job descriptions, the existence of process documentation, and the capacity to leverage tool sets.
+* **Nível 2 Repetível:** Surgimento de ferramentas consistentes e definição de papéis para apoiar a execução dos processos. No Nível 2, a organização começa a utilizar ferramentas centralizadas e a fornecer maior supervisão para o gerenciamento de dados. Os papéis são definidos e os processos não dependem apenas de especialistas específicos. Há consciência organizacional sobre questões e conceitos de qualidade de dados. Os conceitos de Dados Mestres e de Referência começam a ser reconhecidos.
 
-* **Level 3 Defined:** Emerging data management capability. Level 3 sees the introduction and institutionalization of scalable data management processes and a view of DM as an organizational enabler. Characteristics include the replication of data across an organization with some controls in place and a general increase in overall data quality, along with coordinated policy definition and management. More formal process definition leads to a significant reduction in manual intervention. This, along with a centralized design process, means that process outcomes are more predictable.
+Os critérios de avaliação podem incluir a definição formal de papéis em artefatos como descrições de cargos, a existência de documentação de processos e a capacidade de utilizar conjuntos de ferramentas.
 
-Assessment criteria might include the existence of data management policies, the use of scalable processes, and the consistency of data models and system controls.
+* **Nível 3 Definido:** Capacidade emergente de gerenciamento de dados. O Nível 3 prevê a introdução e a institucionalização de processos escaláveis ​​de gerenciamento de dados e uma visão do Gerenciamento de Dados como um facilitador organizacional. As características incluem a replicação de dados em uma organização com alguns controles implementados e um aumento geral na qualidade geral dos dados, juntamente com a definição e o gerenciamento coordenados de políticas. Uma definição mais formal de processos leva a uma redução significativa na intervenção manual. Isso, juntamente com um processo de design centralizado, significa que os resultados do processo são mais previsíveis.
 
-* **Level 4** Managed: Institutional knowledge gained from growth in Levels 1-3 enables the organization to predict results when approaching new projects and tasks and to begin to manage risks related to data. Data management includes performance metrics. Characteristics of Level 4 include standardized tools for data management from desktop to infrastructure, coupled with a well-formed centralized planning and governance function. Expressions of this level are a measurable increase in data quality and organization-wide capabilities such as end-to-end data audits.
+Os critérios de avaliação podem incluir a existência de políticas de gerenciamento de dados, o uso de processos escaláveis ​​e a consistência dos modelos de dados e controles do sistema.
 
-Assessment criteria might include metrics related to project success, operational metrics for systems, and data quality metrics.
+* **Nível 4** Gerenciado: O conhecimento institucional adquirido com o crescimento nos Níveis 1 a 3 permite que a organização preveja resultados ao abordar novos projetos e tarefas e comece a gerenciar riscos relacionados aos dados. O gerenciamento de dados inclui métricas de desempenho. As características do Nível 4 incluem ferramentas padronizadas para gerenciamento de dados, do desktop à infraestrutura, juntamente com uma função centralizada de planejamento e governança bem estruturada. Expressões deste nível são um aumento mensurável na qualidade dos dados e em recursos em toda a organização, como auditorias de dados de ponta a ponta.
 
-* **Level 5:** Optimization: When data management practices are optimized, they are highly predictable, due to process automation and technology change management. Organizations at this level of maturity focus on continuous improvement. At Level 5, tools enable a view data across processes. The proliferation of data is controlled to prevent needless duplication. Well-understood metrics are used to manage and measure data quality and processes.
+Os critérios de avaliação podem incluir métricas relacionadas ao sucesso do projeto, métricas operacionais para sistemas e métricas de qualidade de dados.
 
-Assessment criteria might include change management artifacts and metrics on process improvement.
+* **Nível 5:** Otimização: Quando as práticas de gerenciamento de dados são otimizadas, elas são altamente previsíveis, devido à automação de processos e ao gerenciamento de mudanças tecnológicas. Organizações neste nível de maturidade focam na melhoria contínua. No Nível 5, as ferramentas permitem uma visão dos dados em todos os processos. A proliferação de dados é controlada para evitar duplicações desnecessárias. Métricas bem compreendidas são utilizadas para gerenciar e mensurar a qualidade dos dados e dos processos.
 
-#### 1.3.2 Assessment Criteria
+Os critérios de avaliação podem incluir artefatos de gestão de mudanças e métricas de melhoria de processos.
 
-Each capability level will have specific assessment criteria related to the processes being evaluated. For example, if the maturity of the data modeling function is being evaluated, level 1 may ask whether a data modeling practice exists at all and how many systems it extends to; level 2 may ask whether an approach to enterprise data modeling has been defined; level 3 will ask the degree to which the approach has been implemented; level 4 will ask whether modeling standards have been effectively enforced; and level 5 will ask about processes in place to improve modeling practices. (See Chapter 5.)
+#### 1.3.2 Critérios de Avaliação
 
-At any level, assessment criteria will be evaluated along a scale, such as 1 – Not started, 2 – In process, 3 – Functional, 4 – Effective, showing progress within that level and movement toward the next level. Scores can be combined or visually displayed to enable understanding of the variance between current and desired state. When assessing using a model that can be mapped to a DAMA-DMBOK Data Management Knowledge Area, criteria could be formulated based on the categories in the Context Diagram:
+Cada nível de capacidade terá critérios de avaliação específicos relacionados aos processos avaliados. Por exemplo, se a maturidade da função de modelagem de dados estiver sendo avaliada, o nível 1 pode perguntar se existe alguma prática de modelagem de dados e a quantos sistemas ela se estende; o nível 2 pode perguntar se uma abordagem para modelagem de dados corporativos foi definida; o nível 3 perguntará o grau de implementação da abordagem; o nível 4 perguntará se os padrões de modelagem foram efetivamente aplicados; e o nível 5 perguntará sobre os processos em vigor para aprimorar as práticas de modelagem. (Consulte o Capítulo 5.)
 
-* **Activity:** To what degree is the activity or process in place? Are criteria defined for effective and efficient execution? How well defined and executed is the activity? Are best practice outputs produced?
-* **Tools:** To what degree is the activity automated and supported by a common set of tools? Is tool training provided within specific roles and responsibilities? Are tools available when and where needed? Are they configured optimally to provide the most effective and efficient results? To what extent is long-term technology planning in place to accommodate future state capabilities?
-* **Standards:** To what degree is the activity supported by a common set of standards? How well documented are the standards? Are standards enforced and supported by governance and change management?
-* **People and resources:** To what degree is the organization staffed to carry out the activity? What specific skills, training, and knowledge are necessary to execute the activity? How well are roles and responsibilities defined?
+Em qualquer nível, os critérios de avaliação serão avaliados em uma escala, como 1 – Não iniciado, 2 – Em andamento, 3 – Funcional, 4 – Eficaz, mostrando o progresso dentro desse nível e o movimento em direção ao próximo nível. As pontuações podem ser combinadas ou exibidas visualmente para permitir a compreensão da variação entre o estado atual e o desejado. Ao avaliar usando um modelo que pode ser mapeado para uma Área de Conhecimento em Gerenciamento de Dados DAMA-DMBOK, os critérios podem ser formulados com base nas categorias do Diagrama de Contexto:
 
-Figure 105 illustrates one way of presenting a visual summary of findings from a DMMA. For each of the capabilities (Governance, Architecture, etc.) the outer ring of the display shows the level of capability the organization has determined it needs to compete successfully. The inner ring displays the level of capability as determined via the assessment. Areas where the distance between the two rings is largest represent the greatest risks to the organization. Such a report can help set priorities. It can also be used to measure progress over time.
+* **Atividade:** Em que grau a atividade ou processo está em vigor? Os critérios estão definidos para uma execução eficaz e eficiente? Quão bem definida e executada é a atividade? Os resultados das melhores práticas são produzidos?
+* **Ferramentas:** Em que grau a atividade é automatizada e suportada por um conjunto comum de ferramentas? O treinamento em ferramentas é fornecido dentro de funções e responsabilidades específicas? As ferramentas estão disponíveis quando e onde necessário? Elas estão configuradas de forma otimizada para fornecer os resultados mais eficazes e eficientes? Em que medida o planejamento tecnológico de longo prazo está em vigor para acomodar as capacidades do estado futuro?
+* **Padrões:** Em que grau a atividade é suportada por um conjunto comum de padrões? Quão bem documentados são os padrões? Os padrões são aplicados e suportados pela governança e gestão de mudanças?
+* **Pessoas e recursos:** Em que grau a organização possui pessoal para executar a atividade? Quais habilidades, treinamento e conhecimento específicos são necessários para executar a atividade? Quão bem as funções e responsabilidades são definidas?
 
-![Figure 105 Example of a Data Management Maturity Assessment Visualization](figure_105.png)
-Figure 105 Example of a Data Management Maturity Assessment Visualization
+A Figura 105 ilustra uma maneira de apresentar um resumo visual das descobertas de um DMMA. Para cada uma das capacidades (Governança, Arquitetura, etc.), o anel externo da tela mostra o nível de capacidade que a organização determinou ser necessário para competir com sucesso. O anel interno exibe o nível de capacidade determinado pela avaliação. As áreas onde a distância entre os dois anéis é maior representam os maiores riscos para a organização. Esse relatório pode ajudar a definir prioridades. Também pode ser usado para medir o progresso ao longo do tempo.
 
-#### 1.3.3 Existing DMMA Frameworks [^98]
+![Figura 105 Exemplo de uma Visualização de Avaliação de Maturidade em Gestão de Dados](figure_105.png)
+Figura 105 Exemplo de uma Visualização de Avaliação de Maturidade em Gestão de Dados
 
-A data management maturity assessment framework is segmented into discrete data management topics. Framework focus and content vary depending on whether they have a general or industry-specific focus. However, most address subjects that can be mapped to DAMA-DMBOK Knowledge Areas. The examples below are intended to illustrate the range of Capability Maturity Models that have been developed in the data management space. Many vendors have developed their own models. Organizations should evaluate several models before choosing a vendor or before developing their own framework.
+#### 1.3.3 Frameworks de DMMA Existentes [^98]
 
-##### 1.3.3.1 CMMI Data Management Maturity Model (DMM)
+Um framework de avaliação de maturidade em gestão de dados é segmentado em tópicos discretos de gestão de dados. O foco e o conteúdo do framework variam dependendo se eles têm um foco geral ou específico do setor. No entanto, a maioria aborda assuntos que podem ser mapeados para as Áreas de Conhecimento DAMA-DMBOK. Os exemplos abaixo pretendem ilustrar a gama de Modelos de Maturidade de Capacidades que foram desenvolvidos na área de gerenciamento de dados. Muitos fornecedores desenvolveram seus próprios modelos. As organizações devem avaliar vários modelos antes de escolher um fornecedor ou antes de desenvolver sua própria estrutura.
 
-The CMMI (Capability Maturity Model Institute) has developed the CMMI-DMM (Data Management Maturity Model) which provides assessment criteria for the following data management areas:
+##### 1.3.3.1 Modelo de Maturidade em Gerenciamento de Dados (DMM) do CMMI
 
-* Data Management Strategy
-* Data Governance
-* Data Quality
-* Platform and Architecture
-* Data Operations
-* Supporting Processes
+O CMMI (Capability Maturity Model Institute) desenvolveu o CMMI-DMM (Modelo de Maturidade em Gerenciamento de Dados), que fornece critérios de avaliação para as seguintes áreas de gerenciamento de dados:
 
-Within each of these processes, the model identifies sub-processes for evaluation. For example, the Data Quality section accounts for Data Quality Strategy and Data Quality Assessment, Profiling, and Cleansing. The model also accounts for the relation between the data management areas. For example the need for stakeholder alignment and the relation between business processes and Data Quality Management. [^99]
+* Estratégia de Gerenciamento de Dados
+* Governança de Dados
+* Qualidade de Dados
+* Plataforma e Arquitetura
+* Operações de Dados
+* Processos de Suporte
 
-##### 1.3.3.2 EDM Council DCAM [^100]
+Dentro de cada um desses processos, o modelo identifica subprocessos para avaliação. Por exemplo, a seção Qualidade de Dados considera a Estratégia de Qualidade de Dados e a Avaliação, Criação de Perfil e Limpeza da Qualidade de Dados. O modelo também considera a relação entre as áreas de gerenciamento de dados. Por exemplo, a necessidade de alinhamento das partes interessadas e a relação entre os processos de negócios e o Gerenciamento de Qualidade de Dados. [^99]
 
-The Enterprise Data Management Council, an industry advocacy organization for financial services headquartered in the United States, has developed the DCAM (Data Management Capability Assessment Model). The result of a membership-driven effort to get consensus on data management best practices, the DCAM describes 37 capabilities and 115 sub-capabilities associated with the development of a sustainable Data Management program. Scoring focuses on the level of stakeholder engagement, formality of process, and existence of artifacts that demonstrate the achievement of capabilities.
+##### 1.3.3.2 DCAM do Conselho de EDM [^100]
 
-##### 1.3.3.3 IBM Data Governance Council Maturity Model [^101]
+O Enterprise Data Management Council, uma organização de defesa do setor de serviços financeiros com sede nos Estados Unidos, desenvolveu o DCAM (Modelo de Avaliação de Capacidades de Gestão de Dados). Resultado de um esforço conjunto de membros para obter consenso sobre as melhores práticas de gestão de dados, o DCAM descreve 37 capacidades e 115 subcapacidades associadas ao desenvolvimento de um programa sustentável de Gestão de Dados. A pontuação se concentra no nível de engajamento das partes interessadas, na formalidade do processo e na existência de artefatos que demonstram a obtenção das capacidades.
 
-The IBM Data Governance Council Maturity Model was based on input from a council of 55 organizations. Council members collaborated to define a common set of observable and desired behaviors that organizations can use to evaluate and design their own data governance programs. The purpose of the model is to help organizations build consistency and quality control in governance through proven business technologies, collaborative methods, and best practices. The model is organized around four key categories:
+##### 1.3.3.3 Modelo de Maturidade do Conselho de Governança de Dados da IBM [^101]
 
-* **Outcomes:** Data risk management and compliance, value creation
-* **Enablers:** Organizational structure and awareness, policy, stewardship
-* **Core disciplines:** Data Quality Management, information lifecycle management, information security and privacy
-* **Supporting Disciplines:** Data Architecture, classification and Metadata, audit information, logging and reporting
+O Modelo de Maturidade do Conselho de Governança de Dados da IBM foi baseado nas contribuições de um conselho de 55 organizações. Os membros do conselho colaboraram para definir um conjunto comum de comportamentos observáveis ​​e desejados que as organizações podem usar para avaliar e projetar seus próprios programas de governança de dados. O objetivo do modelo é ajudar as organizações a construir consistência e controle de qualidade na governança por meio de tecnologias de negócios comprovadas, métodos colaborativos e melhores práticas. O modelo é organizado em quatro categorias principais:
 
-The IBM model is presented both as a Maturity Framework and as a set of assessment questions with answers constructed to indicate maturity levels.
+* **Resultados:** Gestão de riscos de dados e conformidade, criação de valor
+* **Facilitadores:** Estrutura organizacional e conscientização, política, administração
+* **Disciplinas principais:** Gestão da Qualidade de Dados, gestão do ciclo de vida da informação, segurança da informação e privacidade
+* **Disciplinas de Suporte:** Arquitetura de Dados, classificação e Metadados, informações de auditoria, registro e relatórios
 
-##### 1.3.3.4 Stanford Data Governance Maturity Model [^102]
+O modelo da IBM é apresentado como uma Estrutura de Maturidade e como um conjunto de perguntas de avaliação com respostas construídas para indicar os níveis de maturidade.
 
-The Stanford Data Governance Maturity Model was developed for use by the University; it was not intended to be an industry standard. Even still, it serves as a solid example of a model that provides guidance and a standard of measurement. The model focuses on data governance, not data management, but it nevertheless provides a basis for evaluating data management overall. The model differentiates between foundational (awareness, formalization, Metadata) and project (data stewardship, Data Quality, Master Data) components. Within each, it articulates drivers for people, policies, and capabilities. It then articulates characteristics of each level of maturity. It also provides qualitative and quantitative measurements for each level.
+##### 1.3.3.4 Modelo de Maturidade de Governança de Dados de Stanford [^102]
 
-##### 1.3.3.5 Gartner’s Enterprise Information Management Maturity Model
+O Modelo de Maturidade de Governança de Dados de Stanford foi desenvolvido para uso pela Universidade; não se destinava a ser um padrão do setor. Mesmo assim, serve como um exemplo sólido de um modelo que fornece orientação e um padrão de mensuração. O modelo se concentra na governança de dados, não na gestão de dados, mas, ainda assim, fornece uma base para avaliar a gestão de dados em geral. O modelo diferencia entre componentes fundamentais (conscientização, formalização, metadados) e de projeto (administração de dados, qualidade de dados, dados mestres). Dentro de cada um, articula os motivadores para pessoas, políticas e capacidades. Em seguida, articula as características de cada nível de maturidade. Também fornece métricas qualitativas e quantitativas para cada nível.
 
-Gartner has published an EIM maturity model, which establishes criteria for evaluating vision, strategy, metrics, governance, roles and responsibilities, lifecycle, and infrastructure.
+##### 1.3.3.5 Modelo de Maturidade em Gestão da Informação Corporativa da Gartner
 
-## 2. Activities
+A Gartner publicou um modelo de maturidade em Gestão da Informação Corporativa (EIM), que estabelece critérios para avaliar visão, estratégia, métricas, governança, papéis e responsabilidades, ciclo de vida e infraestrutura.
 
-Data Management Maturity Assessments require planning. To ensure practical, actionable results, allow time within the plan for preparation of materials and evaluation of results. Assessments should be conducted in a short, defined timeframe. The purpose of the evaluation is expose current strengths and opportunities for improvement – not to solve problems.
+## 2. Atividades
 
-Evaluations are conducted by soliciting knowledge from business, data management, and information technology participants. The goal is to reach a consensus view of current state capabilities, supported by evidence. Evidence may come from examination of artifacts (such as whether database backups exist), through interviews (verifying someone is performing system of record evaluation for re-use), or both.
+Avaliações de Maturidade em Gestão de Dados exigem planejamento. Para garantir resultados práticos e acionáveis, reserve um tempo dentro do plano para a preparação de materiais e a avaliação dos resultados. As avaliações devem ser realizadas em um prazo curto e definido. O objetivo da avaliação é expor os pontos fortes atuais e as oportunidades de melhoria – não resolver problemas.
 
-Assessments can and should be scaled to fit the needs of the organization. However, amend with care. Models may lose rigor or traceability to original intent if shortened or edited. Keep the integrity of the model intact when customizing.
+As avaliações são realizadas por meio da solicitação de conhecimento de participantes de negócios, gestão de dados e tecnologia da informação. O objetivo é chegar a uma visão consensual das capacidades do estado atual, apoiada por evidências. As evidências podem vir da análise de artefatos (como a existência de backups de banco de dados), de entrevistas (verificando se alguém está realizando a avaliação do sistema de registros para reutilização) ou de ambos.
 
-### 2.1 Plan Assessment Activities
+As avaliações podem e devem ser dimensionadas para atender às necessidades da organização. No entanto, faça alterações com cuidado. Os modelos podem perder o rigor ou a rastreabilidade da intenção original se forem encurtados ou editados. Mantenha a integridade do modelo intacta ao personalizá-lo.
 
-Planning for an assessment includes defining the overall approach and communicating with stakeholders before and during the assessment to ensure they are engaged. The assessment itself includes collecting and evaluating inputs and communicating results, recommendations, and action plans.
+### 2.1 Planejar as Atividades de Avaliação
 
-#### 2.1.1 Define Objectives
+O planejamento de uma avaliação inclui a definição da abordagem geral e a comunicação com as partes interessadas antes e durante a avaliação para garantir o seu engajamento. A avaliação em si inclui a coleta e a avaliação de insumos e a comunicação de resultados, recomendações e planos de ação.
 
-Any organization that decides it should assess its data management maturity level is already engaged in the effort to improve its practices. In most cases, such an organization will have identified the drivers for the assessment. These drivers must be clarified in the form of objectives that describe the focus and influence the scope of the assessment. The objectives for the assessment must be clearly understood by executives and the lines of business, who can help ensure alignment with the organization’s strategic direction.
+#### 2.1.1 Definir Objetivos
 
-Assessment objectives also provide criteria by which to evaluate which assessment model to adopt, which business areas to prioritize for assessment, and who should provide direct input to the process.
+Qualquer organização que decida avaliar seu nível de maturidade em gerenciamento de dados já está engajada no esforço de aprimorar suas práticas. Na maioria dos casos, essa organização já terá identificado os motivadores da avaliação. Esses direcionadores devem ser esclarecidos na forma de objetivos que descrevam o foco e influenciem o escopo da avaliação. Os objetivos da avaliação devem ser claramente compreendidos pelos executivos e pelas linhas de negócios, que podem ajudar a garantir o alinhamento com a direção estratégica da organização.
 
-#### 2.1.2 Choose a Framework
+Os objetivos da avaliação também fornecem critérios para avaliar qual modelo de avaliação adotar, quais áreas de negócios priorizar para avaliação e quem deve contribuir diretamente para o processo.
 
-As described in Section 1.3.3, existing frameworks focus on different aspects of data management. Review these frameworks in the context of assumptions about current state and assessment objectives in order to choose one that will inform the organization in meaningful ways. Focus areas of the assessment model can be customized based on organizational focus or scope.
+#### 2.1.2 Escolha uma Estrutura
 
-The choice of framework influences how the assessment is conducted. The team working on it should have expertise in the model and the methodology on which it depends.
+Conforme descrito na Seção 1.3.3, as estruturas existentes concentram-se em diferentes aspectos da gestão de dados. Revise essas estruturas no contexto de premissas sobre o estado atual e os objetivos da avaliação, a fim de escolher uma que informe a organização de maneira significativa. As áreas de foco do modelo de avaliação podem ser personalizadas com base no foco ou escopo organizacional.
 
-#### 2.1.3 Define Organizational Scope
+A escolha da estrutura influencia a forma como a avaliação é conduzida. A equipe que trabalha nela deve ter experiência no modelo e na metodologia da qual ele depende.
 
-Most DMM Frameworks are designed to apply to an entire enterprise. However, an enterprise-wide scope may be impractical. For a first assessment, it is usually best to define a manageable scope, such as a single business area or program. The areas chosen represent a meaningful subset of the organization and participants should be able to influence key business processes that affect the data assets within scope. As part of a phased approach, evaluation can be repeated for other parts of the organization. There are trade-offs between local and enterprise assessments:
+#### 2.1.3 Definir o Escopo Organizacional
 
-* Localized assessments can go much deeper into the details. They can also be done more quickly because the scope is contained. To do a localized assessment, select a function that is highly regulated, such as financial reporting within a public company. The inputs, roles, tools, and consumers may be outside of the functions being assessed, which can complicate the scoping and execution of the assessment. Well-planned localized assessments can often be aggregated and weighted to form an enterprise assessment, since many data assets are shared.
-* Enterprise assessments focus on the broad and sometimes disconnected parts of an organization. An enterprise assessment may be created from localized DMMA’s or it can be a separate undertaking. For example, an organization may evaluate different functions (research and development, manufacturing, and financing) based on the same criteria. The inputs, roles, tools, and consumers are typically pan- enterprise and multi-leveled.
+A maioria das Estruturas DMM é projetada para ser aplicada a uma empresa inteira. No entanto, um escopo que abranja toda a empresa pode ser impraticável. Para uma primeira avaliação, geralmente é melhor definir um escopo gerenciável, como uma única área de negócios ou programa. As áreas escolhidas representam um subconjunto significativo da organização e os participantes devem ser capazes de influenciar os principais processos de negócios que afetam os ativos de dados dentro do escopo. Como parte de uma abordagem em fases, a avaliação pode ser repetida para outras partes da organização. Existem compensações entre avaliações locais e empresariais:
 
-#### 2.1.4 Define Interaction Approach
+* As avaliações localizadas podem se aprofundar muito mais nos detalhes. Elas também podem ser realizadas mais rapidamente, pois o escopo é restrito. Para realizar uma avaliação localizada, selecione uma função altamente regulamentada, como relatórios financeiros em uma empresa de capital aberto. As entradas, funções, ferramentas e consumidores podem estar fora das funções avaliadas, o que pode complicar o escopo e a execução da avaliação. Avaliações localizadas bem planejadas podem frequentemente ser agregadas e ponderadas para formar uma avaliação empresarial, uma vez que muitos ativos de dados são compartilhados.
+* As avaliações empresariais concentram-se nas partes amplas e, às vezes, desconexas de uma organização. Uma avaliação empresarial pode ser criada a partir de DMMAs localizadas ou pode ser uma tarefa separada. Por exemplo, uma organização pode avaliar diferentes funções (pesquisa e desenvolvimento, manufatura e financiamento) com base nos mesmos critérios. As entradas, funções, ferramentas e consumidores são normalmente pan-empresariais e multiníveis.
 
-In conducting a DMMA, an organization should follow recommendations for the selected model. Information gathering activities may include workshops, interviews, surveys, and artifact reviews. Employ methods that work well within the organizational culture, minimize the time commitment from participants, and enable the assessment to be completed quickly so that actions from the assessment can be defined while the process is fresh in participants’ minds.
+#### 2.1.4 Definir a Abordagem de Interação
 
-In all cases, responses will need to be formalized by having participants rate the assessment criteria. In many cases, assessment will also include actual inspection and evaluation of artifacts and other evidence.
+Ao conduzir uma DMMA, uma organização deve seguir as recomendações para o modelo selecionado. As atividades de coleta de informações podem incluir workshops, entrevistas, pesquisas e revisões de artefatos. Empregue métodos que funcionem bem dentro da cultura organizacional, minimizem o tempo dedicado pelos participantes e permitam que a avaliação seja concluída rapidamente, para que as ações da avaliação possam ser definidas enquanto o processo ainda está fresco na mente dos participantes.
 
-If there are delays in completing the assessment, stakeholders are likely to lose enthusiasm for the Data Management program and the impetus for contributing to positive change. It is advisable to avoid detailed and comprehensive analysis and to emphasize sound judgment based on the expertise of the assessment leaders. The DMM Frameworks provide the measurement criteria and an embedded path to improvement. These enable synthesis of a complete picture of the current Data Management program and its parts.
+Em todos os casos, as respostas precisarão ser formalizadas, solicitando que os participantes avaliem os critérios de avaliação. Em muitos casos, a avaliação também incluirá inspeção e avaliação reais de artefatos e outras evidências.
 
-#### 2.1.5 Plan Communications
+Se houver atrasos na conclusão da avaliação, as partes interessadas provavelmente perderão o entusiasmo pelo programa de Gestão de Dados e o ímpeto de contribuir para uma mudança positiva. É aconselhável evitar análises detalhadas e abrangentes e enfatizar o bom senso com base na expertise dos líderes da avaliação. As Estruturas DMM fornecem os critérios de mensuração e um caminho integrado para a melhoria. Isso permite a síntese de um panorama completo do programa de Gestão de Dados atual e de suas partes.
 
-Communications contribute to the overall success of the assessment and the action items coming out of it. Communication will be directed at participants and other stakeholders. Findings may impact people’s jobs, through changes in methodology and organizational alignment, so it is important to communicate clearly about the purpose, the process, and specific expectations for individuals and groups. Ensure participants understand the assessment model, as well as how the findings will be used.
+#### 2.1.5 Planejar as Comunicações
 
-Before the assessment begins, stakeholders should be informed about expectations for the assessment. Communications should describe:
+As comunicações contribuem para o sucesso geral da avaliação e para os itens de ação resultantes dela. A comunicação será direcionada aos participantes e outras partes interessadas. As descobertas podem impactar o trabalho das pessoas, por meio de mudanças na metodologia e no alinhamento organizacional, por isso é importante comunicar claramente o propósito, o processo e as expectativas específicas para indivíduos e grupos. Certifique-se de que os participantes entendam o modelo de avaliação, bem como como as descobertas serão utilizadas.
 
-* The purpose of the DMMA
-* How it will be conducted
-* What their involvement may be
-* The schedule of assessment activities
+Antes do início da avaliação, as partes interessadas devem ser informadas sobre as expectativas para a avaliação. As comunicações devem descrever:
 
-During any activity of the assessment (for example, a focus group meeting), ensure there is a clear agenda, including a plan to answer any follow up questions. Continually remind participants of the goals and objectives. Always thank the participants and describe next steps.
+* O propósito do DMMA
+* Como será conduzido
+* Qual poderá ser o seu envolvimento
+* O cronograma das atividades de avaliação
 
-Determine if the planned approach is likely to be successful across the targeted business scope, including such factors as resistance / cooperation, possible internal legal concerns about exposure to outside inspection if troubling gaps are found, or possible Human Resources concerns.
+Durante qualquer atividade da avaliação (por exemplo, uma reunião de grupo focal), certifique-se de que haja uma agenda clara, incluindo um plano para responder a quaisquer perguntas de acompanhamento. Lembre continuamente os participantes das metas e objetivos. Sempre agradeça aos participantes e descreva os próximos passos.
 
-The communications plan should include a schedule to report on findings and recommendations at all levels, including general reports and executive briefings.
+Determine se a abordagem planejada tem probabilidade de sucesso em todo o escopo de negócios visado, incluindo fatores como resistência/cooperação, possíveis preocupações legais internas sobre a exposição à inspeção externa caso sejam encontradas lacunas preocupantes, ou possíveis preocupações com Recursos Humanos.
 
-### 2.2 Perform Maturity Assessment
+O plano de comunicação deve incluir um cronograma para relatar as descobertas e recomendações em todos os níveis, incluindo relatórios gerais e briefings executivos.
 
-#### 2.2.1 Gather Information
+### 2.2 Realizar a Avaliação de Maturidade
 
-The next step is to gather appropriate inputs for the assessment, based on the interaction model. At a minimum, the information gathered will include formal ratings of assessment criteria. It may also include input from interviews and focus groups, system analysis and design documentation, data investigation, email strings, procedure manuals, standards, policies, file repositories, approval workflows, various work products, Metadata repositories, data and integration reference architectures, templates, and forms.
+#### 2.2.1 Coletar Informações
 
-#### 2.2.2 Perform the Assessment
+O próximo passo é coletar as informações apropriadas para a avaliação, com base no modelo de interação. No mínimo, as informações coletadas incluirão classificações formais dos critérios de avaliação. Também podem incluir informações de entrevistas e grupos focais, análise de sistemas e documentação de design, investigação de dados, sequências de e-mails, manuais de procedimentos, padrões, políticas, repositórios de arquivos, fluxos de trabalho de aprovação, diversos produtos de trabalho, repositórios de metadados, arquiteturas de referência de dados e integração, modelos e formulários.
 
-The overall rating assignments and interpretation are typically multi-phased. Participants will have different opinions generating different ratings across the assessment topics. Discussion and rationalization will be needed to reconcile the ratings. Input is provided by the participants and then refined through artifact reviews or examination by the assessment team. The goal is to come to a consensus view of current state. This view should be supported by evidence (i.e., proof of practice demonstrated by behavior and artifacts). If stakeholders do not have consensus on current state, it is difficult to have consensus on how to improve the organization.
+#### 2.2.2 Realizar a Avaliação
 
-The refinement generally works as follows:
+As atribuições e interpretações gerais das avaliações são normalmente multifásicas. Os participantes terão opiniões diferentes, gerando classificações diferentes entre os tópicos da avaliação. Discussão e racionalização serão necessárias para reconciliar as classificações. As informações são fornecidas pelos participantes e, em seguida, refinadas por meio de revisões de artefatos ou análise pela equipe de avaliação. O objetivo é chegar a uma visão consensual do estado atual. Essa visão deve ser apoiada por evidências (ou seja, comprovação de prática demonstrada por comportamento e artefatos). Se as partes interessadas não chegarem a um consenso sobre o estado atual, será difícil chegar a um consenso sobre como melhorar a organização.
 
-* Review results against the rating method and assign a preliminary rating to each work product or activity.
-* Document the supporting evidence.
-* Review with participants to come to consensus on a final rating for each area. If appropriate, use weight modifiers based on the importance of each criterion.
-* Document the interpretation of the rating using the model criteria statements and assessor comments.
-* Develop visualizations to illustrate results of the assessment.
+O refinamento geralmente funciona da seguinte forma:
 
-### 2.3 Interpret Results
+* Analisar os resultados em relação ao método de classificação e atribuir uma classificação preliminar a cada produto de trabalho ou atividade.
+* Documentar as evidências de apoio.
+* Revisar com os participantes para chegar a um consenso sobre uma classificação final para cada área. Se apropriado, usar modificadores de peso com base na importância de cada critério.
+* Documentar a interpretação da classificação usando as declarações de critérios do modelo e os comentários do avaliador.
+* Desenvolver visualizações para ilustrar os resultados da avaliação.
 
-Interpretation of the results consists of identifying improvement opportunities aligned with organizational strategy and recommending actions required to take advantage of these opportunities. In other words, interpretation defines next steps toward a target state. When the assessment is complete, organizations need to plan for the target state that they aspire to achieve in data management. The amount of time and effort required to achieve the desired target will vary, depending on the starting point, the culture of the organization, and the drivers for change.
+### 2.3 Interpretar os Resultados
 
-When presenting assessment results, start with the meaning of the ratings for the organization. The ratings can be expressed with respect to organizational and cultural drivers as well as business goals, such as customer satisfaction or increased sales. Illustrate the linkage between the current capabilities of the organization and the business processes and strategies that they support, and the benefits of improving these capabilities by moving to the target state.
+A interpretação dos resultados consiste em identificar oportunidades de melhoria alinhadas à estratégia organizacional e recomendar as ações necessárias para aproveitar essas oportunidades. Em outras palavras, a interpretação define os próximos passos em direção a um estado-alvo. Quando a avaliação estiver concluída, as organizações precisam planejar o estado-alvo que desejam alcançar em gerenciamento de dados. O tempo e o esforço necessários para atingir a meta desejada variam, dependendo do ponto de partida, da cultura da organização e dos motivadores da mudança.
 
-#### 2.3.1 Report Assessment Results
+Ao apresentar os resultados da avaliação, comece com o significado das classificações para a organização. As classificações podem ser expressas em relação aos motivadores organizacionais e culturais, bem como às metas de negócios, como satisfação do cliente ou aumento nas vendas. Ilustre a ligação entre as capacidades atuais da organização e os processos e estratégias de negócios que elas suportam, e os benefícios de aprimorar essas capacidades ao atingir o estado-alvo.
 
-The assessment report should include:
+#### 2.3.1 Relatar os Resultados da Avaliação
 
-* Business drivers for the assessment
-* Overall results of the assessment
-* Ratings by topic with gaps indicated
-* A recommended approach to close gaps
-* Strengths of the organization as observed
-* Risks to progress
-* Investment and outcomes options
-* Governance and metrics to measure progress
-* Resource analysis and potential future utilization
-* Artifacts that can be used or re-used within the organization
+O relatório de avaliação deve incluir:
 
-The assessment report is an input to the enhancement of the Data Management program, either as a whole or by Data Management Knowledge Area. From it, the organization can develop or advance its data management strategy. Strategy should include initiatives that further business goals through improved governance of processes and standards.
+* Motivadores de negócios para a avaliação
+* Resultados gerais da avaliação
+* Classificações por tópico com as lacunas indicadas
+* Uma abordagem recomendada para eliminar as lacunas
+* Pontos fortes da organização conforme observados
+* Riscos para o progresso
+* Opções de investimento e resultados
+* Governança e métricas para medir o progresso
+* Análise de recursos e potencial utilização futura
+* Artefatos que podem ser usados ​​ou reutilizados dentro da organização
 
-#### 2.3.2 Develop Executive Briefings
+O relatório de avaliação é uma contribuição para o aprimoramento do programa de Gestão de Dados, seja como um todo ou por Área de Conhecimento em Gestão de Dados. A partir dele, a organização pode desenvolver ou aprimorar sua estratégia de gestão de dados. A estratégia deve incluir iniciativas que promovam os objetivos de negócios por meio da melhoria da governança de processos e padrões.
 
-The assessment team should prepare executive briefings that summarize findings – strengths, gaps, and recommendations – that executives will use as input to decisions about targets, initiatives, and timelines. The team must tailor the messages to clarify likely impacts and benefits for each executive group. Often executives wish to aim higher than the assessment recommendations. In other words, they want to skip levels in the maturity model. Targeting a higher level of maturity has to be reflected in the impact analysis for the recommendations. There is a cost to this kind of acceleration, and costs must be balanced against benefits.
+#### 2.3.2 Desenvolver Briefings Executivos
 
-### 2.4 Create a Targeted Program for Improvements
+A equipe de avaliação deve preparar briefings executivos que resumam as descobertas – pontos fortes, lacunas e recomendações – que os executivos usarão como subsídio para decisões sobre metas, iniciativas e cronogramas. A equipe deve adaptar as mensagens para esclarecer os prováveis ​​impactos e benefícios para cada grupo executivo. Frequentemente, os executivos desejam atingir metas mais altas do que as recomendações da avaliação. Em outras palavras, eles querem pular níveis no modelo de maturidade. A busca por um nível mais alto de maturidade deve ser refletida na análise de impacto das recomendações. Há um custo para esse tipo de aceleração, e os custos devem ser ponderados em relação aos benefícios.
 
-The DMMA should have a direct impact on data strategy and IT governance, as well as the Data Management program and strategy. Recommendations from the DMMA should be actionable. These should describe capabilities the organizational requires. In doing so, an assessment can be a powerful tool for IT and business leaders to set organizational priorities and allocate resources.
+### 2.4 Criar um Programa Direcionado para Melhorias
 
-#### 2.4.1 Identify Actions and Create a Roadmap
+O DMMA deve ter um impacto direto na estratégia de dados e na governança de TI, bem como no programa e na estratégia de Gerenciamento de Dados. As recomendações do DMMA devem ser acionáveis. Elas devem descrever as capacidades que a organização requer. Ao fazer isso, uma avaliação pode ser uma ferramenta poderosa para líderes de TI e negócios definirem prioridades organizacionais e alocarem recursos.
 
-DMMA ratings highlight items for management attention. Initially, a rating is likely to be used as a standalone metric to determine how well an organization is doing a specific activity. However, ratings can be quickly operationalized into ongoing measures, especially for activities where change is desired (e.g., “The target is level ‘n’ because we need or want to be able to do something ‘z’”). If the assessment model is used for ongoing measurement, its criteria not only guides the organization to higher levels of maturity, its criteria also keeps organizational attention on improvement efforts.
+#### 2.4.1 Identificar Ações e Criar um Roteiro
 
-The DMM assessment results should be detailed and comprehensive enough to support a multiple year data management improvement program, including initiatives that will build data management capability as the organization adopt best practices. Since change largely happens in organizations through projects, new projects must be influenced to adopt better practices. The roadmap or reference plan should contain:
+As classificações DMMA destacam itens que exigem atenção da gerência. Inicialmente, uma classificação provavelmente será usada como uma métrica independente para determinar o quão bem uma organização está realizando uma atividade específica. No entanto, as classificações podem ser rapidamente operacionalizadas em medidas contínuas, especialmente para atividades em que a mudança é desejada (por exemplo, "A meta é nível 'n' porque precisamos ou queremos ser capazes de fazer algo 'z'"). Se o modelo de avaliação for usado para mensuração contínua, seus critérios não apenas guiarão a organização para níveis mais elevados de maturidade, como também manterão a atenção da organização nos esforços de melhoria.
 
-* Sequenced activities to effect improvements in specific data management functions
-* A timeline for implementing improvement activities
-* Expected improvements in DMMA ratings once activities have been implemented
-* Oversight activities, including the maturing this oversight over the timeline
+Os resultados da avaliação DMM devem ser detalhados e abrangentes o suficiente para fundamentar um programa de melhoria da gestão de dados de vários anos, incluindo iniciativas que desenvolverão a capacidade de gestão de dados à medida que a organização adotar as melhores práticas. Como a mudança ocorre em grande parte nas organizações por meio de projetos, novos projetos devem ser influenciados para adotar melhores práticas. O roteiro ou plano de referência deve conter:
 
-The roadmap will give targets and a pace for change within prioritized work streams, and accompanied by an approach for measuring progress.
+* Atividades sequenciadas para efetuar melhorias em funções específicas de gerenciamento de dados
+* Um cronograma para a implementação de atividades de melhoria
+* Melhorias esperadas nas classificações do DMMA após a implementação das atividades
+* Atividades de supervisão, incluindo o amadurecimento dessa supervisão ao longo do cronograma
 
-### 2.5 Re-assess Maturity
+O roteiro estabelecerá metas e um ritmo para a mudança dentro dos fluxos de trabalho priorizados, acompanhado de uma abordagem para mensurar o progresso.
 
-Re-assessments should be conducted at regular intervals. They are part of the cycle of continuous improvement:
+### 2.5 Reavaliar a Maturidade
 
-* Establish a baseline rating through the first assessment
-* Define re-assessment parameters, including organizational scope
-* Repeat DMM assessment as necessary on a published schedule
-* Track trends relative to the initial baseline
-* Develop recommendations based on the re-assessment findings
+As reavaliações devem ser realizadas em intervalos regulares. Elas fazem parte do ciclo de melhoria contínua:
 
-Re-assessment can also re-invigorate or refocus effort. Measurable progress assists in maintaining commitment and enthusiasm across the organization. Changes to regulatory frameworks, internal or external policy, or innovations that could change the approach to governance and strategies are additional reasons to re-assess periodically.
+* Estabelecer uma classificação de base até a primeira avaliação
+* Definir os parâmetros de reavaliação, incluindo o escopo organizacional
+* Repetir a avaliação do DMM conforme necessário em um cronograma publicado
+* Acompanhar as tendências em relação à linha de base inicial
+* Desenvolver recomendações com base nas conclusões da reavaliação
 
-## 3. Tools
+A reavaliação também pode revigorar ou redirecionar os esforços. O progresso mensurável auxilia na manutenção do comprometimento e do entusiasmo em toda a organização. Mudanças em marcos regulatórios, políticas internas ou externas, ou inovações que possam alterar a abordagem de governança e estratégias são motivos adicionais para reavaliações periódicas.
 
-* **Data Management Maturity Framework:** The primary tool used in a maturity assessment is the DMM framework itself.
-* **Communication Plan:** A communication plan includes an engagement model for stakeholders, the type of information to be shared, and the schedule for sharing information.
-* **Collaboration Tools:** Collaboration tools allow findings from the assessment to be shared. In addition, evidence of data management practices may be found in email, completed templates, and review documents created via standard processes for collaborative design, operations, incident tracking, reviews, and approvals.
-* **Knowledge Management and Metadata Repositories:** Data standards, policies, methods, agendas, minutes of meetings or decisions, and business and technical artifacts that serve as proof of practice may be managed in these repositories. In some CMMs, lack of such repositories is an indicator of lower maturity in the organization. Metadata repositories can exist in several constructs, which may not be obvious to the participants. For example, some Business Intelligence applications rely completely on Metadata to compile their views and reports, while not referring to it as a separate distinct repository.
+## 3. Ferramentas
 
-## 4. Techniques
+* **Estrutura de Maturidade em Gestão de Dados:** A principal ferramenta utilizada em uma avaliação de maturidade é a própria estrutura do DMM.
+* **Plano de Comunicação:** Um plano de comunicação inclui um modelo de engajamento para as partes interessadas, o tipo de informação a ser compartilhada e o cronograma para o compartilhamento de informações.
+* **Ferramentas de Colaboração:** As ferramentas de colaboração permitem o compartilhamento dos resultados da avaliação. Além disso, evidências de práticas de gestão de dados podem ser encontradas em e-mails, modelos preenchidos e documentos de revisão criados por meio de processos padrão para design colaborativo, operações, rastreamento de incidentes, revisões e aprovações.
+* **Gestão do Conhecimento e Repositórios de Metadados:** Padrões de dados, políticas, métodos, agendas, atas de reuniões ou decisões e artefatos técnicos e de negócios que servem como prova de prática podem ser gerenciados nesses repositórios. Em alguns CMMs, a falta desses repositórios é um indicador de menor maturidade na organização. Repositórios de metadados podem existir em diversas construções, o que pode não ser óbvio para os participantes. Por exemplo, alguns aplicativos de Business Intelligence dependem completamente de metadados para compilar suas visualizações e relatórios, sem se referir a eles como um repositório distinto e separado.
 
-Many techniques related to executing a DMMA are defined by the methodology of the DMM framework chosen. Techniques that are more general are described here.
+## 4. Técnicas
 
-### 4.1 Selecting a DMM Framework
+Muitas técnicas relacionadas à execução de um DMMA são definidas pela metodologia da estrutura DMM escolhida. Técnicas mais gerais são descritas aqui.
 
-The following criteria should be considered when selecting a DMM framework.
+### 4.1 Selecionando uma Estrutura DMM
 
-* **Accessibility:** Practices are stated in non-technical terms that convey the functional essence of the activity.
-* **Comprehensiveness:** The framework addresses a broad scope of data management activities and includes business engagement, not merely IT processes.
-* **Extensible and flexible:** The model is structured to enable enhancement of industry-specific or additional disciplines and can be used either in whole or in part, depending on the needs of the organization.
-* **Future progress path built-in:** While specific priorities differ from organization to organization, the DMM framework outlines a logical way forward within each of the functions it describes.
-* **Industry-agnostic vs. industry-specific:** Some organizations will benefit from an industry-specific approach, others from a more generic framework. Any DMM framework should also adhere to data management best practices that cross verticals.
-* **Level of abstraction or detail:** Practices and evaluation criteria are expressed at a sufficient level of detail to ensure that they can be related to the organization and the work it performs.
-* **Non-prescriptive:** The framework describes what needs to be performed, not how it must be performed.
-* **Organized by topic:** The framework places data management activities in their appropriate context, enabling each to be evaluated separately, while recognizing the dependencies.
-* **Repeatable:** The framework can be consistently interpreted, supporting repeatable results to compare an organization against others in its industry and to track progress over time.
-* **Supported by a neutral, independent organization:** The model should be vendor neutral in order to avoid conflicts of interest, and widely available to ensure a broad representation of best practices.
-* **Technology neutral:** The focus of the model should be on practices, rather than tools.
-* **Training support included:** The model is supported by comprehensive training to enable professionals to master the framework and optimize its use.
+Os seguintes critérios devem ser considerados ao selecionar uma estrutura DMM.
 
-### 4.2 DAMA-DMBOK Framework Use
+* **Acessibilidade:** As práticas são apresentadas em termos não técnicos que transmitem a essência funcional da atividade.
+* **Abrangente:** A estrutura aborda um amplo escopo de atividades de gerenciamento de dados e inclui o engajamento do negócio, não apenas os processos de TI.
+* **Extensível e flexível:** O modelo é estruturado para permitir o aprimoramento de disciplinas específicas do setor ou adicionais, e pode ser usado no todo ou em parte, dependendo das necessidades da organização.
+* **Caminho de progresso futuro integrado:** Embora as prioridades específicas variem de organização para organização, a estrutura DMM descreve um caminho lógico a seguir dentro de cada uma das funções que descreve.
+* **Agnóstico em relação ao setor vs. específico do setor:** Algumas organizações se beneficiarão de uma abordagem específica do setor, outras de uma estrutura mais genérica. Qualquer estrutura DMM também deve aderir às melhores práticas de gerenciamento de dados que abrangem setores verticais.
+* **Nível de abstração ou detalhamento:** As práticas e os critérios de avaliação são expressos com um nível de detalhamento suficiente para garantir que possam ser relacionados à organização e ao trabalho que ela realiza.
+* **Não prescritivo:** A estrutura descreve o que precisa ser executado, não como deve ser executado.
+* **Organizado por tópico:** A estrutura coloca as atividades de gerenciamento de dados em seu contexto apropriado, permitindo que cada uma seja avaliada separadamente, reconhecendo as dependências.
+* **Repetível:** A estrutura pode ser interpretada de forma consistente, permitindo resultados repetíveis para comparar uma organização com outras em seu setor e acompanhar o progresso ao longo do tempo.
+* **Suportado por uma organização neutra e independente:** O modelo deve ser neutro em relação a fornecedores, a fim de evitar conflitos de interesse, e amplamente disponível para garantir uma ampla representação das melhores práticas.
+* **Neutro em relação à tecnologia:** O foco do modelo deve ser nas práticas, e não nas ferramentas.
+* **Suporte de treinamento incluído:** O modelo é apoiado por treinamento abrangente para permitir que os profissionais dominem a estrutura e otimizem seu uso.
 
-The DAMA-DMBOK can be used to prepare for or establish criteria for a DMMA. Execution owners will see a direct linkage between segmented functions (the Knowledge Areas) and the corresponding tasks (activities).
+### 4.2 Uso da Estrutura DAMA-DMBOK
 
-The DMBOK Knowledge Areas, activities, and deliverables (work products) can be configured to a specific DMM framework based on the areas measured, their supporting activities, relevancy, and time available. This fast, checklist approach can be used to determine areas that need deeper analysis, represent gaps, or point to hot spots for remediation.
+A DAMA-DMBOK pode ser usada para preparar ou estabelecer critérios para uma DMMA. Os responsáveis ​​pela execução verão uma ligação direta entre funções segmentadas (as Áreas de Conhecimento) e as tarefas correspondentes (atividades).
 
-The DMBOK offers an additional advantage as an assessment-planning tool: There is a large community of knowledge professionals using the DMBOK as a guide across multiple industries, creating a community of practice around its use.
+As Áreas de Conhecimento, atividades e entregas (produtos de trabalho) da DMBOK podem ser configuradas para uma estrutura DMM específica com base nas áreas medidas, suas atividades de suporte, relevância e tempo disponível. Essa abordagem rápida e baseada em lista de verificação pode ser usada para determinar áreas que precisam de uma análise mais aprofundada, representam lacunas ou apontam pontos críticos para correção.
 
-## 5. Guidelines for a DMMA
+A DMBOK oferece uma vantagem adicional como ferramenta de planejamento de avaliação: há uma grande comunidade de profissionais do conhecimento que a utilizam como guia em diversos setores, criando uma comunidade de práticas em torno de seu uso.
 
-### 5.1 Readiness Assessment / Risk Assessment
+## 5. Diretrizes para uma DMMA
 
-Before conducting a maturity assessment, it is helpful to identify potential risks and some risk mitigation strategies. Table 33 summarizes risks and mitigation approaches.
+### 5.1 Avaliação de Prontidão / Avaliação de Risco
 
-Table 33 Typical Risks and Mitigations for a DMMA
+Antes de realizar uma avaliação de maturidade, é útil identificar os riscos potenciais e algumas estratégias de mitigação de riscos. A Tabela 33 resume os riscos e as abordagens de mitigação.
+
+Tabela 33 Riscos e Mitigações Típicos para uma DMMA
 
 <table>
   <thead>
     <tr>
-      <th>Risk</th>
-      <th colspan="2">Mitigation</th>
+      <th>Risco</th>
+      <th colspan="2">Mitigação</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
-      Lack of organizational buy-in
+        Falta de adesão organizacional
       </td>
       <td>
-      Socialize the concepts related to the assessment. Establish benefit statements before conducting the assessment. Share articles and success stories. Engage an executive sponsor to champion the effort and review the results.
-      </td>
-    </tr>
-    <tr>
-      <td>
-      Lack of DMMA expertise, Lack of time or in-house expertise, Lack of communication planning or standards
-      </td>
-      <td>
-      Use third party resources or specialists. Require knowledge transfer and training as part of the engagement.
+        Socialize os conceitos relacionados à avaliação. Estabeleça declarações de benefícios antes de conduzir a avaliação. Compartilhe artigos e histórias de sucesso. Contrate um patrocinador executivo para apoiar o esforço e revisar os resultados.
       </td>
     </tr>
     <tr>
       <td>
-      Lack of ‘Data Speak’ in the organization; Conversations on data quickly devolve into discussions about systems
+        Falta de experiência em DMMA, Falta de tempo ou experiência interna, Falta de planejamento ou padrões de comunicação
       </td>
       <td>
-      Relate the DMMA to specific business problems or scenarios. Address in the communications plan. The DMMA will educate all participants regardless of background and technical experience. Orient participants to key concepts prior to the DMMA.
-      </td>
-    </tr>
-    <tr>
-      <td>
-      Incomplete or out-of-date assets for analysis
-      </td>
-      <td>
-      Flag ‘as of’ or balance the rating accordingly. For example, give a -1 to everything that is over 1 year out-of-date.
+        Use recursos ou especialistas de terceiros. Exija transferência de conhecimento e treinamento como parte do engajamento.
       </td>
     </tr>
     <tr>
       <td>
-      Narrow focus
+        Falta de "linguagem de dados" na organização; conversas sobre dados rapidamente se transformam em discussões sobre sistemas
       </td>
       <td>
-      Reduce the investigation depth to a simple DMMA and go to other areas for a quick assessment to establish ratings for a later comparative baseline. Conduct the first DMMA as a pilot, then apply lessons learned to address a broader scope. Present in-scope focus of proposed assessment in context of DAMA-DMBOK Knowledge Areas. Illustrate what is being left out of scope and discuss the need to include.
-      </td>
-    </tr>
-    <tr>
-      <td>
-      Inaccessible staff or systems
-      </td>
-      <td>
-      Reduce the horizontal scope of the DMMA by focusing only on available Knowledge Areas and staff
+        Relacione o DMMA a problemas ou cenários de negócios específicos. Aborde no plano de comunicação. O DMMA educará todos os participantes, independentemente de sua formação e experiência técnica. Oriente os participantes sobre os principais conceitos antes do DMMA.
       </td>
     </tr>
     <tr>
       <td>
-      Surprises arise such as a regulation changes
+        Ativos incompletos ou desatualizados para análise
       </td>
       <td>
-      Add flexibility into the assessment work stream and focus.
+        Marque "a partir de" ou equilibre a classificação de acordo. Por exemplo, dê -1 a tudo que estiver desatualizado há mais de 1 ano.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Foco restrito
+      </td>
+      <td>
+        Reduza a profundidade da investigação a um simples DMMA e vá para outras áreas para uma avaliação rápida a fim de estabelecer classificações para uma linha de base comparativa posterior. Conduza o primeiro DMMA como piloto e, em seguida, aplique as lições aprendidas para abordar um escopo mais amplo. Apresente o foco dentro do escopo da avaliação proposta no contexto das Áreas de Conhecimento DAMA-DMBOK. Ilustre o que está sendo deixado de fora do escopo e discuta a necessidade de inclusão.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Equipe ou sistemas inacessíveis
+      </td>
+      <td>
+        Reduza o escopo horizontal do DMMA, concentrando-se apenas nas Áreas de Conhecimento e na equipe disponíveis
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Surpresas surgem, como mudanças na regulamentação
+      </td>
+      <td>
+        Adicione flexibilidade ao fluxo de trabalho de avaliação e ao foco.
       </td>
     </tr>
   </tbody>
 </table>
 
-### 5.2 Organizational and Cultural Change
+### 5.2 Mudança Organizacional e Cultural
 
-Establishing or enhancing a Data Management program includes changes to processes, methods, and tools. With these changes, culture must also change. Organizational and cultural transformation begins with acknowledging that things can be better. Measurement functions typically usher in meaningful change. The DMMA locates the organization on a maturity scale and provides a roadmap for improvement. Doing so, it can point an organization forward through change. The DMMA results should be part of a larger discussion within an organization. When properly supported by effective data governance, DMMA results can coalesce differing perspectives, result in a shared vision, and accelerate an organization’s progress. (See Chapter 17.)
+Estabelecer ou aprimorar um programa de Gestão de Dados inclui mudanças em processos, métodos e ferramentas. Com essas mudanças, a cultura também precisa mudar. A transformação organizacional e cultural começa com o reconhecimento de que as coisas podem ser melhores. Funções de mensuração normalmente inauguram mudanças significativas. O DMMA situa a organização em uma escala de maturidade e fornece um roteiro para melhorias. Dessa forma, pode direcionar a organização para o futuro em meio à mudança. Os resultados do DMMA devem fazer parte de uma discussão mais ampla dentro da organização. Quando devidamente apoiados por uma governança de dados eficaz, os resultados do DMMA podem unir diferentes perspectivas, resultar em uma visão compartilhada e acelerar o progresso da organização. (Consulte o Capítulo 17.)
 
-## 6. Maturity Management Governance
+## 6. Governança da Gestão da Maturidade
 
-Typically, a DMMA is part of an overall set of data governance activities, each of which has a lifecycle. The lifecycle of a DMMA consists of the initial planning and initial assessment, followed by recommendations, an action plan, and periodic re-evaluation. The lifecycle itself should be governed.
+Normalmente, um DMMA faz parte de um conjunto geral de atividades de governança de dados, cada uma com um ciclo de vida. O ciclo de vida de um DMMA consiste no planejamento e na avaliação iniciais, seguidos por recomendações, um plano de ação e reavaliações periódicas. O próprio ciclo de vida deve ser governado.
 
-### 6.1 DMMA Process Oversight
+### 6.1 Supervisão do Processo DMMA
 
-Oversight for the DMMA process belongs to the Data Governance team. If formal Data Governance is not in place, then oversight defaults to the steering committee or management layer that initiated the DMMA. The process should have an executive sponsor, ideally the CDO, to ensure improvements in data management activities map directly to business objectives.
+A supervisão do processo DMMA cabe à equipe de Governança de Dados. Se a Governança de Dados formal não estiver implementada, a supervisão recai, por padrão, sobre o comitê diretor ou a camada de gestão que iniciou o DMMA. O processo deve ter um patrocinador executivo, idealmente o CDO, para garantir que as melhorias nas atividades de gerenciamento de dados estejam diretamente relacionadas aos objetivos de negócios.
 
-The breadth and depth of oversight depend on the DMMA’s scope. Each function involved in the process has a voice in the execution, method, results, and roadmaps coming from the overall assessment. Each involved data management area and organization function will have an independent view, but also will have a common language through the DMM framework.
+A amplitude e a profundidade da supervisão dependem do escopo do DMMA. Cada função envolvida no processo tem voz ativa na execução, no método, nos resultados e nos roteiros decorrentes da avaliação geral. Cada área de gerenciamento de dados e função organizacional envolvida terá uma visão independente, mas também terá uma linguagem comum por meio da estrutura do DMM.
 
-### 6.2 Metrics
+### 6.2 Métricas
 
-In addition to being a core component of any improvement strategy, metrics are a key communications tool. Initial DMMA metrics are the ratings representing the current state of data management. These can be periodically reassessed to show improvement trends. Each organization should develop metrics tailored to its target state roadmap. Sample metrics could include:
+Além de serem um componente central de qualquer estratégia de melhoria, as métricas são uma ferramenta de comunicação fundamental. As métricas iniciais do DMMA são as classificações que representam o estado atual do gerenciamento de dados. Elas podem ser reavaliadas periodicamente para mostrar tendências de melhoria. Cada organização deve desenvolver métricas adaptadas ao seu roteiro de estado-alvo. Exemplos de métricas podem incluir:
 
-* **DMMA ratings:** DMMA ratings present a snapshot of the organization’s capability level. The ratings may be accompanied by a description, perhaps a custom weighting for the rating across an assessment or specific topic area, and a recommended target state.
-* **Resource utilization rates:** Powerful examples of metrics that help express the cost of data management in the form of head count. An example of this type of metric is: “Every resource in the organization spends 10% of their time manually aggregating data.”
-* **Risk exposure** or the ability to respond to risk scenarios expresses an organization’s capabilities relative to their DMMA ratings. For example, if an organization wanted to begin a new business that required a high level of automation but their current operating model is based on manual data management (Level 1), they would be at risk of not delivering.
-* **Spend management** expresses how the cost of data management is allocated across an organization and identifies the impacts of this cost on sustainability and value. These metrics overlap with data governance metrics.
-  * Data management sustainability
-  * Achievement of initiative goals and objectives
-  * Effectiveness of communication
-  * Effectiveness of education and training
-  * Speed of change adoption
-  * Data management value
-  * Contributions to business objectives
-  * Reductions in risks
-  * Improved efficiency in operations
-* Inputs to the DMMA are important to manage as they speak to the completeness of coverage, level of investigation, and detail of the scope relevant for interpretation of the scoring results. Core inputs could include the following: count, coverage, availability, number of systems, data volumes, teams involved, etc.
-* Rate of Change The rate at which an organization is improving its capability. A baseline is established through the DMMA. Periodic reassessment is used to trend improvement.
+* **Classificações DMMA:** As classificações DMMA apresentam uma visão geral do nível de capacidade da organização. As classificações podem ser acompanhadas por uma descrição, talvez uma ponderação personalizada para a classificação em uma avaliação ou área temática específica, e um estado-alvo recomendado.
+* **Taxas de utilização de recursos:** Exemplos poderosos de métricas que ajudam a expressar o custo do gerenciamento de dados na forma de número de funcionários. Um exemplo desse tipo de métrica é: "Cada recurso na organização gasta 10% do seu tempo agregando dados manualmente."
+* **Exposição a riscos** ou a capacidade de responder a cenários de risco expressa as capacidades de uma organização em relação às suas classificações DMMA. Por exemplo, se uma organização quisesse iniciar um novo negócio que exigisse um alto nível de automação, mas seu modelo operacional atual fosse baseado no gerenciamento manual de dados (Nível 1), ela correria o risco de não entregar.
+* **Gerenciamento de gastos** expressa como o custo do gerenciamento de dados é alocado em uma organização e identifica os impactos desse custo na sustentabilidade e no valor. Essas métricas se sobrepõem às métricas de governança de dados.
+  * Sustentabilidade da gestão de dados
+  * Atingimento das metas e objetivos da iniciativa
+  * Eficácia da comunicação
+  * Eficácia da educação e do treinamento
+  * Velocidade de adoção de mudanças
+  * Valor da gestão de dados
+  * Contribuições para os objetivos de negócios
+  * Redução de riscos
+  * Maior eficiência nas operações
+* As entradas para o DMMA são importantes para o gerenciamento, pois refletem a abrangência da cobertura, o nível de investigação e os detalhes do escopo relevantes para a interpretação dos resultados da pontuação. As entradas principais podem incluir o seguinte: contagem, cobertura, disponibilidade, número de sistemas, volumes de dados, equipes envolvidas, etc.
+* Taxa de Mudança: a taxa na qual uma organização está aprimorando sua capacidade. Uma linha de base é estabelecida por meio do DMMA. Reavaliações periódicas são usadas para monitorar a tendência de melhoria.
 
-## 7. Works Cited / Recommended
+## 7. Trabalhos Citados / Recomendados
 
 Afflerbach, Peter. Essential Readings on Assessment. International Reading Association, 2010. Print.
 
@@ -452,38 +453,10 @@ Stanford University. Stanford Data Governance Maturity Model. http://stanford.io
 
 Van Haren Publishing. IT Capability Maturity Framework IT-CMF. Van Haren Pub, 2015. Print.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[^96]: Adapted from Select Business Solutions, “What is the Capability Maturity Model?” http://bit.ly/IFMJI8 (Accessed 2016-11-10).
-[^97]: http://bit.ly/1Vev9xx July 18 2015.
-[^98]: For additional information and review of existing Data Management CMMs, see: Alan McSweeney, Review of Data Management Maturity Models, SlideShare.net, published 2013-10-23. http://bit.ly/2spTCY9. Jeff Gorball, Introduction to Data Management Maturity Models, SlideShare.net, published 2016-08-01. McSweeney includes the DAMA-DMBOK as one of his maturity models, although the DMBOK is not structured as such.
-[^99]: http://bit.ly/1Vev9xx accessed 2015-07-18
-[^100]: http://bit.ly/2sqaSga accessed 2015-07-18
-[^101]: https://ibm.co/2sRfBIn (accessed 2016-12-04)
-[^102]: http://stanford.io/2sBR5bZ (accessed 2016-12-04) and http://stanford.io/2rVPyM2 (accessed 2016-12-04).
-
-
-
-
+[^96]: Adaptado de Select Business Solutions, “O que é o Modelo de Maturidade de Capabilidade?” http://bit.ly/IFMJI8 (Acessado em 10/11/2016).
+[^97]: http://bit.ly/1Vev9xx 18 de julho de 2015.
+[^98]: Para obter informações adicionais e uma análise dos CMMs de Gerenciamento de Dados existentes, consulte: Alan McSweeney, Review of Data Management Maturity Models, SlideShare.net, publicado em 23/10/2013. http://bit.ly/2spTCY9. Jeff Gorball, Introduction to Data Management Maturity Models, SlideShare.net, publicado em 1º de agosto de 2016. McSweeney inclui o DAMA-DMBOK como um de seus modelos de maturidade, embora o DMBOK não seja estruturado como tal.
+[^99]: http://bit.ly/1Vev9xx acessado em 18/07/2015
+[^100]: http://bit.ly/2sqaSga acessado em 18/07/2015
+[^101]: https://ibm.co/2sRfBIn (acessado em 04/12/2016)
+[^102]: http://stanford.io/2sBR5bZ (acessado em 04/12/2016) e http://stanford.io/2rVPyM2 (acessado em 04/12/2016).

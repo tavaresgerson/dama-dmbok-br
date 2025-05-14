@@ -1,538 +1,585 @@
-# Document and Content Management
+# Gerenciamento de documentos e conteúdo
 
 ![](chapter_9.png)
 
-Document and Content Management entails controlling the capture, storage, access, and use of data and information stored outside relational databases. [^44] Its focus is on maintaining the integrity of and enabling access to documents and other unstructured or semi-structured information which makes it roughly equivalent to data operations management for relational databases. However, it also has strategic drivers. In many organizations, unstructured data has a direct relationship to structured data. Management decisions about such content should be applied consistently. In addition, as are other types of data, documents and unstructured content are expected to be secure and of high quality. Ensuring security and quality requires governance, reliable architecture, and well-managed Metadata.
+A Gestão de Documentos e Conteúdo envolve o controle da captura, armazenamento, acesso e uso de dados e informações armazenados fora de bancos de dados relacionais. [^44] Seu foco é manter a integridade e permitir o acesso a documentos e outras informações não estruturadas ou semiestruturadas, o que a torna aproximadamente equivalente à gestão de operações de dados para bancos de dados relacionais. No entanto, também possui motivadores estratégicos. Em muitas organizações, dados não estruturados têm uma relação direta com dados estruturados. As decisões de gestão sobre esse conteúdo devem ser aplicadas de forma consistente. Além disso, assim como outros tipos de dados, espera-se que documentos e conteúdo não estruturado sejam seguros e de alta qualidade. Garantir a segurança e a qualidade requer governança, arquitetura confiável e metadados bem gerenciados.
 
-![Figure 71 Context Diagram: Documents and Content](figure_71.png)
-Figure 71 Context Diagram: Documents and Content
+![Figura 71 Diagrama de Contexto: Documentos e Conteúdo](figure_71.png)
+Figura 71 Diagrama de Contexto: Documentos e Conteúdo
 
-### 1.1 Business Drivers
+### 1.1 Motivadores de Negócios
 
-The primary business drivers for document and content management include regulatory compliance, the ability to respond to litigation and e-discovery requests, and business continuity requirements. Good records management can also help organizations become more efficient. Well-organized, searchable websites that result from effective management of ontologies and other structures that facilitate searching help improve customer and employee satisfaction.
+Os principais motivadores de negócios para a gestão de documentos e conteúdo incluem a conformidade regulatória, a capacidade de responder a litígios e solicitações de descoberta eletrônica, e os requisitos de continuidade de negócios. Uma boa gestão de registros também pode ajudar as organizações a se tornarem mais eficientes. Sites bem organizados e pesquisáveis, resultantes da gestão eficaz de ontologias e outras estruturas que facilitam a pesquisa, ajudam a melhorar a satisfação de clientes e funcionários.
 
-Laws and regulations require that organizations maintain records of certain kinds of activities. Most organizations also have policies, standards, and best practices for record keeping. Records include both paper documents and electronically stored information (ESI). Good records management is necessary for business continuity. It also enables an organization to respond in the case of litigation.
+Leis e regulamentos exigem que as organizações mantenham registros de determinados tipos de atividades. A maioria das organizações também possui políticas, padrões e melhores práticas para manutenção de registros. Os registros incluem documentos em papel e informações armazenadas eletronicamente (ESI). Uma boa gestão de registros é necessária para a continuidade dos negócios. Ela também permite que uma organização responda em caso de litígio.
 
-E-discovery is the process of finding electronic records that might serve as evidence in a legal action. As the technology for creating, storing, and using data has developed, the volume of ESI has increased exponentially. Some of this data will undoubtedly end up in litigation or regulatory requests.
+Descoberta eletrônica é o processo de encontrar registros eletrônicos que possam servir como evidência em uma ação judicial. À medida que a tecnologia para criar, armazenar e usar dados se desenvolveu, o volume de ESI aumentou exponencialmente. Alguns desses dados, sem dúvida, acabarão em litígios ou solicitações regulatórias.
 
-The ability of an organization to respond to an e-discovery request depends on how proactively it has managed records such as email, chats, websites, and electronic documents, as well as raw application data and Metadata. Big Data has become a driver for more efficient e-discovery, records retention, and strong information governance.
+A capacidade de uma organização de responder a uma solicitação de descoberta eletrônica depende de quão proativamente ela gerencia registros como e-mails, chats, sites e documentos eletrônicos, bem como dados brutos de aplicativos e metadados. O Big Data tornou-se um impulsionador para a descoberta eletrônica mais eficiente, retenção de registros e forte governança da informação.
 
-Gaining efficiencies is a driver for improving document management. Technological advances in document management are helping organizations streamline processes, manage workflow, eliminate repetitive manual tasks, and enable collaboration. These technologies have the additional benefits of enabling people to locate, access, and share documents more quickly. They can also prevent documents from being lost. This is very important for e-discovery. Money is also saved by freeing up file cabinet space and reducing document handling costs.
+O ganho de eficiência é um impulsionador para a melhoria da gestão de documentos. Os avanços tecnológicos na gestão de documentos estão ajudando as organizações a otimizar processos, gerenciar o fluxo de trabalho, eliminar tarefas manuais repetitivas e permitir a colaboração. Essas tecnologias têm o benefício adicional de permitir que as pessoas localizem, acessem e compartilhem documentos com mais rapidez. Elas também podem evitar a perda de documentos. Isso é muito importante para a descoberta eletrônica. Além disso, economiza-se dinheiro ao liberar espaço em arquivos e reduzir os custos de manuseio de documentos.
 
-### 1.2 Goals and Principles
+### 1.2 Objetivos e Princípios
 
-The goals of implementing best practices around Document and Content Management include:
+Os objetivos da implementação das melhores práticas em Gestão de Documentos e Conteúdo incluem:
 
-* Ensuring effective and efficient retrieval and use of data and information in unstructured formats
-* Ensuring integration capabilities between structured and unstructured data
-* Complying with legal obligations and customer expectations 
+* Garantir a recuperação e o uso eficaz e eficiente de dados e informações em formatos não estruturados
+* Garantir a capacidade de integração entre dados estruturados e não estruturados
+* Cumprir as obrigações legais e as expectativas dos clientes
 
-Management of Documents and Content follows these guiding principles:
+A Gestão de Documentos e Conteúdo segue os seguintes princípios orientadores:
 
-* Everyone in an organization has a role to play in protecting the organization’s future. Everyone must create, use, retrieve, and dispose of records in accordance with the established policies and procedures.
-* Experts in the handling of records and content should be fully engaged in policy and planning. Regulatory and best practices can vary significantly based on industry sector and legal jurisdiction.
+* Todos em uma organização têm um papel a desempenhar na proteção do futuro da organização. Todos devem criar, usar, recuperar e descartar registros de acordo com as políticas e procedimentos estabelecidos.
+* Especialistas no tratamento de registros e conteúdo devem estar totalmente envolvidos na política e no planejamento. As normas e as melhores práticas podem variar significativamente de acordo com o setor da indústria e a jurisdição legal.
 
-Even if records management professionals are not available to the organization, everyone can be trained to understand the challenges, best practices, and issues. Once trained, business stewards and others can collaborate on an effective approach to records management.
+Mesmo que profissionais de gestão de registros não estejam disponíveis para a organização, todos podem ser treinados para compreender os desafios, as melhores práticas e os problemas. Uma vez treinados, os administradores de negócios e outros podem colaborar em uma abordagem eficaz para a gestão de registros.
 
-In 2009, ARMA International, a not-for-profit professional association for managing records and information, published a set of Generally Acceptable Recordkeeping Principles® (GARP) [^45] that describes how business records should be maintained. It also provides a recordkeeping and information governance framework with associated metrics. The first sentence of each principle is stated below. Further explanation can be found on the ARMA website.
+Em 2009, a ARMA International, uma associação profissional sem fins lucrativos para a gestão de registros e informações, publicou um conjunto de Princípios de Manutenção de Registros Geralmente Aceitáveis® (GARP) [^45] que descreve como os registros empresariais devem ser mantidos. Ele também fornece uma estrutura de manutenção de registros e governança da informação com métricas associadas. A primeira frase de cada princípio é apresentada abaixo. Mais explicações podem ser encontradas no site da ARMA.
 
-* Principle of Accountability: An organization shall assign a senior executive to appropriate individuals, adopt policies and processes to guide staff, and ensure program auditability.
-* Principle of Integrity: An information governance program shall be constructed so the records and information generated or managed by or for the organization have a reasonable and suitable guarantee of authenticity and reliability.
-* Principle of Protection: An information governance program shall be constructed to ensure a reasonable level of protection to information that is personal or that otherwise requires protection.
-* Principle of Compliance: An information governance program shall be constructed to comply with applicable laws and other binding authorities, as well as the organization’s policies.
-* Principle of Availability: An organization shall maintain its information in a manner that ensures timely, efficient, and accurate retrieval of its information.
-* Principle of Retention: An organization shall retain its information for an appropriate time, taking into account all operational, legal, regulatory and fiscal requirements, and those of all relevant binding authorities.
-* Principle of Disposition: An organization shall provide secure and appropriate disposition of information in accordance with its policies, and, applicable laws, regulations and other binding authorities.
-* Principle of Transparency: An organization shall document its policies, processes and activities, including its information governance program, in a manner that is available to and understood by staff and appropriate interested parties.
+* Princípio da Responsabilidade: Uma organização deve designar um executivo sênior para os indivíduos apropriados, adotar políticas e processos para orientar a equipe e garantir a auditabilidade do programa.
+* Princípio da Integridade: Um programa de governança da informação deve ser elaborado de forma que os registros e informações gerados ou gerenciados pela ou para a organização tenham uma garantia razoável e adequada de autenticidade e confiabilidade.
+* Princípio da Proteção: Um programa de governança da informação deve ser elaborado para garantir um nível razoável de proteção às informações pessoais ou que de outra forma requeiram proteção.
+* Princípio da Conformidade: Um programa de governança da informação deve ser elaborado para estar em conformidade com as leis aplicáveis ​​e outras autoridades vinculativas, bem como com as políticas da organização.
 
-### 1.3 Essential Concepts
+* Princípio da Disponibilidade: Uma organização deve manter suas informações de forma a garantir sua recuperação tempestiva, eficiente e precisa.
+* Princípio da Retenção: Uma organização deve reter suas informações por um período apropriado, levando em consideração todos os requisitos operacionais, legais, regulatórios e fiscais, bem como os de todas as autoridades vinculantes relevantes.
+* Princípio da Disposição: Uma organização deve fornecer disposição segura e apropriada das informações, de acordo com suas políticas e leis, regulamentos e outras autoridades vinculantes aplicáveis.
+* Princípio da Transparência: Uma organização deve documentar suas políticas, processos e atividades, incluindo seu programa de governança da informação, de forma que estejam disponíveis e sejam compreendidos por funcionários e partes interessadas apropriadas.
 
-#### 1.3.1 Content
+### 1.3 Conceitos Essenciais
 
-A document is to content what a bucket is to water: a container. Content refers to the data and information inside the file, document, or website. Content is often managed based on the concepts represented by the documents, as well as the type or status of the documents. Content also has a lifecycle. In its completed form, some content becomes a matter of record for an organization. Official records are treated differently from other content.
+#### 1.3.1 Conteúdo
 
-##### 1.3.1.1 Content Management
+Um documento é para o conteúdo o que um balde é para a água: um recipiente. Conteúdo se refere aos dados e informações contidos no arquivo, documento ou website. O conteúdo é frequentemente gerenciado com base nos conceitos representados pelos documentos, bem como no tipo ou status dos documentos. O conteúdo também tem um ciclo de vida. Em sua forma completa, parte do conteúdo se torna um registro para uma organização. Registros oficiais são tratados de forma diferente de outros conteúdos.
 
-Content management includes the processes, techniques, and technologies for organizing, categorizing, and structuring information resources so that they can be stored, published, and reused in multiple ways.
+##### 1.3.1.1 Gestão de Conteúdo
 
-The lifecycle of content can be active, with daily changes through controlled processes for creation and modification; or it can be more static with only minor, occasional changes. Content may be managed formally (strictly stored, managed, audited, retained or disposed of) or informally through ad hoc updates.
+A gestão de conteúdo inclui os processos, técnicas e tecnologias para organizar, categorizar e estruturar recursos de informação para que possam ser armazenados, publicados e reutilizados de diversas maneiras.
 
-Content management is particularly important in websites and portals, but the techniques of indexing based on keywords and organizing based on taxonomies can be applied across technology platforms. When the scope of content management includes the entire enterprise, it is referred to as Enterprise Content Management (ECM).
+O ciclo de vida do conteúdo pode ser ativo, com alterações diárias por meio de processos controlados de criação e modificação; ou pode ser mais estático, com apenas pequenas alterações ocasionais. O conteúdo pode ser gerenciado formalmente (armazenado, gerenciado, auditado, retido ou descartado rigorosamente) ou informalmente por meio de atualizações ad hoc.
 
-##### 1.3.1.2 Content Metadata
+A gestão de conteúdo é particularmente importante em sites e portais, mas as técnicas de indexação com base em palavras-chave e organização com base em taxonomias podem ser aplicadas em todas as plataformas tecnológicas. Quando o escopo da gestão de conteúdo abrange toda a empresa, ela é chamada de Gestão de Conteúdo Empresarial (ECM).
 
-Metadata is essential to managing unstructured data, both what is traditionally thought of as content and documents and what we now understand as ‘Big Data’. Without Metadata, it is not possible to inventory and organize content. Metadata for unstructured data content is based on:
+##### 1.3.1.2 Metadados de Conteúdo
 
-* Format: Often the format of the data dictates the method to access the data (such as electronic index for electronic unstructured data).
-* Search-ability: Whether search tools already exist for use with related unstructured data. Self-documentation: Whether the Metadata is self-documenting (as in filesystems). In this case, development is minimal, as the existing tool is simply adopted.
-* Existing patterns: Whether existing methods and patterns can be adopted or adapted (as in library catalogs).
-* Content subjects: The things people are likely to be looking for.
-* Requirements: Need for thoroughness and detail in retrieval (as in the pharmaceutical or nuclear industry [^46]). Therefore, detailed Metadata at the content level might be necessary, and a tool capable of content tagging might be necessary.
+Metadados são essenciais para o gerenciamento de dados não estruturados, tanto o que tradicionalmente se considera conteúdo e documentos quanto o que hoje entendemos como "Big Data". Sem metadados, não é possível inventariar e organizar o conteúdo. Os metadados para conteúdo de dados não estruturados baseiam-se em:
 
-Generally, the maintenance of Metadata for unstructured data becomes the maintenance of a cross-reference between various local patterns and the official set of enterprise Metadata. Records managers and Metadata professionals recognize long-term embedded methods exist throughout the organization for documents, records, and other content that must be retained for many years, but that these methods are often costly to re-organize. In some organizations, a centralized team maintains cross-reference patterns between records management indexes, taxonomies, and even variant thesauri.
+* Formato: Frequentemente, o formato dos dados determina o método de acesso aos dados (como um índice eletrônico para dados não estruturados eletrônicos).
+* Capacidade de busca: Se já existem ferramentas de busca para uso com dados não estruturados relacionados. Autodocumentação: Se os metadados são autodocumentados (como em sistemas de arquivos). Nesse caso, o desenvolvimento é mínimo, pois a ferramenta existente é simplesmente adotada.
+* Padrões existentes: Se métodos e padrões existentes podem ser adotados ou adaptados (como em catálogos de bibliotecas).
+* Assuntos de conteúdo: As coisas que as pessoas provavelmente estarão procurando.
+* Requisitos: Necessidade de rigor e detalhes na recuperação (como na indústria farmacêutica ou nuclear [^46]). Portanto, Metadados detalhados no nível do conteúdo podem ser necessários, assim como uma ferramenta capaz de marcar o conteúdo.
 
-##### 1.3.1.3 Content Modeling
+Geralmente, a manutenção de Metadados para dados não estruturados se torna a manutenção de uma referência cruzada entre vários padrões locais e o conjunto oficial de Metadados corporativos. Gerentes de registros e profissionais de Metadados reconhecem que existem métodos incorporados de longo prazo em toda a organização para documentos, registros e outros conteúdos que devem ser retidos por muitos anos, mas que esses métodos costumam ser dispendiosos para reorganizar. Em algumas organizações, uma equipe centralizada mantém padrões de referência cruzada entre índices de gerenciamento de registros, taxonomias e até mesmo tesauros variantes.
 
-Content modeling is the process of converting logical content concepts into content types, attributes, and data types with relationships. An attribute describes something specific and distinguishable about the content to which it relates. A data type restricts the type of data the attribute may hold, enabling validation and processing.
+##### 1.3.1.3 Modelagem de Conteúdo
 
-Metadata management and data modeling techniques are used in the development of a content model. There are two levels of content modeling. The first is at the information product level, which creates an actual deliverable like a website. The second is at the component level, which further details the elements that make up the information product model. The level of detail in the model depends on the granularity desired for reuse and structure.
+Modelagem de conteúdo é o processo de conversão de conceitos lógicos de conteúdo em tipos de conteúdo, atributos e tipos de dados com relacionamentos. Um atributo descreve algo específico e distinguível sobre o conteúdo ao qual se relaciona. Um tipo de dado restringe o tipo de dados que o atributo pode conter, permitindo a validação e o processamento.
 
-Content models support the content strategy by guiding content creation and promoting reuse. They support adaptive content, which is format-free and device-independent. The models become the specifications for the content implemented in such structures such as XML schema definition (XSDs), forms, or stylesheets.
+Técnicas de gerenciamento de metadados e modelagem de dados são utilizadas no desenvolvimento de um modelo de conteúdo. Existem dois níveis de modelagem de conteúdo. O primeiro é no nível do produto de informação, que cria uma entrega real, como um website. O segundo é no nível do componente, que detalha ainda mais os elementos que compõem o modelo do produto de informação. O nível de detalhe do modelo depende da granularidade desejada para reutilização e estrutura.
 
-##### 1.3.1.4 Content Delivery Methods
+Os modelos de conteúdo apoiam a estratégia de conteúdo, orientando a criação de conteúdo e promovendo a reutilização. Eles apoiam o conteúdo adaptável, que é independente de formato e dispositivo. Os modelos tornam-se as especificações para o conteúdo implementado em estruturas como definição de esquema XML (XSDs), formulários ou folhas de estilo.
 
-Content needs to be modular, structured, reusable, and device- and platform- independent. Delivery methods include web pages, print, and mobile apps as well as eBooks with interactive video and audio. Converting content into XML early in the workflow supports reuse across different media channels.
+##### 1.3.1.4 Métodos de Entrega de Conteúdo
 
-Content delivery systems are ‘push’, ‘pull’, or interactive.
+O conteúdo precisa ser modular, estruturado, reutilizável e independente de dispositivo e plataforma. Os métodos de entrega incluem páginas da web, aplicativos impressos e móveis, bem como e-books com vídeo e áudio interativos. A conversão de conteúdo em XML no início do fluxo de trabalho permite a reutilização em diferentes canais de mídia.
 
-* Push: In a push delivery system, users choose the type of content delivered to them on a pre- determined schedule. Syndication involves one party creating the content published in many places. Really Simple Syndication (RSS) is an example of a push content delivery mechanism. It distributes content (i.e., a feed) to syndicate news and other web content upon request.
-* Pull: In a pull delivery system, users pull the content through the Internet. An example of a pull system is when shoppers visit online retail stores.
-* Interactive: Interactive content delivery methods, such as third-party electronic point of sale (EPOS) apps or customer facing websites (e.g., for enrollment), need to exchange high volumes of real-time data between enterprise applications. Options for sharing data between applications include Enterprise Application Integration (EAI), Changed Data Capture, Data Integration and EII. (See Chapter 8.)
+Os sistemas de entrega de conteúdo são "push", "pull" ou interativos.
 
-#### 1.3.2 Controlled Vocabularies
+* Push: Em um sistema de entrega push, os usuários escolhem o tipo de conteúdo a ser entregue a eles em um cronograma pré-determinado. A sindicação envolve a criação do conteúdo por uma única parte, publicada em diversos locais. A sindicação realmente simples (RSS) é um exemplo de mecanismo de entrega push. Ela distribui conteúdo (ou seja, um feed) para sindicar notícias e outros conteúdos da web mediante solicitação.
+* Pull: Em um sistema de entrega pull, os usuários extraem o conteúdo pela internet. Um exemplo de sistema pull é quando os compradores visitam lojas de varejo online.
+* Interativo: Métodos interativos de entrega de conteúdo, como aplicativos de ponto de venda eletrônico (EPOS) de terceiros ou sites voltados para o cliente (por exemplo, para cadastro), precisam trocar altos volumes de dados em tempo real entre aplicativos corporativos. As opções para compartilhamento de dados entre aplicativos incluem Integração de Aplicativos Corporativos (EAI), Captura de Dados Alterados, Integração de Dados e EII. (Consulte o Capítulo 8.)
 
-A controlled vocabulary is a defined list of explicitly allowed terms used to index, categorize, tag, sort, and retrieve content through browsing and searching. A controlled vocabulary is necessary to systematically organize documents, records, and content. Vocabularies range in complexity from simple lists or pick lists, to the synonym rings or authority lists, to taxonomies, and, the most complex, thesauri and ontologies. An example of a controlled vocabulary is the Dublin Core, used to catalog publications.
+#### 1.3.2 Vocabulários Controlados
 
-Defined policies control over who adds terms to the vocabulary (e.g., a taxonomist or indexer, or librarian). Librarians are particularly trained in the theory and development of controlled vocabularies. Users of the list may only apply terms from the list for its scoped subject area. (See Chapter 10.)
+Um vocabulário controlado é uma lista definida de termos explicitamente permitidos, usados ​​para indexar, categorizar, marcar, classificar e recuperar conteúdo por meio de navegação e busca. Um vocabulário controlado é necessário para organizar sistematicamente documentos, registros e conteúdo. Os vocabulários variam em complexidade, desde listas simples ou listas de seleção, passando por anéis de sinônimos ou listas de autoridade, taxonomias e, os mais complexos, tesauros e ontologias. Um exemplo de vocabulário controlado é o Dublin Core, usado para catalogar publicações.
 
-Ideally, controlled vocabularies should be aligned with the entity names and definitions in an enterprise conceptual data model. A bottom up approach to collecting terms and concepts is to compile them in a folksonomy, which is a collection of terms and concepts obtained through social tagging.
+Políticas definidas controlam quem adiciona termos ao vocabulário (por exemplo, um taxonomista, indexador ou bibliotecário). Bibliotecários são particularmente treinados na teoria e no desenvolvimento de vocabulários controlados. Os usuários da lista podem aplicar apenas termos da lista para sua área temática de escopo. (Consulte o Capítulo 10.)
 
-Controlled vocabularies constitute a type of Reference Data. Like other Reference Data, their values and definitions need to be managed for completeness and currency. They can also be thought of as Metadata, as they help explain and support the use of other data. They are described in this chapter because Document and Content Management are primary use cases for controlled vocabularies.
+Idealmente, os vocabulários controlados devem estar alinhados com os nomes e definições das entidades em um modelo conceitual de dados corporativo. Uma abordagem de baixo para cima para coletar termos e conceitos é compilá-los em uma folksonomia, que é uma coleção de termos e conceitos obtidos por meio de marcação social.
 
-##### 1.3.2.1 Vocabulary Management
+Vocabulários controlados constituem um tipo de Dado de Referência. Assim como outros Dados de Referência, seus valores e definições precisam ser gerenciados para garantir sua integralidade e atualidade. Eles também podem ser considerados Metadados, pois ajudam a explicar e apoiar o uso de outros dados. Eles são descritos neste capítulo porque o Gerenciamento de Documentos e Conteúdo são os principais casos de uso para vocabulários controlados.
 
-Because vocabularies evolve over time, they require management. ANSI/NISO Z39.19-2005 is an American standard, which provides guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies, describes vocabulary management as a way to “to improve the effectiveness of information storage and retrieval systems, web navigation systems, and other environments that seek to both identify and locate desired content via some sort of description using language. The primary purpose of vocabulary control is to achieve consistency in the description of content objects and to facilitate retrieval.” [^47]
+##### 1.3.2.1 Gerenciamento de Vocabulário
 
-Vocabulary management is the function of defining, sourcing, importing, and maintaining any given vocabulary. Key questions to enable vocabulary management focus on uses, consumers, standards, and maintenance:
+Como os vocabulários evoluem com o tempo, eles exigem gerenciamento. ANSI/NISO Z39.19-2005 é uma norma americana que fornece diretrizes para a Construção, Formatação e Gerenciamento de Vocabulários Controlados Monolíngues e descreve o gerenciamento de vocabulário como uma forma de "melhorar a eficácia dos sistemas de armazenamento e recuperação de informações, sistemas de navegação na web e outros ambientes que buscam identificar e localizar o conteúdo desejado por meio de algum tipo de descrição usando a linguagem. O objetivo principal do controle de vocabulário é alcançar consistência na descrição dos objetos de conteúdo e facilitar a recuperação". [^47]
 
-* What information concepts will this vocabulary support?
-* Who is the audience for this vocabulary? What processes do they support? What roles do they play?
-* Why is the vocabulary necessary? Will it support an application, content management, or analytics?
-* What decision-making body is responsible for designating preferred terms?
-* What existing vocabularies do different groups use to classify this information? Where are they located? How were they created? Who are their subject matter experts? Are there any security or privacy concerns for any of them?
-* Is there an existing standard that can fulfill this need? Are there concerns of using an external standard vs. internal? How frequently is the standard updated and what is the degree of change of each update? Are standards accessible in an easy to import / maintain format, in a cost-efficient manner?
+O gerenciamento de vocabulário é a função de definir, obter, importar e manter qualquer vocabulário. As perguntas-chave para permitir o gerenciamento de vocabulário concentram-se em usos, consumidores, padrões e manutenção:
 
-The results of this assessment will enable data integration. They will also help to establish internal standards, including associated preferred vocabulary through term and term relationship management functions.
+* Quais conceitos de informação este vocabulário suportará?
+* Qual é o público-alvo deste vocabulário? Quais processos eles suportam? Quais papéis eles desempenham?
+* Por que o vocabulário é necessário? Ele suportará um aplicativo, gerenciamento de conteúdo ou análise?
+* Qual órgão decisório é responsável por designar os termos preferenciais?
 
-If this kind of assessment is not done, preferred vocabularies would still be defined in an organization, except they would be done in silos, project by project, lead to a higher cost of integration and higher chances of data quality issues. (See Chapter 13.)
+* Quais vocabulários existentes os diferentes grupos utilizam para classificar essas informações? Onde estão localizados? Como foram criados? Quem são os especialistas no assunto? Há alguma preocupação com segurança ou privacidade para algum deles?
+* Existe um padrão existente que possa atender a essa necessidade? Há preocupações em usar um padrão externo em vez de um interno? Com ​​que frequência o padrão é atualizado e qual o grau de alteração de cada atualização? Os padrões são acessíveis em um formato fácil de importar/manter, de forma econômica?
 
-##### 1.3.2.2 Vocabulary Views and Micro-controlled Vocabulary
+Os resultados desta avaliação permitirão a integração dos dados. Eles também ajudarão a estabelecer padrões internos, incluindo o vocabulário preferencial associado por meio de funções de gerenciamento de termos e relacionamentos entre termos.
 
-A vocabulary view is a subset of a controlled vocabulary, covering a limited range of topics within the domain of the controlled vocabulary. Vocabulary views are necessary when the goal is to use a standard vocabulary containing a large number of terms, but not all terms are relevant to some consumers of the information. For example, a view that only contains terms relevant to a Marketing Business Unit would not contain terms relevant only to Finance.
+Se esse tipo de avaliação não for realizado, os vocabulários preferenciais ainda serão definidos em uma organização, exceto que serão feitos em silos, projeto por projeto, o que levará a um custo de integração mais alto e maiores chances de problemas de qualidade dos dados. (Consulte o Capítulo 13.)
 
-Vocabulary views increase information’s usability by limiting the content to what is appropriate to the users. Construct a vocabulary view of preferred vocabulary terms manually, or through business rules that act on preferred vocabulary term data or Metadata. Define rules for which terms are included in each vocabulary view.
+##### 1.3.2.2 Visualizações de Vocabulário e Vocabulário Microcontrolado
 
-A micro-controlled vocabulary is a vocabulary view containing highly specialized terms not present in the general vocabulary. An example of a micro-controlled vocabulary is a medical dictionary with subsets for medical disciplines. Such terms should map to the hierarchical structure of the broad controlled vocabulary. A micro-controlled vocabulary is internally consistent with respect to relationships among terms.
+Uma visualização de vocabulário é um subconjunto de um vocabulário controlado, abrangendo uma gama limitada de tópicos dentro do domínio do vocabulário controlado. Visualizações de vocabulário são necessárias quando o objetivo é usar um vocabulário padrão contendo um grande número de termos, mas nem todos os termos são relevantes para alguns consumidores da informação. Por exemplo, uma visualização que contém apenas termos relevantes para uma Unidade de Negócios de Marketing não conteria termos relevantes apenas para Finanças.
 
-Micro-controlled vocabularies are necessary when the goal is to take advantage of a standard vocabulary, but the content is not sufficient and there is a need to manage additions/extensions for a specific group of information consumers. Building a micro-controlled vocabulary starts with the same steps as a vocabulary view, but it also includes addition or association of additional preferred terms that are differentiated from the pre-existing preferred terms by indicating a different source.
+Visualizações de vocabulário aumentam a usabilidade da informação, limitando o conteúdo ao que é apropriado para os usuários. Construa uma visualização de vocabulário de termos de vocabulário preferenciais manualmente ou por meio de regras de negócios que atuem sobre dados de termos de vocabulário preferenciais ou Metadados. Defina regras para quais termos são incluídos em cada visualização de vocabulário.
 
-##### 1.3.2.3 Term and Pick Lists
+Um vocabulário microcontrolado é uma visualização de vocabulário que contém termos altamente especializados não presentes no vocabulário geral. Um exemplo de vocabulário microcontrolado é um dicionário médico com subconjuntos para disciplinas médicas. Tais termos devem ser mapeados para a estrutura hierárquica do vocabulário controlado amplo. Um vocabulário microcontrolado é internamente consistente em relação às relações entre os termos.
 
-Lists of terms are just that: lists. They do not describe relationships between the terms. Pick lists, web pull-down lists, and lists of menu choices in information systems use term lists. They provide little or no guidance to the user, but they help to control ambiguity by reducing the domain of values.
+Vocabulários microcontrolados são necessários quando o objetivo é aproveitar um vocabulário padrão, mas o conteúdo não é suficiente e há a necessidade de gerenciar adições/extensões para um grupo específico de consumidores de informação. A construção de um vocabulário microcontrolado começa com as mesmas etapas de uma visualização de vocabulário, mas também inclui a adição ou associação de termos preferenciais adicionais que são diferenciados dos termos preferenciais preexistentes pela indicação de uma fonte diferente.
 
-Pick lists are often buried in applications. Content management software can help transform pick lists and controlled vocabularies into pick lists searchable from the home page. These pick lists are managed as faceted taxonomies inside the software.
+##### 1.3.2.3 Listas de Termos e Seleção
 
-##### 1.3.2.4 Term Management
+Listas de termos são apenas isso: listas. Elas não descrevem as relações entre os termos. Listas de seleção, listas suspensas da web e listas de opções de menu em sistemas de informação usam listas de termos. Elas fornecem pouca ou nenhuma orientação ao usuário, mas ajudam a controlar a ambiguidade, reduzindo o domínio de valores.
 
-The standard ANSI/NISO Z39.19-2005 defines a term as “One or more words designating a concept.” [^48] Like vocabularies, individual terms also require management. Term Management includes specifying how terms are initially defined and classified and how this information is maintained once it starts being used in different systems. Terms should be managed through a governance processes. Stewards may need to arbitrate to ensure stakeholder feedback is accounted for before terms are changed. Z39.19 defines a preferred term as one of two or more synonyms or lexical variants selected as a term for inclusion in a controlled vocabulary.
+As listas de seleção costumam estar ocultas em aplicativos. Softwares de gerenciamento de conteúdo podem ajudar a transformar listas de seleção e vocabulários controlados em listas de seleção pesquisáveis ​​na página inicial. Essas listas de seleção são gerenciadas como taxonomias facetadas dentro do software.
 
-Term management includes establishing relationships between terms within a controlled vocabulary. There are three types of relationships:
+##### 1.3.2.4 Gerenciamento de Termos
 
-* Equivalent term relationship: A relationship between or among terms in a controlled vocabulary that leads to one or more terms to use instead of the term from which the cross-reference is made. This is the most commonly used term mapping in IT functions, indicating a term or value from one system or vocabulary is the same as another, so integration technologies can perform their mapping and standardization.
-* Hierarchical relationship: A relationship between or among terms in a controlled vocabulary that depicts broader (general) to narrower (specific) or whole-part relationships.
-* Related term relationship: A term that is associatively but not hierarchically linked to another term in a controlled vocabulary.
+A norma ANSI/NISO Z39.19-2005 define um termo como “Uma ou mais palavras que designam um conceito”. [^48] Assim como os vocabulários, termos individuais também requerem gerenciamento. O Gerenciamento de Termos inclui a especificação de como os termos são inicialmente definidos e classificados e como essa informação é mantida após começar a ser usada em diferentes sistemas. Os termos devem ser gerenciados por meio de processos de governança. Os administradores podem precisar arbitrar para garantir que o feedback das partes interessadas seja considerado antes que os termos sejam alterados. A Z39.19 define um termo preferencial como um de dois ou mais sinônimos ou variantes lexicais selecionados como um termo para inclusão em um vocabulário controlado.
 
-##### 1.3.2.5 Synonym Rings and Authority Lists
+O gerenciamento de termos inclui o estabelecimento de relacionamentos entre termos dentro de um vocabulário controlado. Existem três tipos de relacionamentos:
 
-A synonym ring is a set of terms with roughly equivalent meaning. A synonym ring allows users who search on one of the terms to access content related to any of the terms. The manual development of synonym rings is for retrieval, not for indexing. They offer synonym control, and treat synonyms and near synonymous terms equally. Usage occurs where the indexing environment has an uncontrolled vocabulary or where there is no indexing. Search engines and different Metadata registries have synonym rings (See Chapter 13.) They can be difficult to implement on user interfaces.
+* Relacionamento de termo equivalente: Um relacionamento entre termos em um vocabulário controlado que leva a um ou mais termos a serem usados ​​em vez do termo do qual a referência cruzada é feita. Este é o mapeamento de termos mais comumente usado em funções de TI, indicando que um termo ou valor de um sistema ou vocabulário é o mesmo que o de outro, permitindo que tecnologias de integração realizem seu mapeamento e padronização.
+* Relacionamento hierárquico: Um relacionamento entre termos em um vocabulário controlado que descreve relacionamentos mais amplos (gerais) a mais restritos (específicos) ou do todo-parte.
+* Relacionamento de termos relacionados: Um termo que está associado, mas não hierarquicamente, a outro termo em um vocabulário controlado.
 
-An authority list is a controlled vocabulary of descriptive terms designed to facilitate retrieval of information within a specific domain or scope. Term treatment is not equal as it is within a synonym ring; instead, one term is preferred and the others are variants. An authority file cross-references synonyms and variants for each term to guide the user from a non-preferred to a preferred term. The list may or may not contain definitions of these terms. Authority lists should have designated managers. They may have structure. An example is the US Library of Congress’ Subject Headings. (See Section 1.3.2.1.)
+##### 1.3.2.5 Anéis de Sinônimos e Listas de Autoridade
 
-##### 1.3.2.6 Taxonomies
+Um anel de sinônimos é um conjunto de termos com significado aproximadamente equivalente. Um anel de sinônimos permite que usuários que pesquisam um dos termos acessem conteúdo relacionado a qualquer um deles. O desenvolvimento manual de anéis de sinônimos é para recuperação, não para indexação. Eles oferecem controle de sinônimos e tratam sinônimos e termos quase sinônimos igualmente. O uso ocorre quando o ambiente de indexação possui um vocabulário não controlado ou onde não há indexação. Mecanismos de busca e diferentes registros de metadados possuem anéis de sinônimos (consulte o Capítulo 13). Eles podem ser difíceis de implementar em interfaces de usuário.
 
-Taxonomy is an umbrella term referring to any classification or controlled vocabulary. The best-known example of taxonomy is the classification system for all living things developed by the Swedish biologist Linnaeus.
+Uma lista de autoridades é um vocabulário controlado de termos descritivos, projetado para facilitar a recuperação de informações dentro de um domínio ou escopo específico. O tratamento dos termos não é igual ao de um anel de sinônimos; em vez disso, um termo é preferido e os outros são variantes. Um arquivo de autoridades faz referências cruzadas de sinônimos e variantes para cada termo para guiar o usuário de um termo não preferido para um preferido. A lista pode ou não conter definições desses termos. As listas de autoridades devem ter gerentes designados. Elas podem ter estrutura. Um exemplo são os Cabeçalhos de Assunto da Biblioteca do Congresso dos EUA. (Consulte a Seção 1.3.2.1.)
 
-In content management, a taxonomy is a naming structure containing a controlled vocabulary used for outlining topics and enabling navigation and search systems. Taxonomies help reduce ambiguity and control synonyms. A hierarchical taxonomy may contain different types of parent/child relationships useful for both indexers and searchers. Such taxonomies are used to create drill-down type interfaces.
+##### 1.3.2.6 Taxonomias
 
-Taxonomies can have different structures:
+Taxonomia é um termo abrangente que se refere a qualquer classificação ou vocabulário controlado. O exemplo mais conhecido de taxonomia é o sistema de classificação para todos os seres vivos desenvolvido pelo biólogo sueco Lineu.
 
-* A flat taxonomy has no relationships among the set of controlled categories. All the categories are equal. This is similar to a list; for example, a list of countries.
-* A hierarchical taxonomy is a tree structure where nodes are related by a rule. A hierarchy has at least two levels and is bi-directional. Moving up the hierarchy expands the category; moving down refines the category. An example is geography, from continent down to street address.
-* A polyhierarchy is a tree-like structure with more than one node relation rule. Child nodes may have multiple parents. Those parents may also share grandparents. As such, the traversal paths can be complicated and care must be taken to avoid potential invalid traversals: up the tree from a node that relates to the parent, but not to one of the grandparents. Complicated polyhierarchy structures may be better served with a facet taxonomy instead.
-* A facet taxonomy looks like a star where each node is associated with the center node. Facets are attributes of the object in the center. An example is Metadata, where each attribute (creator, title, access rights, keywords, version, etc.) is a facet of a content object.
-* A network taxonomy uses both hierarchical and facet structures. Any two nodes in network taxonomy establish linkages based on their associations. An example is a recommender engine (…if you liked that, you might also like this…). Another example is a thesaurus.
+Na gestão de conteúdo, uma taxonomia é uma estrutura de nomenclatura que contém um vocabulário controlado usado para delinear tópicos e habilitar sistemas de navegação e busca. As taxonomias ajudam a reduzir a ambiguidade e controlar sinônimos. Uma taxonomia hierárquica pode conter diferentes tipos de relacionamentos pai/filho, úteis tanto para indexadores quanto para buscadores. Essas taxonomias são usadas para criar interfaces do tipo drill-down.
 
-With the amount of data being generated, even with the best-defined taxonomies require automated flagging, correction, and routing rules. If taxonomies are not maintained, they will be underutilized or will produce incorrect results. This creates the risk that entities and staff governed by applicable regulations will be out of compliance. For example, in a financial taxonomy, the preferred term may be ‘Postemployment’. Content may come from systems that classify it as ‘Post-Employment’, ‘Post Employment’, or even Post Retirement. To support such cases, appropriate synonym ring and related term relationships should be defined (US GAAP, 2008).
+As taxonomias podem ter diferentes estruturas:
 
-Organizations develop their own taxonomies to formalize collective thinking about topics specific to their work. Taxonomies are particularly important for presenting and finding information on websites, as many search engines rely on exact word matches and can only find items tagged or using the same words in the same way.
+* Uma taxonomia plana não possui relacionamentos entre o conjunto de categorias controladas. Todas as categorias são iguais. Isso é semelhante a uma lista; por exemplo, uma lista de países.
+* Uma taxonomia hierárquica é uma estrutura em árvore onde os nós são relacionados por uma regra. Uma hierarquia tem pelo menos dois níveis e é bidirecional. Subir na hierarquia expande a categoria; descer a refina. Um exemplo é a geografia, do continente até o endereço da rua.
+* Uma poli-hierarquia é uma estrutura em forma de árvore com mais de uma regra de relação de nós. Os nós filhos podem ter vários pais. Esses pais também podem compartilhar avós. Como tal, os caminhos de travessia podem ser complicados e deve-se tomar cuidado para evitar potenciais travessias inválidas: suba na árvore a partir de um nó que se relaciona com o pai, mas não com um dos avós. Estruturas poli-hierárquicas complicadas podem ser melhor atendidas com uma taxonomia de facetas.
+* Uma taxonomia de facetas se parece com uma estrela, onde cada nó está associado ao nó central. Facetas são atributos do objeto no centro. Um exemplo são os Metadados, onde cada atributo (criador, título, direitos de acesso, palavras-chave, versão, etc.) é uma faceta de um objeto de conteúdo.
 
-##### 1.3.2.7 Classification Schemes and Tagging
+* Uma taxonomia de rede utiliza estruturas hierárquicas e facetadas. Quaisquer dois nós em uma taxonomia de rede estabelecem ligações com base em suas associações. Um exemplo é um mecanismo de recomendação (…se você gostou disso, também pode gostar disto…). Outro exemplo é um dicionário de sinônimos.
 
-Classification schemes are codes that represent controlled vocabulary. These schemes are often hierarchical and may have words associated with them, such as the Dewey Decimal System and the US Library of Congress Classification (main classes and subclasses). A number based taxonomy, the Dewey Decimal System is also a multi-lingual expression for subject coding, since numbers can be ‘decoded’ into any language.
+Com a quantidade de dados gerados, mesmo as taxonomias mais bem definidas exigem regras automatizadas de sinalização, correção e roteamento. Se as taxonomias não forem mantidas, serão subutilizadas ou produzirão resultados incorretos. Isso cria o risco de que entidades e funcionários regidos pelas regulamentações aplicáveis ​​estejam fora de conformidade. Por exemplo, em uma taxonomia financeira, o termo preferencial pode ser "Pós-Emprego". O conteúdo pode vir de sistemas que o classificam como "Pós-Emprego", "Pós-Emprego" ou mesmo "Pós-Aposentadoria". Para fundamentar esses casos, deve-se definir o anel de sinônimos apropriado e as relações de termos relacionados (US GAAP, 2008).
 
-Folksonomies are classification schemes for online content terms and names obtained through social tagging. Individual users and groups use them to annotate and categorize digital content. They typically do not have hierarchical structures or preferred terms. Folksonomies are not usually considered authoritative or applied to document indexing because experts do not compile them. However, because they directly reflect the vocabulary of users, they offer the potential to enhance information retrieval. Folksonomy terms can be linked to structured controlled vocabularies.
+As organizações desenvolvem suas próprias taxonomias para formalizar o pensamento coletivo sobre tópicos específicos de seu trabalho. As taxonomias são particularmente importantes para apresentar e encontrar informações em sites, já que muitos mecanismos de busca dependem de correspondências exatas de palavras e só conseguem encontrar itens marcados ou usando as mesmas palavras da mesma maneira.
 
-##### 1.3.2.8 Thesauri
+##### 1.3.2.7 Esquemas de Classificação e Marcação
 
-A thesaurus is type of controlled vocabulary used for content retrieval. It combines characteristics of synonym lists and taxonomies. A thesaurus provides information about each term and its relationship to other terms. Relationships are either hierarchical (parent/child or broad/narrower), associative (‘see also’) or equivalent (synonym or used/used from). Synonyms must be acceptably equivalent in all context scenarios. A thesaurus may also include definitions, citations, etc.
+Esquemas de classificação são códigos que representam vocabulário controlado. Esses esquemas são frequentemente hierárquicos e podem ter palavras associadas a eles, como o Sistema Decimal de Dewey e a Classificação da Biblioteca do Congresso dos EUA (classes e subclasses principais). Uma taxonomia baseada em números, o Sistema Decimal de Dewey também é uma expressão multilíngue para codificação de assuntos, uma vez que os números podem ser "decodificados" para qualquer idioma.
 
-Thesauri can be used to organize unstructured content, uncover relationships between content from different media, improve website navigation, and optimize search. When a user inputs a term, a system can use a non-exposed thesaurus (one not directly available to the user) to automatically direct the search to a similar term. Alternatively, the system can suggest related terms with which a user could continue the search.
+Folksonomias são esquemas de classificação para termos e nomes de conteúdo online obtidos por meio de marcação social. Usuários individuais e grupos as utilizam para anotar e categorizar conteúdo digital. Normalmente, elas não possuem estruturas hierárquicas ou termos preferenciais. As folksonomias geralmente não são consideradas autoritativas ou aplicadas à indexação de documentos, pois não são compiladas por especialistas. No entanto, como refletem diretamente o vocabulário dos usuários, oferecem o potencial de aprimorar a recuperação de informações. Termos de folksonomia podem ser vinculados a vocabulários controlados estruturados.
 
-Standards that provide guidance on creating thesauri include ISO 25964 and ANSI/NISO Z39.19. 10.2.2.1.5 Ontologies.
+##### 1.3.2.8 Tesauros
 
-##### 1.3.2.9 Ontology
+Um tesauro é um tipo de vocabulário controlado usado para recuperação de conteúdo. Ele combina características de listas de sinônimos e taxonomias. Um tesauro fornece informações sobre cada termo e sua relação com outros termos. As relações são hierárquicas (pai/filho ou amplo/mais restrito), associativas (‘ver também’) ou equivalentes (sinônimo ou usado/usado de). Os sinônimos devem ser aceitavelmente equivalentes em todos os cenários de contexto. Um tesauro também pode incluir definições, citações, etc.
 
-An ontology is a type of taxonomy that represents a set of concepts and their relationships within a domain. Ontologies provide the primary knowledge representation in the Semantic Web, and are used in the exchange of information between Semantic Web applications. [^49]
+Os tesauros podem ser usados ​​para organizar conteúdo não estruturado, descobrir relações entre conteúdo de diferentes mídias, melhorar a navegação em sites e otimizar a busca. Quando um usuário insere um termo, um sistema pode usar um tesauro não exposto (um que não está diretamente disponível para o usuário) para direcionar automaticamente a busca para um termo semelhante. Alternativamente, o sistema pode sugerir termos relacionados com os quais o usuário pode continuar a busca.
 
-Ontology languages such as Resource Description Framework Schema (RDFS) are used to develop ontologies by encoding the knowledge about specific domains. They may include reasoning rules to support processing of that knowledge. OWL (Web Ontology Language), an extension to RDFS, is a formal syntax for defining ontologies.
+As normas que fornecem orientação sobre a criação de tesauros incluem ISO 25964 e ANSI/NISO Z39.19. 10.2.2.1.5 Ontologias.
 
-Ontologies describe classes (concepts), individuals (instances), attributes, relations, and events. An ontology can be a collection of taxonomies and thesauri of common vocabulary for knowledge representation and exchange of information. Ontologies often relate to a taxonomic hierarchy of classes and definitions with the subsumption relation, such as decomposing intelligent behavior into many simpler behavior modules and then layers.
+##### 1.3.2.9 Ontologia
 
-There are two key differences between a taxonomy (like a data model) and an ontology:
+Uma ontologia é um tipo de taxonomia que representa um conjunto de conceitos e seus relacionamentos dentro de um domínio. Ontologias fornecem a principal representação do conhecimento na Web Semântica e são usadas na troca de informações entre aplicações da Web Semântica. [^49]
 
-* A taxonomy provides data content classifications for a given concept area. A data model specifically calls out the entity to which an attribute belongs and the valid for that attribute. In an ontology, though, entity, attribute, and content concepts can be completely mixed. Differences are identified through Metadata or other relationships.
-* In a taxonomy or data model, what is defined is what is known – and nothing else. This is referred to as a closed-world assumption. In an ontology, possible relationships are inferred based on the nature of existing relationships, so something that is not explicitly declared can be true. This is referred to as the open-world assumption.
+Linguagens de ontologia, como o Resource Description Framework Schema (RDFS), são usadas para desenvolver ontologias, codificando o conhecimento sobre domínios específicos. Elas podem incluir regras de raciocínio para dar suporte ao processamento desse conhecimento. OWL (Web Ontology Language), uma extensão do RDFS, é uma sintaxe formal para definir ontologias.
 
-While taxonomy management evolved under the Library Sciences, today the art and science of taxonomy and ontology management fall under the semantics management space. (See Chapter 10.)
+Ontologias descrevem classes (conceitos), indivíduos (instâncias), atributos, relações e eventos. Uma ontologia pode ser uma coleção de taxonomias e tesauros de vocabulário comum para representação de conhecimento e troca de informações. Ontologias frequentemente se relacionam a uma hierarquia taxonômica de classes e definições com a relação de subsunção, como a decomposição do comportamento inteligente em vários módulos de comportamento mais simples e, em seguida, em camadas.
 
-Because the process of modeling ontologies is somewhat subjective, it is important to avoid common pitfalls that cause ambiguity and confusion:
+Existem duas diferenças principais entre uma taxonomia (como um modelo de dados) e uma ontologia:
 
-* Failure to distinguish between an instance-of relationship and a subclass-of relationship
-* Modeling events as relations
-* Lack of clarity and uniqueness of terms
-* Modeling roles as classes
-* Failure to reuse
-* Mixing semantics of modeling language and concepts
-* Use of a web-based, platform-independent tool (e.g., OOPS!) for ontology validation helps with diagnosis and repair of pitfalls
+* Uma taxonomia fornece classificações de conteúdo de dados para uma determinada área conceitual. Um modelo de dados identifica especificamente a entidade à qual um atributo pertence e o valor válido para esse atributo. Em uma ontologia, porém, os conceitos de entidade, atributo e conteúdo podem ser completamente misturados. As diferenças são identificadas por meio de metadados ou outros relacionamentos.
+* Em uma taxonomia ou modelo de dados, o que é definido é o que é conhecido – e nada mais. Isso é chamado de suposição de mundo fechado. Em uma ontologia, relacionamentos possíveis são inferidos com base na natureza dos relacionamentos existentes, portanto, algo que não é explicitamente declarado pode ser verdadeiro. Isso é chamado de suposição de mundo aberto.
 
-#### 1.3.3 Documents and Records
+Embora a gestão de taxonomia tenha evoluído sob a responsabilidade das Ciências Bibliotecárias, hoje a arte e a ciência da gestão de taxonomia e ontologia se enquadram no âmbito da gestão semântica. (Ver Capítulo 10.)
 
-Documents are electronic or paper objects that contain instructions for tasks, requirements for how and when to perform a task or function, and logs of task execution and decisions. Documents can communicate and share information and knowledge. Examples of documents include procedures, protocols, methods, and specifications.
+Como o processo de modelagem de ontologias é um tanto subjetivo, é importante evitar armadilhas comuns que causam ambiguidade e confusão:
 
-Only a subset of documents will be designated as records. Records provide evidence that actions were taken and decisions were made in keeping with procedures; they can serve as evidence of the organization’s business activities and regulatory compliance. People usually create records, but instruments and monitoring equipment could also provide data to generate records automatically.
+* Falha em distinguir entre um relacionamento de instância de e um relacionamento de subclasse de
+* Modelagem de eventos como relações
+* Falta de clareza e unicidade de termos
+* Modelagem de papéis como classes
+* Falha em reutilização
+* Mistura de semântica de linguagem e conceitos de modelagem
+* O uso de uma ferramenta web independente de plataforma (por exemplo, OOPS!) para validação de ontologias auxilia no diagnóstico e na correção de armadilhas
 
-##### 1.3.3.1 Document Management
+#### 1.3.3 Documentos e Registros
 
-Document management encompasses the processes, techniques, and technologies for controlling and organizing documents and records throughout their lifecycle. It includes storage, inventory, and control, for both electronic and paper documents. More than 90% of the documents created today are electronic. While paperless documents are becoming more widely used, the world is still full of historical paper documents.
+Documentos são objetos eletrônicos ou em papel que contêm instruções para tarefas, requisitos de como e quando executar uma tarefa ou função, e registros da execução e das decisões de tarefas. Documentos podem comunicar e compartilhar informações e conhecimento. Exemplos de documentos incluem procedimentos, protocolos, métodos e especificações.
 
-In general, document management concerns files, with little attention to file content. The information content within a file may guide how to manage that file, but document management treats the file as a single entity.
+Apenas um subconjunto de documentos será designado como registros. Registros fornecem evidências de que ações foram tomadas e decisões foram tomadas em conformidade com os procedimentos; eles podem servir como evidência das atividades comerciais da organização e da conformidade regulatória. As pessoas geralmente criam registros, mas instrumentos e equipamentos de monitoramento também podem fornecer dados para gerá-los automaticamente.
 
-Both market and regulatory pressures put focus on records retention schedules, location, transport, and destruction. For example, some data about individuals cannot cross international boundaries.
+##### 1.3.3.1 Gestão de Documentos
 
-Regulations and statutes, such as the U.S. Sarbanes-Oxley Act and E-Discovery Amendments to the Federal Rules of Civil Procedure and Canada’s Bill 198, are now concerns of corporate compliance officers who push for standardization of records management practices within their organizations. Managing the lifecycle of documents and records includes:
+A gestão de documentos abrange os processos, técnicas e tecnologias para controlar e organizar documentos e registros ao longo de seu ciclo de vida. Inclui armazenamento, inventário e controle, tanto para documentos eletrônicos quanto em papel. Mais de 90% dos documentos criados hoje são eletrônicos. Embora documentos sem papel estejam se tornando mais amplamente utilizados, o mundo ainda está repleto de documentos históricos em papel.
 
-* Inventory: Identification of existing and newly created documents / records.
-* Policy: Creation, approval, and enforcement of documents / records policies, including a document / records retention policy.
-* Classification of documents / records.
-* Storage: Short- and long-term storage of physical and electronic documents / records.
-* Retrieval and Circulation: Allowing access to and circulation of documents / records in accordance with policies, security and control standards, and legal requirements.
-* Preservation and Disposal: Archiving and destroying documents / records according to organizational needs, statutes, and regulations.
+Em geral, a gestão de documentos se concentra em arquivos, com pouca atenção ao seu conteúdo. O conteúdo informativo de um arquivo pode orientar como gerenciá-lo, mas a gestão de documentos trata o arquivo como uma entidade única.
 
-Data management professionals are stakeholders in decisions about document classification and retention. They must support consistency between the base structured data and specific unstructured data. For example, if finished output reports are deemed appropriate historic documentation, the structured data in an OLTP or warehousing environment may be relieved of storing the report’s base data.
+Tanto as pressões do mercado quanto as regulatórias se concentram nos cronogramas de retenção de registros, localização, transporte e destruição. Por exemplo, alguns dados sobre indivíduos não podem cruzar fronteiras internacionais.
 
-Documents are often developed within a hierarchy with some documents more detailed than others are. Figure 72, based on text from ISO 9000 Introduction and Support Package: Guidance on the Documentation Requirements of ISO 9001, Clause 4.2, depicts a documentation-centric paradigm, appropriate for government or the military. ISO 9001 describes the minimal components of a basic quality management system. Commercial entities may have a different document hierarchies or flows to support business practices.
+Regulamentações e estatutos, como a Lei Sarbanes-Oxley dos EUA e as Emendas de Descoberta Eletrônica às Regras Federais de Processo Civil, e o Projeto de Lei 198 do Canadá, são agora preocupações dos responsáveis ​​pela conformidade corporativa que pressionam pela padronização das práticas de gestão de registros em suas organizações. Gerenciar o ciclo de vida de documentos e registros inclui:
 
-##### 1.3.3.2 Records Management
+* Inventário: Identificação de documentos/registros existentes e recém-criados.
+* Política: Criação, aprovação e aplicação de políticas de documentos/registros, incluindo uma política de retenção de documentos/registros.
+* Classificação de documentos/registros.
+* Armazenamento: Armazenamento de curto e longo prazo de documentos/registros físicos e eletrônicos.
 
-Document management includes records management. Managing records has special requirements. [^50] Records management includes the full lifecycle: from record creation or receipt through processing, distribution, organization, and retrieval, to disposition. Records can be physical (e.g., documents, memos, contracts, reports or microfiche); electronic (e.g., email content, attachments, and instant messaging); content on a website; documents on all types of media and hardware; and data captured in databases of all kinds. Hybrid records, such as aperture cards (paper record with a microfiche window imbedded with details or supporting material), combine formats. A Vital Record is type a record required to resume an organization’s operations the event of a disaster.
+* Recuperação e Circulação: Permitir o acesso e a circulação de documentos/registros de acordo com as políticas, padrões de segurança e controle e requisitos legais.
+* Preservação e Descarte: Arquivar e destruir documentos/registros de acordo com as necessidades, estatutos e regulamentos organizacionais.
 
-![Figure 72 Document Hierarchy based on ISO 9001-4.2](figure_72.png)
-Figure 72 Document Hierarchy based on ISO 9001-4.2
+Profissionais de gestão de dados são partes interessadas nas decisões sobre classificação e retenção de documentos. Eles devem manter a consistência entre os dados estruturados básicos e dados não estruturados específicos. Por exemplo, se os relatórios de saída finalizados forem considerados documentação histórica apropriada, os dados estruturados em um ambiente OLTP ou de armazenamento podem ser dispensados ​​do armazenamento dos dados básicos do relatório.
 
-Trustworthy records are important not only for record keeping but also for regulatory compliance. Having signatures on the record contributes to a record’s integrity. Other integrity actions include verification of the event (i.e., witnessing in real time) and double-checking the information after the event.
+Os documentos são frequentemente desenvolvidos dentro de uma hierarquia, com alguns documentos mais detalhados do que outros. A Figura 72, baseada no texto da Introdução e Pacote de Suporte da ISO 9000: Orientações sobre os Requisitos de Documentação da ISO 9001, Cláusula 4.2, descreve um paradigma centrado na documentação, apropriado para o governo ou para o setor militar. A ISO 9001 descreve os componentes mínimos de um sistema básico de gestão da qualidade. Entidades comerciais podem ter diferentes hierarquias ou fluxos de documentos para dar suporte às práticas comerciais.
 
-Well-prepared records have characteristics such as:
+##### 1.3.3.2 Gestão de Registros
 
-* Content: Content must be accurate, complete and truthful.
-* Context: Descriptive information (Metadata) about the record’s creator, date of creation, or relationship to other records should be collected, structured and maintained with the record at the time of record creation.
-* Timeliness: A record should be created promptly after the event, action or decision occurs.
-* Permanency: Once they are designated as records, records cannot be changed for the legal length of their existence.
-* Structure: The appearance and arrangement of a record’s content should be clear. They should be recorded on the correct forms or templates. Content should be legible, terminology should be used consistently.
+A gestão de documentos inclui a gestão de registros. A gestão de registros possui requisitos especiais. [^50] A gestão de registros abrange todo o ciclo de vida: desde a criação ou recebimento do registro, passando pelo processamento, distribuição, organização e recuperação, até a disposição. Os registros podem ser físicos (por exemplo, documentos, memorandos, contratos, relatórios ou microfichas); eletrônicos (por exemplo, conteúdo de e-mail, anexos e mensagens instantâneas); conteúdo em um website; documentos em todos os tipos de mídia e hardware; e dados capturados em bancos de dados de todos os tipos. Registros híbridos, como cartões de abertura (registro em papel com uma janela de microficha incorporada com detalhes ou material de apoio), combinam formatos. Um Registro Vital é um tipo de registro necessário para retomar as operações de uma organização em caso de desastre.
 
-Many records exist in both electronic and paper formats. Records Management requires the organization to know which copy (electronic or paper) is the official ‘copy of record’ to meet record keeping obligations. Once the copy of record is determined, the other copy can be safely destroyed.
+![Figura 72 Hierarquia de Documentos baseada na ISO 9001-4.2](figure_72.png)
+Figura 72 Hierarquia de Documentos baseada na ISO 9001-4.2
 
-##### 1.3.3.3 Digital Asset Management
+Registros confiáveis ​​são importantes não apenas para a manutenção de registros, mas também para a conformidade regulatória. Ter assinaturas no registro contribui para a integridade do mesmo. Outras ações de integridade incluem a verificação do evento (ou seja, testemunhar em tempo real) e a dupla verificação das informações após o evento.
 
-Digital Asset Management (DAM) is process similar to document management that focuses on the storage, tracking and use of rich media documents like video, logos, photographs, etc.
+Registros bem elaborados apresentam características como:
 
-#### 1.3.4 Data Map
+* Conteúdo: O conteúdo deve ser preciso, completo e verdadeiro.
+* Contexto: Informações descritivas (metadados) sobre o criador do registro, a data de criação ou o relacionamento com outros registros devem ser coletadas, estruturadas e mantidas com o registro no momento da criação.
+* Pontualidade: Um registro deve ser criado imediatamente após a ocorrência do evento, ação ou decisão.
 
-A Data Map is an inventory of all ESI data sources, applications, and IT environments that includes the owners of the applications, custodians, relevant geographical locations, and data types.
+* Permanência: Uma vez designados como registros, os registros não podem ser alterados durante o período legal de sua existência.
+* Estrutura: A aparência e a organização do conteúdo de um registro devem ser claras. Eles devem ser registrados nos formulários ou modelos corretos. O conteúdo deve ser legível e a terminologia deve ser usada de forma consistente.
 
-#### 1.3.5 E-discovery
+Muitos registros existem em formato eletrônico e em papel. A Gestão de Registros exige que a organização saiba qual cópia (eletrônica ou em papel) é a "cópia oficial do registro" para cumprir as obrigações de manutenção de registros. Uma vez determinada a cópia do registro, a outra cópia pode ser destruída com segurança.
 
-Discovery is a legal term that refers to pre-trial phase of a lawsuit where both parties request information from each other to find facts for the case and to see how strong the arguments are on either side. The US Federal Rules of Civil Procedure (FRCP) have governed the discovery of evidence in lawsuits and other civil cases since 1938. For decades, paper-based discovery rules were applied to e-discovery. In 2006, amendments to the FRCP accommodated the discovery practice and requirements of ESI in the litigation process.
+##### 1.3.3.3 Gestão de Ativos Digitais
 
-Other global regulations have requirements specific to the ability of an organization to produce electronic evidence. Examples include the UK Bribery Act, Dodd-Frank Act, Foreign Account Tax Compliance Act (FATCA), Foreign Corrupt Practices Act, EU Data Protection Regulations and Rules, global anti-trust regulations, sector-specific regulations, and local court procedural rules.
+A Gestão de Ativos Digitais (GAD) é um processo semelhante à gestão de documentos que se concentra no armazenamento, rastreamento e uso de documentos de mídia avançada, como vídeos, logotipos, fotografias, etc.
 
-Electronic documents usually have Metadata (which may not be available for paper documents) that plays an important part in evidence. Legal requirements come from the key legal processes such as e-discovery, as well as data and records retention practices, the legal hold notification (LHN) process, and legally defensible disposition practices. LHN includes identifying information that may be requested in a legal proceeding, locking that data or document down to prevent editing or deletion, and then notifying all parties in an organization that the data or document in question is subject to a legal hold.
+#### 1.3.4 Mapa de Dados
 
-Figure 73 depicts a high-level Electronic Discovery Reference Model developed by EDRM, a standards and guidelines organization for e-discovery. This framework provides an approach to e-discovery that is handy for people involved in identifying how and where the relevant internal data is stored, what retention policies apply, what data is not accessible, and what tools are available to assist in the identification process.
+Um Mapa de Dados é um inventário de todas as fontes de dados, aplicativos e ambientes de TI do ESI, incluindo os proprietários dos aplicativos, custodiantes, localizações geográficas relevantes e tipos de dados.
 
-![Figure 73 Electronic Discovery Reference Model](figure_73.png)
-Figure 73 Electronic Discovery Reference Model [^51]
+#### 1.3.5 Descoberta eletrônica
 
-The EDRM model assumes that data or information governance is in place. The model includes eight e-discovery phases that can be iterative. As e-discovery progresses, the volume of discoverable data and information is greatly reduced as their relevance is greatly increased.
+Descoberta é um termo jurídico que se refere à fase pré-julgamento de um processo judicial, na qual ambas as partes solicitam informações uma à outra para encontrar fatos para o caso e verificar a solidez dos argumentos de cada lado. As Regras Federais de Processo Civil (FRCP) dos EUA regem a descoberta de provas em processos judiciais e outros casos civis desde 1938. Durante décadas, as regras de descoberta em papel foram aplicadas à descoberta eletrônica. Em 2006, emendas às FRCP acomodaram a prática de descoberta e os requisitos da ESI no processo litigioso.
 
-The first phase, Identification, has two sub-phases: Early Case Assessment and Early Data Assessment (not depicted in the diagram). In Early Case Assessment, the legal case itself is assessed for pertinent information, called descriptive information or Metadata (e.g., keywords, date ranges, etc.). In Early Data Assessment, the types and location of data relevant to the case is assessed. Data assessment should identify policies related to the retention or destruction of relevant data so that ESI can be preserved. Interviews should be held with records management personnel, data custodians or data owners, and information technology personnel to obtain pertinent information. In addition, the involved personnel need to understand the case background, legal hold, and their role in the litigation.
+Outras regulamentações globais têm requisitos específicos para a capacidade de uma organização produzir provas eletrônicas. Exemplos incluem a Lei Antissuborno do Reino Unido, a Lei Dodd-Frank, a Lei de Conformidade Tributária de Contas no Exterior (FATCA), a Lei de Práticas de Corrupção no Exterior, os Regulamentos e Regras de Proteção de Dados da UE, regulamentações antitruste globais, regulamentações setoriais específicas e regras processuais judiciais locais.
 
-The next phases in the model are the Preservation and Collection. Preservation ensures that the data that has been identified as potentially relevant is placed in a legal hold so it is not destroyed. Collection includes the acquisition and transfer of identified data from the company to their legal counsel in a legally defensible manner.
+Documentos eletrônicos geralmente contêm metadados (que podem não estar disponíveis para documentos em papel) que desempenham um papel importante na produção de provas. Os requisitos legais advêm dos principais processos legais, como a descoberta eletrônica, bem como das práticas de retenção de dados e registros, do processo de notificação de retenção legal (LHN) e de práticas de disposição legalmente defensáveis. A LHN inclui a identificação de informações que podem ser solicitadas em um processo judicial, o bloqueio desses dados ou documentos para impedir sua edição ou exclusão e, em seguida, a notificação a todas as partes da organização de que os dados ou documentos em questão estão sujeitos à retenção legal.
 
-During the Processing phase data is de-duplicated, searched, and analyzed to determine which data items will move forward to the Review phase. In the Review phase, documents are identified to be presented in response to the request. Review also identifies privileged documents that will be withheld. Much of the selection depends on Metadata associated with the documents. Processing takes place after the Review phase because it addresses content analysis to understand the circumstances, facts and potential evidence in litigation or investigation and to enhance the search and review processes.
+A Figura 73 descreve um Modelo de Referência de Descoberta Eletrônica de alto nível desenvolvido pela EDRM, uma organização de padrões e diretrizes para descoberta eletrônica. Essa estrutura fornece uma abordagem para descoberta eletrônica útil para pessoas envolvidas na identificação de como e onde os dados internos relevantes são armazenados, quais políticas de retenção se aplicam, quais dados não estão acessíveis e quais ferramentas estão disponíveis para auxiliar no processo de identificação.
 
-Processing and Review depend on analysis, but Analysis is called out as a separate phase with a focus on content. The goal of content analysis is to understand the circumstances, facts, and potential evidence in litigation or investigation, in order to formulate a strategy in response to the legal situation.
+![Figura 73 Modelo de Referência de Descoberta Eletrônica](figure_73.png)
+Figura 73 Modelo de Referência de Descoberta Eletrônica [^51]
 
-In the Production phase, data and information are turned over to opposing counsel, based on agreed-to specifications. Original sources of information may be files, spreadsheets, email, databases, drawings, photographs, data from proprietary applications, website data, voicemail, and much more. The ESI can be collected, processed and output to a variety of formats. Native production retains the original format of the files. Near-native production alters the original format through extraction and conversion. ESI can be produced in an image, or near paper, format. Fielded data is Metadata and other information extracted from native files when ESI is processed and produced in a text-delimited file or XML load file. The lineage of the materials provided during the Production phase is important, because no one wants to be accused of altering data or information provided.
+O modelo EDRM pressupõe a existência de governança de dados ou informações. O modelo inclui oito fases de descoberta eletrônica que podem ser iterativas. À medida que a descoberta eletrônica avança, o volume de dados e informações detectáveis ​​é bastante reduzido, à medida que sua relevância aumenta significativamente.
 
-Displaying the ESI at depositions, hearings, and trials is part of the Presentation phase. The ESI exhibits can be presented in paper, near paper, near-native and native formats to support or refute elements of the case. They may be used to elicit further information, validate existing facts or positions, or persuade an audience.
+A primeira fase, Identificação, possui duas subfases: Avaliação Inicial do Caso e Avaliação Inicial dos Dados (não representada no diagrama). Na Avaliação Inicial do Caso, o próprio caso jurídico é avaliado em busca de informações pertinentes, chamadas de informações descritivas ou Metadados (por exemplo, palavras-chave, intervalos de datas, etc.). Na Avaliação Inicial dos Dados, são avaliados os tipos e a localização dos dados relevantes para o caso. A avaliação de dados deve identificar políticas relacionadas à retenção ou destruição de dados relevantes para que o ESI possa ser preservado. Entrevistas devem ser realizadas com o pessoal de gestão de registros, custodiantes ou proprietários de dados e pessoal de tecnologia da informação para obter informações pertinentes. Além disso, os profissionais envolvidos precisam entender o histórico do caso, a guarda legal e seu papel no litígio.
 
-#### 1.3.6 Information Architecture
+As próximas fases do modelo são a Preservação e a Coleta. A preservação garante que os dados identificados como potencialmente relevantes sejam colocados em guarda legal para que não sejam destruídos. A coleta inclui a aquisição e a transferência dos dados identificados da empresa para seus assessores jurídicos de forma legalmente defensável.
 
-Information Architecture is the process of creating structure for a body of information or content. It includes the following components:
+Durante a fase de Processamento, os dados são desduplicados, pesquisados ​​e analisados ​​para determinar quais itens de dados passarão para a fase de Revisão. Na fase de Revisão, os documentos são identificados para serem apresentados em resposta à solicitação. A Revisão também identifica documentos privilegiados que serão retidos. Grande parte da seleção depende dos Metadados associados aos documentos. O Processamento ocorre após a fase de Revisão porque aborda a análise de conteúdo para entender as circunstâncias, os fatos e as possíveis evidências em litígios ou investigações e para aprimorar os processos de pesquisa e revisão.
 
-* Controlled vocabularies
-* Taxonomies and ontologies
-* Navigation maps
-* Metadata maps
-* Search functionality specifications
-* Use cases
-* User flows
+O Processamento e a Revisão dependem da análise, mas a Análise é considerada uma fase separada com foco no conteúdo. O objetivo da análise de conteúdo é compreender as circunstâncias, os fatos e as potenciais evidências em litígios ou investigações, a fim de formular uma estratégia em resposta à situação jurídica.
 
-The information architecture and the content strategy together describe the ‘what’ – what content will be managed in a system. The design phases describe ‘how’ the content management strategy will be implemented.
+Na fase de Produção, os dados e as informações são entregues ao advogado da parte contrária, com base nas especificações acordadas. As fontes originais de informação podem ser arquivos, planilhas, e-mails, bancos de dados, desenhos, fotografias, dados de aplicativos proprietários, dados de sites, correio de voz e muito mais. O ESI pode ser coletado, processado e gerado em diversos formatos. A produção nativa mantém o formato original dos arquivos. A produção quase nativa altera o formato original por meio de extração e conversão. O ESI pode ser produzido em formato de imagem ou quase papel. Dados de campo são metadados e outras informações extraídas de arquivos nativos quando o ESI é processado e produzido em um arquivo delimitado por texto ou em um arquivo XML de carregamento. A origem dos materiais fornecidos durante a fase de Produção é importante, pois ninguém quer ser acusado de alterar dados ou informações fornecidas.
 
-For a document or content management system, the information architecture identifies the links and relationships between documents and content, specifies document requirements and attributes, and defines the structure of content in a document or content management system. Information architecture is central to developing effective websites. A storyboard provides a blueprint for a web project. It serves as an outline of the design approach, defines the elements that need to go on each web page, and shows the navigation and information flow of how the pages are to work together. This enables development of the navigational models, menus, and other components necessary for the management and use of the site.
+A exibição do ESI em depoimentos, audiências e julgamentos faz parte da fase de Apresentação. As exposições ESI podem ser apresentadas em formato papel, quase papel, quase nativo e nativo para apoiar ou refutar elementos do caso. Elas podem ser usadas para obter mais informações, validar fatos ou posições existentes ou persuadir o público.
 
-#### 1.3.7 Search Engine
+#### 1.3.6 Arquitetura da Informação
 
-A search engine is software that searches for information based on terms and retrieves websites that have those terms within their content. One example is Google. Search functionality requires several components: search engine software proper, spider software that roams the Web and stores the Uniform Resource Locators (URLs) of the content it finds, indexing of the encountered keywords and text, and rules for ranking.
+Arquitetura da Informação é o processo de criação de estrutura para um conjunto de informações ou conteúdo. Ela inclui os seguintes componentes:
 
-#### 1.3.8 Semantic Model
+* Vocabulários controlados
+* Taxonomias e ontologias
+* Mapas de navegação
+* Mapas de metadados
+* Especificações da funcionalidade de pesquisa
+* Casos de uso
+* Fluxos de usuários
 
-Semantic modeling is a type of knowledge modeling that describes a network of concepts (ideas or topics of concern) and their relationships. Incorporated into information systems, semantic models enable users to ask questions of the information in a non-technical way. For example, a semantic model can map database tables and views to concepts that are meaningful to business users.
+A arquitetura da informação e a estratégia de conteúdo, juntas, descrevem o "o quê" – qual conteúdo será gerenciado em um sistema. As fases de design descrevem "como" a estratégia de gerenciamento de conteúdo será implementada.
 
-Semantic models contain semantic objects and bindings. Semantic objects are things represented in the model. They can have attributes with cardinality and domains, and identifiers. Their structures can be simple, composite, compound, hybrid, association, parent / subtype, or archetype / version. Bindings represent associations or association classes in UML. These models help to identify patterns and trends and to discover relationships between pieces of information that might otherwise appear disparate. In doing so, they help enable integration of data across different knowledge domains or subject areas. Ontologies and controlled vocabularies are critical to semantic modeling.
+Para um sistema de gerenciamento de documentos ou conteúdo, a arquitetura da informação identifica os vínculos e relacionamentos entre documentos e conteúdo, especifica os requisitos e atributos do documento e define a estrutura do conteúdo em um sistema de gerenciamento de documentos ou conteúdo. A arquitetura da informação é fundamental para o desenvolvimento de websites eficazes. Um storyboard fornece um modelo para um projeto web. Ele serve como um esboço da abordagem de design, define os elementos que devem estar presentes em cada página da web e mostra a navegação e o fluxo de informações de como as páginas devem funcionar em conjunto. Isso permite o desenvolvimento de modelos de navegação, menus e outros componentes necessários para o gerenciamento e o uso do site.
 
-Data integration uses ontologies in several different ways. A single ontology could be the reference model. If there are multiple data sources, then each individual data source is modeled using an ontology and later mapped to the other ontologies. The hybrid approach uses multiple ontologies that integrate with a common overall vocabulary.
+#### 1.3.7 Mecanismo de Busca
 
-#### 1.3.9 Semantic Search
+Um mecanismo de busca é um software que busca informações com base em termos e recupera sites que contêm esses termos em seu conteúdo. Um exemplo é o Google. A funcionalidade de busca requer vários componentes: o software do mecanismo de busca propriamente dito, um software de rastreamento que percorre a web e armazena os Localizadores Uniformes de Recursos (URLs) do conteúdo encontrado, a indexação das palavras-chave e do texto encontrados e regras de classificação.
 
-Semantic searching focuses on meaning and context rather than predetermined keywords. A semantic search engine can use artificial intelligence to identify query matches based on words and their context. Such a search engine can analyze by location, intent, word variations, synonyms, and concept matching.
+#### 1.3.8 Modelo Semântico
 
-Requirements for semantic search involve figuring out what users want which means thinking like the users. If users want search engines to work like natural language, most likely they will want web content to behave this way. The challenge for marketing organizations is to incorporated associations and keywords that are relevant to their users as well as their brands.
+A modelagem semântica é um tipo de modelagem do conhecimento que descreve uma rede de conceitos (ideias ou tópicos de interesse) e seus relacionamentos. Incorporados aos sistemas de informação, os modelos semânticos permitem que os usuários façam perguntas sobre as informações de forma não técnica. Por exemplo, um modelo semântico pode mapear tabelas e visualizações de banco de dados para conceitos que sejam significativos para usuários corporativos.
 
-Web content optimized for semantics incorporates natural key words, rather than depending on rigid keyword insertion. Types of semantic keywords include: Core keywords that contain variations; thematic keywords for conceptually related terms; and stem keywords that anticipate what people might ask. Content can be further optimized through content relevancy and ‘shareworthiness’, and sharing content through social media integration.
+Modelos semânticos contêm objetos e ligações semânticas. Objetos semânticos são coisas representadas no modelo. Eles podem ter atributos com cardinalidade, domínios e identificadores. Suas estruturas podem ser simples, compostas, híbridas, de associação, pai/subtipo ou arquétipo/versão. Ligações representam associações ou classes de associação em UML. Esses modelos ajudam a identificar padrões e tendências e a descobrir relacionamentos entre informações que, de outra forma, poderiam parecer díspares. Ao fazer isso, eles ajudam a permitir a integração de dados em diferentes domínios de conhecimento ou áreas temáticas. Ontologias e vocabulários controlados são essenciais para a modelagem semântica.
 
-Users of Business Intelligence (BI) and analytics tools often have semantic search requirements. The BI tools need to be flexible so that business users can find the information they need for analysis, reports and dashboards. Users of Big Data have a similar need to find common meaning in data from disparate formats.
+A integração de dados utiliza ontologias de diversas maneiras. Uma única ontologia pode ser o modelo de referência. Se houver múltiplas fontes de dados, cada fonte de dados individual é modelada usando uma ontologia e posteriormente mapeada para as outras ontologias. A abordagem híbrida utiliza múltiplas ontologias que se integram a um vocabulário geral comum.
 
-#### 1.3.10 Unstructured Data
+#### 1.3.9 Busca Semântica
 
-It is estimated that as much as 80% of all stored data is maintained outside of relational databases. This unstructured data does not have a data model that enables users to understand its content or how it is organized; it is not tagged or structured into rows and columns. The term unstructured is somewhat misleading, as there often is structure in documents, graphics, and other formats, for instance, chapters or headers. Some refer to data stored outside relational databases as non-tabular or semi-structured data. No single term adequately describes the vast volume and diverse format of electronic information that is created and stored in today’s world.
+A busca semântica se concentra no significado e no contexto, em vez de palavras-chave predeterminadas. Um mecanismo de busca semântica pode usar inteligência artificial para identificar correspondências de consulta com base em palavras e seu contexto. Esse mecanismo de busca pode analisar por localização, intenção, variações de palavras, sinônimos e correspondência de conceitos.
 
-Unstructured data is found in various electronic formats: word processing documents, electronic mail, social media, chats, flat files, spreadsheets, XML files, transactional messages, reports, graphics, digital images, microfiche, video recordings, and audio recordings. An enormous amount of unstructured data also exists in paper files.
+Os requisitos para a busca semântica envolvem descobrir o que os usuários desejam, o que significa pensar como eles. Se os usuários desejam que os mecanismos de busca funcionem como uma linguagem natural, provavelmente desejarão que o conteúdo da web se comporte dessa maneira. O desafio para as organizações de marketing é incorporar associações e palavras-chave relevantes para seus usuários e também para suas marcas.
 
-The fundamental principles of data management apply to both structured and unstructured data. Unstructured data is a valuable corporate asset. Storage, integrity, security, content quality, access, and effective use guide the management of unstructured data. Unstructured data requires data governance, architecture, security Metadata, and data quality.
+O conteúdo da web otimizado para semântica incorpora palavras-chave naturais, em vez de depender da inserção rígida de palavras-chave. Os tipos de palavras-chave semânticas incluem: palavras-chave principais que contêm variações; palavras-chave temáticas para termos conceitualmente relacionados; e palavras-chave-tronco que antecipam o que as pessoas podem perguntar. O conteúdo pode ser ainda mais otimizado por meio da relevância do conteúdo e do "compartilhamento", além do compartilhamento de conteúdo por meio da integração com as mídias sociais.
 
-Unstructured and semi-structured data have become more important to data warehousing and Business Intelligence. Data warehouses and their data models may include structured indexes to help users find and analyze unstructured data. Some databases include the capacity to handle URLs to unstructured data that perform as hyperlinks when retrieved from the database table. Unstructured data in data lakes is described in Chapter 14.
+Usuários de ferramentas de Business Intelligence (BI) e analytics frequentemente têm requisitos de busca semântica. As ferramentas de BI precisam ser flexíveis para que os usuários de negócios possam encontrar as informações de que precisam para análises, relatórios e dashboards. Usuários de Big Data têm uma necessidade semelhante de encontrar significados comuns em dados de formatos distintos.
 
-#### 1.3.11 Workflow
+#### 1.3.10 Dados Não Estruturados
 
-Content development should be managed through a workflow that ensures content is created on schedule and receives proper approvals. Workflow components can include the creation, processing, routing, rules, administration, security, electronic signature, deadline, escalation (if problems occur), reporting and delivery. It should be automated through the use of a content management system (CMS) or a standalone system, rather than manual processes.
+Estima-se que cerca de 80% de todos os dados armazenados sejam mantidos fora de bancos de dados relacionais. Esses dados não estruturados não possuem um modelo de dados que permita aos usuários compreender seu conteúdo ou como estão organizados; não são marcados ou estruturados em linhas e colunas. O termo "não estruturado" é um tanto enganoso, pois frequentemente há estrutura em documentos, gráficos e outros formatos, por exemplo, capítulos ou cabeçalhos. Alguns se referem aos dados armazenados fora de bancos de dados relacionais como dados não tabulares ou semiestruturados. Nenhum termo descreve adequadamente o vasto volume e a diversidade de formatos de informações eletrônicas criadas e armazenadas no mundo atual.
 
-A CMS has the added benefit of providing version control. When content is checked into a CMS, it will be timestamped, assigned a version number, and tagged with the name of the person who made the updates. The workflow needs to be repeatable, ideally containing process steps common across a variety of content. A set of workflows and templates may be necessary if there are significant differences between content types. Alignment of the stakeholders and distribution points (including technology) is important. Deadlines need to be refined to improve workflows, otherwise you can quickly find your work flows are out of date or there is confusion over which stakeholder is responsible for which piece.
+Dados não estruturados são encontrados em vários formatos eletrônicos: documentos de processamento de texto, e-mails, mídias sociais, chats, arquivos simples, planilhas, arquivos XML, mensagens transacionais, relatórios, gráficos, imagens digitais, microfichas, gravações de vídeo e áudio. Uma enorme quantidade de dados não estruturados também existe em arquivos de papel.
 
-## 2. Activities
+Os princípios fundamentais da gestão de dados se aplicam tanto a dados estruturados quanto a dados não estruturados. Dados não estruturados são um ativo corporativo valioso. Armazenamento, integridade, segurança, qualidade do conteúdo, acesso e uso eficaz orientam o gerenciamento de dados não estruturados. Dados não estruturados exigem governança de dados, arquitetura, segurança, metadados e qualidade dos dados.
 
-### 2.1 Plan for Lifecycle Management
+Dados não estruturados e semiestruturados tornaram-se mais importantes para data warehouse e Business Intelligence. Data warehouses e seus modelos de dados podem incluir índices estruturados para ajudar os usuários a encontrar e analisar dados não estruturados. Alguns bancos de dados incluem a capacidade de manipular URLs para dados não estruturados que funcionam como hiperlinks quando recuperados da tabela do banco de dados. Dados não estruturados em data lakes são descritos no Capítulo 14.
 
-The practice of document management involves planning for a document’s lifecycle, from its creation or receipt, through its distribution, storage, retrieval, archiving and potential destruction. Planning includes developing classification / indexing systems and taxonomies that enable storage and retrieval of documents. Importantly, lifecycle planning requires creating policy specifically for records.
+#### 1.3.11 Fluxo de Trabalho
 
-First, identify the organizational unit responsible for managing the documents and records. That unit coordinates the access and distribution internally and externally, and integrates best practices and process flows with other departments throughout the organization. It also develops an overall document management plan that includes a business continuity plan for vital documents and records. The unit ensures it follows retention policies aligned with company standards and government regulations. It ensures that records required for long-term needs are properly archived and that others are properly destroyed at the end of their lifecycle in accordance with organizational requirements, statutes, and regulations.
+O desenvolvimento de conteúdo deve ser gerenciado por meio de um fluxo de trabalho que garanta que o conteúdo seja criado dentro do cronograma e receba as devidas aprovações. Os componentes do fluxo de trabalho podem incluir criação, processamento, roteamento, regras, administração, segurança, assinatura eletrônica, prazo, escalonamento (se ocorrerem problemas), relatórios e entrega. Deve ser automatizado por meio do uso de um sistema de gerenciamento de conteúdo (CMS) ou de um sistema independente, em vez de processos manuais.
 
-#### 2.1.1 Plan for Records Management
+Um CMS tem o benefício adicional de fornecer controle de versão. Quando o conteúdo é inserido em um CMS, ele recebe um registro de data e hora, um número de versão e é marcado com o nome da pessoa que fez as atualizações. O fluxo de trabalho precisa ser repetível, idealmente contendo etapas de processo comuns a uma variedade de conteúdos. Um conjunto de fluxos de trabalho e modelos pode ser necessário se houver diferenças significativas entre os tipos de conteúdo. O alinhamento das partes interessadas e dos pontos de distribuição (incluindo tecnologia) é importante. Os prazos precisam ser refinados para aprimorar os fluxos de trabalho; caso contrário, você pode rapidamente descobrir que seus fluxos de trabalho estão desatualizados ou que há confusão sobre qual parte interessada é responsável por qual parte.
 
-Records management starts with a clear definition of what constitutes a record. The team that defines records for a functional area should include SMEs from that area along with people who understand the systems that enable management of the records.
+## 2. Atividades
 
-Managing electronic records requires decisions about where to store current, active records and how to archive older records. Despite the widespread use of electronic media, paper records are not going away in the near term. A records management approach should account for paper records and unstructured data as well as structured electronic records.
+### 2.1 Planejar o Gerenciamento do Ciclo de Vida
 
-#### 2.1.2 Develop a Content Strategy
+A prática do gerenciamento de documentos envolve o planejamento do ciclo de vida de um documento, desde sua criação ou recebimento, passando por sua distribuição, armazenamento, recuperação, arquivamento e possível destruição. O planejamento inclui o desenvolvimento de sistemas de classificação/indexação e taxonomias que permitam o armazenamento e a recuperação de documentos. É importante ressaltar que o planejamento do ciclo de vida requer a criação de políticas específicas para registros.
 
-Planning for content management should directly support the organization’s approach to providing relevant and useful content in an efficient and comprehensive manner. A plan should account for content drivers (the reasons content is needed), content creation and delivery. Content requirements should drive technology decisions, such as the selection of a content management system.
+Primeiramente, identifique a unidade organizacional responsável pelo gerenciamento dos documentos e registros. Essa unidade coordena o acesso e a distribuição interna e externamente e integra as melhores práticas e os fluxos de processos com outros departamentos da organização. Ela também desenvolve um plano geral de gerenciamento de documentos que inclui um plano de continuidade de negócios para documentos e registros vitais. A unidade garante o cumprimento das políticas de retenção alinhadas aos padrões da empresa e às regulamentações governamentais. Ela garante que os registros necessários para necessidades de longo prazo sejam arquivados adequadamente e que outros sejam destruídos adequadamente ao final de seu ciclo de vida, de acordo com os requisitos, estatutos e regulamentações organizacionais.
 
-A content strategy should start with an inventory of current state and a gap assessment. The strategy defines how content will be prioritized, organized, and accessed. Assessment often reveals ways to streamline production, workflow, and approval processes for content creation. A unified content strategy emphasizes designing modular content components for reusability rather than creating standalone content.
+#### 2.1.1 Plano para Gerenciamento de Registros
 
-Enabling people to find different types of content through Metadata categorization and search engine optimization (SEO) is critical to any content strategy. Provide recommendations on content creation, publication, and governance. Policies, standards, and guidelines that apply to content and its lifecycle are useful to sustain and evolve an organization’s content strategy.
+O gerenciamento de registros começa com uma definição clara do que constitui um registro. A equipe que define os registros para uma área funcional deve incluir especialistas dessa área, juntamente com pessoas que entendam os sistemas que permitem o gerenciamento dos registros.
 
-#### 2.1.3 Create Content Handling Policies
+Gerenciar registros eletrônicos exige decisões sobre onde armazenar registros atuais e ativos e como arquivar registros mais antigos. Apesar do uso generalizado de mídia eletrônica, os registros em papel não desaparecerão no curto prazo. Uma abordagem de gestão de registros deve levar em conta registros em papel e dados não estruturados, bem como registros eletrônicos estruturados.
 
-Policies codify requirements by describing principles, direction, and guidelines for action. They help employees understand and comply with the requirements for document and records management.
+#### 2.1.2 Desenvolver uma Estratégia de Conteúdo
 
-Most document management programs have policies related to:
+O planejamento para a gestão de conteúdo deve apoiar diretamente a abordagem da organização para fornecer conteúdo relevante e útil de forma eficiente e abrangente. Um plano deve levar em conta os motivadores de conteúdo (os motivos pelos quais o conteúdo é necessário), a criação e a entrega de conteúdo. Os requisitos de conteúdo devem orientar as decisões tecnológicas, como a seleção de um sistema de gestão de conteúdo.
 
-* Scope and compliance with audits
-* Identification and protection of vital records
-* Purpose and schedule for retaining records (a.k.a retention schedule)
-* How to respond to information hold orders (special protection orders); these are requirements for retaining information for a lawsuit, even if retention schedules have expired
-* Requirements for onsite and offsite storage of records
-* Use and maintenance of hard drive and shared network drives
-* Email management, addressed from content management perspective
-* Proper destruction methods for records (e.g., with pre-approved vendors and receipt of destruction certificates)
+Uma estratégia de conteúdo deve começar com um inventário do estado atual e uma avaliação de lacunas. A estratégia define como o conteúdo será priorizado, organizado e acessado. A avaliação frequentemente revela maneiras de otimizar os processos de produção, fluxo de trabalho e aprovação para a criação de conteúdo. Uma estratégia de conteúdo unificada enfatiza o design de componentes de conteúdo modulares para reutilização, em vez da criação de conteúdo independente.
 
-##### 2.1.3.1 Social Media Policies
+Permitir que as pessoas encontrem diferentes tipos de conteúdo por meio da categorização de metadados e da otimização para mecanismos de busca (SEO) é fundamental para qualquer estratégia de conteúdo. Forneça recomendações sobre criação, publicação e governança de conteúdo. Políticas, padrões e diretrizes aplicáveis ​​ao conteúdo e seu ciclo de vida são úteis para sustentar e desenvolver a estratégia de conteúdo de uma organização.
 
-In addition to these standard topics, many organizations are developing policies to respond to new media. For example, an organization has to define if social media content posted on Facebook, Twitter, LinkedIn, chat rooms, blogs, wikis, or online forums constitutes a record, especially if employees post in the course of conducting business using organizational accounts.
+#### 2.1.3 Criar Políticas de Tratamento de Conteúdo
 
-##### 2.1.3.2 Device Access Policies
+As políticas codificam requisitos descrevendo princípios, direções e diretrizes de ação. Elas ajudam os funcionários a compreender e cumprir os requisitos de gerenciamento de documentos e registros.
 
-Since the pendulum is swinging towards user driven IT with BYOD (bring-your-own-devices), BYOA (bring-your-own-apps), and WYOD (wear-your-own-devices), the content and records management functions need to work with these scenarios in order to ensure compliance, security and privacy.
+A maioria dos programas de gerenciamento de documentos possui políticas relacionadas a:
 
-Policies should distinguish between informal content (e.g., Dropbox or Evernote) and formal content (e.g., contracts and agreements), in order to put controls on formal content. Policies can also provide guidance on informal content.
+* Escopo e conformidade com auditorias
+* Identificação e proteção de registros vitais
+* Finalidade e cronograma para retenção de registros (também conhecido como cronograma de retenção)
+* Como responder a ordens de retenção de informações (ordens especiais de proteção); estes são requisitos para retenção de informações para uma ação judicial, mesmo que os cronogramas de retenção tenham expirado
+* Requisitos para armazenamento de registros no local e fora do local
+* Uso e manutenção de discos rígidos e unidades de rede compartilhadas
+* Gerenciamento de e-mails, abordado sob a perspectiva do gerenciamento de conteúdo
+* Métodos adequados de destruição de registros (por exemplo, com fornecedores pré-aprovados e recebimento de certificados de destruição)
 
-##### 2.1.3.3 Handling Sensitive Data
+##### 2.1.3.1 Políticas de Mídias Sociais
 
-Organizations are legally required to protect privacy by identifying and protecting sensitive data. Data Security and/or Data Governance usually establish the confidentiality schemes and identify what assets are confidential or restricted. The people who produce or assemble content must apply these classifications. Documents, web pages, and other content components must be are marked as sensitive based on policies and legal requirements. Once marked, confidential data is either masked or deleted where appropriate. (See Chapter 7.)
+Além desses tópicos padrão, muitas organizações estão desenvolvendo políticas para responder às novas mídias. Por exemplo, uma organização precisa definir se o conteúdo de mídia social publicado no Facebook, Twitter, LinkedIn, salas de bate-papo, blogs, wikis ou fóruns online constitui um registro, especialmente se os funcionários publicarem durante a condução de negócios usando contas organizacionais.
 
-##### 2.1.3.4 Responding to Litigation
+##### 2.1.3.2 Políticas de Acesso a Dispositivos
 
-Organizations should prepare for the possibility of litigation requests through proactive e-discovery. (Hope for the best; prepare for the worst.) They should create and manage an inventory of their data sources and the risks associated with each. By identifying data sources that may have relevant information, they can respond in a timely manner to a litigation hold notice and prevent data loss. The appropriate technologies should be deployed to automate e-discovery processes.
+Como o pêndulo está pendendo para uma TI orientada pelo usuário com BYOD (traga seus próprios dispositivos), BYOA (traga seus próprios aplicativos) e WYOD (use seus próprios dispositivos), as funções de gerenciamento de conteúdo e registros precisam trabalhar com esses cenários para garantir conformidade, segurança e privacidade.
 
-#### 2.1.4 Define Content Information Architecture
+As políticas devem distinguir entre conteúdo informal (por exemplo, Dropbox ou Evernote) e conteúdo formal (por exemplo, contratos e acordos), a fim de impor controles sobre o conteúdo formal. As políticas também podem fornecer orientações sobre conteúdo informal.
 
-Many information systems such as the semantic web, search engines, web social mining, records compliance and risk management, geographic information systems (GIS), and Business Intelligence applications contain structured and unstructured data, documents, text, images, etc. Users have to submit their needs in a form understandable by the system retrieval mechanism to obtain information from these systems. Likewise, the inventory of documents and structured and unstructured data needs to be described / indexed in a format that allows the retrieval mechanism to identify the relevant matched data and information quickly. User queries may be imperfect in that they retrieve both relevant and irrelevant information, or do not retrieve all the relevant information.
+##### 2.1.3.3 Lidando com Dados Sensíveis
 
-Searches use either content-based indexing or Metadata. Indexing designs look at decision options for key aspects or attributes of indexes based on needs and preferences of users. They also look at the vocabulary management and the syntax for combining individual terms into headings or search statements.
+As organizações são legalmente obrigadas a proteger a privacidade, identificando e protegendo dados sensíveis. A Segurança de Dados e/ou a Governança de Dados geralmente estabelecem os esquemas de confidencialidade e identificam quais ativos são confidenciais ou restritos. As pessoas que produzem ou montam o conteúdo devem aplicar essas classificações. Documentos, páginas da web e outros componentes de conteúdo devem ser marcados como sensíveis com base em políticas e requisitos legais. Uma vez marcados, os dados confidenciais são mascarados ou excluídos, quando apropriado. (Consulte o Capítulo 7.)
 
-Data management professionals may get involved with controlled vocabularies and terms in handling Reference Data (see Section 1.3.2.1) and Metadata for unstructured data and content. (See Chapter 12.) They should ensure that there is coordination with efforts to build controlled vocabularies, indexes, classification schemes for information retrieval, and data modeling and Metadata efforts executed as part of data management projects and applications.
+##### 2.1.3.4 Respondendo a Litígios
 
-### 2.2 Manage the Lifecycle
+As organizações devem se preparar para a possibilidade de solicitações de litígio por meio de e-discovery proativo. (Espere pelo melhor; prepare-se para o pior.) Elas devem criar e gerenciar um inventário de suas fontes de dados e os riscos associados a cada uma. Ao identificar fontes de dados que podem conter informações relevantes, elas podem responder em tempo hábil a uma notificação de retenção por litígio e evitar a perda de dados. As tecnologias apropriadas devem ser implantadas para automatizar os processos de e-discovery.
 
-#### 2.2.1 Capture Records and Content
+#### 2.1.4 Definir Arquitetura de Informação de Conteúdo
 
-Capturing content is the first step to managing it. Electronic content is often already in a format to be stored in electronic repositories. To reduce the risk of losing or damaging records, paper content needs to be scanned and then uploaded to the corporate system, indexed, and stored in the repository. Use electronic signatures if possible.
+Muitos sistemas de informação, como a web semântica, mecanismos de busca, mineração social na web, conformidade de registros e gerenciamento de riscos, sistemas de informação geográfica (SIG) e aplicativos de Business Intelligence, contêm dados estruturados e não estruturados, documentos, textos, imagens, etc. Os usuários precisam submeter suas necessidades em um formato compreensível pelo mecanismo de recuperação do sistema para obter informações desses sistemas. Da mesma forma, o inventário de documentos e dados estruturados e não estruturados precisa ser descrito/indexado em um formato que permita ao mecanismo de recuperação identificar rapidamente os dados e informações relevantes correspondentes. As consultas do usuário podem ser imperfeitas, pois recuperam informações relevantes e irrelevantes, ou não recuperam todas as informações relevantes.
 
-When content is captured, it should be tagged (indexed) with appropriate Metadata, such as (at minimum) a document or image identifier, the data and time of capture, the title and author(s). Metadata is necessary for retrieval of the information, as well as for understanding the context of the content. Automated workflows and recognition technologies can help with the capture and ingestion process, providing audit trails.
+As buscas utilizam indexação baseada em conteúdo ou metadados. Os projetos de indexação analisam as opções de decisão para aspectos ou atributos-chave dos índices com base nas necessidades e preferências dos usuários. Eles também analisam o gerenciamento do vocabulário e a sintaxe para combinar termos individuais em títulos ou declarações de busca.
 
-Some social media platforms offer the capability of capturing records. Saving the social media content in a repository makes it available for review, meta tagging and classification, and management as records. Web crawlers can capture versions of websites. Web capture tools, application-programming interfaces (APIs), and RSS feeds can capture content or social media export tools. Social media records can also be captured manually or via predefined, automated workflows.
+Profissionais de gestão de dados podem se envolver com vocabulários e termos controlados ao lidar com Dados de Referência (consulte a Seção 1.3.2.1) e Metadados para dados e conteúdo não estruturados. (Consulte o Capítulo 12.) Eles devem garantir a coordenação com os esforços para construir vocabulários controlados, índices, esquemas de classificação para recuperação de informações e modelagem de dados, além dos esforços de Metadados executados como parte de projetos e aplicações de gestão de dados.
 
-#### 2.2.2 Manage Versioning and Control
+### 2.2 Gerenciar o Ciclo de Vida
 
-ANSI Standard 859 has three levels of control of data, based on the criticality of the data and the perceived harm that would occur if data were corrupted or otherwise unavailable: formal, revision, and custody:
+#### 2.2.1 Capturar Registros e Conteúdo
 
-* Formal control requires formal change initiation, thorough evaluation for impact, decision by a change authority, and full status accounting of implementation and validation to stakeholders
-* Revision control is less formal, notifying stakeholders and incrementing versions when a change is required
-* Custody control is the least formal, merely requiring safe storage and a means of retrieval
+Capturar conteúdo é o primeiro passo para gerenciá-lo. O conteúdo eletrônico geralmente já está em um formato para ser armazenado em repositórios eletrônicos. Para reduzir o risco de perda ou dano de registros, o conteúdo em papel precisa ser digitalizado e, em seguida, carregado no sistema corporativo, indexado e armazenado no repositório. Use assinaturas eletrônicas, se possível.
 
-Table 15 shows a sample list of data assets and possible control levels.
+Quando o conteúdo é capturado, ele deve ser marcado (indexado) com metadados apropriados, como (no mínimo) um identificador de documento ou imagem, a data e a hora da captura, o título e o(s) autor(es). Os metadados são necessários para a recuperação das informações, bem como para a compreensão do contexto do conteúdo. Fluxos de trabalho automatizados e tecnologias de reconhecimento podem auxiliar no processo de captura e ingestão, fornecendo trilhas de auditoria.
 
-*Table 15 Levels of Control for Documents per ANSI-859*
+Algumas plataformas de mídia social oferecem a capacidade de capturar registros. Salvar o conteúdo da mídia social em um repositório o torna disponível para revisão, meta marcação e classificação, e gerenciamento como registros. Rastreadores da web podem capturar versões de sites. Ferramentas de captura da web, interfaces de programação de aplicativos (APIs) e feeds RSS podem capturar conteúdo ou ferramentas de exportação para mídias sociais. Registros de mídia social também podem ser capturados manualmente ou por meio de fluxos de trabalho automatizados predefinidos.
+
+#### 2.2.2 Gerenciar Versionamento e Controle
+
+A Norma ANSI 859 possui três níveis de controle de dados, com base na criticidade dos dados e no dano percebido que ocorreria se os dados fossem corrompidos ou indisponíveis: formal, revisão e custódia:
+
+* O controle formal requer a iniciação formal da mudança, uma avaliação completa do impacto, uma decisão por uma autoridade de mudança e a prestação de contas completa do status da implementação e validação para as partes interessadas.
+* O controle de revisão é menos formal, notificando as partes interessadas e incrementando versões quando uma mudança é necessária.
+* O controle de custódia é o menos formal, exigindo apenas armazenamento seguro e um meio de recuperação.
+
+A Tabela 15 mostra uma lista de exemplos de ativos de dados e possíveis níveis de controle.
+
+*Tabela 15 Níveis de Controle para Documentos segundo a ANSI-859*
 
 <table>
   <thead>
     <tr>
-      <th>Data Asset</th>
-      <th>Formal</th>
-      <th>Revision</th>
-      <th>Custody</th>
+      <th>
+        Ativo de Dados
+      </th>
+      <th>
+        Revisão
+      </th>
+      <th>
+        Formal
+      </th>
+      <th>
+        Custódia
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Action item lists</td>
+      <td>
+        Listas de itens de ação
+      </td>
       <td></td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Agendas</td>
+      <td>
+        Agendas
+      </td>
       <td></td>
       <td></td>
       <td>X</td>
     </tr>
     <tr>
-      <td>Audit findings</td>
+      <td>
+        Resultados da auditoria
+      </td>
       <td></td>
       <td>X</td>
       <td>X</td>
     </tr>
     <tr>
-      <td>Budgets</td>
+      <td>
+        Orçamentos
+      </td>
       <td>X</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td>DD 250s</td>
+      <td>
+        DD 250s
+      </td>
       <td></td>
       <td></td>
       <td>X</td>
     </tr>
     <tr>
-      <td>Final Proposal</td>
+      <td>
+        Proposta final
+      </td>
       <td></td>
       <td></td>
       <td>X</td>
     </tr>
     <tr>
-      <td>Financial data and reports</td>
+      <td>
+        Dados e relatórios financeiros
+      </td>
       <td>X</td>
       <td>X</td>
       <td>X</td>
     </tr>
     <tr>
-      <td>Human Resources data</td>
+      <td>
+        Dados de Recursos Humanos
+      </td>
       <td></td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Meeting minutes</td>
+      <td>
+        Atas de reunião
+      </td>
       <td></td>
       <td></td>
       <td>X</td>
     </tr>
     <tr>
-      <td>Meeting notices and attendance lists</td>
+      <td>
+        Avisos de reunião e listas de presença
+      </td>
       <td></td>
       <td>X</td>
       <td>X</td>
     </tr>
     <tr>
-      <td>Project plans (including data management and configuration management plans)</td>
+      <td>
+        Planos de projeto (incluindo planos de gerenciamento de dados e de configuração)
+      </td>
       <td>X</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td>Proposal (in process)</td>
+      <td>
+        Proposta (em andamento)
+      </td>
       <td></td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Schedules</td>
+      <td>
+        Cronogramas
+      </td>
       <td>X</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td>Statements of Work</td>
+      <td>
+        Declarações de trabalho
+      </td>
       <td>X</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td>Trade studies</td>
+      <td>
+        Estudos comerciais
+      </td>
       <td></td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Training material</td>
+      <td>
+        Material de treinamento
+      </td>
       <td>X</td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Working papers</td>
+      <td>
+        Documentos de trabalho
+      </td>
       <td></td>
       <td></td>
       <td>X</td>
@@ -540,408 +587,448 @@ Table 15 shows a sample list of data assets and possible control levels.
   </tbody>
 </table>
 
-ANSI 859 recommends taking into account the following criteria when determining which control level applies to a data asset:
+A ANSI 859 recomenda levar em consideração os seguintes critérios ao determinar qual nível de controle se aplica a um ativo de dados:
 
-* Cost of providing and updating the asset
-* Project impact, if changes will have significant cost or schedule consequences
-* Other consequences of change to the enterprise or project
-* Need to reuse the asset or earlier versions of the asset
-* Maintenance of a history of change (when required by the enterprise or the project)
+* Custo de fornecimento e atualização do ativo
+* Impacto no projeto, caso as alterações tenham consequências significativas em termos de custo ou cronograma
+* Outras consequências da mudança para a empresa ou projeto
+* Necessidade de reutilização do ativo ou de versões anteriores do ativo
+* Manutenção de um histórico de alterações (quando exigido pela empresa ou pelo projeto)
 
-#### 2.2.3 Backup and Recovery
+#### 2.2.3 Backup e Recuperação
 
-The document / record management system needs to be included in the organization’s overall corporate backup and recovery activities, including business continuity and disaster recovery planning. A vital records program provides the organization with access to the records necessary to conduct its business during a disaster and to resume normal business afterward. Vital records must be identified, and plans for their protection and recovery must be developed and maintained. A records manager should be involved in risk mitigation and business continuity planning, to ensure these activities account for the security for vital records.
+O sistema de gerenciamento de documentos/registros precisa ser incluído nas atividades corporativas gerais de backup e recuperação da organização, incluindo o planejamento de continuidade de negócios e recuperação de desastres. Um programa de registros vitais fornece à organização acesso aos registros necessários para conduzir seus negócios durante um desastre e para retomar as atividades normais posteriormente. Os registros vitais devem ser identificados e planos para sua proteção e recuperação devem ser desenvolvidos e mantidos. Um gerente de registros deve estar envolvido na mitigação de riscos e no planejamento de continuidade de negócios, para garantir que essas atividades sejam responsáveis ​​pela segurança dos registros vitais.
 
-Disasters could include power outages, human error, network and hardware failure, software malfunction, malicious attack, as well as natural disasters. A Business Continuity Plan (or Disaster Recovery Plan) contains written policies, procedures, and information designed to mitigate the impact of threats to an organization’s data, including documents, and to recover them as quickly as possible, with minimum disruption, in the event of a disaster.
+Desastres podem incluir quedas de energia, erro humano, falhas de rede e hardware, mau funcionamento de software, ataques maliciosos e desastres naturais. Um Plano de Continuidade de Negócios (ou Plano de Recuperação de Desastres) contém políticas, procedimentos e informações escritas, projetadas para mitigar o impacto de ameaças aos dados de uma organização, incluindo documentos, e recuperá-los o mais rápido possível, com o mínimo de interrupção, em caso de desastre.
 
-#### 2.2.4 Manage Retention and Disposal
+#### 2.2.4 Gerenciar Retenção e Descarte
 
-Effective document / records management requires clear policies and procedures, especially regarding retention and disposal of records. A retention and disposition policy will define the timeframes during which documents for operational, legal, fiscal or historical value must be maintained. It defines when inactive documents can be transferred to a secondary storage facility, such as off-site storage. The policy specifies the processes for compliance and the methods and schedules for the disposition of documents. Legal and regulatory requirements must be considered when setting up retention schedules.
+O gerenciamento eficaz de documentos/registros requer políticas e procedimentos claros, especialmente em relação à retenção e ao descarte de registros. Uma política de retenção e descarte definirá os prazos durante os quais os documentos, para fins operacionais, legais, fiscais ou históricos, devem ser mantidos. Ela define quando documentos inativos podem ser transferidos para uma unidade de armazenamento secundária, como um armazenamento externo. A política especifica os processos de conformidade e os métodos e cronogramas para o descarte de documentos. Requisitos legais e regulatórios devem ser considerados ao definir cronogramas de retenção.
 
-Records managers or information asset owners provide oversight to ensure that teams account for privacy and data protection requirements, and take actions to prevent in identify theft.
+Gerentes de registros ou proprietários de ativos de informação supervisionam para garantir que as equipes levem em conta os requisitos de privacidade e proteção de dados e tomem medidas para prevenir o roubo de identidade.
 
-Document retention presents software considerations. Access to electronic records may require specific versions of software and operating systems. Technological changes as simple as the installation of new software can make documents unreadable or inaccessible.
+A retenção de documentos apresenta considerações sobre software. O acesso a registros eletrônicos pode exigir versões específicas de software e sistemas operacionais. Mudanças tecnológicas tão simples quanto a instalação de um novo software podem tornar os documentos ilegíveis ou inacessíveis.
 
-Non-value-added information should be removed from the organization’s holdings and disposed of to avoid wasting physical and electronic space, as well as the cost associated with its maintenance. There is also risk associated with retaining records past their legally required timeframes. This information remains discoverable for litigation.
+Informações sem valor agregado devem ser removidas dos acervos da organização e descartadas para evitar o desperdício de espaço físico e eletrônico, bem como o custo associado à sua manutenção. Há também o risco associado à retenção de registros além dos prazos legalmente exigidos. Essas informações permanecem passíveis de litígio.
 
-Still, many organizations do not prioritize removal of non-value added information because:
+Ainda assim, muitas organizações não priorizam a remoção de informações sem valor agregado porque:
 
-* Policies are not adequate
-* One person’s non-valued-added information is another’s valued information
-* Inability to foresee future possible needs for current non-value-added physical and / or electronic records
-* There is no buy-in for Records Management
-* Inability to decide which records to delete
-* Perceived cost of making a decision and removing physical and electronic records
-* Electronic space is cheap. Buying more space when required is easier than archiving and removal processes
+* As políticas não são adequadas
+* A informação sem valor agregado de uma pessoa é a informação valiosa de outra
+* Incapacidade de prever possíveis necessidades futuras de registros físicos e/ou eletrônicos sem valor agregado
+* Não há adesão à Gestão de Registros
+* Incapacidade de decidir quais registros excluir
+* Custo percebido de tomar uma decisão e remover registros físicos e eletrônicos
+* O espaço eletrônico é barato. Comprar mais espaço quando necessário é mais fácil do que arquivar e remover processos
 
-#### 2.2.5 Audit Documents / Records
+#### 2.2.5 Auditar Documentos/Registros
 
-Document / records management requires periodic auditing to ensure that the right information is getting to the right people at the right time for decision-making or performing operational activities. Table 16 contains examples of audit measures.
+A gestão de documentos/registros requer auditoria periódica para garantir que as informações corretas cheguem às pessoas certas no momento certo para a tomada de decisões ou execução de atividades operacionais. A Tabela 16 contém exemplos de medidas de auditoria.
 
 <table>
   <thead>
     <tr>
-      <th>Document / Records Management Component</th>
-      <th>Sample Audit Measure</th>
+      <th>
+        Componente de Gestão de Documentos/Registros
+      </th>
+      <th>
+        Exemplo de Medida de Auditoria
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Inventory</td>
-      <td>Each location in the inventory is uniquely identified.</td>
+      <td>
+        Inventário
+      </td>
+      <td>
+        Cada local no inventário é identificado de forma única.
+      </td>
     </tr>
     <tr>
-      <td>Storage</td>
-      <td>Storage areas for physical documents / records have adequate space to accommodate growth.</td>
+      <td>
+        Armazenamento
+      </td>
+      <td>
+        As áreas de armazenamento para documentos/registros físicos possuem espaço adequado para acomodar o crescimento.
+      </td>
     </tr>
     <tr>
-      <td>Reliability and Accuracy</td>
-      <td>Spot checks are executed to confirm that the documents / records are an adequate reflection of what has been created or received.</td>
+      <td>
+        Confiabilidade e Precisão
+      </td>
+      <td>
+        Verificações pontuais são realizadas para confirmar que os documentos/registros refletem adequadamente o que foi criado ou recebido.
+      </td>
     </tr>
     <tr>
-      <td>Classification and Indexing Schemes</td>
-      <td>Metadata and document file plans are well described.</td>
+      <td>
+        Esquemas de Classificação e Indexação
+      </td>
+      <td>
+        Os planos de metadados e arquivos de documentos são bem descritos.
+      </td>
     </tr>
     <tr>
-      <td>Access and Retrieval</td>
-      <td>End users find and retrieve critical information easily.</td>
+      <td>
+        Acesso e Recuperação
+      </td>
+      <td>
+        Os usuários finais encontram e recuperam informações críticas facilmente.
+      </td>
     </tr>
     <tr>
-      <td>Retention Processes</td>
-      <td>The retention schedule is structured in a logical way either by department, functional or major organizational functions.</td>
+      <td>
+        Processos de Retenção
+      </td>
+      <td>
+        O cronograma de retenção é estruturado de forma lógica, seja por departamento, função ou principais funções organizacionais.
+      </td>
     </tr>
     <tr>
-      <td>Disposition Methods</td>
-      <td>Documents / records are disposed of as recommended.</td>
+      <td>
+        Métodos de Descarte
+      </td>
+      <td>
+        Documentos/registros são descartados conforme recomendado.
+      </td>
     </tr>
     <tr>
-      <td>Security and Confidentiality</td>
-      <td>Breaches of document / record confidentiality and loss of documents / records are recorded as security incidents and managed appropriately.</td>
+      <td>
+        Segurança e Confidencialidade
+      </td>
+      <td>
+        Violações da confidencialidade de documentos/registros e perdas de documentos/registros são registradas como incidentes de segurança e gerenciadas adequadamente.
+      </td>
     </tr>
     <tr>
-      <td>Organizational understanding of documents / records management</td>
-      <td>Appropriate training is provided to stakeholders and staff as to the roles and responsibilities related to document / records management.</td>
+      <td>
+        Compreensão organizacional da gestão de documentos/registros
+      </td>
+      <td>
+        Treinamento adequado é fornecido às partes interessadas e à equipe sobre as funções e responsabilidades relacionadas à gestão de documentos/registros.
+      </td>
     </tr>
   </tbody>
 </table>
 
-An audit usually involves the following steps:
+Uma auditoria geralmente envolve as seguintes etapas:
 
-* Defining organizational drivers and identifying the stakeholders that comprise the ‘why’ of document /
-* Gathering data on the process (the ‘how’), once it is determined what to examine / measure and what records management tools to use (such as standards, benchmarks, interview surveys)
-* Reporting the outcomes
-* Developing an action plan of next steps and timeframes
+* Definir os motivadores organizacionais e identificar as partes interessadas que compõem o "porquê" do documento /
+* Coletar dados sobre o processo (o "como"), uma vez determinado o que examinar/medir e quais ferramentas de gestão de registros utilizar (como padrões, benchmarks, pesquisas de entrevista)
+* Relatar os resultados
+* Desenvolver um plano de ação com as próximas etapas e prazos
 
-### 2.3 Publish and Deliver Content
+### 2.3 Publicar e Entregar Conteúdo
 
-#### 2.3.1 Provide Access, Search, and Retrieval
+#### 2.3.1 Fornecer Acesso, Busca e Recuperação
 
-Once the content has been described by Metadata / key word tagging and classified within the appropriate information content architecture, it is available for retrieval and use. Portal technology that maintains profiles of users can help them find unstructured data. Search engines can return content based on keywords. Some organizations have professionals retrieve information through internal search tools.
+Depois que o conteúdo for descrito por Metadados/marcação por palavras-chave e classificado dentro da arquitetura de conteúdo de informação apropriada, ele estará disponível para recuperação e uso. A tecnologia de portal que mantém perfis de usuários pode ajudá-los a encontrar dados não estruturados. Os mecanismos de busca podem retornar conteúdo com base em palavras-chave. Algumas organizações têm profissionais que recuperam informações por meio de ferramentas de busca internas.
 
-#### 2.3.2 Deliver Through Acceptable Channels
+#### 2.3.2 Entrega por Canais Aceitáveis
 
-There is a shift in delivery expectations as the content users now want to consume or use content on a device of their choosing. Many organizations are still creating content in something like MS Word and moving it into HTML, or delivering content for a given platform, a certain screen resolution, or a given size on the screen. If another delivery channel is desired, this content has to be prepared for that channel (e.g., print). There is the potential that any changed content may need to be brought back into the original format.
+Há uma mudança nas expectativas de entrega, pois os usuários agora desejam consumir ou usar o conteúdo em um dispositivo de sua escolha. Muitas organizações ainda criam conteúdo em algo como o MS Word e o transferem para HTML, ou entregam conteúdo para uma determinada plataforma, uma determinada resolução de tela ou um determinado tamanho de tela. Se outro canal de entrega for desejado, esse conteúdo precisa ser preparado para esse canal (por exemplo, impressão). Existe a possibilidade de que qualquer conteúdo alterado precise ser restaurado ao formato original.
 
-When structured data from databases is formatted into HTML, it becomes difficult to recover the original structured data, as separating the data from the formatting is not always straightforward.
+Quando dados estruturados de bancos de dados são formatados em HTML, torna-se difícil recuperar os dados estruturados originais, pois separar os dados da formatação nem sempre é simples.
 
-## 3. Tools
+## 3. Ferramentas
 
-### 3.1 Enterprise Content Management Systems
+### 3.1 Sistemas de Gerenciamento de Conteúdo Corporativo
 
-An ECM may consist of a platform of core components or a set of applications that can be integrated wholly or used separately. These components, discussed below, can be in-house or outside the enterprise in the cloud.
+Um ECM pode consistir em uma plataforma de componentes principais ou um conjunto de aplicativos que podem ser integrados totalmente ou usados ​​separadamente. Esses componentes, discutidos abaixo, podem ser internos ou externos à empresa, na nuvem.
 
-Reports can be delivered through a number of tools, including printers, email, websites, portals, and messaging, as well as through a document management system interface. Depending on the tool, users can search by drill-down, view, download / check-in and out, and print reports on demand. The ability to add, change, or delete reports organized in folders facilitates report management. Report retention can be set for automatic purge or archival to other media, such as disk, CD-ROM, COLD (Computer Output to Laser Disk), etc. Reports can also be retained in cloud storage. As noted, retaining content in unreadable, outdated formats presents risk to the organization. (See Chapters 6 and 8, and Section 3.1.8.)
+Os relatórios podem ser entregues por meio de diversas ferramentas, incluindo impressoras, e-mail, sites, portais e mensagens, bem como por meio de uma interface de sistema de gerenciamento de documentos. Dependendo da ferramenta, os usuários podem pesquisar por detalhamento, visualizar, baixar/fazer check-in e check-out e imprimir relatórios sob demanda. A capacidade de adicionar, alterar ou excluir relatórios organizados em pastas facilita o gerenciamento de relatórios. A retenção de relatórios pode ser configurada para limpeza automática ou arquivamento em outras mídias, como disco, CD-ROM, COLD (Computer Output to Laser Disk), etc. Os relatórios também podem ser armazenados em nuvem. Como observado, reter conteúdo em formatos ilegíveis e desatualizados representa um risco para a organização. (Consulte os Capítulos 6 e 8 e a Seção 3.1.8.)
 
-The boundaries between document management and content management are blurring as business processes and roles intertwine, and vendors try to widen the markets for their products.
+Os limites entre gerenciamento de documentos e gerenciamento de conteúdo estão se esvaindo à medida que os processos e funções de negócios se entrelaçam, e os fornecedores buscam ampliar os mercados para seus produtos.
 
-#### 3.1.1 Document Management
+#### 3.1.1 Gestão de Documentos
 
-A document management system is an application used to track and store electronic documents and electronic images of paper documents. Document library systems, electronic mail systems and image management systems are specialized document management systems. Document management systems commonly provide storage, versioning, security, Metadata Management, content indexing, and retrieval capabilities. Extended capabilities of some systems can include Metadata views of documents.
+Um sistema de gestão de documentos é um aplicativo usado para rastrear e armazenar documentos eletrônicos e imagens eletrônicas de documentos em papel. Sistemas de biblioteca de documentos, sistemas de correio eletrônico e sistemas de gestão de imagens são sistemas especializados em gestão de documentos. Sistemas de gestão de documentos geralmente oferecem recursos de armazenamento, controle de versão, segurança, gestão de metadados, indexação de conteúdo e recuperação. Recursos estendidos de alguns sistemas podem incluir visualizações de metadados de documentos.
 
-Documents are created within a document management system, or captured via scanners or OCR software. These electronic documents must be indexed via keywords or text during the capture process so that the documents can be found. Metadata, such as the creator’s name, and the dates the document was created, revised, stored, is typically stored for each document. Documents can be categorized for retrieval using a unique document identifier or by specifying partial search terms involving the document identifier and / or parts of the expected Metadata. Metadata can be extracted from the document automatically or added by the user. Bibliographic records of documents are descriptive structured data, typically in Machine-Readable Cataloging (MARC) standard format that are stored in library databases locally and made available through shared catalogues worldwide, as privacy and permissions allow.
+Os documentos são criados em um sistema de gestão de documentos ou capturados por scanners ou software de OCR. Esses documentos eletrônicos devem ser indexados por palavras-chave ou texto durante o processo de captura para que possam ser encontrados. Metadados, como o nome do criador e as datas em que o documento foi criado, revisado ou armazenado, normalmente são armazenados para cada documento. Os documentos podem ser categorizados para recuperação usando um identificador de documento exclusivo ou especificando termos de busca parciais envolvendo o identificador do documento e/ou partes dos metadados esperados. Os metadados podem ser extraídos do documento automaticamente ou adicionados pelo usuário. Registros bibliográficos de documentos são dados estruturados descritivos, normalmente no formato padrão de Catalogação Legível por Máquina (MARC), armazenados em bancos de dados de bibliotecas localmente e disponibilizados por meio de catálogos compartilhados em todo o mundo, conforme a privacidade e as permissões permitirem.
 
-Some systems have advanced capabilities such as compound document support and content replication. Word processing software creates the compound document and integrates non-text elements such as spreadsheets, videos, audio and other multimedia types. In addition, a compound document can be an organized collection of user interfaces to form a single, integrated view. Document storage includes functions to manage documents. A document repository enables check-in and check-out features, versioning, collaboration, comparison, archiving, status state(s), migration from one storage media to another, and disposition. It may offer some access to and version management of documents external to its own repository (e.g., in a file share or cloud environment).
+Alguns sistemas possuem recursos avançados, como suporte a documentos compostos e replicação de conteúdo. Softwares de processamento de texto criam o documento composto e integram elementos não textuais, como planilhas, vídeos, áudio e outros tipos de multimídia. Além disso, um documento composto pode ser uma coleção organizada de interfaces de usuário para formar uma visualização única e integrada. O armazenamento de documentos inclui funções para gerenciar documentos. Um repositório de documentos permite recursos de check-in e check-out, controle de versão, colaboração, comparação, arquivamento, estados de status, migração de uma mídia de armazenamento para outra e disposição. Ele pode oferecer algum acesso e gerenciamento de versões de documentos externos ao seu próprio repositório (por exemplo, em um compartilhamento de arquivos ou ambiente de nuvem).
 
-Some document management systems have a module that may support different types of workflows, such as:
+Alguns sistemas de gerenciamento de documentos possuem um módulo que pode suportar diferentes tipos de fluxos de trabalho, como:
 
-* Manual workflows that indicate where the user sends the document
-* Rules-based workflow, where rules are created that dictate the flow of the document within an organization
-* Dynamic rules that allow for different workflows based on content
+* Fluxos de trabalho manuais que indicam para onde o usuário envia o documento
+* Fluxo de trabalho baseado em regras, onde são criadas regras que ditam o fluxo do documento dentro de uma organização
+* Regras dinâmicas que permitem diferentes fluxos de trabalho com base no conteúdo
 
-Document management systems have a rights management module where the administrator grants access based on document type and user credentials. Organizations may determine that certain types of documents require additional security or control procedures. Security restrictions, including privacy and confidentiality restrictions, apply during the document’s creation and management, as well as during delivery. An electronic signature ensures the identity of the document sender and the authenticity of the message, among other things.
+Os sistemas de gerenciamento de documentos possuem um módulo de gerenciamento de direitos onde o administrador concede acesso com base no tipo de documento e nas credenciais do usuário. As organizações podem determinar que certos tipos de documentos exigem procedimentos adicionais de segurança ou controle. Restrições de segurança, incluindo restrições de privacidade e confidencialidade, aplicam-se durante a criação e o gerenciamento do documento, bem como durante a entrega. Uma assinatura eletrônica garante a identidade do remetente do documento e a autenticidade da mensagem, entre outras coisas.
 
-Some systems focus more on control and security of data and information, than on its access, use, or retrieval, particularly in the intelligence, military, and scientific research sectors. Highly competitive or highly regulated industries, such as the pharmaceutical and financial sectors, also implement extensive security and control measures.
+Alguns sistemas se concentram mais no controle e na segurança de dados e informações do que em seu acesso, uso ou recuperação, particularmente nos setores de inteligência, militar e de pesquisa científica. Indústrias altamente competitivas ou altamente regulamentadas, como os setores farmacêutico e financeiro, também implementam medidas abrangentes de segurança e controle.
 
-##### 3.1.1.1 Digital Asset Management
+##### 3.1.1.1 Gestão de Ativos Digitais
 
-Since the functionality needed is similar, many document management systems include digital asset management. This is the management of digital assets such as audio, video, music, and digital photographs. Tasks involve cataloging, storage, and retrieval of digital assets.
+Como a funcionalidade necessária é semelhante, muitos sistemas de gestão de documentos incluem a gestão de ativos digitais. Trata-se da gestão de ativos digitais, como áudio, vídeo, música e fotografias digitais. As tarefas envolvem catalogação, armazenamento e recuperação de ativos digitais.
 
-##### 3.1.1.2 Image Processing
+##### 3.1.1.2 Processamento de Imagens
 
-An image processing system captures, transforms, and manages images of paper and electronic documents. The capturing capability uses technologies such as scanning, optical and intelligence character recognition, or form processing. Users can index or enter Metadata into the system and save the digitized image in a repository.
+Um sistema de processamento de imagens captura, transforma e gerencia imagens de documentos impressos e eletrônicos. A capacidade de captura utiliza tecnologias como digitalização, reconhecimento óptico e inteligente de caracteres ou processamento de formulários. Os usuários podem indexar ou inserir metadados no sistema e salvar a imagem digitalizada em um repositório.
 
-Recognition technologies include optical character recognition (OCR), which is the mechanical or electronic conversion of scanned (digitized) printed or handwritten text into a form that can be recognized by computer software. Intelligent character recognition (ICR) is a more advanced OCR system that can deal with printed and cursive handwriting. Both are important for converting large amounts of forms or unstructured data to a CMS format.
+As tecnologias de reconhecimento incluem o reconhecimento óptico de caracteres (OCR), que é a conversão mecânica ou eletrônica de texto impresso ou manuscrito digitalizado em um formato que pode ser reconhecido por softwares de computador. O reconhecimento inteligente de caracteres (ICR) é um sistema de OCR mais avançado que pode lidar com caligrafia impressa e cursiva. Ambos são importantes para converter grandes quantidades de formulários ou dados não estruturados para um formato CMS.
 
-Forms processing is the capture of printed forms via scanning or recognition technologies. Forms submitted through a website can be captured as long as the system recognizes the layout, structure, logic, and contents.
+O processamento de formulários é a captura de formulários impressos por meio de tecnologias de digitalização ou reconhecimento. Formulários enviados por meio de um website podem ser capturados, desde que o sistema reconheça o layout, a estrutura, a lógica e o conteúdo.
 
-Besides document images, other digitized images such as digital photographs, infographics, spatial or non-spatial data images may be stored in repositories. Some ECM systems are able to ingest diverse types of digitized documents and images such as COLD information, .wav and .wmv (audio) files, XML and healthcare HL7 messages into an integrated repository.
+Além das imagens de documentos, outras imagens digitalizadas, como fotografias digitais, infográficos e imagens de dados espaciais ou não espaciais, podem ser armazenadas em repositórios. Alguns sistemas de ECM conseguem incorporar diversos tipos de documentos e imagens digitalizados, como informações COLD, arquivos .wav e .wmv (áudio), XML e mensagens HL7 de saúde em um repositório integrado.
 
-Images are often created by using computer software or cameras rather than on paper. Binary file formats include vector and raster (bitmap) types as well as MS Word .DOC format. Vector images use mathematical formulas rather than individual colored blocks, and are very good for creating graphics that frequently require resizing. File formats include .EPS, .AI or .PDF. Raster images use a fixed number of colored pixels to form a complete image, and cannot be resized easily without compromising their resolution. Examples of raster files include .JPEG, .GIF, .PNG, or .TIFF.
+As imagens são frequentemente criadas usando softwares de computador ou câmeras, em vez de papel. Os formatos de arquivo binário incluem os tipos vetorial e raster (bitmap), bem como o formato .DOC do MS Word. Imagens vetoriais usam fórmulas matemáticas em vez de blocos coloridos individuais e são muito boas para criar gráficos que frequentemente exigem redimensionamento. Os formatos de arquivo incluem .EPS, .AI ou .PDF. Imagens raster usam um número fixo de pixels coloridos para formar uma imagem completa e não podem ser redimensionadas facilmente sem comprometer sua resolução. Exemplos de arquivos raster incluem .JPEG, .GIF, .PNG ou .TIFF.
 
-##### 3.1.1.3 Records Management System
+##### 3.1.1.3 Sistema de Gestão de Registros
 
-A records management system may offer capabilities such as automation of retention and disposition, e-discovery support, and long-term archiving to comply with legal and regulatory requirements. It should support a vital records program to retain critical business records. This type of system may be integrated with a documents management system.
+Um sistema de gestão de registros pode oferecer recursos como automação de retenção e descarte, suporte para descoberta eletrônica e arquivamento de longo prazo para atender a requisitos legais e regulatórios. Ele deve oferecer suporte a um programa de registros vitais para reter registros comerciais críticos. Esse tipo de sistema pode ser integrado a um sistema de gestão de documentos.
 
-#### 3.1.2 Content Management System
+#### 3.1.2 Sistema de Gestão de Conteúdo
 
-A content management system is used to collect, organize, index, and retrieve content, storing it either as components or whole documents, while maintaining links between components. A CMS may also provide controls for revising content within documents. While a document management system may provide content management functionality over the documents under its control, a content management system is essentially independent of where and how the documents are stored.
+Um sistema de gestão de conteúdo é usado para coletar, organizar, indexar e recuperar conteúdo, armazenando-o como componentes ou documentos inteiros, mantendo os links entre os componentes. Um CMS também pode fornecer controles para revisão de conteúdo em documentos. Embora um sistema de gestão de documentos possa fornecer funcionalidade de gerenciamento de conteúdo sobre os documentos sob seu controle, um sistema de gestão de conteúdo é essencialmente independente de onde e como os documentos são armazenados.
 
-Content management systems manage content through its lifecycle. For example, a web content management system controls website content through authoring, collaboration, and management tools based on core repository. It may contain user-friendly content creation, workflow and change management, and deployment functions to handle intranet, Internet, and extranet applications. Delivery functions may include responsive design and adaptive capabilities to support a range of client devices. Additional components may include search, document composition, e-signature, content analytics, and mobile applications.
+Os sistemas de gestão de conteúdo gerenciam o conteúdo ao longo de seu ciclo de vida. Por exemplo, um sistema de gestão de conteúdo web controla o conteúdo de um site por meio de ferramentas de autoria, colaboração e gerenciamento baseadas em um repositório central. Ele pode conter funções de criação de conteúdo, fluxo de trabalho e gerenciamento de mudanças fáceis de usar, além de funções de implantação para lidar com aplicativos de intranet, internet e extranet. As funções de entrega podem incluir design responsivo e recursos adaptáveis ​​para suportar uma variedade de dispositivos clientes. Componentes adicionais podem incluir pesquisa, composição de documentos, assinatura eletrônica, análise de conteúdo e aplicativos móveis.
 
-#### 3.1.3 Content and Document Workflow
+#### 3.1.3 Fluxo de Trabalho de Conteúdo e Documentos
 
-Workflow tools support business processes, route content and documents, assign work tasks, track status, and create audit trails. A workflow provides for review and approval of content before it is published.
+Ferramentas de fluxo de trabalho dão suporte a processos de negócios, encaminham conteúdo e documentos, atribuem tarefas de trabalho, rastreiam status e criam trilhas de auditoria. Um fluxo de trabalho permite a revisão e aprovação do conteúdo antes de sua publicação.
 
-### 3.2 Collaboration Tools
+### 3.2 Ferramentas de Colaboração
 
-Team collaboration tools enable the collection, storage, workflow, and management of documents pertinent to team activities. Social networking enables individual and teams to share documents and content inside the team and to reach out to an external group for input using blogs, wikis, RSS, and tagging.
+Ferramentas de colaboração em equipe permitem a coleta, o armazenamento, o fluxo de trabalho e o gerenciamento de documentos pertinentes às atividades da equipe. As redes sociais permitem que indivíduos e equipes compartilhem documentos e conteúdo dentro da equipe e entrem em contato com um grupo externo para obter informações por meio de blogs, wikis, RSS e tags.
 
-### 3.3 Controlled Vocabulary and Metadata Tools
+### 3.3 Ferramentas de Vocabulário Controlado e Metadados
 
-Tools that help develop or manage controlled vocabularies and Metadata range from office productivity software, Metadata repositories, and BI tools, to document and content management systems. For example:
+As ferramentas que ajudam a desenvolver ou gerenciar vocabulários controlados e metadados variam de softwares de produtividade de escritório, repositórios de metadados e ferramentas de BI a sistemas de gerenciamento de documentos e conteúdo. Por exemplo:
 
-* Data models used as guides to the data in an organization
-* Document management systems and office productivity software
-* Metadata repositories, glossaries, or directories
-* Taxonomies and cross-reference schemes between taxonomies
-* Indexes to collections (e.g., particular product, market or installation), filesystems, opinion polls, archives, locations, or offsite holdings
-* Search engines
-* BI tools that incorporate unstructured data
-* Enterprise and departmental thesauri
-* Published reports libraries, contents and bibliographies, and catalogs
+* Modelos de dados usados ​​como guias para os dados em uma organização
+* Sistemas de gerenciamento de documentos e softwares de produtividade de escritório
+* Repositórios de metadados, glossários ou diretórios
+* Taxonomias e esquemas de referência cruzada entre taxonomias
+* Índices para coleções (por exemplo, produto, mercado ou instalação específicos), sistemas de arquivos, pesquisas de opinião, arquivos, locais ou acervos externos
+* Mecanismos de busca
+* Ferramentas de BI que incorporam dados não estruturados
+* Tesauros corporativos e departamentais
+* Bibliotecas de relatórios publicados, conteúdos, bibliografias e catálogos
 
-### 3.4 Standard Markup and Exchange Formats
+### 3.4 Formatos Padrão de Marcação e Troca
 
-Computer applications cannot process unstructured data / content directly. Standard markup and exchange formats facilitate the sharing of data across information systems and the Internet.
+Aplicativos de computador não podem processar dados/conteúdo não estruturados diretamente. Formatos padrão de marcação e troca facilitam o compartilhamento de dados entre sistemas de informação e a internet.
 
 #### 3.4.1 XML
 
-Extensible Markup Language (XML) provides a language for representing both structured and unstructured data and information. XML uses Metadata to describe the content, structure, and business rules of any document or database.
+A Linguagem de Marcação Extensível (XML) fornece uma linguagem para representar dados e informações estruturados e não estruturados. XML usa Metadados para descrever o conteúdo, a estrutura e as regras de negócio de qualquer documento ou banco de dados.
 
-XML requires translating the structure of the data into a document structure for data exchange. XML tags data elements to identify the meaning of the data. Simple nesting and references provide the relationships between data elements.
+XML requer a tradução da estrutura dos dados em uma estrutura de documento para troca de dados. XML marca elementos de dados para identificar o significado dos dados. Aninhamento simples e referências fornecem os relacionamentos entre os elementos de dados.
 
-XML namespaces provide a method to avoid a name conflict when two different documents use the same element names. Older methods of markup include HTML and SGML, to name a few.
+Namespaces XML fornecem um método para evitar conflitos de nomes quando dois documentos diferentes usam os mesmos nomes de elementos. Métodos mais antigos de marcação incluem HTML e SGML, para citar alguns.
 
-The need for XML-capable content management has grown for several reasons:
+A necessidade de gerenciamento de conteúdo compatível com XML cresceu por vários motivos:
 
-* XML provides the capability of integrating structured data into relational databases with unstructured data. Unstructured data can be stored in a relational DBMS BLOB (binary large object) or in XML files.
-* XML can integrate structured data with unstructured data in documents, reports, email, images, graphics, audio, and video files. Data modeling should take into account the generation of unstructured reports from structured data, and include them in creating error-correction workflows, backup, recovery, and archiving.
-* XML also can build enterprise or corporate portals, (Business-to-Business [B2B], Business-to-Customer [B2C]), which provide users with a single access point to a variety of content.
-* XML provides identification and labeling of unstructured data / content so that computer applications can understand and process them. In this way, structured data appends to unstructured content. An Extensible Markup Interface (XMI) specification consists of rules for generating the XML document containing the actual Metadata and thus is a ‘structure’ for XML.
+* XML fornece a capacidade de integrar dados estruturados em bancos de dados relacionais com dados não estruturados. Dados não estruturados podem ser armazenados em um BLOB (objeto binário grande) de um SGBD relacional ou em arquivos XML.
+* O XML pode integrar dados estruturados com dados não estruturados em documentos, relatórios, e-mails, imagens, gráficos, arquivos de áudio e vídeo. A modelagem de dados deve levar em consideração a geração de relatórios não estruturados a partir de dados estruturados e incluí-los na criação de fluxos de trabalho de correção de erros, backup, recuperação e arquivamento.
+* O XML também pode criar portais corporativos (Business-to-Business [B2B], Business-to-Customer [B2C]), que fornecem aos usuários um único ponto de acesso a uma variedade de conteúdos.
+* O XML fornece identificação e rotulagem de dados/conteúdo não estruturados para que os aplicativos de computador possam compreendê-los e processá-los. Dessa forma, os dados estruturados são anexados ao conteúdo não estruturado. Uma especificação de Interface de Marcação Extensível (XMI) consiste em regras para gerar o documento XML que contém os metadados reais e, portanto, é uma "estrutura" para XML.
 
 #### 3.4.2 JSON
 
-JSON (JavaScript Object Notation) is an open, lightweight standard format for data interchange. Its text format is language-independent and easy to parse, but uses conventions from the C-family of languages. JSON has two structures: a collection of unordered name / value pairs known as objects and an ordered list of values realized as an array. It is emerging as the preferred format in web-centric, NoSQL databases.
+JSON (JavaScript Object Notation) é um formato padrão aberto e leve para intercâmbio de dados. Seu formato de texto é independente de linguagem e fácil de analisar, mas utiliza convenções da família de linguagens C. JSON possui duas estruturas: uma coleção de pares nome/valor não ordenados, conhecidos como objetos, e uma lista ordenada de valores, representada como um array. Ele está emergindo como o formato preferido em bancos de dados NoSQL centrados na web.
 
-An alternative to XML, JSON is used to transmit data between a server and web application. JSON is a similar but more compact way of representing, transmitting, and interpreting data than XML. Either XML or JSON content can be returned when using REST technology.
+Uma alternativa ao XML, o JSON é usado para transmitir dados entre um servidor e uma aplicação web. JSON é uma forma semelhante, porém mais compacta, de representar, transmitir e interpretar dados do que XML. Conteúdo XML ou JSON pode ser retornado ao usar a tecnologia REST.
 
-### 3.4.3 RDF and Related W3C Specifications
+### 3.4.3 RDF e Especificações W3C Relacionadas
 
-Resource Description Framework (RDF), a common framework used to describe information about any Web resource, is a standard model for data interchange on the Web. The RDF resources are saved in a triplestore, which is a database used to store and retrieve semantic queries using SPARQL.
+O Resource Description Framework (RDF), um framework comum usado para descrever informações sobre qualquer recurso da Web, é um modelo padrão para intercâmbio de dados na Web. Os recursos RDF são salvos em um triplestore, que é um banco de dados usado para armazenar e recuperar consultas semânticas usando SPARQL.
 
-RDF makes statements about a resource in the form of subject (resource)-predicate (property name)-object (property value) expressions or triples. Usually the subject-predicate-object is each described by a URI (Uniform Resource Identifier), but the subject and object could be blank nodes and the object could be a literal (null values and null strings are not supported). A URI names the relationship between resources as well as two ends of the link or triple. The most common form of URI is a URL (uniform resource locator). This allows structured and semi-structured data to be shared across applications.
+O RDF faz declarações sobre um recurso na forma de expressões sujeito (recurso)-predicado (nome da propriedade)-objeto (valor da propriedade) ou triplas. Normalmente, o sujeito-predicado-objeto é descrito por um URI (Uniform Resource Identifier), mas o sujeito e o objeto podem ser nós em branco e o objeto pode ser um literal (valores nulos e strings nulas não são suportados). Um URI nomeia o relacionamento entre os recursos, bem como duas extremidades do link ou tripla. A forma mais comum de URI é um URL (Uniform Resource Locator). Isso permite que dados estruturados e semiestruturados sejam compartilhados entre aplicativos.
 
-The Semantic Web needs access to both data and relationships between data sets. The collection of interrelated data sets is also known as Linked Data. URIs provide a generic way to identify any entity that exists. HTML provides a means to structure and link documents on the Web. RDF provides a generic, graph-based data model to link data that describes things.
+A Web Semântica precisa de acesso tanto aos dados quanto aos relacionamentos entre conjuntos de dados. A coleção de conjuntos de dados inter-relacionados também é conhecida como Dados Vinculados. URIs fornecem uma maneira genérica de identificar qualquer entidade existente. HTML fornece um meio de estruturar e vincular documentos na Web. RDF fornece um modelo de dados genérico, baseado em grafos, para vincular dados que descrevem coisas.
 
-RDF uses XML as its encoding syntax. It views Metadata as data (e.g., author, date of creation, etc.). The described resources of RDF allow for the association of semantic meanings to resources. RDFS (RDF Schema) provides a data modeling vocabulary for RDF data and is an extension of the basic RDF vocabulary. SKOS (Simple Knowledge Organization System) is a RDF vocabulary (i.e., an application of the RDF data model to capture data depicted as a hierarchy of concepts). Any type of classification, taxonomy, or thesaurus can be represented in SKOS.
+RDF usa XML como sintaxe de codificação. Ele considera metadados como dados (por exemplo, autor, data de criação, etc.). Os recursos descritos de RDF permitem a associação de significados semânticos a recursos. RDFS (Esquema RDF) fornece um vocabulário de modelagem de dados para dados RDF e é uma extensão do vocabulário básico de RDF. SKOS (Simple Knowledge Organization System) é um vocabulário RDF (ou seja, uma aplicação do modelo de dados RDF para capturar dados representados como uma hierarquia de conceitos). Qualquer tipo de classificação, taxonomia ou tesauro pode ser representado em SKOS.
 
-OWL (W3C Web Ontology Language) is a vocabulary extension of RDF. It is a semantic markup language for publishing and sharing OWL documents (ontologies) on the Web. It is used when information contained in documents needs to be processed by applications rather than humans. Both RDF and OWL are Semantic Web standards that provide a framework for sharing and reuse of data, as well as enabling data integration and interoperability, on the Web.
+OWL (W3C Web Ontology Language) é uma extensão de vocabulário de RDF. É uma linguagem de marcação semântica para publicação e compartilhamento de documentos OWL (ontologias) na Web. É utilizada quando as informações contidas em documentos precisam ser processadas por aplicativos em vez de humanos. Tanto RDF quanto OWL são padrões da Web Semântica que fornecem uma estrutura para compartilhamento e reutilização de dados, além de permitir a integração e a interoperabilidade de dados na Web.
 
-RDF can help with the ‘variety’ characteristic of Big Data. If the data is accessible using the RDF triples model, data from different sources can be mixed and the SPARQL query language used to find connections and patterns without predefining a schema. As W3C describes it, “RDF has features that facilitate data merging even if the underlying schemas differ, and it specifically supports the evolution of schemas over time without requiring all the data consumers to be changed.” [^52] It can integrate disparate data from many sources and formats and then either reduce or replace the data sets (known as data fusion) through semantic alignment. (See Chapter 14.)
+RDF pode auxiliar na característica de "variedade" do Big Data. Se os dados forem acessíveis usando o modelo triplo RDF, dados de diferentes fontes podem ser misturados e a linguagem de consulta SPARQL pode ser usada para encontrar conexões e padrões sem predefinir um esquema. Como descreve o W3C, "RDF possui recursos que facilitam a fusão de dados mesmo que os esquemas subjacentes sejam diferentes, e suporta especificamente a evolução de esquemas ao longo do tempo sem exigir que todos os consumidores de dados sejam alterados". [^52] Ela pode integrar dados díspares de diversas fontes e formatos e, em seguida, reduzir ou substituir os conjuntos de dados (conhecido como fusão de dados) por meio do alinhamento semântico. (Ver Capítulo 14.)
 
 #### 3.4.4 Schema.org
 
-Labeling content with semantic markup (e.g., as defined by the open source Schema.org) makes it easier for semantic search engines to index content and for web crawlers to match content with a search query. Schema.org provides a collection of shared vocabularies or schemas for on-page markup so that the major search engines can understand them. It focuses on the meaning of the words on web pages as well as terms and keywords.
+Rotular o conteúdo com marcação semântica (por exemplo, conforme definido pelo Schema.org de código aberto) facilita a indexação de conteúdo por mecanismos de busca semântica e a correspondência de conteúdo com uma consulta de pesquisa por rastreadores da web. O Schema.org fornece um conjunto de vocabulários ou esquemas compartilhados para marcação na página, para que os principais mecanismos de busca possam entendê-los. Ele se concentra no significado das palavras nas páginas da web, bem como em termos e palavras-chave.
 
-Snippets are the text that appears under every search result. Rich snippets are the detailed information on specific searches (e.g., gold star ratings under the link). To create rich snippets, the content on the web pages needs to be formatted properly with structured data like Microdata (a set of tags introduced with HTML5) and shared vocabularies from Schema.org.
+Snippets são o texto que aparece abaixo de cada resultado de pesquisa. Rich snippets são as informações detalhadas sobre pesquisas específicas (por exemplo, avaliações com estrelas douradas sob o link). Para criar rich snippets, o conteúdo das páginas da web precisa ser formatado corretamente com dados estruturados como Microdados (um conjunto de tags introduzido com HTML5) e vocabulários compartilhados do Schema.org.
 
-The Schema.org vocabulary collection can also be used for structured data interoperability (e.g., with JSON).
+O conjunto de vocabulários do Schema.org também pode ser usado para interoperabilidade de dados estruturados (por exemplo, com JSON).
 
-### 3.5 E-discovery Technology
+### 3.5 Tecnologia de E-discovery
 
-E-discovery often involves review of large volumes of documents. E-discovery technologies offer many capabilities and techniques such as early case assessment, collection, identification, preservation, processing, optical character recognition (OCR), culling, similarity analysis, and email thread analysis. Technology-assisted review (TAR) is a workflow or process where a team can review selected documents and mark them relevant or not. These decisions are become input for the predictive coding engine that reviews and sorts remaining documents according to relevancy. Support for information governance may be a feature as well.
+A e-discovery frequentemente envolve a revisão de grandes volumes de documentos. As tecnologias de e-discovery oferecem diversos recursos e técnicas, como avaliação inicial de casos, coleta, identificação, preservação, processamento, reconhecimento óptico de caracteres (OCR), seleção, análise de similaridade e análise de sequências de e-mails. A revisão assistida por tecnologia (TAR) é um fluxo de trabalho ou processo em que uma equipe pode revisar documentos selecionados e marcá-los como relevantes ou não. Essas decisões são inseridas no mecanismo de codificação preditiva, que revisa e classifica os documentos restantes de acordo com a relevância. O suporte à governança da informação também pode ser um recurso.
 
-## 4. Techniques
+## 4. Técnicas
 
-### 4.1 Litigation Response Playbook
+### 4.1 Manual de Resposta a Litígios
 
-E-discovery starts at the beginning of a lawsuit. However, an organization can plan for litigation response through the development of a playbook containing objectives, metrics and responsibilities before a major discovery project begins.
+A e-discovery começa no início de um processo judicial. No entanto, uma organização pode planejar a resposta a litígios por meio do desenvolvimento de um manual contendo objetivos, métricas e responsabilidades antes do início de um grande projeto de descoberta.
 
-The playbook defines the target environment for e-discovery and assesses if gaps exist between current and target environments. It documents business processes for the lifecycle of e-discovery activities and identifies roles and responsibilities of the e-discovery team. A playbook can also enable an organization to identify risks and proactively prevent situations that might result in litigation.
+O manual define o ambiente-alvo para a e-discovery e avalia se existem lacunas entre os ambientes atual e o alvo. Ele documenta os processos de negócios para o ciclo de vida das atividades de e-discovery e identifica as funções e responsabilidades da equipe de e-discovery. Um manual também pode permitir que uma organização identifique riscos e previna proativamente situações que possam resultar em litígios.
 
-To compile a playbook,
+Para compilar um manual,
 
-* Establish an inventory of policies and procedures for specific departments (Legal, Records Management, IT).
-* Draft policies for topics, such as litigation holds, document retention, archiving, and backups.
-* Evaluate IT tool capabilities such as e-discovery indexing, search and collection, data segregation and protection tools as well as the unstructured ESI sources / systems.
-* Identify and analyze pertinent legal issues.
-* Develop a communication and training plan to train employees on what is expected.
-* Identify materials that may be prepared in advance for tailoring to a legal case.
-* Analyze vendor services in case outside services are required.
-* Develop processes on how to handle a notification and keep the playbook current.
+* Estabeleça um inventário de políticas e procedimentos para departamentos específicos (Jurídico, Gestão de Registros, TI).
+* Elabore políticas para tópicos como retenções em litígios, retenção de documentos, arquivamento e backups.
+* Avaliar os recursos das ferramentas de TI, como indexação, busca e coleta de e-discovery, ferramentas de segregação e proteção de dados, bem como fontes/sistemas ESI não estruturados.
+* Identificar e analisar questões jurídicas pertinentes.
+* Desenvolver um plano de comunicação e treinamento para orientar os funcionários sobre o que é esperado.
+* Identificar materiais que podem ser preparados com antecedência para adaptação a um caso jurídico.
+* Analisar os serviços do fornecedor, caso sejam necessários serviços externos.
+* Desenvolver processos sobre como lidar com uma notificação e manter o manual atualizado.
 
-### 4.2 Litigation Response Data Map
+### 4.2 Mapa de Dados de Resposta a Litígios
 
-E-discovery often has a limited timeframe (e.g., 90 days). Providing attorneys with a data map of the IT and ESI environment available can enable an organization to respond more effectively. A data map is a catalog of information systems. It describes the systems and their uses, the information they contain, retention policies, and other characteristics. Catalogs often identify systems of record, originating applications, archives, disaster recovery copies, or backups, and media used for each. A data map should be comprehensive, containing all systems. Since email is often an object of scrutiny in litigation, the map should also describe how email is stored, processed, and consumed. Mapping business processes to the list of the systems and documenting user roles and privileges will enable assessment and documentation of information flows.
+O e-discovery geralmente tem um prazo limitado (por exemplo, 90 dias). Fornecer aos advogados um mapa de dados do ambiente de TI e ESI disponível pode permitir que uma organização responda com mais eficácia. Um mapa de dados é um catálogo de sistemas de informação. Ele descreve os sistemas e seus usos, as informações que eles contêm, as políticas de retenção e outras características. Os catálogos geralmente identificam sistemas de registro, aplicativos de origem, arquivos, cópias de recuperação de desastres ou backups e a mídia usada para cada um. Um mapa de dados deve ser abrangente, contendo todos os sistemas. Como o e-mail é frequentemente objeto de análise em litígios, o mapa também deve descrever como o e-mail é armazenado, processado e consumido. Mapear os processos de negócios para a lista de sistemas e documentar as funções e privilégios dos usuários permitirá a avaliação e a documentação dos fluxos de informações.
 
-The process of creating the data map will demonstrate the value of creating Metadata as part of the document management process. Metadata is critical for searching. It also gives ESI documents context and enables cases, transcripts, undertakings, etc. to be associated with supporting documents.
+O processo de criação do mapa de dados demonstrará o valor da criação de Metadados como parte do processo de gerenciamento de documentos. Os metadados são essenciais para a pesquisa. Eles também fornecem contexto aos documentos ESI e permitem que casos, transcrições, compromissos, etc., sejam associados a documentos comprobatórios.
 
-An e-discovery data map should indicate which records are readily accessible and which are not. There are different e-discovery rules for these two categories. The inaccessible data needs to be identified and the reasons why it is inaccessible need to be documented. To respond appropriately to litigation, an organization should have an inventory of records in offsite storage, including external cloud storage.
+Um mapa de dados de e-discovery deve indicar quais registros são facilmente acessíveis e quais não são. Existem diferentes regras de e-discovery para essas duas categorias. Os dados inacessíveis precisam ser identificados e os motivos pelos quais estão inacessíveis precisam ser documentados. Para responder adequadamente a litígios, uma organização deve ter um inventário de registros em armazenamento externo, incluindo armazenamento em nuvem externa.
 
-Often, systems inventories already exist. For example, they may be maintained by Data Architecture, Metadata Management or IT Asset Management. The legal and / or records management functions should determine whether these can be extended for e-discovery purposes.
+Frequentemente, os inventários de sistemas já existem. Por exemplo, eles podem ser mantidos pela Arquitetura de Dados, Gerenciamento de Metadados ou Gerenciamento de Ativos de TI. As funções jurídicas e/ou de gestão de registros devem determinar se estas podem ser estendidas para fins de e-discovery.
 
-## 5. Implementation Guidelines
+## 5. Diretrizes de Implementação
 
-Implementing ECM is a long-term effort that can be perceived as expensive. As with any enterprise-wide effort, it requires buy-in from a wide range of stakeholders, and funding support from an executive committee for funding. With a large project, there is a risk that it will fall victim to budget cuts, business swings, management changes or inertia. To minimize risks, ensure that the content, not the technology, drives decisions for ECM implementation. Configure the workflow around the organizational needs to show value.
+A implementação do ECM é um esforço de longo prazo que pode ser percebido como caro. Como qualquer esforço que envolva toda a empresa, requer a adesão de uma ampla gama de partes interessadas e o apoio financeiro de um comitê executivo para o financiamento. Em um projeto grande, existe o risco de ele ser vítima de cortes orçamentários, oscilações de negócios, mudanças de gestão ou inércia. Para minimizar os riscos, certifique-se de que o conteúdo, e não a tecnologia, oriente as decisões para a implementação do ECM. Configure o fluxo de trabalho de acordo com as necessidades da organização para demonstrar valor.
 
-### 5.1 Readiness Assessment / Risk Assessment
+### 5.1 Avaliação de Prontidão / Avaliação de Risco
 
-The purpose of an ECM readiness assessment is to identify areas where content management improvement is needed and to determine how well adapted the organization is to changing its processes to meet these needs. A Data Management Maturity Assessment model can help in this process. (See Chapter 15.)
+O objetivo de uma avaliação de prontidão do ECM é identificar áreas onde melhorias na gestão de conteúdo são necessárias e determinar o quão bem a organização está adaptada à mudança de seus processos para atender a essas necessidades. Um modelo de Avaliação de Maturidade em Gestão de Dados pode auxiliar nesse processo. (Consulte o Capítulo 15.)
 
-Some ECM critical success factors are similar to those in IT projects (e.g., executive support, involvement of users, user training, change management, corporate culture, and communication). Specific ECM critical success factors include content audit and classification for existing content, appropriate information architecture, support of the content lifecycle, definitions of appropriate Metadata tags, and the ability to customize functions in an ECM solution. Because ECM solutions involve technical and process complexity, the organization needs to ensure that it has the appropriate resources to support the process.
+Alguns fatores críticos de sucesso do ECM são semelhantes aos de projetos de TI (por exemplo, suporte executivo, envolvimento de usuários, treinamento de usuários, gestão de mudanças, cultura corporativa e comunicação). Os fatores críticos de sucesso específicos do ECM incluem auditoria e classificação de conteúdo existente, arquitetura de informações apropriada, suporte ao ciclo de vida do conteúdo, definições de tags de metadados apropriadas e a capacidade de personalizar funções em uma solução de ECM. Como as soluções de ECM envolvem complexidade técnica e de processos, a organização precisa garantir que tenha os recursos apropriados para dar suporte ao processo.
 
-Risks can arise with ECM implementations due to project size, complexity in integrating with other software applications, process and organizational issues, and the effort required to migrate content. Lack of training for core team members and internal staff can lead to uneven use. Other risks include failure to put policies, processes, and procedures in place or lack of communication with stakeholders.
+Riscos podem surgir com implementações de ECM devido ao tamanho do projeto, à complexidade na integração com outros aplicativos de software, a questões processuais e organizacionais e ao esforço necessário para migrar o conteúdo. A falta de treinamento para os membros principais da equipe e para a equipe interna pode levar a um uso desigual. Outros riscos incluem a falha na implementação de políticas, processos e procedimentos ou a falta de comunicação com as partes interessadas.
 
-#### 5.1.1 Records Management Maturity
+#### 5.1.1 Maturidade da Gestão de Registros
 
-ARMA’s Generally Accepted Recordkeeping Principles® (See section 1.2) can guide an organization’s assessment of it policies and practices for Records Management. Along with GARP, ARMA International has an Information Governance Maturity Model that can help assess an organization’s recordkeeping program and practices. [^53] This Maturity Model describes the characteristics of the information governance and recordkeeping environment at five levels of maturity for each of the eight GARP principles:
+Os Princípios de Manutenção de Registros Geralmente Aceitos® da ARMA (consulte a seção 1.2) podem orientar a avaliação de uma organização sobre suas políticas e práticas de Gestão de Registros. Além do GARP, a ARMA International possui um Modelo de Maturidade de Governança da Informação que pode ajudar a avaliar o programa e as práticas de manutenção de registros de uma organização. [^53] Este Modelo de Maturidade descreve as características do ambiente de governança da informação e manutenção de registros em cinco níveis de maturidade para cada um dos oito princípios do GARP:
 
-* Level 1 Sub-Standard: Information governance and recordkeeping concerns are not addressed or just minimally
-* Level 2 In Development: Developing recognition that information governance and recordkeeping can have an impact on the organization
-* Level 3 Essential: Minimum requirements that must be addressed to meet the legal and regulatory requirements
-* Level 4 Proactive: A proactive information governance program has been established with a focus on continuous improvement
-* Level 5 Transformational: Information governance is integrated into the corporate infrastructure and business processes
+* **Nível 1 Subpadrão:** As questões de governança da informação e manutenção de registros não são abordadas ou são abordadas de forma mínima
+* **Nível 2 Em Desenvolvimento:** Desenvolvendo o reconhecimento de que a governança da informação e a manutenção de registros podem ter um impacto na organização
+* **Nível 3 Essencial:** Requisitos mínimos que devem ser abordados para atender aos requisitos legais e regulatórios
+* **Nível 4 Proativo:** Um programa proativo de governança da informação foi estabelecido com foco na melhoria contínua
+* **Nível 5 Transformacional:** A governança da informação é integrada à infraestrutura corporativa e aos processos de negócios
 
-Several standards can be applied for technical assessments of records management systems and applications. For example,
+Diversos padrões podem ser aplicados para avaliações técnicas de sistemas e aplicativos de gestão de registros. Por exemplo,
 
-* DoD 5015.2 Electronic Records Management Software Applications Design Criteria Standard
-* ISO 16175, Principles and Functional Requirements for Records in Electronic Office Environments
-* The Model Requirements for the Management of Electronic Records (MoReq2)
-* The Records Management Services (RMS) specification from the Object Management Group (OMG)
+* DoD 5015.2 - Padrão de Critérios de Design para Aplicativos de Software de Gerenciamento de Registros Eletrônicos
+* ISO 16175, Princípios e Requisitos Funcionais para Registros em Ambientes de Escritório Eletrônico
+* Requisitos do Modelo para o Gerenciamento de Registros Eletrônicos (MoReq2)
+* Especificação de Serviços de Gerenciamento de Registros (RMS) do Grupo de Gerenciamento de Objetos (OMG)
 
-Gaps and risks identified in records management readiness assessments should be analyzed their potential impact on the organization. Businesses are subject to laws that require maintenance and secure destruction of records. If an organization does not inventory its records, it is already at risk since it cannot know if records have been stolen or destroyed. An organization can spend a lot of time and money trying to find records if it lacks a functional record retention program. Lack of adherence to legal and regulatory requirements can lead to costly fines. Failure to identify and protect vital records can put a company out of business.
+Lacunas e riscos identificados nas avaliações de prontidão para o gerenciamento de registros devem ser analisados ​​quanto ao seu potencial impacto na organização. As empresas estão sujeitas a leis que exigem a manutenção e a destruição segura de registros. Se uma organização não inventariar seus registros, ela já estará em risco, pois não pode saber se os registros foram roubados ou destruídos. Uma organização pode gastar muito tempo e dinheiro tentando encontrar registros se não tiver um programa funcional de retenção de registros. A falta de adesão aos requisitos legais e regulatórios pode levar a multas onerosas. A falha em identificar e proteger registros vitais pode levar uma empresa à falência.
 
-#### 5.1.2 E-discovery Assessment
+#### 5.1.2 Avaliação de E-discovery
 
-A readiness assessment should examine and identify improvement opportunities for the litigation response program. A mature program will specify clear roles and responsibilities, preservation protocols, data collection methodologies, and disclosure processes. Both the program and resulting processes should be documented, defensible, and auditable.
+Uma avaliação de prontidão deve examinar e identificar oportunidades de melhoria para o programa de resposta a litígios. Um programa maduro especificará funções e responsabilidades claras, protocolos de preservação, metodologias de coleta de dados e processos de divulgação. Tanto o programa quanto os processos resultantes devem ser documentados, defensáveis ​​e auditáveis.
 
-The program needs to understand the organization’s information lifecycle and develop an ESI data map for data sources (see Section 2.1.3.4). Since data preservation is a critical legal requirement, data retention policies should be proactively reviewed and assessed in anticipation of litigation. There should be a plan to work with IT to quickly implement litigation holds as required.
+O programa precisa compreender o ciclo de vida das informações da organização e desenvolver um mapa de dados ESI para as fontes de dados (consulte a Seção 2.1.3.4). Como a preservação de dados é um requisito legal crítico, as políticas de retenção de dados devem ser revisadas e avaliadas proativamente em antecipação a litígios. Deve haver um plano para trabalhar com a TI a fim de implementar rapidamente as retenções de litígio, conforme necessário.
 
-The risks of not having defined a proactive litigation response should be assessed and quantified. Sometimes organizations respond only if there is anticipated litigation, and then there is a scramble to find relevant documents and information to review. Most likely, this type of organization either over specifies the amount of data to be kept (i.e., everything) or does not have data deletion policies in place. Not having a retention schedule for data and information can lead to legal liabilities if older unpurged records are required for e-discovery, but not available.
+Os riscos de não ter definido uma resposta proativa a litígios devem ser avaliados e quantificados. Às vezes, as organizações respondem apenas se houver litígios previstos e, em seguida, há uma luta para encontrar documentos e informações relevantes para revisar. Muito provavelmente, esse tipo de organização especifica excessivamente a quantidade de dados a serem mantidos (ou seja, tudo) ou não possui políticas de exclusão de dados em vigor. Não ter um cronograma de retenção para dados e informações pode levar a responsabilidades legais se registros antigos não eliminados forem necessários para descoberta eletrônica, mas não estiverem disponíveis.
 
-### 5.2 Organization and Cultural Change
+### 5.2 Mudança Organizacional e Cultural
 
-People can be a greater challenge than the technology. There may be issues in adapting the management practices in daily activities and getting people to use ECM. In that some cases, ECM can lead to more tasks; for example, scanning paper documents and defining required Metadata.
+As pessoas podem ser um desafio maior do que a tecnologia. Pode haver problemas na adaptação das práticas de gestão às atividades diárias e na capacitação das pessoas para o uso do ECM. Em alguns casos, o ECM pode levar a mais tarefas; por exemplo, digitalizar documentos em papel e definir os metadados necessários.
 
-Often organizations manage information, including records, departmentally, creating information silos that hinder the sharing and proper management of data. A holistic enterprise approach to content and records management can eliminate users’ perception that they need to store copies of the content. The ideal solution is a single repository, centrally and securely managed, with clearly defined policies and processes enforced across the enterprise. Training and communication about the processes, policies, and tools are critical to the success of a records management or ECM program.
+Frequentemente, as organizações gerenciam informações, incluindo registros, departamentalmente, criando silos de informações que dificultam o compartilhamento e o gerenciamento adequado dos dados. Uma abordagem empresarial holística para o gerenciamento de conteúdo e registros pode eliminar a percepção dos usuários de que precisam armazenar cópias do conteúdo. A solução ideal é um repositório único, gerenciado de forma centralizada e segura, com políticas e processos claramente definidos e aplicados em toda a empresa. Treinamento e comunicação sobre os processos, políticas e ferramentas são essenciais para o sucesso de um programa de gerenciamento de registros ou ECM.
 
-Privacy, data protection, confidentiality, intellectual property, encryption, ethical use, and identity are the important issues that document and content management professionals must deal with in cooperation with other employees, management, and regulators. A centralized organization often deals with processes to improve access to information, control the growth of materials taking up office space, reduce operating costs, minimize litigation risks, safeguard vital information, and support better decision-making.
+Privacidade, proteção de dados, confidencialidade, propriedade intelectual, criptografia, uso ético e identidade são questões importantes com as quais os profissionais de gerenciamento de documentos e conteúdo devem lidar em cooperação com outros funcionários, a gerência e os órgãos reguladores. Uma organização centralizada frequentemente lida com processos para melhorar o acesso à informação, controlar o crescimento de materiais que ocupam espaço no escritório, reduzir custos operacionais, minimizar riscos de litígios, proteger informações vitais e apoiar uma melhor tomada de decisões.
 
-Both content and records management need to be elevated organizationally, and not seen as low-level or low-priority functions. In heavily regulated industries, the Records and Information Management (RIM) function needs to be closely aligned with the corporate legal function along with the e-discovery function. If the organization has objectives to improve operational efficiency by managing information better, then RIM should be aligned with marketing or an operational support group. If the organization sees RIM as part of IT, the RIM function should report directly to the CIO or CDO. Often the RIM function is found in ECM program or Enterprise Information Management (EIM) program.
+Tanto a gestão de conteúdo quanto a de registros precisam ser elevadas organizacionalmente e não vistas como funções de baixo nível ou baixa prioridade. Em setores altamente regulamentados, a função de Gestão de Registros e Informações (RIM) precisa estar estreitamente alinhada com a função jurídica corporativa, juntamente com a função de e-discovery. Se a organização tem como objetivo melhorar a eficiência operacional por meio do gerenciamento aprimorado das informações, a RIM deve estar alinhada com o marketing ou com um grupo de suporte operacional. Se a organização enxerga a RIM como parte da TI, a função de RIM deve se reportar diretamente ao CIO ou ao CDO. Frequentemente, a função de RIM é encontrada no programa de ECM ou no programa de Gestão de Informações Corporativas (EIM).
 
-## 6. Documents and Content Governance
+## 6. Governança de Documentos e Conteúdo
 
-### 6.1 Information Governance Frameworks
+### 6.1 Estruturas de Governança da Informação
 
-Documents, records, and other unstructured content represent risk to an organization. Managing this risk and getting value from this information both require governance. Drivers include:
+Documentos, registros e outros conteúdos não estruturados representam riscos para uma organização. Gerenciar esse risco e extrair valor dessas informações exigem governança. Os impulsionadores incluem:
 
-* Legal and regulatory compliance
-* Defensible disposition of records
-* Proactive preparation for e-discovery
-* Security of sensitive information
-* Management of risk areas such as email and Big Data
+* Conformidade legal e regulatória
+* Descarte defensável de registros
+* Preparação proativa para e-discovery
+* Segurança de informações sensíveis
+* Gestão de áreas de risco, como e-mail e Big Data
 
-Principles of successful Information Governance programs are emerging. One set of principles is the ARMA GARP® principles (see Section 1.2). Other principles include:
+Princípios de programas bem-sucedidos de Governança da Informação estão surgindo. Um conjunto de princípios são os princípios ARMA GARP® (consulte a Seção 1.2). Outros princípios incluem:
 
-* Assign executive sponsorship for accountability
-* Educate employees on information governance responsibilities
-* Classify information under the correct record code or taxonomy category
-* Ensure authenticity and integrity of information
-* Determine that the official record is electronic unless specified differently
-* Develop policies for alignment of business systems and third-parties to information governance standards
-* Store, manage, make accessible, monitor, and audit approved enterprise repositories and systems for records and content
-* Secure confidential or personally identifiable information
-* Control unnecessary growth of information
-* Dispose information when it reaches the end of its lifecycle
-* Comply with requests for information (e.g., discovery, subpoena, etc.)
-* Improve continuously
+* Atribuir patrocínio executivo para responsabilização
+* Educar os funcionários sobre as responsabilidades de governança da informação
+* Classificar as informações sob o código de registro ou categoria de taxonomia corretos
+* Garantir a autenticidade e a integridade das informações
+* Determinar que o registro oficial seja eletrônico, a menos que especificado de outra forma
+* Desenvolver políticas para o alinhamento dos sistemas de negócios e de terceiros aos padrões de governança da informação
+* Armazenar, gerenciar, tornar acessível, monitorar e auditar repositórios e sistemas corporativos aprovados para registros e conteúdo
+* Proteger informações confidenciais ou de identificação pessoal
+* Controlar o crescimento desnecessário de informações
+* Descartar as informações quando elas atingirem o fim de seu ciclo de vida
+* Atender às solicitações de informações (por exemplo, descoberta, intimação, etc.)
+* Melhorar continuamente
 
-The Information Governance Reference Model (IGRM) (Figure 74) shows the relationship of Information Governance to other organizational functions. The outer ring includes the stakeholders who put policies, standards, processes, tools and infrastructure in place to manage information. The center shows a lifecycle diagram with each lifecycle component within the color or colors of the stakeholder(s) who executes that component. The IGRM complements ARMA’s GARP®.
+O Modelo de Referência de Governança da Informação (IGRM) (Figura 74) mostra a relação da Governança da Informação com outras funções organizacionais. O anel externo inclui as partes interessadas que implementam políticas, padrões, processos, ferramentas e infraestrutura para gerenciar as informações. O centro mostra um diagrama de ciclo de vida com cada componente do ciclo de vida na cor ou cores do(s) stakeholder(s) que o executa(m). O IGRM complementa o GARP® da ARMA.
 
-![Figure 74 Information Governance Reference Model](figure_74.png)
-Figure 74 Information Governance Reference Model [^54]
+![Figura 74 Modelo de Referência de Governança da Informação](figure_74.png)
+Figura 74 Modelo de Referência de Governança da Informação [^54]
 
-Sponsorship by someone close to or within the ‘C’ suite is a critical requirement for the formation and sustainability of the Information Governance program. A cross-functional senior level Information Council or Steering Committee is established that meets on a regular basis. The Council is responsible for an enterprise Information Governance strategy, operating procedures, guidance on technology and standards, communications and training, monitoring, and funding. Information Governance policies are written for the stakeholder areas, and then ideally technology is applied for enforcement.
+O patrocínio de alguém próximo ou pertencente à alta administração é um requisito crítico para a formação e a sustentabilidade do programa de Governança da Informação. Um Conselho de Informação ou Comitê Diretor multifuncional de nível sênior é estabelecido e se reúne regularmente. O Conselho é responsável por uma estratégia de Governança da Informação corporativa, procedimentos operacionais, orientações sobre tecnologia e padrões, comunicações e treinamento, monitoramento e financiamento. As políticas de Governança da Informação são elaboradas para as áreas de stakeholders e, em seguida, idealmente, a tecnologia é aplicada para sua implementação.
 
-### 6.2 Proliferation of Information
+### 6.2 Proliferação de Informações
 
-Generally, unstructured data grows much faster than structured data. This adds to the challenge of governance. Unstructured data is not necessarily attached to a business function or department. Its ownership can be difficult to ascertain. It can also be difficult to classify the content of unstructured data, since the business purpose of the content cannot always be inferred from the system. Unmanaged unstructured data, without required Metadata, represents risk. It can be misinterpreted and, if content is not known, it may be mishandled or present privacy concerns. (See Chapter 14.)
+Geralmente, dados não estruturados crescem muito mais rápido do que dados estruturados. Isso aumenta o desafio da governança. Dados não estruturados não estão necessariamente vinculados a uma função ou departamento da empresa. Sua propriedade pode ser difícil de determinar. Também pode ser difícil classificar o conteúdo de dados não estruturados, uma vez que a finalidade comercial do conteúdo nem sempre pode ser inferida a partir do sistema. Dados não estruturados não gerenciados, sem os Metadados necessários, representam risco. Podem ser mal interpretados e, se o conteúdo não for conhecido, podem ser mal manuseados ou apresentar problemas de privacidade. (Consulte o Capítulo 14.)
 
-### 6.3 Govern for Quality Content
+### 6.3 Governança para Conteúdo de Qualidade
 
-Managing unstructured data requires effective partnership between data stewards and other data management professionals and records managers. For example, business data stewards can help define web portals, enterprise taxonomies, search engine indexes, and content management issues.
+Gerenciar dados não estruturados requer uma parceria eficaz entre administradores de dados e outros profissionais de gerenciamento de dados e gerentes de registros. Por exemplo, administradores de dados corporativos podem ajudar a definir portais da web, taxonomias corporativas, índices de mecanismos de busca e questões de gerenciamento de conteúdo.
 
-Document and content governance focuses on policies related to retention, electronic signatures, reporting formats, and report distribution. Policies will imply or state expectations about quality. Accurate, complete, and up-to-date information will aid in making decisions. High quality information improves competitive advantage and increases organizational effectiveness. Defining quality content requires understanding the context of its production and use.
+A governança de documentos e conteúdo concentra-se em políticas relacionadas à retenção, assinaturas eletrônicas, formatos de relatórios e distribuição de relatórios. As políticas implicarão ou declararão expectativas sobre qualidade. Informações precisas, completas e atualizadas auxiliarão na tomada de decisões. Informações de alta qualidade melhoram a vantagem competitiva e aumentam a eficácia organizacional. Definir conteúdo de qualidade requer a compreensão do contexto de sua produção e uso.
 
-* Producers: Who creates the content and why do they create it?
-* Consumers: Who uses the information and for what purposes?
-* Timing: When is the information needed? How frequently does it need to be updated or accessed?
-* Format: Do consumers need the content in a specific format for to meet their goals? Are there unacceptable formats?
-* Delivery: How will information be delivered? How will consumers access the information? How will security be enforced to prevent inappropriate access to electronic content?
+* **Produtores:** Quem cria o conteúdo e por que o cria?
+* **Consumidores:** Quem usa a informação e para quais propósitos?
+* **Momento:** Quando a informação é necessária? Com ​​que frequência ela precisa ser atualizada ou acessada?
+* **Formato:** Os consumidores precisam do conteúdo em um formato específico para atingir seus objetivos? Existem formatos inaceitáveis?
+* **Entrega:** Como as informações serão entregues? Como os consumidores acessarão as informações? Como a segurança será reforçada para impedir o acesso indevido ao conteúdo eletrônico?
 
-### 6.4 Metrics
+### 6.4 Métricas
 
-Key Performance Indicators (KPIs) are both quantitative and qualitative measures used to review organizational performance against its goals. KPIs can be developed at the strategic and operational levels. Some KPIs may be appropriate for both levels, especially if they measure lifecycle functions or risks.
+Indicadores-chave de desempenho (KPIs) são medidas quantitativas e qualitativas usadas para avaliar o desempenho organizacional em relação às suas metas. Os KPIs podem ser desenvolvidos nos níveis estratégico e operacional. Alguns KPIs podem ser apropriados para ambos os níveis, especialmente se medirem funções ou riscos do ciclo de vida.
 
-#### 6.4.1 Records Management
+#### 6.4.1 Gestão de Registros
 
-At the strategic level, KPIs can be developed within such areas of records management compliance with regulatory requirements (e.g., time taken to meet requirements), and / or governance (e.g., compliance with policies). At the operational level, KPIs can be developed within such areas of records management resources (e.g., operational and capital costs), training (e.g., number of classes given, number of employees trained and at what level), delivery of daily records management services and operations (e.g., percentage meeting user SLAs), and / or integration of records management functions with other business systems (e.g., percentage of integration).
+No nível estratégico, os KPIs podem ser desenvolvidos em áreas como conformidade da gestão de registros com requisitos regulatórios (por exemplo, tempo gasto para atender aos requisitos) e/ou governança (por exemplo, conformidade com as políticas). No nível operacional, os KPIs podem ser desenvolvidos em áreas como recursos de gestão de registros (por exemplo, custos operacionais e de capital), treinamento (por exemplo, número de aulas ministradas, número de funcionários treinados e em qual nível), prestação de serviços e operações diárias de gestão de registros (por exemplo, porcentagem de cumprimento dos SLAs dos usuários) e/ou integração das funções de gestão de registros com outros sistemas de negócios (por exemplo, porcentagem de integração).
 
-Criteria to measure success of a records management system implementation can include the following percentages:
+Os critérios para medir o sucesso da implementação de um sistema de gestão de registros podem incluir as seguintes porcentagens:
 
-* Percentage of total documents and email per user identified as corporate records
-* Percentage of the identified corporate records declared as such and put under records control
-* Percentage of total stored records that have the proper retention rules applied
+* Porcentagem do total de documentos e e-mails por usuário identificados como registros corporativos
+* Porcentagem dos registros corporativos identificados declarados como tal e colocados sob controle de registros
+* Porcentagem do total de registros armazenados que possuem as regras de retenção adequadas aplicadas
 
-These percentages can then be compared to determine best practice percentages.
+Essas porcentagens podem então ser comparadas para determinar as porcentagens de melhores práticas.
 
-Sometimes, measuring records management implementation success is a simple budgetary matter. A financial determination examines at what point the implementation of an electronic records management system becomes less expensive than acquiring more room to store paper records.
+Às vezes, medir o sucesso da implementação da gestão de registros é uma simples questão orçamentária. Uma avaliação financeira examina em que ponto a implementação de um sistema de gestão de registros eletrônicos se torna menos dispendiosa do que adquirir mais espaço para armazenar registros em papel.
 
-ARMA’s GARP principle categories and maturity model can guide the definition of KPIs. ARMA’s Information Governance Assessment software platform can identify information related compliance risks and develop metrics for governance program maturity in areas such as e-records and e-discovery (e.g., litigation holds).
+As categorias de princípios GARP e o modelo de maturidade da ARMA podem orientar a definição de KPIs. A plataforma de software de Avaliação de Governança da Informação da ARMA pode identificar riscos de conformidade relacionados à informação e desenvolver métricas para a maturidade do programa de governança em áreas como registros eletrônicos e descoberta eletrônica (por exemplo, retenções em litígios).
 
-#### 6.4.2 E-discovery
+#### 6.4.2 Descoberta eletrônica
 
-One common KPI of e-discovery is cost reduction. Another KPI is efficiency gained in collecting information ahead of time rather reactively (e.g., average time in days to turn around e-discovery requests). How quickly an organization can implement a legal hold notification process (LHN) is third type of KPI.
+Um KPI comum da descoberta eletrônica é a redução de custos. Outro KPI é a eficiência obtida na coleta antecipada de informações, em vez de forma reativa (por exemplo, tempo médio em dias para processar solicitações de descoberta eletrônica). A rapidez com que uma organização consegue implementar um processo de notificação de retenção legal (LHN) é o terceiro tipo de KPI.
 
-Measurement of e-discovery is critical to a better rate of litigation wins. The EDRM model can guide development of KPIs based on what is required by each phase. ERDM also publishes a Metrics Model for e-discovery metrics. [^55] The primary elements of Volume, Time, and Cost are in the center surrounded by the seven aspects of e-discovery work (Activities, Custodians, Systems, Media, Status, Format, and QA) which affect the outcome of the center elements.
+A mensuração da descoberta eletrônica é fundamental para uma melhor taxa de vitórias em litígios. O modelo EDRM pode orientar o desenvolvimento de KPIs com base no que é exigido em cada fase. O ERDM também publica um Modelo de Métricas para métricas de e-discovery. [^55] Os elementos principais de Volume, Tempo e Custo estão no centro, cercados pelos sete aspectos do trabalho de e-discovery (Atividades, Custodiantes, Sistemas, Mídia, Status, Formato e QA) que afetam o resultado dos elementos centrais.
 
 #### 6.4.3 ECM
 
-KPIs should be developed to measure both tangible and intangible benefits of ECM. Tangible benefits include increased productivity, cost reduction, improved information quality, and improved compliance. Intangible benefits include improved collaboration, and simplification of job routines and workflow.
+Devem ser desenvolvidos KPIs para mensurar os benefícios tangíveis e intangíveis do ECM. Os benefícios tangíveis incluem aumento de produtividade, redução de custos, melhoria da qualidade da informação e melhoria da conformidade. Os benefícios intangíveis incluem melhoria da colaboração e simplificação das rotinas de trabalho e do fluxo de trabalho.
 
-As ECM is being established, KPIs will focus on program and operational metrics. Program metrics include number of ECM projects, adoption, and user satisfaction levels. Operational metrics include the typical system type KPIs, such as the amount of downtime, number of users, etc.
+À medida que o ECM for sendo estabelecido, os KPIs se concentrarão em métricas operacionais e de programa. As métricas de programa incluem o número de projetos de ECM, a adoção e os níveis de satisfação do usuário. As métricas operacionais incluem os KPIs típicos de sistemas, como tempo de inatividade, número de usuários, etc.
 
-Specific ECM metrics such as storage utilization (e.g., comparison of amount used with ECM implementation vs. amount used before ECM) and search retrieval performance can also be used as KPIs. Information retrieval is measured by precision and recall. Precision is the proportion of the retrieved documents that are actually relevant. Recall is a proportion of all relevant documents that are actually retrieved.
+Métricas específicas de ECM, como utilização de armazenamento (por exemplo, comparação da quantidade usada com a implementação do ECM versus a quantidade usada antes do ECM) e desempenho de recuperação de pesquisa, também podem ser usadas como KPIs. A recuperação de informações é medida pela precisão e recall. Precisão é a proporção dos documentos recuperados que são realmente relevantes. Recall é a proporção de todos os documentos relevantes que são realmente recuperados.
 
-Over time, KPIs related to the value of business solutions can be developed.
+Com o tempo, KPIs relacionados ao valor das soluções de negócios podem ser desenvolvidos.
 
-* Financial KPIs can include the cost of ECM system, reduced costs related to physical storage, and percentage decrease in operational costs.
-* Customer KPIs can include percentage incidents resolved at first contact and number of customer complaints.
-* KPIs representing more effective and productive internal business processes can include percentage of paperwork reduced, percentage of error reduction using workflow and process automation.
-* Training KPIs can include number of training sessions for management and non-management.
-* Risk mitigation KPIs can include reduction of discovery costs, and number of audit trails tracking e-discovery requests.
+* Os KPIs financeiros podem incluir o custo do sistema ECM, a redução de custos relacionados ao armazenamento físico e a redução percentual nos custos operacionais.
+* Os KPIs do cliente podem incluir a porcentagem de incidentes resolvidos no primeiro contato e o número de reclamações de clientes.
+* Os KPIs que representam processos internos de negócios mais eficazes e produtivos podem incluir a porcentagem de redução de papelada, a porcentagem de redução de erros usando o fluxo de trabalho e a automação de processos.
+* Os KPIs de treinamento podem incluir o número de sessões de treinamento para a gerência e não gerência.
+* Os KPIs de mitigação de riscos podem incluir a redução dos custos de descoberta e o número de trilhas de auditoria rastreando solicitações de descoberta eletrônica.
 
-## 7. Works Cited / Recommended
+## 7. Trabalhos Citados / Recomendados
 
 Boiko, Bob. Content Management Bible. 2nd ed. Wiley, 2004. Print.
 
@@ -964,18 +1051,15 @@ Smallwood, Robert F. Information Governance: Concepts, Strategies, and Best Prac
 US GAAP Financial Statement Taxonomy Project. XBRL US GAAP Taxonomies. v1.0 Technical Guide Document Number: SECOFM-USGAAPT-TechnicalGuide. Version 1.0. April 28, 2008 http://bit.ly/2rRauZt.
 
 
-
-
-
-[^44]: The types of unstructured data have evolved since the early 2000s, as the capacity to capture and store digital information has grown. The concept of unstructured data continues to refer to data that is not pre-defined through a data model, whether relational or otherwise.
+[^44]: Os tipos de dados não estruturados evoluíram desde o início dos anos 2000, à medida que a capacidade de capturar e armazenar informações digitais cresceu. O conceito de dados não estruturados continua a se referir a dados que não são predefinidos por meio de um modelo de dados, seja relacional ou não.
 [^45]: ARMA International, ARMA Generally Accepted Recordkeeping Principles®, http://bit.ly/2tNF1E4.
-[^46]: These industries are responsible for supplying evidence of how certain kinds of materials are handled. Pharmacy manufacturers, for example, must keep detailed records of how a compound came to be and was then tested and handled, before being allowed to be used by people.
+[^46]: Esses setores são responsáveis ​​por fornecer evidências de como certos tipos de materiais são manuseados. Os fabricantes de produtos farmacêuticos, por exemplo, devem manter registros detalhados de como um composto surgiu e foi testado e manuseado, antes de ser autorizado para uso humano.
 [^47]: http://bit.ly/2sTaI2h
 [^48]: http://bit.ly/2sTaI2h
-[^49]: Semantic Web, also known as Linked Data Web or Web 3.0, an enhancement of the current Web where meaning (i.e., semantics) is machine-process-able. Having a machine (computer) understand more makes it easier to find, share, and combine data / information more easily.
-[^50]: The ISO 15489 standard defines records management as “The field of management responsible for the efficient and systematic control of the creation, receipt, maintenance, use and disposition of records, including the processes for capturing and maintaining evidence of and information about business activities and transactions in the form of records.” http://bit.ly/2sVG8EW.
-[^51]: EDRM (edrm.net). Content posted at EDRM.net is licensed under a Creative Commons Attribution 3.0 Unported License.
+[^49]: Web Semântica, também conhecida como Web de Dados Conectados ou Web 3.0, é um aprimoramento da Web atual, onde o significado (ou seja, a semântica) é processável por máquina. Ter uma máquina (computador) com maior capacidade de compreensão facilita a busca, o compartilhamento e a combinação de dados/informações.
+[^50]: A norma ISO 15489 define gestão de registros como “A área da gestão responsável pelo controle eficiente e sistemático da criação, recebimento, manutenção, uso e descarte de registros, incluindo os processos de captura e manutenção de evidências e informações sobre atividades e transações comerciais na forma de registros.” http://bit.ly/2sVG8EW.
+[^51]: EDRM (edrm.net). O conteúdo publicado em EDRM.net está licenciado sob uma Licença Creative Commons Atribuição 3.0 Não Adaptada.
 [^52]: W3C, “Resource Description Framework (RDF),” http://bit.ly/1k9btZQ.
-[^53]: ARMA International, Information Governance Maturity Model, http://bit.ly/2sPWGOe.
-[^54]: EDRM (edrm.net). Content posted at EDRM.net is licensed under a Creative Commons Attribution 3.0 Unported License.
-[^55]: EDRM Metrics Model, http://bit.ly/2rURq7R.
+[^53]: ARMA International, Modelo de Maturidade da Governança da Informação, http://bit.ly/2sPWGOe.
+[^54]: EDRM (edrm.net). O conteúdo publicado em EDRM.net está licenciado sob uma Licença Creative Commons Atribuição 3.0 Não Adaptada.
+[^55]: Modelo de Métricas EDRM, http://bit.ly/2rURq7R.

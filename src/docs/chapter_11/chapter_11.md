@@ -1,139 +1,139 @@
-# Data Warehousing and Business Intelligence
+# Data Warehousing e Business Intelligence
 
 ![](chapter_11.png)
 
-## 1. Introduction
+## 1. Introdução
 
-The concept of the Data Warehouse emerged in the 1980s as technology enabled organizations to integrate data from a range of sources into a common data model. Integrated data promised to provide insight into operational processes and open up new possibilities for leveraging data to make decisions and create organizational value. As importantly, data warehouses were seen as a means to reduce the proliferation of decision support systems (DSS), most of which drew on the same core enterprise data. The concept of an enterprise warehouse promised a way to reduce data redundancy, improve the consistency of information, and enable an enterprise to use its data to make better decisions.
+O conceito de Data Warehouse surgiu na década de 1980, quando a tecnologia permitiu que as organizações integrassem dados de diversas fontes em um modelo de dados comum. Dados integrados prometiam fornecer insights sobre os processos operacionais e abrir novas possibilidades de aproveitamento de dados para a tomada de decisões e a criação de valor organizacional. Igualmente importante, os data warehouses eram vistos como um meio de reduzir a proliferação de sistemas de suporte à decisão (SAD), a maioria dos quais se baseava nos mesmos dados corporativos essenciais. O conceito de data warehouse corporativo prometia uma maneira de reduzir a redundância de dados, melhorar a consistência das informações e permitir que uma empresa utilizasse seus dados para tomar decisões mais acertadas.
 
-![Figure 79 Context Diagram: DW/BI](figure_79.png)
-Figure 79 Context Diagram: DW/BI
+![Figura 79 Diagrama de Contexto: DW/BI](figure_79.png)
+Figura 79 Diagrama de Contexto: DW/BI
 
-Data warehouses began to be built in earnest in the 1990s. Since then (and especially with the co-evolution of Business Intelligence as a primary driver of business decision-making), data warehouses have become ‘mainstream’. Most enterprises have data warehouses and warehousing is the recognized core of enterprise data management. [^63] Even though well established, the data warehouse continues to evolve. As new forms of data are created with increasing velocity, new concepts, such as data lakes, are emerging that will influence the future of the data warehouse. See Chapters 8 and 15.
+Os data warehouses começaram a ser construídos com mais força na década de 1990. Desde então (e especialmente com a coevolução da Business Intelligence como principal impulsionador da tomada de decisões de negócios), os data warehouses se tornaram "mainstream". A maioria das empresas possui data warehouses, e o armazenamento é o núcleo reconhecido do gerenciamento de dados corporativos. [^63] Embora bem estabelecido, o data warehouse continua a evoluir. À medida que novas formas de dados são criadas com velocidade crescente, novos conceitos, como data lakes, surgem e influenciarão o futuro do data warehouse. Consulte os Capítulos 8 e 15.
 
-## 1.1 Business Drivers
+## 1.1 Impulsionadores de Negócios
 
-The primary driver for data warehousing is to support operational functions, compliance requirements, and Business Intelligence (BI) activities (though not all BI activities depend on warehouse data). Increasingly organizations are being asked to provide data as evidence that they have complied with regulatory requirements. Because they contain historical data, warehouses are often the means to respond to such requests. Nevertheless, Business Intelligence support continues to be the primary reason for a warehouse. BI promises insight about the organization, its customers, and its products. An organization that acts on knowledge gained from BI can improve operational efficiency and competitive advantage. As more data has become available at a greater velocity, BI has evolved from retrospective assessment to predictive analytics.
+O principal impulsionador do data warehouse é o suporte a funções operacionais, requisitos de conformidade e atividades de Business Intelligence (BI) (embora nem todas as atividades de BI dependam de dados de warehouse). Cada vez mais, as organizações são solicitadas a fornecer dados como evidência de que cumpriram os requisitos regulatórios. Por conterem dados históricos, os warehouses costumam ser o meio para responder a essas solicitações. No entanto, o suporte de Business Intelligence continua sendo a principal razão para a existência de um warehouse. O BI promete insights sobre a organização, seus clientes e seus produtos. Uma organização que atua com base no conhecimento adquirido com o BI pode melhorar a eficiência operacional e a vantagem competitiva. À medida que mais dados se tornam disponíveis em maior velocidade, o BI evoluiu da avaliação retrospectiva para a análise preditiva.
 
-### 1.2 Goals and Principles
+### 1.2 Objetivos e Princípios
 
-Organizations implement data warehouses in order to:
+As organizações implementam data warehouses para:
 
-* Support Business Intelligence activity
-* Enable effective business analysis and decision-making
-* Find ways to innovate based on insights from their data
+* Apoiar a atividade de Business Intelligence
+* Permitir análises de negócios e tomadas de decisão eficazes
+* Encontrar maneiras de inovar com base em insights de seus dados
 
-The implementation of a Data Warehouse should follow these guiding principles:
+A implementação de um Data Warehouse deve seguir estes princípios norteadores:
 
-* **Focus on business goals:** Make sure DW serves organizational priorities and solves business problems.
-* **Start with the end in mind:** Let the business priority and scope of end-data-delivery in the BI space drive the creation of the DW content.
-* **Think and design globally; act and build locally:** Let end-vision guide the architecture, but build and deliver incrementally, through focused projects or sprints that enable more immediate return on investment.
-* **Summarize and optimize last, not first:** Build on the atomic data. Aggregate and summarize to meet requirements and ensure performance, not to replace the detail.
-* **Promote transparency and self-service:** The more context (Metadata of all kinds) provided, the better able data consumers will be to get value out of the data. Keep stakeholders informed about the data and the processes by which it is integrated.
-* **Build Metadata with the warehouse:** Critical to DW success is the ability to explain the data. For example, being able to answer basic questions like “Why is this sum X?” “How was that computed?” and “Where did the data come from?” Metadata should be captured as part of the development cycle and managed as part of ongoing operations.
-* **Collaborate:** Collaborate with other data initiatives, especially those for Data Governance, Data Quality, and Metadata.
-* **One size does not fit all:** Use the right tools and products for each group of data consumers.
+* **Foco nos objetivos de negócios:** Certifique-se de que o Data Warehouse atenda às prioridades organizacionais e resolva os problemas de negócios.
+* **Comece com o objetivo final em mente:** Deixe que a prioridade de negócios e o escopo da entrega de dados finais no ambiente de BI impulsionem a criação do conteúdo do Data Warehouse.
+* **Pense e projete globalmente; aja e construa localmente:** Deixe que a visão final guie a arquitetura, mas construa e entregue incrementalmente, por meio de projetos focados ou sprints que permitam um retorno mais imediato sobre o investimento.
+* **Resuma e otimize por último, não primeiro:** Construa com base nos dados atômicos. Agregue e resuma para atender aos requisitos e garantir o desempenho, não para substituir os detalhes.
+* **Promova a transparência e o autoatendimento:** Quanto mais contexto (Metadados de todos os tipos) for fornecido, mais capazes os consumidores de dados serão de extrair valor dos dados. Mantenha as partes interessadas informadas sobre os dados e os processos pelos quais eles são integrados.
+* **Construa Metadados com o warehouse:** A capacidade de explicar os dados é fundamental para o sucesso do DW. Por exemplo, ser capaz de responder a perguntas básicas como "Por que essa soma é X?", "Como isso foi calculado?" e ​​"De onde vieram os dados?". Os metadados devem ser capturados como parte do ciclo de desenvolvimento e gerenciados como parte das operações contínuas.
+* **Colabore:** Colabore com outras iniciativas de dados, especialmente aquelas para Governança de Dados, Qualidade de Dados e Metadados.
+* **Uma solução única não se aplica a todos:** Use as ferramentas e os produtos certos para cada grupo de consumidores de dados.
 
-### 1.3 Essential Concepts
+### 1.3 Conceitos Essenciais
 
 #### 1.3.1 Business Intelligence
 
-The term Business Intelligence (BI) has two meanings. First, it refers to a type of data analysis aimed at understanding organizational activities and opportunities. Results of such analysis are used to improve organizational success. When people say that data holds the key to competitive advantage, they are articulating the promise inherent in Business Intelligence activity: that if an organization asks the right questions of its own data, it can gain insights about its products, services, and customers that enable it to make better decisions about how to fulfill its strategic objectives. Secondly, Business Intelligence refers to a set of technologies that support this kind of data analysis. An evolution of decisions support tools, BI tools enable querying, data mining, statistical analysis, reporting, scenario modeling, data visualization, and dashboarding. They are used for everything from budgeting to advanced analytics.
+O termo Business Intelligence (BI) tem dois significados. Primeiro, refere-se a um tipo de análise de dados que visa compreender as atividades e oportunidades organizacionais. Os resultados dessa análise são usados ​​para aprimorar o sucesso organizacional. Quando as pessoas dizem que os dados são a chave para a vantagem competitiva, estão articulando a promessa inerente à atividade de Business Intelligence: que, se uma organização fizer as perguntas certas sobre seus próprios dados, poderá obter insights sobre seus produtos, serviços e clientes que lhe permitam tomar melhores decisões sobre como atingir seus objetivos estratégicos. Em segundo lugar, Business Intelligence refere-se a um conjunto de tecnologias que suportam esse tipo de análise de dados. Uma evolução das ferramentas de suporte à decisão, as ferramentas de BI permitem consultas, mineração de dados, análise estatística, relatórios, modelagem de cenários, visualização de dados e criação de painéis. Elas são usadas para tudo, desde orçamentos até análises avançadas.
 
 #### 1.3.2 Data Warehouse
 
-A Data Warehouse (DW) is a combination of two primary components: An integrated decision support database and the related software programs used to collect, cleanse, transform, and store data from a variety of operational and external sources. To support historical, analytical, and BI requirements, a data warehouse may also include dependent data marts, which are subset copies of data from the warehouse. In its broadest context, a data warehouse includes any data stores or extracts used to support the delivery of data for BI purposes.
+Um Data Warehouse (DW) é uma combinação de dois componentes principais: um banco de dados integrado de suporte à decisão e os programas de software relacionados usados ​​para coletar, limpar, transformar e armazenar dados de uma variedade de fontes operacionais e externas. Para atender aos requisitos históricos, analíticos e de BI, um data warehouse também pode incluir data marts dependentes, que são cópias de subconjuntos de dados do warehouse. Em seu contexto mais amplo, um data warehouse inclui quaisquer armazenamentos ou extrações de dados usados ​​para dar suporte à entrega de dados para fins de BI.
 
-An Enterprise Data Warehouse (EDW) is a centralized data warehouse designed to service the BI needs of the entire organization. An EDW adheres to an enterprise data model to ensure consistency of decision support activities across the enterprise.
+Um Enterprise Data Warehouse (EDW) é um data warehouse centralizado projetado para atender às necessidades de BI de toda a organização. Um EDW adere a um modelo de dados corporativo para garantir a consistência das atividades de suporte à decisão em toda a empresa.
 
 #### 1.3.3 Data Warehousing
 
-Data Warehousing describes the operational extract, cleansing, transformation, control, and load processes that maintain the data in a data warehouse. The data warehousing process focuses on enabling an integrated and historical business context on operational data by enforcing business rules and maintaining appropriate business data relationships. Data warehousing also includes processes that interact with Metadata repositories.
+Data Warehousing descreve os processos operacionais de extração, limpeza, transformação, controle e carregamento que mantêm os dados em um data warehouse. O processo de data warehouse concentra-se em permitir um contexto de negócios integrado e histórico em dados operacionais, aplicando regras de negócios e mantendo relacionamentos de dados de negócios apropriados. O data warehouse também inclui processos que interagem com repositórios de metadados.
 
-Traditionally, data warehousing focuses on structured data: elements in defined fields, whether in files or tables, as documented in data models. With recent advances in technology, the BI and DW space now embraces semi-structured and unstructured data. Semi-structured data, defined as electronic elements organized as semantic entities with no required attribute affinity, predates XML but not HTML; an EDI transfer could serve as an example. Unstructured data refers to data that is not predefined through a data model. Because unstructured data exists in a range of formats and encompasses items such as e-mail, free format text, business documents, videos, photos, and web pages to name a few, defining a feasible storage construct that sustains analytic workloads within warehousing governance has been a challenge yet to be overcome.
+Tradicionalmente, o data warehouse concentra-se em dados estruturados: elementos em campos definidos, sejam em arquivos ou tabelas, conforme documentado em modelos de dados. Com os recentes avanços tecnológicos, o espaço de BI e DW agora abrange dados semiestruturados e não estruturados. Dados semiestruturados, definidos como elementos eletrônicos organizados como entidades semânticas sem afinidade de atributos obrigatória, são anteriores ao XML, mas não ao HTML; uma transferência EDI poderia servir de exemplo. Dados não estruturados referem-se a dados que não são predefinidos por meio de um modelo de dados. Como os dados não estruturados existem em uma variedade de formatos e abrangem itens como e-mail, texto em formato livre, documentos comerciais, vídeos, fotos e páginas da web, para citar alguns, definir uma estrutura de armazenamento viável que sustente cargas de trabalho analíticas dentro da governança de data warehouse tem sido um desafio ainda a ser superado.
 
-#### 1.3.4 Approaches to Data Warehousing
+#### 1.3.4 Abordagens para Data Warehousing
 
-Much of the conversation about what constitutes a data warehouse has been driven by two influential thought leaders – Bill Inmon and Ralph Kimball – who have different approaches to modeling and developing warehouses. Inmon defines a data warehouse as “a subject-oriented, integrated, time-variant and non-volatile collection of data in support of management’s decision-making process.” [^64] A normalized relational model is used to store and manage data. Kimball defines a warehouse as “a copy of transaction data specifically structured for query and analysis.” Kimball’s approach calls for a dimensional model. (See Chapter 5.)
+Grande parte da discussão sobre o que constitui um data warehouse tem sido conduzida por dois influentes líderes de pensamento – Bill Inmon e Ralph Kimball – que têm abordagens diferentes para a modelagem e o desenvolvimento de data warehouses. Inmon define um data warehouse como “uma coleção de dados orientada por assunto, integrada, variável no tempo e não volátil, em apoio ao processo de tomada de decisão da gerência”. [^64] Um modelo relacional normalizado é usado para armazenar e gerenciar dados. Kimball define um data warehouse como “uma cópia de dados de transações especificamente estruturada para consulta e análise”. A abordagem de Kimball exige um modelo dimensional. (Ver Capítulo 5.)
 
-While Inmon and Kimball advocate different approaches to building warehouses, their definitions recognize similar core ideas:
+Embora Inmon e Kimball defendam abordagens diferentes para a construção de warehouses, suas definições reconhecem ideias centrais semelhantes:
 
-* Warehouses store data from other systems
-* The act of storage includes organizing the data in ways that increase its value
-* Warehouses make data accessible and usable for analysis
-* Organizations build warehouses because they need to make reliable, integrated data available to authorized stakeholders
-* Warehouse data serves many purposes, from support of workflow to operational management to predictive analytics
+* Warehouses armazenam dados de outros sistemas
+* O ato de armazenar inclui organizar os dados de forma a aumentar seu valor
+* Warehouses tornam os dados acessíveis e utilizáveis ​​para análise
+* As organizações constroem warehouses porque precisam disponibilizar dados confiáveis ​​e integrados para partes interessadas autorizadas
+* Os dados de warehouse atendem a diversos propósitos, desde o suporte ao fluxo de trabalho até a gestão operacional e a análise preditiva
 
-### 1.3.5 Corporate Information Factory (Inmon)
+### 1.3.5 Fábrica de Informações Corporativas (Inmon)
 
-Bill Inmon’s Corporate Information Factory (CIF) is one of the two primary patterns for data warehousing. The component parts of Inmon’s definition of a data warehouse, “a subject oriented, integrated, time variant, and nonvolatile collection of summary and detailed historical data,” describe the concepts that support the CIF and point to the differences between warehouses and operational systems.
+A Fábrica de Informações Corporativas (CIF) de Bill Inmon é um dos dois principais padrões de data warehouse. Os componentes da definição de Inmon para data warehouse, "uma coleção de dados históricos resumidos e detalhados, orientada por assunto, integrada, variável no tempo e não volátil", descrevem os conceitos que sustentam a CIF e apontam as diferenças entre data warehouses e sistemas operacionais.
 
-* **Subject-oriented:** The data warehouse is organized based on major business entities, rather than focusing on a functional or application.
-* **Integrated:** Data in the warehouse is unified and cohesive. The same key structures, encoding and decoding of structures, data definitions, naming conventions are applied consistently throughout the warehouse. Because data is integrated, Warehouse data is not simply a copy of operational data. Instead, the warehouse becomes a system of record for the data.
-* **Time variant:** The data warehouse stores data as it exists in a set point in time. Records in the DW are like snapshots. Each one reflects the state of the data at a moment of time. This means that querying data based on a specific time period will always produce the same result, regardless of when the query is submitted.
-* **Non-volatile:** In the DW, records are not normally updated as they are in operational systems. Instead, new data is appended to existing data. A set of records may represent different states of the same transaction.
-* **Aggregate and detail data:** The data in the DW includes details of atomic level transactions, as well as summarized data. Operational systems rarely aggregate data. When warehouses were first established, cost and space considerations drove the need to summarize data. Summarized data can be persistent (stored in a table) or non-persistent (rendered in a view) in contemporary DW environments. The deciding factor in whether to persist data is usually performance.
-* **Historical:** The focus of operational systems is current data. Warehouses contain historical data as well. Often they house vast amounts of it.
+* **Orientado por assunto:** O data warehouse é organizado com base nas principais entidades de negócios, em vez de focar em uma funcionalidade ou aplicação.
+* **Integrado:** Os dados no data warehouse são unificados e coesos. As mesmas estruturas-chave, codificação e decodificação de estruturas, definições de dados e convenções de nomenclatura são aplicadas de forma consistente em todo o data warehouse. Como os dados são integrados, os dados do data warehouse não são simplesmente uma cópia dos dados operacionais. Em vez disso, o data warehouse se torna um sistema de registro para os dados.
+* **Variante no tempo:** O data warehouse armazena os dados como eles existem em um determinado momento. Os registros no DW são como instantâneos. Cada um reflete o estado dos dados em um determinado momento. Isso significa que consultar dados com base em um período específico sempre produzirá o mesmo resultado, independentemente de quando a consulta for enviada.
+* **Não volátil:** No DW, os registros normalmente não são atualizados como em sistemas operacionais. Em vez disso, novos dados são anexados aos dados existentes. Um conjunto de registros pode representar diferentes estados da mesma transação.
+* **Dados agregados e detalhados:** Os dados no DW incluem detalhes de transações em nível atômico, bem como dados resumidos. Os sistemas operacionais raramente agregam dados. Quando os warehouses foram estabelecidos, considerações de custo e espaço impulsionaram a necessidade de resumir os dados. Os dados resumidos podem ser persistentes (armazenados em uma tabela) ou não persistentes (renderizados em uma visualização) em ambientes de DW contemporâneos. O fator decisivo para persistir os dados geralmente é o desempenho.
+* **Histórico:** O foco dos sistemas operacionais são os dados atuais. Os warehouses também contêm dados históricos. Frequentemente, eles armazenam grandes quantidades deles.
 
-Inmon, Claudia Imhoff and Ryan Sousa describe data warehousing in the context of the Corporate Information Factory (CIF). See Figure 80. CIF components include:
+Inmon, Claudia Imhoff e Ryan Sousa descrevem o data warehousing no contexto da Fábrica de Informações Corporativas (CIF). Veja a Figura 80. Os componentes da CIF incluem:
 
-* **Applications:** Applications perform operational processes. Detail data from applications is brought into the data warehouse and the operational data stores (ODS) where it can be analyzed.
-* **Staging Area:** A database that stands between the operational source databases and the target databases. The data staging area is where the extract, transform, and load effort takes place. It is not used by end users. Most data in the data staging area is transient, although typically there is some relatively small amount of persistent data.
-* **Integration and transformation:** In the integration layer, data from disparate sources is transformed so that it can be integrated into the standard corporate representation / model in the DW and ODS.
-* **Operational Data Store (ODS):** An ODS is integrated database of operational data. It may be sourced directly from applications or from other databases. ODS’s generally contain current or near term data (30-90 days), while a DW contains historical data as well (often several years of data). Data in ODS’s is volatile, while warehouse data is stable. Not all organizations use ODS’s. They evolved as to meet the need for low latency data. An ODS may serve as the primary source for a data warehouse; it may also be used to audit a data warehouse.
-* **Data marts:** Data marts provide data prepared for analysis. This data is often a sub-set of warehouse data designed to support particular kinds of analysis or a specific group of data consumers. For example, marts can aggregate data to support faster analysis. Dimensional modeling (using denormalization techniques) is often used to design user-oriented data marts.
-* **Operational Data Mart (OpDM):** An OpDM is a data mart focused on tactical decision support. It is sourced directly from an ODS, rather than from a DW. It shares characteristics of the ODS: it contains current or near-term data. Its contents are volatile.
-* **Data Warehouse:** The DW provides a single integration point for corporate data to support management decision-making, and strategic analysis and planning. The data flows into a DW from the application systems and ODS, and flows out to the data marts, usually in one direction only. Data that needs correction is rejected, corrected at its source, and ideally re-fed through the system.
-* **Operational reports:** Reports are output from the data stores.
-* **Reference, Master, and external data:** In addition to transactional data from applications, the CIF also includes data required to understand transactions, such as reference and Master Data. Access to common data simplifies integration in the DW. While applications consume current master and Reference Data, the DW also requires historical values and the timeframes during which they were valid (see Chapter 10).
+* **Aplicativos:** Os aplicativos executam processos operacionais. Dados detalhados dos aplicativos são trazidos para o data warehouse e para os repositórios de dados operacionais (ODS), onde podem ser analisados.
+* **Área de Preparação:** Um banco de dados que fica entre os bancos de dados de origem operacional e os bancos de dados de destino. A área de preparação de dados é onde ocorrem os esforços de extração, transformação e carregamento. Ela não é utilizada pelos usuários finais. A maioria dos dados na área de preparação de dados é transitória, embora normalmente haja uma quantidade relativamente pequena de dados persistentes.
+* **Integração e transformação:** Na camada de integração, dados de fontes distintas são transformados para que possam ser integrados à representação/modelo corporativo padrão no DW e no ODS.
+* **Armazenamento de Dados Operacionais (ODS):** Um ODS é um banco de dados integrado de dados operacionais. Ele pode ser obtido diretamente de aplicativos ou de outros bancos de dados. Os ODS geralmente contêm dados atuais ou de curto prazo (30 a 90 dias), enquanto um DW também contém dados históricos (geralmente vários anos de dados). Os dados em ODS são voláteis, enquanto os dados de warehouse são estáveis. Nem todas as organizações utilizam ODS. Eles evoluíram para atender à necessidade de dados de baixa latência. Um ODS pode servir como fonte primária para um data warehouse; também pode ser usado para auditar um data warehouse.
+* **Data marts:** Os data marts fornecem dados preparados para análise. Esses dados geralmente são um subconjunto de dados de warehouse projetados para oferecer suporte a tipos específicos de análise ou a um grupo específico de consumidores de dados. Por exemplo, os marts podem agregar dados para oferecer suporte a análises mais rápidas. A modelagem dimensional (usando técnicas de desnormalização) é frequentemente usada para projetar data marts orientados ao usuário.
+* **Data Mart Operacional (OpDM):** Um OpDM é um data mart focado no suporte à decisão tática. Ele é obtido diretamente de um ODS, em vez de um DW. Ele compartilha características do ODS: contém dados atuais ou de curto prazo. Seu conteúdo é volátil.
+* **Data Warehouse:** O DW fornece um ponto único de integração para dados corporativos, apoiando a tomada de decisões gerenciais, a análise e o planejamento estratégico. Os dados fluem para um DW a partir dos sistemas de aplicação e do ODS, e fluem para os data marts, geralmente em apenas uma direção. Os dados que precisam de correção são rejeitados, corrigidos na fonte e, idealmente, realimentados pelo sistema.
+* **Relatórios operacionais:** Os relatórios são gerados a partir dos data warehouses.
+* **Dados de referência, mestres e externos:** Além dos dados transacionais dos aplicativos, o CIF também inclui dados necessários para a compreensão das transações, como dados de referência e mestres. O acesso a dados comuns simplifica a integração no DW. Enquanto os aplicativos consomem os dados mestres e de referência atuais, o DW também requer valores históricos e os períodos em que eles foram válidos (consulte o Capítulo 10).
 
-Figure 80 depicts movement within the CIF, from data collection and creation via applications (on the left) to the creation of information via marts and analysis (on the right). Movement from left to right includes other changes. For example:
+A Figura 80 ilustra o movimento dentro do CIF, desde a coleta e criação de dados por meio de aplicativos (à esquerda) até a criação de informações por meio de marts e análises (à direita). A movimentação da esquerda para a direita inclui outras mudanças. Por exemplo:
 
-* The purpose shifts from execution of operational functions to analysis
-* End users of systems move from front line workers to decision-makers
-* System usage moves from fixed operations to ad hoc uses
-* Response time requirements are relaxed (strategic decisions take more time than do daily operations)
-* Much more data is involved in each operation, query, or process
+* O propósito muda da execução de funções operacionais para a análise
+* Os usuários finais dos sistemas passam de trabalhadores da linha de frente para tomadores de decisão
+* O uso do sistema passa de operações fixas para usos ad hoc
+* Os requisitos de tempo de resposta são flexibilizados (decisões estratégicas levam mais tempo do que as operações diárias)
+* Muito mais dados são envolvidos em cada operação, consulta ou processo
 
-The data in DW and marts differs from that in applications:
+Os dados em DW e marts diferem daqueles em aplicativos:
 
-* Data is organized by subject rather than function
-* Data is integrated data rather than ‘siloed’
-* Data is time-variant vs. current-valued only
-* Data has higher latency in DW than in applications
-* Significantly more historical data is available in DW than in applications
+* Os dados são organizados por assunto em vez de função
+* Os dados são integrados em vez de "silos"
+* Os dados são variantes no tempo em vez de apenas valores atuais
+* Os dados têm maior latência em DW do que em aplicativos
+* Significativamente mais dados históricos estão disponíveis em DW do que em aplicativos
 
-![Figure 80 The Corporate Information Factory](figure_80.png)
-Figure 80 The Corporate Information Factory
+![Figura 80 A Fábrica de Informações Corporativas](figure_80.png)
+Figura 80 A Fábrica de Informações Corporativas
 
-#### 1.3.6 Dimensional DW (Kimball)
+#### 1.3.6 DW Dimensional (Kimball)
 
-Kimball’s Dimensional Data Warehouse is the other primary pattern for DW development. Kimball defines a data warehouse simply as “a copy of transaction data specifically structured for query and analysis” (Kimball, 2002). The ‘copy’ is not exact, however. Warehouse data is stored in a dimensional data model. The dimensional model is designed to enable data consumers to understand and use the data, while also enabling query performance. [^65] It is not normalized in the way an entity relationship model is.
+O Data Warehouse Dimensional de Kimball é o outro padrão primário para o desenvolvimento de DW. Kimball define um data warehouse simplesmente como "uma cópia de dados de transações especificamente estruturada para consulta e análise" (Kimball, 2002). A "cópia", no entanto, não é exata. Os dados do data warehouse são armazenados em um modelo de dados dimensional. O modelo dimensional é projetado para permitir que os consumidores de dados entendam e utilizem os dados, além de permitir o desempenho das consultas. [^65] Ele não é normalizado da mesma forma que um modelo de entidade-relacionamento.
 
-Often referred to as Star Schema, dimensional models are comprised facts, which contain quantitative data about business processes (e.g., sales numbers), and dimensions, which store descriptive attributes related to fact data and allow data consumers to answer questions about the facts (e.g., how many units of product X were sold this quarter?) A fact table joins with many dimension tables, and when viewed as a diagram, appears as a star. (See Chapter 5.) Multiple fact tables will share the common, or conformed, dimensions via a ‘bus’, similar to a bus in a computer. [^66] Multiple data marts can be integrated at an enterprise level by plugging into the bus of conformed dimensions.
+Frequentemente chamados de Esquema Estrela, os modelos dimensionais são compostos por fatos, que contêm dados quantitativos sobre processos de negócios (por exemplo, números de vendas), e dimensões, que armazenam atributos descritivos relacionados aos dados de fatos e permitem que os consumidores de dados respondam a perguntas sobre os fatos (por exemplo, quantas unidades do produto X foram vendidas neste trimestre?). Uma tabela de fatos se une a muitas tabelas de dimensão e, quando visualizada como um diagrama, aparece como uma estrela. (Consulte o Capítulo 5.) Várias tabelas de fatos compartilharão as dimensões comuns, ou conformadas, por meio de um "barramento", semelhante a um barramento em um computador. [^66] Vários data marts podem ser integrados em nível empresarial conectando-se ao barramento de dimensões conformadas.
 
-The DW bus matrix shows the intersection of business processes that generate fact data and data subject areas that represent dimensions. Opportunities for conformed dimensions exist where multiple processes use the same data. Table 27 is a sample bus matrix. In this example, the business processes for Sales, Inventory, and Orders all require Date and Product data. Sales and Inventory both require Store data, while Inventory and Orders require Vendor data. Date, Product, Store and Vendor are all candidates for conformed dimensions. In contrast, Warehouse is not shared; it is used only by Inventory.
+A matriz de barramento DW mostra a interseção dos processos de negócios que geram dados de fatos e áreas de assunto de dados que representam dimensões. Oportunidades para dimensões conformadas existem quando vários processos usam os mesmos dados. A Tabela 27 é um exemplo de matriz de barramento. Neste exemplo, os processos de negócios de Vendas, Estoque e Pedidos exigem dados de Data e Produto. Vendas e Estoque exigem dados de Loja, enquanto Estoque e Pedidos exigem dados de Fornecedor. Data, Produto, Loja e Fornecedor são todos candidatos a dimensões conformadas. Em contraste, Armazém não é compartilhado; é usado apenas por Estoque.
 
-Table 27 DW-Bus Matrix Example
+Tabela 27 Exemplo de Matriz de Barramento DW
 
 <table>
   <thead>
     <tr>
       <th></th>
-      <th colspan="4">Subject Areas</th>
+      <th colspan="4">Áreas Temáticas</th>
     </tr>
     <tr>
-      <th>Business Processes</th>
-      <th>Date</th>
-      <th>Product</th>
-      <th>Store</th>
-      <th>Vendor</th>
-      <th>Warehouse</th>
+      <th>Processos de Negócios</th>
+      <th>Data</th>
+      <th>Produto</th>
+      <th>Loja</th>
+      <th>Fornecedor</th>
+      <th>Armazém</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Sales</td>
+      <td>Vendas</td>
       <td>X</td>
       <td>X</td>
       <td>X</td>
@@ -141,7 +141,7 @@ Table 27 DW-Bus Matrix Example
       <td></td>
     </tr>
     <tr>
-      <td>Inventory</td>
+      <td>Estoque</td>
       <td>X</td>
       <td>X</td>
       <td>X</td>
@@ -149,7 +149,7 @@ Table 27 DW-Bus Matrix Example
       <td>X</td>
     </tr>
     <tr>
-      <td>Orders</td>
+      <td>Pedidos</td>
       <td>X</td>
       <td>X</td>
       <td></td>
@@ -157,503 +157,504 @@ Table 27 DW-Bus Matrix Example
       <td></td>
     </tr>
     <tr>
-      <td>Conformed Dimension Candidate</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
+      <td>Candidato à Dimensão Conformada</td>
+      <td>Sim</td>
+      <td>Sim</td>
+      <td>Sim</td>
+      <td>Sim</td>
+      <td>Não</td>
     </tr>
   </tbody>
 </table>
 
-The enterprise DW bus matrix can be used to represent the long-term data content requirements for the DW/BI system, independent of technology. This tool enables an organization to scope manageable development efforts. Each implementation builds an increment of the overall architecture. At some point, enough dimensional schemas exist to make good on the promise of an integrated enterprise data warehouse environment. Figure 81 represents Kimball’s Data Warehouse Chess Pieces view of DW/BI architecture. Note that Kimball’s Data Warehouse is more expansive than Inmon’s. The DW encompasses all components in the data staging and data presentation areas.
+A matriz de barramento DW empresarial pode ser usada para representar os requisitos de conteúdo de dados de longo prazo para o sistema DW/BI, independentemente da tecnologia. Essa ferramenta permite que uma organização defina o escopo de esforços de desenvolvimento gerenciáveis. Cada implementação cria um incremento da arquitetura geral. Em algum momento, existem esquemas dimensionais suficientes para cumprir a promessa de um ambiente de data warehouse empresarial integrado. A Figura 81 representa a visão das Peças de Xadrez do Data Warehouse de Kimball da arquitetura DW/BI. Observe que o Data Warehouse de Kimball é mais abrangente que o de Inmon. O DW abrange todos os componentes das áreas de preparação e apresentação de dados.
 
-* **Operational source systems:** Operational / transactional applications of the Enterprise. These create the data that is integrated into the ODS and DW. This component is equivalent to the application systems in the CIF diagram.
-* **Data staging area:** Kimball’s staging includes the set of processes needed to integrate and transform data for presentation. It can be compared to a combination of CIF’s integration, transformation, and DW components. Kimball’s focus is on efficient end-delivery of the analytical data, a scope smaller than Inmon’s corporate management of data. Kimball’s enterprise DW can fit into the architecture of the data staging area.
-* **Data presentation area:** Similar to the Data Marts in the CIF. The key architectural difference being an integrating paradigm of a ‘DW Bus,’ such as shared or conformed dimensions unifying the multiple data marts.
-* **Data access tools:** Kimball’s approach focuses on end users’ data requirements. These needs drive the adoption of appropriate data access tools.
+* **Sistemas de origem operacional:** Aplicações operacionais/transacionais da empresa. Elas criam os dados que são integrados ao ODS e ao DW. Este componente é equivalente aos sistemas de aplicação no diagrama CIF.
+* **Área de preparação de dados:** A preparação de Kimball inclui o conjunto de processos necessários para integrar e transformar dados para apresentação. Pode ser comparada a uma combinação dos componentes de integração, transformação e DW do CIF. O foco da Kimball está na entrega final eficiente dos dados analíticos, um escopo menor do que o gerenciamento corporativo de dados da Inmon. O DW corporativo da Kimball pode se encaixar na arquitetura da área de preparação de dados.
+* **Área de apresentação de dados:** Semelhante aos Data Marts no CIF. A principal diferença arquitetônica é um paradigma integrador de um "Barramento DW", como dimensões compartilhadas ou conformadas que unificam os múltiplos data marts.
+* **Ferramentas de acesso a dados:** A abordagem da Kimball concentra-se nos requisitos de dados dos usuários finais. Essas necessidades impulsionam a adoção de ferramentas de acesso a dados apropriadas.
 
-#### 1.3.7 DW Architecture Components
+#### 1.3.7 Componentes da Arquitetura do DW
 
-The data warehouse environment includes a collection of architectural components that need to be organized to meet the needs of the enterprise. Figure 82 depicts the architectural components of the DW/BI and Big Data Environment discussed in this section. The evolution of Big Data has changed the DW/BI landscape by adding another path through which data may be brought into an enterprise.
+O ambiente de data warehouse inclui um conjunto de componentes arquitetônicos que precisam ser organizados para atender às necessidades da empresa. A Figura 82 descreve os componentes arquitetônicos do DW/BI e do Ambiente de Big Data discutidos nesta seção. A evolução do Big Data mudou o cenário do DW/BI, adicionando outro caminho pelo qual os dados podem ser trazidos para uma empresa.
 
-![Figure 81 Kimball's Data Warehouse Chess Pieces](figure_81.png)
-Figure 81 Kimball's Data Warehouse Chess Pieces [^67]
+![Figura 81 Peças de Xadrez do Data Warehouse de Kimball](figure_81.png)
+Figura 81 Peças de Xadrez do Data Warehouse de Kimball [^67]
 
-Figure 82 also depicts aspects of the data lifecycle. Data moves from source systems, into a staging area where it may be cleansed and enriched as it is integrated and stored in the DW and/or an ODS. From the DW it may be accessed via marts or cubes and used for various kinds of reporting. Big Data goes through a similar process, but with a significant difference: while most warehouses integrate data before landing it in tables, Big Data solutions ingest data before integrating it. Big Data BI may include predictive analytics and data mining, as well as more traditional forms of reporting. (See Chapter 14.)
+A Figura 82 também descreve aspectos do ciclo de vida dos dados. Os dados são movidos dos sistemas de origem para uma área de preparação, onde podem ser limpos e enriquecidos à medida que são integrados e armazenados no DW e/ou em um ODS. Do DW, eles podem ser acessados ​​por meio de marts ou cubos e usados ​​para vários tipos de relatórios. O Big Data passa por um processo semelhante, mas com uma diferença significativa: enquanto a maioria dos data warehouses integra dados antes de colocá-los em tabelas, as soluções de Big Data os ingerem antes de integrá-los. O BI para Big Data pode incluir análise preditiva e mineração de dados, bem como formas mais tradicionais de relatórios. (Consulte o Capítulo 14.)
 
-##### 1.3.7.1 Source Systems
+##### 1.3.7.1 Sistemas de Origem
 
-Source Systems, on the left side of Figure 82, include the operational systems and external data to be brought into the DW/BI environment. These typically include operational systems such as CRM, Accounting, and Human Resources applications, as well as operational systems that differ based on industry. Data from vendors and external sources may also be included, as may DaaS, web content, and any Big Data computation results.
+Os Sistemas de Origem, no lado esquerdo da Figura 82, incluem os sistemas operacionais e os dados externos a serem trazidos para o ambiente DW/BI. Isso normalmente inclui sistemas operacionais como CRM, Contabilidade e aplicativos de Recursos Humanos, bem como sistemas operacionais que variam de acordo com o setor. Dados de fornecedores e fontes externas também podem ser incluídos, assim como DaaS, conteúdo web e quaisquer resultados de computação de Big Data.
 
-##### 1.3.7.2 Data Integration
+##### 1.3.7.2 Integração de Dados
 
-Data integration covers Extract, Transform, and Load (ETL), data virtualization, and other techniques of getting data into a common form and location. In a SOA environment, the data services layers are part of this component. In Figure 82, all the arrows represent data integration processes. (See Chapter 8.)
+A integração de dados abrange Extração, Transformação e Carregamento (ETL), virtualização de dados e outras técnicas para obter dados em um formato e local comuns. Em um ambiente SOA, as camadas de serviços de dados fazem parte desse componente. Na Figura 82, todas as setas representam os processos de integração de dados. (Consulte o Capítulo 8.)
 
-![Figure 82 Conceptual DW/BI and Big Data Architecture](figure_82.png)
-Figure 82 Conceptual DW/BI and Big Data Architecture
+![Figura 82: Arquitetura Conceitual de DW/BI e Big Data](figure_82.png)
+Figura 82: Arquitetura Conceitual de DW/BI e Big Data
 
-##### 1.3.7.3 Data Storage Areas
+##### 1.3.7.3 Áreas de Armazenamento de Dados
 
-The warehouse has a set of storage areas:
+O data warehouse possui um conjunto de áreas de armazenamento:
 
-* **Staging area:** A staging area is an intermediate data store between an original data source and the centralized data repository. Data is staged so that it can be transformed, integrated, and prepped for loading to the warehouse.
-* **Reference and Master Data conformed dimensions:** Reference and Master Data may be stored in separate repositories. The data warehouse feeds new Master Data and is fed by conformed dimension contents from the separate repositories.
-* **Central Warehouse:** Once transformed and prepped, the DW data usually persists in the central or atomic layer. This layer maintains all historical atomic data as well as the latest instance of the batch run. The data structure of this area is developed and influenced based on performance needs and use patterns. Several design elements are brought to bear:
-  * The relationship between the business key and surrogate keys for performance
-  * Creation of indices and foreign keys to support dimensions
-  * Change Data Capture (CDC) techniques that are used to detect, maintain, and store history
-* **Operational Data Store (ODS):** The ODS is a version of a central persisted store that supports lower latencies, and therefore operational use. Since the ODS contains a time window of data and not the history, it can be refreshed much more quickly than a warehouse. Sometimes real-time streams are snapshotted at predefined intervals into the ODS to enable integrated reporting and analysis. Over time, with the increasing frequency of updates driven by business needs, and growing technology and techniques to integrate real-time data into the DW, many installations have merged their ODS into the existing DW or Data Mart architecture.
-* **Data marts:** A data mart is a type of data store often used to support presentation layers of the data warehouse environment. It is also used for presenting a departmental or functional sub-set of the DW for integrated reporting, query, and analysis of historical information. The data mart is oriented to a specific subject area, a single department, or a single business process. It can also form the basis of a virtualized warehouse where the combined marts comprise the resulting warehouse entity. Data integration processes will refresh, update or expand the contents of the various marts from the persistence layer.
-* **Cubes:** Three classic implementation approaches support Online Analytical Processing (OLAP). Their names relate to underlying database types, such as Relational, Multi-dimensional, and Hybrid.
+* **Área de preparação:** Uma área de preparação é um armazenamento de dados intermediário entre uma fonte de dados original e o repositório de dados centralizado. Os dados são preparados para que possam ser transformados, integrados e preparados para carregamento no data warehouse.
+* **Dimensões conformadas de Dados Mestres e de Referência:** Os Dados Mestres e de Referência podem ser armazenados em repositórios separados. O data warehouse alimenta novos Dados Mestres e é alimentado pelo conteúdo das dimensões conformadas dos repositórios separados.
+* **Data Warehouse Central:** Uma vez transformados e preparados, os dados do DW geralmente persistem na camada central ou atômica. Essa camada mantém todos os dados atômicos históricos, bem como a instância mais recente da execução em lote. A estrutura de dados dessa área é desenvolvida e influenciada com base nas necessidades de desempenho e nos padrões de uso. Vários elementos de design são utilizados:
+* A relação entre a chave de negócios e as chaves substitutas para desempenho
+* Criação de índices e chaves estrangeiras para suportar dimensões
+* Técnicas de Captura de Dados Alterados (CDC) usadas para detectar, manter e armazenar o histórico
+* **Armazenamento de Dados Operacionais (ODS):** O ODS é uma versão de um armazenamento central persistente que suporta latências mais baixas e, portanto, uso operacional. Como o ODS contém uma janela de tempo de dados e não o histórico, ele pode ser atualizado muito mais rapidamente do que um warehouse. Às vezes, fluxos em tempo real são capturados em intervalos predefinidos no ODS para permitir relatórios e análises integrados. Com o tempo, com a frequência crescente de atualizações impulsionadas pelas necessidades de negócios e o desenvolvimento de tecnologias e técnicas para integrar dados em tempo real ao DW, muitas instalações incorporaram seus ODS à arquitetura existente de DW ou Data Mart.
+* **Data marts:** Um data mart é um tipo de armazenamento de dados frequentemente usado para suportar camadas de apresentação do ambiente de data warehouse. Também é usado para apresentar um subconjunto departamental ou funcional do DW para relatórios, consultas e análises integradas de informações históricas. O data mart é orientado para uma área temática específica, um único departamento ou um único processo de negócios. Ele também pode formar a base de um warehouse virtualizado, onde os marts combinados compõem a entidade de warehouse resultante. Os processos de integração de dados atualizarão, atualizarão ou expandirão o conteúdo dos vários marts a partir da camada de persistência.
+* **Cubos:** Três abordagens clássicas de implementação oferecem suporte ao Processamento Analítico Online (OLAP). Seus nomes estão relacionados aos tipos de banco de dados subjacentes, como Relacional, Multidimensional e Híbrido.
 
-#### 1.3.8 Types of Load Processing
+#### 1.3.8 Tipos de Processamento de Carga
 
-Data warehousing involves two main types of data integration processes: historical loads and ongoing updates. Historical data is usually loaded only once, or a few times while working out data issues, and then never again. Ongoing updates are consistently scheduled and executed to keep the data in the warehouse up-to-date.
+O data warehouse envolve dois tipos principais de processos de integração de dados: cargas históricas e atualizações contínuas. Os dados históricos geralmente são carregados apenas uma vez, ou algumas vezes durante a resolução de problemas de dados, e nunca mais. As atualizações contínuas são agendadas e executadas de forma consistente para manter os dados no warehouse atualizados.
 
-##### 1.3.8.1 Historical Data
+##### 1.3.8.1 Dados Históricos
 
-One advantage of a data warehouse is that it can capture detailed history of the data it stores. There are different methods to capture this detail. An organization that wants to capture history should design based on requirements. Being able to reproduce point-in-time snapshots requires a different approach than simply presenting current state.
+Uma vantagem de um data warehouse é que ele pode capturar o histórico detalhado dos dados que armazena. Existem diferentes métodos para capturar esses detalhes. Uma organização que deseja capturar o histórico deve projetar com base nos requisitos. Ser capaz de reproduzir instantâneos pontuais exige uma abordagem diferente da simples apresentação do estado atual.
 
-The Inmon data warehouse suggests that all data is stored in a single data warehouse layer. This layer will store cleansed, standardized, and governed atomic level data. A common integration and transformation layer facilitates reuse across the delivery implementations. An enterprise data model is required for success. Once validated, this single store is available to different data consumers via a star structured data mart.
+O data warehouse Inmon sugere que todos os dados sejam armazenados em uma única camada de data warehouse. Essa camada armazenará dados de nível atômico limpos, padronizados e governados. Uma camada comum de integração e transformação facilita a reutilização em todas as implementações de entrega. Um modelo de dados corporativo é necessário para o sucesso. Uma vez validado, esse armazenamento único fica disponível para diferentes consumidores de dados por meio de um data mart estruturado em estrela.
 
-The Kimball data warehouse suggests that the data warehouse is composed of a combination of departmental data marts containing cleansed, standardized, and governed data. The data marts will store the history at the atomic level. Conformed dimensions and conformed facts will deliver enterprise level information.
+O data warehouse Kimball sugere que o data warehouse seja composto por uma combinação de data marts departamentais contendo dados limpos, padronizados e governados. Os data marts armazenarão o histórico em nível atômico. Dimensões e fatos conformados fornecerão informações de nível corporativo.
 
-Another approach, the Data Vault, also cleanses and standardizes as part of the staging process. History is stored in a normalized atomic structure, dimensional surrogate, primary and alternate keys are defined. Ensuring that the business and surrogate key relationship remains intact becomes the secondary role of the vault – this is the data mart history. Facts persisted here as atomic structures. The vault is then available to a variety of data consumers via data marts. By retaining the history inside the vault, reloading facts is possible when later increments introduce grain changes. It is possible to virtualize the presentation layer, facilitating agile incremental delivery and collaborative development with the business community. A final materialization process can implement a more traditional star data mart for production end user consumption.
+Outra abordagem, o Data Vault, também limpa e padroniza como parte do processo de preparação. O histórico é armazenado em uma estrutura atômica normalizada, com chaves substitutas dimensionais, primárias e alternativas definidas. Garantir que o relacionamento entre as chaves de negócio e substituta permaneça intacto torna-se a função secundária do vault – este é o histórico do data mart. Os fatos são persistidos aqui como estruturas atômicas. O vault fica então disponível para uma variedade de consumidores de dados por meio de data marts. Ao reter o histórico dentro do vault, é possível recarregar os fatos quando incrementos posteriores introduzem alterações de granularidade. É possível virtualizar a camada de apresentação, facilitando a entrega incremental ágil e o desenvolvimento colaborativo com a comunidade empresarial. Um processo de materialização final pode implementar um data mart em estrela mais tradicional para consumo do usuário final em produção.
 
-##### 1.3.8.2 Batch Change Data Capture
+##### 1.3.8.2 Captura de Dados de Alterações em Lote
 
-Data Warehouses are often loaded daily and serviced by a nightly batch window. The load process can accommodate a variety of change detection, as each source system may require differing change capture techniques.
+Data warehouses geralmente são carregados diariamente e atendidos por uma janela de lote noturna. O processo de carregamento pode acomodar uma variedade de detecções de alterações, visto que cada sistema de origem pode exigir técnicas de captura de alterações diferentes.
 
-Database log techniques are likely candidates for in-house developed applications as vendor purchased applications are unlikely to tolerate modification with triggers or additional overhead. Time stamped or log table loads are the most common. Full loads occur when dealing with legacy systems built without native time stamping capabilities (yes, there are applications without databases) or when certain batch recovery conditions apply.
+Técnicas de log de banco de dados são prováveis ​​candidatas para aplicações desenvolvidas internamente, visto que aplicações adquiridas por fornecedores dificilmente toleram modificações com gatilhos ou sobrecarga adicional. Carregamentos com registro de data e hora ou tabelas de log são os mais comuns. Carregamentos completos ocorrem ao lidar com sistemas legados criados sem recursos nativos de registro de data e hora (sim, existem aplicações sem bancos de dados) ou quando certas condições de recuperação em lote se aplicam.
 
-Table 28 summarizes difference between change data capture techniques, including their relative complexity and speed. The overlap column identifies whether there may be data duplication between source system changes and the target environment. When Overlap is ‘Yes’ this change data may already be present. When the Delete indicator is set to ‘Yes’ that the Change Data Method will track any deletes that have occurred in the source system – useful for expiring dimensions no longer in use. When Deletes are not tracked by the source system, additional efforts are required to determine when they occur. (See Chapter 8.)
+A Tabela 28 resume as diferenças entre as técnicas de captura de dados de alterações, incluindo sua complexidade e velocidade relativas. A coluna de sobreposição identifica se pode haver duplicação de dados entre as alterações do sistema de origem e o ambiente de destino. Quando a opção Sobreposição estiver definida como "Sim", esses dados de alteração podem já estar presentes. Quando o indicador Excluir estiver definido como "Sim", o Método de Dados de Alteração rastreará quaisquer exclusões ocorridas no sistema de origem – útil para dimensões expiradas que não estão mais em uso. Quando as exclusões não são rastreadas pelo sistema de origem, esforços adicionais são necessários para determinar quando elas ocorrem. (Consulte o Capítulo 8.)
 
-Table 28 CDC Technique Comparison
+*Tabela 28 - Comparação de Técnicas do CDC*
 
 <table>
   <thead>
     <tr>
-      <th>Method</th>
-      <th>Source System Requirement</th>
-      <th>Complexity</th>
-      <th>Fact Load</th>
-      <th>Dimension Load</th>
-      <th>Overlap</th>
-      <th>Deletes</th>
+      <th>Método</th>
+      <th>Requisito do Sistema de Origem</th>
+      <th>Complexidade</th>
+      <th>Carga de Fatos</th>
+      <th>Carga de Dimensão</th>
+      <th>Sobreposição</th>
+      <th>Exclusões</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Time stamped Delta Load</td>
-      <td>Changes in the source system are stamped with the system date and time</td>
-      <td>Low</td>
-      <td>Fast</td>
-      <td>Fast</td>
-      <td>Yes</td>
-      <td>No</td>
+      <td>Carregamento Delta com Carimbo de Data/Hora</td>
+      <td>Alterações no sistema de origem são carimbadas com a data e hora do sistema</td>
+      <td>Baixo</td>
+      <td>Rápido</td>
+      <td>Rápido</td>
+      <td>Sim</td>
+      <td>Não</td>
     </tr>
     <tr>
-      <td>Log Table Delta Load</td>
-      <td>Source system changes are captured and stored in log tables</td>
-      <td>Medium</td>
+      <td>Carregamento Delta da Tabela de Log</td>
+      <td>Alterações no sistema de origem são capturadas e armazenadas em tabelas de log</td>
+      <td>Médio</td>
       <td>Nominal</td>
       <td>Nominal</td>
-      <td>Yes</td>
-      <td>Yes</td>
+      <td>Sim</td>
+      <td>Sim</td>
     </tr>
     <tr>
-      <td>Database Transaction Log</td>
-      <td>Database captures changes in the transaction log</td>
-      <td>High</td>
+      <td>Log de Transações do Banco de Dados</td>
+      <td>O banco de dados captura alterações no log de transações</td>
+      <td>Alto</td>
       <td>Nominal</td>
       <td>Nominal</td>
-      <td>No</td>
-      <td>Yes</td>
+      <td>Não</td>
+      <td>Sim</td>
     </tr>
     <tr>
-      <td>Message Delta</td>
-      <td>Source system changes are published as [near] real-time messages</td>
-      <td>Extreme</td>
-      <td>Slow</td>
-      <td>Slow</td>
-      <td>No</td>
-      <td>Yes</td>
+      <td>Delta de Mensagens</td>
+      <td>Alterações no sistema de origem são publicadas como mensagens em tempo [quase] real</td>
+      <td>Extremo</td>
+      <td>Lento</td>
+      <td>Lento</td>
+      <td>Não</td>
+      <td>Sim</td>
     </tr>
     <tr>
-      <td>Full Load</td>
-      <td>No change indicator, tables extracted in full and compared to identify change</td>
-      <td>Simple</td>
-      <td>Slow</td>
+      <td>Carregamento Completo</td>
+      <td>Sem indicador de alteração, tabelas extraídas integralmente e comparadas para identificar alterações</td>
+      <td>Simples</td>
+      <td>Lento</td>
       <td>Nominal</td>
-      <td>Yes</td>
-      <td>Yes</td>
+      <td>Sim</td>
+      <td>Sim</td>
     </tr>
   </tbody>
 </table>
 
-##### 1.3.8.3 Near-real-time and Real-time
+##### 1.3.8.3 Tempo Quase Real e Tempo Real
 
-With the onset of Operational BI (or Operational Analytics) pushing for lower latency and more integration of real-time or near-real-time data into the data warehouse, new architectural approaches emerged to deal with the inclusion of volatile data. For example, a common application of operational BI is the automated banking machine data provisioning. When making a banking transaction, historical balances and new balances resulting from immediate banking actions need to be presented to the banking customer real-time. Two key design concepts that are required for provisioning data in near-real-time are isolation of change and alternatives to batch processing.
+Com o surgimento do BI Operacional (ou Análise Operacional), buscando menor latência e maior integração de dados em tempo real ou quase real no data warehouse, novas abordagens arquitetônicas surgiram para lidar com a inclusão de dados voláteis. Por exemplo, uma aplicação comum do BI operacional é o provisionamento automatizado de dados em caixas eletrônicos bancários. Ao realizar uma transação bancária, os saldos históricos e os novos saldos resultantes de ações bancárias imediatas precisam ser apresentados ao cliente em tempo real. Dois conceitos-chave de design necessários para o provisionamento de dados em tempo quase real são o isolamento de alterações e alternativas ao processamento em lote.
 
-The impact of the changes from new volatile data must be isolated from the bulk of the historical, non-volatile DW data. Typical architectural approaches for isolation include a combination of building partitions and using union queries for the different partitions. Alternatives to batch processing handle the increasingly shorter latency requirements for data availability in the DW. There are three main types: trickle feeds, messaging, and streaming, which differ by where data is accumulated while waiting to be processed. (See Chapter 8.)
+O impacto das alterações de novos dados voláteis deve ser isolado da maior parte dos dados históricos e não voláteis do DW. As abordagens arquitetônicas típicas para isolamento incluem uma combinação de construção de partições e o uso de consultas de união para as diferentes partições. Alternativas ao processamento em lote atendem aos requisitos de latência cada vez mais curtos para a disponibilidade de dados no DW. Existem três tipos principais: feeds de gotejamento, mensagens e streaming, que diferem conforme o local onde os dados são acumulados enquanto aguardam para serem processados. (Consulte o Capítulo 8.)
 
-* **Trickle feeds (Source accumulation):** Rather than run on a nightly schedule, trickle feeds execute batch loads on a more frequent schedule (e.g., hourly, every 5 minutes) or when a threshold is reached (e.g., 300 transactions, 1G of data). This allows some processing to happen during the day, but not as intensely as with a dedicated nightly batch process. Care is needed to ensure that if a trickle feed batch takes longer to complete than the time between feeds, the next feed is delayed so that the data is still loaded in proper order.
-* **Messaging (Bus accumulation):** Message interaction in real-time or near-real-time is useful when extremely small packets of data (messages, events, or transactions) are published to a bus as they occur. Target systems subscribe to the bus, and incrementally process the packets into the warehouse as needed. Source systems and target systems are independent of each other. Data-as-a-Service (DaaS) frequently uses this method.
-* **Streaming (Target accumulation):** Rather than wait on a source-based schedule or threshold, a target system collects data as it is received into a buffer area or queue, and processes it in order. The result interaction or some aggregate may later appear as an additional feed to the warehouse.
+* **Alimentação lenta (Acumulação de origem):** Em vez de serem executadas em um cronograma noturno, as alimentações lentas executam carregamentos em lote em um cronograma mais frequente (por exemplo, de hora em hora, a cada 5 minutos) ou quando um limite é atingido (por exemplo, 300 transações, 1 GB de dados). Isso permite que algum processamento ocorra durante o dia, mas não tão intensamente quanto em um processamento em lote noturno dedicado. É necessário cuidado para garantir que, se um lote de alimentação lenta demorar mais para ser concluído do que o tempo entre alimentações, a próxima alimentação seja atrasada para que os dados ainda sejam carregados na ordem correta.
+* **Mensagens (Acumulação de barramento):** A interação de mensagens em tempo real ou quase real é útil quando pacotes de dados extremamente pequenos (mensagens, eventos ou transações) são publicados em um barramento à medida que ocorrem. Os sistemas de destino assinam o barramento e processam os pacotes incrementalmente no warehouse, conforme necessário. Os sistemas de origem e de destino são independentes entre si. Dados como Serviço (DaaS) frequentemente utilizam esse método.
+* **Streaming (Acumulação de destino):** Em vez de esperar por um cronograma ou limite baseado na origem, um sistema de destino coleta dados conforme eles são recebidos em uma área de buffer ou fila e os processa em ordem. A interação resultante ou algum agregado pode posteriormente aparecer como um feed adicional para o data warehouse.
 
-## 2. Activities
+## 2. Atividades
 
-### 2.1 Understand Requirements
+### 2.1 Entendendo os Requisitos
 
-Developing a data warehouse is different from developing an operational system. Operational systems depend on precise, specific requirements. Data warehouses bring together data that will be used in a range of different ways. Moreover, usage will evolve over time as users analyze and explore data. Take time in the initial phases
+Desenvolver um data warehouse é diferente de desenvolver um sistema operacional. Os sistemas operacionais dependem de requisitos precisos e específicos. Data warehouses reúnem dados que serão usados ​​de diversas maneiras. Além disso, o uso evoluirá com o tempo, à medida que os usuários analisam e exploram os dados. Reserve um tempo nas fases iniciais
 
-to ask questions related to capabilities and sources of data to support these capabilities. This time to design pays off in reduced rework costs later when the data processing is being tested using the actual data sources.
+para fazer perguntas relacionadas aos recursos e fontes de dados para dar suporte a esses recursos. Esse tempo de projeto compensa na redução de custos de retrabalho posteriormente, quando o processamento de dados estiver sendo testado usando as fontes de dados reais.
 
-In gathering requirements for DW/BI projects, begin with business goals and strategy. Identify and scope the business areas, then identify and interview the appropriate business people. Ask what they do and why. Capture specific questions they are asking now, and those they want to ask of the data. Document how they distinguish between and categorize important aspects of the information. Where possible, define and capture key performance metrics and calculations. These can uncover business rules that provide the foundation for automation of data quality expectations.
+Ao coletar requisitos para projetos de DW/BI, comece com as metas e a estratégia de negócios. Identifique e defina o escopo das áreas de negócios e, em seguida, identifique e entreviste os profissionais de negócios apropriados. Pergunte o que eles fazem e por quê. Capture perguntas específicas que eles estão fazendo agora e aquelas que desejam fazer sobre os dados. Documente como eles distinguem e categorizam aspectos importantes das informações. Sempre que possível, defina e capture as principais métricas e cálculos de desempenho. Isso pode revelar regras de negócios que fornecem a base para a automação das expectativas de qualidade dos dados.
 
-Catalog requirements and prioritize them into those necessary for production go-live and adoption of the warehouse and those that can wait. Look for items that are simple and valuable to jump-start the productivity of the initial project release. A DW/BI project requirements write-up should frame the whole context of the business areas and / or processes that are in scope.
+Catalogue os requisitos e priorize-os entre aqueles necessários para a entrada em produção e adoção do warehouse e aqueles que podem esperar. Procure itens simples e valiosos para impulsionar a produtividade da versão inicial do projeto. Uma descrição dos requisitos de um projeto de DW/BI deve enquadrar todo o contexto das áreas de negócios e/ou processos que estão no escopo.
 
-### 2.2 Define and Maintain the DW/BI Architecture
+### 2.2 Definir e Manter a Arquitetura de DW/BI
 
-The DW/BI architecture should describe where data comes from, where it goes, when it goes, why and how it goes into a warehouse. The ‘how’ includes the hardware and software detail and the organizing framework to bring all the activities together. Technical requirements should include performance, availability, and timing needs. (See Chapters 4 and 8.)
+A arquitetura de DW/BI deve descrever de onde os dados vêm, para onde vão, quando vão, por que e como vão para um warehouse. O "como" inclui os detalhes de hardware e software e a estrutura organizacional para reunir todas as atividades. Os requisitos técnicos devem incluir as necessidades de desempenho, disponibilidade e tempo. (Veja Capítulos 4 e 8.)
 
-#### 2.2.1 Define DW/BI Technical Architecture
+#### 2.2.1 Definir a Arquitetura Técnica de DW/BI
 
-The best DW/BI architectures will design a mechanism to connect back to transactional level and operational level reports in an atomic DW. This mechanism will protect the DW from having to carry every transactional detail. An example is providing a viewing mechanism for key operational reports or forms based on a transactional key, such as Invoice Number. Customers will always want all the detail available, but some of the operational data, such as long description fields, has value only in the context of the original report, and does not provide analytic value.
+As melhores arquiteturas de DW/BI projetarão um mecanismo para conectar-se aos relatórios de nível transacional e operacional em um DW atômico. Esse mecanismo protegerá o DW da necessidade de carregar todos os detalhes transacionais. Um exemplo é fornecer um mecanismo de visualização para relatórios ou formulários operacionais importantes com base em uma chave transacional, como o Número da Fatura. Os clientes sempre desejarão todos os detalhes disponíveis, mas alguns dados operacionais, como campos de descrição longos, têm valor apenas no contexto do relatório original e não fornecem valor analítico.
 
-A conceptual architecture is a starting point. Many activities are necessary to correctly align the non-functional requirements to the business needs. Prototyping can quickly prove or disprove key points before making expensive commitments to technologies or architectures. In addition, empowering the business community with knowledge and adoption programs championed through a sanctioned change management team will assist in transition and ongoing operational success.
+Uma arquitetura conceitual é um ponto de partida. Muitas atividades são necessárias para alinhar corretamente os requisitos não funcionais às necessidades do negócio. A prototipagem pode comprovar ou refutar rapidamente pontos-chave antes de assumir compromissos dispendiosos com tecnologias ou arquiteturas. Além disso, capacitar a comunidade empresarial com conhecimento e programas de adoção, defendidos por uma equipe de gerenciamento de mudanças aprovada, auxiliará na transição e no sucesso operacional contínuo.
 
-A natural extension to this transformation process is the maintenance, or at least validation, with the enterprise data model. Since the focus is on which data structures are in use by which organizational areas, check the physical deployment against the logical model. Make any updates if omissions or errors arise.
+Uma extensão natural desse processo de transformação é a manutenção, ou pelo menos a validação, com o modelo de dados corporativo. Como o foco está em quais estruturas de dados estão em uso por quais áreas organizacionais, verifique a implantação física em relação ao modelo lógico. Faça quaisquer atualizações caso ocorram omissões ou erros.
 
-#### 2.2.2 Define DW/BI Management Processes
+#### 2.2.2 Definir Processos de Gestão de DW/BI
 
-Address production management with a coordinated and integrated maintenance process, delivering regular releases to the business community.
+Abordar a gestão da produção com um processo de manutenção coordenado e integrado, disponibilizando lançamentos regulares para a comunidade empresarial.
 
-It is crucial to establish a standard release plan (see Section 2.6). Ideally, the warehouse project team should manage each update to the deployed data product as a software release that provisions additional functionality. Establishing a schedule for releases allows for an annual demand and resource plan and standard delivery schedule. Use the internal release to tweak this standardized schedule, the resource expectations and estimate sheets derived for it.
+É crucial estabelecer um plano de lançamento padrão (consulte a Seção 2.6). Idealmente, a equipe do projeto de warehouse deve gerenciar cada atualização do produto de dados implantado como um lançamento de software que fornece funcionalidades adicionais. Estabelecer um cronograma para lançamentos permite um plano anual de demanda e recursos e um cronograma de entrega padrão. Use o lançamento interno para ajustar esse cronograma padronizado, as expectativas de recursos e as planilhas de estimativas derivadas dele.
 
-Establishing a functioning release process ensures that management understands this to be a data product-centric proactive process and not an installed product addressed through reactive issue resolution. It is critical to work pro-actively and collaboratively in a cross-functional team to continuously grow and enhancement features – reactive support systems reduce adoption.
+Estabelecer um processo de lançamento funcional garante que a gestão entenda que este é um processo proativo centrado no produto de dados e não um produto instalado, abordado por meio da resolução reativa de problemas. É fundamental trabalhar de forma proativa e colaborativa em uma equipe multifuncional para o crescimento contínuo e o aprimoramento de recursos – sistemas de suporte reativos reduzem a adoção.
 
-### 2.3 Develop the Data Warehouse and Data Marts
+### 2.3 Desenvolver o Data Warehouse e os Data Marts
 
-Typically, DW/BI projects have three concurrent development tracks:
+Normalmente, os projetos de DW/BI têm três trilhas de desenvolvimento simultâneas:
 
-* **Data:** The data necessary to support the analysis the business wants to do. This track involves identifying the best sources for the data and designing rules for how the data is remediated, transformed, integrated, stored, and made available for use by the applications. This step also includes deciding how to handle data that doesn’t fit expectations.
-* **Technology:** The back-end systems and processes supporting the data storage and movement. Integration with the existing enterprise is fundamental, as the warehouse is not an island unto itself. Enterprise Architectures, specifically Technology and Application specialties, usually manage this track.
-* **Business Intelligence tools:** The suite of applications necessary for data consumers to gain meaningful insight from deployed data products.
+* **Dados:** Os dados necessários para dar suporte à análise que a empresa deseja realizar. Esta trilha envolve a identificação das melhores fontes de dados e a criação de regras sobre como os dados são remediados, transformados, integrados, armazenados e disponibilizados para uso pelos aplicativos. Esta etapa também inclui decidir como lidar com dados que não atendem às expectativas.
+* **Tecnologia:** Os sistemas e processos de back-end que suportam o armazenamento e a movimentação de dados. A integração com a empresa existente é fundamental, pois o data warehouse não é uma ilha em si. Arquiteturas Corporativas, especificamente as especialidades em Tecnologia e Aplicativos, geralmente gerenciam esta trilha.
+* **Ferramentas de Business Intelligence:** O conjunto de aplicativos necessário para que os consumidores de dados obtenham insights significativos dos produtos de dados implantados.
 
-#### 2.3.1 Map Sources to Targets
+#### 2.3.1 Mapear Fontes para Destinos
 
-Source-to-target mapping establishes transformation rules for entities and data elements from individual sources to a target system. Such mapping also documents lineage for each data element available in the BI environment back to its respective source(s).
+O mapeamento da origem para o destino estabelece regras de transformação para entidades e elementos de dados de fontes individuais para um sistema de destino. Esse mapeamento também documenta a linhagem de cada elemento de dados disponível no ambiente de BI até sua(s) respectiva(s) fonte(s).
 
-The most difficult part of any mapping effort is determining valid links or equivalencies between data elements in multiple systems. Consider the effort to consolidate data into a DW from multiple billing or order management systems. Chances are that tables and fields that contain equivalent data do not have the same names or structures.
+A parte mais difícil de qualquer esforço de mapeamento é determinar vínculos válidos ou equivalências entre elementos de dados em múltiplos sistemas. Considere o esforço de consolidar dados em um DW a partir de múltiplos sistemas de faturamento ou gerenciamento de pedidos. É provável que tabelas e campos que contêm dados equivalentes não tenham os mesmos nomes ou estruturas.
 
-A solid taxonomy is necessary to map data elements in different systems to a consistent structure in the DW. Most often, this taxonomy is the logical data model. The mapping process must also address whether data in different structures is to be appended, changed in place, or inserted.
+Uma taxonomia sólida é necessária para mapear elementos de dados em diferentes sistemas para uma estrutura consistente no DW. Na maioria das vezes, essa taxonomia é o modelo lógico de dados. O processo de mapeamento também deve considerar se os dados em diferentes estruturas devem ser anexados, alterados no local ou inseridos.
 
-#### 2.3.2 Remediate and Transform Data
+#### 2.3.2 Remediar e Transformar Dados
 
-Data remediation or cleansing activities enforce standards and correct and enhance the domain values of individual data elements. Remediation is particularly necessary for initial loads where significant history is involved. To reduce the complexity of the target system, source systems should be made responsible for data remediation and correction.
+Atividades de remediação ou limpeza de dados impõem padrões e corrigem e aprimoram os valores de domínio de elementos de dados individuais. A remediação é particularmente necessária para cargas iniciais que envolvem histórico significativo. Para reduzir a complexidade do sistema de destino, os sistemas de origem devem ser responsabilizados pela remediação e correção de dados.
 
-Develop strategies for rows of data that are loaded but found to be incorrect. A policy for deleting old records may cause some havoc with related tables and surrogate keys, expiring a row and loading the new data as a completely new row may be a better option.
+Desenvolva estratégias para linhas de dados carregadas, mas que se mostram incorretas. Uma política de exclusão de registros antigos pode causar algum estrago em tabelas e chaves substitutas relacionadas; expirar uma linha e carregar os novos dados como uma linha completamente nova pode ser uma opção melhor.
 
-An optimistic load strategy may include creating dimension entries to accommodate fact data. Such a process must account for how to update and expire such entries. Pessimistic load strategies should include a recycle area for fact data that cannot be associated with corresponding dimension keys. These entries require appropriate notification, alerting and reporting to ensure they are tracked, and reloaded later. Fact jobs should consider first loading recycled entries, then processing newly arrived content.
+Uma estratégia de carga otimista pode incluir a criação de entradas de dimensão para acomodar dados de fatos. Tal processo deve levar em conta como atualizar e expirar essas entradas. Estratégias de carga pessimista devem incluir uma área de reciclagem para dados de fatos que não podem ser associados às chaves de dimensão correspondentes. Essas entradas exigem notificação, alertas e relatórios apropriados para garantir que sejam rastreadas e recarregadas posteriormente. As tarefas de fatos devem considerar primeiro o carregamento de entradas recicladas e, em seguida, o processamento do conteúdo recém-chegado.
 
-Data transformation focuses on activities that implement business rules within a technical system. Data transformation is essential to data integration. Defining the correct rules by which to integrate data often requires direct involvement from Data Stewards and other SMEs. Rules should be documented so that they can be governed. Data integration tools perform these tasks. (See Chapter 8.)
+A transformação de dados concentra-se em atividades que implementam regras de negócios em um sistema técnico. A transformação de dados é essencial para a integração de dados. Definir as regras corretas para integrar dados frequentemente requer o envolvimento direto de Administradores de Dados e outras PMEs. As regras devem ser documentadas para que possam ser governadas. Ferramentas de integração de dados realizam essas tarefas. (Consulte o Capítulo 8.)
 
-### 2.4 Populate the Data Warehouse
+### 2.4 Preencher o Data Warehouse
 
-The largest part of the work in any DW/BI effort is the preparation and processing of the data. The design decisions and principles for what data detail the DW contains are a key design priority for DW/BI architecture. Publishing clear rules for what data will be available via only operational reporting (such as in non-DW) is critical to the success of DW/BI efforts.
+A maior parte do trabalho em qualquer projeto de DW/BI é a preparação e o processamento dos dados. As decisões e os princípios de design para quais detalhes de dados o DW contém são uma prioridade fundamental para a arquitetura de DW/BI. Publicar regras claras sobre quais dados estarão disponíveis apenas por meio de relatórios operacionais (como em projetos não DW) é fundamental para o sucesso dos projetos de DW/BI.
 
-The key factors to consider when defining a population approach are required latency, availability of sources, batch windows or upload intervals, target databases, dimensional aspects, and timeframe consistency of the data warehouse and data mart. The approach must also address data quality processing, time to perform transformations, and late-arriving dimensions and data rejects.
+Os principais fatores a serem considerados ao definir uma abordagem de preenchimento são a latência necessária, a disponibilidade de fontes, as janelas de lote ou intervalos de upload, os bancos de dados de destino, os aspectos dimensionais e a consistência do período de tempo do data warehouse e do data mart. A abordagem também deve abordar o processamento da qualidade dos dados, o tempo para realizar transformações, as dimensões e as rejeições de dados que chegam com atraso.
 
-Another aspect to defining a population approach centers around change data capture process – detecting changes in the source system, integrating those changes together, and aligning changes across time. Several databases now provision log capture functionality that data integration tools can operate on directly, so the database tells the user what has changed. Scripting processes can be written or generated where this function is not available. Several techniques are available to the design and build teams for integration and latency alignment across heterogeneous feeds.
+Outro aspecto da definição de uma abordagem populacional gira em torno do processo de captura de dados alterados – detectar alterações no sistema de origem, integrar essas alterações e alinhar as alterações ao longo do tempo. Vários bancos de dados agora fornecem funcionalidade de captura de logs na qual as ferramentas de integração de dados podem operar diretamente, para que o banco de dados informe ao usuário o que foi alterado. Processos de script podem ser escritos ou gerados onde essa função não estiver disponível. Diversas técnicas estão disponíveis para as equipes de design e construção para integração e alinhamento de latência em feeds heterogêneos.
 
-The first increment paves the way for additional capability development and onboarding new business units. Many new technologies, processes, and skills are necessary, as well as careful planning and attention to detail. Downstream increments are to build on top of this foundational element, so more investments are recommended to sustain high quality data, technical architecture, and transitioning to production. Create processes to facilitate and automate timely identification of data errors with end user workflow integration.
+O primeiro incremento abre caminho para o desenvolvimento de capacidades adicionais e a integração de novas unidades de negócios. Muitas novas tecnologias, processos e habilidades são necessários, bem como planejamento cuidadoso e atenção aos detalhes. Os incrementos subsequentes devem ser construídos sobre esse elemento fundamental, portanto, mais investimentos são recomendados para sustentar dados de alta qualidade, arquitetura técnica e transição para produção. Crie processos para facilitar e automatizar a identificação oportuna de erros de dados com a integração do fluxo de trabalho do usuário final.
 
-### 2.5 Implement the Business Intelligence Portfolio
+### 2.5 Implementar o Portfólio de Business Intelligence
 
-Implementing the BI Portfolio is about identifying the right tools for the right user communities within or across business units. Find similarities through alignment of common business processes, performance analysis, management styles, and requirements.
+A implementação do Portfólio de BI consiste em identificar as ferramentas certas para as comunidades de usuários certas dentro ou entre as unidades de negócios. Encontre semelhanças por meio do alinhamento de processos comerciais comuns, análise de desempenho, estilos de gestão e requisitos.
 
-#### 2.5.1 Group Users According to Needs
+#### 2.5.1 Agrupar Usuários de Acordo com as Necessidades
 
-In defining the target user groups, there is a spectrum of BI needs. First, know the user groups and then match the tool to the user groups in the company. On one end of the spectrum are IT developers concerned with extracting data, who focus on advanced functionality. On the other end, information consumers may want fast access to previously developed and executed reports. These consumers may want some degree of interactivity such as drill, filter, sort, or may only want to see a static report.
+Ao definir os grupos de usuários-alvo, há um espectro de necessidades de BI. Primeiro, conheça os grupos de usuários e, em seguida, combine a ferramenta com os grupos de usuários da empresa. Em uma extremidade do espectro estão os desenvolvedores de TI, preocupados com a extração de dados, que se concentram em funcionalidades avançadas. Na outra extremidade, os consumidores de informação podem desejar acesso rápido a relatórios previamente desenvolvidos e executados. Esses consumidores podem desejar algum grau de interatividade, como detalhamento, filtragem, classificação, ou podem querer apenas ver um relatório estático.
 
-Users may move from one class to another as their skills increase or as they perform different functions. A supply chain manager, for example, may want to view a static report on financials but a highly interactive report for analyzing inventory. A financial analyst and a line manager responsible for expenses may be power users when analyzing total expenses, but are satisfied with a static report of one phone bill. Executives and managers will use a combination of fixed reports, dashboards, and scorecards. Managers and power users tend to want to drill into these reports slice and dice the data to identify the root causes of problems. External customers may use any of these tools as part of their experience.
+Os usuários podem mudar de uma classe para outra à medida que suas habilidades aumentam ou à medida que desempenham funções diferentes. Um gerente da cadeia de suprimentos, por exemplo, pode querer visualizar um relatório estático sobre finanças, mas um relatório altamente interativo para analisar o estoque. Um analista financeiro e um gerente de linha responsável por despesas podem ser usuários avançados na análise de despesas totais, mas se contentam com um relatório estático de uma conta telefônica. Executivos e gerentes usarão uma combinação de relatórios fixos, painéis e scorecards. Gerentes e usuários avançados tendem a querer detalhar esses relatórios, segmentar os dados e identificar as causas-raiz dos problemas. Clientes externos podem usar qualquer uma dessas ferramentas como parte de sua experiência.
 
-#### 2.5.2 Match Tools to User Requirements
+#### 2.5.2 Adequar as Ferramentas aos Requisitos do Usuário
 
-The marketplace offers an impressive range of reporting and analytics tools. Major BI vendors offer classic pixel-perfect report capabilities that were once the domain of application reports. Many application vendors offer embedded analytics with standard content fetched from pre-populated cubes or aggregate tables. Virtualization has blurred the lines between on-premises data sources and external purchased or open data, and in some cases provisions user-controlled report-centric integration on demand. In other words, it is prudent for companies to use common infrastructure and delivery mechanisms. These include the web, email, and applications for the delivery of all kinds of information and reports, of which DW/BI is a subset.
+O marketplace oferece uma gama impressionante de ferramentas de relatórios e análises. Os principais fornecedores de BI oferecem recursos clássicos de relatórios pixel-perfect, que antes eram domínio de relatórios de aplicativos. Muitos fornecedores de aplicativos oferecem análises incorporadas com conteúdo padrão obtido de cubos pré-preenchidos ou tabelas agregadas. A virtualização tornou tênue a linha entre fontes de dados locais e dados externos adquiridos ou abertos e, em alguns casos, fornece integração sob demanda, centrada em relatórios e controlada pelo usuário. Em outras palavras, é prudente que as empresas utilizem infraestrutura e mecanismos de entrega comuns. Isso inclui a web, e-mail e aplicativos para a entrega de todos os tipos de informações e relatórios, dos quais DW/BI é um subconjunto.
 
-Many vendors are now combining related BI Tools, through mergers and acquisitions or net new development, and offering BI Suites. Suites are the primary option at the Enterprise Architecture level but given that most organizations have already purchased individual tools, or embraced open source tools, questions around replacement versus co-existence are likely to surface. Remember that every BI tool comes with a price, requiring system resources, support, training, and architectural integration.
+Muitos fornecedores agora estão combinando ferramentas de BI relacionadas, por meio de fusões e aquisições ou novos desenvolvimentos, e oferecendo suítes de BI. As suítes são a principal opção no nível de Arquitetura Corporativa, mas, como a maioria das organizações já adquiriu ferramentas individuais ou adotou ferramentas de código aberto, é provável que surjam questões sobre substituição versus coexistência. Lembre-se de que cada ferramenta de BI tem um preço, exigindo recursos de sistema, suporte, treinamento e integração arquitetônica.
 
-### 2.6 Maintain Data Products
+### 2.6 Manutenção de Produtos de Dados
 
-An implemented warehouse and its customer-facing BI tools is a data product. Enhancements (extensions, augmentations, or modifications) to an existing DW platform should be implemented incrementally. Maintaining the scope for an increment, and executing a critical path for key work items, can be a challenge in a dynamic work environment. Set priorities with business partners and focus work on mandatory enhancements.
+Um warehouse implementado e suas ferramentas de BI voltadas para o cliente são um produto de dados. Aprimoramentos (extensões, ampliações ou modificações) em uma plataforma de DW existente devem ser implementados de forma incremental. Manter o escopo para um incremento e executar um caminho crítico para itens de trabalho importantes pode ser um desafio em um ambiente de trabalho dinâmico. Defina prioridades com os parceiros de negócios e concentre o trabalho nos aprimoramentos obrigatórios.
 
-#### 2.6.1 Release Management
+#### 2.6.1 Gerenciamento de Liberação
 
-Release Management is critical to an incremental development processes that grows new capabilities, enhances the production deployment, and ensures provision of regular maintenance across the deployed assets. This process will keep the warehouse up-to-date, clean, and operating at its best. However, this process requires the same alignment between IT and Business as between the Data Warehouse model and the BI capabilities. It is a continual improvement effort.
+O Gerenciamento de Liberação é fundamental para um processo de desenvolvimento incremental que desenvolve novos recursos, aprimora a implantação da produção e garante a manutenção regular dos ativos implantados. Esse processo manterá o warehouse atualizado, limpo e operando da melhor forma possível. No entanto, esse processo exige o mesmo alinhamento entre TI e Negócios que entre o modelo de Data Warehouse e os recursos de BI. É um esforço de melhoria contínua.
 
-Figure 83 illustrates an example release process, based on a quarterly schedule. Over the year, there are three business-driven releases and one technology-based release (to address requirements internal to the warehouse). The process should enable incremental development of the warehouse and management of the backlog of requirements.
+A Figura 83 ilustra um exemplo de processo de liberação, baseado em um cronograma trimestral. Ao longo do ano, há três lançamentos orientados ao negócio e um lançamento baseado em tecnologia (para atender aos requisitos internos do warehouse). O processo deve permitir o desenvolvimento incremental do warehouse e o gerenciamento do backlog de requisitos.
 
-#### 2.6.2 Manage Data Product Development Lifecycle
+#### 2.6.2 Gerenciar o Ciclo de Vida de Desenvolvimento de Produtos de Dados
 
-While data consumers are using the existing DW, the DW team is preparing for the next iteration, with the understanding that not all items will go to production. Align the iterations to releases with a backorder work list prioritized by the business units. Each iteration will extend an existing increment or add new functionality by onboarding a business unit. Releases will align functionality to the business unit, whereas the iteration will align the functionality to the configuration itself managed by the product manager.
+Enquanto os consumidores de dados utilizam o DW existente, a equipe do DW se prepara para a próxima iteração, com a compreensão de que nem todos os itens entrarão em produção. Alinhe as iterações às versões com uma lista de trabalhos pendentes priorizada pelas unidades de negócios. Cada iteração estenderá um incremento existente ou adicionará uma nova funcionalidade por meio da integração de uma unidade de negócios. As versões alinharão a funcionalidade à unidade de negócios, enquanto a iteração alinhará a funcionalidade à própria configuração gerenciada pelo gerente de produto.
 
-![Figure 83 Release Process Example](figure_83.png)
-Figure 83 Release Process Example
+![Figura 83 Exemplo de Processo de Liberação](figure_83.png)
+Figura 83 Exemplo de Processo de Liberação
 
-Those items that business believes ready and feasible for further investigation can be reviewed, adjusted if necessary, and then promoted to a pilot or sandbox environment, where business users investigate new approaches, experiment with new techniques, or develop new models or learning algorithms. This area may see less governance and supervision than other business-facing areas but some form of sandbox prioritizing is necessary.
+Os itens que a área de negócios considera prontos e viáveis ​​para investigação posterior podem ser revisados, ajustados, se necessário, e então promovidos para um ambiente piloto ou sandbox, onde os usuários de negócios investigam novas abordagens, experimentam novas técnicas ou desenvolvem novos modelos ou algoritmos de aprendizagem. Esta área pode ter menos governança e supervisão do que outras áreas voltadas para os negócios, mas alguma forma de priorização em sandbox é necessária.
 
-Akin to the traditional quality assurance or testing environment, scrutinize items in the pilot area for fit into the production world. How well pilot items perform determines their next steps. Take care not to promote blindly and without regard to downstream data quality or governance issues. The lifespan in production is just an existential measure: it must be of the highest practical quality to be in production.
+Semelhante ao ambiente tradicional de garantia de qualidade ou teste, examine os itens na área piloto para verificar sua adequação ao ambiente de produção. O desempenho dos itens piloto determina seus próximos passos. Tome cuidado para não promover cegamente e sem considerar questões de qualidade ou governança de dados posteriores. A vida útil em produção é apenas uma medida existencial: deve ser da mais alta qualidade prática para estar em produção.
 
-Items passing the pilot and deemed production-ready by both business and IT representatives can be promoted to production as new data products. This completes one iteration.
+Itens aprovados no piloto e considerados prontos para produção pelos representantes de negócios e de TI podem ser promovidos para produção como novos produtos de dados. Isso completa uma iteração.
 
-Items not passing pilot can be rejected entirely or returned to development for fine-tuning. Perhaps additional support from the DW team is needed at this time to advance the item in the next promotion iteration.
+Itens que não forem aprovados no piloto podem ser rejeitados completamente ou devolvidos ao desenvolvimento para ajustes finos. Talvez seja necessário suporte adicional da equipe de DW neste momento para avançar o item na próxima iteração de promoção.
 
-#### 2.6.3 Monitor and Tune Load Processes
+#### 2.6.3 Monitorar e Ajustar Processos de Carga
 
-Monitor load processing across the system for bottlenecks and dependencies. Employ database tuning techniques where and when needed, including partitioning, tuned backup, and recovery strategies. Archiving is a difficult subject in data warehousing.
+Monitore o processamento de carga em todo o sistema em busca de gargalos e dependências. Empregue técnicas de ajuste de banco de dados onde e quando necessário, incluindo particionamento, backup ajustado e estratégias de recuperação. O arquivamento é um assunto complexo em data warehouse.
 
-Users often consider the data warehouse as an active archive due to the long histories that are built and are unwilling, particularly if the On Line Analytical Processing (OLAP) sources have dropped records, to see the data warehouse engage in archiving. (See Chapter 6.)
+Os usuários frequentemente consideram o data warehouse como um arquivo ativo devido aos longos históricos que são construídos e não estão dispostos a ver o data warehouse se envolver em arquivamento, principalmente se as fontes de Processamento Analítico Online (OLAP) tiverem descartado registros. (Consulte o Capítulo 6.)
 
-#### 2.6.4 Monitor and Tune BI Activity and Performance
+#### 2.6.4 Monitorar e Ajustar a Atividade e o Desempenho do BI
 
-A best practice for BI monitoring and tuning is to define and display a set of customer-facing satisfaction metrics. Average query response time and the number of users per day, week, or month are examples of useful metrics. In addition to the statistical measures available from the systems, it is useful to survey DW/BI customers regularly.
+Uma prática recomendada para monitoramento e ajuste de BI é definir e exibir um conjunto de métricas de satisfação do cliente. O tempo médio de resposta a consultas e o número de usuários por dia, semana ou mês são exemplos de métricas úteis. Além das medidas estatísticas disponíveis nos sistemas, é útil pesquisar regularmente os clientes de DW/BI.
 
-Regular review of usage statistics and patterns is essential. Reports providing frequency and resource usage of data, queries, and reports allow prudent enhancement. Tuning BI activity is analogous to the principle of profiling applications in order to know where the bottlenecks are and where to apply optimization efforts. The creation of indexes and aggregations is most effective when done according to usage patterns and statistics. Tremendous performance gains can come from simple solutions such as posting the completed daily results to a report that runs hundreds or thousands of times a day.
+A revisão regular das estatísticas e padrões de uso é essencial. Relatórios que fornecem a frequência e o uso de recursos de dados, consultas e relatórios permitem um aprimoramento prudente. O ajuste da atividade de BI é análogo ao princípio de criação de perfil de aplicativos para saber onde estão os gargalos e onde aplicar esforços de otimização. A criação de índices e agregações é mais eficaz quando feita de acordo com os padrões e estatísticas de uso. Grandes ganhos de desempenho podem advir de soluções simples, como a publicação dos resultados diários completos em um relatório executado centenas ou milhares de vezes por dia.
 
-Transparency and visibility are the key principles that should drive DW/BI monitoring. The more one can expose the details of the DW/BI activities, the more data consumers can see and understand what is going on (and have confidence in the BI), and less direct end-customer support will be required. Providing a dashboard that exposes the high-level status of data delivery activities, with drill-down capability, is a best practice that allows an on-demand-pull of information by both support personnel and customers.
+Transparência e visibilidade são os princípios-chave que devem nortear o monitoramento de DW/BI. Quanto mais detalhes das atividades de DW/BI forem expostos, mais os consumidores de dados poderão ver e entender o que está acontecendo (e confiar no BI), e menos suporte direto ao cliente final será necessário. Fornecer um painel que exponha o status geral das atividades de entrega de dados, com capacidade de detalhamento, é uma prática recomendada que permite a coleta de informações sob demanda tanto pela equipe de suporte quanto pelos clientes.
 
-The addition of data quality measures will enhance the value of this dashboard where performance is more than just speed and timing. Use heat maps to visualize workload on infrastructure, data throughput, and compliance to operating agreement levels.
+A adição de medidas de qualidade de dados aumentará o valor deste painel, onde o desempenho vai além da velocidade e do tempo. Use mapas de calor para visualizar a carga de trabalho na infraestrutura, a taxa de transferência de dados e a conformidade com os níveis de acordos operacionais.
 
-## 3. Tools
+## 3. Ferramentas
 
-Choosing the initial set of tools can be a long process. It includes attempting to satisfy near-term requirements, non-functional specifications, and the as-yet to be created next generation requirements. Decision criteria tool sets, process implementation tools, and professional services offerings can facilitate and expedite this activity. It is critical to evaluate not only the conventional build or buy positions, but also the rent option provisioned as Software-as-a-Service. Renting SaaS tools and the associated expertise is weighed against the cost of building from scratch or deploying purchased products from vendors. Consider ongoing upgrade and potential replacement costs as well. Alignment to a set OLA (Operational Level Agreement) can bridge forecasted costs, and provide input into setting compelling fees and penalties for term violations.
+Escolher o conjunto inicial de ferramentas pode ser um processo longo. Inclui a tentativa de atender aos requisitos de curto prazo, especificações não funcionais e os requisitos da próxima geração ainda a serem criados. Conjuntos de ferramentas de critérios de decisão, ferramentas de implementação de processos e ofertas de serviços profissionais podem facilitar e agilizar essa atividade. É fundamental avaliar não apenas as posições convencionais de construção ou compra, mas também a opção de aluguel provisionada como Software como Serviço. O aluguel de ferramentas SaaS e a expertise associada são ponderados em relação ao custo de construir do zero ou implantar produtos adquiridos de fornecedores. Considere também os custos contínuos de atualização e possíveis substituições. O alinhamento com um OLA (Acordo de Nível Operacional) definido pode cobrir os custos previstos e fornecer subsídios para a definição de taxas e penalidades relevantes para violações de prazo.
 
-### 3.1 Metadata Repository
+### 3.1 Repositório de Metadados
 
-Large organizations often find themselves with many tools from different vendors, each deployed potentially at differing versions. Key to this effort is the ability to stitch Metadata together from a variety of sources. Automating and integrating population of this repository can be achieved with a variety of techniques. (See Chapter 13.)
+Grandes organizações frequentemente se deparam com muitas ferramentas de diferentes fornecedores, cada uma implantada potencialmente em versões diferentes. A chave para esse esforço é a capacidade de unir Metadados de diversas fontes. A automatização e a integração do preenchimento deste repositório podem ser alcançadas com uma variedade de técnicas. (Consulte o Capítulo 13.)
 
-#### 3.1.1 Data Dictionary / Glossary
+#### 3.1.1 Dicionário de Dados / Glossário
 
-A data dictionary is necessary to support the use of a DW. The dictionary describes data in business terms and includes other information needed to use the data (e.g., data types, details of structure, security restrictions). Often the content for the data dictionary comes directly from the logical data model. Plan for high quality Metadata by ensuring modelers take a disciplined approach to managing definitions as part of the modeling process.
+Um dicionário de dados é necessário para dar suporte ao uso de um DW. O dicionário descreve os dados em termos de negócios e inclui outras informações necessárias para o uso dos dados (por exemplo, tipos de dados, detalhes da estrutura, restrições de segurança). Frequentemente, o conteúdo do dicionário de dados vem diretamente do modelo lógico de dados. Planeje metadados de alta qualidade garantindo que os modeladores adotem uma abordagem disciplinada para gerenciar as definições como parte do processo de modelagem.
 
-In some organizations, business users actively participate in the development of the data dictionary by supplying, defining, and then stewarding corrections to definitions of subject area data elements. Embrace this activity through a collaboration tool, monitor activities through a Center of Excellence, and ensure that content created through this activity is retained in the logical model. Ensuring agreement between the business-facing content and the technical-facing physical data model will reduce the risk of downstream errors and rework. (See Chapter 13.)
+Em algumas organizações, os usuários de negócios participam ativamente do desenvolvimento do dicionário de dados, fornecendo, definindo e, em seguida, administrando correções nas definições dos elementos de dados da área de assunto. Adote essa atividade por meio de uma ferramenta de colaboração, monitore as atividades por meio de um Centro de Excelência e garanta que o conteúdo criado por meio dessa atividade seja mantido no modelo lógico. Garantir a concordância entre o conteúdo voltado para o negócio e o modelo de dados físico voltado para a área técnica reduzirá o risco de erros e retrabalho posteriores. (Ver Capítulo 13.)
 
-#### 3.1.2 Data and Data Model Lineage
+#### 3.1.2 Dados e Linhagem do Modelo de Dados
 
-Many data integration tools offer lineage analysis that considers both the developed population code and the physical data model and database. Some offer web interfaces to monitor and update definitions and other Metadata. Documented data lineage serves many purposes:
+Muitas ferramentas de integração de dados oferecem análise de linhagem que considera tanto o código populacional desenvolvido quanto o modelo de dados físico e o banco de dados. Algumas oferecem interfaces web para monitorar e atualizar definições e outros metadados. A linhagem de dados documentada atende a diversos propósitos:
 
-* Investigation of the root causes of data issues
-* Impact analysis for system changes or data issues
-* Ability to determine the reliability of data, based on its origin
+* Investigação das causas-raiz de problemas de dados
+* Análise de impacto para alterações no sistema ou problemas de dados
+* Capacidade de determinar a confiabilidade dos dados com base em sua origem
 
-Look to implement an integrated impact and lineage tool that can understand all the moving parts involved in the load process, as well as end user reporting and analytics. Impact analysis reports will outline which components are affected by a potential change, expediting and streamlining estimating and maintenance tasks. Many key business processes, relationships, and terminologies are captured and explained during development of the data model. The logical data model holds much of this information, which is often lost or ignored during development or production deployment. It is critical to ensure that this information is not discarded and that the logical and physical models are updated after deployment and are in sync.
+Procure implementar uma ferramenta integrada de impacto e linhagem que possa compreender todas as partes móveis envolvidas no processo de carregamento, bem como relatórios e análises para o usuário final. Os relatórios de análise de impacto descreverão quais componentes são afetados por uma possível alteração, agilizando e otimizando as tarefas de estimativa e manutenção. Muitos processos, relacionamentos e terminologias importantes de negócios são capturados e explicados durante o desenvolvimento do modelo de dados. O modelo lógico de dados contém muitas dessas informações, que frequentemente são perdidas ou ignoradas durante o desenvolvimento ou a implantação em produção. É fundamental garantir que essas informações não sejam descartadas e que os modelos lógicos e físicos sejam atualizados após a implantação e estejam sincronizados.
 
-### 3.2 Data Integration Tools
+### 3.2 Ferramentas de Integração de Dados
 
-Data integration tools are used to populate a data warehouse. In addition to doing the work of integrating data, they enable scheduling of jobs in ways that account for complex data delivery from multiple sources. In selecting a tool, also account for these features that enable management of the system:
+Ferramentas de integração de dados são usadas para preencher um data warehouse. Além de realizar o trabalho de integração de dados, elas permitem o agendamento de tarefas de forma a considerar a entrega complexa de dados de múltiplas fontes. Ao selecionar uma ferramenta, considere também os seguintes recursos que permitem o gerenciamento do sistema:
 
-* Process audit, control, restart, and scheduling
-* The ability to selectively extract data elements at execution time and pass that extract to a downstream system for audit purposes
-* Controlling which operations can or cannot execute and restarting a failed or aborted run (see Chapter 8)
+* Auditoria, controle, reinicialização e agendamento de processos
+* Capacidade de extrair seletivamente elementos de dados em tempo de execução e passar essa extração para um sistema posterior para fins de auditoria
+* Controlar quais operações podem ou não ser executadas e reiniciar uma execução com falha ou abortada (consulte o Capítulo 8)
 
-A variety of data integration tools also offer integration capabilities with the BI portfolio, supporting import and export of workflow messages, email, or even semantic layers. Workflow integration can drive data quality defect identification, resolution, and escalation processes. Messaging through email or alert processing driven from email is a common practice especially for mobile devices. In addition, the ability to provision a data target as a semantic layer can be a data virtualization candidate for agile implementations.
+Diversas ferramentas de integração de dados também oferecem recursos de integração com o portfólio de BI, suportando a importação e exportação de mensagens de fluxo de trabalho, e-mails ou até mesmo camadas semânticas. A integração de fluxos de trabalho pode impulsionar processos de identificação, resolução e escalonamento de defeitos de qualidade de dados. O envio de mensagens por e-mail ou o processamento de alertas a partir de e-mail é uma prática comum, especialmente para dispositivos móveis. Além disso, a capacidade de provisionar um destino de dados como uma camada semântica pode ser uma candidata à virtualização de dados para implementações ágeis.
 
-### 3.3 Business Intelligence Tools Types
+### 3.3 Tipos de Ferramentas de Business Intelligence
 
-The maturity of the BI market, and a wide range of available BI tools, makes it rare for companies to build their own BI tools. [^68] The purpose of this section is to introduce the types of tools available in the BI marketplace, and provide an overview of their chief characteristics with information to help match the tools to the appropriate customer-level capabilities. BI tools are evolving quickly, enabling a transition from IT-led, standardized reporting to self-service, business-driven data exploration. [^69]
+A maturidade do mercado de BI e a ampla gama de ferramentas disponíveis tornam raro que as empresas criem suas próprias ferramentas de BI. [^68] O objetivo desta seção é apresentar os tipos de ferramentas disponíveis no mercado de BI e fornecer uma visão geral de suas principais características, com informações que ajudem a adequá-las às capacidades adequadas do cliente. As ferramentas de BI estão evoluindo rapidamente, permitindo uma transição de relatórios padronizados e orientados pela TI para a exploração de dados de autoatendimento e orientada pelos negócios. [^69]
 
-* Operational reporting is the application of BI tools to analyze business trends, both short-term (month-over-month) and longer-term (year-over-year). Operational reporting can also help discover trends and patterns. Use Tactical BI to support short-term business decisions.
-* Business performance management (BPM) includes the formal assessment of metrics aligned with organizational goals. This assessment usually happens at the executive level. Use Strategic BI to support long-term corporate goals and objectives.
-* Descriptive, self-service analytics provides BI to the front lines of the business, where analytical capabilities guide operational decisions. Operational analytics couples BI applications with operational functions and processes, to guide decisions in near-real-time. The requirement for low latency (near real-time data capture and data delivery) will drive the architectural approach to operational analytics solutions. Service-oriented Architecture (SOA) and Big Data become necessary to support operational analytics fully (see Chapters 8 and 15).
+* Relatórios operacionais são a aplicação de ferramentas de BI para analisar tendências de negócios, tanto de curto prazo (mês a mês) quanto de longo prazo (ano a ano). Os relatórios operacionais também podem ajudar a descobrir tendências e padrões. Use o BI Tático para apoiar decisões de negócios de curto prazo.
+* A gestão de desempenho empresarial (BPM) inclui a avaliação formal de métricas alinhadas às metas organizacionais. Essa avaliação geralmente ocorre no nível executivo. Use o BI Estratégico para apoiar metas e objetivos corporativos de longo prazo.
 
-#### 3.3.1 Operational Reporting
+* A análise descritiva e de autoatendimento fornece BI para as linhas de frente dos negócios, onde os recursos analíticos orientam as decisões operacionais. A análise operacional acopla aplicações de BI a funções e processos operacionais para orientar decisões em tempo quase real. A exigência de baixa latência (captura e entrega de dados quase em tempo real) impulsionará a abordagem arquitetônica para soluções de análise operacional. Arquitetura orientada a serviços (SOA) e Big Data tornam-se necessários para dar suporte completo à análise operacional (consulte os Capítulos 8 e 15).
 
-Operational Reporting involves business users generating reports directly from transactional systems, operational applications, or a data warehouse. This is typically an application functionality. Often business areas will start to use a DW for operational reporting, especially if DW/BI governance is poor, or the DW contains additional data that enhances the operational, transaction data. Often the reports will appear as ad-hoc queries, when in fact they are simple reports or are used to initiate workflow. From a data management perspective, the key is to understand if the data necessary for this reporting exists within the application itself, or if it requires data enhancements from the DW or operational data store.
+#### 3.3.1 Relatórios Operacionais
 
-Data exploration and reporting tools, sometimes called ad-hoc query tools, enable users to author their own reports or create outputs for use by others. They are less concerned with the precise layout because they are not trying to generate an invoice or the like. However, they do want to include charts and tables quickly and intuitively. Often the reports created by business users become standard reports, not exclusively used for ad hoc business questions.
+Relatórios Operacionais envolvem usuários de negócios gerando relatórios diretamente de sistemas transacionais, aplicativos operacionais ou um data warehouse. Normalmente, essa é uma funcionalidade do aplicativo. Frequentemente, as áreas de negócios começarão a usar um DW para relatórios operacionais, especialmente se a governança de DW/BI for ruim ou se o DW contiver dados adicionais que aprimoram os dados operacionais e transacionais. Frequentemente, os relatórios aparecerão como consultas ad hoc, quando, na verdade, são relatórios simples ou são usados ​​para iniciar o fluxo de trabalho. Do ponto de vista do gerenciamento de dados, o fundamental é entender se os dados necessários para esse relatório existem no próprio aplicativo ou se exigem aprimoramentos de dados do DW ou do repositório de dados operacionais.
 
-The needs within business operations reporting are often different from the needs within business query and reporting. With business query and reporting, the data source is usually a data warehouse or data mart (though not always). While IT develops production reports, power users and ad hoc business users develop their own reports with business query tools. Use reports generated with business query tools individually, departmentally, or enterprise-wide.
+Ferramentas de exploração de dados e geração de relatórios, às vezes chamadas de ferramentas de consulta ad hoc, permitem que os usuários criem seus próprios relatórios ou saídas para uso por terceiros. Eles se preocupam menos com o layout preciso, pois não estão tentando gerar uma fatura ou algo semelhante. No entanto, desejam incluir gráficos e tabelas de forma rápida e intuitiva. Frequentemente, os relatórios criados por usuários corporativos tornam-se relatórios padrão, não sendo usados ​​exclusivamente para questões comerciais ad hoc.
 
-Production reporting crosses the DW/BI boundary and often queries transactional systems to produce operational items such as invoices or bank statements. The developers of production reports tend to be IT personnel.
+As necessidades dos relatórios de operações comerciais costumam ser diferentes das necessidades das consultas e relatórios comerciais. Com consultas e relatórios comerciais, a fonte de dados geralmente é um data warehouse ou data mart (embora nem sempre). Enquanto a TI desenvolve relatórios de produção, usuários avançados e usuários corporativos ad hoc desenvolvem seus próprios relatórios com ferramentas de consulta comercial. Use os relatórios gerados com ferramentas de consulta comercial individualmente, departamentalmente ou em toda a empresa.
 
-Traditional BI tools cover some data visualization methods such as tables, pie charts, line charts, area charts, bar charts, histograms, turnkey box (candlestick) as examples fairly well. Data visualizations can be delivered in a static format, such as a published report, or a more interactive online format; and some support end-user interaction where drilling or filtering capabilities facilitate analysis of data within the visualization. Others allow the visualization to be changed by the user on demand. (See Chapter 14.)
+Os relatórios de produção cruzam a fronteira entre DW e BI e frequentemente consultam sistemas transacionais para produzir itens operacionais, como faturas ou extratos bancários. Os desenvolvedores de relatórios de produção tendem a ser profissionais de TI.
 
-#### 3.3.2 Business Performance Management
+As ferramentas tradicionais de BI abrangem alguns métodos de visualização de dados, como tabelas, gráficos de pizza, gráficos de linhas, gráficos de área, gráficos de barras, histogramas e caixas prontas para uso (candlestick), por exemplo. As visualizações de dados podem ser entregues em um formato estático, como um relatório publicado, ou em um formato online mais interativo; e algumas oferecem suporte à interação do usuário final, onde recursos de detalhamento ou filtragem facilitam a análise dos dados dentro da visualização. Outras permitem que a visualização seja alterada pelo usuário sob demanda. (Consulte o Capítulo 14.)
 
-Performance management is a set of integrated organizational processes and applications designed to optimize execution of business strategy; applications include budgeting, planning, and financial consolidation. There have been a number of major acquisitions in this segment, as ERP vendors and BI vendors see great growth opportunities here and believe BI and Performance Management are converging. How frequently customers buy BI and performance management from the same vendor depends on product capabilities.
+#### 3.3.2 Gestão de Desempenho Empresarial
 
-Broadly speaking, Performance Management technology enables processes to help meet organizational goals. Measurement and a feedback loop with positive reinforcement are key elements. Within the BI space, this has taken the form of many strategic enterprise applications, such as budgeting, forecasting, or resource planning. Another specialization has formed in this area: creating scorecards driven by dashboards for user interaction. Dashboards, like those found in automobiles, provide the necessary summary or aggregate information to the end user with most recent updates (Eckerson, 2005).
+A gestão de desempenho é um conjunto de processos e aplicativos organizacionais integrados, projetados para otimizar a execução da estratégia de negócios; as aplicações incluem orçamento, planejamento e consolidação financeira. Houve uma série de aquisições importantes neste segmento, já que fornecedores de ERP e BI enxergam grandes oportunidades de crescimento e acreditam que BI e Gestão de Desempenho estão convergindo. A frequência com que os clientes compram BI e gestão de desempenho do mesmo fornecedor depende dos recursos do produto.
 
-#### 3.3.3 Operational Analytic Applications
+Em termos gerais, a tecnologia de Gestão de Desempenho permite que os processos ajudem a atingir as metas organizacionais. A mensuração e um ciclo de feedback com reforço positivo são elementos-chave. No âmbito do BI, isso assumiu a forma de muitas aplicações empresariais estratégicas, como orçamento, previsão ou planejamento de recursos. Outra especialização surgiu nesta área: a criação de scorecards orientados por painéis para interação do usuário. Painéis, como os encontrados em automóveis, fornecem as informações resumidas ou agregadas necessárias ao usuário final com as atualizações mais recentes (Eckerson, 2005).
 
-Henry Morris of IDC coined the term Analytic Applications in the 1990s, clarifying how they are different from general OLAP and BI tools (Morris, 1999). Analytic applications include the logic and processes to extract data from well-known source systems, such as vendor ERP systems, a data model for the data mart, and pre-built reports and dashboards. They provide businesses with a pre-built solution to optimize a functional area (people management, for example) or industry vertical (retail analytics, for example). Different types of analytic applications include customer, financial, supply chain, manufacturing, and human resource applications.
+#### 3.3.3 Aplicações Analíticas Operacionais
 
-##### 3.3.3.1 Multi-dimensional Analysis – OLAP
+Henry Morris, da IDC, cunhou o termo Aplicações Analíticas na década de 1990, esclarecendo como elas se diferenciam das ferramentas gerais de OLAP e BI (Morris, 1999). As aplicações analíticas incluem a lógica e os processos para extrair dados de sistemas de origem conhecidos, como sistemas ERP de fornecedores, um modelo de dados para o data mart e relatórios e painéis pré-construídos. Elas fornecem às empresas uma solução pré-construída para otimizar uma área funcional (gestão de pessoas, por exemplo) ou um setor vertical (análise de varejo, por exemplo). Diferentes tipos de aplicações analíticas incluem aplicações de clientes, financeiras, da cadeia de suprimentos, de manufatura e de recursos humanos.
 
-Online Analytical Processing (OLAP) refers to an approach to providing fast performance for multi-dimensional analytic queries. The term OLAP originated, in part, to make a clear distinction from OLTP, Online Transactional Processing. The typical output of OLAP queries are in a matrix format. The dimensions form the rows and columns of the matrix, and the factors, or measures, are the values inside the matrix.
+##### 3.3.3.1 Análise Multidimensional – OLAP
 
-Conceptually, this illustrates as a cube. Multi-dimensional analysis with cubes is particularly useful where there are well-known ways analysts want to look at summaries of data.
+O Processamento Analítico Online (OLAP) refere-se a uma abordagem para fornecer desempenho rápido para consultas analíticas multidimensionais. O termo OLAP surgiu, em parte, para fazer uma distinção clara do OLTP, Processamento Transacional Online. A saída típica das consultas OLAP está em formato de matriz. As dimensões formam as linhas e colunas da matriz, e os fatores, ou medidas, são os valores dentro da matriz.
 
-A traditional application is financial analysis, where analysts want to repeatedly traverse known hierarchies to analyze data; for example, date (such as Year, Quarter, Month, Week, Day), organization (such as Region, Country, Business Unit, Department), and product hierarchy (such as Product Category, Product Line, Product).
+Conceitualmente, isso é ilustrado como um cubo. A análise multidimensional com cubos é particularmente útil quando há maneiras bem conhecidas pelas quais os analistas desejam analisar resumos de dados.
 
-Many tools today embed OLAP cubes into their software footprint and some even seamlessly automate and integrate the definition and population process. This means that any user in any business process can slice and dice their data. Align this capability with the power users in the subject area communities and deliver it along a self-service channel empowering these selected users to analyze their data their way.
+Uma aplicação tradicional é a análise financeira, na qual os analistas desejam percorrer repetidamente hierarquias conhecidas para analisar dados; por exemplo, data (como Ano, Trimestre, Mês, Semana, Dia), organização (como Região, País, Unidade de Negócios, Departamento) e hierarquia de produtos (como Categoria de Produto, Linha de Produto, Produto).
 
-Typically, OLAP tools have both a server component and an end user client-facing component installed on the desktop, or available on the web. Some desktop components are accessible from within a spreadsheet appearing as an embedded menu or function item. The architecture selected (ROLAP, MOLAP, HOLAP) will guide the development efforts but common to all will be definition of cube structure, aggregate needs, Metadata augmentation and analysis of data sparsity.
+Muitas ferramentas hoje incorporam cubos OLAP em seus softwares e algumas até automatizam e integram perfeitamente o processo de definição e preenchimento. Isso significa que qualquer usuário em qualquer processo de negócios pode segmentar e segmentar seus dados. Alinhe essa capacidade com os usuários avançados nas comunidades da área de estudo e forneça-a por meio de um canal de autoatendimento, capacitando esses usuários selecionados a analisar seus dados à sua maneira.
 
-Structuring the cube to provision desired functional requirements may require splitting larger dimensions into separate cubes to accommodate storage, population, or calculation requirements. Use levels of aggregation to ensure calculation and retrieval of desired formulas occurs within agreed upon response times. End user augmentation of hierarchies enable fulfillment the aggregation, calculation, or population requirements. In addition, sparsity of cube data may require addition or removal of aggregate structures or refine materialization needs in the warehouse data layer provisioning it.
+Normalmente, as ferramentas OLAP possuem um componente de servidor e um componente voltado para o cliente final instalados no desktop ou disponíveis na web. Alguns componentes de desktop são acessíveis a partir de uma planilha, aparecendo como um menu ou item de função incorporado. A arquitetura selecionada (ROLAP, MOLAP, HOLAP) guiará os esforços de desenvolvimento, mas comum a todas será a definição da estrutura do cubo, as necessidades de agregação, o aumento de metadados e a análise da escassez de dados.
 
-Provisioning role-based security or multi-language text within the cube may require extra dimensions, additional functions, calculations, or sometimes creating separate cube structures. Striking a balance between end user flexibility, performance, and server workloads means some negotiating is to be expected. The negotiation typically occurs during the loading processes and may require hierarchy changes, aggregate structure changes or additional warehouse materialized data objects. Strike the right balance among cube count, server workload, and delivered flexibility, so that the refresh occurs in a timely manner, and cubes provide reliable and consistent queries without high storage or server utilization costs.
+Estruturar o cubo para atender aos requisitos funcionais desejados pode exigir a divisão de dimensões maiores em cubos separados para acomodar os requisitos de armazenamento, preenchimento ou cálculo. Use níveis de agregação para garantir que o cálculo e a recuperação das fórmulas desejadas ocorram dentro dos tempos de resposta acordados. O aumento das hierarquias para o usuário final permite o atendimento aos requisitos de agregação, cálculo ou preenchimento. Além disso, a escassez de dados do cubo pode exigir a adição ou remoção de estruturas agregadas ou refinar as necessidades de materialização na camada de dados do warehouse que os provisiona.
 
-The value of On Line Analytical Processing (OLAP) Tools and cubes is reduction of the chance of confusion and erroneous interpretation, by aligning the data content with the analyst’s mental model. The analyst can navigate through the database and screen for a particular subset of the data, changing the data’s orientation and defining analytical calculations. Slice-and-dice is the user-initiated process of navigation by calling for page displays interactively, through the specification of slices via rotations and drill down / up. Common OLAP operations include slice and dice, drill down, drill up, roll up, and pivot.
+O provisionamento de segurança baseada em funções ou texto multilíngue dentro do cubo pode exigir dimensões extras, funções adicionais, cálculos ou, às vezes, a criação de estruturas de cubo separadas. Encontrar um equilíbrio entre flexibilidade para o usuário final, desempenho e cargas de trabalho do servidor significa que alguma negociação é esperada. A negociação normalmente ocorre durante os processos de carregamento e pode exigir alterações na hierarquia, alterações na estrutura agregada ou objetos de dados materializados adicionais no warehouse. Encontre o equilíbrio certo entre a quantidade de cubos, a carga de trabalho do servidor e a flexibilidade fornecida, para que a atualização ocorra em tempo hábil e os cubos forneçam consultas confiáveis ​​e consistentes sem altos custos de armazenamento ou utilização do servidor.
 
-* **Slice:** A slice is a subset of a multi-dimensional array corresponding to a single value for one or more members of the dimensions not in the subset.
-* **Dice:** The dice operation is a slice on more than two dimensions of a data cube, or more than two consecutive slices.
-* **Drill down / up:** Drilling down or up is a specific analytical technique whereby the user navigates among levels of data, ranging from the most summarized (up) to the most detailed (down).
-* **Roll-up:** A roll-up involves computing all of the data relationships for one or more dimensions. To do this, define a computational relationship or formula.
-* **Pivot:** A pivot changes the dimensional orientation of a report or page display.
+O valor das ferramentas de Processamento Analítico Online (OLAP) e dos cubos é a redução da chance de confusão e interpretação errônea, alinhando o conteúdo dos dados com o modelo mental do analista. O analista pode navegar pelo banco de dados e pela tela para um subconjunto específico de dados, alterando a orientação dos dados e definindo cálculos analíticos. "Slice-and-dice" é o processo de navegação iniciado pelo usuário, chamando a exibição de páginas interativamente, por meio da especificação de fatias por meio de rotações e drill down/up. Operações OLAP comuns incluem "slice and dice", "drill down", "drill up", "roll up" e "pivot".
 
-Three classic implementation approaches support Online Analytical Processing.
+* **Slice:** Uma fatia é um subconjunto de uma matriz multidimensional correspondente a um único valor para um ou mais membros das dimensões que não estão no subconjunto.
+* **Dice:** A operação "dice" é um fatiamento em mais de duas dimensões de um cubo de dados, ou mais de duas fatias consecutivas.
+* **Drill down/up:** Drill down ou up é uma técnica analítica específica pela qual o usuário navega entre níveis de dados, desde o mais resumido (up) até o mais detalhado (down).
+* **Roll-up:** Um roll-up envolve o cálculo de todos os relacionamentos de dados para uma ou mais dimensões. Para fazer isso, defina uma relação computacional ou fórmula.
+* **Pivô:** Um pivô altera a orientação dimensional de um relatório ou exibição de página.
 
-* **Relational Online Analytical Processing (ROLAP):** ROLAP supports OLAP by using techniques that implement multi-dimensionality in the two-dimensional tables of relational database management systems (RDBMS). Star schema joins are a common database design technique used in ROLAP environments.
-* **Multi-dimensional Online Analytical Processing (MOLAP):** MOLAP supports OLAP by using proprietary and specialized multi-dimensional database technology.
-* **Hybrid Online Analytical Processing (HOLAP):** This is simply a combination of ROLAP and MOLAP. HOLAP implementations allow part of the data to be stored in MOLAP form and another part of the data to be stored in ROLAP. Implementations vary on the control a designer has to vary the mix of partitioning.
+Três abordagens clássicas de implementação suportam o Processamento Analítico Online.
 
-## 4. Techniques
+* **Processamento Analítico Online Relacional (ROLAP):** O ROLAP suporta o OLAP usando técnicas que implementam a multidimensionalidade nas tabelas bidimensionais de sistemas de gerenciamento de banco de dados relacional (RDBMS). Junções de esquema em estrela são uma técnica comum de projeto de banco de dados usada em ambientes ROLAP.
+* **Processamento Analítico Online Multidimensional (MOLAP):** O MOLAP suporta o OLAP usando tecnologia proprietária e especializada de banco de dados multidimensional.
+* **Processamento Analítico Online Híbrido (HOLAP):** Esta é simplesmente uma combinação de ROLAP e MOLAP. As implementações de HOLAP permitem que parte dos dados seja armazenada no formato MOLAP e outra parte no ROLAP. As implementações variam quanto ao controle que um projetista tem para variar a combinação de particionamento.
 
-### 4.1 Prototypes to Drive Requirements
+## 4. Técnicas
 
-Quickly prioritize requirements before the implementation activities begin by creating a demonstration set of data and applying discovery steps in a joint prototype effort. Advances in data virtualization technologies can alleviate some of the traditional implementation pains through collaborative prototyping techniques. Profiling the data contributes to prototyping and helps reduces risk associated with unexpected data. The DW is often the first place where the pain of poor quality data in source systems or data entry functions becomes apparent. Profiling also discloses differences between sources that may present obstacles to data integration. Data may be of high quality within its sources, but because sources, differ the data integration process becomes more complicated.
+### 4.1 Protótipos para Impulsionar Requisitos
 
-Evaluation of the state of the source data leads to more accurate up-front estimates for feasibility and scope of effort. The evaluation is also important for setting appropriate expectations. Plan to collaborate with the Data Quality and Data Governance team(s) and to draw on the expertise of other SMEs to understand data discrepancies and risks. (See Chapters 11 and 13.)
+Priorize os requisitos rapidamente antes do início das atividades de implementação, criando um conjunto de dados de demonstração e aplicando etapas de descoberta em um esforço conjunto de protótipo. Os avanços nas tecnologias de virtualização de dados podem aliviar alguns dos problemas tradicionais de implementação por meio de técnicas de prototipagem colaborativa. A criação de perfil dos dados contribui para a prototipagem e ajuda a reduzir os riscos associados a dados inesperados. O DW é frequentemente o primeiro local onde os problemas de dados de baixa qualidade em sistemas de origem ou funções de entrada de dados se tornam aparentes. A criação de perfil também revela diferenças entre fontes que podem representar obstáculos à integração de dados. Os dados podem ser de alta qualidade dentro de suas fontes, mas, como as fontes diferem, o processo de integração de dados se torna mais complicado.
 
-### 4.2 Self-Service BI
+A avaliação do estado dos dados de origem leva a estimativas iniciais mais precisas de viabilidade e escopo do esforço. A avaliação também é importante para definir expectativas adequadas. Planeje colaborar com a(s) equipe(s) de Qualidade e Governança de Dados e aproveitar a experiência de outras PMEs para entender as discrepâncias e os riscos dos dados. (Consulte os Capítulos 11 e 13.)
 
-Self-service is a fundamental delivery channel within the BI portfolio. This typically funnels user activity within a governed portal where, depending on the privileges of the user, a variety of functionality is provided ranging from messaging, alerts, viewing scheduled production reports, interacting with analytic reports, developing ad hoc reporting and of course dash boarding and score carding. Reports can be pushed to the portal on standard schedules, to be retrieved by the users at their leisure. Users can also pull data by executing reports from within the portal. These portals share content across organizational boundaries.
+### 4.2 BI de Autoatendimento
 
-Extending the collaboration tool outwards toward the user community can also provide self-service tips and tricks, an integrated communique on load status, overall performance, and release progress as well as dialog forums. Mediate forum content through the support channel and then facilitate with user group sessions through the maintenance channel.
+O autoatendimento é um canal de entrega fundamental dentro do portfólio de BI. Ele normalmente canaliza a atividade do usuário dentro de um portal governado onde, dependendo dos privilégios do usuário, uma variedade de funcionalidades é fornecida, desde mensagens, alertas, visualização de relatórios de produção agendados, interação com relatórios analíticos, desenvolvimento de relatórios ad hoc e, claro, dashboard e scorecards. Os relatórios podem ser enviados ao portal em horários padrão, para serem recuperados pelos usuários quando quiserem. Os usuários também podem extrair dados executando relatórios de dentro do portal. Esses portais compartilham conteúdo além das fronteiras organizacionais.
 
-Visualization and statistical analysis tooling allows for rapid data exploration and discovery. Some tools allow for business-centric construction of dashboard like objects that can be rapidly shared, reviewed, and revitalized. Once the domain of IT and developers only, many data shaping, calculation, and visualization techniques can now be employed by the business community. This offers a degree of workload distribution and integration efforts can be feasibly prototyped through business channels and then materialized and optimized by IT.
+Estender a ferramenta de colaboração para a comunidade de usuários também pode fornecer dicas e truques de autoatendimento, um comunicado integrado sobre status de carga, desempenho geral e progresso de lançamento, bem como fóruns de diálogo. Mediar o conteúdo do fórum por meio do canal de suporte e, em seguida, facilitar as sessões do grupo de usuários por meio do canal de manutenção.
 
-### 4.3 Audit Data that can be Queried
+Ferramentas de visualização e análise estatística permitem rápida exploração e descoberta de dados. Algumas ferramentas permitem a construção centrada nos negócios de objetos semelhantes a painéis, que podem ser rapidamente compartilhados, revisados ​​e revitalizados. Antes domínio exclusivo da TI e de desenvolvedores, muitas técnicas de modelagem, cálculo e visualização de dados agora podem ser empregadas pela comunidade empresarial. Isso oferece um grau de distribuição da carga de trabalho e os esforços de integração podem ser prototipados de forma viável por meio de canais de negócios e, em seguida, materializados e otimizados pela TI.
 
-In order to maintain lineage, all structures and processes should have the capability to create and store audit information at a grain useful for tracking and reporting. Allowing users to query this audit data enables the users to verify for themselves the condition and arrival of the data, which improves user confidence. Audit information also allows for more detailed trouble-shooting when data issues arise.
+### 4.3 Dados de Auditoria que Podem Ser Consultados
 
-## 5. Implementation Guidelines
+Para manter a linhagem, todas as estruturas e processos devem ter a capacidade de criar e armazenar informações de auditoria em um nível granular, útil para rastreamento e geração de relatórios. Permitir que os usuários consultem esses dados de auditoria permite que eles próprios verifiquem a condição e a chegada dos dados, o que aumenta a confiança do usuário. As informações de auditoria também permitem uma solução de problemas mais detalhada quando surgem problemas de dados.
 
-A stable architecture that can scale to meet future requirements is paramount to the success of a data warehouse. A production support team capable of dealing with the daily loading, analysis and end user feedback is mandatory. In addition, to sustain success, ensure that the warehouse and the business unit teams are aligned.
+## 5. Diretrizes de Implementação
 
-### 5.1 Readiness Assessment / Risk Assessment
+Uma arquitetura estável e escalável para atender aos requisitos futuros é fundamental para o sucesso de um data warehouse. Uma equipe de suporte à produção capaz de lidar com o carregamento diário, a análise e o feedback do usuário final é essencial. Além disso, para manter o sucesso, garanta que as equipes do depósito e da unidade de negócios estejam alinhadas.
 
-There may be a gap between when an organization embraces a new venture, and when it has the ability to sustain that venture. Successful projects start with a Prerequisite Checklist. All IT projects should have business support, be aligned with strategy, and have a defined architectural approach. In addition, a DW should:
+### 5.1 Avaliação de Prontidão / Avaliação de Risco
 
-* Define data sensitivity and security constraints
-* Perform tool selection
-* Secure resources
-* Create an ingestion process to evaluate and receive source data
+Pode haver uma lacuna entre o momento em que uma organização abraça um novo empreendimento e o momento em que ela tem a capacidade de sustentá-lo. Projetos bem-sucedidos começam com uma Lista de Verificação de Pré-requisitos. Todos os projetos de TI devem ter suporte de negócios, estar alinhados com a estratégia e ter uma abordagem arquitetônica definida. Além disso, um DW deve:
 
-Identify and inventory sensitive or restricted data elements in the warehouse. This data will need to be masked or obfuscated to prevent access by unauthorized personnel. Additional constraints may apply when considering outsourcing for implementation or maintenance activities.
+* Definir a sensibilidade dos dados e as restrições de segurança
+* Realizar a seleção de ferramentas
+* Proteger os recursos
+* Criar um processo de ingestão para avaliar e receber os dados de origem
 
-Account for security constrains before selecting tools and assigning resources. Ensure data governance processes for review and approval have been followed. DW/BI projects risk refocus or total cancellation due to these overarching factors.
+Identificar e inventariar elementos de dados sensíveis ou restritos no warehouse. Esses dados precisarão ser mascarados ou ofuscados para impedir o acesso por pessoas não autorizadas. Restrições adicionais podem ser aplicadas ao considerar a terceirização para atividades de implementação ou manutenção.
 
-### 5.2 Release Roadmap
+Considere as restrições de segurança antes de selecionar ferramentas e atribuir recursos. Certifique-se de que os processos de governança de dados para revisão e aprovação tenham sido seguidos. Projetos de DW/BI correm o risco de reorientação ou cancelamento total devido a esses fatores abrangentes.
 
-Because they require a large development effort, warehouses are built incrementally. Whatever method chosen to implement, be it waterfall, iterative or agile, it should account for the desired end state. That is why a roadmap is a valuable planning tool. The method combined with the maintenance processes can be both flexible and adaptive to balance the pressures of individual project delivery with overall goals of re-usable data and infrastructure.
+### Roteiro de Lançamento 5.2
 
-An incremental approach leveraging the DW bus matrix as a communication and marketing tool is suggested. Use business-determined priorities tethered by exposure metrics to determine how much rigor and overhead to apply to each increment; a small single-sourced delivery may afford rule relaxation especially when limited exposure is felt should those issues be realized by the organization.
+Por exigirem um grande esforço de desenvolvimento, os warehouses são construídos de forma incremental. Qualquer que seja o método escolhido para implementação, seja em cascata, iterativo ou ágil, ele deve levar em conta o estado final desejado. É por isso que um roteiro é uma ferramenta de planejamento valiosa. O método, combinado com os processos de manutenção, pode ser flexível e adaptável para equilibrar as pressões da entrega individual do projeto com os objetivos gerais de dados e infraestrutura reutilizáveis.
 
-Each increment will modify existing capabilities or add brand new capabilities typically aligned with a newly onboarded business unit. Apply a consistent needs and abilities process to determine the next business unit to onboard. Maintain a back-order or work item list to identify outstanding capabilities and the business-facing priorities. Determine any technical dependencies that require delivery in a different order. Then package this work into a software release. Each release can be delivered at an agreed-upon pace: quarterly, monthly, weekly, or even faster when appropriate. Manage the releases with the business partners by assembling a roadmap: a listing of releases by date by capabilities.
+Sugere-se uma abordagem incremental, utilizando a matriz de barramento DW como ferramenta de comunicação e marketing. Use prioridades determinadas pelo negócio, atreladas a métricas de exposição, para determinar o rigor e a sobrecarga a serem aplicados a cada incremento; uma pequena entrega de fonte única pode permitir o relaxamento das regras, especialmente quando a exposição limitada é sentida, caso esses problemas sejam percebidos pela organização.
 
-### 5.3 Configuration Management
+Cada incremento modificará as capacidades existentes ou adicionará novas capacidades, normalmente alinhadas a uma unidade de negócios recém-integrada. Aplique um processo consistente de necessidades e habilidades para determinar a próxima unidade de negócios a ser integrada. Mantenha uma lista de pedidos pendentes ou de itens de trabalho para identificar as capacidades pendentes e as prioridades do negócio. Determine quaisquer dependências técnicas que exijam entrega em uma ordem diferente. Em seguida, compacte esse trabalho em uma versão de software. Cada lançamento pode ser entregue em um ritmo acordado: trimestral, mensal, semanal ou até mais rápido, quando apropriado. Gerencie os lançamentos com os parceiros de negócios, elaborando um roteiro: uma lista de lançamentos por data e por recursos.
 
-Configuration management aligns with the release roadmap and provides the necessary back office stitching and scripts to automate development, testing, and transportation to production. It also brands the model by the release at the database level, and ties the codebase to that brand in an automated manner so that manually coded, generated programs and semantic layer content is harmonized across the environment and is versioned controlled.
+### 5.3 Gerenciamento de Configuração
 
-### 5.4 Organization and Cultural Change
+O gerenciamento de configuração se alinha ao roteiro de lançamento e fornece a costura e os scripts de back-office necessários para automatizar o desenvolvimento, os testes e o transporte para a produção. Ele também identifica o modelo por lançamento no nível do banco de dados e vincula a base de código a essa marca de forma automatizada, de modo que os programas codificados e gerados manualmente e o conteúdo da camada semântica sejam harmonizados em todo o ambiente e controlados por versão.
 
-Starting with and keeping a consistent business focus throughout the DW/BI lifecycle is essential to success. Looking at the value chain of the enterprise is a good way to understand the business context. The specific business processes in a company’s value chain provide a natural business-oriented context in which to frame areas of analysis.
+### 5.4 Mudança Organizacional e Cultural
 
-Most importantly, align projects behind real business needs and assess the necessary business support, considering these critical success factors:
+Começar e manter um foco consistente nos negócios ao longo do ciclo de vida de DW/BI é essencial para o sucesso. Observar a cadeia de valor da empresa é uma boa maneira de entender o contexto de negócios. Os processos de negócios específicos na cadeia de valor de uma empresa fornecem um contexto natural voltado para os negócios no qual se enquadram as áreas de análise.
 
-* **Business sponsorship:** Is there appropriate executive sponsorship, i.e., an identified and engaged steering committee and commensurate funding? DW/BI projects require strong executive sponsorship.
-* **Business goals and scope:** Is there a clearly identified business need, purpose, and scope for the effort?
-* **Business resources:** Is there a commitment by business management to the availability and engagement of the appropriate business subject matter experts? The lack of commitment is a common point of failure and a good enough reason to halt a DW/BI project until commitment is confirmed.
-* **Business readiness:** Is the business partner prepared for a long-term incremental delivery? Have they committed themselves to establishing centers of excellence to sustain the product in future releases? How broad is the average knowledge or skill gap within the target community and can that be crossed within a single increment?
-* **Vision alignment:** How well does the IT Strategy support the Business Vision? It is vital to ensure that desired functional requirements correspond to business capabilities that are or can be sustained in the immediate IT roadmap. Any significant departures or material gaps in capability alignment can stall or stop a DW/BI program.
+Mais importante ainda, alinhe os projetos às necessidades reais do negócio e avalie o suporte comercial necessário, considerando estes fatores críticos de sucesso:
 
-#### 5.4.1 Dedicated Team
+* **Patrocínio comercial:** Existe patrocínio executivo adequado, ou seja, um comitê diretor identificado e engajado e financiamento adequado? Projetos de DW/BI exigem forte patrocínio executivo.
+* **Objetivos e escopo do negócio:** Existe uma necessidade comercial, propósito e escopo claramente identificados para o esforço?
+* **Recursos comerciais:** Existe um comprometimento da gerência comercial com a disponibilidade e o engajamento dos especialistas adequados no assunto do negócio? A falta de comprometimento é um ponto comum de falha e um motivo suficiente para interromper um projeto de DW/BI até que o comprometimento seja confirmado.
+* **Preparação comercial:** O parceiro comercial está preparado para uma entrega incremental de longo prazo? Ele se comprometeu a estabelecer centros de excelência para sustentar o produto em lançamentos futuros? Qual é a amplitude da lacuna média de conhecimento ou habilidade dentro da comunidade-alvo e ela pode ser superada com um único incremento?
+* **Alinhamento da visão:** Quão bem a Estratégia de TI apoia a Visão Comercial? É vital garantir que os requisitos funcionais desejados correspondam às capacidades de negócios que estão ou podem ser sustentadas no roteiro de TI imediato. Quaisquer desvios significativos ou lacunas materiais no alinhamento de capacidades podem paralisar ou interromper um programa de DW/BI.
 
-Many organizations have a dedicated team to manage the ongoing operations of the production environment. (See Chapter 6). A separate set of hands operating the delivered data product is beneficial to workload optimization as this group has repeating tasks on a calendar cycle and may be further used for any escalation items whereas the maintenance channel will see workload spikes aligned to specific deliverables. A front office support group interacts with the maintenance team to foster inter-department relationships and ensure critical activities are addressed in upcoming releases. It notifies the team of any deficiencies to be addressed. A back office support team in operations will ensure that production configuration has executed as required. They will escalate alerts and report on throughput status.
+#### 5.4.1 Equipe Dedicada
 
-## 6. DW/BI Governance
+Muitas organizações possuem uma equipe dedicada para gerenciar as operações contínuas do ambiente de produção. (Consulte o Capítulo 6). Um conjunto separado de pessoas operando o produto de dados entregue é benéfico para a otimização da carga de trabalho, pois esse grupo tem tarefas recorrentes em um ciclo de calendário e pode ser usado posteriormente para quaisquer itens de escalonamento, enquanto o canal de manutenção verá picos de carga de trabalho alinhados a entregas específicas. Um grupo de suporte de front-office interage com a equipe de manutenção para promover relacionamentos entre departamentos e garantir que as atividades críticas sejam abordadas nas próximas versões. Ele notifica a equipe sobre quaisquer deficiências a serem corrigidas. Uma equipe de suporte de back-office em operações garantirá que a configuração de produção tenha sido executada conforme necessário. Eles escalarão alertas e reportarão o status da taxa de transferência.
 
-Industries that are highly regulated and need compliance-centric reporting will benefit greatly from a well-governed data warehouse. Critical to ongoing support and vital to release planning is ensuring that governance activities are completed and addressed during the implementation. More and more organizations are extending their Software Development Lifecycle with specific deliverables aimed at addressing governance needs. Warehouse governance processes should be aligned with risk management. They should be business-driven, since different kinds of businesses have different needs (e.g., marketing and advertising companies will use their data differently from financial institutions). Governance processes should mitigate risk, not curtail execution.
+## 6. Governança de DW/BI
 
-The most critical functions are those that govern the business-operated discovery or refinement area, and those that ensure pristine quality within the warehouse itself. As the refinement area leads all initiative boundaries, handshaking and well running procedures are necessary to instantiate, operate, transfer, and discard the data in these areas. Data archival and time horizons are key elements in boundary agreements as they help avoid sprawl. Monitoring of these environments and schedules to determine longevity terms are included in user group sessions as well as management meetings. Loading data into the warehouse means assigning time, resources, and programming efforts to see remediated, credible, high quality data arrive to the end user community, in a timely manner of course.
+Setores altamente regulamentados e que precisam de relatórios centrados em conformidade se beneficiarão muito de um data warehouse bem governado. Fundamental para o suporte contínuo e vital para o planejamento de versões é garantir que as atividades de governança sejam concluídas e abordadas durante a implementação. Cada vez mais organizações estão estendendo seu Ciclo de Vida de Desenvolvimento de Software com entregas específicas destinadas a atender às necessidades de governança. Os processos de governança de warehouse devem estar alinhados com a gestão de riscos. Devem ser orientados pelos negócios, visto que diferentes tipos de negócios têm necessidades diferentes (por exemplo, empresas de marketing e publicidade usarão seus dados de forma diferente das instituições financeiras). Os processos de governança devem mitigar os riscos, não restringir a execução.
 
-Consider one-off or limited-use events as part of the lifecycle, and perhaps curtail them within the pilot area itself, or within a user-controlled ‘sandbox’ area. Real-time analysis processes can feed time-aligned aggregate results back into the data warehouse through an automated process. Policy is defined for the procedures enacted upon the real-time environment, and governance applies to the brokerage of results into the warehouse for organizational consumption.
+As funções mais críticas são aquelas que governam a área de descoberta ou refinamento operada pela empresa e aquelas que garantem a qualidade impecável dentro do próprio warehouse. Como a área de refinamento lidera todos os limites de iniciativa, procedimentos de handshake e execução eficiente são necessários para instanciar, operar, transferir e descartar os dados nessas áreas. O arquivamento de dados e os horizontes temporais são elementos-chave nos acordos de limites, pois ajudam a evitar a dispersão. O monitoramento desses ambientes e cronogramas para determinar os termos de longevidade são incluídos nas sessões do grupo de usuários, bem como nas reuniões de gestão. Carregar dados no warehouse significa alocar tempo, recursos e esforços de programação para que dados corrigidos, confiáveis ​​e de alta qualidade cheguem à comunidade de usuários finais, em tempo hábil, é claro.
 
-Apply data discrimination to known or cataloged items managed through a risk exposure mitigation matrix. Those items with a deemed high exposure, and low mitigation or difficult early detection, warrant governance functions to curtail the associated risk. Depending on the sensitivity of the data being examined, a separate workspace for selected local personnel may also be required. A thorough review with corporate security and legal personnel during policy formation creates a final safety net.
+Considere eventos pontuais ou de uso limitado como parte do ciclo de vida e, talvez, restrinja-os dentro da própria área piloto ou dentro de uma área de "sandbox" controlada pelo usuário. Processos de análise em tempo real podem retornar resultados agregados alinhados temporalmente ao data warehouse por meio de um processo automatizado. A política é definida para os procedimentos implementados no ambiente de tempo real, e a governança se aplica à intermediação dos resultados no data warehouse para consumo organizacional.
 
-### 6.1 Enabling Business Acceptance
+Aplique a discriminação de dados a itens conhecidos ou catalogados, gerenciados por meio de uma matriz de mitigação de exposição a riscos. Os itens com alta exposição considerada e baixa mitigação ou difícil detecção precoce justificam funções de governança para restringir o risco associado. Dependendo da sensibilidade dos dados examinados, um espaço de trabalho separado para pessoal local selecionado também pode ser necessário. Uma revisão completa com a equipe de segurança corporativa e jurídica durante a formulação da política cria uma rede de segurança final.
 
-A key success factor is business acceptance of data, including the data being understandable, having verifiable quality, and having a demonstrable lineage. Sign-off by the Business on the data should be part of the User Acceptance Testing. Perform structured random testing of the data in the BI tool against data in the source systems over the initial load, and after a few update load cycles, to meet sign-off criteria. Meeting these requirements is paramount for every DW/BI implementation. Consider, up-front, a few critically important architectural sub-components, along with their supporting activities:
+### 6.1 Possibilitando a Aceitação Comercial
 
-* **Conceptual Data Model:** What information is core to the organization? What are the key business concepts and how are they related to each other?
-* **Data quality feedback loop:** How are data issues identified and remediated? How are owners of the systems in which issues originate informed about problems and held accountable for fixing them? What is the remediation process for issues that are caused by the DW data integration processes?
-* **End-to-end Metadata:** How does the architecture support the integrated end-to-end flow of Metadata? In particular, is access to meaning and context designed into the architecture? How do data consumers answer basic questions like "What does this report mean?" or "What does this metric mean?"
-* **End-to-end verifiable data lineage:** Are the items exposed to business users traceable to the source systems in an automated, maintained manner? Is a system of record identified for all data?
+Um fator-chave para o sucesso é a aceitação comercial dos dados, incluindo a compreensão dos dados, a qualidade verificável e a demonstração de sua origem. A aprovação dos dados pela área de negócios deve fazer parte do Teste de Aceitação do Usuário. Realize testes aleatórios estruturados dos dados na ferramenta de BI em comparação com os dados nos sistemas de origem durante o carregamento inicial e após alguns ciclos de carregamento de atualização, para atender aos critérios de aprovação. Atender a esses requisitos é fundamental para qualquer implementação de DW/BI. Considere, antecipadamente, alguns subcomponentes arquitetônicos de importância crítica, juntamente com suas atividades de suporte:
 
-### 6.2 Customer / User Satisfaction
+* **Modelo Conceitual de Dados:** Quais informações são essenciais para a organização? Quais são os principais conceitos de negócios e como eles se relacionam?
+* **Ciclo de feedback sobre a qualidade dos dados:** Como os problemas de dados são identificados e corrigidos? Como os proprietários dos sistemas nos quais os problemas se originam são informados sobre os problemas e responsabilizados por sua correção? Qual é o processo de correção para problemas causados ​​pelos processos de integração de dados do DW?
+* **Metadados de ponta a ponta:** Como a arquitetura suporta o fluxo integrado de ponta a ponta dos Metadados? Em particular, o acesso ao significado e ao contexto é projetado na arquitetura? Como os consumidores de dados respondem a perguntas básicas como "O que este relatório significa?" ou "O que esta métrica significa?"
+* **Linhagem de dados verificável de ponta a ponta:** Os itens expostos aos usuários corporativos são rastreáveis ​​até os sistemas de origem de forma automatizada e mantida? Um sistema de registro é identificado para todos os dados?
 
-Perceptions of the quality of data will drive customer satisfaction but satisfaction is dependent on other factors as well, such as data consumers’ understanding of the data and the operations team’s responsiveness to identified issues. Collecting, understanding, and acting on customer feedback can be facilitated through regularly scheduled meetings with user representatives. Such interaction can also help the warehouse team share information about the release roadmap and understand how data consumers are using the warehouse.
+### 6.2 Satisfação do Cliente/Usuário
 
-### 6.3 Service Level Agreements
+As percepções sobre a qualidade dos dados impulsionarão a satisfação do cliente, mas a satisfação também depende de outros fatores, como a compreensão dos dados pelos consumidores e a capacidade de resposta da equipe de operações aos problemas identificados. A coleta, a compreensão e a tomada de decisões com base no feedback do cliente podem ser facilitadas por meio de reuniões regulares com representantes dos usuários. Essa interação também pode ajudar a equipe do warehouse a compartilhar informações sobre o roteiro de lançamento e a entender como os consumidores de dados estão utilizando o warehouse.
 
-Business and technical expectations for the environments should be specified in Service Level Agreements (SLAs). Often the response time, data retention, and availability requirements differ greatly between classes of business needs and their respective supporting systems (e.g., ODS versus DW versus data mart).
+### 6.3 Acordos de Nível de Serviço
 
-### 6.4 Reporting Strategy
+As expectativas comerciais e técnicas para os ambientes devem ser especificadas em Acordos de Nível de Serviço (ANSs). Frequentemente, os requisitos de tempo de resposta, retenção de dados e disponibilidade diferem significativamente entre as classes de necessidades comerciais e seus respectivos sistemas de suporte (por exemplo, ODS versus DW versus data mart).
 
-Ensure that a reporting strategy exists within and across the BI Portfolio. A reporting strategy includes standards, processes, guidelines, best practices, and procedures. It will ensure users have clear, accurate, and timely information. The reporting strategy must address
+### 6.4 Estratégia de Relatórios
 
-* Security access to ensure that only entitled users will gain access to sensitive data elements
-* Access mechanisms to describe how users want to interact, report, examine or view their data
-* User community type and appropriate tool to consume it with
-* Nature of the reports summary, detailed, exception as well as frequency, timing, distribution and storage formats
-* Potential use of visualization capabilities to provision graphical output
-* Trade-offs between timeliness and performance
+Garanta a existência de uma estratégia de relatórios dentro e em todo o Portfólio de BI. Uma estratégia de relatórios inclui padrões, processos, diretrizes, melhores práticas e procedimentos. Ela garantirá que os usuários tenham informações claras, precisas e atualizadas. A estratégia de relatórios deve abordar
 
-Standard reports should be evaluated periodically to ensure they are still providing value, as just executing reports incurs cost in storage and processing. Implementation and maintenance processes and management activities are critical. Aligning the appropriate reporting tools to the business community is a critical success factor. Depending on the size and nature of the organization, there are probably many different reporting tools used in a variety of processes. Ensure that the audience is capable of making the best use of the reporting tools; users that are more sophisticated will have increasingly complex demands. Maintain a decision matrix based on these demands to determine upgrades or future tool selection.
+* Acesso de segurança para garantir que apenas usuários autorizados tenham acesso a elementos de dados sensíveis
+* Mecanismos de acesso para descrever como os usuários desejam interagir, relatar, examinar ou visualizar seus dados
+* Tipo de comunidade de usuários e ferramenta apropriada para utilizá-la
+* Natureza dos relatórios: resumo, detalhes, exceções, bem como formatos de frequência, tempo, distribuição e armazenamento
+* Uso potencial de recursos de visualização para fornecer saída gráfica
+* Compensações entre pontualidade e desempenho
 
-Data source governance monitoring and control are also vital. Ensure that appropriate levels of data are provisioned securely for authorized personnel, and that subscription data is accessible according to agreed-upon levels.
+Relatórios padrão devem ser avaliados periodicamente para garantir que ainda estejam agregando valor, pois a simples execução de relatórios incorre em custos de armazenamento e processamento. Os processos de implementação e manutenção, bem como as atividades de gerenciamento, são essenciais. Alinhar as ferramentas de relatórios adequadas à comunidade empresarial é um fator crítico de sucesso. Dependendo do porte e da natureza da organização, provavelmente existem muitas ferramentas de relatórios diferentes usadas em diversos processos. Certifique-se de que o público-alvo seja capaz de fazer o melhor uso das ferramentas de relatórios; usuários mais sofisticados terão demandas cada vez mais complexas. Mantenha uma matriz de decisões com base nessas demandas para determinar atualizações ou futuras seleções de ferramentas.
 
-A Center of Excellence can provide training, start-up sets, design best practices, data source tips and tricks and other point solutions or artifacts to help empower business users towards a self-service model. In addition to knowledge management, this center can provide timely communications across the developer, designer, analyst and subscribing user communities.
+O monitoramento e o controle da governança da fonte de dados também são vitais. Garanta que níveis apropriados de dados sejam provisionados com segurança para o pessoal autorizado e que os dados de assinatura sejam acessíveis de acordo com os níveis acordados.
 
-### 6.5 Metrics
+Um Centro de Excelência pode fornecer treinamento, conjuntos de inicialização, melhores práticas de design, dicas e truques sobre fontes de dados e outras soluções pontuais ou artefatos para ajudar a capacitar os usuários corporativos em direção a um modelo de autoatendimento. Além da gestão do conhecimento, este centro pode fornecer comunicações oportunas entre as comunidades de desenvolvedores, designers, analistas e usuários assinantes.
 
-#### 6.5.1 Usage Metrics
+### 6.5 Métricas
 
-DW usage metrics typically include the number of registered users, as well as connected users or concurrent connected users. These metrics show how many people within the organization are using the data warehouse. How many user accounts are licensed for each tool is a great start, especially for the auditors. However, how many actually connect with that tool is a better measurement, and how many queries (or query equivalents) are dispatched by a user community per timeframe is an even better technical measurement, especially for capacity planning. Allow for multiple analysis metrics such as audit users, generated user query capacity, and consuming users.
+#### 6.5.1 Métricas de Uso
 
-#### 6.5.2 Subject Area Coverage Percentages
+As métricas de uso do DW geralmente incluem o número de usuários registrados, bem como usuários conectados ou usuários conectados simultaneamente. Essas métricas mostram quantas pessoas dentro da organização estão usando o data warehouse. Quantas contas de usuário são licenciadas para cada ferramenta é um ótimo começo, especialmente para os auditores. No entanto, quantas pessoas realmente se conectam a essa ferramenta é uma métrica melhor, e quantas consultas (ou equivalentes de consulta) são despachadas por uma comunidade de usuários por período é uma métrica técnica ainda melhor, especialmente para o planejamento de capacidade. Permita múltiplas métricas de análise, como usuários de auditoria, capacidade de consulta de usuários gerada e usuários consumidores.
 
-Subject area coverage percentages measure how much of the warehouse (from a data topology perspective) is being accessed by each department. They also highlight which data is shared across departments, and which is not, but could be.
+#### 6.5.2 Porcentagens de Cobertura da Área de Assunto
 
-Mapping operational source(s) to targets is another natural extension, which enforces and validates the lineage and Metadata already collected, and can provide penetration analysis for which source systems are in analytical use by which departments. This can help focus tuning efforts on those high impact analytic queries by mitigating any changes to heavily used sourced objects.
+As porcentagens de cobertura da área de assunto medem quanto do warehouse (de uma perspectiva de topologia de dados) está sendo acessado por cada departamento. Elas também destacam quais dados são compartilhados entre os departamentos e quais não são, mas poderiam ser.
 
-#### 6.5.3 Response and Performance Metrics
+Mapear a(s) origem(ns) operacional(ais) para os destinos é outra extensão natural, que reforça e valida a linhagem e os metadados já coletados, e pode fornecer análise de penetração para quais sistemas de origem estão em uso analítico por quais departamentos. Isso pode ajudar a concentrar os esforços de ajuste nessas consultas analíticas de alto impacto, mitigando quaisquer alterações em objetos de origem muito utilizados.
 
-Most query tools measure response time. Retrieve response or performance metrics from tools. This data will inform metrics about the number and type of users.
+#### 6.5.3 Métricas de Resposta e Desempenho
 
-Harvest load times for each data product in raw format from the population processes. These should also be expressed as a percentage of expected support: so a mart that is expected to be refreshed daily and loaded in a four-hour window is 100% supported when it loads in four hours. Apply this process to any extracts generated for downstream processing too.
+A maioria das ferramentas de consulta mede o tempo de resposta. Recupere métricas de resposta ou desempenho das ferramentas. Esses dados informarão as métricas sobre o número e o tipo de usuários.
 
-Most tools will retain, in a log or repository, query records, data refresh, and data extract times for the objects provided to the users. Divide this data into scheduled and executed objects, and express as raw counts both attempted and succeeded. Highly popular objects or queries performing poorly are likely in-need of attention before satisfaction metrics suffer. This can guide defect analysis, maintenance planning, as well as capacity planning if a group of objects is failing regularly. Remediation may vary depending on the tool, but sometimes creating or dropping one index can result in great improvements. (See Chapter 6.)
+Colete os tempos de carregamento para cada produto de dados em formato bruto dos processos populacionais. Estes também devem ser expressos como uma porcentagem do suporte esperado: portanto, um mart que deve ser atualizado diariamente e carregado em uma janela de quatro horas tem 100% de suporte quando carrega em quatro horas. Aplique este processo também a quaisquer extrações geradas para processamento posterior.
 
-A natural follow on for this is the validation and adjustment of service levels. Adjust items that have consistently failed in the next release, or in the absence of necessary funding, the support level must be reduced.
+A maioria das ferramentas retém, em um log ou repositório, registros de consulta, atualização de dados e tempos de extração de dados para os objetos fornecidos aos usuários. Divida esses dados em objetos agendados e executados e expresse como contagens brutas as tentativas e as sucessos. Objetos muito populares ou consultas com baixo desempenho provavelmente precisam de atenção antes que as métricas de satisfação sejam afetadas. Isso pode orientar a análise de defeitos, o planejamento de manutenção e o planejamento de capacidade se um grupo de objetos estiver falhando regularmente. A correção pode variar dependendo da ferramenta, mas às vezes a criação ou remoção de um índice pode resultar em grandes melhorias. (Ver Capítulo 6.)
 
-## 7. Works Cited / Recommended
+Uma consequência natural para isso é a validação e o ajuste dos níveis de serviço. Ajuste os itens que falharam consistentemente na próxima versão ou, na ausência de financiamento necessário, o nível de suporte deve ser reduzido.
+
+## 7. Trabalhos Citados / Recomendados
 
 Adamson, Christopher. Mastering Data Warehouse Aggregates: Solutions for Star Schema Performance. John Wiley and Sons, 2006. Print.
 
@@ -742,9 +743,9 @@ Wremble, Robert and Christian Koncilia. Data Warehouses and Olap: Concepts, Arch
 
 
 [^63]: http://bit.ly/2sVPIYr
-[^64]: http://bit.ly/1FtgeIL, last accessed 2/27/2016.
+[^64]: http://bit.ly/1FtgeIL, Último acesso em 27/02/2016.
 [^65]: http://bit.ly/1udtNC8
-[^66]: The term bus came from Kimball’s electrical engineering background, where a bus was something providing common power to a number of electrical components.
-[^67]: Adapted from Kimball and Ross (2002). Used with permission.
-[^68]: The material in this section is primarily from “The Business Intelligence Market” by Cindi Howson, BIScorecard®, http://bit.ly/2tNirv5; used by permission, with minor changes and additions.
-[^69]: Dataversity refers to this trend as the “democratization of data technologies.” See Ghosh, Paramita. “A Comparative Study of Business Intelligence and Analytics Market Trends.” Dataversity. January 17, 2017. http://bit.ly/2sTgXTJ (accessed 2017-01-22).
+[^66]: O termo barramento surgiu da formação de Kimball em engenharia elétrica, onde barramento era algo que fornecia energia comum a diversos componentes elétricos.
+[^67]: Adaptado de Kimball e Ross (2002). Usado com permissão.
+[^68]: O material desta seção é principalmente de “The Business Intelligence Market” de Cindi Howson, BIScorecard®, http://bit.ly/2tNirv5; usado com permissão, com pequenas alterações e acréscimos.
+[^69]: A Dataversity se refere a essa tendência como a “democratização das tecnologias de dados”. Veja Ghosh, Paramita. “Um Estudo Comparativo das Tendências de Mercado de Business Intelligence e Analytics”. Dataversity. 17 de janeiro de 2017. http://bit.ly/2sTgXTJ (acessado em 22/01/2017).

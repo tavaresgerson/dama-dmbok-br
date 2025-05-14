@@ -1,588 +1,589 @@
-# Data Integration and Interoperability
+# Integração e Interoperabilidade de Dados
 
 ![](chapter_8.png)
 
-## 1. Introduction
+## 1. Introdução
 
-Data Integration and Interoperability (DII) describes processes related to the movement and consolidation of data within and between data stores, applications and organizations. Integration consolidates data into consistent forms, either physical or virtual. Data Interoperability is the ability for multiple systems to communicate. DII solutions enable basic data management functions on which most organizations depend:
+Integração e Interoperabilidade de Dados (DII) descreve processos relacionados à movimentação e consolidação de dados dentro e entre armazenamentos de dados, aplicativos e organizações. A integração consolida dados em formatos consistentes, físicos ou virtuais. Interoperabilidade de Dados é a capacidade de comunicação de vários sistemas. As soluções DII permitem funções básicas de gerenciamento de dados das quais a maioria das organizações depende:
 
-* Data migration and conversion
-* Data consolidation into hubs or marts
-* Integration of vendor packages into an organization’s application portfolio
-* Data sharing between applications and across organizations
-* Distributing data across data stores and data centers
-* Archiving data
-* Managing data interfaces
-* Obtaining and ingesting external data
-* Integrating structured and unstructured data
-* Providing operational intelligence and management decision support
+* Migração e conversão de dados
+* Consolidação de dados em hubs ou marts
+* Integração de pacotes de fornecedores ao portfólio de aplicativos de uma organização
+* Compartilhamento de dados entre aplicativos e entre organizações
+* Distribuição de dados entre datastores e data centers
+* Arquivamento de dados
+* Gerenciamento de interfaces de dados
+* Obtenção e ingestão de dados externos
+* Integração de dados estruturados e não estruturados
+* Fornecimento de inteligência operacional e suporte a decisões de gestão
 
-DII is dependent on these other areas of data management:
+A DII depende destas outras áreas de gerenciamento de dados:
 
-* Data Governance: For governing the transformation rules and message structures
-* Data Architecture: For designing solutions
-* Data Security: For ensuring solutions appropriately protect the security of data, whether it is persistent, virtual, or in motion between applications and organizations
-* Metadata: For tracking the technical inventory of data (persistent, virtual, and in motion), the business meaning of the data, the business rules for transforming the data, and the operational history and lineage of the data
-* Data Storage and Operations: For managing the physical instantiation of the solutions
-* Data Modeling and Design: For designing the data structures including physical persistence in databases, virtual data structures, and messages passing information between applications and organizations
+* **Governança de Dados:** Para governar as regras de transformação e estruturas de mensagens
+* **Arquitetura de Dados:** Para projetar soluções
+* **Segurança de Dados:** Para garantir que as soluções protejam adequadamente a segurança dos dados, sejam eles persistentes, virtuais ou em movimento entre aplicativos e organizações
+* **Metadados:** Para rastrear o inventário técnico de dados (persistentes, virtuais e em movimento), o significado comercial dos dados, as regras de negócios para a transformação dos dados e o histórico operacional e a linhagem dos dados
+* **Armazenamento e Operações de Dados:** Para gerenciar a instanciação física das soluções
+* **Modelagem e Design de Dados:** Para projetar estruturas de dados, incluindo persistência física em bancos de dados, estruturas de dados virtuais e mensagens que transmitem informações entre aplicativos e organizações.
 
-Data Integration and Interoperability is critical to Data Warehousing and Business Intelligence, as well as Reference Data and Master Data Management, because all of these focus on transforming and integrating data from source systems to consolidated data hubs and from hubs to the target systems where it can be delivered to data consumers, both system and human.
+A Integração e a Interoperabilidade de Dados são cruciais para Data Warehouse e Business Intelligence, bem como para Dados de Referência e Gestão de Dados Mestres, pois todos se concentram na transformação e integração de dados de sistemas de origem para hubs de dados consolidados e de hubs para sistemas de destino, onde podem ser entregues aos consumidores de dados, tanto de sistemas quanto humanos.
 
-Data Integration and Interoperability is central to the emerging area of Big Data management. Big Data seeks to integrate various types of data, including data structured and stored in databases, unstructured text data in documents or files, other types of unstructured data such as audio, video, and streaming data. This integrated data can be mined, used to develop predictive models, and deployed in operational intelligence activities.
+A Integração e a Interoperabilidade de Dados são centrais para a área emergente da gestão de Big Data. O Big Data busca integrar vários tipos de dados, incluindo dados estruturados e armazenados em bancos de dados, dados de texto não estruturados em documentos ou arquivos e outros tipos de dados não estruturados, como áudio, vídeo e streaming. Esses dados integrados podem ser minerados, usados ​​para desenvolver modelos preditivos e implantados em atividades de inteligência operacional.
 
-### 1.1 Business Drivers
+### 1.1 Impulsionadores de Negócios
 
-The need to manage data movement efficiently is a primary driver for DII. Since most organizations have hundreds or thousands of databases and stores, managing the processes for moving data between the data stores within the organization and to and from other organizations has become a central responsibility of every information technology organization. If not managed properly, the process of moving data can overwhelm IT resources and capabilities and dwarf the support requirements of traditional application and data management areas.
+A necessidade de gerenciar a movimentação de dados com eficiência é um dos principais impulsionadores da DII. Como a maioria das organizações possui centenas ou milhares de bancos de dados e repositórios, gerenciar os processos de movimentação de dados entre os repositórios de dados dentro da organização e de e para outras organizações tornou-se uma responsabilidade central de toda organização de tecnologia da informação. Se não for gerenciado adequadamente, o processo de movimentação de dados pode sobrecarregar os recursos e capacidades de TI e ofuscar os requisitos de suporte das áreas tradicionais de aplicativos e gerenciamento de dados.
 
-The advent of organizations purchasing applications from software vendors, rather than developing custom applications, has amplified the need for enterprise data integration and interoperability. Each purchased application comes with its own set of Master Data stores, transaction data stores, and reporting data stores that must integrate with the other data stores in the organization. Even Enterprise Resource Planning (ERP) systems that run the common functions of the organization, rarely, if ever, encompass all the data stores in the organization. They, too, have to have their data integrated with other organizational data.
+O advento das organizações que compram aplicativos de fornecedores de software, em vez de desenvolver aplicativos personalizados, ampliou a necessidade de integração e interoperabilidade de dados corporativos. Cada aplicativo adquirido vem com seu próprio conjunto de repositórios de Dados Mestres, repositórios de dados de transações e repositórios de dados de relatórios que devem se integrar aos outros repositórios de dados da organização. Mesmo os sistemas de Planejamento de Recursos Empresariais (ERP) que executam as funções comuns da organização raramente, ou nunca, abrangem todos os repositórios de dados da organização. Eles também precisam ter seus dados integrados a outros dados organizacionais.
 
-![Figure 66 Context Diagram: Data Integration and Interoperability](figure_66.png)
-Figure 66 Context Diagram: Data Integration and Interoperability
+![Figura 66 Diagrama de Contexto: Integração e Interoperabilidade de Dados](figure_66.png)
+Figura 66 Diagrama de Contexto: Integração e Interoperabilidade de Dados
 
-The need to manage complexity and the costs associated with complexity are reasons to architect data integration from an enterprise perspective. An enterprise design of data integration is demonstrably more efficient and cost effective than distributed or point-to-point solutions. Developing point-to-point solutions between applications can result in thousands to millions of interfaces and can quickly overwhelm the capabilities of even the most effective and efficient IT support organization.
+A necessidade de gerenciar a complexidade e os custos associados a ela são motivos para arquitetar a integração de dados sob uma perspectiva corporativa. Um projeto corporativo de integração de dados é comprovadamente mais eficiente e econômico do que soluções distribuídas ou ponto a ponto. O desenvolvimento de soluções ponto a ponto entre aplicativos pode resultar em milhares a milhões de interfaces e pode rapidamente sobrecarregar as capacidades até mesmo da organização de suporte de TI mais eficaz e eficiente.
 
-Data hubs such as data warehouses and Master Data solutions help to alleviate this problem by consolidating the data needed by many applications and providing those applications with consistent views of the data. Similarly, the complexity of managing operational and transactional data that needs to be shared across the organization can be greatly simplified using enterprise data integration techniques such as hub-and-spoke integration and canonical message models.
+Hubs de dados, como data warehouses e soluções de Dados Mestres, ajudam a aliviar esse problema, consolidando os dados necessários para muitos aplicativos e fornecendo a esses aplicativos visualizações consistentes dos dados. Da mesma forma, a complexidade do gerenciamento de dados operacionais e transacionais que precisam ser compartilhados por toda a organização pode ser bastante simplificada usando técnicas de integração de dados corporativos, como integração hub-and-spoke e modelos de mensagens canônicas.
 
-Another business driver is managing the cost of support. Moving data using multiple technologies, each requiring specific development and maintenance skills, can drive support costs up. Standard tool implementations can reduce support and staffing costs and improve the efficiency of troubleshooting efforts. Reducing the complexity of interface management can lower the cost of interface maintenance, and allow support resources to be more effectively deployed on other organizational priorities.
+Outro impulsionador de negócios é o gerenciamento do custo do suporte. A movimentação de dados por meio de diversas tecnologias, cada uma exigindo habilidades específicas de desenvolvimento e manutenção, pode aumentar os custos de suporte. Implementações de ferramentas padrão podem reduzir os custos de suporte e pessoal, além de aumentar a eficiência dos esforços de solução de problemas. Reduzir a complexidade do gerenciamento de interfaces pode reduzir o custo de manutenção de interfaces e permitir que os recursos de suporte sejam alocados de forma mais eficaz em outras prioridades organizacionais.
 
-DII also supports an organization’s ability to comply with data handling standards and regulations. Enterprise-level DII systems enable re-use of code to implement compliance rules and simplify verification of compliance.
+A DII também auxilia na capacidade da organização de cumprir os padrões e regulamentações de tratamento de dados. Sistemas de DII de nível empresarial permitem a reutilização de código para implementar regras de conformidade e simplificar a verificação da conformidade.
 
-### 1.2 Goals and Principles
+### 1.2 Objetivos e Princípios
 
-The implementation of Data Integration and Interoperability practices and solutions aims to:
+A implementação de práticas e soluções de Integração e Interoperabilidade de Dados visa:
 
-* Make data available in the format and timeframe needed by data consumers, both human and system
-* Consolidate data physically and virtually into data hubs
-* Lower cost and complexity of managing solutions by developing shared models and interfaces
-* Identify meaningful events (opportunities and threats) and automatically trigger alerts and actions
-* Support Business Intelligence, analytics, Master Data Management, and operational efficiency efforts
+* Disponibilizar os dados no formato e no prazo necessários para os consumidores de dados, tanto humanos quanto de sistemas;
+* Consolidar os dados física e virtualmente em hubs de dados;
+* Reduzir o custo e a complexidade do gerenciamento de soluções por meio do desenvolvimento de modelos e interfaces compartilhados;
+* Identificar eventos significativos (oportunidades e ameaças) e disparar alertas e ações automaticamente;
+* Apoiar os esforços de Business Intelligence, analytics, Master Data Management e eficiência operacional;
 
-When implementing DII, an organization should follow these principles:
+Ao implementar a DII, uma organização deve seguir estes princípios:
 
-* Take an enterprise perspective in design to ensure future extensibility, but implement through iterative and incremental delivery
-* Balance local data needs with enterprise data needs, including support and maintenance.
-* Ensure business accountability for Data Integration and Interoperability design and activity. Business experts should be involved in the design and modification of data transformation rules, both persistent and virtual.
+* Adotar uma perspectiva corporativa no design para garantir a extensibilidade futura, mas implementar por meio de entrega iterativa e incremental;
+* Equilibrar as necessidades locais de dados com as necessidades corporativas de dados, incluindo suporte e manutenção.
+* Garantir a responsabilidade da empresa pelo design e pelas atividades de Integração e Interoperabilidade de Dados. Especialistas de negócios devem estar envolvidos no design e na modificação das regras de transformação de dados, tanto persistentes quanto virtuais.
 
-### 1.3 Essential Concepts
+### 1.3 Conceitos Essenciais
 
-#### 1.3.1 Extract, Transform, and Load
+#### 1.3.1 Extrair, Transformar e Carregar
 
-Central to all areas in Data Integration and Interoperability is the basic process of Extract, Transform, and Load (ETL). Whether executed physically or virtually, in batch or real-time, these are the essential steps in moving data around and between applications and organizations.
+O processo básico de Extrair, Transformar e Carregar (ETL) é central para todas as áreas de Integração e Interoperabilidade de Dados. Sejam executadas física ou virtualmente, em lote ou em tempo real, essas são as etapas essenciais para a movimentação de dados entre aplicativos e organizações.
 
-Depending on data integration requirements, ETL can be performed as a periodically scheduled event (batch) or whenever new or updated data is available (real-time or event-driven). Operational data processing tends to be real-time or near real-time, while data needed for analysis or reporting is often scheduled in batch jobs.
+Dependendo dos requisitos de integração de dados, o ETL pode ser executado como um evento agendado periodicamente (lote) ou sempre que dados novos ou atualizados estiverem disponíveis (em tempo real ou orientado a eventos). O processamento operacional de dados tende a ser em tempo real ou quase real, enquanto os dados necessários para análise ou geração de relatórios são frequentemente agendados em tarefas em lote.
 
-Data integration requirements also determine whether the extracted and transformed data is physically stored in staging structures. Physical staging allows for an audit trail of steps that have occurred with the data and potential process restarts from an intermediate point. However, staging structures take up disk space and take time to write and read. Data integration needs that require very low latency will usually not include physical staging of the intermediate data integration results.
+Os requisitos de integração de dados também determinam se os dados extraídos e transformados são armazenados fisicamente em estruturas de preparação. A preparação física permite um registro de auditoria das etapas que ocorreram com os dados e possíveis reinicializações do processo a partir de um ponto intermediário. No entanto, as estruturas de preparação ocupam espaço em disco e levam tempo para gravar e ler. As necessidades de integração de dados que exigem latência muito baixa geralmente não incluem a preparação física dos resultados intermediários da integração de dados.
 
-##### 1.3.1.1 Extract
+##### 1.3.1.1 Extração
 
-The extract process includes selecting the required data and extracting it from its source. Extracted data is then staged, in a physical data store on disk or in memory. If physically staged on disk, the staging data store may be co-located with the source data store or with the target data store, or both. Ideally, if this process executes on an operational system, it is designed to use as few resources as possible, in order to avoid negatively affecting the operational processes. Batch processing during off-peak hours is an option for extracts that include complex processing to perform the selection or identify changed data to extract.
+O processo de extração inclui a seleção dos dados necessários e sua extração da origem. Os dados extraídos são então armazenados em um armazenamento físico de dados em disco ou na memória. Se estiverem fisicamente armazenados em disco, o armazenamento de dados de preparação pode ser co-localizado com o armazenamento de dados de origem ou com o armazenamento de dados de destino, ou ambos. Idealmente, se esse processo for executado em um sistema operacional, ele será projetado para usar o mínimo de recursos possível, a fim de evitar afetar negativamente os processos operacionais. O processamento em lote fora do horário de pico é uma opção para extrações que incluem processamento complexo para realizar a seleção ou identificar dados alterados a serem extraídos.
 
-##### 1.3.1.2 Transform
+##### 1.3.1.2 Transformação
 
-The transform process makes the selected data compatible with the structure of the target data store. Transformation includes cases where data is removed from the source when it moves to the target, where data is copied to multiple targets, and where the data is used to trigger events but is not persisted.
+O processo de transformação torna os dados selecionados compatíveis com a estrutura do armazenamento de dados de destino. A transformação inclui casos em que os dados são removidos da origem quando são movidos para o destino, em que os dados são copiados para vários destinos e em que os dados são usados ​​para acionar eventos, mas não são persistidos.
 
-Examples of transformation may include
+Exemplos de transformação podem incluir:
 
-* Format changes: Conversion of the technical format of the data; for example, from EBCDIC to ASCII format
-* Structure changes: Changes to the structure of the data; for example, from denormalized to normalized records
-* Semantic conversion: Conversion of data values to maintain consistent semantic representation. For example, the source gender codes might include 0, 1, 2, and 3, while the target gender codes might be represented as UNKNOWN, FEMALE, MALE, or NOT PROVIDED.
-* De-duping: Ensuring that if rules require unique key values or records, a means for scanning the target, and detecting and removing duplicate rows, is included
-* Re-ordering: Changing the order of the data elements or records to fit a defined pattern
+* **Alterações de formato:** Conversão do formato técnico dos dados; por exemplo, do formato EBCDIC para o formato ASCII
+* **Alterações de estrutura:** Alterações na estrutura dos dados; por exemplo, de registros desnormalizados para normalizados
+* **Conversão semântica:** Conversão de valores de dados para manter uma representação semântica consistente. Por exemplo, os códigos de gênero de origem podem incluir 0, 1, 2 e 3, enquanto os códigos de gênero de destino podem ser representados como DESCONHECIDO, FEMININO, MASCULINO ou NÃO FORNECIDO.
+* **Desduplicação:** Garantir que, se as regras exigirem valores-chave ou registros exclusivos, um meio de escanear o destino e detectar e remover linhas duplicadas seja incluído
+* **Reordenação:** Alterar a ordem dos elementos de dados ou registros para se adequar a um padrão definido
 
-Transformation may be performed in batch or real-time, either physically storing the result in a staging area, or virtually storing the transformed data in memory until ready to move to the load step. Data resulting from the transformation stage should be ready to integrate with data in the target structure.
+A transformação pode ser realizada em lote ou em tempo real, armazenando fisicamente o resultado em uma área de preparação ou armazenando virtualmente os dados transformados na memória até que estejam prontos para passar para a etapa de carregamento. Os dados resultantes da etapa de transformação devem estar prontos para integração com os dados na estrutura de destino.
 
-##### 1.3.1.3 Load
+##### 1.3.1.3 Carregamento
 
-The load step of ETL is physically storing or presenting the result of the transformations in the target system. Depending on the transformations performed, the target system’s purpose, and the intended use, the data may need further processing to be integrated with other data, or it may be in a final form, ready to present to consumers.
+A etapa de carregamento do ETL consiste em armazenar ou apresentar fisicamente o resultado das transformações no sistema de destino. Dependendo das transformações realizadas, da finalidade do sistema de destino e do uso pretendido, os dados podem precisar de processamento adicional para serem integrados a outros dados ou podem estar em um formato final, prontos para serem apresentados aos consumidores.
 
-![Figure 67 ETL Process Flow](figure_67.png)
-Figure 67 ETL Process Flow
+![Figura 67 Fluxo do Processo ETL](figure_67.png)
+Figura 67 Fluxo do Processo ETL
 
 ##### 1.3.1.4 ELT
 
-If the target system has more transformation capability than either the source or an intermediary application system, the order of processes may be switched to ELT – Extract, Load, and Transform. ELT allows transformations to occur after the load to the target system, often as part of the process. ELT allows source data to be instantiated on the target system as raw data, which can be useful for other processes. This is common in Big Data environments where ELT loads the data lake. (See Chapter 14.)
+Se o sistema de destino tiver mais capacidade de transformação do que o sistema de origem ou um sistema de aplicação intermediário, a ordem dos processos pode ser alterada para ELT – Extração, Carregamento e Transformação. O ELT permite que as transformações ocorram após o carregamento no sistema de destino, geralmente como parte do processo. O ELT permite que os dados de origem sejam instanciados no sistema de destino como dados brutos, o que pode ser útil para outros processos. Isso é comum em ambientes de Big Data, onde o ELT carrega o data lake. (Ver Capítulo 14.)
 
-![Figure 68 ELT Process Flow](figure_68.png)
-Figure 68 ELT Process Flow
+![Figura 68 Fluxo do Processo ELT](figure_68.png)
+Figura 68 Fluxo do Processo ELT
 
-##### 1.3.1.5 Mapping
+##### 1.3.1.5 Mapeamento
 
-A synonym for transformation, a mapping is both the process of developing the lookup matrix from source to target structures and the result of that process. A mapping defines the sources to be extracted, the rules for identifying data for extraction, targets to be loaded, rules for identifying target rows for update (if any), and any transformation rules or calculations to be applied. Many data integration tools offer visualizations of mappings that enable developers to use graphical interfaces to create transformation code.
+Sinônimo de transformação, um mapeamento é tanto o processo de desenvolvimento da matriz de consulta das estruturas de origem para destino quanto o resultado desse processo. Um mapeamento define as fontes a serem extraídas, as regras para identificar os dados para extração, os destinos a serem carregados, as regras para identificar as linhas de destino para atualização (se houver) e quaisquer regras ou cálculos de transformação a serem aplicados. Muitas ferramentas de integração de dados oferecem visualizações de mapeamentos que permitem aos desenvolvedores usar interfaces gráficas para criar código de transformação.
 
-#### 1.3.2 Latency
+#### 1.3.2 Latência
 
-Latency is the time difference between when data is generated in the source system and when the data is available for use in the target system. Different approaches to data processing result in different degrees of data latency. Latency can be high (batch) or low (event-driven) to very low (real-time synchronous).
+Latência é a diferença de tempo entre o momento em que os dados são gerados no sistema de origem e o momento em que os dados estão disponíveis para uso no sistema de destino. Diferentes abordagens para o processamento de dados resultam em diferentes graus de latência de dados. A latência pode ser alta (lote) ou baixa (orientada por eventos) a muito baixa (síncrona em tempo real).
 
-##### 1.3.2.1 Batch
+##### 1.3.2.1 Lote
 
-Most data moves between applications and organizations in clumps or files either on request by a human data consumer or automatically on a periodic schedule. This type of interaction is called batch or ETL.
+A maioria dos dados se move entre aplicativos e organizações em grupos ou arquivos, seja mediante solicitação de um consumidor de dados humano ou automaticamente em um cronograma periódico. Esse tipo de interação é chamado de lote ou ETL.
 
-Data moving in batch mode will represent either the full set of data at a given point in time, such as account balances at the end of a period, or data that has changed values since the last time the data was sent, such as address changes that have been made in a day. The set of changed data is called the delta, and the data from a point in time is called a snapshot.
+Os dados que se movimentam em lote representam o conjunto completo de dados em um determinado momento, como saldos de contas no final de um período, ou dados que mudaram de valor desde o último envio, como alterações de endereço feitas em um dia. O conjunto de dados alterados é chamado de delta, e os dados de um momento específico são chamados de snapshot.
 
-With batch data integration solutions, there is often a significant delay between when data changes in the source and when it is updated in the target, resulting in high latency. Batch processing is very useful for processing very high volumes of data in a short time window. It tends to be used for data warehouse data integration solutions, even when lower latency solutions are available.
+Com soluções de integração de dados em lote, geralmente há um atraso significativo entre o momento em que os dados mudam na origem e o momento em que são atualizados no destino, resultando em alta latência. O processamento em lote é muito útil para processar grandes volumes de dados em um curto espaço de tempo. Ele tende a ser usado em soluções de integração de dados de data warehouse, mesmo quando soluções de menor latência estão disponíveis.
 
-To achieve fast processing and lower latency, some data integration solutions use micro-batch processing which schedules batch processing to run on a much higher frequency than daily, such as every five minutes.
+Para obter um processamento rápido e menor latência, algumas soluções de integração de dados usam o processamento em microlotes, que programa o processamento em lote para ser executado em uma frequência muito maior do que a diária, como a cada cinco minutos.
 
-Batch data integration is used for data conversions, migrations, and archiving, as well as for extracting from and loading data warehouses and data marts. There are risks associated with the timing of batch processing. To minimize issues with application updates, schedule data movement between applications at the end of logical processing for the business day, or after special processing of the data has occurred at night. To avoid incomplete data sets, jobs moving data to a data warehouse should be scheduled based on the daily, weekly, or monthly reporting schedule.
+A integração de dados em lote é usada para conversões, migrações e arquivamento de dados, bem como para extração e carregamento de data warehouses e data marts. Há riscos associados ao tempo de processamento em lote. Para minimizar problemas com atualizações de aplicativos, agende a movimentação de dados entre aplicativos ao final do processamento lógico do dia útil ou após o processamento especial dos dados ter ocorrido à noite. Para evitar conjuntos de dados incompletos, as tarefas de movimentação de dados para um data warehouse devem ser agendadas com base no cronograma de relatórios diário, semanal ou mensal.
 
-##### 1.3.2.2 Change Data Capture
+##### 1.3.2.2 Captura de Dados de Alterações
 
-Change Data Capture is a method of reducing bandwidth by filtering to include only data that has been changed within a defined timeframe. Change data capture monitors a data set for changes (inserts, changes, deletes) and then passes those changes (the deltas) to other data sets, applications, and organizations that consume the data. Data may also be tagged with identifiers such as flags or timestamps as part of the process. Change data capture may be data-based or log-based. (See Chapter 6.)
+A Captura de Dados de Alterações é um método de redução de largura de banda por meio de filtragem para incluir apenas dados que foram alterados dentro de um período definido. A Captura de Dados de Alterações monitora um conjunto de dados em busca de alterações (inserções, alterações, exclusões) e, em seguida, repassa essas alterações (os deltas) para outros conjuntos de dados, aplicativos e organizações que consomem os dados. Os dados também podem ser marcados com identificadores, como sinalizadores ou carimbos de data/hora, como parte do processo. A Captura de Dados de Alterações pode ser baseada em dados ou em logs. (Ver Capítulo 6.)
 
-There are three techniques for data-based change data capture.
+Existem três técnicas para captura de dados de alterações baseadas em dados.
 
-* The source system populates specific data elements, such as timestamps within a range, or codes or flags, which serve as change indicators. The extract process uses rules to identify rows to extract.
-* The source system processes add to a simple list of objects and identifiers when changing data, which is then used to control selection of data for extraction.
-* The source system processes copy data that has changed into a separate object as part of the transaction, which is then used for extract processing. This object does not need to be within the database management system.
+* O sistema de origem preenche elementos de dados específicos, como registros de data e hora dentro de um intervalo, ou códigos ou sinalizadores, que servem como indicadores de alterações. O processo de extração usa regras para identificar as linhas a serem extraídas.
+* Os processos do sistema de origem adicionam dados a uma lista simples de objetos e identificadores ao alterar os dados, que é então usada para controlar a seleção de dados para extração.
+* O sistema de origem processa dados copiados que foram alterados para um objeto separado como parte da transação, que é então usado para o processamento de extração. Este objeto não precisa estar dentro do sistema de gerenciamento de banco de dados.
 
-These types of extraction use capabilities built into the source application, which may be resource intensive and require the ability to modify the source application.
+Esses tipos de extração usam recursos incorporados ao aplicativo de origem, que podem consumir muitos recursos e exigir a capacidade de modificar o aplicativo de origem.
 
-In log-based change data captures, data activity logs created by the database management system are copied and processed, looking for specific changes that are then translated and applied to a target database. Complex translations may be difficult, but intermediary structures resembling the source object can be used as a way of staging the changes for further processing.
+Na captura de dados de alterações baseada em log, os logs de atividades de dados criados pelo sistema de gerenciamento de banco de dados são copiados e processados, buscando alterações específicas que são então traduzidas e aplicadas a um banco de dados de destino. Traduções complexas podem ser difíceis, mas estruturas intermediárias semelhantes ao objeto de origem podem ser usadas como uma forma de preparar as alterações para processamento posterior.
 
-##### 1.3.2.3 Near-real-time and Event-driven
+##### 1.3.2.3 Quase em tempo real e orientado a eventos
 
-Most data integration solutions that are not performed in batches use a near-real-time or event-driven solution. Data is processed in smaller sets spread across the day in a defined schedule, or data is processed when an event happens, such as a data update. Near-real-time processing has a lower latency than batch processing and often a lower system load as the work is distributed over time, but it is usually slower than a synchronized data integration solution. Near-real-time data integration solutions are usually implemented using an enterprise service bus.
+A maioria das soluções de integração de dados que não são executadas em lotes utiliza uma solução quase em tempo real ou orientada a eventos. Os dados são processados ​​em conjuntos menores distribuídos ao longo do dia em um cronograma definido, ou são processados ​​quando um evento ocorre, como uma atualização de dados. O processamento quase em tempo real tem uma latência menor do que o processamento em lote e, frequentemente, uma carga menor no sistema, pois o trabalho é distribuído ao longo do tempo, mas geralmente é mais lento do que uma solução de integração de dados sincronizada. Soluções de integração de dados quase em tempo real geralmente são implementadas usando um barramento de serviços corporativo.
 
-State information and process dependencies must be monitored by the target application load process. Data coming into the target may not be available in the exact order that the target needs to build the correct target data. For example, process Master Data or dimensional data prior to transactional data that uses that Master Data.
+Informações de estado e dependências de processo devem ser monitoradas pelo processo de carregamento do aplicativo de destino. Os dados que chegam ao destino podem não estar disponíveis na ordem exata em que o destino precisa para construir os dados de destino corretos. Por exemplo, processe Dados Mestres ou dados dimensionais antes dos dados transacionais que utilizam esses Dados Mestres.
 
-##### 1.3.2.4 Asynchronous
+##### 1.3.2.4 Assíncrono
 
-In an asynchronous data flow, the system providing data does not wait for the receiving system to acknowledge update before continuing processing. Asynchronous implies that either the sending or receiving system could be off-line for some period without the other system also being off-line.
+Em um fluxo de dados assíncrono, o sistema que fornece os dados não espera que o sistema receptor confirme a atualização antes de continuar o processamento. Assíncrono implica que tanto o sistema emissor quanto o receptor podem ficar off-line por algum período sem que o outro sistema também fique off-line.
 
-Asynchronous data integration does not prevent the source application from continuing its processing, or cause the source application to be unavailable if any of the target applications are unavailable. Since the data updates made to applications in an asynchronous configuration are not immediate, the integration is called near-real-time. The delay between updates made in the source and relayed to target data sets in a near-real-time environment is usually measured in seconds or minutes.
+A integração assíncrona de dados não impede que o aplicativo de origem continue seu processamento, nem faz com que o aplicativo de origem fique indisponível caso algum dos aplicativos de destino esteja indisponível. Como as atualizações de dados feitas nos aplicativos em uma configuração assíncrona não são imediatas, a integração é chamada de integração quase em tempo real. O atraso entre as atualizações feitas na origem e retransmitidas aos conjuntos de dados de destino em um ambiente quase em tempo real é geralmente medido em segundos ou minutos.
 
-##### 1.3.2.5 Real-time, Synchronous
+##### 1.3.2.5 Tempo Real, Síncrono
 
-There are situations where no time delay or other differences between source and target data is acceptable. When data in one data set must be kept perfectly in synch with the data in another data set, then a real-time, synchronous solution must be used.
+Existem situações em que nenhum atraso ou outras diferenças entre os dados de origem e de destino são aceitáveis. Quando os dados em um conjunto de dados precisam ser mantidos perfeitamente sincronizados com os dados em outro conjunto de dados, uma solução síncrona em tempo real deve ser usada.
 
-In a synchronous integration solution, an executing process waits to receive confirmation from other applications or processes prior to executing its next activity or transaction. This means that the solution can process fewer transactions because it has to spend time waiting for confirmation of data synchronization. If any of the applications that need the update are not available then the transaction cannot be completed in the primary application. This situation keeps data synchronized but has the potential to make strategic applications dependent on less critical applications.
+Em uma solução de integração síncrona, um processo em execução aguarda a confirmação de outros aplicativos ou processos antes de executar sua próxima atividade ou transação. Isso significa que a solução pode processar menos transações porque precisa aguardar a confirmação da sincronização dos dados. Se algum dos aplicativos que precisam da atualização não estiver disponível, a transação não poderá ser concluída no aplicativo principal. Essa situação mantém os dados sincronizados, mas tem o potencial de tornar os aplicativos estratégicos dependentes de aplicativos menos críticos.
 
-Solutions using this type of architecture exist on a continuum based on how much difference between data sets might be possible and how much such a solution is worth. Data sets may be kept in synch through database capabilities such as two-phase commits, which ensure that all updates in a business transaction are all successful, or none is made. For example, financial institutions use two-phase commit solutions to ensure that financial transaction tables are absolutely synchronized with financial balance tables. Most programming does not use two-phase commit. There is a very small possibility that if an application is interrupted unexpectedly then one data set may be updated but not another.
+Soluções que utilizam esse tipo de arquitetura existem em um continuum baseado na possível diferença entre os conjuntos de dados e no valor de tal solução. Os conjuntos de dados podem ser mantidos sincronizados por meio de recursos de banco de dados, como confirmações em duas fases, que garantem que todas as atualizações em uma transação comercial sejam bem-sucedidas ou que nenhuma seja feita. Por exemplo, instituições financeiras utilizam soluções de confirmação em duas fases para garantir que as tabelas de transações financeiras estejam absolutamente sincronizadas com as tabelas de balanço financeiro. A maioria dos programas não utiliza confirmação em duas fases. Há uma possibilidade muito pequena de que, se um aplicativo for interrompido inesperadamente, um conjunto de dados seja atualizado, mas outro não.
 
-Real-time, synchronous solutions require less state management than asynchronous solutions because the order in which transactions are processed is clearly managed by the updating applications. However, they also may lead to blocking and delay other transactions.
+Soluções síncronas em tempo real exigem menos gerenciamento de estado do que soluções assíncronas, pois a ordem em que as transações são processadas é claramente gerenciada pelos aplicativos de atualização. No entanto, eles também podem levar ao bloqueio e atraso de outras transações.
 
-##### 1.3.2.6 Low Latency or Streaming
+##### 1.3.2.6 Baixa Latência ou Streaming
 
-Tremendous advances have been made in developing extremely fast data integration solutions. These solutions require a large investment in hardware and software. The extra costs of low latency solutions are justified if an organization requires extremely fast data movement across large distances. ‘Streaming data’ flows from computer systems on a real-time continuous basis immediately as events occur. Data streams capture events like the purchase of goods or financial securities, social media comments, and readouts from sensors monitoring location, temperature, usage, or other values.
+Avanços tremendos foram feitos no desenvolvimento de soluções de integração de dados extremamente rápidas. Essas soluções exigem um grande investimento em hardware e software. Os custos extras de soluções de baixa latência são justificados se uma organização precisa de movimentação de dados extremamente rápida em grandes distâncias. "Dados de streaming" fluem de sistemas de computador em tempo real e contínuo, imediatamente após a ocorrência de eventos. Os fluxos de dados capturam eventos como a compra de bens ou títulos financeiros, comentários em mídias sociais e leituras de sensores que monitoram localização, temperatura, uso ou outros valores.
 
-Low latency data integration solutions are designed to minimize the response time to events. They may include the use of hardware solutions like solid-state disk or software solutions like in-memory databases so that the process does not have to slow down to read or write to traditional disk. The read and write processes to traditional disk drives is thousands of times slower than processing data in-memory or on solid-state disk drives.
+Soluções de integração de dados de baixa latência são projetadas para minimizar o tempo de resposta a eventos. Elas podem incluir o uso de soluções de hardware, como discos de estado sólido, ou soluções de software, como bancos de dados em memória, para que o processo não precise ficar lento para ler ou gravar em discos tradicionais. Os processos de leitura e gravação em unidades de disco tradicionais são milhares de vezes mais lentos do que o processamento de dados em memória ou em unidades de disco de estado sólido.
 
-Asynchronous solutions are usually used in low latency solutions so that transactions do not need to wait for confirmation from subsequent processes before processing the next piece of data. 
+Soluções assíncronas são geralmente utilizadas em soluções de baixa latência para que as transações não precisem aguardar a confirmação de processos subsequentes antes de processar o próximo dado.
 
-Massive multi-processing, or simultaneous processing, is also a common configuration in low latency solutions so that the processing of incoming data can be spread out over many processors simultaneously, and not bottlenecked by a single or small number of processors.
+O multiprocessamento massivo, ou processamento simultâneo, também é uma configuração comum em soluções de baixa latência, para que o processamento dos dados recebidos possa ser distribuído por vários processadores simultaneamente, sem ser restringido por um único ou um pequeno número de processadores.
 
-#### 1.3.3 Replication
+#### 1.3.3 Replicação
 
-To provide better response time for users located around the world, some applications maintain exact copies of data sets in multiple physical locations. Replication solutions minimize the performance impact of analytics and queries on the primary transactional operating environment.
+Para proporcionar um melhor tempo de resposta para usuários localizados em todo o mundo, alguns aplicativos mantêm cópias exatas de conjuntos de dados em vários locais físicos. As soluções de replicação minimizam o impacto no desempenho de análises e consultas no ambiente operacional transacional primário.
 
-Such a solution must synchronize the physically distributed data set copies. Most database management systems have replication utilities to do this work. These utilities work best when the data sets are all maintained in the same database management system technology. Replication solutions usually monitor the log of changes to the data set, not the data set itself. They minimize the impact on any operational applications because they do not compete with the applications for access to the data set. Only data from the change log passes between replicated copies. Standard replication solutions are near-real-time; there is a small delay between a change in one copy of the data set and another.
+Essa solução deve sincronizar as cópias do conjunto de dados fisicamente distribuídas. A maioria dos sistemas de gerenciamento de banco de dados possui utilitários de replicação para realizar esse trabalho. Esses utilitários funcionam melhor quando todos os conjuntos de dados são mantidos na mesma tecnologia do sistema de gerenciamento de banco de dados. As soluções de replicação geralmente monitoram o log de alterações no conjunto de dados, não o conjunto de dados em si. Elas minimizam o impacto em quaisquer aplicativos operacionais, pois não competem com os aplicativos pelo acesso ao conjunto de dados. Somente os dados do log de alterações são transmitidos entre as cópias replicadas. As soluções de replicação padrão são quase em tempo real; há um pequeno atraso entre uma alteração em uma cópia do conjunto de dados e outra.
 
-Because the benefits of replication solutions — minimal effect on the source data set and minimal amount of data being passed — are very desirable, replication is used in many data integration solutions, even those that do not include long distance physical distribution. The database management utilities do not require extensive programming, so there tend to be few programming bugs.
+Como os benefícios das soluções de replicação — efeito mínimo no conjunto de dados de origem e quantidade mínima de dados transmitidos — são muito desejáveis, a replicação é usada em muitas soluções de integração de dados, mesmo aquelas que não incluem distribuição física de longa distância. Os utilitários de gerenciamento de banco de dados não exigem programação extensa, portanto, tendem a haver poucos bugs de programação.
 
-Replication utilities work optimally when source and target data sets are exact copies of each other. Differences between source and target introduce risks to synchronization. If the ultimate target is not an exact copy of the source then it is necessary to maintain a staging area to house an exact copy of the sources. This requires extra disk usage and possibly extra database technology.
+Os utilitários de replicação funcionam de forma ideal quando os conjuntos de dados de origem e destino são cópias exatas um do outro. Diferenças entre origem e destino apresentam riscos à sincronização. Se o destino final não for uma cópia exata da origem, é necessário manter uma área de preparação para armazenar uma cópia exata das fontes. Isso requer uso extra de disco e possivelmente tecnologia de banco de dados adicional.
 
-Data replication solutions are not optimal if changes to the data may occur at multiple copy sites. If it is possible that the same piece of data is changed at two different sites, then there is a risk that the data might get unsynchronized, or one of the sites may have their changes overwritten without warning. (See Chapter 6.)
+As soluções de replicação de dados não são ideais se alterações nos dados puderem ocorrer em vários locais de cópia. Se for possível que o mesmo dado seja alterado em dois locais diferentes, existe o risco de os dados ficarem dessincronizados ou de um dos locais ter suas alterações substituídas sem aviso prévio. (Consulte o Capítulo 6.)
 
-#### 1.3.4 Archiving
+#### 1.3.4 Arquivamento
 
-Data that is used infrequently or not actively used may be moved to an alternate data structure or storage solution that is less costly to the organization. ETL functions can be used to transport and possibly transform the archive data to the data structures in the archive environment. Use archives to store data from applications that are being retired, as well as data from production operational systems that have not been used for a long time, to improve operational efficiency.
+Dados usados ​​com pouca frequência ou que não são usados ​​ativamente podem ser movidos para uma estrutura de dados ou solução de armazenamento alternativa que seja menos custosa para a organização. Funções ETL podem ser usadas para transportar e possivelmente transformar os dados de arquivo para as estruturas de dados no ambiente de arquivo. Use arquivos para armazenar dados de aplicativos que estão sendo descontinuados, bem como dados de sistemas operacionais de produção que não são usados ​​há muito tempo, para melhorar a eficiência operacional.
 
-It is critical to monitor archive technology to ensure that the data is still accessible when technology changes. Having an archive in an older structure or format unreadable by newer technology can be a risk, especially for data that is still legally required. (See Chapter 9.)
+É fundamental monitorar a tecnologia de arquivo para garantir que os dados ainda estejam acessíveis quando a tecnologia muda. Ter um arquivo em uma estrutura ou formato antigo, ilegível por tecnologias mais recentes, pode ser um risco, especialmente para dados que ainda são exigidos por lei. (Consulte o Capítulo 9.)
 
-#### 1.3.5 Enterprise Message Format / Canonical Model
+#### 1.3.5 Formato de Mensagem Corporativa / Modelo Canônico
 
-A canonical data model is a common model used by an organization or data exchange group that standardizes the format in which data will be shared. In a hub-and-spoke data interaction design pattern, all systems that want to provide or receive data interact only with a central information hub. Data is transformed from or to a sending or receiving system based on a common or enterprise message format for the organization (a canonical model). (See Chapter 5.) Use of a canonical model limits the number of data transformations needed by any system or organization exchanging data. Each system needs to transform data only to and from the central canonical model, rather than to the format of the multitude of systems with which it may want to exchange data.
+Um modelo de dados canônico é um modelo comum usado por uma organização ou grupo de troca de dados que padroniza o formato no qual os dados serão compartilhados. Em um padrão de design de interação de dados hub-and-spoke, todos os sistemas que desejam fornecer ou receber dados interagem apenas com um hub central de informações. Os dados são transformados de ou para um sistema emissor ou receptor com base em um formato de mensagem comum ou corporativo para a organização (um modelo canônico). (Consulte o Capítulo 5.) O uso de um modelo canônico limita o número de transformações de dados necessárias para qualquer sistema ou organização que troque dados. Cada sistema precisa transformar dados apenas de e para o modelo canônico central, em vez de para o formato da multiplicidade de sistemas com os quais deseja trocar dados.
 
-Although developing and agreeing on a shared message format is a major undertaking, having a canonical model can significantly reduce the complexity of data interoperability in an enterprise, and thus greatly lower the cost of support. The creation and management of the common canonical data model for all data interactions is a complex item of overhead that is required in the implementation of an enterprise data integration solution using a hub-and-spoke interaction model. It is justifiable in support of managing the data interactions between more than three systems and critical for managing data interactions in environments of more than 100 application systems.
+Embora desenvolver e concordar com um formato de mensagem compartilhado seja uma tarefa importante, ter um modelo canônico pode reduzir significativamente a complexidade da interoperabilidade de dados em uma empresa e, assim, reduzir significativamente o custo de suporte. A criação e o gerenciamento do modelo de dados canônico comum para todas as interações de dados representam um item complexo de overhead necessário na implementação de uma solução de integração de dados corporativos utilizando um modelo de interação hub-and-spoke. É justificável para auxiliar no gerenciamento das interações de dados entre mais de três sistemas e essencial para o gerenciamento de interações de dados em ambientes com mais de 100 sistemas de aplicação.
 
-#### 1.3.6 Interaction Models
+#### 1.3.6 Modelos de Interação
 
-Interaction models describe ways to make connections between systems in order to transfer data.
+Os modelos de interação descrevem maneiras de estabelecer conexões entre sistemas para transferir dados.
 
-##### 1.3.6.1 Point-to-point
+##### 1.3.6.1 Ponto a ponto
 
-The vast majority of interactions between systems that share data do so ‘point-to-point’; they pass data directly to each other. This model makes sense in the context of a small set of systems. However, it becomes quickly inefficient and increases organizational risk when many systems require the same data from the same sources.
+A grande maioria das interações entre sistemas que compartilham dados o fazem "ponto a ponto"; eles passam dados diretamente entre si. Este modelo faz sentido no contexto de um pequeno conjunto de sistemas. No entanto, torna-se rapidamente ineficiente e aumenta o risco organizacional quando muitos sistemas exigem os mesmos dados das mesmas fontes.
 
-* Impacts to processing: If source systems are operational, then the workload from supplying data could affect processing.
-* Managing interfaces: The number of interfaces needed in a point-to-point interaction model approaches the number of systems squared (s2). Once they are built, these interfaces need to be maintained and supported. The workload to manage and support interfaces between the systems can quickly become greater than supporting the systems themselves.
-* Potential for inconsistency: Design issues arise when multiple systems require different versions or formats of the data. The use of multiple interfaces to obtain data will lead to inconsistencies in the data sent to downstream systems.
+* Impactos no processamento: Se os sistemas de origem estiverem operacionais, a carga de trabalho do fornecimento de dados poderá afetar o processamento.
+
+* Gerenciamento de interfaces: O número de interfaces necessárias em um modelo de interação ponto a ponto se aproxima do número de sistemas ao quadrado (s²). Uma vez construídas, essas interfaces precisam ser mantidas e suportadas. A carga de trabalho para gerenciar e suportar interfaces entre os sistemas pode rapidamente se tornar maior do que suportar os próprios sistemas.
+* Potencial para inconsistência: Problemas de projeto surgem quando múltiplos sistemas exigem diferentes versões ou formatos de dados. O uso de múltiplas interfaces para obter dados levará a inconsistências nos dados enviados aos sistemas posteriores.
 
 ##### 1.3.6.2 Hub-and-spoke
 
-The hub-and-spoke model, an alternative to point-to-point, consolidates shared data (either physically or virtually) in a central data hub that many applications can use. All systems that want to exchange data do so through a central common data control system, rather than directly with one another (point-to-point). Data Warehouses, Data Marts, Operational Data Stores, and Master Data Management hubs are the most well-known examples of data hubs.
+O modelo hub-and-spoke, uma alternativa ao modelo ponto a ponto, consolida dados compartilhados (física ou virtualmente) em um hub de dados central que pode ser usado por diversas aplicações. Todos os sistemas que desejam trocar dados o fazem por meio de um sistema central de controle de dados comum, em vez de diretamente entre si (ponto a ponto). Data Warehouses, Data Marts, Armazenamentos de Dados Operacionais e hubs de Gerenciamento de Dados Mestres são os exemplos mais conhecidos de hubs de dados.
 
-The hubs provide consistent views of the data with limited performance impact on the source systems. Data hubs even minimize the number of systems and extracts that must access the data sources, thus minimizing the impact on the source system resources. Adding new systems to the portfolio only requires building interfaces to the data hub. Hub-and-spoke interaction is more efficient and can be cost-justified even if the number of systems involved is relatively small, but it becomes critical to managing a portfolio of systems in the hundreds or thousands.
+Os hubs fornecem visualizações consistentes dos dados com impacto limitado no desempenho dos sistemas de origem. Os hubs de dados minimizam até mesmo o número de sistemas e extrações que precisam acessar as fontes de dados, minimizando assim o impacto nos recursos do sistema de origem. Adicionar novos sistemas ao portfólio requer apenas a construção de interfaces para o hub de dados. A interação hub-and-spoke é mais eficiente e pode ser justificada em termos de custo, mesmo que o número de sistemas envolvidos seja relativamente pequeno, mas torna-se crítica para gerenciar um portfólio de sistemas na casa das centenas ou milhares.
 
-Enterprise Service Buses (ESB) are the data integration solution for near real-time sharing of data between many systems, where the hub is a virtual concept of the standard format or the canonical model for sharing data in the organization.
+Enterprise Service Buses (ESB) são a solução de integração de dados para compartilhamento de dados quase em tempo real entre vários sistemas, onde o hub é um conceito virtual do formato padrão ou do modelo canônico para compartilhamento de dados na organização.
 
-Hub-and-spoke may not always be the best solution. Some hub-and-spoke model latency is unacceptable or performance is insufficient. The hub itself creates overhead in a hub-and-spoke architecture. A point-to-point solution would not require the hub. However, the benefits of the hub outweigh the drawbacks of the overhead as soon as three or more systems are involved in sharing data. Use of the hub-and-spoke design pattern for the interchange of data can drastically reduce the proliferation of data transformation and integration solutions and thus dramatically simplify the necessary organizational support.
+O hub-and-spoke pode nem sempre ser a melhor solução. Algumas latências do modelo hub-and-spoke são inaceitáveis ​​ou o desempenho é insuficiente. O próprio hub cria sobrecarga em uma arquitetura hub-and-spoke. Uma solução ponto a ponto não exigiria o hub. No entanto, os benefícios do hub superam as desvantagens da sobrecarga assim que três ou mais sistemas estão envolvidos no compartilhamento de dados. O uso do padrão de design hub-and-spoke para o intercâmbio de dados pode reduzir drasticamente a proliferação de soluções de transformação e integração de dados e, assim, simplificar drasticamente o suporte organizacional necessário.
 
-##### 1.3.6.3 Publish - Subscribe
+##### 1.3.6.3 Publicar - Assinar
 
-A publish and subscribe model involves systems pushing data out (publish), and other systems pulling data in (subscribe). Systems providing data are listed in a catalog of data services, and systems looking to consume data subscribe to those services. When data is published, the data is automatically sent to the subscribers.
+Um modelo de publicação e assinatura envolve sistemas que enviam dados (publicar) e outros sistemas que recebem dados (assinar). Os sistemas que fornecem dados são listados em um catálogo de serviços de dados, e os sistemas que buscam consumir dados assinam esses serviços. Quando os dados são publicados, eles são enviados automaticamente aos assinantes.
 
-When multiple data consumers want a certain set of data or data in a certain format, developing that data set centrally and making it available to all who need it ensures that all constituents receive a consistent data set in a timely manner.
+Quando vários consumidores de dados desejam um determinado conjunto de dados ou dados em um determinado formato, desenvolver esse conjunto de dados centralmente e disponibilizá-lo a todos que precisam garante que todos os constituintes recebam um conjunto de dados consistente em tempo hábil.
 
-#### 1.3.7 DII Architecture Concepts
+#### 1.3.7 Conceitos da Arquitetura DII
 
-##### 1.3.7.1 Application Coupling
+##### 1.3.7.1 Acoplamento de Aplicações
 
-Coupling describes the degree to which two systems are entwined. Two systems that are tightly coupled usually have a synchronous interface, where one system waits for a response from the other. Tight coupling represents a riskier operation: if one system is unavailable then they are both effectively unavailable, and the business continuity plan for both have to be the same. (See Chapter 6.)
+O acoplamento descreve o grau em que dois sistemas estão interligados. Dois sistemas fortemente acoplados geralmente têm uma interface síncrona, onde um sistema aguarda uma resposta do outro. O acoplamento fortemente acoplado representa uma operação mais arriscada: se um sistema estiver indisponível, ambos estarão efetivamente indisponíveis, e o plano de continuidade de negócios para ambos deve ser o mesmo. (Ver Capítulo 6.)
 
-Where possible, loose coupling is a preferred interface design, where data is passed between systems without waiting for a response and one system may be unavailable without causing the other to be unavailable. Loose coupling can be implemented using various techniques with services, APIs, or message queues. Figure 69 illustrates a possible loose coupling design.
+Sempre que possível, o acoplamento fraco é um projeto de interface preferencial, onde os dados são transmitidos entre sistemas sem aguardar uma resposta e um sistema pode ficar indisponível sem causar a indisponibilidade do outro. O acoplamento fraco pode ser implementado usando várias técnicas com serviços, APIs ou filas de mensagens. A Figura 69 ilustra um possível projeto de acoplamento fraco.
 
-![Figure 69 Application Coupling](figure_69.png)
-Figure 69 Application Coupling
+![Figura 69 Acoplamento de Aplicações](figure_69.png)
+Figura 69 Acoplamento de Aplicações
 
-Service Oriented Architecture using an Enterprise Service Bus is an example of a loosely coupled data interaction design pattern.
+A Arquitetura Orientada a Serviços utilizando um Barramento de Serviços Corporativos é um exemplo de um padrão de projeto de interação de dados com acoplamento fraco.
 
-Where the systems are loosely coupled, replacement of systems in the application inventory can theoretically be performed without rewriting the systems with which they interact, because the interaction points are well-defined.
+Quando os sistemas são fracamente acoplados, a substituição de sistemas no inventário de aplicações pode, teoricamente, ser realizada sem reescrever os sistemas com os quais eles interagem, pois os pontos de interação são bem definidos.
 
-##### 1.3.7.2 Orchestration and Process Controls
+##### 1.3.7.2 Orquestração e Controles de Processos
 
-Orchestration is the term used to describe how multiple processes are organized and executed in a system. All systems handling messages or data packets must be able to manage the order of execution of those processes, in order to preserve consistency and continuity.
+Orquestração é o termo usado para descrever como múltiplos processos são organizados e executados em um sistema. Todos os sistemas que manipulam mensagens ou pacotes de dados devem ser capazes de gerenciar a ordem de execução desses processos, a fim de preservar a consistência e a continuidade.
 
-Process Controls are the components that ensure shipment, delivery, extraction, and loading of data is accurate and complete. An often-overlooked aspect of basic data movement architecture, controls include:
+Controles de Processo são os componentes que garantem que o envio, a entrega, a extração e o carregamento de dados sejam precisos e completos. Um aspecto frequentemente negligenciado da arquitetura básica de movimentação de dados, os controles incluem:
 
-* Database activity logs
-* Batch job logs
-* Alerts
-* Exception logs
-* Job dependence charts with remediation options, standard responses
-* Job ‘clock’ information, such as the timing of dependent jobs, the expected length of the jobs, and the computing (available) window time
+* Logs de atividades do banco de dados
+* Logs de tarefas em lote
+* Alertas
+* Logs de exceções
+* Gráficos de dependência de tarefas com opções de correção e respostas padrão
+* Informações do "relógio" da tarefa, como o tempo das tarefas dependentes, a duração esperada das tarefas e o tempo da janela de computação (disponível)
 
-##### 1.3.7.3 Enterprise Application Integration (EAI)
+##### 1.3.7.3 Integração de Aplicações Corporativas (EAI)
 
-In an enterprise application integration model (EAI), software modules interact with one another only through well-defined interface calls (application programming interfaces – APIs). Data stores are updated only by their own software modules and other software cannot reach in to the data in an application but only access through the defined APIs. EAI is built on object-oriented concepts, which emphasize reuse and the ability to replace any module without impact on any other.
+Em um modelo de integração de aplicações corporativas (EAI), os módulos de software interagem entre si apenas por meio de chamadas de interface bem definidas (interfaces de programação de aplicações – APIs). Os repositórios de dados são atualizados apenas por seus próprios módulos de software e outros softwares não conseguem acessar os dados em uma aplicação, apenas por meio das APIs definidas. O EAI é construído com base em conceitos orientados a objetos, que enfatizam a reutilização e a capacidade de substituir qualquer módulo sem afetar os demais.
 
-##### 1.3.7.4 Enterprise Service Bus (ESB)
+##### 1.3.7.4 Barramento de Serviços Corporativos (ESB)
 
-An Enterprise Service Bus is a system that acts as an intermediary between systems, passing messages between them. Applications can send and receive messages or files using the ESB, and are encapsulated from other processes existing on the ESB. An example of loose coupling, the ESB acts as the service between the applications. (See Figure 70.)
+Um Barramento de Serviços Corporativos é um sistema que atua como intermediário entre sistemas, transmitindo mensagens entre eles. Os aplicativos podem enviar e receber mensagens ou arquivos usando o ESB e são encapsulados de outros processos existentes no ESB. Um exemplo de acoplamento fraco: o ESB atua como o serviço entre os aplicativos. (Veja a Figura 70.)
 
-![Figure 70 Enterprise Service Bus](figure_70.png)
-Figure 70 Enterprise Service Bus
+![Figura 70 Barramento de Serviços Corporativos](figure_70.png)
+Figura 70 Barramento de Serviços Corporativos
 
-##### 1.3.7.5 Service-Oriented Architecture (SOA)
+##### 1.3.7.5 Arquitetura Orientada a Serviços (SOA)
 
-Most mature enterprise data integration strategies utilize the idea of service-oriented architecture (SOA), where the functionality of providing data or updating data (or other data services) can be provided through well-defined service calls between applications. With this approach, applications do not have to have direct interaction with or knowledge of the inner workings of other applications. SOA enables application independence and the ability for an organization to replace systems without needing to make significant changes to the systems that interfaced with them.
+A maioria das estratégias maduras de integração de dados corporativos utiliza a ideia de arquitetura orientada a serviços (SOA), na qual a funcionalidade de fornecer ou atualizar dados (ou outros serviços de dados) pode ser fornecida por meio de chamadas de serviço bem definidas entre aplicativos. Com essa abordagem, os aplicativos não precisam ter interação direta ou conhecimento do funcionamento interno de outros aplicativos. A SOA permite a independência de aplicativos e a capacidade de uma organização substituir sistemas sem a necessidade de fazer alterações significativas nos sistemas que interagem com eles.
 
-The goal of service-oriented architecture is to have well-defined interaction between self-contained software modules. Each module performs functions (a.k.a. provides services) to other software modules or to human consumers. The key concept is that SOA architecture provides independent services: the service has no fore knowledge of the calling application and the implementation of the service is a black box to the calling application. A service-oriented architecture may be implemented with various technologies including web services, messaging, RESTful APIs, etc. Services are usually implemented as APIs (application programming interfaces) that are available to be called by application systems (or human consumers). A well-defined API registry describes what options are available, parameters that need to be provided, and resulting information that is provided.
+O objetivo da arquitetura orientada a serviços é ter uma interação bem definida entre módulos de software autocontidos. Cada módulo executa funções (ou seja, fornece serviços) para outros módulos de software ou para consumidores humanos. O conceito-chave é que a arquitetura SOA fornece serviços independentes: o serviço não tem conhecimento prévio do aplicativo que o solicita e a implementação do serviço é uma caixa-preta para o aplicativo que o solicita. Uma arquitetura orientada a serviços pode ser implementada com diversas tecnologias, incluindo serviços web, mensagens, APIs RESTful, etc. Os serviços geralmente são implementados como APIs (interfaces de programação de aplicações) disponíveis para serem chamadas por sistemas de aplicação (ou consumidores humanos). Um registro de API bem definido descreve quais opções estão disponíveis, os parâmetros que precisam ser fornecidos e as informações resultantes que são fornecidas.
 
-Data services, which may include the addition, deletion, update, and retrieval of data, are specified in a catalog of available services. To achieve the enterprise goals of scalability (supporting integrations between all applications in the enterprise without using unreasonable amounts of resources to do so) and reuse (having services that are leveraged by all requestors of data of a type), a strong governance model must be established around the design and registration of services and APIs. Prior to developing new data services, it is necessary to ensure that no service already exists that could provide the requested data. In addition, new services need to be designed to meet broad requirements so that they will not be limited to the immediate need but can be reused.
+Os serviços de dados, que podem incluir a adição, exclusão, atualização e recuperação de dados, são especificados em um catálogo de serviços disponíveis. Para atingir os objetivos corporativos de escalabilidade (suportar integrações entre todas as aplicações da empresa sem usar quantidades excessivas de recursos para isso) e reutilização (ter serviços que sejam aproveitados por todos os solicitantes de dados de um tipo), um modelo de governança forte deve ser estabelecido em torno do design e registro de serviços e APIs. Antes de desenvolver novos serviços de dados, é necessário garantir que nenhum serviço já exista que possa fornecer os dados solicitados. Além disso, novos serviços precisam ser projetados para atender a requisitos amplos, de modo que não se limitem à necessidade imediata, mas possam ser reutilizados.
 
-##### 1.3.7.6 Complex Event Processing (CEP)
+##### 1.3.7.6 Processamento de Eventos Complexos (CEP)
 
-Event processing is a method of tracking and analyzing (processing) streams of information (data) about things that happen (events), and deriving a conclusion from them. Complex event processing (CEP) combines data from multiple sources to identify meaningful events (such as opportunities or threats) to predict behavior or activity and automatically trigger real-time response, such as suggesting a product for a consumer to purchase. Rules are set to guide the event processing and routing.
+O processamento de eventos é um método de rastrear e analisar (processar) fluxos de informações (dados) sobre coisas que acontecem (eventos) e derivar uma conclusão a partir deles. O processamento de eventos complexos (CEP) combina dados de múltiplas fontes para identificar eventos significativos (como oportunidades ou ameaças) para prever comportamentos ou atividades e acionar automaticamente respostas em tempo real, como sugerir um produto para um consumidor comprar. Regras são definidas para orientar o processamento e o roteamento de eventos.
 
-Organizations can use complex event processing to predict behavior or activity and automatically trigger real-time response. Events such as sales leads, web clicks, orders, or customer service calls may happen across the various layers of an organization. Alternatively, they may include news items, text messages, social media posts, stock market feeds, traffic reports, weather reports, or other kinds of data. An event may also be defined as a change of state, when a measurement exceeds a predefined threshold of time, temperature, or other value.
+As organizações podem usar o processamento de eventos complexos para prever comportamentos ou atividades e acionar automaticamente respostas em tempo real. Eventos como leads de vendas, cliques na web, pedidos ou chamadas de atendimento ao cliente podem ocorrer em várias camadas de uma organização. Alternativamente, podem incluir notícias, mensagens de texto, postagens em mídias sociais, feeds do mercado de ações, boletins de trânsito, boletins meteorológicos ou outros tipos de dados. Um evento também pode ser definido como uma mudança de estado, quando uma medição excede um limite predefinido de tempo, temperatura ou outro valor.
 
-CEP presents some data challenges. In many cases, the rate at which events occur makes it impractical to retrieve the additional data necessary to interpret the event as it occurs. Efficient processing typically mandates pre-positioning some data in the CEP engine’s memory.
+O CEP apresenta alguns desafios de dados. Em muitos casos, a taxa de ocorrência dos eventos torna impraticável a recuperação dos dados adicionais necessários para interpretá-los à medida que ocorrem. O processamento eficiente normalmente exige o pré-posicionamento de alguns dados na memória do mecanismo CEP.
 
-Supporting complex event processing requires an environment that can integrate vast amounts of data of various types. Because of the volume and variety of data usually involved in creating predictions, complex event processing is often tied to Big Data. It often requires use of technologies that support ultra-low latency requirements such as processing real-time streaming data and in-memory databases. (See Chapter 14.)
+O suporte ao processamento complexo de eventos requer um ambiente capaz de integrar grandes quantidades de dados de vários tipos. Devido ao volume e à variedade de dados geralmente envolvidos na criação de previsões, o processamento complexo de eventos frequentemente está vinculado ao Big Data. Frequentemente, ele requer o uso de tecnologias que suportam requisitos de latência ultrabaixa, como o processamento de dados de streaming em tempo real e bancos de dados na memória. (Consulte o Capítulo 14.)
 
-##### 1.3.7.7 Data Federation and Virtualization
+##### 1.3.7.7 Federação e Virtualização de Dados
 
-When data exists in disparate data stores, it can be brought together in ways other than physical integration. Data Federation provides access to a combination of individual data stores, regardless of structure. Data Virtualization enables distributed databases, as well as multiple heterogeneous data stores, to be accessed and viewed as a single database. (See Chapter 6.)
+Quando os dados existem em armazenamentos de dados distintos, eles podem ser reunidos de outras maneiras além da integração física. A Federação de Dados fornece acesso a uma combinação de armazenamentos de dados individuais, independentemente da estrutura. A Virtualização de Dados permite que bancos de dados distribuídos, bem como vários armazenamentos de dados heterogêneos, sejam acessados ​​e visualizados como um único banco de dados. (Consulte o Capítulo 6.)
 
-##### 1.3.7.8 Data-as-a-Service (DaaS)
+##### 1.3.7.8 Dados como Serviço (DaaS)
 
-Software-as-a-service (SaaS) is a delivery and licensing model. An application is licensed to provide services, but the software and data are located at a data center controlled by the software vendor, rather than in the data center of the licensing organization. There are similar concepts for providing various tiers of computing infrastructure-as-a-service (IT-as-a-service, platform-as-a-service, database-as-a-service).
+Software como Serviço (SaaS) é um modelo de entrega e licenciamento. Uma aplicação é licenciada para fornecer serviços, mas o software e os dados estão localizados em um data center controlado pelo fornecedor do software, e não no data center da organização licenciadora. Existem conceitos semelhantes para o fornecimento de vários níveis de infraestrutura de computação como serviço (TI como serviço, plataforma como serviço, banco de dados como serviço).
 
-One definition of Data-as-a-Service (DaaS) is data licensed from a vendor and provided on demand, rather than stored and maintained in the data center of the licensing organization. A common example includes information on the securities sold through a stock exchange and associated prices (current and historical).
+Uma definição de Dados como Serviço (DaaS) são dados licenciados de um fornecedor e fornecidos sob demanda, em vez de armazenados e mantidos no data center da organização licenciadora. Um exemplo comum inclui informações sobre os títulos vendidos em uma bolsa de valores e os preços associados (atuais e históricos).
 
-Although Data-as-a-Service certainly lends itself to vendors that sell data to stakeholders within an industry, the ‘service’ concept is also used within an organization to provide enterprise data or data services to various functions and operational systems. Service organizations provide a catalog of services available, service levels, and pricing schedules.
+Embora Dados como Serviço certamente se aplique a fornecedores que vendem dados para stakeholders dentro de um setor, o conceito de "serviço" também é usado dentro de uma organização para fornecer dados corporativos ou serviços de dados para diversas funções e sistemas operacionais. As organizações de serviços fornecem um catálogo de serviços disponíveis, níveis de serviço e tabelas de preços.
 
-##### 1.3.7.9 Cloud-based Integration
+##### 1.3.7.9 Integração baseada em nuvem
 
-Cloud-based integration (also known as integration platform-as-a-service or IPaaS) is a form of systems integration delivered as a cloud service that addresses data, process, service oriented architecture (SOA), and application integration use cases.
+A integração baseada em nuvem (também conhecida como plataforma de integração como serviço ou IPaaS) é uma forma de integração de sistemas fornecida como um serviço em nuvem que aborda dados, processos, arquitetura orientada a serviços (SOA) e casos de uso de integração de aplicações.
 
-Prior to the emergence of cloud computing, integration could be categorized as either internal or business to business (B2B). Internal integration requirements are serviced through an on-premises middleware platform, and typically use a service bus (ESB) to manage exchange of data between systems. Business-to-business integration is serviced through EDI (electronic data interchange) gateways or value-added networks (VAN) or market places.
+Antes do surgimento da computação em nuvem, a integração podia ser categorizada como interna ou business-to-business (B2B). Os requisitos de integração interna são atendidos por meio de uma plataforma de middleware local e normalmente utilizam um barramento de serviço (ESB) para gerenciar a troca de dados entre sistemas. A integração business-to-business é atendida por meio de gateways EDI (intercâmbio eletrônico de dados), redes de valor agregado (VAN) ou marketplaces.
 
-The advent of SaaS applications created a new kind of demand for integrating data located outside of an organization’s data center, met through cloud-based integration. Since their emergence, many such services have also developed the capability to integrate on-premises applications as well as function as EDI gateways. Cloud-based integration solutions are usually run as SaaS applications in the data centers of the vendors and not the organizations that own the data being integrated. Cloud-based integration involves interacting with the SaaS application data to be integrated using SOA interaction services. (See Chapter 6.)
+O advento dos aplicativos SaaS criou um novo tipo de demanda por integração de dados localizados fora do data center de uma organização, atendida por meio da integração baseada em nuvem. Desde o seu surgimento, muitos desses serviços também desenvolveram a capacidade de integrar aplicativos locais, bem como funcionar como gateways EDI. Soluções de integração baseadas em nuvem geralmente são executadas como aplicativos SaaS nos data centers dos fornecedores e não nas organizações proprietárias dos dados a serem integrados. A integração baseada em nuvem envolve a interação com os dados do aplicativo SaaS a serem integrados usando serviços de interação SOA. (Consulte o Capítulo 6.)
 
-#### 1.3.8 Data Exchange Standards
+#### 1.3.8 Padrões de Troca de Dados
 
-Data Exchange Standards are formal rules for the structure of data elements. ISO (International Standards Organization) has developed data exchange standards, as have many industries. A data exchange specification is a common model used by an organization or data exchange group that standardizes the format in which data will be shared. An exchange pattern defines a structure for data transformations needed by any system or organization exchanging data. Data needs to be mapped to the exchange specification.
+Os Padrões de Troca de Dados são regras formais para a estrutura de elementos de dados. A ISO (Organização Internacional de Padronização) desenvolveu padrões de troca de dados, assim como muitos setores. Uma especificação de troca de dados é um modelo comum usado por uma organização ou grupo de troca de dados que padroniza o formato no qual os dados serão compartilhados. Um padrão de troca define uma estrutura para as transformações de dados necessárias para qualquer sistema ou organização que troque dados. Os dados precisam ser mapeados para a especificação de troca.
 
-Although developing and agreeing on a shared message format is a major undertaking, having an agreed upon exchange format or data layout between systems can significantly simplify data interoperability in an enterprise, lowering the cost of support and enabling better understanding of the data.
+Embora desenvolver e concordar com um formato de mensagem compartilhado seja uma tarefa árdua, ter um formato de troca ou layout de dados acordado entre sistemas pode simplificar significativamente a interoperabilidade de dados em uma empresa, reduzindo o custo de suporte e permitindo uma melhor compreensão dos dados.
 
-The National Information Exchange Model (NIEM) was developed to exchange documents and transactions across government organizations in the United States. The intention is that the sender and receiver of information share a common, unambiguous understanding of the meaning of that information. Conformance to NIEM ensures that a basic set of information is well understood and carries the same consistent meaning across various communities, thus allowing interoperability.
+O Modelo Nacional de Troca de Informações (NIEM) foi desenvolvido para a troca de documentos e transações entre organizações governamentais nos Estados Unidos. A intenção é que o remetente e o destinatário das informações compartilhem uma compreensão comum e inequívoca do significado dessas informações. A conformidade com o NIEM garante que um conjunto básico de informações seja bem compreendido e tenha o mesmo significado consistente em várias comunidades, permitindo assim a interoperabilidade.
 
-NIEM uses Extensible Markup Language (XML) for schema definitions and element representation, which allows the structure and meaning of data to be defined through simple, but carefully defined XML syntax rules.
+O NIEM utiliza a Linguagem de Marcação Extensível (XML) para definições de esquemas e representação de elementos, o que permite que a estrutura e o significado dos dados sejam definidos por meio de regras de sintaxe XML simples, mas cuidadosamente definidas.
 
-## 2. Data Integration Activities
+## 2. Atividades de Integração de Dados
 
-Data Integration and Interoperability involves getting data where it is needed, when it is needed, and in the form in which it is needed. Data integration activities follow a development lifecycle. They begin with planning and move through design, development, testing, and implementation. Once implemented, integrated systems must be managed, monitored and enhanced.
+Integração e Interoperabilidade de Dados envolve obter dados onde e quando necessários. As atividades de integração de dados seguem um ciclo de vida de desenvolvimento. Começam com o planejamento e passam pelo design, desenvolvimento, testes e implementação. Uma vez implementados, os sistemas integrados precisam ser gerenciados, monitorados e aprimorados.
 
-### 2.1 Plan and Analyze
+### 2.1 Planejar e Analisar
 
-#### 2.1.1 Define Data Integration and Lifecycle Requirements
+#### 2.1.1 Definir Requisitos de Integração e Ciclo de Vida de Dados
 
-Defining data integration requirements involves understanding the organization’s business objectives, as well as the data required and the technology initiatives proposed to meet those objectives. It is also necessary to gather any relevant laws or regulations regarding the data to be used. Some activities may need to be restricted due to the data contents, and knowing up front will prevent issues later. Requirements must also account for organizational policy on data retention and other parts of the data lifecycle. Often requirements for data retention will differ by data domain and type.
+Definir os requisitos de integração de dados envolve a compreensão dos objetivos de negócios da organização, bem como dos dados necessários e das iniciativas tecnológicas propostas para atingi-los. Também é necessário reunir todas as leis ou regulamentações relevantes relativas aos dados a serem utilizados. Algumas atividades podem precisar ser restringidas devido ao conteúdo dos dados, e conhecê-los antecipadamente evitará problemas posteriores. Os requisitos também devem levar em conta a política organizacional sobre retenção de dados e outras partes do ciclo de vida dos dados. Frequentemente, os requisitos para retenção de dados variam de acordo com o domínio e o tipo de dados.
 
-Data integration and lifecycle requirements are usually defined by business analysts, data stewards, and architects in various functions, including IT, who have a desire to get data in a certain place, in a certain format, and integrated with other data. The requirements will determine the type of DII interaction model, which then determines the technology and services necessary to fulfill the requirements.
+Os requisitos de integração e ciclo de vida de dados são geralmente definidos por analistas de negócios, administradores de dados e arquitetos em diversas funções, incluindo TI, que desejam obter dados em um determinado local, em um determinado formato e integrados a outros dados. Os requisitos determinarão o tipo de modelo de interação DII, que, por sua vez, determinará a tecnologia e os serviços necessários para atender aos requisitos.
 
-The process of defining requirements creates and uncovers valuable Metadata. This Metadata should be managed throughout the data lifecycle, from discovery through operations. The more complete and accurate an organization’s Metadata, the better its ability to manage the risks and costs of data integration.
+O processo de definição de requisitos cria e revela Metadados valiosos. Esses Metadados devem ser gerenciados ao longo de todo o ciclo de vida dos dados, desde a descoberta até as operações. Quanto mais completos e precisos forem os Metadados de uma organização, maior será sua capacidade de gerenciar os riscos e custos da integração de dados.
 
-#### 2.1.2 Perform Data Discovery
+#### 2.1.2 Realizar a Descoberta de Dados
 
-Data discovery should be performed prior to design. The goal of data discovery is to identify potential sources of data for the data integration effort. Discovery will identify where data might be acquired and where it might be integrated. The process combines a technical search, using tools that scan the Metadata and/or actual contents on an organization’s data sets, with subject matter expertise (i.e., interviewing people who work with the data of interest).
+A descoberta de dados deve ser realizada antes do projeto. O objetivo da descoberta de dados é identificar potenciais fontes de dados para o esforço de integração. A descoberta identificará onde os dados podem ser adquiridos e onde podem ser integrados. O processo combina uma busca técnica, utilizando ferramentas que examinam os Metadados e/ou o conteúdo real dos conjuntos de dados de uma organização, com expertise no assunto (ou seja, entrevistar pessoas que trabalham com os dados de interesse).
 
-Discovery also includes high-level assessment of data quality, to determine whether the data is fit for the purposes of the integration initiative. This assessment requires not only reviewing existing documentation, interviewing subject matter experts, but also verifying information gathered against the actual data through data profiling or other analysis. (See Section 2.1.4.) In almost all cases, there will be discrepancies between what is believed about a data set and what is actually found to be true.
+A descoberta também inclui uma avaliação de alto nível da qualidade dos dados, para determinar se os dados são adequados para os propósitos da iniciativa de integração. Essa avaliação requer não apenas a revisão da documentação existente, entrevistando especialistas no assunto, mas também a verificação das informações coletadas em relação aos dados reais por meio de perfis de dados ou outras análises. (Consulte a Seção 2.1.4.) Em quase todos os casos, haverá discrepâncias entre o que se acredita sobre um conjunto de dados e o que realmente se constata ser verdadeiro.
 
-Data discovery produces or adds to an inventory of organizational data. This inventory should be maintained in a Metadata repository. Ensure this inventory is maintained as a standard part of integration efforts: add or remove data stores, document structure changes.
+A descoberta de dados produz ou adiciona dados organizacionais a um inventário. Esse inventário deve ser mantido em um repositório de metadados. Garanta que esse inventário seja mantido como parte padrão dos esforços de integração: adicione ou remova repositórios de dados, documente alterações na estrutura.
 
-Most organizations have a need to integrate data from their internal systems. However, data integration solutions may also involve the acquisition of data from outside the organization. There is a vast and ever growing amount of valuable information available for free, or from data vendors. Data from external sources can be extremely valuable when integrated with data from within an organization. However, acquiring and integrating external data takes planning.
+A maioria das organizações precisa integrar dados de seus sistemas internos. No entanto, as soluções de integração de dados também podem envolver a aquisição de dados de fora da organização. Há uma quantidade vasta e crescente de informações valiosas disponíveis gratuitamente ou de fornecedores de dados. Dados de fontes externas podem ser extremamente valiosos quando integrados a dados internos de uma organização. No entanto, a aquisição e a integração de dados externos exigem planejamento.
 
-#### 2.1.3 Document Data Lineage
+#### 2.1.3 Documentar a Linhagem de Dados
 
-The process of data discovery will also uncover information about how data flows through an organization. This information can be used to document high-level data lineage: how the data under analysis is acquired or created by the organization, where it moves and is changed within the organization, and how the data is used by the organization for analytics, decision-making, or event triggering. Detailed lineage can include the rules according to which data is changed, and the frequency of changes.
+O processo de descoberta de dados também revelará informações sobre como os dados fluem por uma organização. Essas informações podem ser usadas para documentar a linhagem de dados de alto nível: como os dados em análise são adquiridos ou criados pela organização, para onde se movem e são alterados dentro da organização e como os dados são usados ​​pela organização para análises, tomada de decisões ou acionamento de eventos. A linhagem detalhada pode incluir as regras segundo as quais os dados são alterados e a frequência das alterações.
 
-Analysis of lineage may identify updates required to documentation of systems in use. Custom-coded ETL and other legacy data manipulation objects should be documented to ensure that the organization can analyze the impact of any changes in the data flow.
+A análise da linhagem pode identificar atualizações necessárias na documentação dos sistemas em uso. ETL com codificação personalizada e outros objetos de manipulação de dados legados devem ser documentados para garantir que a organização possa analisar o impacto de quaisquer alterações no fluxo de dados.
 
-The analysis process may also identify opportunities for improvements in the existing data flow. For example, finding that code can be upgraded to a simple call to a function in a tool, or can be discarded as no longer relevant. Sometimes an old tool is performing a transformation that is undone later in the process. Finding and removing these inefficiencies can greatly help with the project’s success and with an organization’s overall ability to use its data.
+O processo de análise também pode identificar oportunidades de melhorias no fluxo de dados existente. Por exemplo, descobrir que o código pode ser atualizado para uma simples chamada de função em uma ferramenta ou pode ser descartado por não ser mais relevante. Às vezes, uma ferramenta antiga está realizando uma transformação que é desfeita posteriormente no processo. Encontrar e remover essas ineficiências pode contribuir significativamente para o sucesso do projeto e para a capacidade geral da organização de usar seus dados.
 
-#### 2.1.4 Profile Data
+#### 2.1.4 Dados de Perfil
 
-Understanding data content and structure is essential to successful integration of data. Data profiling contributes to this end. Actual data structure and contents always differ from what is assumed. Sometimes differences are small; other times they are large enough to derail an integration effort. Profiling can help integration teams discover these differences and use that knowledge to make better decisions about sourcing and design. If data profiling is skipped, then information that should influence design will not be discovered until testing or operations.
+Compreender o conteúdo e a estrutura dos dados é essencial para uma integração bem-sucedida. A criação de perfil de dados contribui para esse objetivo. A estrutura e o conteúdo reais dos dados sempre diferem do que se supõe. Às vezes, as diferenças são pequenas; outras vezes, são grandes o suficiente para inviabilizar um esforço de integração. A criação de perfil pode ajudar as equipes de integração a descobrir essas diferenças e usar esse conhecimento para tomar melhores decisões sobre sourcing e design. Se a criação de perfil de dados for ignorada, as informações que deveriam influenciar o design só serão descobertas durante os testes ou as operações.
 
-Basic profiling involves analysis of:
+A criação de perfil básica envolve a análise de:
 
-* Data format as defined in the data structures and inferred from the actual data
-* Data population, including the levels of null, blank, or defaulted data
-* Data values and how closely they correspond to a defined set of valid values
-* Patterns and relationships internal to the data set, such as related fields and cardinality rules
-* Relationships to other data sets
+* Formato dos dados conforme definido nas estruturas de dados e inferido a partir dos dados reais
+* População de dados, incluindo os níveis de dados nulos, em branco ou padrão
+* Valores dos dados e sua correspondência com um conjunto definido de valores válidos
+* Padrões e relacionamentos internos ao conjunto de dados, como campos relacionados e regras de cardinalidade
+* Relacionamentos com outros conjuntos de dados
 
-More extensive profiling of the potential source and target data sets is required to understand how well the data meets the requirements of the particular data integration initiative. Profile both the sources and targets to understand how to transform the data to match requirements.
+Uma criação de perfil mais abrangente dos potenciais conjuntos de dados de origem e destino é necessária para entender o quão bem os dados atendem aos requisitos da iniciativa específica de integração de dados. Crie o perfil das fontes e dos alvos para entender como transformar os dados para atender aos requisitos.
 
-One goal of profiling is to assess the quality of data. Assessing the fitness of the data for a particular use requires documenting business rules and measuring how well the data meets those business rules. Assessing accuracy requires comparing to a definitive set of data that has been determined to be correct. Such data sets are not always available, so measuring accuracy may not be possible, especially as part of a profiling effort.
+Um dos objetivos da criação de perfil é avaliar a qualidade dos dados. Avaliar a adequação dos dados para um uso específico requer a documentação das regras de negócios e a mensuração do grau de conformidade dos dados com essas regras. Avaliar a precisão requer a comparação com um conjunto definitivo de dados que foi determinado como correto. Esses conjuntos de dados nem sempre estão disponíveis, portanto, mensurar a precisão pode não ser possível, especialmente como parte de um esforço de criação de perfil.
 
-As with high-level data discovery, data profiling includes verifying assumptions about the data against the actual data. Capture results of data profiling in a Metadata repository for use on later projects and use what is learned from the process to improve the accuracy of existing Metadata (Olson, 2003). (See Chapter 13.)
+Assim como na descoberta de dados de alto nível, a criação de perfil de dados inclui a verificação de suposições sobre os dados em relação aos dados reais. Capture os resultados da criação de perfil de dados em um repositório de metadados para uso em projetos posteriores e use o que for aprendido com o processo para melhorar a precisão dos metadados existentes (Olson, 2003). (Consulte o Capítulo 13.)
 
-The requirement to profile data must be balanced with an organization’s security and privacy regulations. (See Chapter 7.)
+O requisito para criar o perfil de dados deve ser equilibrado com as normas de segurança e privacidade de uma organização. (Consulte o Capítulo 7.)
 
-#### 2.1.5 Collect Business Rules
+#### 2.1.5 Coletar Regras de Negócios
 
-Business rules are a critical subset of requirements. A business rule is a statement that defines or constrains an aspect of business processing. Business rules are intended to assert business structure or to control or influence the behavior of the business. Business rules fall into one of four categories: definitions of business terms, facts relating terms to each other, constraints or action assertions, and derivations.
+As regras de negócios são um subconjunto crítico de requisitos. Uma regra de negócios é uma declaração que define ou restringe um aspecto do processamento de negócios. As regras de negócios têm como objetivo afirmar a estrutura do negócio ou controlar ou influenciar o comportamento do negócio. As regras de negócios se enquadram em uma das quatro categorias: definições de termos de negócios, fatos que relacionam os termos entre si, restrições ou afirmações de ação e derivações.
 
-Use business rules to support Data Integration and Interoperability at various points, to:
+Use regras de negócios para dar suporte à Integração e Interoperabilidade de Dados em vários pontos, para:
 
-* Assess data in potential source and target data sets
-* Direct the flow of data in the organization
-* Monitor the organization’s operational data
-* Direct when to automatically trigger events and alerts
+* Avaliar dados em conjuntos de dados de origem e destino em potencial
+* Direcionar o fluxo de dados na organização
+* Monitorar os dados operacionais da organização
+* Direcionar quando acionar eventos e alertas automaticamente
 
-For Master Data Management, business rules include match rules, merge rules, survivorship rules, and trust rules. For data archiving, data warehousing, and other situations where a data store is in use, the business rules also include data retention rules.
+Para o Gerenciamento de Dados Mestres, as regras de negócios incluem regras de correspondência, regras de mesclagem, regras de sobrevivência e regras de confiança. Para arquivamento de dados, data warehouse e outras situações em que um armazenamento de dados está em uso, as regras de negócios também incluem regras de retenção de dados.
 
-Gathering business rules is also called rules harvesting or business rule mining. The business analyst or data steward can extract the rules from existing documentation (like use cases, specifications, or system code), or they may also organize workshops and interviews with subject matter experts (SMEs), or both.
+A coleta de regras de negócios também é chamada de coleta de regras ou mineração de regras de negócios. O analista de negócios ou administrador de dados pode extrair as regras da documentação existente (como casos de uso, especificações ou código do sistema), ou pode também organizar workshops e entrevistas com especialistas no assunto (SMEs), ou ambos.
 
-### 2.2 Design Data Integration Solutions
+### 2.2 Projetar Soluções de Integração de Dados
 
-#### 2.2.1 Design Data Integration Architecture
+#### 2.2.1 Projetar Arquitetura de Integração de Dados
 
-Data integration solutions should be specified at both the enterprise level and the individual solution level (see Chapter 4). By establishing enterprise standards, the organization saves time in implementing individual solutions, because assessments and negotiations have been performed in advance of need. An enterprise approach saves money in the cost of licenses through group discounts and in the costs of operating a consistent and less complex set of solutions. Operational resources that support and back up one another can be part of a shared pool.
+As soluções de integração de dados devem ser especificadas tanto no nível corporativo quanto no nível da solução individual (consulte o Capítulo 4). Ao estabelecer padrões corporativos, a organização economiza tempo na implementação de soluções individuais, pois as avaliações e negociações são realizadas antecipadamente. Uma abordagem corporativa economiza dinheiro no custo de licenças por meio de descontos para grupos e nos custos de operação de um conjunto consistente e menos complexo de soluções. Recursos operacionais que se apoiam e respaldam mutuamente podem fazer parte de um pool compartilhado.
 
-Design a solution to meet the requirements, reusing as many of the existing Data Integration and Interoperability components as is feasible. A solution architecture indicates the techniques and technologies that will be used. It will include an inventory of the involved data structures (both persistent and transitive, existing and required), an indication of the orchestration and frequency of data flow, regulatory and security concerns and remediation, and operating concerns around backup and recovery, availability, and data archive and retention.
+Projete uma solução para atender aos requisitos, reutilizando o máximo possível dos componentes existentes de Integração de Dados e Interoperabilidade. Uma arquitetura de solução indica as técnicas e tecnologias que serão utilizadas. Incluirá um inventário das estruturas de dados envolvidas (persistentes e transitivas, existentes e necessárias), uma indicação da orquestração e frequência do fluxo de dados, preocupações regulatórias e de segurança e remediação, e preocupações operacionais em torno de backup e recuperação, disponibilidade e arquivamento e retenção de dados.
 
-##### 2.2.1.1 Select Interaction Model
+##### 2.2.1.1 Selecione o Modelo de Interação
 
-Determine which interaction model or combination will fulfill the requirements – hub-and-spoke, point-to-point, or publish-subscribe. If the requirements match an existing interaction pattern already implemented, re-use the existing system as much as possible, to reduce development efforts.
+Determine qual modelo ou combinação de interação atenderá aos requisitos – hub-and-spoke, ponto a ponto ou publicação-assinatura. Se os requisitos corresponderem a um padrão de interação já implementado, reutilize o sistema existente o máximo possível para reduzir os esforços de desenvolvimento.
 
-##### 2.2.1.2 Design Data Services or Exchange Patterns
+##### 2.2.1.2 Projetar Serviços de Dados ou Padrões de Troca
 
-Create or re-use existing integration flows to move the data. These data services should be companions to existing similar data services, but be careful to not create multiple almost-identical services, as troubleshooting and support increasingly become difficult if services proliferate. If an existing data flow can be modified to support multiple needs, it may be worthwhile to make that change instead of creating a new service. Any data exchange specification design should start with industry standards, or other exchange patterns already existing. When possible, make any changes to existing patterns generic enough to be useful to other systems; having specific exchange patterns that only relate to one exchange has the same issues as point-to-point connections.
+Crie ou reutilize fluxos de integração existentes para mover os dados. Esses serviços de dados devem ser complementares a serviços de dados semelhantes existentes, mas tome cuidado para não criar vários serviços quase idênticos, pois a solução de problemas e o suporte se tornam cada vez mais difíceis com a proliferação de serviços. Se um fluxo de dados existente puder ser modificado para atender a múltiplas necessidades, pode valer a pena fazer essa alteração em vez de criar um novo serviço. Qualquer projeto de especificação de troca de dados deve começar com padrões do setor ou outros padrões de troca já existentes. Sempre que possível, faça alterações nos padrões existentes de forma genérica o suficiente para serem úteis a outros sistemas; ter padrões de troca específicos que se relacionam apenas a uma troca apresenta os mesmos problemas que as conexões ponto a ponto.
 
-#### 2.2.2 Model Data Hubs, Interfaces, Messages, and Data Services
+#### 2.2.2 Hubs de Dados, Interfaces, Mensagens e Serviços de Dados do Modelo
 
-Data structures needed in Data Integration and Interoperability include those in which data persists, such as Master Data Management hubs, data warehouses and marts, and operational data stores, and those that are transient and used only for moving or transforming data, such as interfaces, message layouts, and canonical models. Both types should be modeled. (See Chapter 5.)
+As estruturas de dados necessárias para a Integração e Interoperabilidade de Dados incluem aquelas nas quais os dados persistem, como hubs de Gerenciamento de Dados Mestres, data warehouses e marts e armazenamentos de dados operacionais, e aquelas que são transitórias e usadas apenas para mover ou transformar dados, como interfaces, layouts de mensagens e modelos canônicos. Ambos os tipos devem ser modelados. (Consulte o Capítulo 5.)
 
-#### 2.2.3 Map Data Sources to Targets
+#### 2.2.3 Mapear Fontes de Dados para Destinos
 
-Almost all data integration solutions include transforming data from source to target structures. Mapping sources to targets involves specifying the rules for transforming data from one location and format to another. For each attribute mapped, a mapping specification
+Quase todas as soluções de integração de dados incluem a transformação de dados de estruturas de origem para destino. O mapeamento de fontes para destinos envolve a especificação das regras para a transformação de dados de um local e formato para outro. Para cada atributo mapeado, uma especificação de mapeamento
 
-* Indicates the technical format of the source and target
-* Specifies transformations required for all intermediate staging points between source and target
-* Describes how each attribute in a final or intermediate target data store will be populated
-* Describes whether data values need to be transformed; for example, by looking up the source value in a table that indicates the appropriate target value
-* Describes what calculations are required
+* Indica o formato técnico da origem e do destino
+* Especifica as transformações necessárias para todos os pontos intermediários de preparação entre a origem e o destino
+* Descreve como cada atributo em um armazenamento de dados de destino final ou intermediário será preenchido
+* Descreve se os valores de dados precisam ser transformados; Por exemplo, consultando o valor de origem em uma tabela que indica o valor de destino apropriado.
+* Descreve quais cálculos são necessários.
 
-Transformation may be performed on a batch schedule, or triggered by the occurrence of a real-time event. It may be accomplished through physical persistence of the target format or through virtual presentation of the data in the target format.
+A transformação pode ser realizada em um agendamento em lote ou acionada pela ocorrência de um evento em tempo real. Ela pode ser realizada por meio da persistência física do formato de destino ou por meio da apresentação virtual dos dados no formato de destino.
 
-#### 2.2.4 Design Data Orchestration
+#### 2.2.4 Projetar a Orquestração de Dados
 
-The flow of data in a data integration solution must be designed and documented. Data orchestration is the pattern of data flows from start to finish, including intermediate steps, required to complete the transformation and/or transaction.
+O fluxo de dados em uma solução de integração de dados deve ser projetado e documentado. A orquestração de dados é o padrão de fluxos de dados do início ao fim, incluindo etapas intermediárias, necessárias para concluir a transformação e/ou transação.
 
-Batch data integration orchestration will indicate the frequency of the data movement and transformation. Batch data integration is usually coded into a scheduler that triggers the start at a certain time, periodicity, or when an event occurs. The schedule may include multiple steps with dependencies.
+A orquestração da integração de dados em lote indicará a frequência da movimentação e transformação dos dados. A integração de dados em lote geralmente é codificada em um agendador que aciona o início em um determinado horário, periodicidade ou quando um evento ocorre. O agendamento pode incluir várias etapas com dependências.
 
-Real-time data integration orchestration is usually triggered by an event, such as new or updated data. Real-time data integration orchestration is usually more complex and implemented across multiple tools. It may not be linear in nature.
+A orquestração da integração de dados em tempo real geralmente é acionada por um evento, como dados novos ou atualizados. A orquestração da integração de dados em tempo real geralmente é mais complexa e implementada em várias ferramentas. Pode não ser linear por natureza.
 
-### 2.3 Develop Data Integration Solutions
+### 2.3 Desenvolver Soluções de Integração de Dados
 
-#### 2.3.1 Develop Data Services
+#### 2.3.1 Desenvolver Serviços de Dados
 
-Develop services to access, transform, and deliver data as specified, matching the interaction model selected. Tools or vendor suites are most frequently used to implement data integration solutions, such as data transformation, Master Data Management, data warehousing, etc. Using consistent tools or standard vendor suites across the organization for these various purposes can simplify operational support and lower operating costs by enabling shared support solutions.
+Desenvolver serviços para acessar, transformar e entregar dados conforme especificado, de acordo com o modelo de interação selecionado. Ferramentas ou conjuntos de fornecedores são usados ​​com mais frequência para implementar soluções de integração de dados, como transformação de dados, Gestão de Dados Mestres, data warehousing, etc. O uso de ferramentas consistentes ou conjuntos de fornecedores padrão em toda a organização para esses diversos propósitos pode simplificar o suporte operacional e reduzir os custos operacionais, permitindo soluções de suporte compartilhadas.
 
-#### 2.3.2 Develop Data Flows
+#### 2.3.2 Desenvolver Fluxos de Dados
 
-Integration or ETL data flows will usually be developed within tools specialized to manage those flows in a proprietary way. Batch data flows will be developed in a scheduler (usually the enterprise standard scheduler) that will manage the order, frequency, and dependency of executing the data integration pieces that have been developed.
+Fluxos de dados de integração ou ETL geralmente são desenvolvidos em ferramentas especializadas para gerenciar esses fluxos de forma proprietária. Fluxos de dados em lote são desenvolvidos em um agendador (geralmente o agendador padrão corporativo) que gerencia a ordem, a frequência e a dependência da execução das partes de integração de dados desenvolvidas.
 
-Interoperability requirements may include developing mappings or coordination points between data stores. Some organizations use an ESB to subscribe to data that is created or changed in the organization and other applications to publish changes to data. The enterprise service bus will poll the applications constantly to see if they have any data to publish and deliver to them new or changed data for which they have subscribed.
+Requisitos de interoperabilidade podem incluir o desenvolvimento de mapeamentos ou pontos de coordenação entre armazenamentos de dados. Algumas organizações usam um ESB para assinar dados criados ou alterados na organização e outros aplicativos para publicar alterações nos dados. O barramento de serviços corporativos pesquisa os aplicativos constantemente para verificar se eles têm dados para publicar e entrega a eles dados novos ou alterados para os quais se inscreveram.
 
-Developing real-time data integration flows involves monitoring for events that should trigger the execution of services to acquire, transform, or publish data. This is usually implemented within one or multiple proprietary technologies and is best implemented with a solution that can manage the operation across technologies.
+O desenvolvimento de fluxos de integração de dados em tempo real envolve o monitoramento de eventos que devem acionar a execução de serviços para adquirir, transformar ou publicar dados. Isso geralmente é implementado em uma ou várias tecnologias proprietárias e é melhor implementado com uma solução que possa gerenciar a operação entre tecnologias.
 
-#### 2.3.3 Develop Data Migration Approach
+#### 2.3.3 Desenvolver a Abordagem de Migração de Dados
 
-Data needs to be moved when new applications are implemented or when applications are retired or merged. This process involves transformation of data to the format of the receiving application. Almost all application development projects involve some data migration, even if all that is involved is the population of Reference Data. Migration is not quite a one-time process, as it needs to be executed for testing phases as well as final implementation.
+Os dados precisam ser movidos quando novos aplicativos são implementados ou quando aplicativos são descontinuados ou mesclados. Esse processo envolve a transformação dos dados para o formato do aplicativo receptor. Quase todos os projetos de desenvolvimento de aplicativos envolvem alguma migração de dados, mesmo que isso envolva apenas o preenchimento de Dados de Referência. A migração não é um processo único, pois precisa ser executada tanto nas fases de teste quanto na implementação final.
 
-Data migration projects are frequently under-estimated or under-designed, because programmers are told to simply move the data; they do not engage in the analysis and design activities required for data integration. When data is migrated without proper analysis, it often looks different from the data that came in through the normal processing. Or the migrated data may not work with the application as anticipated. Profiling data of core operational applications will usually highlight data that has been migrated from one or more generations of previous operational systems and does not meet the standards of the data that enters the data set through the current application code. (See Chapter 6.)
+Projetos de migração de dados são frequentemente subestimados ou subprojetados, porque os programadores são instruídos a simplesmente mover os dados; eles não se envolvem nas atividades de análise e design necessárias para a integração dos dados. Quando os dados são migrados sem uma análise adequada, eles geralmente parecem diferentes dos dados que chegaram por meio do processamento normal. Ou os dados migrados podem não funcionar com o aplicativo conforme o esperado. A criação de perfil de dados de aplicativos operacionais principais geralmente destaca dados que foram migrados de uma ou mais gerações de sistemas operacionais anteriores e que não atendem aos padrões dos dados que entram no conjunto de dados por meio do código do aplicativo atual. (Ver Capítulo 6.)
 
-#### 2.3.4 Develop a Publication Approach
+#### 2.3.4 Desenvolver uma Abordagem de Publicação
 
-Systems where critical data is created or maintained need to make that data available to other systems in the organization. New or changed data should be pushed by data producing applications to other systems (especially data hubs and enterprise data buses) either at the time of data change (event-driven) or on a periodic schedule.
+Sistemas onde dados críticos são criados ou mantidos precisam disponibilizá-los para outros sistemas na organização. Dados novos ou alterados devem ser enviados por aplicativos produtores de dados para outros sistemas (especialmente hubs de dados e barramentos de dados corporativos) no momento da alteração dos dados (orientado por eventos) ou em um cronograma periódico.
 
-Best practice is to define common message definitions (canonical model) for the various types of data in the organization and let data consumers (either applications or individuals) who have appropriate access authority subscribe to receive notification of any changes to data of interest.
+A melhor prática é definir definições de mensagens comuns (modelo canônico) para os vários tipos de dados na organização e permitir que os consumidores de dados (aplicativos ou indivíduos) que tenham autoridade de acesso apropriada se inscrevam para receber notificações sobre quaisquer alterações nos dados de interesse.
 
-#### 2.3.5 Develop Complex Event Processing Flows
+#### 2.3.5 Desenvolver Fluxos de Processamento de Eventos Complexos
 
-Developing complex event processing solutions requires:
+O desenvolvimento de soluções complexas de processamento de eventos requer:
 
-* Preparation of the historical data about an individual, organization, product, or market and pre-population of the predictive models
-* Processing the real-time data stream to fully populate the predictive model and identify meaningful events (opportunities or threats)
-* Executing the triggered action in response to the prediction
+* Preparação dos dados históricos sobre um indivíduo, organização, produto ou mercado e pré-preenchimento dos modelos preditivos
+* Processamento do fluxo de dados em tempo real para preencher completamente o modelo preditivo e identificar eventos significativos (oportunidades ou ameaças)
+* Execução da ação acionada em resposta à previsão
 
-Preparation and pre-processing of the historical data needed in the predictive model may be performed in nightly batch processes or in near real-time. Usually some of the predictive model can be populated in advance of the triggering event, such as identifying what products are usually bought together in preparation of suggesting an additional item for purchase.
+A preparação e o pré-processamento dos dados históricos necessários ao modelo preditivo podem ser realizados em processos em lote noturnos ou quase em tempo real. Normalmente, parte do modelo preditivo pode ser preenchida antes do evento acionador, como a identificação de quais produtos são geralmente comprados juntos, em preparação para sugerir um item adicional para compra.
 
-Some processing flows trigger a response to every event in the real-time stream, such as adding an item to a shopping cart; other processing flows attempt to identify particularly meaningful events that trigger action, such as a suspected fraudulent charge attempt on a credit card.
+Alguns fluxos de processamento acionam uma resposta a cada evento no fluxo em tempo real, como adicionar um item ao carrinho de compras; outros fluxos de processamento tentam identificar eventos particularmente significativos que acionam a ação, como uma suspeita de tentativa de cobrança fraudulenta no cartão de crédito.
 
-The response to the identification of a meaningful event may be as simple as a warning being sent out or as complex as the automatic deployment of armed forces.
+A resposta à identificação de um evento significativo pode ser tão simples quanto o envio de um alerta ou tão complexa quanto o envio automático de forças armadas.
 
-#### 2.3.6 Maintain DII Metadata
+#### 2.3.6 Manter Metadados de Integração de Dados (DII)
 
-As previously noted (see Section 2.1), an organization will create and uncover valuable Metadata during the process of developing DII solutions. This Metadata should be managed and maintained to ensure proper understanding of the data in the system, and to prevent the need to rediscover it for future solutions. Reliable Metadata improves an organization’s ability to manage risks, reduce costs, and obtain more value from its data. Document the data structures of all systems involved in data integration as source, target, or staging. Include business definitions and technical definitions (structure, format, size), as well as the transformation of data between the persistent data stores. Whether data integration Metadata is stored in documents or a Metadata repository, it should not be changed without a review and approval process from both business and technical stakeholders.
+Conforme observado anteriormente (consulte a Seção 2.1), uma organização criará e descobrirá Metadados valiosos durante o processo de desenvolvimento de soluções de DII. Esses Metadados devem ser gerenciados e mantidos para garantir a compreensão adequada dos dados no sistema e evitar a necessidade de redescobri-los para soluções futuras. Metadados confiáveis ​​melhoram a capacidade de uma organização de gerenciar riscos, reduzir custos e obter mais valor de seus dados. Documente as estruturas de dados de todos os sistemas envolvidos na integração de dados, como origem, destino ou preparação. Inclua definições de negócios e técnicas (estrutura, formato, tamanho), bem como a transformação de dados entre os armazenamentos de dados persistentes. Independentemente de os Metadados de integração de dados serem armazenados em documentos ou em um repositório de Metadados, eles não devem ser alterados sem um processo de revisão e aprovação das partes interessadas, tanto de negócios quanto técnicas.
 
-Most ETL tool vendors package their Metadata repositories with additional functionality that enables governance and stewardship oversight. If the Metadata repository is utilized as an operational tool, then it may even include operational Metadata about when data was copied and transformed between systems.
+A maioria dos fornecedores de ferramentas ETL inclui em seus repositórios de Metadados funcionalidades adicionais que permitem a supervisão da governança e da administração. Se o repositório de Metadados for utilizado como uma ferramenta operacional, ele poderá até incluir Metadados operacionais sobre quando os dados foram copiados e transformados entre os sistemas.
 
-Of particular importance for DII solutions is the SOA registry, which provides controlled access to an evolving catalog of information about the available services for accessing and using the data and functionality in an application.
+De particular importância para soluções DII é o registro SOA, que fornece acesso controlado a um catálogo em constante evolução de informações sobre os serviços disponíveis para acessar e usar os dados e funcionalidades de uma aplicação.
 
-### 2.4 Implement and Monitor
+### 2.4 Implementar e Monitorar
 
-Activate the data services that have been developed and tested. Real-time data processing requires real-time monitoring for issues. Establish parameters that indicate potential problems with processing, as well as direct notification of issues. Automated as well as human monitoring for issues should be established, especially as the complexity and risk of the triggered responses rises. There are cases, for example, where issues with automated financial securities trading algorithms have triggered actions that have affected entire markets or bankrupted organizations.
+Ative os serviços de dados que foram desenvolvidos e testados. O processamento de dados em tempo real requer monitoramento em tempo real de problemas. Estabeleça parâmetros que indiquem potenciais problemas com o processamento, bem como a notificação direta de problemas. O monitoramento automatizado e humano de problemas deve ser estabelecido, especialmente à medida que a complexidade e o risco das respostas acionadas aumentam. Há casos, por exemplo, em que problemas com algoritmos automatizados de negociação de títulos financeiros desencadearam ações que afetaram mercados inteiros ou levaram organizações à falência.
 
-Data interaction capabilities must be monitored and serviced at the same service level as the most demanding target application or data consumer.
+Os recursos de interação de dados devem ser monitorados e atendidos no mesmo nível de serviço que o aplicativo-alvo ou consumidor de dados mais exigente.
 
-## 3. Tools
+## 3. Ferramentas
 
-### 3.1 Data Transformation Engine/ETL Tool
+### 3.1 Mecanismo de Transformação de Dados/Ferramenta ETL
 
-A data transformation engine (or ETL tool) is the primary tool in the data integration toolbox, central to every enterprise data integration program. These tools usually support the operation as well as the design of the data transformation activities.
+Um mecanismo de transformação de dados (ou ferramenta ETL) é a principal ferramenta na caixa de ferramentas de integração de dados, central para todo programa de integração de dados corporativos. Essas ferramentas geralmente suportam a operação e o design das atividades de transformação de dados.
 
-Extremely sophisticated tools exist to develop and perform ETL, whether batch or real-time, physically or virtually. For single use point-to-point solutions, data integration processing is frequently implemented through custom coding. Enterprise level solutions usually require the use of tools to perform this processing in a standard way across the organization.
+Existem ferramentas extremamente sofisticadas para desenvolver e executar ETL, seja em lote ou em tempo real, física ou virtualmente. Para soluções ponto a ponto de uso único, o processamento de integração de dados é frequentemente implementado por meio de codificação personalizada. Soluções de nível empresarial geralmente exigem o uso de ferramentas para executar esse processamento de forma padronizada em toda a organização.
 
-Basic considerations in selecting a data transformation engine should include whether it is necessary to handle batch as well as real-time functionality, and whether unstructured as well as structured data needs to be accommodated, as the most mature tools exist for batch-oriented processing of structured data only.
+Considerações básicas na seleção de um mecanismo de transformação de dados devem incluir a necessidade de lidar com funcionalidades em lote e em tempo real, e se dados não estruturados e estruturados precisam ser acomodados, visto que as ferramentas mais maduras existem apenas para processamento orientado a lote de dados estruturados.
 
-### 3.2 Data Virtualization Server
+### 3.2 Servidor de Virtualização de Dados
 
-Data transformation engines usually perform extract, transform, and load physically on data; however, data virtualization servers perform data extract, transform, and integrate virtually. Data virtualization servers can combine structured and unstructured data. A data warehouse is frequently an input to a data virtualization server, but a data virtualization server does not replace the data warehouse in the enterprise information architecture.
+Os mecanismos de transformação de dados geralmente realizam extração, transformação e carregamento físico dos dados; no entanto, os servidores de virtualização de dados realizam extração, transformação e integração de dados virtualmente. Os servidores de virtualização de dados podem combinar dados estruturados e não estruturados. Um data warehouse é frequentemente uma entrada para um servidor de virtualização de dados, mas um servidor de virtualização de dados não substitui o data warehouse na arquitetura de informações corporativas.
 
-### 3.3 Enterprise Service Bus
+### 3.3 Barramento de Serviços Empresariais
 
-An enterprise service bus (ESB) refers to both a software architecture model and a type of message-oriented middleware used to implement near real-time messaging between heterogeneous data stores, applications, and servers that reside within the same organization. Most internal data integration solutions that need to execute more frequent than daily use this architecture and this technology. Most commonly, an ESB is used in asynchronous format to enable the free flow of data. An ESB can also be used synchronously in certain situations.
+Um barramento de serviços empresarial (ESB) refere-se tanto a um modelo de arquitetura de software quanto a um tipo de middleware orientado a mensagens, usado para implementar mensagens quase em tempo real entre armazenamentos de dados, aplicativos e servidores heterogêneos que residem na mesma organização. A maioria das soluções internas de integração de dados que precisam ser executadas com mais frequência do que diariamente utiliza essa arquitetura e essa tecnologia. Mais comumente, um ESB é usado em formato assíncrono para permitir o livre fluxo de dados. Um ESB também pode ser usado de forma síncrona em determinadas situações.
 
-The enterprise service bus implements incoming and outgoing message queues on each of the systems participating in message interchange with an adapter or agent installed in each environment. The central processor for the ESB is usually implemented on a server separate from the other participating systems. The processor keeps track of which systems have subscribed interest in what kinds of messages. The central processor continuously polls each participating system for outgoing messages and deposits incoming messages into the message queue for subscribed types of messages and messages that have been directly addressed to that system.
+O barramento de serviços empresarial implementa filas de mensagens de entrada e saída em cada um dos sistemas participantes da troca de mensagens, com um adaptador ou agente instalado em cada ambiente. O processador central do ESB geralmente é implementado em um servidor separado dos outros sistemas participantes. O processador monitora quais sistemas assinaram interesse em quais tipos de mensagens. O processador central pesquisa continuamente cada sistema participante em busca de mensagens de saída e deposita as mensagens recebidas na fila de mensagens para os tipos de mensagens assinados e as mensagens que foram diretamente endereçadas a esse sistema.
 
-This model is called ‘near real-time’ because the data can take up to a couple of minutes to get from sending system to receiving system. This is a loosely coupled model and the system sending data will not wait for confirmation of receipt and update from the receiving system before continuing processing.
+Este modelo é chamado de "quase em tempo real" porque os dados podem levar até alguns minutos para ir do sistema emissor ao receptor. Este é um modelo fracamente acoplado e o sistema que envia os dados não aguarda a confirmação de recebimento e atualização do sistema receptor antes de continuar o processamento.
 
-### 3.4 Business Rules Engine
+### 3.4 Mecanismo de Regras de Negócios
 
-Many data integration solutions are dependent on business rules. An important form of Metadata, these rules can be used in basic integration and in solutions that incorporate complex event processing to enable an organization to respond to events in near real-time. A business rules engine that allows non-technical users to manage business rules implemented by software is a very valuable tool that will enable evolution of the solution at a lower cost, because a business rules engine can support changes to predictive models without technical code changes. For example, models that predict what a customer might want to purchase may be defined as business rules rather than code changes.
+Muitas soluções de integração de dados dependem de regras de negócios. Uma forma importante de metadados, essas regras podem ser usadas na integração básica e em soluções que incorporam processamento de eventos complexos para permitir que uma organização responda a eventos quase em tempo real. Um mecanismo de regras de negócios que permite que usuários não técnicos gerenciem regras de negócios implementadas por software é uma ferramenta muito valiosa que permitirá a evolução da solução a um custo menor, pois um mecanismo de regras de negócios pode suportar alterações em modelos preditivos sem alterações técnicas no código. Por exemplo, modelos que preveem o que um cliente pode querer comprar podem ser definidos como regras de negócios em vez de alterações no código.
 
-### 3.5 Data and Process Modeling Tools
+### 3.5 Ferramentas de Modelagem de Dados e Processos
 
-Data modeling tools should be used to design not only the target but also the intermediate data structures needed in data integration solutions. The structure of the messages or streams of data that pass between systems and organizations, and are not usually persisted, should nevertheless be modeled. The flow of data between systems and organizations should also be designed, as should complex event processes.
+Ferramentas de modelagem de dados devem ser usadas para projetar não apenas o destino, mas também as estruturas de dados intermediárias necessárias em soluções de integração de dados. A estrutura das mensagens ou fluxos de dados que transitam entre sistemas e organizações, e que geralmente não são persistentes, deve, no entanto, ser modelada. O fluxo de dados entre sistemas e organizações também deve ser projetado, assim como processos de eventos complexos.
 
-### 3.6 Data Profiling Tool
+### 3.6 Ferramenta de Criação de Perfil de Dados
 
-Data profiling involves statistical analysis of data set contents to understand format, completeness, consistency, validity, and structure of the data. All data integration and interoperability development should include detailed assessment of potential data sources and targets to determine whether the actual data meets the needs of the proposed solution. Since most integration projects involve a significant amount of data, the most efficient means of conducting this analysis is to use a data profiling tool. (See Section 2.1.4 and Chapter 13.)
+A criação de perfil de dados envolve a análise estatística do conteúdo do conjunto de dados para compreender o formato, a integridade, a consistência, a validade e a estrutura dos dados. Todo o desenvolvimento de integração e interoperabilidade de dados deve incluir uma avaliação detalhada das potenciais fontes e alvos de dados para determinar se os dados reais atendem às necessidades da solução proposta. Como a maioria dos projetos de integração envolve uma quantidade significativa de dados, o meio mais eficiente de conduzir essa análise é usar uma ferramenta de criação de perfil de dados. (Consulte a Seção 2.1.4 e o Capítulo 13.)
 
-### 3.7 Metadata Repository
+### 3.7 Repositório de Metadados
 
-A Metadata repository contains information about the data in an organization, including data structure, content, and the business rules for managing the data. During data integration projects, one or more Metadata repositories may be used to document the technical structure and business meaning of the data being sourced, transformed, and targeted.
+Um repositório de metadados contém informações sobre os dados de uma organização, incluindo a estrutura dos dados, o conteúdo e as regras de negócios para o gerenciamento dos dados. Durante projetos de integração de dados, um ou mais repositórios de metadados podem ser usados ​​para documentar a estrutura técnica e o significado comercial dos dados que estão sendo originados, transformados e direcionados.
 
-Usually the rules regarding data transformation, lineage, and processing used by the data integration tools are also stored in a Metadata repository as are the instructions for scheduled processes such as triggers and frequency.
+Normalmente, as regras relativas à transformação, linhagem e processamento de dados utilizadas pelas ferramentas de integração de dados também são armazenadas em um repositório de metadados, assim como as instruções para processos agendados, como gatilhos e frequência.
 
-Every tool usually has its own Metadata repository. Suites of tools from the same vendor may share a Metadata repository. One Metadata repository may be designated as a central point for consolidating data from the various operational tools. (See Chapter 12.)
+Cada ferramenta geralmente possui seu próprio repositório de metadados. Conjuntos de ferramentas do mesmo fornecedor podem compartilhar um repositório de metadados. Um repositório de metadados pode ser designado como um ponto central para a consolidação de dados das diversas ferramentas operacionais. (Consulte o Capítulo 12.)
 
-## 4. Techniques
+## 4. Técnicas
 
-Several of the important techniques for designing data integration solutions are described in the Essential Concepts in this chapter. The basic goals are to keep the applications coupled loosely, limit the number of interfaces developed and requiring management by using a hub-and-spoke approach, and to create standard (or canonical) interfaces.
+Várias das técnicas importantes para o projeto de soluções de integração de dados são descritas nos Conceitos Essenciais deste capítulo. Os objetivos básicos são manter os aplicativos acoplados de forma flexível, limitar o número de interfaces desenvolvidas e que exigem gerenciamento usando uma abordagem hub-and-spoke e criar interfaces padrão (ou canônicas).
 
-## 5. Implementation Guidelines
+## 5. Diretrizes de Implementação
 
-### 5.1 Readiness Assessment / Risk Assessment
+### 5.1 Avaliação de Prontidão/Avaliação de Risco
 
-All organizations have some form of DII already in place – so the readiness/risk assessment should be around enterprise integration tool implementation, or enhancing capabilities to allow interoperability.
+Todas as organizações já possuem alguma forma de DII em vigor – portanto, a avaliação de prontidão/risco deve envolver a implementação de ferramentas de integração empresarial ou o aprimoramento de recursos para permitir a interoperabilidade.
 
-Implementing enterprise data integration solutions is usually cost-justified based on implementation between many systems. Design an enterprise data integration solution to support the movement of data between many applications and organizations, and not just the first one to be implemented.
+A implementação de soluções de integração de dados empresariais geralmente se justifica em termos de custo com base na implementação entre vários sistemas. Projete uma solução de integração de dados empresariais para suportar a movimentação de dados entre vários aplicativos e organizações, e não apenas a primeira a ser implementada.
 
-Many organizations spend their time reworking existing solutions instead of bringing additional value. Focus on implementing data integration solutions where none or limited integration currently exists, rather than replacing working data integration solutions with a common enterprise solution across the organization.
+Muitas organizações gastam seu tempo retrabalhando soluções existentes em vez de agregar valor adicional. Concentre-se na implementação de soluções de integração de dados onde atualmente não há integração ou há integração limitada, em vez de substituir as soluções de integração de dados existentes por uma solução empresarial comum para toda a organização.
 
-Certain data projects can justify a data integration solution focused only on a particular application, such as a data warehouse or Master Data Management hub. In those cases, any additional use of the data integration solution adds value to the investment, because the first system use already achieved the justification.
+Certos projetos de dados podem justificar uma solução de integração de dados focada apenas em um aplicativo específico, como um data warehouse ou um hub de Gerenciamento de Dados Mestres. Nesses casos, qualquer uso adicional da solução de integração de dados agrega valor ao investimento, pois o primeiro uso do sistema já atendeu à justificativa.
 
-Application support teams prefer to manage data integration solutions locally. They will perceive that the cost of doing so is lower than leveraging an enterprise solution. The software vendors that support such teams will also prefer that they leverage the data integration tools that they sell. Therefore, it is necessary to sponsor the implementation of an enterprise data integration program from a level that has sufficient authority over solution design and technology purchase, such as from IT enterprise architecture. In addition, it may be necessary to encourage application systems to participate through positive incentives, such as funding the data integration technology centrally, and through negative incentives, such as refusing to approve the implementation of new alternative data integration technologies.
+As equipes de suporte a aplicativos preferem gerenciar as soluções de integração de dados localmente. Eles perceberão que o custo disso é menor do que utilizar uma solução corporativa. Os fornecedores de software que dão suporte a essas equipes também preferirão que elas utilizem as ferramentas de integração de dados que vendem. Portanto, é necessário patrocinar a implementação de um programa de integração de dados corporativos a partir de um nível que tenha autoridade suficiente sobre o design da solução e a compra de tecnologia, como a arquitetura corporativa de TI. Além disso, pode ser necessário incentivar a participação de sistemas de aplicativos por meio de incentivos positivos, como o financiamento centralizado da tecnologia de integração de dados, e por meio de incentivos negativos, como a recusa em aprovar a implementação de novas tecnologias alternativas de integração de dados.
 
-Development projects that implement new data integration technology frequently become focused on the technology and lose focus on the business goals. It is necessary to make sure that data integration solution implementation retain focus on the business goals and requirements, including making sure that some participants in every project are business- or application-oriented, and not just data integration tool experts.
+Projetos de desenvolvimento que implementam novas tecnologias de integração de dados frequentemente se concentram na tecnologia e perdem o foco nos objetivos de negócio. É necessário garantir que a implementação da solução de integração de dados mantenha o foco nos objetivos e requisitos de negócio, incluindo a garantia de que alguns participantes em cada projeto sejam orientados para o negócio ou para a aplicação, e não apenas especialistas em ferramentas de integração de dados.
 
-### 5.2 Organization and Cultural Change
+### 5.2 Mudança Organizacional e Cultural
 
-Organizations must determine whether responsibility for managing data integration implementations is centralized or whether it resides with decentralized application teams. Local teams understand the data in their applications. Central teams can build deep knowledge of tools and technologies. Many organizations develop a Center of Excellence specializing in the design and deployment of the enterprise data integration solutions. Local and central teams collaborate to develop solutions connecting an application into an enterprise data integration solution. The local team should take primary responsibility for managing the solution and resolving any problems, escalating to the Center of Excellence, if necessary.
+As organizações devem determinar se a responsabilidade pelo gerenciamento das implementações de integração de dados é centralizada ou se reside em equipes descentralizadas de aplicativos. Equipes locais compreendem os dados em seus aplicativos. Equipes centrais podem desenvolver um profundo conhecimento de ferramentas e tecnologias. Muitas organizações desenvolvem um Centro de Excelência especializado no design e na implantação de soluções de integração de dados corporativos. Equipes locais e centrais colaboram para desenvolver soluções que conectam um aplicativo a uma solução de integração de dados corporativos. A equipe local deve assumir a responsabilidade primária pelo gerenciamento da solução e pela resolução de quaisquer problemas, encaminhando-os ao Centro de Excelência, se necessário.
 
-Data integration solutions are frequently perceived as purely technical; however, to successfully deliver value, they must be developed based on deep business knowledge. The data analysis and modeling activities should be performed by business-oriented resources. Development of a canonical message model, or consistent standard for how data is shared in the organization, requires a large resource commitment that should involve business modeling resources as well as technical resources. Review all data transformation mapping design and changes with by business subject matter experts in each involved system.
+As soluções de integração de dados são frequentemente percebidas como puramente técnicas; no entanto, para agregar valor com sucesso, elas devem ser desenvolvidas com base em profundo conhecimento do negócio. As atividades de análise e modelagem de dados devem ser realizadas por recursos voltados para o negócio. O desenvolvimento de um modelo de mensagem canônica, ou um padrão consistente de como os dados são compartilhados na organização, requer um grande comprometimento de recursos, que deve envolver recursos de modelagem de negócios, bem como recursos técnicos. Revise todo o design e as alterações do mapeamento de transformação de dados com especialistas no assunto de negócios em cada sistema envolvido.
 
-## 6. DII Governance
+## 6. Governança de DII
 
-Decisions about the design of data messages, data models, and data transformation rules have a direct impact on an organization’s ability to use its data. These decisions must be business-driven. While there are many technical considerations in implementing business rules, a purely technical approach to DII can lead to errors in the data mappings and transformations as data flows into, through and out of an organization.
+Decisões sobre o design de mensagens de dados, modelos de dados e regras de transformação de dados têm um impacto direto na capacidade de uma organização de usar seus dados. Essas decisões devem ser orientadas pelos negócios. Embora existam muitas considerações técnicas na implementação de regras de negócios, uma abordagem puramente técnica para DII pode levar a erros nos mapeamentos e transformações de dados à medida que os dados fluem para dentro, através e para fora de uma organização.
 
-Business stakeholders are responsible for defining rules for how data should be modeled and transformed. Business stakeholders should approve changes to any of these business rules. Rules should be captured as Metadata and consolidated for cross-enterprise analysis. Identifying and verifying the predictive models and defining what actions should be automatically triggered by the predictions are also business functions.
+As partes interessadas do negócio são responsáveis ​​por definir regras sobre como os dados devem ser modelados e transformados. As partes interessadas do negócio devem aprovar alterações em qualquer uma dessas regras de negócio. As regras devem ser capturadas como metadados e consolidadas para análise entre empresas. Identificar e verificar os modelos preditivos e definir quais ações devem ser acionadas automaticamente pelas previsões também são funções de negócio.
 
-Without trust that the integration or interoperable design will perform as promised, in a secure, reliable way, there can be no effective business value. In DII, the landscape of governance controls to support trust can be complex and detailed. One approach is to determine what events trigger governance reviews (exceptions or critical events). Map each trigger to reviews that engage with governance bodies. Event triggers may be part of the System Development Life Cycle (SDLC) at Stage Gates when moving from one phase to another or as part of User Stories. For example, architecture design compliance checklists may include such questions as: If possible, are you using the ESB and tools? Was there a search for reusable services?
+Sem a confiança de que a integração ou o design interoperável funcionará conforme prometido, de forma segura e confiável, não pode haver valor comercial efetivo. Em DII, o cenário de controles de governança para sustentar a confiança pode ser complexo e detalhado. Uma abordagem é determinar quais eventos acionam revisões de governança (exceções ou eventos críticos). Mapeie cada gatilho para revisões que envolvam órgãos de governança. Os gatilhos de eventos podem fazer parte do Ciclo de Vida de Desenvolvimento de Sistemas (SDLC) nos Stage Gates, ao passar de uma fase para outra, ou como parte das Histórias de Usuário. Por exemplo, listas de verificação de conformidade do projeto de arquitetura podem incluir perguntas como: Se possível, você está usando o ESB e as ferramentas? Houve uma busca por serviços reutilizáveis?
 
-Controls may come from governance-driven management routines, such as mandated reviews of models, auditing of Metadata, gating of deliverables, and required approvals for changes to transformation rules.
+Os controles podem vir de rotinas de gerenciamento orientadas pela governança, como revisões obrigatórias de modelos, auditoria de metadados, controle de entregas e aprovações necessárias para alterações nas regras de transformação.
 
-In Service Level Agreements, and in Business Continuity/Disaster Recovery plans, real-time operational data integration solutions must be included in the same backup and recovery tier as the most critical system to which they provide data.
+Em Acordos de Nível de Serviço e em planos de Continuidade de Negócios/Recuperação de Desastres, as soluções de integração de dados operacionais em tempo real devem ser incluídas na mesma camada de backup e recuperação do sistema mais crítico para o qual fornecem dados.
 
-Policies need to be established to ensure that the organization benefits from an enterprise approach to DII. For example, policies can be put in place to ensure that SOA principles are followed, that new services are created only after a review of existing services, and that all data flowing between systems goes through the enterprise service bus.
+Políticas precisam ser estabelecidas para garantir que a organização se beneficie de uma abordagem corporativa para a DII. Por exemplo, políticas podem ser implementadas para garantir que os princípios da SOA sejam seguidos, que novos serviços sejam criados somente após uma revisão dos serviços existentes e que todos os dados que fluem entre os sistemas passem pelo barramento de serviços corporativos.
 
-### 6.1 Data Sharing Agreements
+### 6.1 Acordos de Compartilhamento de Dados
 
-Prior to the development of interfaces or the provision of data electronically, develop a data sharing agreement or memorandum of understanding (MOU) which stipulates the responsibilities and acceptable use of data to be exchanged, approved by the business data stewards of the data in question. The data sharing agreements should specify anticipated use and access to the data, restrictions on use, as well as expected service levels, including required system up times and response times. These agreements are especially critical for regulated industries, or when personal or secure information is involved.
+Antes do desenvolvimento de interfaces ou do fornecimento eletrônico de dados, desenvolva um acordo de compartilhamento de dados ou memorando de entendimento (MOU) que estipule as responsabilidades e o uso aceitável dos dados a serem trocados, aprovado pelos administradores de dados corporativos em questão. Os acordos de compartilhamento de dados devem especificar o uso e o acesso previstos aos dados, as restrições de uso, bem como os níveis de serviço esperados, incluindo os tempos de atividade e de resposta do sistema necessários. Esses acordos são especialmente críticos para setores regulamentados ou quando informações pessoais ou seguras estão envolvidas.
 
-### 6.2 DII and Data Lineage
+### 6.2 DII e Linhagem de Dados
 
-Data lineage is useful to the development of DII solutions. It is also often required for data consumers to use data, but it is becoming even more important as data is integrated between organizations. Governance is required to ensure that knowledge of data origins and movement is documented. Data sharing agreements may stipulate limitations to the uses of data and in order to abide by these, it is necessary to know where data moves and persists. There are emerging compliance standards (for example, Solvency II regulation in Europe) that require organizations be able to describe where their data originated and how it has been changed as it has moved through various systems.
+A linhagem de dados é útil para o desenvolvimento de soluções de DII. Ela também é frequentemente necessária para que os consumidores de dados utilizem os dados, mas está se tornando ainda mais importante à medida que os dados são integrados entre as organizações. A governança é necessária para garantir que o conhecimento das origens e da movimentação dos dados seja documentado. Acordos de compartilhamento de dados podem estipular limitações ao uso dos dados e, para cumpri-los, é necessário saber para onde os dados se movem e persistem. Existem padrões de conformidade emergentes (por exemplo, a regulamentação Solvência II na Europa) que exigem que as organizações descrevam a origem de seus dados e como eles foram alterados ao se moverem por vários sistemas.
 
-In addition, data lineage information is required when making changes to data flows. This information must be managed as a critical part of solution Metadata. Forward and backward data lineage (i.e., where did data get used and where did it come from) is critical as part of the impact analysis needed when making changes to data structures, data flows, or data processing.
+Além disso, informações sobre a linhagem dos dados são necessárias ao fazer alterações nos fluxos de dados. Essas informações devem ser gerenciadas como parte crítica dos metadados da solução. A linhagem de dados para frente e para trás (ou seja, onde os dados foram usados ​​e de onde vieram) é fundamental como parte da análise de impacto necessária ao fazer alterações em estruturas de dados, fluxos de dados ou processamento de dados.
 
-### 6.3 Data Integration Metrics
+### 6.3 Métricas de Integração de Dados
 
-To measure the scale and benefits from implementing Data Integration solutions, include metrics on availability, volume, speed, cost, and usage:
+Para mensurar a escala e os benefícios da implementação de soluções de Integração de Dados, inclua métricas de disponibilidade, volume, velocidade, custo e uso:
 
-* Data Availability
-  * Availability of data requested
-* Data Volumes and Speed
-  * Volumes of data transported and transformed
-  * Volumes of data analyzed
-  * Speed of transmission
-  * Latency between data update and availability
-  * Latency between event and triggered action
-  * Time to availability of new data sources
-* Solution Costs and Complexity
-  * Cost of developing and managing solutions
-  * Ease of acquiring new data
-  * Complexity of solutions and operations
-  * Number of systems using data integration solutions
+* Disponibilidade de Dados
+  * Disponibilidade dos dados solicitados
+* Volume e Velocidade de Dados
+  * Volumes de dados transportados e transformados
+  * Volumes de dados analisados
+  * Velocidade de transmissão
+  * Latência entre a atualização e a disponibilidade dos dados
+  * Latência entre o evento e a ação acionada
+  * Tempo para disponibilidade de novas fontes de dados
+* Custos e Complexidade da Solução
+  * Custo de desenvolvimento e gerenciamento de soluções
+  * Facilidade de aquisição de novos dados
+  * Complexidade das soluções e operações
+  * Número de sistemas que utilizam soluções de integração de dados
 
-## 7. Works Cited / Recommended
+## 7. Trabalhos Citados / Recomendados
 
 Aiken, P. and Allen, D. M. XML in Data Management. Morgan Kaufmann, 2004. Print.
 

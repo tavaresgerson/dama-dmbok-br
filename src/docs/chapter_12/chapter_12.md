@@ -1,621 +1,622 @@
-# Metadata Management
+# Gerenciamento de Metadados
 
 ![](chapter_12.png)
 
-## 1. Introduction
+## 1. Introdução
 
-The most common definition of Metadata, “data about data,” is misleadingly simple. The kind of information that can be classified as Metadata is wide-ranging. Metadata includes information about technical and business processes, data rules and constraints, and logical and physical data structures. It describes the data itself (e.g., databases, data elements, data models), the concepts the data represents (e.g., business processes, application systems, software code, technology infrastructure), and the connections (relationships) between the data and concepts. Metadata helps an organization understand its data, its systems, and its workflows. It enables data quality assessment and is integral to the management of databases and other applications. It contributes to the ability to process, maintain, integrate, secure, audit, and govern other data.
+A definição mais comum de Metadados, "dados sobre dados", é enganosamente simples. O tipo de informação que pode ser classificada como Metadados é abrangente. Metadados incluem informações sobre processos técnicos e de negócios, regras e restrições de dados e estruturas lógicas e físicas de dados. Eles descrevem os dados em si (por exemplo, bancos de dados, elementos de dados, modelos de dados), os conceitos que os dados representam (por exemplo, processos de negócios, sistemas de aplicativos, código de software, infraestrutura tecnológica) e as conexões (relacionamentos) entre os dados e os conceitos. Os metadados ajudam uma organização a entender seus dados, seus sistemas e seus fluxos de trabalho. Eles permitem a avaliação da qualidade dos dados e são essenciais para o gerenciamento de bancos de dados e outros aplicativos. Contribuem para a capacidade de processar, manter, integrar, proteger, auditar e governar outros dados.
 
-To understand Metadata’s vital role in data management, imagine a large library, with hundreds of thousands of books and magazines, but no card catalog. Without a card catalog, readers might not even know how to start looking for a specific book or even a specific topic. The card catalog not only provides the necessary information (which books and materials the library owns and where they are shelved) it also enables patrons to find materials using different starting points (subject area, author, or title). Without the catalog, finding a specific book would be difficult if not impossible. An organization without Metadata is like a library without a card catalog.
+Para entender o papel vital dos Metadados no gerenciamento de dados, imagine uma grande biblioteca, com centenas de milhares de livros e revistas, mas sem um catálogo de fichas. Sem um catálogo de fichas, os leitores podem nem saber como começar a procurar um livro específico ou mesmo um tópico específico. O catálogo de fichas não apenas fornece as informações necessárias (quais livros e materiais a biblioteca possui e onde estão dispostos nas prateleiras), como também permite que os usuários encontrem materiais usando diferentes pontos de partida (área temática, autor ou título). Sem o catálogo, encontrar um livro específico seria difícil, senão impossível. Uma organização sem metadados é como uma biblioteca sem um catálogo de fichas.
 
-Metadata is essential to data management as well as data usage (see multiple references to Metadata throughout the DAMA-DMBOK). All large organizations produce and use a lot of data. Across an organization, different individuals will have different levels of data knowledge, but no individual will know everything about the data. This information must be documented or the organization risks losing valuable knowledge about itself. Metadata provides the primary means of capturing and managing organizational knowledge about data. However, Metadata management is not only a knowledge management challenge; it is also a risk management necessity. Metadata is necessary to ensure an organization can identify private or sensitive data and that it can manage the data lifecycle for its own benefit and in order to meet compliance requirements and minimize risk exposure.
+Os metadados são essenciais para o gerenciamento de dados, bem como para o uso de dados (veja as diversas referências a metadados ao longo do DAMA-DMBOK). Todas as grandes organizações produzem e utilizam uma grande quantidade de dados. Em uma organização, diferentes indivíduos terão diferentes níveis de conhecimento sobre dados, mas nenhum indivíduo saberá tudo sobre eles. Essas informações devem ser documentadas, caso contrário, a organização corre o risco de perder conhecimento valioso sobre si mesma. Os metadados fornecem o principal meio de capturar e gerenciar o conhecimento organizacional sobre dados. No entanto, o gerenciamento de metadados não é apenas um desafio de gerenciamento do conhecimento; é também uma necessidade de gerenciamento de riscos. Os metadados são necessários para garantir que uma organização possa identificar dados privados ou sensíveis e que possa gerenciar o ciclo de vida dos dados em seu próprio benefício, a fim de atender aos requisitos de conformidade e minimizar a exposição a riscos.
 
-Without reliable Metadata, an organization does not know what data it has, what the data represents, where it originates, how it moves through systems, who has access to it, or what it means for the data to be of high quality. Without Metadata, an organization cannot manage its data as an asset. Indeed, without Metadata, an organization may not be able to manage its data at all.
+Sem Metadados confiáveis, uma organização não sabe quais dados possui, o que representam, sua origem, como se movem pelos sistemas, quem tem acesso a eles ou o que significa para a alta qualidade dos dados. Sem Metadados, uma organização não consegue gerenciar seus dados como um ativo. De fato, sem Metadados, uma organização pode não ser capaz de gerenciar seus dados de forma alguma.
 
-As technology has evolved, the speed at which data is generated has also increased. Technical Metadata has become integral to the way in which data is moved and integrated. ISO’s Metadata Registry Standard, ISO/IEC 11179, is intended to enable Metadata-driven exchange of data in a heterogeneous environment, based on exact definitions of data. Metadata present in XML and other formats enables use of the data. Other types of Metadata tagging allow data to be exchanged while retaining signifiers of ownership, security requirements, etc. (See Chapter 8.)
+Com a evolução da tecnologia, a velocidade com que os dados são gerados também aumentou. Metadados técnicos tornaram-se parte integrante da maneira como os dados são movidos e integrados. O Padrão de Registro de Metadados da ISO, ISO/IEC 11179, visa permitir a troca de dados orientada por Metadados em um ambiente heterogêneo, com base em definições exatas de dados. Metadados presentes em XML e outros formatos permitem o uso dos dados. Outros tipos de marcação de Metadados permitem que os dados sejam trocados, mantendo os significantes de propriedade, requisitos de segurança, etc. (Consulte o Capítulo 8.)
 
-Like other data, Metadata requires management. As the capacity of organizations to collect and store data increases, the role of Metadata in data management grows in importance. To be data-driven, an organization must be Metadata-driven.
+Como outros dados, os Metadados exigem gerenciamento. À medida que a capacidade das organizações de coletar e armazenar dados aumenta, o papel dos metadados na gestão de dados ganha importância. Para ser orientada por dados, uma organização precisa ser orientada por metadados.
 
-![Figure 84 Context Diagram: Metadata](figure_84.png)
-Figure 84 Context Diagram: Metadata
+![Figura 84 Diagrama de Contexto: Metadados](figure_84.png)
+Figura 84 Diagrama de Contexto: Metadados
 
-### 1.1 Business Drivers
+### 1.1 Impulsionadores de Negócios
 
-Data cannot be managed without Metadata. In addition, Metadata itself must be managed. Reliable, well-managed Metadata helps:
+Dados não podem ser gerenciados sem Metadados. Além disso, os próprios Metadados devem ser gerenciados. Metadados confiáveis ​​e bem gerenciados ajudam a:
 
-* Increase confidence in data by providing context and enabling the measurement of data quality
-* Increase the value of strategic information (e.g., Master Data) by enabling multiple uses
-* Improve operational efficiency by identifying redundant data and processes
-* Prevent the use of out-of-date or incorrect data
-* Reduce data-oriented research time
-* Improve communication between data consumers and IT professionals
-* Create accurate impact analysis thus reducing the risk of project failure
-* Improve time-to-market by reducing system development life-cycle time
-* Reduce training costs and lower the impact of staff turnover through thorough documentation of data context, history, and origin
-* Support regulatory compliance
+* Aumentar a confiança nos dados, fornecendo contexto e permitindo a mensuração da qualidade dos dados
+* Aumentar o valor de informações estratégicas (por exemplo, Dados Mestres) ao permitir múltiplos usos
+* Melhorar a eficiência operacional, identificando dados e processos redundantes
+* Prevenir o uso de dados desatualizados ou incorretos
+* Reduzir o tempo de pesquisa orientada a dados
+* Melhorar a comunicação entre consumidores de dados e profissionais de TI
+* Criar análises de impacto precisas, reduzindo assim o risco de falha do projeto
+* Melhorar o tempo de lançamento no mercado, reduzindo o tempo do ciclo de vida de desenvolvimento do sistema
+* Reduzir os custos de treinamento e diminuir o impacto da rotatividade de pessoal por meio da documentação completa do contexto, histórico e origem dos dados
+* Apoiar a conformidade regulatória
 
-Metadata assists in representing information consistently, streamlining workflow capabilities, and protecting sensitive information, particularly when regulatory compliance is required. Organizations get more value out of their data assets if their data is of high quality. Quality data depends on governance. Because it explains the data and processes that enable organizations to function, Metadata is critical to data governance. If Metadata is a guide to the data in an organization, then it must be well managed.
+Os metadados auxiliam na representação consistente de informações, otimizando os recursos de fluxo de trabalho e protegendo informações confidenciais, especialmente quando a conformidade regulatória é necessária. As organizações obtêm mais valor de seus ativos de dados se eles forem de alta qualidade. Dados de qualidade dependem de governança. Por explicarem os dados e processos que permitem o funcionamento das organizações, os Metadados são essenciais para a governança de dados. Se os Metadados são um guia para os dados em uma organização, eles devem ser bem gerenciados.
 
-Poorly managed Metadata leads to:
+Metadados mal gerenciados levam a:
 
-* Redundant data and data management processes
-* Replicated and redundant dictionaries, repositories, and other Metadata storage
-* Inconsistent definitions of data elements and risks associated with data misuse
-* Competing and conflicting sources and versions of Metadata which reduce the confidence of data consumers
-* Doubt about the reliability of Metadata and data
+* Dados e processos de gerenciamento de dados redundantes
+* Dicionários, repositórios e outros tipos de armazenamento de Metadados replicados e redundantes
+* Definições inconsistentes de elementos de dados e riscos associados ao uso indevido de dados
+* Fontes e versões de Metadados concorrentes e conflitantes, que reduzem a confiança dos consumidores de dados
+* Dúvidas sobre a confiabilidade dos Metadados e dos dados
 
-Well-executed Metadata management enables a consistent understanding of data resources and more efficient cross-organizational development.
+O gerenciamento de Metadados bem executado permite uma compreensão consistente dos recursos de dados e um desenvolvimento interorganizacional mais eficiente.
 
-### 1.2 Goals and Principles
+### 1.2 Objetivos e Princípios
 
-The goals of Metadata management include:
+Os objetivos da gestão de metadados incluem:
 
-* Document and manage organizational knowledge of data-related business terminology in order to ensure people understand data content and can use data consistently
-* Collect and integrate Metadata from diverse sources to ensure people understand similarities and differences between data from different parts of the organization
-* Ensure Metadata quality, consistency, currency, and security
-* Provide standard ways to make Metadata accessible to Metadata consumers (people, systems, and processes)
-* Establish or enforce the use of technical Metadata standards to enable data exchange
+* Documentar e gerenciar o conhecimento organizacional da terminologia empresarial relacionada a dados para garantir que as pessoas entendam o conteúdo dos dados e possam utilizá-los de forma consistente
+* Coletar e integrar metadados de diversas fontes para garantir que as pessoas entendam as semelhanças e diferenças entre os dados de diferentes partes da organização
+* Garantir a qualidade, a consistência, a atualidade e a segurança dos metadados
+* Fornecer maneiras padronizadas de tornar os metadados acessíveis aos consumidores de metadados (pessoas, sistemas e processos)
+* Estabelecer ou impor o uso de padrões técnicos de metadados para permitir a troca de dados
 
-The implementation of a successful Metadata solution follows these guiding principles:
+A implementação de uma solução de metadados bem-sucedida segue estes princípios orientadores:
 
-* **Organizational commitment:** Secure organizational commitment (senior management support and funding) to Metadata management as part of an overall strategy to manage data as an enterprise asset.
-* **Strategy:** Develop a Metadata strategy that accounts for how Metadata will be created, maintained, integrated, and accessed. The strategy should drive requirements, which should be defined before evaluating, purchasing, and installing Metadata management products. The Metadata strategy must align with business priorities.
-* **Enterprise perspective:** Take an enterprise perspective to ensure future extensibility, but implement through iterative and incremental delivery to bring value.
-* **Socialization:** Communicate the necessity of Metadata and the purpose of each type of Metadata; socialization of the value of Metadata will encourage business use and, as importantly, the contribution of business expertise.
-* **Access:** Ensure staff members know how to access and use Metadata.
-* **Quality:** Recognize that Metadata is often produced through existing processes (data modeling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
-* **Audit:** Set, enforce, and audit standards for Metadata to simplify integration and enable use.
-* **Improvement:** Create a feedback mechanism so that consumers can inform the Metadata Management team of Metadata that is incorrect or out-of-date.
+* **Compromisso organizacional:** Garantir o comprometimento organizacional (suporte e financiamento da alta gerência) com a gestão de metadados como parte de uma estratégia geral para gerenciar dados como um ativo corporativo.
+* **Estratégia:** Desenvolver uma estratégia de metadados que leve em conta como os metadados serão criados, mantidos, integrados e acessados. A estratégia deve direcionar os requisitos, que devem ser definidos antes da avaliação, compra e instalação de produtos de gestão de metadados. A estratégia de Metadados deve estar alinhada às prioridades do negócio.
+* **Perspectiva Corporativa:** Adote uma perspectiva corporativa para garantir extensibilidade futura, mas implemente por meio de entrega iterativa e incremental para agregar valor.
+* **Socialização:** Comunique a necessidade dos Metadados e a finalidade de cada tipo de Metadado; a socialização do valor dos Metadados incentivará o uso comercial e, igualmente importante, a contribuição da expertise empresarial.
+* **Acesso:** Garanta que os membros da equipe saibam como acessar e usar os Metadados.
+* **Qualidade:** Reconheça que os Metadados são frequentemente produzidos por meio de processos existentes (modelagem de dados, SDLC, definição de processos de negócio) e responsabilize os responsáveis ​​pelos processos pela qualidade dos Metadados.
+* **Auditoria:** Defina, aplique e audite padrões para Metadados para simplificar a integração e permitir o uso.
+* **Melhoria:** Crie um mecanismo de feedback para que os consumidores possam informar a equipe de Gerenciamento de Metadados sobre Metadados incorretos ou desatualizados.
 
-### 1.3 Essential Concepts
+### 1.3 Conceitos Essenciais
 
-#### 1.3.1 Metadata vs. Data
+#### 1.3.1 Metadados vs. Dados
 
-As stated in the chapter introduction, Metadata is a kind of data, and it should be managed as such. One question that some organizations face is where to draw the line between data that is not Metadata and data that is Metadata. Conceptually, this line is related to the level of abstraction represented by the data. For example, in reporting on the release of the US National Security Administration’s surveillance of the phone usage of people in the US, phone numbers and times of calls were routinely referred to as ‘Metadata’, implying that the ‘real’
+Conforme mencionado na introdução do capítulo, Metadados são um tipo de dado e devem ser gerenciados como tal. Uma questão que algumas organizações enfrentam é onde traçar a linha entre dados que não são Metadados e dados que são Metadados. Conceitualmente, essa linha está relacionada ao nível de abstração representado pelos dados. Por exemplo, em relatórios sobre a divulgação da vigilância da Administração de Segurança Nacional dos EUA sobre o uso de telefones por pessoas nos EUA, números de telefone e horários das chamadas eram rotineiramente chamados de "Metadados", implicando que os dados "reais"
 
-data comprised only the content of the phone conversations. Common sense recognizes that telephone numbers and duration of phone calls are also just plain data. [^70]
+compreendiam apenas o conteúdo das conversas telefônicas. O senso comum reconhece que números de telefone e a duração das chamadas telefônicas também são apenas dados. [^70]
 
-A rule of thumb might be that one person’s Metadata is another’s data. Even something that seems like Metadata (e.g., a list of column names) may be just plain data – if, for instance, this data was the input for an analysis aimed at understanding data content across different organizations.
+Uma regra geral pode ser que os Metadados de uma pessoa são os dados de outra. Mesmo algo que pareça Metadados (por exemplo, uma lista de nomes de colunas) pode ser apenas dados – se, por exemplo, esses dados forem a entrada para uma análise que visa compreender o conteúdo de dados em diferentes organizações.
 
-To manage their Metadata, organizations should not worry about the philosophical distinctions. Instead they should define Metadata requirements focused on what they need Metadata for (to create new data, understand existing data, enable movement between systems, access data, to share data) and source data to meet these requirements.
+Para gerenciar seus Metadados, as organizações não devem se preocupar com distinções filosóficas. Em vez disso, devem definir requisitos de Metadados com foco na finalidade para a qual precisam dos Metadados (criar novos dados, compreender os dados existentes, permitir a movimentação entre sistemas, acessar dados, compartilhar dados) e na fonte de dados para atender a esses requisitos.
 
-#### 1.3.2 Types of Metadata
+#### 1.3.2 Tipos de Metadados
 
-Metadata is often categorized into three types: business, technical, and operational. These categories enable people to understand the range of information that falls under the overall umbrella of Metadata, as well as the functions through which Metadata is produced. That said, the categories could also lead to confusion, especially if people get caught up in questions about which category a set of Metadata belongs or who is supposed to use it. It is best to think of these categories in relation to where Metadata originates, rather than how it is used. In relation to usage, the distinctions between Metadata types are not strict. Technical and operational staff use ‘business’ Metadata and vice versa.
+Os Metadados são frequentemente categorizados em três tipos: comercial, técnico e operacional. Essas categorias permitem que as pessoas entendam a gama de informações que se enquadram no escopo geral dos Metadados, bem como as funções pelas quais os Metadados são produzidos. Dito isso, as categorias também podem gerar confusão, especialmente se as pessoas se envolverem em questões sobre a qual categoria um conjunto de Metadados pertence ou quem deve usá-lo. É melhor pensar nessas categorias em relação à origem dos Metadados, em vez de como eles são usados. Em relação ao uso, as distinções entre os tipos de Metadados não são rígidas. Equipes técnicas e operacionais utilizam Metadados "de negócios" e vice-versa.
 
-Outside of information technology, for example, in library or information science, Metadata is described using a different set of categories:
+Fora da área de tecnologia da informação, por exemplo, em biblioteconomia ou ciência da informação, os Metadados são descritos usando um conjunto diferente de categorias:
 
-* Descriptive Metadata (e.g., title, author, and subject) describes a resource and enables identification and retrieval.
-* Structural Metadata describes relationships within and among resources and their component parts (e.g., number of pages, number of chapters).
-* Administrative Metadata (e.g., version numbers, archive dates) is used to manage resources over their lifecycle.
+* Metadados Descritivos (por exemplo, título, autor e assunto) descrevem um recurso e permitem a identificação e a recuperação.
+* Metadados Estruturais descrevem relacionamentos dentro e entre recursos e seus componentes (por exemplo, número de páginas, número de capítulos).
+* Metadados Administrativos (por exemplo, números de versão, datas de arquivamento) são usados ​​para gerenciar recursos ao longo de seu ciclo de vida.
 
-These categories can helpful inform the process of defining Metadata requirements.
+Essas categorias podem ser úteis para informar o processo de definição de requisitos de Metadados.
 
-##### 1.3.2.1 Business Metadata
+##### 1.3.2.1 Metadados de Negócios
 
-Business Metadata focuses largely on the content and condition of the data and includes details related to data governance. Business Metadata includes the non-technical names and definitions of concepts, subject areas, entities, and attributes; attribute data types and other attribute properties; range descriptions; calculations; algorithms and business rules; valid domain values and their definitions. Examples of Business Metadata include:
+Os Metadados de Negócios concentram-se principalmente no conteúdo e na condição dos dados e incluem detalhes relacionados à governança de dados. Os Metadados de Negócios incluem nomes e definições não técnicos de conceitos, áreas temáticas, entidades e atributos; tipos de dados de atributos e outras propriedades de atributos; Descrições de intervalo; cálculos; algoritmos e regras de negócio; valores de domínio válidos e suas definições. Exemplos de Metadados de Negócio incluem:
 
-* Definitions and descriptions of data sets, tables, and columns
-* Business rules, transformation rules, calculations, and derivations
-* Data models
-* Data quality rules and measurement results
-* Schedules by which data is updated
-* Data provenance and data lineage
-* Data standards
-* Designations of the system of record for data elements
-* Valid value constraints
-* Stakeholder contact information (e.g., data owners, data stewards)
-* Security/privacy level of data
-* Known issues with data
-* Data usage notes
+* Definições e descrições de conjuntos de dados, tabelas e colunas
+* Regras de negócio, regras de transformação, cálculos e derivações
+* Modelos de dados
+* Regras de qualidade de dados e resultados de medições
+* Cronogramas de atualização dos dados
+* Proveniência e linhagem dos dados
+* Padrões de dados
+* Designações do sistema de registro para elementos de dados
+* Restrições de valor válidas
+* Informações de contato das partes interessadas (por exemplo, proprietários dos dados, administradores dos dados)
+* Nível de segurança/privacidade dos dados
+* Problemas conhecidos com os dados
+* Observações sobre o uso de dados
 
-##### 1.3.2.2 Technical Metadata
+##### 1.3.2.2 Metadados Técnicos
 
-Technical Metadata provides information about the technical details of data, the systems that store data, and the processes that move it within and between systems. Examples of Technical Metadata include:
+Os Metadados Técnicos fornecem informações sobre os detalhes técnicos dos dados, os sistemas que os armazenam e os processos que os movem dentro e entre os sistemas. Exemplos de Metadados Técnicos incluem:
 
-* Physical database table and column names
-* Column properties
-* Database object properties
-* Access permissions
-* Data CRUD (create, replace, update and delete) rules
-* Physical data models, including data table names, keys, and indexes
-* Documented relationships between the data models and the physical assets
-* ETL job details
-* File format schema definitions
-* Source-to-target mapping documentation
-* Data lineage documentation, including upstream and downstream change impact information
-* Program and application names and descriptions
-* Content update cycle job schedules and dependencies
-* Recovery and backup rules
-* Data access rights, groups, roles
+* Nomes de tabelas e colunas do banco de dados físico
+* Propriedades das colunas
+* Propriedades dos objetos do banco de dados
+* Permissões de acesso
+* Regras CRUD (criar, substituir, atualizar e excluir) de dados
+* Modelos de dados físicos, incluindo nomes de tabelas de dados, chaves e índices
+* Relacionamentos documentados entre os modelos de dados e os ativos físicos
+* Detalhes da tarefa ETL
+* Definições de esquema de formato de arquivo
+* Documentação de mapeamento da origem para o destino
+* Documentação da linhagem de dados, incluindo informações sobre o impacto das alterações a montante e a jusante
+* Nomes e descrições de programas e aplicativos
+* Cronogramas e dependências da tarefa do ciclo de atualização de conteúdo
+* Regras de recuperação e backup
+* Direitos, grupos e funções de acesso aos dados
 
-##### 1.3.2.3 Operational Metadata
+##### 1.3.2.3 Metadados Operacionais
 
-Operational Metadata describes details of the processing and accessing of data. For example:
+Os Metadados Operacionais descrevem detalhes do processamento e acesso aos dados. Por exemplo:
 
-* Logs of job execution for batch programs
-* History of extracts and results
-* Schedule anomalies
-* Results of audit, balance, control measurements
-* Error Logs
-* Reports and query access patterns, frequency, and execution time
-* Patches and Version maintenance plan and execution, current patching level
-* Backup, retention, date created, disaster recovery provisions
-* SLA requirements and provisions
-* Volumetric and usage patterns
-* Data archiving and retention rules, related archives
-* Purge criteria
-* Data sharing rules and agreements
-* Technical roles and responsibilities, contacts
+* Logs de execução de tarefas para programas em lote
+* Histórico de extrações e resultados
+* Anomalias de cronograma
+* Resultados de auditoria, balanceamento e medições de controle
+* Logs de erros
+* Padrões de acesso a relatórios e consultas, frequência e tempo de execução
+* Plano e execução de patches e manutenção de versões, nível atual de patch
+* Backup, retenção, data de criação e disposições para recuperação de desastres
+* Requisitos e disposições de SLA
+* Padrões volumétricos e de uso
+* Regras de arquivamento e retenção de dados, arquivos relacionados
+* Critérios de limpeza
+* Regras e acordos de compartilhamento de dados
+* Funções e responsabilidades técnicas, contatos
 
-#### 1.3.3 ISO / IEC 11179 Metadata Registry Standard
+#### 1.3.3 Padrão de Registro de Metadados ISO/IEC 11179
 
-ISO’s Metadata Registry Standard, ISO/IEC 11179, provides a framework for defining a Metadata registry. It is designed to enable Metadata-driven data exchange, based on exact definitions of data, beginning with data elements. The standard is structured in several parts:
+O Padrão de Registro de Metadados ISO/IEC 11179 fornece uma estrutura para a definição de um registro de metadados. Ele foi projetado para permitir a troca de dados orientada por metadados, com base em definições exatas de dados, começando pelos elementos de dados. A norma é estruturada em várias partes:
 
-* **Part 1:** Framework for the Generation and Standardization of Data Elements
-* **Part 3:** Basic Attributes of Data Elements
-* **Part 4:** Rules and Guidelines for the Formulation of Data Definitions
-* **Part 5:** Naming and Identification Principles for Data Elements
-* **Part 6:** Registration of Data Elements
+* **Parte 1:** Estrutura para a Geração e Padronização de Elementos de Dados
+* **Parte 3:** Atributos Básicos de Elementos de Dados
+* **Parte 4:** Regras e Diretrizes para a Formulação de Definições de Dados
+* **Parte 5:** Princípios de Nomenclatura e Identificação para Elementos de Dados
+* **Parte 6:** Registro de Elementos de Dados
 
-#### 1.3.4 Metadata for Unstructured Data
+#### 1.3.4 Metadados para Dados Não Estruturados
 
-By its nature, all data has some structure, though not all of it is formally structured in the familiar rows, columns, and records of relational databases. Any data that is not in a database or data file, including documents or other media, is considered unstructured data. (See Chapters 9 and 14.)
+Por natureza, todos os dados possuem alguma estrutura, embora nem todos sejam formalmente estruturados nas linhas, colunas e registros familiares de bancos de dados relacionais. Quaisquer dados que não estejam em um banco de dados ou arquivo de dados, incluindo documentos ou outras mídias, são considerados dados não estruturados. (Consulte os Capítulos 9 e 14.)
 
-Metadata is as essential to the management of unstructured data as it is to the management of structured data – perhaps even more so. Think again about the card catalog analogy from the chapter introduction. Books and magazines in a library are good examples of unstructured data. The primary use of the Metadata in a card catalog is to find the materials one is looking for, whatever their format.
+Metadados são tão essenciais para o gerenciamento de dados não estruturados quanto para o gerenciamento de dados estruturados – talvez até mais. Pense novamente na analogia do catálogo de fichas da introdução do capítulo. Livros e revistas em uma biblioteca são bons exemplos de dados não estruturados. O principal uso dos Metadados em um catálogo de fichas é encontrar os materiais que se procura, independentemente do seu formato.
 
-Metadata for unstructured data includes descriptive Metadata, such as catalog information and thesauri keywords; structural Metadata such as tags, field structures, format; administrative Metadata, such as sources, update schedules, access rights, and navigation information; bibliographic Metadata, such as library catalog entries; record keeping Metadata, such as retention policies; and preservation Metadata, such as storage, archival condition, and rules for conservation. (See Chapter 9.)
+Metadados para dados não estruturados incluem Metadados descritivos, como informações de catálogo e palavras-chave de tesauros; Metadados estruturais, como tags, estruturas de campos e formato; Metadados administrativos, como fontes, cronogramas de atualização, direitos de acesso e informações de navegação; Metadados bibliográficos, como entradas de catálogo de biblioteca; Metadados de manutenção de registros, como políticas de retenção; e Metadados de preservação, como armazenamento, condições de arquivamento e regras de conservação. (Ver Capítulo 9.)
 
-While most assertions about Metadata for unstructured data are connected to traditional content management concerns, new practices are emerging around managing unstructured data in data lakes. Organizations wanting to take advantage of data lakes, using Big Data platforms such as Hadoop, are finding that they must catalog ingested data in order to enable later access. Most put in place processes to collect Metadata as part of data ingestion. A minimum set of Metadata attributes needs to be collected about each object ingested in the data lake (e.g., name, format, source, version, date received, etc.). This produces a catalog of data lake contents.
+Embora a maioria das afirmações sobre Metadados para dados não estruturados esteja conectada a preocupações tradicionais de gerenciamento de conteúdo, novas práticas estão surgindo em torno do gerenciamento de dados não estruturados em data lakes. Organizações que desejam aproveitar os data lakes, utilizando plataformas de Big Data como o Hadoop, estão descobrindo que precisam catalogar os dados ingeridos para permitir o acesso posterior. A maioria implementa processos para coletar Metadados como parte da ingestão de dados. Um conjunto mínimo de atributos de metadados precisa ser coletado sobre cada objeto ingerido no data lake (por exemplo, nome, formato, fonte, versão, data de recebimento, etc.). Isso produz um catálogo do conteúdo do data lake.
 
-#### 1.3.5 Sources of Metadata
+#### 1.3.5 Fontes de Metadados
 
-As should be clear from the types of Metadata, Metadata can be collected from many different sources. Moreover, if Metadata from applications and databases has been well-managed, it can simply be harvested and integrated. However, most organizations do not manage Metadata well at the application level, because Metadata is often created as a by-product of application processing rather than as an end product (i.e., it is not created with consumption in mind). As with other forms of data, there is a lot of work in preparing Metadata before it can be integrated.
+Como deve ficar claro a partir dos tipos de Metadados, eles podem ser coletados de diversas fontes. Além disso, se os Metadados de aplicativos e bancos de dados forem bem gerenciados, eles podem ser facilmente coletados e integrados. No entanto, a maioria das organizações não gerencia bem os Metadados no nível do aplicativo, pois eles são frequentemente criados como um subproduto do processamento do aplicativo e não como um produto final (ou seja, não são criados com o consumo em mente). Assim como acontece com outras formas de dados, há muito trabalho na preparação dos Metadados antes que eles possam ser integrados.
 
-The majority of operational Metadata is generated as data is processed. The key to using this Metadata is to collect it in a usable form, and to ensure that those responsible for interpreting it have the tools they need to do so. Keep in mind that interpreting data in places like error logs itself requires Metadata that describes the logs. Similarly, a large portion of technical Metadata can be harvested from database objects.
+A maior parte dos Metadados operacionais é gerada à medida que os dados são processados. A chave para usar esses Metadados é coletá-los de forma utilizável e garantir que os responsáveis ​​por interpretá-los tenham as ferramentas necessárias para isso. Lembre-se de que interpretar dados em locais como os próprios logs de erros requer Metadados que os descrevam. Da mesma forma, uma grande parte dos Metadados técnicos pode ser coletada de objetos de banco de dados.
 
-It is possible to reverse engineer knowledge about data from existing systems and to harvest business Metadata from existing data dictionaries, models, and process documentation (Loshin, 2001; Aiken, 1995), but there are risks in doing so. The biggest risk is not knowing how much care was taken to develop and refine the definitions in the first place. If definitions are underdeveloped or ambiguous, then they will not provide data consumers with the information they need to understand the data they are using.
+É possível fazer engenharia reversa do conhecimento sobre dados de sistemas existentes e coletar metadados de negócios de dicionários de dados, modelos e documentação de processos existentes (Loshin, 2001; Aiken, 1995), mas há riscos em fazê-lo. O maior risco é não saber quanto cuidado foi tomado para desenvolver e refinar as definições em primeiro lugar. Se as definições forem subdesenvolvidas ou ambíguas, elas não fornecerão aos consumidores de dados as informações necessárias para compreender os dados que estão usando.
 
-It is better to be intentional about developing definitions than to simply accept existing ones. Development of definitions takes time and the right skill set (e.g., writing and facilitation skills). This is why the development of business Metadata requires stewardship. (See Chapter 3.)
+É melhor ser intencional ao desenvolver definições do que simplesmente aceitar as existentes. O desenvolvimento de definições leva tempo e o conjunto de habilidades certo (por exemplo, habilidades de escrita e facilitação). É por isso que o desenvolvimento de metadados de negócios requer administração. (Consulte o Capítulo 3.)
 
-Much of the technical Metadata required to manage databases and the business Metadata required to use data can be collected and developed as part of project work. For example, the process of modeling data requires discussions on the meaning of data elements and the relation between them. Knowledge shared during such discussions should be captured and groomed for use in Data Dictionaries, Business Glossaries, and other repositories. The data models themselves include important details about the physical characteristics of data. Time should be allocated to ensure that project artifacts contain high quality Metadata that aligns with enterprise standards.
+Grande parte dos metadados técnicos necessários para gerenciar bancos de dados e dos metadados de negócios necessários para usar dados podem ser coletados e desenvolvidos como parte do trabalho do projeto. Por exemplo, o processo de modelagem de dados requer discussões sobre o significado dos elementos de dados e a relação entre eles. O conhecimento compartilhado durante essas discussões deve ser capturado e preparado para uso em Dicionários de Dados, Glossários de Negócios e outros repositórios. Os próprios modelos de dados incluem detalhes importantes sobre as características físicas dos dados. Tempo deve ser alocado para garantir que os artefatos do projeto contenham Metadados de alta qualidade alinhados aos padrões corporativos.
 
-Well-defined business Metadata is reusable from project-to-project and can drive a consistent understanding of how business concepts are represented in different data sets. As part of developing Metadata intentionally so that it can be reused, an organization can also plan for the integration of Metadata. For example, it can develop an inventory of systems, and all Metadata related to particular system can be tagged with the same system identifier.
+Metadados de negócios bem definidos são reutilizáveis ​​de projeto para projeto e podem impulsionar uma compreensão consistente de como os conceitos de negócios são representados em diferentes conjuntos de dados. Como parte do desenvolvimento intencional de Metadados para que possam ser reutilizados, uma organização também pode planejar a integração de Metadados. Por exemplo, ela pode desenvolver um inventário de sistemas, e todos os Metadados relacionados a um sistema específico podem ser marcados com o mesmo identificador de sistema.
 
-Creating Metadata for its own sake rarely works well. Most organizations will not fund this type of effort and, even when they do, they are unlikely to put in place processes for maintenance. In this respect, as in others, Metadata is like other data: It should be created as the product of a well-defined process, using tools that will support its overall quality. Stewards and other data management professionals should ensure that there are processes in place to maintain Metadata related to these processes. For example, if an organization harvests critical Metadata from its data models, it should ensure that there is a change management process in place to keep models current.
+Criar Metadados por si só raramente funciona bem. A maioria das organizações não financia esse tipo de esforço e, mesmo quando o faz, é improvável que implemente processos de manutenção. Nesse aspecto, como em outros, Metadados são como outros dados: devem ser criados como produto de um processo bem definido, utilizando ferramentas que suportem sua qualidade geral. Administradores e outros profissionais de gerenciamento de dados devem garantir a existência de processos para manter os Metadados relacionados a esses processos. Por exemplo, se uma organização coleta Metadados críticos de seus modelos de dados, deve garantir a existência de um processo de gerenciamento de mudanças para manter os modelos atualizados.
 
-To give a sense of the breadth of Metadata in any organization, a range of sources is outlined here, in alphabetical rather than priority order.
+Para dar uma ideia da amplitude dos Metadados em qualquer organização, uma gama de fontes é descrita aqui, em ordem alfabética e não por prioridade.
 
-##### 1.3.5.1 Application Metadata Repositories
+##### 1.3.5.1 Repositórios de Metadados de Aplicativos
 
-A Metadata repository refers to the physical tables in which the Metadata is stored. Often these are built into modeling tools, BI tools, and other applications. As an organization matures, it will want to integrate Metadata from repositories in these applications to enable data consumers to look across the breadth of information.
+Um repositório de Metadados refere-se às tabelas físicas nas quais os Metadados são armazenados. Frequentemente, eles são incorporados a ferramentas de modelagem, ferramentas de BI e outros aplicativos. À medida que uma organização amadurece, ela desejará integrar Metadados de repositórios nesses aplicativos para permitir que os consumidores de dados visualizem toda a amplitude das informações.
 
-##### 1.3.5.2 Business Glossary
+##### 1.3.5.2 Glossário de Negócios
 
-The purpose of a business glossary is to document and store an organization’s business concepts and terminology, definitions, and the relationships between those terms.
+O objetivo de um glossário de negócios é documentar e armazenar os conceitos e a terminologia de negócios de uma organização, as definições e as relações entre esses termos.
 
-In many organizations, the business glossary is merely a spreadsheet. However, as organizations mature, they often purchase or build glossaries that contain robust information and the capability to manage it over time. As with all data-oriented systems, business glossaries should be architected to account for hardware, software, database, processes, and human resources with differing roles and responsibilities. The business glossary application is structured to meet the functional requirements of the three core audiences:
+Em muitas organizações, o glossário de negócios é apenas uma planilha. No entanto, à medida que as organizações amadurecem, elas frequentemente adquirem ou criam glossários que contêm informações robustas e a capacidade de gerenciá-las ao longo do tempo. Como em todos os sistemas orientados a dados, os glossários de negócios devem ser arquitetados para levar em conta hardware, software, banco de dados, processos e recursos humanos com diferentes funções e responsabilidades. O aplicativo do glossário de negócios é estruturado para atender aos requisitos funcionais dos três públicos principais:
 
-* **Business users:** Data analysts, research analysts, management, and executive staff use the business glossary to understand terminology and data.
-* **Data Stewards:** Data Steward use the business glossary to manage the lifecycle of terms and definitions and to enhance enterprise knowledge by associating data assets with glossary terms; for example, linking terms to business metrics, reports, data quality analysis, or technology components. Data stewards raise terminology and usage issues and help resolve differences across the organization.
-* **Technical users:** Technical users use the business glossary to make architecture, systems design, and development decisions, and to conduct impact analysis.
+* **Usuários de negócios:** Analistas de dados, analistas de pesquisa, gerência e equipe executiva usam o glossário de negócios para entender a terminologia e os dados.
+* **Administradores de Dados:** Os Administradores de Dados usam o glossário de negócios para gerenciar o ciclo de vida de termos e definições e para aprimorar o conhecimento corporativo, associando ativos de dados aos termos do glossário; por exemplo, vinculando termos a métricas de negócios, relatórios, análise de qualidade de dados ou componentes de tecnologia. Os administradores de dados levantam questões de terminologia e uso e ajudam a resolver diferenças em toda a organização.
+* **Usuários técnicos:** Usuários técnicos utilizam o glossário de negócios para tomar decisões de arquitetura, design de sistemas e desenvolvimento, além de conduzir análises de impacto.
 
-The business glossary should capture business terms attributes such as:
+O glossário de negócios deve capturar atributos de termos de negócios, como:
 
-* Term name, definition, acronym or abbreviation, and any synonyms
-* Business unit and or application responsible for managing the data associated with the terminology
-* Name of the person identifying the term, and date updated
-* Categorization or taxonomy association for the term (business functional association)
-* Conflicting definitions that need resolution, nature of the problem, action timeline
-* Common misunderstandings in terms
-* Algorithms supporting definitions
-* Lineage
-* Official or authoritative source for the data supporting the term
+* Nome do termo, definição, sigla ou abreviação e quaisquer sinônimos
+* Unidade de negócios e/ou aplicativo responsável por gerenciar os dados associados à terminologia
+* Nome da pessoa que identifica o termo e data de atualização
+* Associação de categorização ou taxonomia para o termo (associação funcional de negócios)
+* Definições conflitantes que precisam ser resolvidas, natureza do problema, cronograma de ação
+* Mal-entendidos comuns em termos
+* Algoritmos que suportam definições
+* Linhagem
+* Fonte oficial ou autorizada para os dados que suportam o termo
 
-Every business glossary implementation should have a basic set of reports to support the governance processes. It is recommended that organizations do not ‘print the glossary’ because glossary content is not static. Data stewards are generally responsible for glossary development, use, operations, and reporting. Reporting includes, tracking for new terms and definitions that have not been reviewed yet, those in a pending status, and those that are missing definitions or other attributes. (See Section 6.4.)
+Toda implementação de glossário de negócios deve ter um conjunto básico de relatórios para apoiar os processos de governança. Recomenda-se que as organizações não "imprimam o glossário", pois o conteúdo do glossário não é estático. Os administradores de dados são geralmente responsáveis ​​pelo desenvolvimento, uso, operações e relatórios do glossário. Os relatórios incluem o rastreamento de novos termos e definições que ainda não foram revisados, aqueles em status pendente e aqueles sem definições ou outros atributos. (Consulte a Seção 6.4.)
 
-Ease of use and functionality can vary widely. The simpler and easier business glossary search, the more likely the glossary content will be used. However, the most important characteristic of a glossary is that it contains robust content.
+A facilidade de uso e a funcionalidade podem variar bastante. Quanto mais simples e fácil for a busca em glossários de negócios, maior a probabilidade de o conteúdo do glossário ser utilizado. No entanto, a característica mais importante de um glossário é que ele contenha conteúdo robusto.
 
-##### 1.3.5.3 Business Intelligence (BI) Tools
+##### 1.3.5.3 Ferramentas de Business Intelligence (BI)
 
-Business Intelligence tools produce various types of Metadata relevant to the Business Intelligence design including overview information, classes, objects, derived and calculated items, filters, reports, report fields, report layout, reports users, report distribution frequency, and report distribution channels.
+As ferramentas de Business Intelligence produzem vários tipos de metadados relevantes para o design de Business Intelligence, incluindo informações gerais, classes, objetos, itens derivados e calculados, filtros, relatórios, campos de relatório, layout do relatório, usuários do relatório, frequência de distribuição do relatório e canais de distribuição do relatório.
 
-##### 1.3.5.4 Configuration Management Tools
+##### 1.3.5.4 Ferramentas de Gerenciamento de Configuração
 
-Configuration management tools or databases (CMDB) provide the capability to manage and maintain Metadata specifically related to the IT assets, the relationships among them, and contractual details of the asset. Each asset in the CMDB database is referred to as a configuration item (CI). Standard Metadata is collected and managed for each CI type. Many organizations integrate the CMDB with the change management processes to identify the related assets or applications impacted by a change to a specific asset. Repositories provide mechanisms to link the assets in the Metadata repository to the actual physical implementation details in CMDB to give a complete picture of the data and the platforms.
+Ferramentas de Gerenciamento de Configuração ou bancos de dados (CMDB) fornecem a capacidade de gerenciar e manter Metadados especificamente relacionados aos ativos de TI, os relacionamentos entre eles e os detalhes contratuais do ativo. Cada ativo no banco de dados do CMDB é denominado item de configuração (IC). Metadados padrão são coletados e gerenciados para cada tipo de IC. Muitas organizações integram o CMDB aos processos de gerenciamento de mudanças para identificar os ativos ou aplicativos relacionados impactados por uma alteração em um ativo específico. Os repositórios fornecem mecanismos para vincular os ativos no repositório de Metadados aos detalhes reais da implementação física no CMDB para fornecer uma visão completa dos dados e das plataformas.
 
-##### 1.3.5.5 Data Dictionaries
+##### 1.3.5.5 Dicionários de Dados
 
-A data dictionary defines the structure and contents of data sets, often for a single database, application, or warehouse. The dictionary can be used to manage the names, descriptions, structure, characteristics, storage requirements, default values, relationships, uniqueness, and other attributes of every data element in a model. It should also contain table or file definitions. Data dictionaries are embedded in database tools for the creation, operation, manipulation of data contained in them. To make this Metadata available to data consumers, it must be extracted from the database or modeling tools. Data dictionaries can also describe in business terminology what data elements are available to the community, provisioned under what security restrictions, and applied in which business process. Time can be saved when defining, publishing, and maintaining a semantic layer for reporting and analysis by leveraging the content directly from the logical model. However, as noted earlier, existing definitions should be used with caution, especially in an organization with a low level of maturity around Metadata management.
+Um dicionário de dados define a estrutura e o conteúdo de conjuntos de dados, geralmente para um único banco de dados, aplicativo ou warehouse. O dicionário pode ser usado para gerenciar nomes, descrições, estrutura, características, requisitos de armazenamento, valores padrão, relacionamentos, exclusividade e outros atributos de cada elemento de dados em um modelo. Ele também deve conter definições de tabelas ou arquivos. Dicionários de dados são incorporados em ferramentas de banco de dados para a criação, operação e manipulação dos dados nelas contidos. Para disponibilizar esses metadados aos consumidores de dados, eles devem ser extraídos do banco de dados ou de ferramentas de modelagem. Os dicionários de dados também podem descrever, em terminologia empresarial, quais elementos de dados estão disponíveis para a comunidade, provisionados sob quais restrições de segurança e aplicados em quais processos empresariais. É possível economizar tempo ao definir, publicar e manter uma camada semântica para relatórios e análises, aproveitando o conteúdo diretamente do modelo lógico. No entanto, como observado anteriormente, as definições existentes devem ser usadas com cautela, especialmente em uma organização com baixo nível de maturidade em gerenciamento de metadados.
 
-Many key business processes, relationships, and terminologies are explained during the development of the data model. This information, captured in the logical data model, is often lost when physical structures are deployed to production. A data dictionary can help ensure that this information is not lost entirely to the organization and that the logical and physical models are kept in agreement after production deployment.
+Muitos processos, relacionamentos e terminologias empresariais importantes são explicados durante o desenvolvimento do modelo de dados. Essas informações, capturadas no modelo lógico de dados, frequentemente são perdidas quando estruturas físicas são implantadas em produção. Um dicionário de dados pode ajudar a garantir que essas informações não sejam totalmente perdidas para a organização e que os modelos lógico e físico sejam mantidos em conformidade após a implantação em produção.
 
-#### 1.3.5.6 Data Integration Tools
+#### 1.3.5.6 Ferramentas de Integração de Dados
 
-Many data integration tools are used for executables to move data from one system to another or between various modules within the same system. Many of these tools generate transient files, which might contain copies or derived copies of the data. These tools are capable of loading data from various sources and then operating on the loaded data, through grouping, remediation, re-formatting, joining, filtering, or other operations, and then generating output data, which is distributed to the target locations. They document the lineage as data as it moves between systems. Any successful Metadata solution should be able to use the lineage Metadata as it is moves through the integration tools and expose it as a holistic lineage from the actual sources to the final destinations.
+Muitas ferramentas de integração de dados são usadas para executáveis ​​moverem dados de um sistema para outro ou entre vários módulos dentro do mesmo sistema. Muitas dessas ferramentas geram arquivos transitórios, que podem conter cópias ou cópias derivadas dos dados. Essas ferramentas são capazes de carregar dados de várias fontes e, em seguida, operar com os dados carregados, por meio de agrupamento, correção, reformatação, junção, filtragem ou outras operações, e, em seguida, gerar dados de saída, que são distribuídos para os locais de destino. Elas documentam a linhagem como dados à medida que se movem entre os sistemas. Qualquer solução de Metadados bem-sucedida deve ser capaz de usar os Metadados de linhagem à medida que se movem pelas ferramentas de integração e expô-los como uma linhagem holística, desde as fontes reais até os destinos finais.
 
-Data integration tools provide application interfaces (API) to allow external Metadata repositories to extract the lineage information and the transient files Metadata. Once the Metadata repository collects the information, some tools can generate a holistic lineage diagram for any data element. Data integration tools also provide Metadata about the execution of the various data integration jobs, including last successful run, duration, and job status. Some Metadata repositories can extract the data integration runtime statistics and Metadata and expose it alongside the data elements. (See Chapters 6 and 8.)
+Ferramentas de integração de dados fornecem interfaces de aplicação (API) para permitir que repositórios externos de metadados extraiam as informações de linhagem e os metadados de arquivos transitórios. Uma vez que o repositório de metadados coleta as informações, algumas ferramentas podem gerar um diagrama de linhagem holístico para qualquer elemento de dados. Ferramentas de integração de dados também fornecem metadados sobre a execução dos vários trabalhos de integração de dados, incluindo a última execução bem-sucedida, a duração e o status do trabalho. Alguns repositórios de metadados podem extrair as estatísticas de tempo de execução da integração de dados e os metadados e expô-los juntamente com os elementos de dados. (Consulte os Capítulos 6 e 8.)
 
-##### 1.3.5.7 Database Management and System Catalogs
+##### 1.3.5.7 Gerenciamento de Banco de Dados e Catálogos de Sistemas
 
-Database catalogs are an important source of Metadata. They describe the content of databases, along with sizing information, software versions, deployment status, network uptime, infrastructure uptime, availability, and many other operational Metadata attributes. The most common form of database is relational. Relational databases manage the data as a set of tables and columns, where a table contains one or more columns, indexes, constraints, views, and procedures. A Metadata solution should be able to connect to the various databases and data sets and read all of the Metadata exposed by the database. Some of the Metadata repository tools can integrate the exposed Metadata from the system management tools to provide a more holistic picture about the captured physical assets.
+Catálogos de bancos de dados são uma fonte importante de metadados. Eles descrevem o conteúdo dos bancos de dados, juntamente com informações de dimensionamento, versões de software, status de implantação, tempo de atividade da rede, tempo de atividade da infraestrutura, disponibilidade e muitos outros atributos operacionais de metadados. A forma mais comum de banco de dados é o relacional. Bancos de dados relacionais gerenciam os dados como um conjunto de tabelas e colunas, onde uma tabela contém uma ou mais colunas, índices, restrições, visualizações e procedimentos. Uma solução de Metadados deve ser capaz de se conectar a vários bancos de dados e conjuntos de dados e ler todos os Metadados expostos pelo banco de dados. Algumas das ferramentas de repositório de Metadados podem integrar os Metadados expostos das ferramentas de gerenciamento do sistema para fornecer uma visão mais holística dos ativos físicos capturados.
 
-##### 1.3.5.8 Data Mapping Management Tools
+##### 1.3.5.8 Ferramentas de Gerenciamento de Mapeamento de Dados
 
-Mapping management tools are used during the analysis and design phase of a project to transform requirements into mapping specifications, which can then be consumed directly by a data integration tool or used by the developers to generate data integration code. Mapping documentation is also often held in excel documents across the enterprise. Vendors are now considering centralized repositories for the mapping specifications with capabilities to perform version control and change analysis between versions. Many mapping tools integrate with data integration tools to automate the generation of the data integration programs and most can exchange data with other Metadata and Reference Data repositories. (See Chapter 8.)
+Ferramentas de gerenciamento de mapeamento são usadas durante a fase de análise e design de um projeto para transformar requisitos em especificações de mapeamento, que podem então ser consumidas diretamente por uma ferramenta de integração de dados ou usadas pelos desenvolvedores para gerar código de integração de dados. A documentação de mapeamento também é frequentemente mantida em documentos Excel em toda a empresa. Os fornecedores agora estão considerando repositórios centralizados para as especificações de mapeamento com recursos para realizar controle de versão e análise de alterações entre versões. Muitas ferramentas de mapeamento se integram com ferramentas de integração de dados para automatizar a geração dos programas de integração de dados e a maioria pode trocar dados com outros repositórios de Metadados e Dados de Referência. (Consulte o Capítulo 8.)
 
-##### 1.3.5.9 Data Quality Tools
+##### 1.3.5.9 Ferramentas de Qualidade de Dados
 
-Data quality tools assess the quality of data through validation rules. Most of these tools provide the capability to exchange the quality scores and profiles patterns with other Metadata repositories, enabling the Metadata repository to attach the quality scores to the relevant physical assets.
+Ferramentas de qualidade de dados avaliam a qualidade dos dados por meio de regras de validação. A maioria dessas ferramentas oferece a capacidade de trocar pontuações de qualidade e padrões de perfis com outros repositórios de metadados, permitindo que o repositório de metadados anexe as pontuações de qualidade aos ativos físicos relevantes.
 
-##### 1.3.5.10 Directories and Catalogs
+##### 1.3.5.10 Diretórios e Catálogos
 
-While data dictionaries and glossaries contain detailed information about terminology, tables, and fields, a directory or catalog contains information about systems, sources, and locations of data within an organization. A directory of Metadata is particularly useful to developers and data super users, such as data stewardship teams and data analysts, to understand the scope of data in the enterprise, whether to research issues or to find information about sourcing new applications.
+Enquanto dicionários e glossários de dados contêm informações detalhadas sobre terminologia, tabelas e campos, um diretório ou catálogo contém informações sobre sistemas, fontes e locais de dados dentro de uma organização. Um diretório de Metadados é particularmente útil para desenvolvedores e superusuários de dados, como equipes de administração de dados e analistas de dados, para entender o escopo dos dados na empresa, seja para pesquisar problemas ou encontrar informações sobre o fornecimento de novas aplicações.
 
-##### 1.3.5.11 Event Messaging Tools
+##### 1.3.5.11 Ferramentas de Mensagens de Eventos
 
-Event messaging tools move data between diverse systems. To do so, they require a lot of Metadata. They also generate Metadata that describes this movement. These tools include graphic interfaces through which they manage the logic of data movement. They can export the interfaces implementation details, movement logic, and processing statistics to other Metadata repositories.
+Ferramentas de mensagens de eventos movem dados entre diversos sistemas. Para isso, elas requerem muitos Metadados. Elas também geram Metadados que descrevem essa movimentação. Essas ferramentas incluem interfaces gráficas por meio das quais gerenciam a lógica da movimentação de dados. Elas podem exportar os detalhes de implementação das interfaces, a lógica da movimentação e as estatísticas de processamento para outros repositórios de Metadados.
 
-##### 1.3.5.12 Modeling Tools and Repositories
+##### 1.3.5.12 Ferramentas e Repositórios de Modelagem
 
-Data modeling tools are used to build various types of data models: conceptual, logical, and physical. These tools produce Metadata relevant to the design of the application or system model, like subject areas, logical entities, logical attributes, entity and attribute relationships, super types and subtypes, tables, columns, indexes, primary and foreign keys, integrity constraints, and other types of attribution from the models. Metadata repositories can ingest the models created by these tools and integrate the imported Metadata into the repository. Modeling tools are often the source of data dictionary content.
+Ferramentas de modelagem de dados são usadas para construir vários tipos de modelos de dados: conceituais, lógicos e físicos. Essas ferramentas produzem Metadados relevantes para o design do modelo de aplicação ou sistema, como áreas temáticas, entidades lógicas, atributos lógicos, relacionamentos entre entidades e atributos, supertipos e subtipos, tabelas, colunas, índices, chaves primárias e estrangeiras, restrições de integridade e outros tipos de atribuição dos modelos. Os repositórios de Metadados podem ingerir os modelos criados por essas ferramentas e integrar os Metadados importados ao repositório. As ferramentas de modelagem são frequentemente a fonte do conteúdo do dicionário de dados.
 
-##### 1.3.5.13 Reference Data Repositories
+##### 1.3.5.13 Repositórios de Dados de Referência
 
-Reference Data documents the business values and descriptions of the various types of enumerated data (domains) and their contextual use in a system. Tools used to manage Reference Data are also capable of managing relationships between the various codified values within the same or across domains. These suites of tools normally provide capabilities to send the collected Reference Data to a Metadata repository, which in turn will provide mechanisms to associate the Reference Data to the business glossary and to the locations where it is physically implemented like columns or fields.
+Os Dados de Referência documentam os valores de negócio e as descrições dos vários tipos de dados enumerados (domínios) e seu uso contextual em um sistema. As ferramentas usadas para gerenciar Dados de Referência também são capazes de gerenciar relacionamentos entre os vários valores codificados dentro do mesmo domínio ou entre domínios. Esses conjuntos de ferramentas normalmente fornecem recursos para enviar os Dados de Referência coletados para um repositório de Metadados, que, por sua vez, fornecerá mecanismos para associar os Dados de Referência ao glossário de negócios e aos locais onde são fisicamente implementados, como colunas ou campos.
 
-##### 1.3.5.14 Service Registries
+##### 1.3.5.14 Registros de Serviços
 
-A service registry manages and stores the technical information about services and service end-points from a service oriented architecture (SOA) perspective. For example, definitions, interfaces, operations, input and output parameters, policies, versions, and sample usage scenarios. Some of the most important Metadata related to services includes service version, location of service, data center, availability, deployment date, service port, IP address, stats port, connection timeout, and connection retry timeout. Service registries can be interrogated to satisfy various needs like displaying a list of all available services, services with a specific version, obsolete services, or details about a specific service. Services can also be reviewed for potential re-use. The information contained in these repositories provides important facts on what data exists and how it moves between various systems or applications. Metadata in service repositories can be extracted and incorporated with Metadata collected from other tools to provide a complete picture of how data is moving between the various systems.
+Um registro de serviços gerencia e armazena informações técnicas sobre serviços e endpoints de serviços sob a perspectiva de uma arquitetura orientada a serviços (SOA). Por exemplo, definições, interfaces, operações, parâmetros de entrada e saída, políticas, versões e exemplos de cenários de uso. Alguns dos metadados mais importantes relacionados a serviços incluem versão do serviço, local do serviço, data center, disponibilidade, data de implantação, porta do serviço, endereço IP, porta de estatísticas, tempo limite de conexão e tempo limite de nova tentativa de conexão. Os registros de serviços podem ser consultados para atender a diversas necessidades, como exibir uma lista de todos os serviços disponíveis, serviços com uma versão específica, serviços obsoletos ou detalhes sobre um serviço específico. Os serviços também podem ser revisados ​​para possível reutilização. As informações contidas nesses repositórios fornecem fatos importantes sobre quais dados existem e como eles se movem entre vários sistemas ou aplicativos. Os metadados em repositórios de serviços podem ser extraídos e incorporados aos metadados coletados de outras ferramentas para fornecer uma visão completa de como os dados se movem entre os vários sistemas.
 
-##### 1.3.5.15 Other Metadata Stores
+##### 1.3.5.15 Outros Armazenamentos de Metadados
 
-Other Metadata stores include specialized lists such as event registries, source lists or interfaces, code sets, lexicons, spatial and temporal schema, spatial reference, and distribution of digital geographic data sets, repositories of repositories, and business rules.
+Outros armazenamentos de metadados incluem listas especializadas, como registros de eventos, listas de fontes ou interfaces, conjuntos de códigos, léxicos, esquemas espaciais e temporais, referências espaciais e distribuição de conjuntos de dados geográficos digitais, repositórios de repositórios e regras de negócios.
 
-#### 1.3.6 Types of Metadata Architecture
+#### 1.3.6 Tipos de Arquitetura de Metadados
 
-Like other forms of data, Metadata has a lifecycle. Conceptually, all Metadata management solutions include architectural layers that correspond to points in the Metadata lifecycle:
+Assim como outras formas de dados, os metadados têm um ciclo de vida. Conceitualmente, todas as soluções de gerenciamento de metadados incluem camadas arquitetônicas que correspondem a pontos no ciclo de vida dos metadados:
 
-* Metadata creation and sourcing
-* Metadata storage in one or more repositories
-* Metadata integration
-* Metadata delivery
-* Metadata usage
-* Metadata control and management
+* Criação e fornecimento de metadados
+* Armazenamento de metadados em um ou mais repositórios
+* Integração de metadados
+* Entrega de metadados
+* Uso de metadados
+* Controle e gerenciamento de metadados
 
-Different architectural approaches can be used to source, store, integrate, maintain, and make Metadata accessible to consumers.
+Diferentes abordagens arquitetônicas podem ser usadas para fornecer, armazenar, integrar, manter e tornar os metadados acessíveis aos consumidores.
 
-##### 1.3.6.1 Centralized Metadata Architecture
+##### 1.3.6.1 Arquitetura de Metadados Centralizada
 
-A centralized architecture consists of a single Metadata repository that contains copies of Metadata from the various sources. Organizations with limited IT resources, or those seeking to automate as much as possible, may choose to avoid this architecture option. Organizations seeking a high degree of consistency within the common Metadata repository can benefit from a centralized architecture.
+Uma arquitetura centralizada consiste em um único repositório de Metadados que contém cópias de Metadados de diversas fontes. Organizações com recursos de TI limitados ou que buscam automatizar o máximo possível podem optar por evitar essa opção de arquitetura. Organizações que buscam um alto grau de consistência dentro do repositório comum de Metadados podem se beneficiar de uma arquitetura centralizada.
 
-Advantages of a centralized repository include:
+As vantagens de um repositório centralizado incluem:
 
-* High availability, since it is independent of the source systems
-* Quick Metadata retrieval, since the repository and the query reside together
-* Resolved database structures not affected by the proprietary nature of third party or commercial systems
-* Extracted Metadata may be transformed, customized, or enhanced with additional Metadata that may not reside in the source system, improving quality
+* Alta disponibilidade, pois é independente dos sistemas de origem
+* Recuperação rápida de metadados, já que o repositório e a consulta residem juntos
+* Estruturas de banco de dados resolvidas não afetadas pela natureza proprietária de sistemas de terceiros ou comerciais
+* Os metadados extraídos podem ser transformados, personalizados ou aprimorados com metadados adicionais que podem não residir no sistema de origem, melhorando a qualidade
 
-Some limitations of the centralized approach include:
+Algumas limitações da abordagem centralizada incluem:
 
-* Complex processes are necessary to ensure that changes in source Metadata are quickly replicated into the repository
-* Maintenance of a centralized repository can be costly
-* Extraction could require custom modules or middleware
-* Validation and maintenance of customized code can increase the demands on both internal IT staff and the software vendors
+* Processos complexos são necessários para garantir que as alterações nos metadados de origem sejam replicadas rapidamente para o repositório
+* A manutenção de um repositório centralizado pode ser dispendiosa
+* A extração pode exigir módulos ou middleware personalizados
+* A validação e a manutenção de código personalizado podem aumentar as demandas tanto da equipe interna de TI quanto dos fornecedores de software
 
-Figure 85 shows how Metadata is collected in a standalone Metadata repository with its own internal Metadata store. The internal store is populated through a scheduled import (arrows) of the Metadata from the various tools. In turn, the centralized repository exposes a portal for the end users to submit their queries. The Metadata portal passes the request to the centralized Metadata repository. The centralized repository will fulfill the request from the collected Metadata. In this type of implementation, the capability to pass the request from the user to various tools directly is not supported. Global search across the Metadata collected from the various tool is possible due to the collection of various Metadata in the centralized repository.
+A Figura 85 mostra como os metadados são coletados em um repositório de metadados autônomo com seu próprio repositório interno de metadados. O repositório interno é preenchido por meio de uma importação agendada (setas) dos metadados a partir de várias ferramentas. Por sua vez, o repositório centralizado expõe um portal para os usuários finais enviarem suas consultas. O portal de metadados passa a solicitação para o repositório centralizado de metadados. O repositório centralizado atenderá à solicitação a partir dos metadados coletados. Nesse tipo de implementação, a capacidade de passar a solicitação do usuário diretamente para várias ferramentas não é suportada. A busca global nos metadados coletados das diversas ferramentas é possível devido à coleta de vários metadados no repositório centralizado.
 
-![Figure 85 Centralized Metadata Architecture](figure_85.png)
-Figure 85 Centralized Metadata Architecture
+![Figura 85 Arquitetura Centralizada de Metadados](figure_85.png)
+Figura 85 Arquitetura Centralizada de Metadados
 
-##### 1.3.6.2 Distributed Metadata Architecture
+##### 1.3.6.2 Arquitetura Distribuída de Metadados
 
-A completely distributed architecture maintains a single access point. The Metadata retrieval engine responds to user requests by retrieving data from source systems in real time; there is no persistent repository. In this architecture, the Metadata management environment maintains the necessary source system catalogs and lookup information needed to process user queries and searches effectively. A common object request broker or similar middleware protocol accesses these source systems.
+Uma arquitetura completamente distribuída mantém um único ponto de acesso. O mecanismo de recuperação de metadados responde às solicitações do usuário recuperando dados dos sistemas de origem em tempo real; não há um repositório persistente. Nessa arquitetura, o ambiente de gerenciamento de metadados mantém os catálogos do sistema de origem e as informações de consulta necessárias para processar consultas e pesquisas do usuário de forma eficaz. Um agente de solicitação de objeto comum ou um protocolo de middleware semelhante acessa esses sistemas de origem.
 
-Advantages of distributed Metadata architecture include:
+As vantagens da arquitetura de metadados distribuída incluem:
 
-* Metadata is always as current and valid as possible because it is retrieved from its source
-* Queries are distributed, possibly improving response and process time
-* Metadata requests from proprietary systems are limited to query processing rather than requiring a detailed understanding of proprietary data structures, therefore minimizing the implementation and maintenance effort required
-* Development of automated Metadata query processing is likely simpler, requiring minimal manual intervention
-* Batch processing is reduced, with no Metadata replication or synchronization processes
+* Os metadados são sempre tão atuais e válidos quanto possível, pois são recuperados de sua fonte
+* As consultas são distribuídas, possivelmente melhorando o tempo de resposta e o tempo de processamento
+* As solicitações de metadados de sistemas proprietários são limitadas ao processamento de consultas, em vez de exigir um entendimento detalhado das estruturas de dados proprietárias, minimizando, portanto, o esforço de implementação e manutenção necessário
+* O desenvolvimento de processamento automatizado de consultas de metadados é provavelmente mais simples, exigindo intervenção manual mínima
+* O processamento em lote é reduzido, sem processos de replicação ou sincronização de metadados
 
-Distributed architectures also have limitations:
+As arquiteturas distribuídas também apresentam limitações:
 
-* No ability to support user-defined or manually inserted Metadata entries since there is no repository in which to place these additions
-* Standardization of presenting Metadata from various systems
-* Query capabilities are directly affected by the availability of the participating source systems
-* The quality of Metadata depends solely on the participating source systems
+* Não há capacidade de suportar entradas de metadados definidas pelo usuário ou inseridas manualmente, visto que não há um repositório para armazenar essas adições
+* Padronização da apresentação de metadados de vários sistemas
+* Os recursos de consulta são diretamente afetados pela disponibilidade dos sistemas de origem participantes
+* A qualidade dos metadados depende exclusivamente dos sistemas de origem participantes
 
-![Figure 86 Distributed Metadata Architecture](figure_86.png)
-Figure 86 Distributed Metadata Architecture
+![Figura 86 Arquitetura de Metadados Distribuídos](figure_86.png)
+Figura 86 Arquitetura de Metadados Distribuídos
 
-Figure 86 illustrates a distributed Metadata architecture. There is no centralized Metadata repository store and the portal passes the users’ requests to the appropriate tool to execute. As there is no centralized store for the Metadata to be collected from the various tools, every request has to be delegated down to the sources; hence, no capability exist for a global search across the various Metadata sources.
+A Figura 86 ilustra uma arquitetura de metadados distribuída. Não há um repositório centralizado de metadados, e o portal encaminha as solicitações dos usuários para a ferramenta apropriada para execução. Como não há um repositório centralizado para a coleta dos metadados das diversas ferramentas, cada solicitação precisa ser delegada às fontes; portanto, não há capacidade de realizar uma busca global nas diversas fontes de metadados.
 
-##### 1.3.6.3 Hybrid Metadata Architecture
+##### 1.3.6.3 Arquitetura Híbrida de Metadados
 
-A hybrid architecture combines characteristics of centralized and distributed architectures. Metadata still moves directly from the source systems into a centralized repository. However, the repository design only accounts for the user-added Metadata, the critical standardized items, and the additions from manual sources.
+Uma arquitetura híbrida combina características de arquiteturas centralizadas e distribuídas. Os metadados ainda são movidos diretamente dos sistemas de origem para um repositório centralizado. No entanto, o design do repositório considera apenas os metadados adicionados pelo usuário, os itens padronizados críticos e as adições de fontes manuais.
 
-The architecture benefits from the near-real-time retrieval of Metadata from its source and enhanced Metadata to meet user needs most effectively, when needed. The hybrid approach lowers the effort for manual IT intervention and custom-coded access functionality to proprietary systems. The Metadata is as current and valid as possible at the time of use, based on user priorities and requirements. Hybrid architecture does not improve system availability.
+A arquitetura se beneficia da recuperação quase em tempo real dos metadados de sua origem e de metadados aprimorados para atender às necessidades do usuário com mais eficácia, quando necessário. A abordagem híbrida reduz o esforço de intervenção manual de TI e a funcionalidade de acesso codificado personalizado a sistemas proprietários. Os metadados são tão atuais e válidos quanto possível no momento do uso, com base nas prioridades e requisitos do usuário. A arquitetura híbrida não melhora a disponibilidade do sistema.
 
-The availability of the source systems is a limitation, because the distributed nature of the back-end systems handles processing of queries. Additional overhead is required to link those initial results with the Metadata augmentation in the central repository before presenting the result set to the end user.
+A disponibilidade dos sistemas de origem é uma limitação, pois a natureza distribuída dos sistemas de back-end lida com o processamento das consultas. É necessária uma sobrecarga adicional para vincular esses resultados iniciais ao aumento dos metadados no repositório central antes de apresentar o conjunto de resultados ao usuário final.
 
-Many organizations can benefit from a hybrid architecture, including those that have rapidly-changing operational Metadata, those that need consistent, uniform Metadata, and those that experience substantial growth in Metadata and Metadata sources. Organizations with more static Metadata and smaller Metadata growth profiles may not see the maximum potential from this architecture alternative.
+Muitas organizações podem se beneficiar de uma arquitetura híbrida, incluindo aquelas com metadados operacionais que mudam rapidamente, aquelas que precisam de metadados consistentes e uniformes e aquelas que vivenciam um crescimento substancial em metadados e fontes de metadados. Organizações com metadados mais estáticos e perfis de crescimento menores podem não aproveitar o potencial máximo dessa alternativa de arquitetura.
 
-##### 1.3.6.4 Bi-Directional Metadata Architecture
+##### 1.3.6.4 Arquitetura de Metadados Bidirecional
 
-Another advanced architectural approach is bi-directional Metadata architecture, which allows Metadata to change in any part of the architecture (source, data integration, user interface) and then feedback is coordinated from the repository (broker) into its original source.
+Outra abordagem arquitetônica avançada é a arquitetura de Metadados bidirecional, que permite que os Metadados mudem em qualquer parte da arquitetura (fonte, integração de dados, interface do usuário) e, em seguida, o feedback é coordenado do repositório (corretor) para sua fonte original.
 
-Various challenges are apparent in this approach. The design forces the Metadata repository to contain the latest version of the Metadata source and forces it to manage changes to the source, as well. Changes must be trapped systematically, and then resolved. Additional sets of process interfaces to tie the repository back to the Metadata source(s) must be built and maintained.
+Vários desafios são aparentes nessa abordagem. O design força o repositório de Metadados a conter a versão mais recente da fonte de Metadados e também a gerenciar as alterações na fonte. As alterações devem ser capturadas sistematicamente e, em seguida, resolvidas. Conjuntos adicionais de interfaces de processo para vincular o repositório à(s) fonte(s) de Metadados devem ser criados e mantidos.
 
-![Figure 87 Hybrid Metadata Architecture](figure_87.png)
-Figure 87 Hybrid Metadata Architecture
+![Figura 87 Arquitetura de Metadados Híbridos](figure_87.png)
+Figura 87 Arquitetura de Metadados Híbridos
 
-Figure 87 illustrates how common Metadata from different sources is collected in a centralized Metadata store. Users submit their queries to the Metadata portal, which passes the request to a centralized repository. The centralized repository will try to fulfill the user request from the common Metadata collected initially from the various sources. As the request becomes more specific or the user needs more detailed Metadata then the centralized repository will delegate down to the specific source to research the specific details. Global search across the various tools is available due to the common Metadata collected in the centralized repository.
+A Figura 87 ilustra como Metadados comuns de diferentes fontes são coletados em um repositório de Metadados centralizado. Os usuários enviam suas consultas ao portal de Metadados, que repassa a solicitação a um repositório centralizado. O repositório centralizado tentará atender à solicitação do usuário a partir dos Metadados comuns coletados inicialmente das diversas fontes. À medida que a solicitação se torna mais específica ou o usuário precisa de Metadados mais detalhados, o repositório centralizado delegará à fonte específica a pesquisa dos detalhes específicos. A busca global entre as diversas ferramentas está disponível devido aos Metadados comuns coletados no repositório centralizado.
 
-## 2. Activities
+## 2. Atividades
 
-### 2.1 Define Metadata Strategy
+### 2.1 Definir a Estratégia de Metadados
 
-A Metadata strategy describes how an organization intends to manage its Metadata and how it will move from current state to future state practices. A Metadata strategy should provide a framework for development teams to improve Metadata management. Developing Metadata requirements will help clarify the drivers of the strategy and identify potential obstacles to enacting it.
+Uma estratégia de metadados descreve como uma organização pretende gerenciar seus metadados e como ela passará do estado atual para as práticas futuras. Uma estratégia de metadados deve fornecer uma estrutura para as equipes de desenvolvimento aprimorarem o gerenciamento de metadados. O desenvolvimento dos requisitos de metadados ajudará a esclarecer os impulsionadores da estratégia e a identificar potenciais obstáculos à sua implementação.
 
-The strategy includes defining the organization’s future state enterprise Metadata architecture and the implementation phases required to meet strategic objectives. Steps include:
+A estratégia inclui a definição do estado futuro da arquitetura corporativa de metadados da organização e as fases de implementação necessárias para atingir os objetivos estratégicos. As etapas incluem:
 
-* **Initiate Metadata strategy planning:** The goal of initiation and planning is to enable the Metadata strategy team to define its short- and long-term goals. Planning includes drafting a charter, scope, and objectives aligned with overall governance efforts and establishing a communications plan to support the effort. Key stakeholders should be involved in planning.
-* **Conduct key stakeholder interviews:** Interviews with business and technical stakeholder provide a foundation of knowledge for the Metadata strategy.
-* **Assess existing Metadata sources and information architecture:** Assessment determines the relative degree of difficulty in solving the Metadata and systems issues identified in the interviews and documentation review. During this stage, conduct detailed interviews of key IT staff and review documentation of the system architectures, data models, etc.
-* **Develop future Metadata architecture:** Refine and confirm the future vision, and develop the long-term target architecture for the managed Metadata environment in this stage. This phase must account for strategic components, such as organization structure, alignment with data governance andstewardship, managed Metadata architecture, Metadata delivery architecture, technical architecture, and security architecture.
-* **Develop a phased implementation plan:** Validate, integrate, and prioritize findings from the interviews and data analyses. Document the Metadata strategy and define a phased implementation approach to move from the existing to the future managed Metadata environment.
+* **Iniciar o planejamento da estratégia de metadados:** O objetivo da iniciação e do planejamento é permitir que a equipe de estratégia de metadados defina suas metas de curto e longo prazo. O planejamento inclui a elaboração de um estatuto, escopo e objetivos alinhados com os esforços gerais de governança e o estabelecimento de um plano de comunicação para apoiar o esforço. As principais partes interessadas devem ser envolvidas no planejamento.
+* **Conduzir entrevistas com as principais partes interessadas:** Entrevistas com as partes interessadas de negócios e técnicas fornecem uma base de conhecimento para a estratégia de metadados.
 
-The strategy will evolve over time, as Metadata requirements, the architecture, and the lifecycle of Metadata are better understood.
+* **Avaliar as fontes de metadados existentes e a arquitetura da informação:** A avaliação determina o grau relativo de dificuldade na resolução dos problemas de metadados e sistemas identificados nas entrevistas e na revisão da documentação. Durante esta etapa, conduza entrevistas detalhadas com a equipe principal de TI e revise a documentação das arquiteturas de sistema, modelos de dados, etc.
+* **Desenvolver a arquitetura futura de metadados:** Refina e confirma a visão futura e desenvolve a arquitetura-alvo de longo prazo para o ambiente de metadados gerenciado nesta etapa. Esta fase deve levar em conta componentes estratégicos, como estrutura organizacional, alinhamento com a governança e administração de dados, arquitetura de metadados gerenciados, arquitetura de entrega de metadados, arquitetura técnica e arquitetura de segurança.
+* **Desenvolver um plano de implementação em fases:** Validar, integrar e priorizar as descobertas das entrevistas e análises de dados. Documentar a estratégia de metadados e definir uma abordagem de implementação em fases para migrar do ambiente de metadados gerenciado existente para o futuro.
 
-### 2.2 Understand Metadata Requirements
+A estratégia evoluirá ao longo do tempo, à medida que os requisitos de metadados, a arquitetura e o ciclo de vida dos metadados forem melhor compreendidos.
 
-Metadata requirements start with content: What Metadata is needed and at what level. For example, physical and logical names need to be captured for both columns and tables. Metadata content is wide-ranging and requirements will come from both business and technical data consumers. (See Section 1.3.2.)
+### 2.2 Entendendo os Requisitos de Metadados
 
-There are also many functionality-focused requirements associated with a comprehensive Metadata solution:
+Os requisitos de metadados começam com o conteúdo: quais metadados são necessários e em que nível. Por exemplo, nomes físicos e lógicos precisam ser capturados para colunas e tabelas. O conteúdo dos metadados é abrangente e os requisitos virão tanto de consumidores de dados comerciais quanto técnicos. (Consulte a Seção 1.3.2.)
 
-* **Volatility:** How frequently Metadata attributes and sets will be updated
-* **Synchronization:** Timing of updates in relation to source changes
-* **History:** Whether historical versions of Metadata need to be retained
-* **Access rights:** Who can access Metadata and how they access, along with specific user interface functionality for access
-* **Structure:** How Metadata will be modeled for storage
-* **Integration:** The degree of integration of Metadata from different sources; rules for integration
-* **Maintenance:** Processes and rules for updating Metadata (logging and referring for approval)
-* **Management:** Roles and responsibilities for managing Metadata
-* **Quality:** Metadata quality requirements
-* **Security:** Some Metadata cannot be exposed because it will reveal the existence of highly protected data
+Existem também muitos requisitos focados em funcionalidade associados a uma solução abrangente de metadados:
 
-### 2.3 Define Metadata Architecture
+* **Volatilidade:** Com que frequência os atributos e conjuntos de metadados serão atualizados
+* **Sincronização:** Tempo de atualizações em relação às alterações na fonte
+* **Histórico:** Se versões históricas dos metadados precisam ser mantidas
+* **Direitos de acesso:** Quem pode acessar os metadados e como eles acessam, juntamente com a funcionalidade específica da interface do usuário para acesso
+* **Estrutura:** Como os metadados serão modelados para armazenamento
+* **Integração:** O grau de integração dos metadados de diferentes fontes; Regras para integração
+* **Manutenção:** Processos e regras para atualização de Metadados (registro e encaminhamento para aprovação)
+* **Gestão:** Funções e responsabilidades para gerenciar Metadados
+* **Qualidade:** Requisitos de qualidade para Metadados
+* **Segurança:** Alguns Metadados não podem ser expostos, pois isso revelaria a existência de dados altamente protegidos
 
-A Metadata Management system must be capable of extracting Metadata from many sources. Design the architecture to be capable of scanning the various Metadata sources and periodically updating the repository. The system must support the manual updates of Metadata, requests, searches, and lookups of Metadata by various user groups.
+### 2.3 Definir Arquitetura de Metadados
 
-A managed Metadata environment should isolate the end user from the various and disparate Metadata sources. The architecture should provide a single access point for the Metadata repository. The access point must supply all related Metadata resources transparently to the user. Users should be able to access Metadata without being aware of the differing environments of the data sources. In analytics and Big Data solutions, the interface may have largely user-defined functions (UDF) to draw on various data sets, and the Metadata exposure to the end user is inherent to those customizations. With less reliance on UDF in solutions, end users will be gathering, inspecting, and using data sets more directly and various supporting Metadata is usually more exposed.
+Um sistema de Gerenciamento de Metadados deve ser capaz de extrair Metadados de diversas fontes. Projete a arquitetura para ser capaz de escanear as diversas fontes de Metadados e atualizar periodicamente o repositório. O sistema deve suportar atualizações manuais de Metadados, solicitações, buscas e consultas de Metadados por diversos grupos de usuários.
 
-Design of the architecture depends on the specific requirements of the organization. Three technical architectural approaches to building a common Metadata repository mimic the approaches to designing data warehouses: centralized, distributed, and hybrid (see Section 1.3.6). These approaches all take into account implementation of the repository, and how the update mechanisms operate.
+Um ambiente de Metadados gerenciado deve isolar o usuário final das diversas e distintas fontes de Metadados. A arquitetura deve fornecer um único ponto de acesso para o repositório de Metadados. O ponto de acesso deve fornecer todos os recursos de Metadados relacionados de forma transparente ao usuário. Os usuários devem ser capazes de acessar os Metadados sem estar cientes dos diferentes ambientes das fontes de dados. Em soluções de análise e Big Data, a interface pode ter funções amplamente definidas pelo usuário (UDF) para utilizar diversos conjuntos de dados, e a exposição dos Metadados ao usuário final é inerente a essas personalizações. Com menos dependência de UDF nas soluções, os usuários finais coletarão, inspecionarão e usarão conjuntos de dados de forma mais direta, e diversos Metadados de suporte geralmente estarão mais expostos.
 
-#### 2.3.1 Create MetaModel
+O design da arquitetura depende dos requisitos específicos da organização. Três abordagens técnicas de arquitetura para a construção de um repositório comum de metadados imitam as abordagens para o projeto de data warehouses: centralizado, distribuído e híbrido (consulte a Seção 1.3.6). Todas essas abordagens levam em consideração a implementação do repositório e o funcionamento dos mecanismos de atualização.
 
-Create a data model for the Metadata repository, or metamodel, as one of the first design steps after the Metadata strategy is complete and the business requirements are understood. Different levels of metamodel may be developed as needed; a high-level conceptual model, that explains the relationships between systems, and a lower level metamodel that details the attributions, to describe the elements and processes of a model. In addition to being a planning tool and a means of articulating requirements, the metamodel is in itself a valuable source of Metadata.
+#### 2.3.1 Criar o Metamodelo
 
-Figure 88 depicts a sample Metadata repository metamodel. The boxes represent the high-level major entities, which contain the data.
+Crie um modelo de dados para o repositório de metadados, ou metamodelo, como uma das primeiras etapas do projeto após a conclusão da estratégia de metadados e a compreensão dos requisitos de negócios. Diferentes níveis de metamodelo podem ser desenvolvidos conforme necessário: um modelo conceitual de alto nível, que explica as relações entre os sistemas, e um metamodelo de nível inferior, que detalha as atribuições, para descrever os elementos e processos de um modelo. Além de ser uma ferramenta de planejamento e um meio de articular requisitos, o metamodelo é, por si só, uma fonte valiosa de metadados.
 
-![Figure 88 Example Metadata Repository Metamodel](figure_88.png)
-Figure 88 Example Metadata Repository Metamodel
+A Figura 88 ilustra um exemplo de metamodelo de repositório de metadados. As caixas representam as principais entidades de alto nível, que contêm os dados.
 
-#### 2.3.2 Apply Metadata Standards
+![Figura 88 Exemplo de Metamodelo de Repositório de Metadados](figure_88.png)
+Figura 88 Exemplo de Metamodelo de Repositório de Metadados
 
-The Metadata solution should adhere to the agreed-upon internal and external standards as identified in the Metadata strategy. Metadata should be monitored for compliance by governance activities. Organization internal Metadata standards include naming conventions, custom attributions, security, visibility, and processing documentation. Organization external Metadata standards include the data exchange formats and application-programming interfaces design.
+#### 2.3.2 Aplicar Padrões de Metadados
 
-#### 2.3.3 Manage Metadata Stores
+A solução de Metadados deve aderir aos padrões internos e externos acordados, conforme identificados na estratégia de Metadados. A conformidade dos metadados deve ser monitorada por atividades de governança. Os padrões internos de Metadados da organização incluem convenções de nomenclatura, atribuições personalizadas, segurança, visibilidade e documentação de processamento. Os padrões externos de Metadados da organização incluem os formatos de troca de dados e o design das interfaces de programação de aplicativos.
 
-Implement control activities to manage the Metadata environment. Control of repositories is control of Metadata movement and repository updates performed by the Metadata specialist. These activities are administrative in nature and involve monitoring and responding to reports, warnings, job logs, and resolving various issues in the implemented repository environment. Many control activities are standard for data operations and interface maintenance. Control activities should have data governance oversight.
+#### 2.3.3 Gerenciar Armazenamentos de Metadados
 
-Control activities include:
+Implementar atividades de controle para gerenciar o ambiente de Metadados. O controle de repositórios é o controle da movimentação e das atualizações de Metadados realizado pelo especialista em Metadados. Essas atividades são de natureza administrativa e envolvem o monitoramento e a resposta a relatórios, avisos, logs de tarefas e a resolução de vários problemas no ambiente de repositório implementado. Muitas atividades de controle são padrão para operações de dados e manutenção de interfaces. As atividades de controle devem ter supervisão da governança de dados.
 
-* Job scheduling and monitoring
-* Load statistical analysis
-* Backup, recovery, archive, purging
-* Configuration modifications
-* Performance tuning
-* Query statistics analysis
-* Query and report generation
-* Security management
-* Quality control activities include:
-* Quality assurance, quality control
-* Frequency of data update – matching sets to timeframes
-* Missing Metadata reports
-* Aging Metadata report
-* Metadata management activities include:
-* Loading, scanning, importing and tagging assets
-* Source mapping and movement
-* Versioning
-* User interface management
-* Linking data sets Metadata maintenance – for NOSQL provisioning
-* Linking data to internal data acquisition – custom links and job Metadata
-* Licensing for external data sources and feeds
-* Data enhancement Metadata, e.g., Link to GIS
-* And training, including:
-* Education and training of users and data stewards
-* Management metrics generation and analysis
-* Training on the control activities and query and reporting
+As atividades de controle incluem:
 
-### 2.4 Create and Maintain Metadata
+* Agendamento e monitoramento de tarefas
+* Análise estatística de carga
+* Backup, recuperação, arquivamento e limpeza
+* Modificações de configuração
+* Ajuste de desempenho
+* Análise estatística de consultas
+* Geração de consultas e relatórios
+* Gerenciamento de segurança
+* As atividades de controle de qualidade incluem:
+* Garantia de qualidade, controle de qualidade
+* Frequência de atualização de dados – correspondência de conjuntos com períodos
+* Relatórios de metadados ausentes
+* Relatório de metadados antigos
+* As atividades de gerenciamento de metadados incluem:
+* Carregamento, digitalização, importação e marcação de ativos
+* Mapeamento e movimentação de fontes
+* Controle de versão
+* Gerenciamento da interface do usuário
+* Vinculação de conjuntos de dados Manutenção de metadados – para provisionamento NOSQL
+* Vinculação de dados à aquisição interna de dados – links personalizados e metadados de tarefas
+* Licenciamento para fontes e feeds de dados externos
+* Aprimoramento de dados Metadados, por exemplo, vinculação a GIS
+* E treinamento, incluindo:
+* Educação e treinamento de usuários e administradores de dados
+* Geração e análise de métricas de gerenciamento
+* Treinamento sobre as atividades de controle, consultas e relatórios
 
-As described in Section 1.3.5, Metadata is created through a range of processes and stored in many places within an organization. To be of high quality, Metadata should be managed as a product. Good Metadata is not created by accident. It requires planning. (See Chapter 13.)
+### 2.4 Criar e Manter Metadados
 
-Several general principles of Metadata management describe the means to manage Metadata for quality:
+Conforme descrito na Seção 1.3.5, os Metadados são criados por meio de uma série de processos e armazenados em diversos locais dentro de uma organização. Para serem de alta qualidade, os Metadados devem ser gerenciados como um produto. Bons Metadados não são criados por acidente. Requerem planejamento. (Consulte o Capítulo 13.)
 
-* **Accountability:** Recognize that Metadata is often produced through existing processes (data modeling, SDLC, business process definition) and hold process owners accountable for the quality of Metadata.
-* **Standards:** Set, enforce, and audit standards for Metadata to simplify integration and enable use.
-* **Improvement:** Create a feedback mechanism so that consumers can inform the Metadata Management team of metadata that is incorrect or out-of-date.
+Vários princípios gerais de gerenciamento de Metadados descrevem os meios para gerenciar Metadados visando à qualidade:
 
-Like other data, Metadata can be profiled and inspected for quality. Its maintenance should be scheduled or completed as an auditable part of project work.
+* **Responsabilização:** Reconhecer que os Metadados são frequentemente produzidos por meio de processos existentes (modelagem de dados, SDLC, definição de processos de negócios) e responsabilizar os responsáveis ​​pelos processos pela qualidade dos Metadados.
+* **Padrões:** Definir, aplicar e auditar padrões para Metadados a fim de simplificar a integração e permitir o uso.
+* **Melhoria:** Criar um mecanismo de feedback para que os consumidores possam informar a equipe de Gerenciamento de Metadados sobre metadados incorretos ou desatualizados.
 
-#### 2.4.1 Integrate Metadata
+Como outros dados, os Metadados podem ser perfilados e inspecionados quanto à qualidade. Sua manutenção deve ser programada ou concluída como parte auditável do trabalho do projeto.
 
-Integration processes gather and consolidate Metadata from across the enterprise, including Metadata from data acquired outside the enterprise. The Metadata repository should integrate extracted technical Metadata with relevant business, processes, and stewardship Metadata. Metadata can be extracted using adapters, scanners, bridge applications, or by directly accessing the Metadata in a source data store. Adapters are available with many third party vendor software tools, as well as from Metadata integration tools. In some cases, adapters will be developed using the tool API’s.
+#### 2.4.1 Integrar Metadados
 
-Challenges arise in integration that will require governance. Integrating internal data sets, external data such as government statistics, and data sourced from non-electronic forms, such as white papers, articles in magazines, or reports, can raise numerous questions on quality and semantics. Accomplish repository scanning in two distinct approaches.
+Os processos de integração reúnem e consolidam Metadados de toda a empresa, incluindo Metadados de dados adquiridos fora da empresa. O repositório de Metadados deve integrar Metadados técnicos extraídos com Metadados relevantes de negócios, processos e administração. Os Metadados podem ser extraídos usando adaptadores, scanners, aplicativos de ponte ou acessando diretamente os Metadados em um repositório de dados de origem. Adaptadores estão disponíveis com diversas ferramentas de software de terceiros, bem como com ferramentas de integração de Metadados. Em alguns casos, os adaptadores serão desenvolvidos usando as APIs das ferramentas.
 
-* **Proprietary interface:** In a single-step scan and load process, a scanner collects the Metadata from a source system, then directly calls the format-specific loader component to load the Metadata into the repository. In this process, there is no format-specific file output and the collection and loading of Metadata occurs in a single step.
-* **Semi-proprietary interface:** In a two-step process, a scanner collects the Metadata from a source system and outputs it into a format-specific data file. The scanner only produces a data file that the receiving repository needs to be able to read and load appropriately. The interface is a more open architecture, as the file is readable by many methods.
+Surgem desafios na integração que exigirão governança. A integração de conjuntos de dados internos, dados externos, como estatísticas governamentais, e dados provenientes de formulários não eletrônicos, como white papers, artigos em revistas ou relatórios, pode levantar inúmeras questões sobre qualidade e semântica. Realize a varredura do repositório em duas abordagens distintas.
 
-A scanning process uses and produces several types of files during the process.
+* **Interface proprietária:** Em um processo de varredura e carregamento em uma única etapa, um scanner coleta os metadados de um sistema de origem e, em seguida, chama diretamente o componente carregador específico do formato para carregar os metadados no repositório. Nesse processo, não há saída de arquivo específica do formato e a coleta e o carregamento dos metadados ocorrem em uma única etapa.
+* **Interface semiproprietária:** Em um processo de duas etapas, um scanner coleta os metadados de um sistema de origem e os gera em um arquivo de dados específico do formato. O scanner produz apenas um arquivo de dados que o repositório receptor precisa para poder ler e carregar adequadamente. A interface possui uma arquitetura mais aberta, pois o arquivo pode ser lido por diversos métodos.
 
-* **Control file:** Containing the source structure of the data model
-* **Reuse file:** Containing the rules for managing reuse of process loads
-* **Log files:** Produced during each phase of the process, one for each scan or extract and one for each load cycle
-* **Temporary and backup files:** Use during the process or for traceability
+Um processo de varredura utiliza e produz diversos tipos de arquivos durante o processo.
 
-Use a non-persistent Metadata staging area to store temporary and backup files. The staging area supports rollback and recovery processes, and provides an interim audit trail to assist repository managers when investigating Metadata source or quality issues. The staging area may take the form of a directory of files or a database.
+* **Arquivo de controle:** Contém a estrutura de origem do modelo de dados
+* **Arquivo de reutilização:** Contém as regras para gerenciar a reutilização de cargas de processo
+* **Arquivos de log:** Produzidos durante cada fase do processo, um para cada varredura ou extração e um para cada ciclo de carga
+* **Arquivos temporários e de backup:** Uso durante o processo ou para rastreabilidade
 
-Data Integration tools used for data warehousing and Business Intelligence applications are often used effectively in Metadata integration processes. (See Chapter 8.)
+Use uma área de preparação de metadados não persistente para armazenar arquivos temporários e de backup. A área de preparação suporta processos de reversão e recuperação e fornece uma trilha de auditoria provisória para auxiliar os gerentes de repositório na investigação de problemas de origem ou qualidade de metadados. A área de preparação pode assumir a forma de um diretório de arquivos ou um banco de dados.
 
-#### 2.4.2 Distribute and Deliver Metadata
+Ferramentas de integração de dados usadas para aplicações de data warehouse e Business Intelligence são frequentemente usadas com eficácia em processos de integração de metadados. (Consulte o Capítulo 8.)
 
-Metadata is delivered to data consumers and to applications or tools that require Metadata feeds. Delivery mechanisms include:
+#### 2.4.2 Distribuir e entregar metadados
 
-* Metadata intranet websites for browse, search, query, reporting, and analysis
-* Reports, glossaries and other documents
-* Data warehouses, data marts, and BI (Business Intelligence) tools
-* Modeling and software development tools
-* Messaging and transactions
-* Web services and Application Programming Interfaces (APIs)
-* External organization interface solutions (e.g., supply chain solutions)
+Os metadados são entregues aos consumidores de dados e aos aplicativos ou ferramentas que exigem feeds de metadados. Os mecanismos de entrega incluem:
 
-The Metadata solution often links to a Business Intelligence solution, so that both the scope and the currency of Metadata synchronize with the BI content. A link provides a means of integration into the delivery of BI to the end user. Similarly, some CRM (Customer Relationship Management) or other ERP (Enterprise Resource Planning) solutions may require Metadata integration at the application delivery layer.
+* Sites de intranet com metadados para navegação, pesquisa, consulta, geração de relatórios e análise
+* Relatórios, glossários e outros documentos
+* Data warehouses, data marts e ferramentas de BI (Business Intelligence)
+* Ferramentas de modelagem e desenvolvimento de software
+* Mensagens e transações
+* Serviços web e Interfaces de Programação de Aplicativos (APIs)
+* Soluções de interface para organizações externas (por exemplo, soluções para cadeia de suprimentos)
 
-Metadata is exchanged with external organizations using files (flat, XML, or JSON structured) or through web services.
+A solução de Metadados frequentemente se vincula a uma solução de Business Intelligence, de modo que tanto o escopo quanto a atualidade dos Metadados sejam sincronizados com o conteúdo de BI. Um vínculo fornece um meio de integração na entrega de BI ao usuário final. Da mesma forma, algumas soluções de CRM (Customer Relationship Management) ou outras soluções de ERP (Enterprise Resource Planning) podem exigir integração de Metadados na camada de entrega de aplicativos.
 
-### 2.5 Query, Report, and Analyze Metadata
+Os metadados são trocados com organizações externas por meio de arquivos (estruturados em XML ou JSON) ou por meio de serviços web.
 
-Metadata guides the use of data assets. Use Metadata in Business Intelligence (reporting and analysis), business decisions (operational, tactical, strategic), and in business semantics (what they say, what they mean – business lingo’). A Metadata repository must have a front-end application that supports the search-and-retrieval functionality required for all this guidance and management of data assets. The interface provided to business users may have a different set of functional requirements than that for technical users and developers. Some reports facilitate future development such as change impact analysis, or trouble shoot varying definitions for data warehouse and Business Intelligence projects, such as data lineage reports.
+### 2.5 Consultar, Relatar e Analisar Metadados
 
-## 3. Tools
+Os metadados orientam o uso de ativos de dados. Use metadados em Business Intelligence (relatórios e análises), decisões de negócios (operacionais, táticas, estratégicas) e em semântica de negócios (o que eles dizem, o que eles significam – jargão empresarial). Um repositório de metadados deve ter um aplicativo front-end que suporte a funcionalidade de busca e recuperação necessária para toda essa orientação e gerenciamento de ativos de dados. A interface fornecida aos usuários de negócios pode ter um conjunto diferente de requisitos funcionais daquela para usuários técnicos e desenvolvedores. Alguns relatórios facilitam o desenvolvimento futuro, como a análise de impacto de mudanças, ou a solução de problemas em diferentes definições para projetos de data warehouse e Business Intelligence, como relatórios de linhagem de dados.
 
-The primary tool used to manage Metadata is the Metadata repository. This will include an integration layer and often an interface for manual updates. Tools that produce and use Metadata become sources of Metadata that can be integrated into a Metadata repository.
+## 3. Ferramentas
 
-### 3.1 Metadata Repository Management Tools
+A principal ferramenta usada para gerenciar metadados é o repositório de metadados. Ele incluirá uma camada de integração e, frequentemente, uma interface para atualizações manuais. Ferramentas que produzem e usam metadados tornam-se fontes de metadados que podem ser integradas a um repositório de metadados.
 
-Metadata Management tools provide capabilities to manage Metadata in a centralized location (repository). The Metadata can be either manually entered or extracted from various other sources through specialized connecters. Metadata repositories also provide capabilities to exchange Metadata with other systems.
+### 3.1 Ferramentas de Gerenciamento de Repositórios de Metadados
 
-Metadata management tools and repositories themselves are also a source of Metadata, especially in a hybrid Metadata architectural model or in large enterprise implementations. Metadata management tools allow for the exchange of the collected Metadata with other Metadata repositories, enabling the collection of various and diverse Metadata from different sources into a centralized repository, or enabling the enriching and standardization of the diverse Metadata as it moves between the repositories.
+As ferramentas de gerenciamento de metadados fornecem recursos para gerenciar metadados em um local centralizado (repositório). Os metadados podem ser inseridos manualmente ou extraídos de várias outras fontes por meio de conectores especializados. Os repositórios de metadados também fornecem recursos para a troca de metadados com outros sistemas.
 
-## 4. Techniques
+As ferramentas de gerenciamento de metadados e os próprios repositórios também são uma fonte de metadados, especialmente em um modelo de arquitetura de metadados híbrido ou em implementações corporativas de grande porte. As ferramentas de gerenciamento de metadados permitem a troca dos metadados coletados com outros repositórios de metadados, permitindo a coleta de metadados variados e diversos de diferentes fontes em um repositório centralizado, ou possibilitando o enriquecimento e a padronização dos diversos metadados à medida que se movem entre os repositórios.
 
-### 4.1 Data Lineage and Impact Analysis
+## 4. Técnicas
 
-A key benefit of discovering and documenting Metadata about the physical assets is to provide information on how data is transformed as it moves between systems. Many Metadata tools carry information about what is happening to the data within their environments and provide capabilities to view the lineage across the span of the systems or applications they interface. The current version of the lineage based on programming code is referred to as ‘As Implemented Lineage’. In contrast, lineage describe in mapping specification documents is referred to as ‘As Designed Lineage’.
+### 4.1 Linhagem de Dados e Análise de Impacto
 
-The limitations of a lineage build are based on the coverage of the Metadata management system. Function-specific Metadata repositories or data visualization tools have information about the data lineage within the scope of the environments they interact with but will not provide visibility to what is happening to the data outside their environments.
+Um benefício fundamental de descobrir e documentar metadados sobre os ativos físicos é fornecer informações sobre como os dados são transformados à medida que se movem entre os sistemas. Muitas ferramentas de metadados carregam informações sobre o que está acontecendo com os dados em seus ambientes e fornecem recursos para visualizar a linhagem em toda a extensão dos sistemas ou aplicativos com os quais interagem. A versão atual da linhagem baseada em código de programação é chamada de "Linhagem Conforme Implementada". Em contraste, a linhagem descrita em documentos de especificação de mapeamento é chamada de "Linhagem Conforme Projetado".
 
-Metadata management systems import the ‘As Implemented’ lineage from the various tools that can provide this lineage detail and then augment the data lineage with the ‘As Designed’ from the places where the actual implementation details is not extractable. The process of connecting the pieces of the data lineage referred to as stitching. It results in a holistic visualization of the data as it moves from its original locations (official source or system of record) until it lands in its final destination.
+As limitações de uma construção de linhagem são baseadas na cobertura do sistema de gerenciamento de metadados. Repositórios de metadados específicos para cada função ou ferramentas de visualização de dados têm informações sobre a linhagem de dados dentro do escopo dos ambientes com os quais interagem, mas não fornecem visibilidade sobre o que está acontecendo com os dados fora de seus ambientes.
 
-Figure 89 shows a sample data element lineage. In reading this, the ‘Total Backorder’ business data element, which is physically implemented as column zz_total, depends on 3 other data elements: ‘Units Cost in Cents’ physically implemented as ‘yy_unit_cost’, ‘Tax in Ship to State’ implemented in ‘yy_tax’ and ‘Back Order Quantity’ implemented in ‘yy_qty’.
+Os sistemas de gerenciamento de metadados importam a linhagem "Conforme Implementada" das diversas ferramentas que podem fornecer esses detalhes de linhagem e, em seguida, complementam a linhagem de dados com a "Conforme Projetado" dos locais onde os detalhes reais da implementação não podem ser extraídos. O processo de conectar as partes da linhagem de dados é chamado de costura. Isso resulta em uma visualização holística dos dados à medida que se movem de seus locais originais (fonte oficial ou sistema de registro) até chegarem ao seu destino final.
 
-Although a lineage graphic, such as in Figure 89, describes what is happening to a particular data element, not all business users will understand it. Higher levels of lineage (e.g., ‘System Lineage’) summarize movement at the system or application level. Many visualization tools provide zoom-in / zoom-out capability, to show data element lineage in the context of system lineage. For example, Figure 90 shows a sample system lineage, where at a glance, general data movement is understood and visualized at a system or an application level.
+A Figura 89 mostra um exemplo de linhagem de elementos de dados. Ao lê-lo, o elemento de dados de negócios "Total de Pedidos em Atraso", que é fisicamente implementado como coluna zz_total, depende de 3 outros elementos de dados: "Custo Unitário em Centavos" fisicamente implementado como "yy_unit_cost", "Imposto no Estado de Entrega" implementado em "yy_tax" e "Quantidade de Pedidos em Atraso" implementado em "yy_qty".
 
-![Figure 89 Sample Data Element Lineage Flow Diagram](figure_89.png)
-Figure 89 Sample Data Element Lineage Flow Diagram
+Embora um gráfico de linhagem, como o da Figura 89, descreva o que está acontecendo com um elemento de dados específico, nem todos os usuários de negócios o compreenderão. Níveis mais altos de linhagem (por exemplo, "Linhagem do Sistema") resumem o movimento no nível do sistema ou do aplicativo. Muitas ferramentas de visualização oferecem recursos de zoom in/zoom out para mostrar a linhagem dos elementos de dados no contexto da linhagem do sistema. Por exemplo, a Figura 90 mostra um exemplo de linhagem de sistema, onde, à primeira vista, a movimentação geral de dados é compreendida e visualizada em nível de sistema ou aplicativo.
 
-![Figure 90 Sample System Lineage Flow Diagram](figure_90.png)
-Figure 90 Sample System Lineage Flow Diagram
+![Figura 89 Exemplo de Diagrama de Fluxo de Linhagem de Elementos de Dados](figure_89.png)
+Figura 89 Exemplo de Diagrama de Fluxo de Linhagem de Elementos de Dados
 
-As the number of data elements in a system grows, the lineage discovery becomes complex and difficult to manage. In order to successfully achieve the business goals, a strategy for discovering and importing assets into the Metadata repository requires planning and design. Successful lineage discovery needs to account for both business and technical focus:
+![Figura 90 Exemplo de Diagrama de Fluxo de Linhagem de Sistema](figure_90.png)
+Figura 90 Exemplo de Diagrama de Fluxo de Linhagem de Sistema
 
-* **Business focus:** Limit the lineage discovery to data elements prioritized by the business. Start from the target locations and trace back to the source systems where the specific data originates. By limiting the scanned assets to those that move, transfer, or update the selected data elements, this approach will enable business data consumers to understand what is happening to the specific data element as it moves through systems. If coupled with data quality measurements, lineage can be used to pinpoint where system design adversely impacts the quality of the data.
-* **Technical focus:** Start at the source systems and identify all the immediate consumers, then identify all the subsequent consumers of the first set identified and keep repeating these steps until all systems are identified. Technology users benefit more from the system discovery strategy in order to help answer the various questions about the data. This approach will enable technology and business users to answer question about discovering data elements across the enterprise, like “Where is social security number?” or generate impact reports like “What systems are impacted if the width of a specific column is changed?” This strategy can, however, be complex to manage.
+À medida que o número de elementos de dados em um sistema aumenta, a descoberta de linhagem se torna complexa e difícil de gerenciar. Para atingir com sucesso os objetivos de negócios, uma estratégia para descobrir e importar ativos para o repositório de metadados requer planejamento e design. Uma descoberta de linhagem bem-sucedida precisa levar em conta o foco comercial e técnico:
 
-Many data integration tools offer lineage analysis that considers not only the developed population code but the data model and the physical database as well. Some offer business user facing web interfaces to monitor and update definitions. These begin to look like business glossaries.
+* **Foco comercial:** Limite a descoberta de linhagem aos elementos de dados priorizados pela empresa. Comece pelos locais de destino e rastreie até os sistemas de origem onde os dados específicos se originam. Ao limitar os ativos escaneados àqueles que movem, transferem ou atualizam os elementos de dados selecionados, essa abordagem permitirá que os consumidores de dados comerciais entendam o que está acontecendo com o elemento de dados específico à medida que ele se move pelos sistemas. Se combinada com medições de qualidade de dados, a linhagem pode ser usada para identificar onde o design do sistema impacta negativamente a qualidade dos dados.
+* **Foco técnico:** Comece pelos sistemas de origem e identifique todos os consumidores imediatos, depois identifique todos os consumidores subsequentes do primeiro conjunto identificado e continue repetindo essas etapas até que todos os sistemas sejam identificados. Os usuários de tecnologia se beneficiam mais da estratégia de descoberta de sistemas para ajudar a responder às diversas perguntas sobre os dados. Essa abordagem permitirá que usuários de tecnologia e de negócios respondam a perguntas sobre a descoberta de elementos de dados em toda a empresa, como "Onde está o número do seguro social?" ou gerem relatórios de impacto como "Quais sistemas são impactados se a largura de uma coluna específica for alterada?". No entanto, essa estratégia pode ser complexa de gerenciar.
 
-Documented lineage helps both business and technical people use data. Without it, much time is wasted in investigating anomalies, potential change impacts, or unknown results. Look to implement an integrated impact and lineage tool that can understand all the moving parts involved in the load process as well as end user reporting and analytics. Impact reports outline which components are affected by a potential change expediting and streamlining estimating and maintenance tasks.
+Muitas ferramentas de integração de dados oferecem análise de linhagem que considera não apenas o código populacional desenvolvido, mas também o modelo de dados e o banco de dados físico. Algumas oferecem interfaces web voltadas para usuários de negócios para monitorar e atualizar definições. Essas interfaces começam a se parecer com glossários de negócios.
 
-### 4.2 Metadata for Big Data Ingest
+A linhagem documentada ajuda tanto os profissionais de negócios quanto os técnicos a usar os dados. Sem ela, muito tempo é perdido investigando anomalias, potenciais impactos de mudanças ou resultados desconhecidos. Procure implementar uma ferramenta integrada de impacto e linhagem que possa compreender todas as partes móveis envolvidas no processo de carregamento, bem como relatórios e análises para o usuário final. Os relatórios de impacto descrevem quais componentes são afetados por uma possível mudança, agilizando e simplificando as tarefas de estimativa e manutenção.
 
-Many data management professionals are familiar and comfortable with structured data stores, where every item can be clearly identified and tagged. Nowadays, though, much data comes in less structured formats. Some unstructured sources will be internal to the organization, and some will be external. In either case, there is no longer a need to physically bring the data to one place. Through the new technologies, the program will go to the data as opposed to moving the data to the program, reducing the amount of data movement, and speeding up the execution of the process. Nevertheless, successful data management in a data lake depends on managing Metadata.
+### 4.2 Metadados para Ingestão de Big Data
 
-Metadata tags should be applied to data upon ingestion. Metadata then can be used to identify data content available for access in the data lake. Many ingestion engines profile data as it is ingested. Data profiling can identify data domains, relationships, and data quality issues. It can also enable tagging. On ingestion, Metadata tags can be added to identify sensitive or private (like Personally Identifiable Information – PPI) data, for example. Data scientists may add confidence, textual identifiers, and codes representing behavior clusters. (See Chapter 14.)
+Muitos profissionais de gerenciamento de dados estão familiarizados e confortáveis ​​com armazenamentos de dados estruturados, onde cada item pode ser claramente identificado e marcado. Hoje em dia, porém, muitos dados vêm em formatos menos estruturados. Algumas fontes não estruturadas serão internas à organização e outras externas. Em ambos os casos, não há mais a necessidade de trazer fisicamente os dados para um único local. Com as novas tecnologias, o programa irá até os dados em vez de movê-los para o programa, reduzindo a quantidade de movimentação de dados e acelerando a execução do processo. No entanto, o gerenciamento bem-sucedido de dados em um data lake depende do gerenciamento de metadados.
 
-## 5. Implementation Guidelines
+Tags de metadados devem ser aplicadas aos dados no momento da ingestão. Os metadados podem então ser usados ​​para identificar o conteúdo dos dados disponível para acesso no data lake. Muitos mecanismos de ingestão criam perfis de dados à medida que são ingeridos. A criação de perfis de dados pode identificar domínios de dados, relacionamentos e problemas de qualidade de dados. Também pode permitir a marcação. Na ingestão, tags de metadados podem ser adicionadas para identificar dados sensíveis ou privados (como Informações de Identificação Pessoal – PPI), por exemplo. Cientistas de dados podem adicionar confiança, identificadores textuais e códigos que representam grupos de comportamento. (Consulte o Capítulo 14.)
 
-Implement a managed Metadata environment in incremental steps in order to minimize risks to the organization and to facilitate acceptance. Implement Metadata repositories using an open relational database platform. This allows development and implementation of various controls and interfaces that may not be anticipated at the start of a repository development project.
+## 5. Diretrizes de Implementação
 
-The repository contents should be generic in design, not merely reflecting the source system database designs. Design contents in alignment with the enterprise subject area experts, and based on a comprehensive Metadata model. Planning should account for integrating Metadata so that data consumers can see across different data sources. The ability to do so will be one of the most valuable capabilities of the repository. It should house current, planned, and historical versions of the Metadata.
+Implemente um ambiente de Metadados gerenciado em etapas incrementais para minimizar os riscos para a organização e facilitar a aceitação. Implemente repositórios de Metadados usando uma plataforma de banco de dados relacional aberta. Isso permite o desenvolvimento e a implementação de diversos controles e interfaces que podem não ser previstos no início de um projeto de desenvolvimento de repositório.
 
-Often, the first implementation is a pilot to prove concepts and learn about managing the Metadata environment. Integration of Metadata projects into the IT development methodology is necessary. There will be variations depending on architecture and types of storage.
+O conteúdo do repositório deve ter um design genérico, não refletindo apenas os designs do banco de dados do sistema de origem. Projete o conteúdo em alinhamento com os especialistas da área temática da empresa e com base em um modelo abrangente de Metadados. O planejamento deve levar em conta a integração de Metadados para que os consumidores de dados possam visualizar diferentes fontes de dados. A capacidade de fazer isso será um dos recursos mais valiosos do repositório. Ele deve abrigar versões atuais, planejadas e históricas dos Metadados.
 
-### 5.1 Readiness Assessment / Risk Assessment
+Frequentemente, a primeira implementação é um piloto para comprovar conceitos e aprender sobre o gerenciamento do ambiente de Metadados. A integração de projetos de Metadados à metodologia de desenvolvimento de TI é necessária. Haverá variações dependendo da arquitetura e dos tipos de armazenamento.
 
-Having a solid Metadata strategy helps everyone make more effective decisions. First and foremost, people should be aware of the risks of not managing Metadata. Assess the degree to which the lack of high quality Metadata might result in:
+### 5.1 Avaliação de Prontidão / Avaliação de Riscos
 
-* Errors in judgment due to incorrect, incomplete or invalid assumptions or lack of knowledge about the context of the data
-* Exposure of sensitive data, which may put customers or employees at risk, or impact the credibility of the business and lead to legal expenses
-* Risk that the small set of SMEs who know the data will leave and take their knowledge with them
+Ter uma estratégia sólida de Metadados ajuda todos a tomar decisões mais eficazes. Em primeiro lugar, as pessoas devem estar cientes dos riscos de não gerenciar Metadados. Avalie o grau em que a falta de Metadados de alta qualidade pode resultar em:
 
-Risk is reduced when an organization adopts a solid Metadata strategy. Organizational readiness is addressed by a formal assessment of the current maturity in Metadata activities. The assessment should include the critical business data elements, available Metadata glossaries, lineage, data profiling and data quality processes, MDM (Master Data Management) maturity, and other aspects. Findings from the assessment, aligned with business priorities, will provide the basis for a strategic approach to improvement of Metadata Management practices. A formal assessment also provides the basis for a business case, sponsorship and funding.
+* Erros de julgamento devido a suposições incorretas, incompletas ou inválidas ou à falta de conhecimento sobre o contexto dos dados
+* Exposição de dados sensíveis, que pode colocar clientes ou funcionários em risco, ou impactar a credibilidade da empresa e gerar despesas legais
+* Risco de que o pequeno grupo de PMEs que conhece os dados abandone a empresa e leve seu conhecimento consigo
 
-The Metadata strategy may be part of an overall data governance strategy or it may be the first step in implementing effective data governance. A Metadata assessment should be conducted via objective inspection of existing Metadata, along with interviews with key stakeholders. The deliverables from a risk assessment include a strategy and roadmap.
+O risco é reduzido quando uma organização adota uma estratégia sólida de Metadados. A prontidão organizacional é abordada por uma avaliação formal da maturidade atual nas atividades de Metadados. A avaliação deve incluir os elementos críticos de dados de negócios, os glossários de Metadados disponíveis, a linhagem, os processos de criação de perfil de dados e qualidade de dados, a maturidade do MDM (Master Data Management) e outros aspectos. Os resultados da avaliação, alinhados às prioridades de negócios, fornecerão a base para uma abordagem estratégica para o aprimoramento das práticas de Gestão de Metadados. Uma avaliação formal também fornece a base para um caso de negócios, patrocínio e financiamento.
 
-### 5.2 Organizational and Cultural Change
+A estratégia de Metadados pode fazer parte de uma estratégia geral de governança de dados ou pode ser o primeiro passo para implementar uma governança de dados eficaz. Uma avaliação de Metadados deve ser conduzida por meio de inspeção objetiva dos Metadados existentes, juntamente com entrevistas com as principais partes interessadas. Os resultados de uma avaliação de riscos incluem uma estratégia e um roteiro.
 
-Like other data management efforts, Metadata initiatives often meet with cultural resistance. Moving from an unmanaged to a managed Metadata environment takes work and discipline. It is not easy to do, even if most people recognize the value of reliable Metadata. Organizational readiness is a major concern, as are methods for governance and control.
+### 5.2 Mudança Organizacional e Cultural
 
-Metadata Management is a low priority in many organizations. An essential set of Metadata needs coordination and commitment in an organization. It can be structures of employee identification data, insurance policy numbers, vehicle identification numbers, or product specifications, which if changed, would require major overhauls of many enterprise systems. Look for that good example where control will reap immediate quality benefits for data in the company. Build the argument from concrete business-relevant examples. Implementation of an enterprise data governance strategy needs senior management support and engagement. It requires that business and technology staff be able to work closely together in a cross-functional manner.
+Assim como outros esforços de gerenciamento de dados, as iniciativas de Metadados frequentemente encontram resistência cultural. Mudar de um ambiente de Metadados não gerenciado para um gerenciado exige trabalho e disciplina. Não é fácil, mesmo que a maioria das pessoas reconheça o valor de Metadados confiáveis. A prontidão organizacional é uma grande preocupação, assim como os métodos de governança e controle.
 
-## 6. Metadata Governance
+O Gerenciamento de Metadados é uma prioridade baixa em muitas organizações. Um conjunto essencial de Metadados precisa de coordenação e comprometimento em uma organização. Podem ser estruturas de dados de identificação de funcionários, números de apólices de seguro, números de identificação de veículos ou especificações de produtos que, se alteradas, exigiriam grandes revisões de muitos sistemas corporativos. Procure aquele bom exemplo em que o controle trará benefícios imediatos de qualidade para os dados na empresa. Construa o argumento a partir de exemplos concretos relevantes para os negócios. A implementação de uma estratégia de governança de dados corporativos requer o apoio e o engajamento da alta gerência. Exige que as equipes de negócios e tecnologia sejam capazes de trabalhar em estreita colaboração e de forma multifuncional.
 
-Organizations should determine their specific requirements for the management of the Metadata lifecycle and establish governance processes to enable those requirements. It is recommended that formal roles and responsibilities be assigned to dedicated resources, especially in large or business critical areas. Metadata governance processes themselves depend on reliable Metadata, so the team charged with managing Metadata can test principles on the Metadata they create and use.
+## 6. Governança de Metadados
 
-### 6.1 Process Controls
+As organizações devem determinar seus requisitos específicos para a gestão do ciclo de vida dos Metadados e estabelecer processos de governança para viabilizar esses requisitos. Recomenda-se que funções e responsabilidades formais sejam atribuídas a recursos dedicados, especialmente em áreas de grande porte ou críticas para os negócios. Os próprios processos de governança de Metadados dependem de Metadados confiáveis, de modo que a equipe responsável pelo gerenciamento dos Metadados possa testar os princípios nos Metadados que cria e utiliza.
 
-The data governance team should be responsible for defining the standards and managing status changes for Metadata – often with workflow or collaboration software – and may be responsible for promotional activities and training development or actual training across the organization.
+### 6.1 Controles de Processo
 
-More mature Metadata governance will require business terms and definitions to progress through varying status changes or governance gates; for example, from a candidate term, to approved, to published, and to a final point in the lifecycle of replaced or retired. The governance team may also manage business term associations such as related terms, as well as the categorization of and grouping of the terms.
+A equipe de governança de dados deve ser responsável por definir os padrões e gerenciar as mudanças de status dos Metadados – geralmente com software de fluxo de trabalho ou colaboração – e pode ser responsável por atividades promocionais e desenvolvimento de treinamentos ou treinamentos em toda a organização.
 
-Integration of the Metadata strategy into the SDLC is needed to ensure that changed Metadata is collected when it is changed. This helps ensure Metadata remains current.
+Uma governança de Metadados mais madura exigirá que termos e definições de negócios avancem por meio de diferentes mudanças de status ou portais de governança; por exemplo, de um termo candidato a aprovado, publicado e até um ponto final no ciclo de vida de substituído ou aposentado. A equipe de governança também pode gerenciar associações de termos de negócios, como termos relacionados, bem como a categorização e o agrupamento dos termos.
 
-### 6.2 Documentation of Metadata Solutions
+A integração da estratégia de Metadados ao SDLC é necessária para garantir que os Metadados alterados sejam coletados quando alterados. Isso ajuda a garantir que os Metadados permaneçam atualizados.
 
-A master catalog of Metadata will include the sources and targets currently in scope. This is a resource for IT and business users and can be published out to the user community as a guide to ‘what is where’ and to set expectations on what they will find:
+### 6.2 Documentação das Soluções de Metadados
 
-* Metadata implementation status
-* Source and the target Metadata store
-* Schedule information for updates
-* Retention and versions kept
-* Contents
-* Quality statements or warnings (e.g., missing values)
-* System of record and other data source statuses (e.g., data contents history coverage, retiring or replacing flags)
-* Tools, architectures, and people involved
-* Sensitive information and removal or masking strategy for the source
+Um catálogo mestre de Metadados incluirá as fontes e os destinos atualmente em escopo. Este é um recurso para usuários de TI e de negócios e pode ser publicado para a comunidade de usuários como um guia sobre "o que está onde" e para definir expectativas sobre o que encontrarão:
 
-In documents and content management, data maps show similar information. Visualizations of the overall Metadata integration systems landscape are also maintained as part of Metadata documentation. (See Chapter 9.)
+* Status de implementação de metadados
+* Armazenamento de metadados de origem e destino
+* Informações sobre o cronograma para atualizações
+* Retenção e versões mantidas
+* Conteúdo
+* Declarações ou avisos de qualidade (por exemplo, valores ausentes)
+* Status do sistema de registro e de outras fontes de dados (por exemplo, cobertura do histórico de conteúdo de dados, desativação ou substituição de sinalizadores)
+* Ferramentas, arquiteturas e pessoas envolvidas
+* Informações confidenciais e estratégia de remoção ou mascaramento da fonte
 
-### 6.3 Metadata Standards and Guidelines
+Em documentos e gerenciamento de conteúdo, mapas de dados mostram informações semelhantes. Visualizações do cenário geral dos sistemas de integração de metadados também são mantidas como parte da documentação de metadados. (Consulte o Capítulo 9.)
 
-Metadata standards are essential in the exchange of data with operational trading partners. Companies realize the value of information sharing with customers, suppliers, partners, and regulatory bodies. The need for sharing common Metadata to support the optimal usage of shared information has spawned many sector-based standards.
+### 6.3 Padrões e Diretrizes de Metadados
 
-Adopt industry-based and sector-sensitive Metadata standards early in the planning cycle. Use the standards to evaluate Metadata Management technologies. Many leading vendors support multiple standards, and some can assist in customizing industry-based and sector-sensitive standards.
+Os padrões de metadados são essenciais na troca de dados com parceiros comerciais operacionais. As empresas reconhecem o valor do compartilhamento de informações com clientes, fornecedores, parceiros e órgãos reguladores. A necessidade de compartilhar metadados comuns para dar suporte ao uso ideal das informações compartilhadas gerou muitos padrões setoriais.
 
-Tool vendors provide XML and JSON or REST support to exchange data for their data management products. They use the same strategy to bind their tools together into suites of solutions. Technologies, including data integration, relational and multidimensional databases, requirements management, Business Intelligence reporting, data modeling, and business rules, offer import and export capabilities for data and Metadata using XML. Vendors maintain their proprietary XML schemas and document type definitions (DTD) or more commonly the XML schema definitions (XSD). These are accessed through proprietary interfaces. Custom development is required to integrate these tools into a Metadata management environment.
+Adote padrões de metadados setoriais e sensíveis ao setor no início do ciclo de planejamento. Use os padrões para avaliar tecnologias de gerenciamento de metadados. Muitos fornecedores líderes oferecem suporte a vários padrões, e alguns podem auxiliar na personalização de padrões setoriais e sensíveis ao setor.
 
-Guidelines include templates and associated examples and training on expected inputs and updates including such rules as ‘do not define a term by using the term’ and completeness statements. Different templates are developed for different types of Metadata, and are driven in part by the Metadata solution selected. Ongoing monitoring of guidelines for effectiveness and necessary updates is a governance responsibility.
+Fornecedores de ferramentas fornecem suporte a XML e JSON ou REST para troca de dados para seus produtos de gerenciamento de dados. Eles usam a mesma estratégia para agrupar suas ferramentas em conjuntos de soluções. Tecnologias, incluindo integração de dados, bancos de dados relacionais e multidimensionais, gerenciamento de requisitos, relatórios de Business Intelligence, modelagem de dados e regras de negócios, oferecem recursos de importação e exportação de dados e metadados usando XML. Os fornecedores mantêm seus esquemas XML proprietários e definições de tipo de documento (DTD) ou, mais comumente, as definições de esquema XML (XSD). Eles são acessados ​​por meio de interfaces proprietárias. O desenvolvimento personalizado é necessário para integrar essas ferramentas a um ambiente de gerenciamento de metadados.
 
-The ISO standards for Metadata provide guidance for tool developers but are unlikely to be a concern for organizations who implement using commercial tools, since the tools should meet the standards. Regardless, it can be helpful to have a good understanding of these standards and their repercussions.
+As diretrizes incluem modelos, exemplos associados e treinamento sobre entradas e atualizações esperadas, incluindo regras como "não defina um termo usando o termo" e declarações de completude. Diferentes modelos são desenvolvidos para diferentes tipos de metadados e são determinados, em parte, pela solução de metadados selecionada. O monitoramento contínuo das diretrizes para garantir a eficácia e as atualizações necessárias é uma responsabilidade da governança.
 
-### 6.4 Metrics
+As normas ISO para metadados fornecem orientação para desenvolvedores de ferramentas, mas dificilmente serão uma preocupação para organizações que implementam ferramentas comerciais, uma vez que as ferramentas devem atender às normas. Independentemente disso, pode ser útil ter um bom entendimento dessas normas e suas repercussões.
 
-It is difficult to measure the impact of Metadata without first measuring the impact of the lack of Metadata. As part of risk assessment, obtain metrics on the amount of time data consumers spend searching for information, in order to show improvement after the Metadata solution is put in place. The effectiveness of the Metadata implementation can also be measured in terms of the completeness of the Metadata itself, of the management routines associated it with it, and of Metadata usage. Suggested metrics on Metadata environments include:
+### 6.4 Métricas
 
-* Metadata repository completeness: Compare ideal coverage of the enterprise Metadata (all artifacts and all instances within scope) to actual coverage. Reference the strategy for scope definitions.
-* Metadata Management Maturity: Metrics developed to judge the Metadata maturity of the enterprise, based on the Capability Maturity Model (CMM-DMM) approach to maturity assessment. (See Chapter 15.)
-* Steward representation: Organizational commitment to Metadata as assessed by the appointment of stewards, coverage across the enterprise for stewardship, and documentation of the roles in job descriptions.
-* Metadata usage: User uptake on the Metadata repository usage can be measured by repository login counts. Reference to Metadata by users in business practice is a more difficult measure to track. Anecdotal measures on qualitative surveys may be required to capture this measure.
-* Business Glossary activity: Usage, update, resolution of definitions, coverage. Master Data service data compliance: Shows the reuse of data in SOA solutions. Metadata on the data services assists developers in deciding when new development could use an existing service.
-* Metadata documentation quality: Assess the quality of Metadata documentation through both automatic and manual methods. Automatic methods include performing collision logic on two sources, measuring how much they match, and the trend over time. Another metric would measure the percentage of attributes that have definitions, trending over time. Manual methods include random or complete survey, based on enterprise definitions of quality. Quality measures indicate the completeness, reliability, currency, etc., of the Metadata in the repository.
-* Metadata repository availability: Uptime, processing time (batch and query).
+É difícil mensurar o impacto dos Metadados sem primeiro mensurar o impacto da falta deles. Como parte da avaliação de risco, obtenha métricas sobre o tempo que os consumidores de dados gastam buscando informações, a fim de demonstrar melhorias após a implementação da solução de Metadados. A eficácia da implementação de Metadados também pode ser medida em termos da completude dos próprios Metadados, das rotinas de gerenciamento associadas a eles e do uso dos Metadados. As métricas sugeridas para ambientes de Metadados incluem:
 
-## 7. Works Cited / Recommended
+* Completude do repositório de Metadados: Compare a cobertura ideal dos Metadados da empresa (todos os artefatos e todas as instâncias dentro do escopo) com a cobertura real. Consulte a estratégia para definições de escopo.
+* Maturidade do Gerenciamento de Metadados: Métricas desenvolvidas para avaliar a maturidade dos Metadados da empresa, com base na abordagem do Modelo de Maturidade de Capacidades (CMM-DMM) para avaliação de maturidade. (Ver Capítulo 15.)
+* Representação de Steward: Comprometimento organizacional com os Metadados, avaliado pela nomeação de stewards, abrangência da administração em toda a empresa e documentação das funções nas descrições de cargos.
+* Uso de Metadados: A adesão dos usuários ao uso do repositório de Metadados pode ser medida pela contagem de logins no repositório. A referência a Metadados por usuários na prática empresarial é uma medida mais difícil de rastrear. Medidas anedóticas em pesquisas qualitativas podem ser necessárias para capturar essa medida.
+* Atividade do Glossário de Negócios: Uso, atualização, resolução de definições, abrangência. Conformidade de dados do serviço de Dados Mestres: Mostra a reutilização de dados em soluções SOA. Metadados nos serviços de dados auxiliam os desenvolvedores a decidir quando um novo desenvolvimento pode usar um serviço existente.
+* Qualidade da documentação de Metadados: Avalie a qualidade da documentação de Metadados por meio de métodos automáticos e manuais. Os métodos automáticos incluem a execução de lógica de colisão em duas fontes, medindo o quanto elas correspondem e a tendência ao longo do tempo. Outra métrica mediria a porcentagem de atributos que possuem definições, com a tendência ao longo do tempo. Os métodos manuais incluem pesquisas aleatórias ou completas, com base nas definições de qualidade da empresa. As medidas de qualidade indicam a completude, confiabilidade, atualidade, etc., dos metadados no repositório.
+* Disponibilidade do repositório de metadados: Tempo de atividade, tempo de processamento (lote e consulta).
+
+## 7. Trabalhos Citados / Recomendados
 
 Aiken, Peter. Data Reverse Engineering: Slaying the Legacy Dragon. 1995.
 
@@ -641,44 +642,4 @@ Zeng, Marcia Lei and Jian Qin. Metadata. 2nd ed. ALA Neal-Schuman, 2015. Print.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[^70]: Cole, David. “We kill people based on metadata.” New York Review of Books. 10 May 2014. http://bit.ly/2sV1ulS.
-
+[^70]: Cole, David. “We kill people based on metadata.” New York Review of Books. 10 de Maio de 2014. http://bit.ly/2sV1ulS.

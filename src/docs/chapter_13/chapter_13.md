@@ -1,379 +1,382 @@
-# Data Quality
+# Qualidade de Dados
 
 ![](chapter_13.png)
 
-## 1. Introduction
+## 1. Introdução
 
-Effective data management involves a set of complex, interrelated processes that enable an organization to use its data to achieve strategic goals. Data management includes the ability to design data for applications, store and access it securely, share it appropriately, learn from it, and ensure it meets business needs. An assumption underlying assertions about the value of data is that the data itself is reliable and trustworthy. In other words, that it is of high quality.
+A gestão eficaz de dados envolve um conjunto de processos complexos e inter-relacionados que permitem a uma organização utilizar seus dados para atingir objetivos estratégicos. A gestão de dados inclui a capacidade de projetar dados para aplicações, armazená-los e acessá-los com segurança, compartilhá-los adequadamente, aprender com eles e garantir que atendam às necessidades do negócio. Uma premissa subjacente às afirmações sobre o valor dos dados é que os próprios dados são confiáveis ​​e confiáveis. Em outras palavras, que são de alta qualidade.
 
-However, many factors can undermine that assumption by contributing to poor quality data: Lack of understanding about the effects of poor quality data on organizational success, bad planning, ‘siloed’ system design, inconsistent development processes, incomplete documentation, a lack of standards, or a lack of governance. Many organizations fail to define what makes data fit for purpose.
+No entanto, muitos fatores podem minar essa premissa, contribuindo para a baixa qualidade dos dados: falta de compreensão sobre os efeitos de dados de baixa qualidade no sucesso organizacional, planejamento inadequado, design de sistemas "isolados", processos de desenvolvimento inconsistentes, documentação incompleta, falta de padrões ou falta de governança. Muitas organizações não conseguem definir o que torna os dados adequados à finalidade.
 
-All data management disciplines contribute to the quality of data, and high quality data that supports the organization should be the goal of all data management disciplines. Because uninformed decisions or actions by anyone who interacts with data can result in poor quality data, producing high quality data requires cross- functional commitment and coordination. Organizations and teams should be aware of this and should plan for high quality data, by executing processes and projects in ways that account for risk related to unexpected or unacceptable conditions in the data.
+Todas as disciplinas de gestão de dados contribuem para a qualidade dos dados, e dados de alta qualidade que apoiam a organização devem ser o objetivo de todas as disciplinas de gestão de dados. Como decisões ou ações desinformadas por qualquer pessoa que interaja com os dados podem resultar em dados de baixa qualidade, a produção de dados de alta qualidade exige comprometimento e coordenação interfuncionais. Organizações e equipes devem estar cientes disso e planejar dados de alta qualidade, executando processos e projetos de forma a considerar os riscos relacionados a condições inesperadas ou inaceitáveis ​​nos dados.
 
-Because no organization has perfect business processes, perfect technical processes, or perfect data management practices, all organizations experience problems related to the quality of their data. Organizations that formally manage the quality of data have fewer problems than those that leave data quality to chance. Formal data quality management is similar to continuous quality management for other products. It includes managing data through its lifecycle by setting standards, building quality into the processes that create, transform, and store data, and measuring data against standards. Managing data to this level usually requires a
+Como nenhuma organização possui processos de negócios, processos técnicos ou práticas de gerenciamento de dados perfeitos, todas as organizações enfrentam problemas relacionados à qualidade de seus dados. Organizações que gerenciam formalmente a qualidade dos dados têm menos problemas do que aquelas que deixam a qualidade dos dados ao acaso. O gerenciamento formal da qualidade dos dados é semelhante ao gerenciamento contínuo da qualidade para outros produtos. Inclui o gerenciamento de dados ao longo de seu ciclo de vida, definindo padrões, incorporando a qualidade aos processos que criam, transformam e armazenam dados e medindo os dados em relação a padrões. Gerenciar dados nesse nível geralmente requer uma
 
-Data Quality program team. The Data Quality program team is responsible for engaging both business and technical data management professionals and driving the work of applying quality management techniques to data to ensure that data is fit for consumption for a variety of purposes. The team will likely be involved with a series of projects through which they can establish processes and best practices while addressing high priority data issues.
+Equipe do programa de Qualidade de Dados. A equipe do programa de Qualidade de Dados é responsável por envolver profissionais de gerenciamento de dados comerciais e técnicos e conduzir o trabalho de aplicação de técnicas de gerenciamento de qualidade aos dados para garantir que eles sejam adequados para consumo para uma variedade de propósitos. A equipe provavelmente estará envolvida em uma série de projetos por meio dos quais poderá estabelecer processos e melhores práticas, ao mesmo tempo em que aborda questões de dados de alta prioridade.
 
-Because managing the quality of data involves managing the data lifecycle, a Data Quality program will also have operational responsibilities related to data usage. For example, reporting on data quality levels and engaging in the analysis, quantification, and prioritization of data issues. The team is also responsible for working with those who need data to do their jobs to ensure the data meets their needs and working with those who create, update, or delete data in the course of their jobs to ensure they are properly handling the data. Data quality depends on all who interact with the data, not just data management professionals.
+Como a gestão da qualidade dos dados envolve a gestão do ciclo de vida dos dados, um programa de Qualidade de Dados também terá responsabilidades operacionais relacionadas ao uso dos dados. Por exemplo, relatar os níveis de qualidade dos dados e se envolver na análise, quantificação e priorização de problemas de dados. A equipe também é responsável por trabalhar com aqueles que precisam de dados para realizar suas tarefas, a fim de garantir que atendam às suas necessidades, e com aqueles que criam, atualizam ou excluem dados durante suas tarefas, para garantir que estejam lidando com os dados adequadamente. A qualidade dos dados depende de todos que interagem com os dados, não apenas dos profissionais de gestão de dados.
 
-As is the case with Data Governance and with data management as a whole, Data Quality Management is a program, not a project. It will include both project and maintenance work, along with a commitment to communications and training. Most importantly, the long-term success of data quality improvement program depends on getting an organization to change its culture and adopt a quality mindset. As stated in The Leader’s Data Manifesto: fundamental, lasting change requires committed leadership and involvement from people at all levels in an organization. People who use data to do their jobs – which in most organizations is a very large percentage of employees – need to drive change. One of the most critical changes to focus on is how their organizations manage and improve the quality of their data. [^71]
+Assim como no caso da Governança de Dados e da gestão de dados como um todo, a Gestão da Qualidade de Dados é um programa, não um projeto. Ela incluirá tanto o trabalho de projeto quanto o de manutenção, juntamente com um compromisso com a comunicação e o treinamento. Mais importante ainda, o sucesso a longo prazo de um programa de melhoria da qualidade de dados depende de fazer com que uma organização mude sua cultura e adote uma mentalidade de qualidade. Conforme declarado no Manifesto de Dados do Líder: uma mudança fundamental e duradoura requer liderança comprometida e envolvimento de pessoas em todos os níveis da organização. Pessoas que usam dados para realizar seu trabalho – o que na maioria das organizações representa uma porcentagem muito grande de funcionários – precisam impulsionar a mudança. Uma das mudanças mais críticas a serem consideradas é como suas organizações gerenciam e aprimoram a qualidade de seus dados. [^71]
 
-![Figure 91 Context Diagram: Data Quality](figure_91.png)
-Figure 91 Context Diagram: Data Quality
+![Figura 91 Diagrama de Contexto: Qualidade de Dados](figure_91.png)
+Figura 91 Diagrama de Contexto: Qualidade de Dados
 
-### 1.1 Business Drivers
+### 1.1 Impulsionadores de Negócios
 
-The business drivers for establishing a formal Data Quality Management program include:
+Os impulsionadores de negócios para o estabelecimento de um programa formal de Gestão da Qualidade de Dados incluem:
 
-* Increasing the value of organizational data and the opportunities to use it
-* Reducing risks and costs associated with poor quality data
-* Improving organizational efficiency and productivity
-* Protecting and enhancing the organization’s reputation
+* Aumentar o valor dos dados organizacionais e as oportunidades de utilizá-los
+* Reduzir riscos e custos associados a dados de baixa qualidade
+* Melhorar a eficiência e a produtividade organizacional
+* Proteger e aprimorar a reputação da organização
 
-Organizations that want to get value out of their data recognize that high quality data is more valuable than low quality data. Poor quality data is risk-laden (see Chapter 1). It can damage an organization’s reputation, resulting in fines, lost revenue, lost customers, and negative media exposure. Regulatory requirements often demand high quality data. In addition, many direct costs are associated with poor quality data. For example,
+Organizações que desejam extrair valor de seus dados reconhecem que dados de alta qualidade são mais valiosos do que dados de baixa qualidade. Dados de baixa qualidade são repletos de riscos (consulte o Capítulo 1). Eles podem prejudicar a reputação de uma organização, resultando em multas, perda de receita, perda de clientes e exposição negativa na mídia. Requisitos regulatórios frequentemente exigem dados de alta qualidade. Além disso, muitos custos diretos estão associados a dados de baixa qualidade. Por exemplo,
 
-* Inability to invoice correctly
-* Increased customer service calls and decreased ability to resolve them
-* Revenue loss due to missed business opportunities
-* Delay of integration during mergers and acquisitions
-* Increased exposure to fraud
-* Loss due to bad business decisions driven by bad data
-* Loss of business due to lack of good credit standing
+* Incapacidade de faturar corretamente
+* Aumento de chamadas de atendimento ao cliente e diminuição da capacidade de resolvê-las
+* Perda de receita devido à perda de oportunidades de negócios
+* Atraso na integração durante fusões e aquisições
+* Maior exposição a fraudes
+* Prejuízo devido a más decisões de negócios motivadas por dados incorretos
+* Perda de negócios devido à falta de boa reputação de crédito
 
-Still high quality data is not an end in itself. It is a means to organizational success. Trustworthy data not only mitigates risk and reduces costs, but also improves efficiency. Employees can answer questions more quickly and consistently, when they are working with reliable data. They spend less time trying to figure out if the data is right and more time using the data to gain insight, make decisions, and serve customers.
+Dados de alta qualidade não são um fim em si mesmos. São um meio para o sucesso organizacional. Dados confiáveis ​​não apenas mitigam riscos e reduzem custos, mas também melhoram a eficiência. Os funcionários podem responder a perguntas com mais rapidez e consistência quando trabalham com dados confiáveis. Eles gastam menos tempo tentando descobrir se os dados estão corretos e mais tempo usando os dados para obter insights, tomar decisões e atender clientes.
 
-### 1.2 Goals and Principles
+### 1.2 Metas e Princípios
 
-Data Quality programs focus on these general goals:
+Os programas de Qualidade de Dados concentram-se nestes objetivos gerais:
 
-* Developing a governed approach to make data fit for purpose based on data consumers’ requirements
-* Defining standards and specifications for data quality controls as part of the data lifecycle
-* Defining and implementing processes to measure, monitor, and report on data quality levels
-* Identifying and advocating for opportunities to improve the quality of data, through changes to processes and systems and engaging in activities that measurably improve the quality of data based on data consumer requirements
+* Desenvolver uma abordagem governada para adequar os dados à finalidade, com base nos requisitos dos consumidores de dados
+* Definir padrões e especificações para controles de qualidade de dados como parte do ciclo de vida dos dados
+* Definir e implementar processos para mensurar, monitorar e reportar os níveis de qualidade dos dados
+* Identificar e defender oportunidades para melhorar a qualidade dos dados, por meio de mudanças em processos e sistemas, e envolver-se em atividades que melhorem mensuravelmente a qualidade dos dados com base nos requisitos dos consumidores de dados
 
-Data Quality programs should be guided by the following principles:
+Os programas de Qualidade de Dados devem ser guiados pelos seguintes princípios:
 
-* **Criticality:** A Data Quality program should focus on the data most critical to the enterprise and its customers. Priorities for improvement should be based on the criticality of the data and on the level of risk if data is not correct.
-* **Lifecycle management:** The quality of data should be managed across the data lifecycle, from creation or procurement through disposal. This includes managing data as it moves within and between systems (i.e., each link in the data chain should ensure data output is of high quality).
-* **Prevention:** The focus of a Data Quality program should be on preventing data errors and conditions that reduce the usability of data; it should not be focused on simply correcting records.
-* **Root cause remediation:** Improving the quality of data goes beyond correcting errors. Problems with the quality of data should be understood and addressed at their root causes, rather than just their symptoms. Because these causes are often related to process or system design, improving data quality often requires changes to processes and the systems that support them.
-* **Governance:** Data Governance activities must support the development of high quality data and Data Quality program activities must support and sustain a governed data environment.
-* **Standards-driven:** All stakeholders in the data lifecycle have data quality requirements. To the degree possible, these requirements should be defined in the form of measurable standards and expectations against which the quality of data can be measured.
-* **Objective measurement and transparency:** Data quality levels need to be measured objectively and consistently. Measurements and measurement methodology should be shared with stakeholders since they are the arbiters of quality.
-* **Embedded in business processes:** Business process owners are responsible for the quality of data produced through their processes. They must enforce data quality standards in their processes.
-* **Systematically enforced:** System owners must systematically enforce data quality requirements.
-* **Connected to service levels:** Data quality reporting and issues management should be incorporated into Service Level Agreements (SLA).
+* **Criticalidade:** Um programa de Qualidade de Dados deve se concentrar nos dados mais críticos para a empresa e seus clientes. As prioridades de melhoria devem ser baseadas na criticidade dos dados e no nível de risco caso os dados não estejam corretos.
+* **Gerenciamento do ciclo de vida:** A qualidade dos dados deve ser gerenciada ao longo de todo o ciclo de vida dos dados, desde a criação ou aquisição até o descarte. Isso inclui o gerenciamento de dados conforme eles se movem dentro e entre sistemas (ou seja, cada elo na cadeia de dados deve garantir que a saída de dados seja de alta qualidade).
+* **Prevenção:** O foco de um programa de Qualidade de Dados deve ser a prevenção de erros e condições de dados que reduzem a usabilidade dos dados; não deve se concentrar apenas na correção de registros.
+* **Remediação da causa raiz:** Melhorar a qualidade dos dados vai além da correção de erros. Problemas com a qualidade dos dados devem ser compreendidos e tratados em suas causas raiz, e não apenas em seus sintomas. Como essas causas geralmente estão relacionadas ao design de processos ou sistemas, melhorar a qualidade dos dados geralmente requer mudanças nos processos e nos sistemas que os suportam.
+* **Governança:** As atividades de Governança de Dados devem apoiar o desenvolvimento de dados de alta qualidade, e as atividades do programa de Qualidade de Dados devem apoiar e sustentar um ambiente de dados governado.
+* **Orientado por padrões:** Todas as partes interessadas no ciclo de vida dos dados têm requisitos de qualidade de dados. Na medida do possível, esses requisitos devem ser definidos na forma de padrões e expectativas mensuráveis, em relação aos quais a qualidade dos dados possa ser mensurada.
 
-### 1.3 Essential Concepts
+* **Mensuração objetiva e transparência:** Os níveis de qualidade dos dados precisam ser medidos de forma objetiva e consistente. As medições e a metodologia de medição devem ser compartilhadas com as partes interessadas, visto que elas são os árbitros da qualidade.
+* **Integrados em processos de negócios:** Os proprietários de processos de negócios são responsáveis ​​pela qualidade dos dados produzidos por meio de seus processos. Eles devem aplicar padrões de qualidade de dados em seus processos.
+* **Aplicados sistematicamente:** Os proprietários de sistemas devem aplicar sistematicamente os requisitos de qualidade de dados.
+* **Conectados a níveis de serviço:** Os relatórios de qualidade de dados e o gerenciamento de problemas devem ser incorporados aos Acordos de Nível de Serviço (ANS).
 
-#### 1.3.1 Data Quality
+### 1.3 Conceitos Essenciais
 
-The term data quality refers both to the characteristics associated with high quality data and to the processes used to measure or improve the quality of data. These dual usages can be confusing, so it helps to separate them and clarify what constitutes high quality data. [^72]
+#### 1.3.1 Qualidade de Dados
 
-Data is of high quality to the degree that it meets the expectations and needs of data consumers. That is, if the data is fit for the purposes to which they want to apply it. It is of low quality if it is not fit for those purposes. Data quality is thus dependent on context and on the needs of the data consumer.
+O termo qualidade de dados refere-se tanto às características associadas a dados de alta qualidade quanto aos processos utilizados para mensurar ou melhorar a qualidade dos dados. Esses usos duplos podem ser confusos, por isso é útil separá-los e esclarecer o que constitui dados de alta qualidade. [^72]
 
-One of the challenges in managing the quality of data is that expectations related to quality are not always known. Customers may not articulate them. Often, the people managing data do not even ask about these requirements. However, if data is to be reliable and trustworthy, then data management professionals need to better understand their customers’ quality requirements and how to measure them. This needs to be an ongoing discussion, as requirements change over time as business needs and external forces evolve.
+Os dados são de alta qualidade na medida em que atendem às expectativas e necessidades dos consumidores de dados. Ou seja, se os dados são adequados para os propósitos aos quais eles desejam aplicá-los. São de baixa qualidade se não são adequados para esses propósitos. A qualidade dos dados depende, portanto, do contexto e das necessidades do consumidor de dados.
 
-#### 1.3.2 Critical Data
+Um dos desafios na gestão da qualidade dos dados é que as expectativas relacionadas à qualidade nem sempre são conhecidas. Os clientes podem não as articular. Muitas vezes, as pessoas que gerenciam os dados nem sequer perguntam sobre esses requisitos. No entanto, para que os dados sejam confiáveis ​​e confiáveis, os profissionais de gestão de dados precisam entender melhor os requisitos de qualidade de seus clientes e como medi-los. Esta precisa ser uma discussão contínua, visto que os requisitos mudam ao longo do tempo, à medida que as necessidades do negócio e as forças externas evoluem.
 
-Most organizations have a lot of data, not all of which is of equal importance. One principle of Data Quality Management is to focus improvement efforts on data that is most important to the organization and its customers. Doing so gives the program scope and focus and enables it to make a direct, measurable impact on business needs.
+#### 1.3.2 Dados Críticos
 
-While specific drivers for criticality will differ by industry, there are common characteristics across organizations. Data can be assessed based on whether it is required by:
+A maioria das organizações possui muitos dados, e nem todos têm a mesma importância. Um princípio da Gestão da Qualidade de Dados é concentrar os esforços de melhoria nos dados mais importantes para a organização e seus clientes. Isso confere escopo e foco ao programa, permitindo que ele tenha um impacto direto e mensurável nas necessidades do negócio.
 
-* Regulatory reporting
-* Financial reporting
-* Business policy
-* Ongoing operations
-* Business strategy, especially efforts at competitive differentiation
+Embora os fatores específicos para a criticidade variem de acordo com o setor, existem características comuns entre as organizações. Os dados podem ser avaliados com base na sua necessidade por:
 
-Master Data is critical by definition. Data sets or individual data elements can be assessed for criticality based on the processes that consume them, the nature of the reports they appear in, or the financial, regulatory, or reputational risk to the organization if something were to go wrong with the data. [^73]
+* Relatórios regulatórios
+* Relatórios financeiros
+* Política de negócios
+* Operações em andamento
+* Estratégia de negócios, especialmente esforços de diferenciação competitiva
 
-#### 1.3.3 Data Quality Dimensions
+Dados Mestres são críticos por definição. Conjuntos de dados ou elementos individuais de dados podem ser avaliados quanto à criticidade com base nos processos que os consomem, na natureza dos relatórios em que aparecem ou no risco financeiro, regulatório ou de reputação para a organização caso algo dê errado com os dados. [^73]
 
-A Data Quality dimension is a measurable feature or characteristic of data. The term dimension is used to make the connection to dimensions in the measurement of physical objects (e.g., length, width, height). Data quality dimensions provide a vocabulary for defining data quality requirements. From there, they can be used to define results of initial data quality assessment as well as ongoing measurement. In order to measure the quality of data, an organization needs to establish characteristics that are both important to business processes (worth measuring) and measurable. Dimensions provide a basis for measurable rules, which themselves should be directly connected to potential risks in critical processes.
+#### 1.3.3 Dimensões de Qualidade de Dados
 
-For example, if the data in the customer email address field is incomplete, then we will not be able to send product information to our customers via email, and we will lose potential sales. Therefore, we will measure the percentage of customers for whom we have usable email addresses, and we will improve our processes until we have a usable email address for at least 98% of our customers.
+Uma dimensão de Qualidade de Dados é uma característica ou recurso mensurável dos dados. O termo dimensão é usado para fazer a conexão com dimensões na medição de objetos físicos (por exemplo, comprimento, largura, altura). As dimensões de qualidade de dados fornecem um vocabulário para definir os requisitos de qualidade de dados. A partir daí, podem ser usadas para definir os resultados da avaliação inicial da qualidade dos dados, bem como da medição contínua. Para mensurar a qualidade dos dados, uma organização precisa estabelecer características que sejam importantes para os processos de negócios (valem a pena mensurar) e mensuráveis. As dimensões fornecem uma base para regras mensuráveis, que devem estar diretamente conectadas a riscos potenciais em processos críticos.
 
-Many leading thinkers in data quality have published sets of dimensions. 74 The three most influential are described here because they provide insight into how to think about what it means to have high quality data, as well as into how data quality can be measured.
+Por exemplo, se os dados no campo de endereço de e-mail do cliente estiverem incompletos, não poderemos enviar informações do produto aos nossos clientes por e-mail e perderemos vendas potenciais. Portanto, mensuraremos a porcentagem de clientes para os quais temos endereços de e-mail utilizáveis ​​e aprimoraremos nossos processos até que tenhamos um endereço de e-mail utilizável para pelo menos 98% dos nossos clientes.
 
-The Strong-Wang framework (1996) focuses on data consumers’ perceptions of data. It describes 15 dimensions across four general categories of data quality:
+Muitos pensadores renomados em qualidade de dados publicaram conjuntos de dimensões. [^74] As três mais influentes são descritas aqui porque fornecem insights sobre como pensar o que significa ter dados de alta qualidade, bem como sobre como a qualidade dos dados pode ser mensurada.
 
-* Intrinsic DQ
-  * Accuracy
-  * Objectivity
-  * Believability
-  * Reputation
-* Contextual DQ
-  * Value-added
-  * Relevancy
-  * Timeliness
-  * Completeness
-  * Appropriate amount of data
-* Representational DQ
-  * Interpretability
-  * Ease of understanding
-  * Representational consistency
-  * Concise representation
-* Accessibility DQ
-  * Accessibility
-  * Access security
+A estrutura de Strong-Wang (1996) concentra-se nas percepções dos consumidores de dados sobre os dados. Ela descreve 15 dimensões em quatro categorias gerais de qualidade de dados:
 
-In Data Quality for the Information Age (1996), Thomas Redman formulated a set of data quality dimension rooted in data structure. 75 Redman defines a data item as a “representable triple”: a value from the domain of an attribute within an entity. Dimensions can be associated with any of the component pieces of data – the model (entities and attributes) as well as the values. Redman includes the dimension of representation, which he defines as a set of rules for recording data items. Within these three general categories (data model, data values, representation), he describes more than two dozen dimensions. They include the following:
+* DQ Intrínseca
+  * Precisão
+  * Objetividade
+  * Credibilidade
+  * Reputação
+* DQ Contextual
+  * Valor agregado
+  * Relevância
+  * Temporalidade
+  * Integridade
+  * Quantidade adequada de dados
+* DQ Representacional
+  * Interpretabilidade
+  * Facilidade de compreensão
+  * Consistência representacional
+  * Representação concisa
+* DQ de Acessibilidade
+  * Acessibilidade
+  * Segurança de acesso
 
-Data Model:
+Em Qualidade de Dados para a Era da Informação (1996), Thomas Redman formulou um conjunto de dimensões de qualidade de dados baseadas na estrutura de dados. [^75] Redman define um item de dados como uma "tripla representável": um valor do domínio de um atributo dentro de uma entidade. As dimensões podem ser associadas a qualquer um dos componentes dos dados – o modelo (entidades e atributos), bem como os valores. Redman inclui a dimensão da representação, que ele define como um conjunto de regras para o registro de itens de dados. Dentro dessas três categorias gerais (modelo de dados, valores de dados, representação), ele descreve mais de duas dúzias de dimensões. Elas incluem as seguintes:
 
-* **Content:**
-  * Relevance of data
-  * The ability to obtain the values
-  * Clarity of definitions
-* **Level of detail:**
-  * Attribute granularity
-  * Precision of attribute domains
-* **Composition:**
-  * Naturalness: The idea that each attribute should have a simple counterpart in the real world and that each attribute should bear on a single fact about the entity
-  * Identify-ability: Each entity should be distinguishable from every other entity
-  * Homogeneity
-  * Minimum necessary redundancy
-* **Consistency:**
-  * Semantic consistency of the components of the model
-  * Structure consistency of attributes across entity types
-* **Reaction to change:**
-  * Robustness
-  * Flexibility
+Modelo de Dados:
 
-Data Values:
+* **Conteúdo:**
+  * Relevância dos dados
+  * Capacidade de obter os valores
+  * Clareza das definições
+* **Nível de detalhe:**
+  * Granularidade dos atributos
+  * Precisão dos domínios dos atributos
+* **Composição:**
+  * Naturalidade: A ideia de que cada atributo deve ter uma contrapartida simples no mundo real e que cada atributo deve se basear em um único fato sobre a entidade
+  * Capacidade de identificação: Cada entidade deve ser distinguível de todas as outras
+  * Homogeneidade
+  * Redundância mínima necessária
+* **Consistência:**
+  * Consistência semântica dos componentes do modelo
+  * Consistência estrutural dos atributos entre os tipos de entidade
+* **Reação à mudança:**
+  * Robustez
+  * Flexibilidade
 
-* Accuracy
-* Completeness
-* Currency
-* Consistency
+Valores dos Dados:
 
-Representation:
+* Precisão
+* Completude
+* Atualidade
+* Consistência
 
-* Appropriateness
-* Interpretability
-* Portability
-* Format precision
-* Format flexibility
-* Ability to represent null values
-* Efficient use of storage
-* Physical instances of data being in accord with their formats
+Representação:
 
-Redman recognizes that consistency of entities, values, and representation can be understood in terms of constraints. Different types of consistency are subject to different kinds of constraints.
+* Adequação
+* Interpretabilidade
+* Portabilidade
+* Precisão de formato
+* Flexibilidade de formato
+* Capacidade de representar valores nulos
+* Uso eficiente do armazenamento
+* Instâncias físicas de dados em conformidade com seus formatos
 
-In Improving Data Warehouse and Business Information Quality (1999), Larry English presents a comprehensive set of dimensions divided into two broad categories: inherent and pragmatic. [^76] Inherent characteristics are independent of data use. Pragmatic characteristics are associated with data presentation and are dynamic; their value (quality) can change depending on the uses of data.
+Redman reconhece que a consistência de entidades, valores e representação pode ser entendida em termos de restrições. Diferentes tipos de consistência estão sujeitos a diferentes tipos de restrições.
 
-* Inherent quality characteristics
-  * Definitional conformance
-  * Completeness of values
-  * Validity or business rule conformance
-  * Accuracy to a surrogate source
-  * Accuracy to reality
-  * Precision
-  * Non-duplication
-  * Equivalence of redundant or distributed data
-  * Concurrency of redundant or distributed data
-* Pragmatic quality characteristics
-  * Accessibility
-  * Timeliness
-  * Contextual clarity
-  * Usability
-  * Derivation integrity
-  * Rightness or fact completeness
+Em "Melhorando a Qualidade da Informação Empresarial e do Data Warehouse" (1999), Larry English apresenta um conjunto abrangente de dimensões divididas em duas grandes categorias: inerentes e pragmáticas. [^76] As características inerentes são independentes do uso dos dados. As características pragmáticas estão associadas à apresentação dos dados e são dinâmicas; seu valor (qualidade) pode mudar dependendo do uso dos dados.
 
-In 2013, DAMA UK produced a white paper describing six core dimensions of data quality:
+* Características de qualidade inerentes
+  * Conformidade definicional
+  * Integridade dos valores
+  * Validade ou conformidade com as regras de negócio
+  * Precisão em relação a uma fonte substituta
+  * Precisão em relação à realidade
+  * Precisão
+  * Não duplicação
+  * Equivalência de dados redundantes ou distribuídos
+  * Concorrência de dados redundantes ou distribuídos
+* Características de qualidade pragmáticas
+  * Acessibilidade
+  * Temporalidade
+  * Clareza contextual
+  * Usabilidade
+  * Integridade da derivação
+  * Correção ou completude dos fatos
 
-* **Completeness:** The proportion of data stored against the potential for 100%.
-* **Uniqueness:** No entity instance (thing) will be recorded more than once based upon how that thing is identified.
-* **Timeliness:** The degree to which data represent reality from the required point in time.
-* **Validity:** Data is valid if it conforms to the syntax (format, type, range) of its definition.
-* **Accuracy:** The degree to which data correctly describes the ‘real world’ object or event being described.
-* **Consistency:** The absence of difference, when comparing two or more representations of a thing against a definition.
+Em 2013, a DAMA UK produziu um white paper descrevendo seis dimensões principais da qualidade de dados:
 
-The DAMA UK white paper also describes other characteristics that have an impact on quality. While the white paper does not call these dimensions, they work in a manner similar to Strong and Wang’s contextual and representational DQ and English’s pragmatic characteristics.
+* **Completude:** A proporção de dados armazenados em relação ao potencial de 100%.
+* **Unicidade:** Nenhuma instância de entidade (coisa) será registrada mais de uma vez com base em como essa coisa é identificada.
+* **Temporalidade:** O grau em que os dados representam a realidade a partir do ponto no tempo necessário.
+* **Validade:** Os dados são válidos se estiverem em conformidade com a sintaxe (formato, tipo, intervalo) de sua definição.
+* **Precisão:** O grau em que os dados descrevem corretamente o objeto ou evento do "mundo real" que está sendo descrito.
+* **Consistência:** A ausência de diferença ao comparar duas ou mais representações de uma coisa em relação a uma definição.
 
-* **Usability:** Is the data understandable, simple, relevant, accessible, maintainable and at the right level of precision?
-* **Timing issues (beyond timeliness itself):** Is it stable yet responsive to legitimate change requests?
-* **Flexibility:** Is the data comparable and compatible with other data? Does it have useful groupings and classifications? Can it be repurposed? Is it easy to manipulate?
-* **Confidence:** Are Data Governance, Data Protection, and Data Security processes in place? What is the
-* **Value:** Is there a good cost / benefit case for the data? Is it being optimally used? Does it endanger reputation of the data, and is it verified or verifiable? people’s safety or privacy, or the legal responsibilities of the enterprise? Does it support or contradict the corporate image or the corporate message?
+O white paper da DAMA UK também descreve outras características que impactam a qualidade. Embora o white paper não nomeie essas dimensões, elas funcionam de maneira semelhante à DQ contextual e representacional de Strong e Wang e às características pragmáticas de English.
 
-While there is not a single, agreed-to set of data quality dimensions, these formulations contain common ideas. Dimensions include some characteristics that can be measured objectively (completeness, validity, format conformity) and others that depend on heavily context or on subjective interpretation (usability, reliability, reputation). Whatever names are used, dimensions focus on whether there is enough data (completeness), whether it is right (accuracy, validity), how well it fits together (consistency, integrity, uniqueness), whether it is up-to-date (timeliness), accessible, usable, and secure. Table 29 contains definitions of a set of data quality dimensions, about which there is general agreement and describes approaches to measuring them.
+* **Usabilidade:** Os dados são compreensíveis, simples, relevantes, acessíveis, fáceis de manter e apresentam o nível adequado de precisão?
+* **Questões de tempo (além da pontualidade em si):** São estáveis, mas respondem a solicitações de mudança legítimas?
+* **Flexibilidade:** Os dados são comparáveis ​​e compatíveis com outros dados? Possuem agrupamentos e classificações úteis? Podem ser reaproveitados? São fáceis de manipular?
+* **Confiança:** Os processos de Governança, Proteção e Segurança de Dados estão em vigor? Qual é o
+* **Valor:** Existe uma boa relação custo/benefício para os dados? Estão sendo utilizados de forma otimizada? Colocam em risco a reputação dos dados e são verificados ou verificáveis? A segurança ou privacidade das pessoas, ou as responsabilidades legais da empresa? Apoiam ou contradizem a imagem corporativa ou a mensagem corporativa?
 
-Table 29 Common Dimensions of Data Quality
+Embora não exista um conjunto único e consensual de dimensões de qualidade de dados, essas formulações contêm ideias comuns. As dimensões incluem algumas características que podem ser medidas objetivamente (integridade, validade, conformidade com o formato) e outras que dependem fortemente do contexto ou da interpretação subjetiva (usabilidade, confiabilidade, reputação). Independentemente dos nomes usados, as dimensões se concentram em verificar se há dados suficientes (integridade), se estão corretos (precisão, validade), quão bem se encaixam (consistência, integridade, unicidade), se estão atualizados (oportunidade), acessíveis, utilizáveis ​​e seguros. A Tabela 29 contém as definições de um conjunto de dimensões de qualidade de dados sobre as quais há consenso geral e descreve abordagens para mensurá-las.
+
+Tabela 29 Dimensões Comuns da Qualidade de Dados
 
 <table>
   <thead>
     <tr>
-      <th>Dimension of Quality</th>
-      <th>Description</th>
+      <th>Dimensão da Qualidade</th>
+      <th>Descrição</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Accuracy</td>
+      <td>Precisão</td>
       <td>
-        Accuracy refers to the degree that data correctly represents ‘real-life’ entities. Accuracy is difficult to measure, unless an organization can reproduce data collection or manually confirm accuracy of records. Most measures of accuracy rely on comparison to a data source that has been verified as accurate, such as a system of record or data from a reliable source (e.g., Dun and Bradstreet Reference Data).
+        Precisão refere-se ao grau em que os dados representam corretamente entidades da "vida real". A precisão é difícil de mensurar, a menos que uma organização possa reproduzir a coleta de dados ou confirmar manualmente a precisão dos registros. A maioria das medidas de precisão depende da comparação com uma fonte de dados que foi verificada como precisa, como um sistema de registro ou dados de uma fonte confiável (por exemplo, Dados de Referência Dun and Bradstreet).
       </td>
     </tr>
     <tr>
-      <td>Completeness</td>
+      <td>Integridade</td>
       <td>
-        Completeness refers to whether all required data is present. Completeness can be measured at the data set, record, or column level. Does the data set contain all the records expected? Are records populated correctly? (Records with different statuses may have different expectations for completeness.) Are columns/attributes populated to the level expected? (Some columns are mandatory. Optional columns are populated only under specific conditions.) Assign completeness rules to a data set with varying levels of constraint: Mandatory attributes that require a value, data elements with conditional and optional values, and inapplicable attribute values. Data set level measurements may require comparison to a source of record or may be based on historical levels of population.
+        Completude refere-se à presença de todos os dados necessários. A completude pode ser medida no nível do conjunto de dados, registro ou coluna. O conjunto de dados contém todos os registros esperados? Os registros estão preenchidos corretamente? (Registros com status diferentes podem ter expectativas diferentes de completude.) As colunas/atributos estão preenchidos no nível esperado? (Algumas colunas são obrigatórias. Colunas opcionais são preenchidas apenas sob condições específicas.) Atribua regras de completude a um conjunto de dados com vários níveis de restrição: atributos obrigatórios que exigem um valor, elementos de dados com valores condicionais e opcionais e valores de atributos inaplicáveis. As medições no nível do conjunto de dados podem exigir comparação com uma fonte de registro ou podem ser baseadas em níveis históricos de preenchimento.
       </td>
     </tr>
     <tr>
-      <td>Consistency</td>
+      <td>Consistência</td>
       <td>
-        Consistency can refer to ensuring that data values are consistently represented within a data set and between data sets, and consistently associated across data sets. It can also refer to the size and composition of data sets between systems or across time. Consistency may be defined between one set of attribute values and another attribute set within the same record (record-level consistency), between one set of attribute values and another attribute set in different records (cross-record consistency), or between one set of attribute values and the same attribute set within the same record at different points in time (temporal consistency). Consistency can also be used to refer to consistency of format. Take care not to confuse consistency with accuracy or correctness. Characteristics that are expected to be consistent within and across data sets can be used as the basis for standardizing data. Data Standardization refers to the conditioning of input data to ensure that data meets rules for content and format. Standardizing data enables more effective matching and facilitates consistent output. Encapsulate consistency constraints as a set of rules that specify consistent relationships between values of attributes, either across a record or message, or along all values of a single attribute (such as a range or list of valid values). For example, one might expect that the number of transactions each day does not exceed 105% of the running average number of transactions for the previous 30 days.
+        Consistência pode se referir a garantir que os valores de dados sejam representados consistentemente dentro de um conjunto de dados e entre conjuntos de dados, e consistentemente associados entre conjuntos de dados. Também pode se referir ao tamanho e à composição de conjuntos de dados entre sistemas ou ao longo do tempo. Consistência pode ser definida entre um conjunto de valores de atributos e outro conjunto de atributos dentro do mesmo registro (consistência em nível de registro), entre um conjunto de valores de atributos e outro conjunto de atributos em registros diferentes (consistência entre registros) ou entre um conjunto de valores de atributos e o mesmo conjunto de atributos dentro do mesmo registro em diferentes pontos no tempo (consistência temporal). Consistência também pode ser usada para se referir à consistência de formato. Tome cuidado para não confundir consistência com precisão ou correção. Características que devem ser consistentes dentro e entre conjuntos de dados podem ser usadas como base para padronizar dados. Padronização de dados se refere ao condicionamento de dados de entrada para garantir que os dados atendam às regras de conteúdo e formato. A padronização de dados permite uma correspondência mais eficaz e facilita a saída consistente. Encapsule restrições de consistência como um conjunto de regras que especificam relacionamentos consistentes entre valores de atributos, seja em um registro ou mensagem, ou em todos os valores de um único atributo (como um intervalo ou lista de valores válidos). Por exemplo, pode-se esperar que o número de transações por dia não exceda 105% da média móvel de transações dos 30 dias anteriores.
       </td>
     </tr>
     <tr>
-      <td>Integrity</td>
+      <td>Integridade</td>
       <td>
-        Data Integrity (or Coherence) includes ideas associated with completeness, accuracy, and consistency. In data, integrity usually refers to either referential integrity (consistency between data objects via a reference key contained in both objects) or internal consistency within a data set such that there are no holes or missing parts. Data sets without integrity are seen as corrupted, or have data loss. Data sets without referential integrity have ‘orphans’ – invalid reference keys, or ‘duplicates’ – identical rows which may negatively affect aggregation functions. The level of orphan records can be measured as a raw count or as a percentage of the data set.
+        Integridade de Dados (ou Coerência) inclui ideias associadas à completude, precisão e consistência. Em dados, integridade geralmente se refere à integridade referencial (consistência entre objetos de dados por meio de uma chave de referência contida em ambos os objetos) ou à consistência interna dentro de um conjunto de dados, de forma que não haja lacunas ou partes ausentes. Conjuntos de dados sem integridade referencial são vistos como corrompidos ou apresentam perda de dados. Conjuntos de dados sem integridade referencial têm "órfãos" – chaves de referência inválidas – ou "duplicatas" – linhas idênticas que podem afetar negativamente as funções de agregação. O nível de registros órfãos pode ser medido como uma contagem bruta ou como uma porcentagem do conjunto de dados.
       </td>
     </tr>
     <tr>
-      <td>Reasonability</td>
+      <td>Razoabilidade</td>
       <td>
-        Reasonability asks whether a data pattern meets expectations. For example, whether a distribution of sales across a geographic area makes sense based on what is known about the customers in that area. Measurement of reasonability can take different forms. For example, reasonability may be based on comparison to benchmark data, or past instances of a similar data set (e.g., sales from the previous quarter). Some ideas about reasonability may be perceived as subjective. If this is the case, work with data consumers to articulate the basis of their expectations of data to formulate objective comparisons. Once benchmark measurements of reasonability are established, these can be used to objectively compare new instances of the same data set in order to detect change. (See Section 4.5.)
+        A razoabilidade questiona se um padrão de dados atende às expectativas. Por exemplo, se uma distribuição de vendas em uma área geográfica faz sentido com base no que se sabe sobre os clientes naquela área. A mensuração da razoabilidade pode assumir diferentes formas. Por exemplo, a razoabilidade pode ser baseada na comparação com dados de referência ou instâncias anteriores de um conjunto de dados semelhante (por exemplo, vendas do trimestre anterior). Algumas ideias sobre razoabilidade podem ser percebidas como subjetivas. Se for esse o caso, trabalhe com os consumidores de dados para articular a base de suas expectativas em relação aos dados e formular comparações objetivas. Uma vez estabelecidas as mensurações de referência da razoabilidade, estas podem ser usadas para comparar objetivamente novas instâncias do mesmo conjunto de dados a fim de detectar mudanças. (Consulte a Seção 4.5.)
       </td>
     </tr>
     <tr>
-      <td>Timeliness</td>
+      <td>Temporalidade</td>
       <td>
-        The concept of data Timeliness refers to several characteristics of data. Measures of timeliness need to be understood in terms of expected volatility – how frequently data is likely to change and for what reasons. Data currency is the measure of whether data values are the most up-to-date version of the information. Relatively static data, for example some Reference Data values like country codes, may remain current for a long period. Volatile data remains current for a short period. Some data, for example, stock prices on financial web pages, will often be shown with an as-of-time, so that data consumers understand the risk that the data has changed since it was recorded. During the day, while the markets are open, such data will be updated frequently. Once markets close, the data will remain unchanged, but will still be current, since the market itself is inactive. Latency measures the time between when the data was created and when it was made available for use. For example, overnight batch processing can give a latency of 1 day at 8am for data entered into the system during the prior day, but only one hour for data generated during the batch processing. (See Chapter 8.)
+        O conceito de atualidade dos dados refere-se a várias características dos dados. As medidas de atualidade precisam ser entendidas em termos de volatilidade esperada – com que frequência os dados provavelmente mudarão e por quais motivos. A atualidade dos dados é a medida que determina se os valores dos dados são a versão mais atualizada das informações. Dados relativamente estáticos, por exemplo, alguns valores de Dados de Referência, como códigos de países, podem permanecer atuais por um longo período. Dados voláteis permanecem atuais por um curto período. Alguns dados, por exemplo, preços de ações em páginas da web financeiras, geralmente serão exibidos com uma data de validade, para que os consumidores de dados entendam o risco de que os dados tenham mudado desde que foram registrados. Durante o dia, enquanto os mercados estiverem abertos, esses dados serão atualizados com frequência. Uma vez que os mercados fechem, os dados permanecerão inalterados, mas ainda serão atuais, uma vez que o próprio mercado está inativo. A latência mede o tempo entre quando os dados foram criados e quando foram disponibilizados para uso. Por exemplo, o processamento em lote noturno pode gerar uma latência de 1 dia às 8h para dados inseridos no sistema no dia anterior, mas apenas uma hora para dados gerados durante o processamento em lote. (Consulte o Capítulo 8.)
       </td>
     </tr>
     <tr>
-      <td>Uniqueness / Deduplication</td>
+      <td>Unicidade / Desduplicação</td>
       <td>
-        Uniqueness states that no entity exists more than once within the data set. Asserting uniqueness of the entities within a data set implies that a key value relates to each unique entity, and only that specific entity, within the data set. Measure uniqueness by testing against key structure. (See Chapter 5.)
+        Unicidade afirma que nenhuma entidade existe mais de uma vez no conjunto de dados. Afirmar a unicidade das entidades em um conjunto de dados implica que um valor-chave se relaciona a cada entidade única, e apenas àquela entidade específica, dentro do conjunto de dados. Meça a unicidade testando a estrutura da chave. (Consulte o Capítulo 5.)
       </td>
     </tr>
     <tr>
-      <td>Validity</td>
-      <td>Validity refers to whether data values are consistent with a defined domain of values. A domain of values may be a defined set of valid values (such as in a reference table), a range of values, or value that can be determined via rules. The data type, format, and precision of expected values must be accounted for in defining the domain. Data may also only be valid for a specific length of time, for example data that is generated from RFID (radio frequency ID) or some scientific data sets. Validate data by comparing it to domain constraints. Keep in mind that data may be valid (i.e., it may meet domain requirements) and still not be accurate or correctly associated with particular records.
+      <td>Validade</td>
+      <td>
+        Validade refere-se à consistência dos valores dos dados com um domínio de valores definido. Um domínio de valores pode ser um conjunto definido de valores válidos (como em uma tabela de referência), um intervalo de valores ou um valor que pode ser determinado por meio de regras. O tipo de dado, o formato e a precisão dos valores esperados devem ser considerados na definição do domínio. Os dados também podem ser válidos apenas por um período específico, por exemplo, dados gerados a partir de RFID (identificação por radiofrequência) ou alguns conjuntos de dados científicos. Valide os dados comparando-os com as restrições do domínio. Tenha em mente que os dados podem ser válidos (ou seja, podem atender aos requisitos do domínio) e ainda assim não ser precisos ou associados corretamente a registros específicos.
       </td>
     </tr>
   </tbody>
 </table>
 
-Figure 92 aligns data quality dimensions and concepts associated with those dimensions. The arrows indicate significant overlaps between concepts and also demonstrate that there is not agreement on a specific set. For example, the dimension of accuracy is associated with ‘agrees with real world’ and ‘match to agreed source’ and also to the concepts associated with validity, such as ‘derivation correct’.
+A Figura 92 alinha as dimensões de qualidade de dados e os conceitos associados a essas dimensões. As setas indicam sobreposições significativas entre os conceitos e também demonstram que não há consenso sobre um conjunto específico. Por exemplo, a dimensão de precisão está associada a "concordância com o mundo real" e "correspondência com a fonte acordada", e também aos conceitos associados à validade, como "derivação correta".
 
-![Figure 92 Relationship Between Data Quality Dimensions](figure_92.png)
-Figure 92 Relationship Between Data Quality Dimensions [^77]
+![Figura 92 Relação entre as Dimensões de Qualidade de Dados](figure_92.png)
+Figura 92 Relação entre as Dimensões de Qualidade de Dados [^77]
 
-#### 1.3.4 Data Quality and Metadata
+#### 1.3.4 Qualidade de Dados e Metadados
 
-Metadata is critical to managing the quality of data. The quality of data is based on how well it meets the requirements of data consumers. Metadata defines what the data represents. Having a robust process by which data is defined supports the ability of an organization to formalize and document the standards and requirements by which the quality of data can be measured. Data quality is about meeting expectations. Metadata is a primary means of clarifying expectations.
+Os metadados são essenciais para o gerenciamento da qualidade dos dados. A qualidade dos dados se baseia em quão bem eles atendem aos requisitos dos consumidores de dados. Os metadados definem o que os dados representam. Ter um processo robusto pelo qual os dados são definidos apoia a capacidade de uma organização de formalizar e documentar os padrões e requisitos pelos quais a qualidade dos dados pode ser mensurada. A qualidade dos dados consiste em atender às expectativas. Os metadados são um meio primário de esclarecer expectativas.
 
-Well-managed Metadata can also support the effort to improve the quality of data. A Metadata repository can house results of data quality measurements so that these are shared across the organization and the Data Quality team can work toward consensus about priorities and drivers for improvement. (See Chapter 12.)
+Metadados bem gerenciados também podem apoiar o esforço de melhoria da qualidade dos dados. Um repositório de metadados pode armazenar resultados de medições de qualidade de dados para que sejam compartilhados por toda a organização e a equipe de Qualidade de Dados possa trabalhar em busca de consenso sobre prioridades e motivadores de melhoria. (Consulte o Capítulo 12.)
 
-#### 1.3.5 Data Quality ISO Standard
+#### 1.3.5 Norma ISO de Qualidade de Dados
 
-ISO 8000, the international standard for data quality, is being developed to enable the exchange of complex data in an application-neutral form. In the introduction to the standard, ISO asserts: “The ability to create, collect, store, maintain, transfer, process and present data to support business processes in a timely and cost effective manner requires both an understanding of the characteristics of the data that determine its quality, and an ability to measure, manage and report on data quality.”
+A ISO 8000, a norma internacional para qualidade de dados, está sendo desenvolvida para permitir a troca de dados complexos de forma neutra em termos de aplicação. Na introdução à norma, a ISO afirma: “A capacidade de criar, coletar, armazenar, manter, transferir, processar e apresentar dados para dar suporte aos processos de negócios de forma oportuna e econômica requer tanto a compreensão das características dos dados que determinam sua qualidade quanto a capacidade de mensurar, gerenciar e relatar a qualidade dos dados.”
 
-ISO 8000 defines characteristics that can be tested by any organization in the data supply chain to objectively determine conformance of the data to ISO 8000. [^78]
+A ISO 8000 define características que podem ser testadas por qualquer organização na cadeia de fornecimento de dados para determinar objetivamente a conformidade dos dados com a ISO 8000. [^78]
 
-The first published part of ISO 8000 (part 110, published in 2008) focused on the syntax, semantic encoding, and conformance to the data specification of Master Data. Other parts projected for the standard include part 100 - Introduction, part 120 - Provenance, part 130 -Accuracy, and part 140 - Completeness. [^79] ISO defines quality data as “portable data that meets stated requirements.” [^80] The data quality standard is related to the ISO’s overall work on data portability and preservation. Data is considered ‘portable’ if it can be separated from a software application. Data that can only be used or read using a specific licensed software application is subject to the terms of the software license. An organization may not be able to use data it created unless that data can be detached from the software that was used to create it.
+A primeira parte publicada da ISO 8000 (parte 110, publicada em 2008) concentrou-se na sintaxe, codificação semântica e conformidade com a especificação de dados de Dados Mestres. Outras partes projetadas para a norma incluem a parte 100 - Introdução, a parte 120 - Proveniência, a parte 130 - Precisão e a parte 140 - Completude. [^79] A ISO define dados de qualidade como "dados portáteis que atendem aos requisitos estabelecidos". [^80] O padrão de qualidade de dados está relacionado ao trabalho geral da ISO sobre portabilidade e preservação de dados. Dados são considerados "portáteis" se puderem ser separados de um aplicativo de software. Dados que só podem ser usados ​​ou lidos usando um aplicativo de software licenciado específico estão sujeitos aos termos da licença de software. Uma organização pode não conseguir utilizar os dados que criou, a menos que esses dados possam ser separados do software utilizado para criá-los.
 
-To meet stated requirements requires that these requirements be defined in a clear, unambiguous manner. ISO 8000 is supported through ISO 22745, a standard for defining and exchanging Master Data. ISO 22745 defines how data requirement statements should be constructed, provides examples in XML, and defines a format for the exchange of encoded data. [^81] ISO 22745 creates portable data by labeling the data using an ISO 22745 compliant Open Technical Dictionary such as the ECCMA Open Technical Dictionary (eOTD).
+Para atender aos requisitos estabelecidos, é necessário que estes sejam definidos de forma clara e inequívoca. A ISO 8000 é respaldada pela ISO 22745, uma norma para definição e troca de Dados Mestres. A ISO 22745 define como as declarações de requisitos de dados devem ser construídas, fornece exemplos em XML e define um formato para a troca de dados codificados. [^81] A ISO 22745 cria dados portáteis, rotulando-os com um Dicionário Técnico Aberto compatível com a ISO 22745, como o Dicionário Técnico Aberto da ECCMA (eOTD).
 
-The intention of ISO 8000 is to help organizations define what is and is not quality data, enable them to ask for quality data using standard conventions, and verify that they have received quality data using those same standards. When standards are followed, requirements can be confirmed through a computer program. ISO 8000 - Part 61 Information and data quality management process reference model is under development. [^82]
+A intenção da ISO 8000 é ajudar as organizações a definir o que são e o que não são dados de qualidade, permitir que solicitem dados de qualidade utilizando convenções padrão e verificar se receberam dados de qualidade utilizando essas mesmas normas. Quando as normas são seguidas, os requisitos podem ser confirmados por meio de um programa de computador. O modelo de referência do processo de gestão da qualidade da informação e dos dados da ISO 8000 - Parte 61 está em desenvolvimento. [^82]
 
-This standard will describe the structure and organization of data quality management, including:
+Esta norma descreverá a estrutura e a organização da gestão da qualidade dos dados, incluindo:
 
-* Data Quality Planning
-* Data Quality Control
-* Data Quality Assurance
-* Data Quality Improvement
+* Planejamento da Qualidade dos Dados
+* Controle da Qualidade dos Dados
+* Garantia da Qualidade dos Dados
+* Melhoria da Qualidade dos Dados
 
-#### 1.3.6 Data Quality Improvement Lifecycle
+#### 1.3.6 Ciclo de Vida de Melhoria da Qualidade de Dados
 
-Most approaches to improving data quality are based on the techniques of quality improvement in the manufacture of physical products. 83 In this paradigm, data is understood as the product of a set of processes. At its simplest, a process is defined as a series of steps that turns inputs into outputs. A process that creates data may consist of one-step (data collection) or many steps: data collection, integration into a data warehouse, aggregation in a data mart, etc. At any step, data can be negatively affected. It can be collected incorrectly, dropped or duplicated between systems, aligned or aggregated incorrectly, etc. Improving data quality requires the ability to assess the relationship between inputs and outputs, in order to ensure that inputs meet the requirements of the process and that outputs conform to expectations. Since outputs from one process become inputs to other processes, requirements must be defined along the whole data chain.
+A maioria das abordagens para melhorar a qualidade de dados baseia-se nas técnicas de melhoria da qualidade na fabricação de produtos físicos. [^83] Nesse paradigma, os dados são entendidos como o produto de um conjunto de processos. Em sua forma mais simples, um processo é definido como uma série de etapas que transforma entradas em saídas. Um processo que cria dados pode consistir em uma etapa (coleta de dados) ou em várias etapas: coleta de dados, integração em um data warehouse, agregação em um data mart, etc. Em qualquer etapa, os dados podem ser afetados negativamente. Eles podem ser coletados incorretamente, descartados ou duplicados entre sistemas, alinhados ou agregados incorretamente, etc. Melhorar a qualidade dos dados requer a capacidade de avaliar a relação entre entradas e saídas, a fim de garantir que as entradas atendam aos requisitos do processo e que as saídas estejam em conformidade com as expectativas. Como as saídas de um processo se tornam entradas para outros processos, os requisitos devem ser definidos ao longo de toda a cadeia de dados.
 
-A general approach to data quality improvement, shown in Figure 93, is a version of the Shewhart / Deming cycle. [^84] Based on the scientific method, the Shewhart / Deming cycle is a problem-solving model known as ‘plan-do-check-act’. Improvement comes through a defined set of steps. The condition of data must be measured against standards and, if it does not meet standards, root cause(s) of the discrepancy from standards must be identified and remediated. Root causes may be found in any of the steps of the process, technical or non-technical. Once remediated, data should be monitored to ensure that it continues to meet requirements.
+Uma abordagem geral para a melhoria da qualidade de dados, mostrada na Figura 93, é uma versão do ciclo de Shewhart/Deming. [^84] Baseado no método científico, o ciclo de Shewhart/Deming é um modelo de resolução de problemas conhecido como "planejar-executar-verificar-agir". A melhoria ocorre por meio de um conjunto definido de etapas. A condição dos dados deve ser medida em relação aos padrões e, caso não atenda aos padrões, a(s) causa(s) raiz(es) da discrepância em relação aos padrões deve(m) ser identificada(s) e remediada(s). As causas raiz podem ser encontradas em qualquer uma das etapas do processo, técnicas ou não técnicas. Uma vez remediados, os dados devem ser monitorados para garantir que continuem atendendo aos requisitos.
 
-![Figure 93 The Shewhart Chart](figure_93.png)
-Figure 93 The Shewhart Chart
+![Figura 93 O Diagrama de Shewhart](figure_93.png)
+Figura 93 O Diagrama de Shewhart
 
-For a given data set, a Data Quality Management cycle begins by identifying the data that does not meet data consumers’ requirements and data issues that are obstacles to the achievement of business objectives. Data needs to be assessed against key dimensions of quality and known business requirements. Root causes of issues will need to be identified so that stakeholders can understand the costs of remediation and the risks of not remediating the issues. This work is often done in conjunction with Data Stewards and other stakeholders.
+Para um determinado conjunto de dados, um ciclo de Gestão da Qualidade de Dados começa com a identificação dos dados que não atendem aos requisitos dos consumidores de dados e dos problemas de dados que são obstáculos para o alcance dos objetivos de negócios. Os dados precisam ser avaliados em relação às principais dimensões de qualidade e aos requisitos de negócios conhecidos. As causas-raiz dos problemas precisarão ser identificadas para que as partes interessadas possam compreender os custos da remediação e os riscos de não remediar os problemas. Esse trabalho geralmente é realizado em conjunto com os Administradores de Dados e outras partes interessadas.
 
-In the Plan stage, the Data Quality team assesses the scope, impact, and priority of known issues, and evaluates alternatives to address them. This plan should be based on a solid foundation of analysis of the root causes of issues. From knowledge of the causes and the impact of the issues, cost / benefit can be understood, priority can be determined, and a basic plan can be formulated to address them.
+Na fase de Planejamento, a equipe de Qualidade de Dados avalia o escopo, o impacto e a prioridade dos problemas conhecidos e avalia alternativas para solucioná-los. Esse plano deve ser baseado em uma base sólida de análise das causas-raiz dos problemas. A partir do conhecimento das causas e do impacto dos problemas, a relação custo/benefício pode ser compreendida, a prioridade pode ser determinada e um plano básico pode ser formulado para solucioná-los.
 
-In the Do stage, the DQ team leads efforts to address the root causes of issues and plan for ongoing monitoring of data. For root causes that are based on non-technical processes, the DQ team can work with process owners to implement changes. For root causes that require technical changes, the DQ team should work with technical teams to ensure that requirements are implemented correctly and that technical changes do not introduce errors.
+Na fase de Execução, a equipe de Qualidade de Dados lidera os esforços para tratar as causas-raiz dos problemas e planeja o monitoramento contínuo dos dados. Para causas-raiz baseadas em processos não técnicos, a equipe de Qualidade de Dados pode trabalhar com os responsáveis ​​pelos processos para implementar mudanças. Para causas-raiz que exigem mudanças técnicas, a equipe de Qualidade de Dados deve trabalhar com as equipes técnicas para garantir que os requisitos sejam implementados corretamente e que as mudanças técnicas não introduzam erros.
 
-The Check stage involves actively monitoring the quality of data as measured against requirements. As long as data meets defined thresholds for quality, additional actions are not required. The processes will be considered under control and meeting business requirements. However, if the data falls below acceptable quality thresholds, then additional action must be taken to bring it up to acceptable levels.
+A fase de Verificação envolve o monitoramento ativo da qualidade dos dados, medida em relação aos requisitos. Desde que os dados atendam aos limites definidos de qualidade, ações adicionais não são necessárias. Os processos serão considerados sob controle e atendendo aos requisitos de negócios. No entanto, se os dados ficarem abaixo dos limites de qualidade aceitáveis, ações adicionais deverão ser tomadas para elevá-los a níveis aceitáveis.
 
-The Act stage is for activities to address and resolve emerging data quality issues. The cycle restarts, as the causes of issues are assessed and solutions proposed. Continuous improvement is achieved by starting a new cycle. New cycles begin as:
+A fase de Ação é para atividades que abordam e resolvem problemas emergentes de qualidade de dados. O ciclo se reinicia, à medida que as causas dos problemas são avaliadas e soluções são propostas. A melhoria contínua é alcançada com o início de um novo ciclo. Novos ciclos começam quando:
 
-* Existing measurements fall below thresholds
-* New data sets come under investigation
-* New data quality requirements emerge for existing data sets
-* Business rules, standards, or expectations change
+* Medições existentes caem abaixo dos limites
+* Novos conjuntos de dados passam a ser investigados
+* Novos requisitos de qualidade de dados surgem para conjuntos de dados existentes
+* Regras, padrões ou expectativas de negócios mudam
 
-The cost of getting data right the first time is cheaper than the costs from getting data wrong and fixing it later. Building quality into the data management processes from the beginning costs less than retrofitting it. Maintaining high quality data throughout the data lifecycle is less risky than trying to improve quality in an existing process. It also creates a far lower impact on the organization. Establishing criteria for data quality at the beginning of a process or system build is one sign of a mature Data Management Organization. Doing so takes governance and discipline, as well as cross-functional collaboration.
+O custo de obter dados corretos na primeira vez é menor do que os custos de obter dados incorretos e corrigi-los posteriormente. Incorporar qualidade aos processos de gerenciamento de dados desde o início custa menos do que adaptá-los. Manter dados de alta qualidade ao longo do ciclo de vida dos dados é menos arriscado do que tentar melhorar a qualidade em um processo existente. Também gera um impacto muito menor na organização. Estabelecer critérios de qualidade de dados no início da construção de um processo ou sistema é um sinal de uma Organização de Gestão de Dados madura. Fazer isso exige governança e disciplina, além de colaboração multifuncional.
 
-#### 1.3.7 Data Quality Business Rule Types
+#### 1.3.7 Tipos de Regras de Negócios de Qualidade de Dados
 
-Business rules describe how business should operate internally, in order to be successful and compliant with the outside world. Data Quality Business Rules describe how data should exist in order to be useful and usable within an organization. These rules can be aligned with dimensions of quality and used to describe data quality requirements. For example, a business rule that all state code fields must comply with the US State Abbreviations can be enforced by data entry pick lists and data integration lookups. The level of valid or invalid records can then be measured.
+As regras de negócios descrevem como as empresas devem operar internamente para serem bem-sucedidas e estarem em conformidade com o mundo externo. As Regras de Negócios de Qualidade de Dados descrevem como os dados devem existir para serem úteis e utilizáveis ​​dentro de uma organização. Essas regras podem ser alinhadas com as dimensões de qualidade e usadas para descrever os requisitos de qualidade de dados. Por exemplo, uma regra de negócios que determina que todos os campos de código de estado devem estar em conformidade com as Abreviações de Estados dos EUA pode ser aplicada por meio de listas de seleção de entrada de dados e consultas de integração de dados. O nível de registros válidos ou inválidos pode então ser mensurado.
 
-Business rules are commonly implemented in software, or by using document templates for data entry. Some common simple business rule types are:
+As regras de negócios são comumente implementadas em software ou usando modelos de documentos para entrada de dados. Alguns tipos comuns de regras de negócios simples são:
 
-* **Definitional conformance:** Confirm that the same understanding of data definitions is implemented and used properly in processes across the organization. Confirmation includes algorithmic agreement on calculated fields, including any time, or local constraints, and rollup and status interdependence rules.
-* **Value presence and record completeness:** Rules defining the conditions under which missing values are acceptable or unacceptable.
-* **Format compliance:** One or more patterns specify values assigned to a data element, such as standards for formatting telephone numbers.
-* **Value domain membership:** Specify that a data element’s assigned value is included in those enumerated in a defined data value domain, such as 2-Character United States Postal Codes for a STATE field.
-* **Range conformance:** A data element assigned value must be within a defined numeric, lexicographic, or time range, such as greater than 0 and less than 100 for a numeric range.
-* **Mapping conformance:** Indicating that the value assigned to a data element must correspond to one selected from a value domain that maps to other equivalent corresponding value domain(s). The STATE data domain again provides a good example, since State values may be represented using different value domains (USPS Postal codes, FIPS 2-digit codes, full names), and these types of rules validate that ‘AL’ and ‘01’ both map to ‘Alabama.’
-* **Consistency rules:** Conditional assertions that refer to maintaining a relationship between two (or more) attributes based on the actual values of those attributes. For example, address validation where postal codes correspond to particular States or Provinces.
-* **Accuracy verification:** Compare a data value against a corresponding value in a system of record or other verified source (e.g., marketing data purchased from a vendor) to verify that the values match.
-* **Uniqueness verification:** Rules that specify which entities must have a unique representation and whether one and only one record exists for each represented real world object.
-* **Timeliness validation:** Rules that indicate the characteristics associated with expectations for accessibility and availability of data.
+* **Conformidade definicional:** Confirme se o mesmo entendimento das definições de dados é implementado e usado corretamente nos processos em toda a organização. A confirmação inclui concordância algorítmica em campos calculados, incluindo restrições de tempo ou locais, e regras de interdependência de rollup e status.
+* **Presença de valor e integridade do registro:** Regras que definem as condições sob as quais valores ausentes são aceitáveis ​​ou inaceitáveis.
 
-Other types of rules may involve aggregating functions applied to sets of data instances (see Section 4.5).
-Examples of aggregation checks include:
+* **Conformidade de formato:** Um ou mais padrões especificam valores atribuídos a um elemento de dados, como padrões para formatação de números de telefone.
+* **Associação ao domínio de valor:** Especifica que o valor atribuído a um elemento de dados está incluído naqueles enumerados em um domínio de valor de dados definido, como Códigos Postais dos Estados Unidos de 2 caracteres para um campo ESTADO.
+* **Conformidade de intervalo:** O valor atribuído a um elemento de dados deve estar dentro de um intervalo numérico, lexicográfico ou temporal definido, como maior que 0 e menor que 100 para um intervalo numérico.
+* **Conformidade de mapeamento:** Indica que o valor atribuído a um elemento de dados deve corresponder a um selecionado de um domínio de valor que mapeia para outro(s) domínio(s) de valor(es) equivalente(s). O domínio de dados STATE novamente fornece um bom exemplo, uma vez que os valores de State podem ser representados usando diferentes domínios de valor (códigos postais do USPS, códigos FIPS de 2 dígitos, nomes completos), e esses tipos de regras validam que "AL" e "01" mapeiam para "Alabama".
+* **Regras de consistência:** Afirmações condicionais que se referem à manutenção de um relacionamento entre dois (ou mais) atributos com base nos valores reais desses atributos. Por exemplo, validação de endereço em que os códigos postais correspondem a estados ou províncias específicos.
+* **Verificação de precisão:** Compare um valor de dados com um valor correspondente em um sistema de registro ou outra fonte verificada (por exemplo, dados de marketing adquiridos de um fornecedor) para verificar se os valores correspondem.
+* **Verificação de unicidade:** Regras que especificam quais entidades devem ter uma representação única e se existe apenas um registro para cada objeto do mundo real representado.
+* **Validação de pontualidade:** Regras que indicam as características associadas às expectativas de acessibilidade e disponibilidade de dados.
 
-* Validate reasonableness of the number of records in a file. This requires keeping statistics over time to generate trends.
-* Validate reasonableness of an average amount calculated from a set of transactions. This requires establishing thresholds for comparison, and may be based on statistics over time.
-* Validate the expected variance in the count of transactions over a specified timeframe. This requires keeping statistics over time and using them to establish thresholds.
+Outros tipos de regras podem envolver funções de agregação aplicadas a conjuntos de instâncias de dados (consulte a Seção 4.5).
+Exemplos de verificações de agregação incluem:
 
-#### 1.3.8 Common Causes of Data Quality Issues
+* Validar a razoabilidade do número de registros em um arquivo. Isso requer a manutenção de estatísticas ao longo do tempo para gerar tendências.
+* Validar a razoabilidade de um valor médio calculado a partir de um conjunto de transações. Isso requer o estabelecimento de limites para comparação e pode ser baseado em estatísticas ao longo do tempo.
+* Validar a variância esperada na contagem de transações em um período especificado. Isso requer a manutenção de estatísticas ao longo do tempo e o uso delas para estabelecer limites.
 
-Data quality issues can emerge at any point in the data lifecycle, from creation to disposal. When investigating root causes, analysts should look for potential culprits, like problems with data entry, data processing, system design, and manual intervention in automated processes. Many issues will have multiple causes and contributing factors (especially if people have created ways to work around them). These causes of issues also imply ways to prevent issues: through improvement to interface design, testing of data quality rules as part of processing, a focus on data quality within system design, and strict controls on manual intervention in automated processes.
+#### 1.3.8 Causas Comuns de Problemas de Qualidade de Dados
 
-##### 1.3.8.1 Issues Caused by Lack of Leadership
+Problemas de qualidade de dados podem surgir em qualquer ponto do ciclo de vida dos dados, desde a criação até o descarte. Ao investigar as causas-raiz, os analistas devem procurar possíveis culpados, como problemas com entrada de dados, processamento de dados, design do sistema e intervenção manual em processos automatizados. Muitos problemas terão múltiplas causas e fatores contribuintes (especialmente se as pessoas tiverem criado maneiras de contorná-los). Essas causas de problemas também implicam maneiras de preveni-los: por meio de melhorias no design da interface, testes de regras de qualidade de dados como parte do processamento, foco na qualidade de dados no design do sistema e controles rígidos na intervenção manual em processos automatizados.
 
-Many people assume that most data quality issues are caused by data entry errors. A more sophisticated understanding recognizes that gaps in or poor execution of business and technical processes cause many more problems than mis-keying. However, common sense says and research indicates that many data quality problems are caused by a lack of organizational commitment to high quality data, which itself stems from a lack of leadership, in the form of both governance and management.
+##### 1.3.8.1 Problemas Causados ​​pela Falta de Liderança
 
-Every organization has information and data assets that are of value to its operations. Indeed, the operations of every organization depend on the ability to share information. Despite this, few organizations manage these assets with rigor. Within most organizations, data disparity (differences in data structure, format, and use of values) is a larger problem than just simple errors; it can be a major obstacle to the integration of data. One of the reasons data stewardship programs focus on defining terms and consolidating the language around data is because that is the starting point for getting to more consistent data.
+Muitas pessoas presumem que a maioria dos problemas de qualidade de dados são causados ​​por erros de entrada de dados. Uma compreensão mais sofisticada reconhece que lacunas ou má execução de processos técnicos e de negócios causam muito mais problemas do que erros de digitação. No entanto, o senso comum afirma e pesquisas indicam que muitos problemas de qualidade de dados são causados ​​pela falta de comprometimento organizacional com dados de alta qualidade, o que, por sua vez, decorre da falta de liderança, tanto na governança quanto na gestão.
 
-Many governance and information asset programs are driven solely by compliance, rather than by the potential value to be derived from data as an asset. A lack of recognition on the part of leadership means a lack of commitment within an organization to managing data as an asset, including managing its quality (Evans and Price, 2012). (See Figure 94.)
+Toda organização possui informações e ativos de dados que são valiosos para suas operações. De fato, as operações de toda organização dependem da capacidade de compartilhar informações. Apesar disso, poucas organizações gerenciam esses ativos com rigor. Na maioria das organizações, a disparidade de dados (diferenças na estrutura, formato e uso de valores dos dados) é um problema maior do que simples erros; pode ser um grande obstáculo à integração de dados. Um dos motivos pelos quais os programas de administração de dados se concentram na definição de termos e na consolidação da linguagem em torno dos dados é porque esse é o ponto de partida para obter dados mais consistentes.
 
-Barriers to effective management of data quality include: [^85]
+Muitos programas de governança e ativos de informação são orientados exclusivamente pela conformidade, e não pelo valor potencial a ser derivado dos dados como um ativo. A falta de reconhecimento por parte da liderança significa falta de comprometimento dentro da organização com a gestão de dados como um ativo, incluindo a gestão de sua qualidade (Evans e Price, 2012). (Ver Figura 94.)
 
-* Lack of awareness on the part of leadership and staff
-* Lack of business governance
-* Lack of leadership and management
-* Difficulty in justification of improvements
-* Inappropriate or ineffective instruments to measure value
+As barreiras à gestão eficaz da qualidade dos dados incluem: [^85]
 
-These barriers have negative effects on customer experience, productivity, morale, organizational effectiveness, revenue, and competitive advantage. They increase costs of running the organization and introduce risks as well. (See Chapter 11.)
+* Falta de conscientização por parte da liderança e da equipe
+* Falta de governança empresarial
+* Falta de liderança e gestão
+* Dificuldade em justificar melhorias
+* Instrumentos inadequados ou ineficazes para mensurar valor
 
-##### 1.3.8.2 Issues Caused by Data Entry Processes
+Essas barreiras têm efeitos negativos na experiência do cliente, na produtividade, no moral, na eficácia organizacional, na receita e na vantagem competitiva. Elas aumentam os custos de administração da organização e também introduzem riscos. (Ver Capítulo 11.)
 
-* **Data entry interface issues:** Poorly designed data entry interfaces can contribute to data quality issues. If a data entry interface does not have edits or controls to prevent incorrect data from being put in the system data processors are likely to take shortcuts, such as skipping non-mandatory fields and failing to update defaulted fields.
-* **List entry placement:** Even simple features of data entry interfaces, such as the order of values within a drop-down list, can contribute to data entry errors.
-* **Field overloading:** Some organizations re-use fields over time for different business purposes rather than making changes to the data model and user interface. This practice results in inconsistent and confusing population of the fields.
-* **Training issues:** Lack of process knowledge can lead to incorrect data entry, even if controls and edits are in place. If data processors are not aware of the impact of incorrect data or if they are incented for speed, rather than accuracy, they are likely to make choices based on drivers other than the quality of the data.
+##### 1.3.8.2 Problemas Causados ​​por Processos de Entrada de Dados
 
-![Figure 94 Barriers to Managing Information as a Business Asset](figure_94.png)
-Figure 94 Barriers to Managing Information as a Business Asset [^86]
+* **Problemas na interface de entrada de dados:** Interfaces de entrada de dados mal projetadas podem contribuir para problemas de qualidade dos dados. Se uma interface de entrada de dados não tiver edições ou controles para impedir que dados incorretos sejam inseridos no sistema, os processadores de dados provavelmente adotarão atalhos, como ignorar campos não obrigatórios e não atualizar campos padrão.
+* **Posicionamento de entradas em lista:** Mesmo recursos simples de interfaces de entrada de dados, como a ordem dos valores em uma lista suspensa, podem contribuir para erros de entrada de dados.
+* **Sobrecarga de campos:** Algumas organizações reutilizam campos ao longo do tempo para diferentes fins comerciais, em vez de fazer alterações no modelo de dados e na interface do usuário. Essa prática resulta em um preenchimento inconsistente e confuso dos campos.
+* **Problemas de treinamento:** A falta de conhecimento do processo pode levar à entrada incorreta de dados, mesmo com controles e edições em vigor. Se os processadores de dados não estiverem cientes do impacto de dados incorretos ou se forem incentivados pela velocidade em vez da precisão, provavelmente farão escolhas com base em outros fatores que não a qualidade dos dados.
 
-* **Changes to business processes:** Business processes change over time, and with these changes new business rules and data quality requirements are introduced. However, business rule changes are not always incorporated into systems in a timely manner or comprehensively. Data errors will result if an interface is not upgraded to accommodate new or changed requirements. In addition, data is likely to be impacted unless changes to business rules are propagated throughout the entire system.
-* **Inconsistent business process execution:** Data created through processes that are executed inconsistently is likely to be inconsistent. Inconsistent execution may be due to training or documentation issues as well as to changing requirements.
+![Figura 94 Barreiras à Gestão da Informação como um Ativo de Negócios](figure_94.png)
+Figura 94 Barreiras à Gestão da Informação como um Ativo de Negócios [^86]
+
+* **Mudanças nos processos de negócios:** Os processos de negócios mudam ao longo do tempo e, com essas mudanças, novas regras de negócios e requisitos de qualidade de dados são introduzidos. No entanto, as mudanças nas regras de negócios nem sempre são incorporadas aos sistemas de forma oportuna ou abrangente. Erros de dados ocorrerão se uma interface não for atualizada para acomodar requisitos novos ou alterados. Além disso, os dados provavelmente serão afetados, a menos que as mudanças nas regras de negócios sejam propagadas por todo o sistema.
+* **Execução inconsistente de processos de negócios:** Dados criados por meio de processos executados de forma inconsistente provavelmente serão inconsistentes. A execução inconsistente pode ser devido a problemas de treinamento ou documentação, bem como a mudanças de requisitos.
 
 ##### 1.3.8.3 Issues Caused by Data Processing Functions
 
@@ -383,675 +386,670 @@ Figure 94 Barriers to Managing Information as a Business Asset [^86]
 
 ##### 1.3.8.4 Issues Caused by System Design
 
-* **Failure to enforce referential integrity:** Referential integrity is necessary to ensure high quality data at an application or system level. If referential integrity is not enforced or if validation is switched off (for example, to improve response times), various data quality issues can arise:
-  * Duplicate data that breaks uniqueness rules
-  * Orphan rows, which can be included in some reports and excluded from others, leading to multiple values for the same calculation
-  * Inability to upgrade due to restored or changed referential integrity requirements
-  * Inaccurate data due to missing data being assigned default values
-* **Failure to enforce uniqueness constraints:** Multiple copies of data instances within a table or file expected to contain unique instances. If there are insufficient checks for uniqueness of instances, or if the unique constraints are turned off in the database to improve performance, data aggregation results can be overstated.
-* **Coding inaccuracies and gaps:** If the data mapping or layout is incorrect, or the rules for processing the data are not accurate, the data processed will have data quality issues, ranging from incorrect calculations to data being assigned to or linked to improper fields, keys, or relationships.
-* **Data model inaccuracies:** If assumptions within the data model are not supported by the actual data, there will be data quality issues ranging from data loss due to field lengths being exceeded by the actual data, to data being assigned to improper IDs or keys.
-* **Field overloading:** Re-use of fields over time for different purposes, rather than changing the data model or code can result in confusing sets of values, unclear meaning, and potentially, structural problems, like incorrectly assigned keys.
-* **Temporal data mismatches:** In the absence of a consolidated data dictionary, multiple systems could implement disparate date formats or timings, which in turn lead to data mismatch and data loss when data synchronization takes place between different source systems.
-* **Weak Master Data Management:** Immature Master Data Management can lead to choosing unreliable sources for data, which can cause data quality issues that are very difficult to find until the assumption that the data source is accurate is disproved.
-* **Data duplication:** Unnecessary data duplication is often a result of poor data management. There are two main types of undesirable duplication issues:
-  * **Single Source – Multiple Local Instances:** For example, instances of the same customer in multiple (similar or identical) tables in the same database. Knowing which instance is the most accurate for use can be difficult without system-specific knowledge.
-  * **Multiple Sources – Single Instance:** Data instances with multiple authoritative sources or systems of record. For example, single customer instances coming from multiple point-of-sale systems. When processing this data for use, there can be duplicate temporary storage areas. Merge rules determine which source has priority over others when processing into permanent production data areas.
+* **Falha na aplicação da integridade referencial:** A integridade referencial é necessária para garantir dados de alta qualidade em nível de aplicativo ou sistema. Se a integridade referencial não for aplicada ou se a validação for desativada (por exemplo, para melhorar os tempos de resposta), vários problemas de qualidade de dados podem surgir:
+  * Dados duplicados que violam as regras de exclusividade
+  * Linhas órfãs, que podem ser incluídas em alguns relatórios e excluídas de outros, resultando em valores múltiplos para o mesmo cálculo
+  * Impossibilidade de atualização devido a requisitos de integridade referencial restaurados ou alterados
+  * Dados imprecisos devido à atribuição de valores padrão a dados ausentes
+* **Falha na aplicação de restrições de exclusividade:** Várias cópias de instâncias de dados em uma tabela ou arquivo devem conter instâncias únicas. Se houver verificações insuficientes para a exclusividade das instâncias, ou se as restrições de exclusividade forem desativadas no banco de dados para melhorar o desempenho, os resultados da agregação de dados podem ser superestimados.
+* **Imprecisões e lacunas na codificação:** Se o mapeamento ou layout dos dados estiver incorreto, ou se as regras de processamento dos dados não forem precisas, os dados processados ​​apresentarão problemas de qualidade, que vão desde cálculos incorretos até a atribuição ou vinculação de dados a campos, chaves ou relacionamentos inadequados.
+* **Imprecisões no modelo de dados:** Se as suposições contidas no modelo de dados não forem suportadas pelos dados reais, haverá problemas de qualidade dos dados, que vão desde a perda de dados devido ao excesso de comprimento dos campos pelos dados reais até a atribuição de dados a IDs ou chaves inadequadas.
+* **Sobrecarga de campos:** A reutilização de campos ao longo do tempo para diferentes propósitos, em vez de alterar o modelo de dados ou o código, pode resultar em conjuntos de valores confusos, significados pouco claros e, potencialmente, problemas estruturais, como chaves atribuídas incorretamente.
+* **Incompatibilidades temporais de dados:** Na ausência de um dicionário de dados consolidado, vários sistemas podem implementar formatos de data ou temporizações diferentes, o que, por sua vez, leva à incompatibilidade de dados e à perda de dados quando a sincronização ocorre entre diferentes sistemas de origem.
+* **Gerenciamento de Dados Mestres Fraco:** O Gerenciamento de Dados Mestres Imaturo pode levar à escolha de fontes não confiáveis ​​para os dados, o que pode causar problemas de qualidade de dados muito difíceis de encontrar até que a suposição de que a fonte de dados é precisa seja refutada.
+* **Duplicação de dados:** A duplicação desnecessária de dados geralmente é resultado de um gerenciamento de dados inadequado. Existem dois tipos principais de problemas de duplicação indesejáveis:
+  * **Fonte Única – Múltiplas Instâncias Locais:** Por exemplo, instâncias do mesmo cliente em várias tabelas (semelhantes ou idênticas) no mesmo banco de dados. Saber qual instância é a mais precisa para uso pode ser difícil sem conhecimento específico do sistema.
+  * **Múltiplas Fontes – Instância Única:** Instâncias de dados com múltiplas fontes autoritativas ou sistemas de registro. Por exemplo, instâncias de um único cliente provenientes de vários sistemas de ponto de venda. Ao processar esses dados para uso, pode haver áreas de armazenamento temporário duplicadas. As regras de mesclagem determinam qual fonte tem prioridade sobre as outras ao processar em áreas de dados de produção permanentes.
 
-##### 1.3.8.5 Issues Caused by Fixing Issues
+##### 1.3.8.5 Problemas Causados ​​pela Correção de Problemas
 
-Manual data patches are changes made directly on the data in the database, not through the business rules in the application interfaces or processing. These are scripts or manual commands generally created in a hurry and used to ‘fix’ data in an emergency such as intentional injection of bad data, lapse in security, internal fraud, or external source for business disruption.
+Patches de dados manuais são alterações feitas diretamente nos dados do banco de dados, não por meio de regras de negócios nas interfaces ou no processamento do aplicativo. São scripts ou comandos manuais geralmente criados às pressas e usados ​​para "consertar" dados em caso de emergência, como injeção intencional de dados incorretos, falha de segurança, fraude interna ou fonte externa para interrupção dos negócios.
 
-Like any untested code, they have a high risk of causing further errors through unintended consequences, by changing more data than required, or not propagating the patch to all historical data affected by the original issue. Most such patches also change the data in place, rather than preserving the prior state and adding corrected rows.
+Como qualquer código não testado, eles apresentam alto risco de causar mais erros por consequências não intencionais, alterando mais dados do que o necessário ou não propagando o patch para todos os dados históricos afetados pelo problema original. A maioria desses patches também altera os dados no local, em vez de preservar o estado anterior e adicionar linhas corrigidas.
 
-These changes are generally NOT undo-able without a complete restore from backup as there is only the database log to show the changes. Therefore, these shortcuts are strongly discouraged – they are opportunities for security breaches and business disruption longer than a proper correction would cause. All changes should go through a governed change management process.
+Essas alterações geralmente NÃO podem ser desfeitas sem uma restauração completa do backup, pois há apenas o log do banco de dados para mostrar as alterações. Portanto, esses atalhos são fortemente desencorajados – eles são oportunidades para violações de segurança e interrupção dos negócios por mais tempo do que uma correção adequada causaria. Todas as alterações devem passar por um processo de gerenciamento de mudanças controlado.
 
-#### 1.3.9 Data Profiling
+#### 1.3.9 Criação de Perfil de Dados
 
-Data Profiling is a form of data analysis used to inspect data and assess quality. Data profiling uses statistical techniques to discover the true structure, content, and quality of a collection of data (Olson, 2003). A profiling engine produces statistics that analysts can use to identify patterns in data content and structure. For example:
+A Criação de Perfil de Dados é uma forma de análise de dados usada para inspecionar dados e avaliar sua qualidade. A criação de perfil de dados utiliza técnicas estatísticas para descobrir a verdadeira estrutura, conteúdo e qualidade de uma coleção de dados (Olson, 2003). Um mecanismo de criação de perfil produz estatísticas que os analistas podem usar para identificar padrões no conteúdo e na estrutura dos dados. Por exemplo:
 
-* **Counts of nulls:** Identifies nulls exist and allows for inspection of whether they are allowable or not
-* **Max/Min value:** Identifies outliers, like negatives
-* **Max/Min length:** Identifies outliers or invalids for fields with specific length requirements
-* **Frequency distribution of values for individual columns:** Enables assessment of reasonability (e.g., distribution of country codes for transactions, inspection of frequently or infrequently occurring values, as well as the percentage of the records populated with defaulted values)
-* **Data type and format:** Identifies level of non-conformance to format requirements, as well as identification of unexpected formats (e.g., number of decimals, embedded spaces, sample values)
+* **Contagem de nulos:** Identifica a existência de nulos e permite a inspeção para verificar se são permitidos ou não
+* **Valor máx./mín.:** Identifica valores discrepantes, como negativos
+* **Comprimento máx./mín.:** Identifica valores discrepantes ou inválidos para campos com requisitos de comprimento específicos
+* **Distribuição de frequência de valores para colunas individuais:** Permite a avaliação da razoabilidade (por exemplo, distribuição de códigos de país para transações, inspeção de valores que ocorrem com frequência ou infrequência, bem como a porcentagem de registros preenchidos com valores padrão)
+* **Tipo e formato de dados:** Identifica o nível de não conformidade com os requisitos de formato, bem como a identificação de formatos inesperados (por exemplo, número de decimais, espaços incorporados, valores de amostra)
 
-Profiling also includes cross-column analysis, which can identify overlapping or duplicate columns and expose embedded value dependencies. Inter-table analysis explores overlapping values sets and helps identify foreign key relationships. Most data profiling tools allow for drilling down into the analyzed data for further investigation.
+A criação de perfil também inclui análise entre colunas, que pode identificar colunas sobrepostas ou duplicadas e expor dependências de valores incorporados. A análise entre tabelas explora conjuntos de valores sobrepostos e ajuda a identificar relacionamentos de chaves estrangeiras. A maioria das ferramentas de criação de perfil de dados permite o detalhamento dos dados analisados ​​para investigação posterior.
 
-Results from the profiling engine must be assessed by an analyst to determine whether data conforms to rules and other requirements. A good analyst can use profiling results to confirm known relationships and uncover hidden characteristics and patterns within and between data sets, including business rules, and validity constraints. Profiling is usually used as part of data discovery for projects (especially data integration projects; see Chapter 8) or to assess the current state of data that is targeted for improvement. Results of data profiling can be used to identify opportunities to improve the quality of both data and Metadata (Olson, 2003; Maydanchik, 2007).
+Os resultados do mecanismo de criação de perfil devem ser avaliados por um analista para determinar se os dados estão em conformidade com as regras e outros requisitos. Um bom analista pode usar os resultados da criação de perfil para confirmar relacionamentos conhecidos e descobrir características e padrões ocultos dentro e entre conjuntos de dados, incluindo regras de negócios e restrições de validade. A criação de perfil é geralmente usada como parte da descoberta de dados para projetos (especialmente projetos de integração de dados; consulte o Capítulo 8) ou para avaliar o estado atual dos dados que precisam ser aprimorados. Os resultados da criação de perfil de dados podem ser usados ​​para identificar oportunidades de melhoria da qualidade dos dados e dos metadados (Olson, 2003; Maydanchik, 2007).
 
-While profiling is an effective way to understand data, it is just a first step to data quality improvement. It enables organizations to identify potential problems. Solving problems requires other forms of analysis, including business process analysis, analysis of data lineage, and deeper data analysis that can help isolate root causes of problems.
+Embora a criação de perfil seja uma maneira eficaz de entender os dados, ela é apenas um primeiro passo para a melhoria da qualidade dos dados. Ela permite que as organizações identifiquem problemas potenciais. A resolução de problemas requer outras formas de análise, incluindo análise de processos de negócios, análise da linhagem dos dados e análises mais aprofundadas dos dados, que podem ajudar a isolar as causas-raiz dos problemas.
 
-##### 1.3.10 Data Quality and Data Processing
+##### 1.3.10 Qualidade e Processamento de Dados
 
-While the focus of data quality improvement efforts is often on the prevention of errors, data quality can also be improved through some forms of data processing. (See Chapter 8.)
+Embora o foco dos esforços de melhoria da qualidade de dados seja frequentemente a prevenção de erros, a qualidade dos dados também pode ser aprimorada por meio de algumas formas de processamento de dados. (Consulte o Capítulo 8.)
 
-##### 1.3.10.1 Data Cleansing
+##### 1.3.10.1 Limpeza de Dados
 
-Data Cleansing or Scrubbing transforms data to make it conform to data standards and domain rules. Cleansing includes detecting and correcting data errors to bring the quality of data to an acceptable level. It costs money and introduces risk to continuously remediate data through cleansing. Ideally, the need for data cleansing should decrease over time, as root causes of data issues are resolved. The need for data cleansing can be addressed by:
+A Limpeza ou Depuração de Dados transforma os dados para torná-los em conformidade com os padrões de dados e regras de domínio. A limpeza inclui a detecção e a correção de erros nos dados para elevar a qualidade dos dados a um nível aceitável. A correção contínua dos dados por meio da limpeza custa dinheiro e apresenta riscos. Idealmente, a necessidade de limpeza de dados deve diminuir ao longo do tempo, à medida que as causas-raiz dos problemas de dados são resolvidas. A necessidade de limpeza de dados pode ser abordada por:
 
-* Implementing controls to prevent data entry errors
-* Correcting the data in the source system
-* Improving the business processes that create the data
+* Implementação de controles para evitar erros de entrada de dados
+* Correção dos dados no sistema de origem
+* Aprimoramento dos processos de negócios que criam os dados
 
-In some situations, correcting on an ongoing basis may be necessary, as re-processing the data in a midstream system is cheaper than any other alternative.
+Em algumas situações, a correção contínua pode ser necessária, pois o reprocessamento dos dados em um sistema intermediário é mais barato do que qualquer outra alternativa.
 
-##### 1.3.10.2 Data Enhancement
+##### 1.3.10.2 Aprimoramento de Dados
 
-Data enhancement or enrichment is the process of adding attributes to a data set to increase its quality and usability. Some enhancements are gained by integrating data sets internal to an organization. External data can also be purchased to enhance organizational data (see Chapter 10). Examples of data enhancement include:
+O aprimoramento ou enriquecimento de dados é o processo de adicionar atributos a um conjunto de dados para aumentar sua qualidade e usabilidade. Alguns aprimoramentos são obtidos pela integração de conjuntos de dados internos a uma organização. Dados externos também podem ser adquiridos para aprimorar os dados organizacionais (consulte o Capítulo 10). Exemplos de aprimoramento de dados incluem:
 
-* **Time/Date stamps:** One way to improve data is to document the time and date that data items are created, modified, or retired, which can help to track historical data events. If issues are detected with the data, timestamps can be very valuable in root cause analysis, because they enable analysts to isolate the timeframe of the issue.
-* **Audit data:** Auditing can document data lineage, which is important for historical tracking as well as validation.
-* **Reference vocabularies:** Business specific terminology, ontologies, and glossaries enhance understanding and control while bringing customized business context.
-* **Contextual information:** Adding context such as location, environment, or access methods and tagging data for review and analysis.
-* **Geographic information:** Geographic information can be enhanced through address standardization and geocoding, which includes regional coding, municipality, neighborhood mapping, latitude / longitude pairs, or other kinds of location-based data.
-* **Demographic information:** Customer data can be enhanced through demographic information, such as age, marital status, gender, income, or ethnic coding. Business entity data can be associated with annual revenue, number of employees, size of occupied space, etc.
-* **Psychographic information:** Data used to segment the target populations by specific behaviors, habits, or preferences, such as product and brand preferences, organization memberships, leisure activities, commuting transportation style, shopping time preferences, etc.
-* **Valuation information:** Use this kind of enhancement for asset valuation, inventory, and sale.
+* **Carimbos de data e hora:** Uma maneira de aprimorar os dados é documentar a hora e a data em que os itens de dados são criados, modificados ou descontinuados, o que pode ajudar a rastrear eventos históricos de dados. Se forem detectados problemas com os dados, os carimbos de data e hora podem ser muito valiosos na análise da causa raiz, pois permitem que os analistas isolem o período do problema.
+* **Dados de auditoria:** A auditoria pode documentar a linhagem dos dados, o que é importante para o rastreamento histórico, bem como para a validação.
+* **Vocabulários de referência:** Terminologia, ontologias e glossários específicos do negócio aprimoram a compreensão e o controle, ao mesmo tempo em que trazem um contexto empresarial personalizado.
+* **Informações contextuais:** Adicionar contexto, como localização, ambiente ou métodos de acesso, e marcar dados para revisão e análise.
 
-##### 1.3.10.3 Data Parsing and Formatting
+* **Informações geográficas:** As informações geográficas podem ser aprimoradas por meio da padronização de endereços e geocodificação, que inclui codificação regional, município, mapeamento de bairros, pares de latitude/longitude ou outros tipos de dados baseados em localização.
+* **Informações demográficas:** Os dados do cliente podem ser aprimorados por meio de informações demográficas, como idade, estado civil, sexo, renda ou codificação étnica. Os dados da entidade comercial podem ser associados à receita anual, número de funcionários, tamanho do espaço ocupado, etc.
+* **Informações psicográficas:** Dados usados ​​para segmentar as populações-alvo por comportamentos, hábitos ou preferências específicas, como preferências por produtos e marcas, associações a organizações, atividades de lazer, estilo de transporte, preferências de horário de compras, etc.
+* **Informações de avaliação:** Use este tipo de aprimoramento para avaliação de ativos, inventário e venda.
 
-Data Parsing is the process of analyzing data using pre-determined rules to define its content or value. Data parsing enables the data analyst to define sets of patterns that feed into a rule engine used to distinguish between valid and invalid data values. Matching specific pattern(s) triggers actions.
+##### 1.3.10.3 Análise e Formatação de Dados
 
-Data parsing assigns characteristics to the data values appearing in a data instance, and those characteristics help in determining potential sources for added benefits. For example, if an attribute called ‘name’ can be determined to have values belonging to ‘business name’ embedded within it, then the data value is identified as the name of a business rather than the name of a person. Use the same approach for any situation in which data values organize into semantic hierarchies such as sub-parts, parts, and assemblies.
+A Análise de Dados é o processo de análise de dados usando regras pré-determinadas para definir seu conteúdo ou valor. A análise de dados permite que o analista de dados defina conjuntos de padrões que alimentam um mecanismo de regras usado para distinguir entre valores de dados válidos e inválidos. A correspondência de padrões específicos aciona ações.
 
-Many data quality issues involve situations where variation in data values representing similar concepts introduces ambiguity. Extract and rearrange the separate components (commonly referred to as ‘tokens’) can be extracted and rearranged into a standard representation to create a valid pattern. When an invalid pattern is recognized, the application may attempt to transform the invalid value into one that meets the rules. Perform standardization by mapping data from some source pattern into a corresponding target representation.
+A análise de dados atribui características aos valores de dados que aparecem em uma instância de dados, e essas características ajudam a determinar fontes potenciais de benefícios adicionais. Por exemplo, se um atributo chamado "nome" puder ser determinado como tendo valores pertencentes a "nome da empresa" incorporados, o valor dos dados será identificado como o nome de uma empresa em vez do nome de uma pessoa. Use a mesma abordagem para qualquer situação em que os valores de dados se organizem em hierarquias semânticas, como subpartes, partes e montagens.
 
-For example, consider the different ways telephone numbers expected to conform to a numbering plan are formatted. While some have digits, some have alphabetic characters, and all use different special characters for separation. People can recognize each one as a telephone number. However, to determine if these numbers are accurate (perhaps by comparing them to a master customer directory), or to investigate whether duplicate numbers exist when there should be only one for each supplier, the values must be parsed into their component segments (area code, exchange, and line number) and then transformed into a standard format.
+Muitos problemas de qualidade de dados envolvem situações em que a variação nos valores de dados que representam conceitos semelhantes introduz ambiguidade. Extrair e reorganizar os componentes separados (comumente chamados de "tokens") pode ser extraído e reorganizado em uma representação padrão para criar um padrão válido. Quando um padrão inválido é reconhecido, o aplicativo pode tentar transformar o valor inválido em um que atenda às regras. Realize a padronização mapeando dados de algum padrão de origem para uma representação de destino correspondente.
 
-Another good example is a customer name, since names may be represented in thousands of different forms. A good standardization tool will be able to parse the different components of a customer name, such as given name, middle name, family name, initials, titles, generational designations, and then rearrange those components into a canonical representation that other data services will be able to manipulate.
+Por exemplo, considere as diferentes maneiras como os números de telefone que devem estar em conformidade com um plano de numeração são formatados. Enquanto alguns têm dígitos, outros têm caracteres alfabéticos e todos usam caracteres especiais diferentes para separação. As pessoas podem reconhecer cada um como um número de telefone. No entanto, para determinar se esses números são precisos (talvez comparando-os a um diretório mestre de clientes) ou para investigar se existem números duplicados quando deveria haver apenas um para cada fornecedor, os valores devem ser analisados ​​em seus segmentos componentes (código de área, central telefônica e número de linha) e, em seguida, transformados em um formato padrão.
 
-The human ability to recognize familiar patterns contributes to an ability to characterize variant data values belonging to the same abstract class of values; people recognize different types of telephone numbers because they conform to frequently used patterns. An analyst describes the format patterns that all represent a data object, such as Person Name, Product Description, and so on. A data quality tool parses data values that conform to any of those patterns, and even transforms them into a single, standardized form that will simplify the assessment, similarity analysis, and remediation processes. Pattern-based parsing can automate the recognition and subsequent standardization of meaningful value components.
+Outro bom exemplo é o nome de um cliente, já que os nomes podem ser representados em milhares de formas diferentes. Uma boa ferramenta de padronização será capaz de analisar os diferentes componentes do nome de um cliente, como nome próprio, nome do meio, sobrenome, iniciais, títulos, designações geracionais, e então reorganizar esses componentes em uma representação canônica que outros serviços de dados poderão manipular.
 
-##### 1.3.10.4 Data Transformation and Standardization
+A capacidade humana de reconhecer padrões familiares contribui para a capacidade de caracterizar valores de dados variantes pertencentes à mesma classe abstrata de valores; as pessoas reconhecem diferentes tipos de números de telefone porque eles estão em conformidade com padrões usados ​​com frequência. Um analista descreve os padrões de formato que representam um objeto de dados, como Nome da Pessoa, Descrição do Produto e assim por diante. Uma ferramenta de qualidade de dados analisa valores de dados que estão em conformidade com qualquer um desses padrões e até mesmo os transforma em um formato único e padronizado que simplificará os processos de avaliação, análise de similaridade e remediação. A análise sintática baseada em padrões pode automatizar o reconhecimento e a subsequente padronização de componentes de valor significativos.
 
-During normal processing, data rules trigger and transform the data into a format that is readable by the target architecture. However, readable does not always mean acceptable. Rules are created directly within a data integration stream, or rely on alternate technologies embedded in or accessible from within a tool. Data transformation builds on these types of standardization techniques. Guide rule-based transformations by mapping data values in their original formats and patterns into a target representation. Parsed components of a pattern are subjected to rearrangement, corrections, or any changes as directed by the rules in the knowledge base. In fact, standardization is a special case of transformation, employing rules that capture context, linguistics, and idioms recognized as common over time, through repeated analysis by the rules analyst or tool vendor. (See Chapter 3.)
+##### 1.3.10.4 Transformação e Padronização de Dados
 
-## 2. Activities
+Durante o processamento normal, as regras de dados acionam e transformam os dados em um formato legível pela arquitetura de destino. No entanto, legível nem sempre significa aceitável. As regras são criadas diretamente em um fluxo de integração de dados ou dependem de tecnologias alternativas incorporadas ou acessíveis a partir de uma ferramenta. A transformação de dados se baseia nesses tipos de técnicas de padronização. Oriente as transformações baseadas em regras mapeando os valores de dados em seus formatos e padrões originais em uma representação de destino. Os componentes analisados ​​de um padrão são submetidos a rearranjos, correções ou quaisquer alterações, conforme determinado pelas regras na base de conhecimento. De fato, a padronização é um caso especial de transformação, empregando regras que capturam contexto, linguística e expressões idiomáticas reconhecidas como comuns ao longo do tempo, por meio de análises repetidas pelo analista de regras ou pelo fornecedor da ferramenta. (Consulte o Capítulo 3.)
 
-### 2.1 Define High Quality Data
+## 2. Atividades
 
-Many people recognize poor quality data when they see it. Fewer are able to define what they mean by high quality data. Alternatively, they define it in very general term: “The data has to be right.” “We need accurate data.” High quality data is fit for the purposes of data consumers. Before launching a Data Quality program, it is beneficial to understand business needs, define terms, identify organizational pain points, and start to build consensus about the drivers and priorities for data quality improvement. Ask a set of questions to understand current state and assess organizational readiness for data quality improvement:
+### 2.1 Definir Dados de Alta Qualidade
 
-* What do stakeholders mean by ‘high quality data’?
-* What is the impact of low quality data on business operations and strategy?
-* How will higher quality data enable business strategy?
-* What priorities drive the need for data quality improvement?
-* What is the tolerance for poor quality data?
-* What governance is in place to support data quality improvement?
-* What additional governance structures will be needed?
+Muitas pessoas reconhecem dados de baixa qualidade quando os veem. Menos pessoas conseguem definir o que querem dizer com dados de alta qualidade. Alternativamente, definem-nos em termos muito gerais: "Os dados têm de estar corretos". "Precisamos de dados precisos". Dados de alta qualidade são adequados aos propósitos dos consumidores de dados. Antes de lançar um programa de Qualidade de Dados, é benéfico compreender as necessidades do negócio, definir termos, identificar os pontos fracos da organização e começar a construir consenso sobre os impulsionadores e prioridades para a melhoria da qualidade dos dados. Faça uma série de perguntas para compreender o estado atual e avaliar a prontidão da organização para a melhoria da qualidade dos dados:
 
-Getting a comprehensive picture of the current state of data quality in an organization requires approaching the question from different perspectives:
+* O que as partes interessadas querem dizer com "dados de alta qualidade"?
+* Qual é o impacto de dados de baixa qualidade nas operações e estratégias de negócios?
+* Como dados de alta qualidade viabilizarão a estratégia de negócios?
+* Quais prioridades impulsionam a necessidade de melhoria da qualidade dos dados?
+* Qual é a tolerância para dados de baixa qualidade?
+* Qual é a governança implementada para apoiar a melhoria da qualidade dos dados?
+* Quais estruturas de governança adicionais serão necessárias?
 
-* An understanding of business strategy and goals
-* Interviews with stakeholders to identify pain points, risks, and business drivers
-* Direct assessment of data, through profiling and other form of analysis
-* Documentation of data dependencies in business processes
-* Documentation of technical architecture and systems support for business processes
+Obter uma visão abrangente do estado atual da qualidade de dados em uma organização requer abordar a questão sob diferentes perspectivas:
 
-This kind of assessment can reveal a significant number of opportunities. These need to be prioritized based on the potential benefit to the organization. Using input from stakeholders, including Data Stewards and business and technical SMEs, the Data Quality team should define the meaning of data quality and propose program priorities.
+* Compreensão da estratégia e dos objetivos do negócio
+* Entrevistas com as partes interessadas para identificar pontos problemáticos, riscos e impulsionadores do negócio
+* Avaliação direta dos dados, por meio de criação de perfil e outras formas de análise
+* Documentação das dependências de dados nos processos de negócio
+* Documentação da arquitetura técnica e do suporte de sistemas para os processos de negócio
 
-### 2.2 Define a Data Quality Strategy
+Esse tipo de avaliação pode revelar um número significativo de oportunidades. Elas precisam ser priorizadas com base no benefício potencial para a organização. Usando a contribuição das partes interessadas, incluindo Administradores de Dados e Especialistas em negócios e tecnologia, a equipe de Qualidade de Dados deve definir o significado de qualidade de dados e propor prioridades para o programa.
 
-Improving data quality requires a strategy that accounts for the work that needs to be done and the way people will execute it. Data quality priorities must align with business strategy. Adopting or developing a framework and methodology will help guide both strategy and tactics while providing a means to measure progress and impacts. A framework should include methods to:
+### 2.2 Definir uma Estratégia de Qualidade de Dados
 
-* Understand and prioritize business needs
-* Identify the data critical to meeting business needs
-* Define business rules and data quality standards based on business requirements
-* Assess data against expectations
-* Share findings and get feedback from stakeholders
-* Prioritize and manage issues
-* Identify and prioritize opportunities for improvement
-* Measure, monitor, and report on data quality
-* Manage Metadata produced through data quality processes
-* Integrate data quality controls into business and technical processes
+Melhorar a qualidade dos dados requer uma estratégia que leve em conta o trabalho que precisa ser feito e a forma como as pessoas o executarão. As prioridades da qualidade de dados devem estar alinhadas com a estratégia de negócio. Adotar ou desenvolver uma estrutura e metodologia ajudará a orientar tanto a estratégia quanto as táticas, ao mesmo tempo em que fornecerá um meio de mensurar o progresso e os impactos. Uma estrutura deve incluir métodos para:
 
-A framework should also account for how to organize for data quality and how to leverage data quality tools. As noted in the chapter introduction, improving data quality requires a Data Quality program team to engage business and technical staff and define a program of work that addresses critical issues, defines best practices, and puts in place operational processes that support ongoing management of data quality. Often such a team will be part of the Data Management Organization. DQ analysts will need to work closely with Data Stewards at all levels. They should also influence policy, including policy about business processes and systems development. However, such a team will not be able to solve all of an organization’s data quality challenges. DQ work and a commitment to high quality data need to become embedded in organizational practices. The DQ Strategy should account for how to extend best practices. (See Chapter 17.)
+* Entender e priorizar as necessidades do negócio
+* Identificar os dados críticos para atender às necessidades do negócio
+* Definir regras de negócio e padrões de qualidade de dados com base nos requisitos do negócio
+* Avaliar os dados em relação às expectativas
+* Compartilhar descobertas e obter feedback das partes interessadas
+* Priorizar e gerenciar problemas
+* Identificar e priorizar oportunidades de melhoria
+* Mensurar, monitorar e relatar a qualidade dos dados
+* Gerenciar metadados produzidos por meio de processos de qualidade de dados
+* Integrar controles de qualidade de dados aos processos de negócios e técnicos
 
-### 2.3 Identify Critical Data and Business Rules
+Uma estrutura também deve considerar como se organizar para a qualidade dos dados e como utilizar as ferramentas de qualidade de dados. Conforme observado na introdução do capítulo, a melhoria da qualidade dos dados exige que uma equipe do programa de Qualidade de Dados envolva a equipe de negócios e técnica e defina um programa de trabalho que aborde questões críticas, defina as melhores práticas e implemente processos operacionais que apoiem o gerenciamento contínuo da qualidade dos dados. Frequentemente, essa equipe fará parte da Organização de Gerenciamento de Dados. Os analistas de Qualidade de Dados precisarão trabalhar em estreita colaboração com os Administradores de Dados em todos os níveis. Eles também devem influenciar as políticas, incluindo as políticas sobre processos de negócios e desenvolvimento de sistemas. No entanto, essa equipe não será capaz de solucionar todos os desafios de qualidade de dados de uma organização. O trabalho de QD e o compromisso com dados de alta qualidade precisam ser incorporados às práticas organizacionais. A Estratégia de QD deve considerar como estender as melhores práticas. (Ver Capítulo 17.)
 
-Not all data is of equal importance. Data Quality Management efforts should focus first on the most important data in the organization: data that, if it were of higher quality, would provide greater value to the organization and its customers. Data can be prioritized based on factors such as regulatory requirements, financial value, and direct impact on customers. Often, data quality improvement efforts start with Master Data, which is, by definition, among the most important data in any organization. The result of the importance analysis is a ranked list of data, which the Data Quality team can use to focus their work efforts.
+### 2.3 Identificar Dados Críticos e Regras de Negócios
 
-Having identified the critical data, Data Quality analysts need to identify business rules that describe or imply expectations about the quality characteristics of data. Often rules themselves are not explicitly documented. They may need to be reverse-engineered through analysis of existing business processes, workflows, regulations, policies, standards, system edits, software code, triggers and procedures, status code assignment and use, and plain old common sense. For example, if a marketing company wants to target efforts at people in a specific demographic, then potential indexes of data quality might be the level and reasonability of population in demographic fields like birth date, age, gender, and household income.
+Nem todos os dados têm a mesma importância. Os esforços de Gestão da Qualidade de Dados devem se concentrar primeiro nos dados mais importantes da organização: dados que, se fossem de maior qualidade, agregariam maior valor à organização e aos seus clientes. Os dados podem ser priorizados com base em fatores como requisitos regulatórios, valor financeiro e impacto direto sobre os clientes. Frequentemente, os esforços de melhoria da qualidade de dados começam com os Dados Mestres, que estão, por definição, entre os dados mais importantes de qualquer organização. O resultado da análise de importância é uma lista ordenada de dados, que a equipe de Qualidade de Dados pode usar para concentrar seus esforços de trabalho.
 
-Most business rules are associated with how data is collected or created, but data quality measurement centers around whether data is fit for use. The two (data creation and data use) are related. People want to use data because of what it represents and why it was created. For example, to understand an organization’s sales performance during a specific quarter or over time depends on having reliable data about the sales process (number and type of units sold, volume sold to existing customers vs. new customers, etc.).
+Após a identificação dos dados críticos, os analistas de Qualidade de Dados precisam identificar regras de negócios que descrevam ou impliquem expectativas sobre as características de qualidade dos dados. Frequentemente, as regras em si não são documentadas explicitamente. Elas podem precisar de engenharia reversa por meio da análise de processos de negócios existentes, fluxos de trabalho, regulamentações, políticas, padrões, edições de sistema, código de software, gatilhos e procedimentos, atribuição e uso de códigos de status e o bom senso. Por exemplo, se uma empresa de marketing deseja direcionar seus esforços para pessoas de um grupo demográfico específico, os possíveis índices de qualidade dos dados podem ser o nível e a razoabilidade da população em campos demográficos como data de nascimento, idade, sexo e renda familiar.
 
-It is not possible to know all the ways that data might be used, but it is possible to understand the process and rules by which data was created or collected. Measurements that describe whether data is fit for use should be developed in relation to known uses and measurable rules based on dimensions of data quality: completeness, conformity, validity, integrity, etc. that provide the basis for meaningful metrics. Dimensions of quality enable analysts to characterize both rules (field X is mandatory and must be populated) and findings (e.g., the field is not populated in 3% of the records; the data is only 97% complete).
+A maioria das regras de negócios está associada à forma como os dados são coletados ou criados, mas a mensuração da qualidade dos dados gira em torno da adequação dos dados para uso. Os dois (criação e uso dos dados) estão relacionados. As pessoas desejam usar dados pelo que eles representam e por que foram criados. Por exemplo, entender o desempenho de vendas de uma organização durante um trimestre específico ou ao longo do tempo depende da disponibilidade de dados confiáveis ​​sobre o processo de vendas (número e tipo de unidades vendidas, volume vendido para clientes existentes vs. novos clientes, etc.).
 
-At the field or column level, rules can be straightforward. Completeness rules are a reflection of whether a field is mandatory or optional, and, if optional, the conditions under which it should be populated. Validity rules are dependent on stipulating the domain of valid values and, in some cases, the relationship between fields. For example, a US ZIP Code needs to be valid, in and of itself, and correctly associated with a US State code. Rules should also be defined at the data set level. For example, every customer must have a valid mailing address.
+Não é possível conhecer todas as maneiras pelas quais os dados podem ser usados, mas é possível entender o processo e as regras pelos quais os dados foram criados ou coletados. As mensurações que descrevem se os dados são adequados para uso devem ser desenvolvidas em relação a usos conhecidos e regras mensuráveis ​​com base nas dimensões da qualidade dos dados: completude, conformidade, validade, integridade, etc., que fornecem a base para métricas significativas. As dimensões de qualidade permitem que os analistas caracterizem tanto as regras (o campo X é obrigatório e deve ser preenchido) quanto as descobertas (por exemplo, o campo não é preenchido em 3% dos registros; os dados estão apenas 97% completos).
 
-Defining data quality rules is challenging because most people are not used to thinking about data in terms of rules. It may be necessary to get at the rules indirectly, by asking stakeholders about the input and output requirements of a business process. It also helps to ask about pain points, what happens when data is missing or incorrect, how they identify issues, how they recognize bad data, etc. Keep in mind that it is not necessary to know all the rules in order to assess data. Discovery and refinement of rules is an ongoing process. One of the best ways to get at rules is to share results of assessments. These results often give stakeholders a new perspective on the data from which they can articulate rules that tell them what they need to know about the data.
+No nível de campo ou coluna, as regras podem ser diretas. As regras de completude refletem se um campo é obrigatório ou opcional e, se opcional, as condições sob as quais ele deve ser preenchido. As regras de validade dependem da estipulação do domínio de valores válidos e, em alguns casos, da relação entre os campos. Por exemplo, um CEP dos EUA precisa ser válido, por si só, e corretamente associado a um código de estado dos EUA. As regras também devem ser definidas no nível do conjunto de dados. Por exemplo, todo cliente deve ter um endereço postal válido.
 
-### 2.4 Perform an Initial Data Quality Assessment
+Definir regras de qualidade de dados é desafiador porque a maioria das pessoas não está acostumada a pensar em dados em termos de regras. Pode ser necessário abordar as regras indiretamente, perguntando às partes interessadas sobre os requisitos de entrada e saída de um processo de negócios. Também ajuda a questionar sobre os pontos problemáticos, o que acontece quando os dados estão ausentes ou incorretos, como identificar problemas, como reconhecer dados incorretos, etc. Lembre-se de que não é necessário conhecer todas as regras para avaliar os dados. A descoberta e o refinamento das regras são um processo contínuo. Uma das melhores maneiras de chegar às regras é compartilhar os resultados das avaliações. Esses resultados geralmente oferecem às partes interessadas uma nova perspectiva sobre os dados, a partir da qual podem articular regras que lhes digam o que precisam saber sobre os dados.
 
-Once the most critical business needs and the data that supports them have been identified, the most important part of the data quality assessment is actually looking at that data, querying it to understand data content and relationships, and comparing actual data to rules and expectations. The first time this is done, analysts will discover many things: undocumented relationships and dependencies within the data, implied rules, redundant data, contradictory data, etc., as well as data that actually does conform to rules. With the help of data stewards, other SMEs, and data consumers, DQ analysts will need to sort out and prioritize findings.
+### 2.4 Realizar uma Avaliação Inicial da Qualidade dos Dados
 
-The goal of an initial data quality assessment is to learn about the data in order to define an actionable plan for improvement. It is usually best to start with a small, focused effort – a basic proof of concept – to demonstrate how the improvement process works. Steps include:
+Uma vez identificadas as necessidades comerciais mais críticas e os dados que as suportam, a parte mais importante da avaliação da qualidade dos dados é analisar esses dados, consultá-los para entender o conteúdo e os relacionamentos dos dados e comparar os dados reais com as regras e expectativas. Na primeira vez que isso for feito, os analistas descobrirão muitas coisas: relacionamentos e dependências não documentados nos dados, regras implícitas, dados redundantes, dados contraditórios, etc., bem como dados que realmente estão em conformidade com as regras. Com a ajuda de administradores de dados, outras PMEs e consumidores de dados, os analistas de qualidade de dados precisarão classificar e priorizar as descobertas.
 
-* Define the goals of the assessment; these will drive the work
-* Identify the data to be assessed; focus should be on a small data set, even a single data element, or a specific data quality problem
-* Identify uses of the data and the consumers of the data
-* Identify known risks with the data to be assessed, including the potential impact of data issues onorganizational processes
-* Inspect the data based on known and proposed rules
-* Document levels of non-conformance and types of issues
-* Perform additional, in-depth analysis based on initial findings in order to
-  * Quantify findings
-  * Prioritize issues based on business impact
-  * Develop hypotheses about root causes of data issues
-* Meet with Data Stewards, SMEs, and data consumers to confirm issues and priorities
-* Use findings as a foundation for planning
-  * Remediation of issues, ideally at their root causes
-  * Controls and process improvements to prevent issues from recurring
-  * Ongoing controls and reporting
+O objetivo de uma avaliação inicial da qualidade dos dados é aprender sobre os dados para definir um plano de ação para melhorias. Geralmente, é melhor começar com um esforço pequeno e focado – uma prova de conceito básica – para demonstrar como o processo de melhoria funciona. As etapas incluem:
 
-### 2.5 Identify and Prioritize Potential Improvements
+* Definir os objetivos da avaliação; estes orientarão o trabalho.
+* Identificar os dados a serem avaliados; o foco deve estar em um pequeno conjunto de dados, mesmo um único elemento de dados, ou em um problema específico de qualidade de dados.
+* Identificar os usos dos dados e seus consumidores.
+* Identificar os riscos conhecidos dos dados a serem avaliados, incluindo o impacto potencial de problemas de dados nos processos organizacionais.
+* Inspecionar os dados com base em regras conhecidas e propostas.
+* Documentar os níveis de não conformidade e os tipos de problemas.
+* Realizar análises adicionais e aprofundadas com base nas descobertas iniciais para
+  * Quantificar descobertas
+  * Priorizar problemas com base no impacto nos negócios
+  * Desenvolver hipóteses sobre as causas-raiz dos problemas de dados
+* Reúna-se com administradores de dados, PMEs e consumidores de dados para confirmar problemas e prioridades.
+* Use as descobertas como base para o planejamento.
+  * Remediar problemas, idealmente em suas causas-raiz
+  * Controles e melhorias de processos para evitar que os problemas se repitam
+  * Controles e relatórios contínuos
 
-Having proven that the improvement process can work, the next goal is to apply it strategically. Doing so requires identifying and prioritizing potential improvements. Identification may be accomplished by full-scale data profiling of larger data sets to understand the breadth of existing issues. It may also be accomplished by other means, such as interviewing stakeholders about the data issues that impact them and following up with analysis of the business impact of those issues. Ultimately, prioritization requires a combination of data analysis and discussion with stakeholders.
+### 2.5 Identificar e Priorizar Potenciais Melhorias
 
-The steps to perform a full data profiling and analysis are essentially the same as those in performing a small-scale assessment: define goals, understand data uses and risks, measure against rules, document and confirm findings with SMEs, use this information to prioritize remediation and improvement efforts. However, there are sometimes technical obstacles to full-scale profiling. And the effort will need to be coordinated across a team of analysts and overall results will need to be summarized and understood if an effective action plan is to be put in place. Large-scale profiling efforts, like those on a smaller scale, should still focus on the most critical data.
+Tendo comprovado que o processo de melhoria pode funcionar, o próximo objetivo é aplicá-lo estrategicamente. Para isso, é necessário identificar e priorizar potenciais melhorias. A identificação pode ser realizada por meio da criação de perfis de dados em larga escala, de conjuntos de dados maiores, para compreender a amplitude dos problemas existentes. Também pode ser realizada por outros meios, como entrevistar as partes interessadas sobre os problemas de dados que as afetam e acompanhar a análise do impacto comercial desses problemas. Em última análise, a priorização requer uma combinação de análise de dados e discussão com as partes interessadas.
 
-Profiling data is only the first step in analysis of data quality issues. It helps identify issues, but does not identify root causes, nor does it determine the impact of issues to business processes. Determining impact requires input from stakeholders along the data chain. When planning large scale profiling, ensure that time is allocated to share results, prioritize problems, and determine which issues require in-depth analysis.
+As etapas para realizar uma criação de perfil e análise completas de dados são essencialmente as mesmas de uma avaliação em pequena escala: definir metas, compreender os usos e riscos dos dados, comparar as medidas com as regras, documentar e confirmar as descobertas com as PMEs e usar essas informações para priorizar os esforços de remediação e melhoria. No entanto, às vezes, existem obstáculos técnicos para a criação de perfis em larga escala. E o esforço precisará ser coordenado por uma equipe de analistas, e os resultados gerais precisarão ser resumidos e compreendidos para que um plano de ação eficaz seja implementado. Esforços de criação de perfil em larga escala, assim como aqueles em menor escala, ainda devem se concentrar nos dados mais críticos.
 
-### 2.6 Define Goals for Data Quality Improvement
+A criação de perfil de dados é apenas o primeiro passo na análise de problemas de qualidade de dados. Ela ajuda a identificar problemas, mas não identifica as causas-raiz, nem determina o impacto dos problemas nos processos de negócios. Determinar o impacto requer a contribuição das partes interessadas ao longo da cadeia de dados. Ao planejar a criação de perfil em larga escala, garanta que haja tempo para compartilhar resultados, priorizar problemas e determinar quais questões exigem uma análise aprofundada.
 
-The knowledge obtained through the preliminary assessments forms the basis for specific Data Quality program goals. Improvement can take different forms, from simple remediation (e.g., correction of errors on records) to remediation of root causes. Remediation and improvement plans should account for quick hits – issues that can be addressed immediately at low cost – and longer-term strategic changes. The strategic focus of such plans should be to address root causes of issues and to put in place mechanisms to prevent issues in the first place.
+### 2.6 Definir Metas para a Melhoria da Qualidade de Dados
 
-Be aware that many things can get in the way of improvement efforts: system constraints, age of data, ongoing project work that uses the questionable data, overall complexity of the data landscape, cultural resistance to change. To prevent these constraints from stalling the program, set specific, achievable goals based on consistent quantification of the business value of the improvements to data quality.
+O conhecimento obtido por meio das avaliações preliminares forma a base para as metas específicas do programa de Qualidade de Dados. A melhoria pode assumir diferentes formas, desde a simples remediação (por exemplo, correção de erros em registros) até a remediação das causas-raiz. Os planos de remediação e melhoria devem levar em conta soluções rápidas – problemas que podem ser resolvidos imediatamente a baixo custo – e mudanças estratégicas de longo prazo. O foco estratégico desses planos deve ser abordar as causas-raiz dos problemas e implementar mecanismos para preveni-los desde o início.
 
-For example, a goal may be to improve the completeness of customer data from 90% to 95% based on process improvements and system edits. Obviously, showing improvement will involve comparing initial measurements and improved results. But the value comes with benefits of the improvement: fewer customer complaints, less time spent correcting errors, etc. Measure these things to explain the value of the improvement work. No one cares about levels of field completeness unless there is a business impact. There must be a positive return on investment for improvements to data. When issues are found, determine ROI of fixes based on:
+Esteja ciente de que muitos fatores podem atrapalhar os esforços de melhoria: restrições do sistema, idade dos dados, trabalho em andamento no projeto que utiliza dados questionáveis, complexidade geral do cenário de dados, resistência cultural à mudança. Para evitar que essas restrições paralisem o programa, defina metas específicas e alcançáveis ​​com base na quantificação consistente do valor comercial das melhorias na qualidade dos dados.
 
-* The criticality (importance ranking) of the data affected
-* Amount of data affected
-* The age of the data
-* Number and type of business processes impacted by the issue
-* Number of customers, clients, vendors, or employees impacted by the issue
-* Risks associated with the issue
-* Costs of remediating root causes
-* Costs of potential work-arounds
+Por exemplo, uma meta pode ser melhorar a completude dos dados do cliente de 90% para 95% com base em melhorias de processo e edições no sistema. Obviamente, demonstrar melhorias envolverá comparar as medições iniciais e os resultados aprimorados. Mas o valor vem com os benefícios da melhoria: menos reclamações de clientes, menos tempo gasto corrigindo erros, etc. Mensure esses fatores para explicar o valor do trabalho de melhoria. Ninguém se importa com os níveis de completude dos campos, a menos que haja impacto comercial. Deve haver um retorno positivo sobre o investimento em melhorias nos dados. Quando problemas forem encontrados, determine o ROI das correções com base em:
 
-In assessing issues, especially those where root causes are identified and technical changes are required, always seek out opportunities to prevent issues from recurring. Preventing issues generally costs less than correcting them – sometimes orders of magnitude less. (See Chapter 11.)
+* A criticidade (classificação de importância) dos dados afetados
+* Quantidade de dados afetados
+* A idade dos dados
+* Número e tipo de processos de negócios impactados pelo problema
+* Número de clientes, fornecedores ou funcionários impactados pelo problema
+* Riscos associados ao problema
+* Custos de remediação das causas-raiz
+* Custos de possíveis soluções alternativas
 
-### 2.7 Develop and Deploy Data Quality Operations
+Ao avaliar problemas, especialmente aqueles em que as causas-raiz são identificadas e mudanças técnicas são necessárias, sempre busque oportunidades para evitar que os problemas se repitam. Prevenir problemas geralmente custa menos do que corrigi-los – às vezes, ordens de magnitude menos. (Consulte o Capítulo 11.)
 
-Many Data Quality programs get started through a set of improvement projects identified via results of the data quality assessment. In order to sustain data quality, a DQ program should put in place a plan that allows the team to manage data quality rules and standards, monitor data’s ongoing conformance with rules, identify and manage data quality issues, and report on quality levels. In support of these activities, DQ analysts and Data Stewards will also be engaged in activities such as documenting data standards and business rules and establishing data quality requirements for vendors.
+### 2.7 Desenvolver e Implantar Operações de Qualidade de Dados
 
-#### 2.7.1 Manage Data Quality Rules
+Muitos programas de Qualidade de Dados começam com um conjunto de projetos de melhoria identificados pelos resultados da avaliação da qualidade de dados. Para manter a qualidade dos dados, um programa de DQ deve implementar um plano que permita à equipe gerenciar regras e padrões de qualidade de dados, monitorar a conformidade contínua dos dados com as regras, identificar e gerenciar problemas de qualidade de dados e reportar os níveis de qualidade. Para dar suporte a essas atividades, analistas de DQ e administradores de dados também estarão envolvidos em atividades como documentar padrões de dados e regras de negócios, e estabelecer requisitos de qualidade de dados para fornecedores.
 
-The process of profiling and analyzing data will help an organization discover (or reverse engineer) business and data quality rules. As the data quality practice matures, the capture of such rules should be built into the system development and enhancement process. Defining rules upfront will:
+#### 2.7.1 Gerenciar Regras de Qualidade de Dados
 
-* Set clear expectations for data quality characteristics
-* Provide requirements for system edits and controls that prevent data issues from being introduced
-* Provide data quality requirements to vendors and other external parties
-* Create the foundation for ongoing data quality measurement and reporting
+O processo de criação de perfil e análise de dados ajudará uma organização a descobrir (ou fazer engenharia reversa) regras de negócios e de qualidade de dados. À medida que a prática de qualidade de dados amadurece, a captura dessas regras deve ser incorporada ao processo de desenvolvimento e aprimoramento do sistema. Definir regras antecipadamente irá:
 
-In short, data quality rules and standards are a critical form of Metadata. To be effective, they need to be managed as Metadata. Rules should be:
+* Definir expectativas claras para as características de qualidade de dados
+* Fornecer requisitos para edições e controles do sistema que impeçam a introdução de problemas de dados
+* Fornecer requisitos de qualidade de dados para fornecedores e outras partes externas
+* Criar a base para a medição e geração de relatórios contínuos de qualidade de dados
 
-* **Documented consistently:** Establish standards and templates for documenting rules so that they have a consistent format and meaning.
-* **Defined in terms of Data Quality dimensions:** Dimensions of quality help people understand what is being measured. Consistent application of dimensions will help with the measurement and issue management processes.
-* **Tied to business impact:** While data quality dimensions enable understanding of common problems, they are not a goal in-and-of-themselves. Standards and rules should be connected directly to their impact on organizational success. Measurements that are not tied to business processes should not be taken.
-* **Backed by data analysis:** Data Quality Analysts should not guess at rules. Rules should be tested against actual data. In many cases, rules will show that there are issues with the data. But analysis can also show that the rules themselves are not complete.
-* **Confirmed by SMEs:** The goal of the rules is to describe how the data should look. Often, it takes knowledge of organizational processes to confirm that rules correctly describe the data. This knowledge comes when subject matter experts confirm or explain the results of data analysis.
-* **Accessible to all data consumers:** All data consumers should have access to documented rules. Such access allows them to better understand the data. It also helps to ensure that the rules are correct and complete. Ensure that consumers have a means to ask questions about and provide feedback on rules.* 
+Em resumo, regras e padrões de qualidade de dados são uma forma crítica de Metadados. Para serem eficazes, eles precisam ser gerenciados como Metadados. As regras devem ser:
 
-#### 2.7.2 Measure and Monitor Data Quality
+* **Documentadas consistentemente:** Estabelecer padrões e modelos para documentar regras, de forma que tenham formato e significado consistentes.
+* **Definidas em termos de dimensões de Qualidade de Dados:** As dimensões de qualidade ajudam as pessoas a entender o que está sendo medido. A aplicação consistente de dimensões auxiliará nos processos de medição e gerenciamento de problemas.
 
-The operational Data Quality Management procedures depend on the ability to measure and monitor the quality of data. There are two equally important reasons to implement operational data quality measurements:
+* **Vinculado ao impacto nos negócios:** Embora as dimensões de qualidade de dados permitam a compreensão de problemas comuns, elas não são um objetivo em si mesmas. Padrões e regras devem estar diretamente conectados ao seu impacto no sucesso organizacional. Medições que não estejam vinculadas aos processos de negócios não devem ser realizadas.
+* **Apoiado pela análise de dados:** Analistas de Qualidade de Dados não devem adivinhar regras. As regras devem ser testadas com dados reais. Em muitos casos, as regras mostrarão que há problemas com os dados. Mas a análise também pode mostrar que as regras em si não estão completas.
+* **Confirmado por PMEs:** O objetivo das regras é descrever a aparência dos dados. Muitas vezes, é necessário conhecimento dos processos organizacionais para confirmar que as regras descrevem os dados corretamente. Esse conhecimento surge quando especialistas no assunto confirmam ou explicam os resultados da análise de dados.
+* **Acessível a todos os consumidores de dados:** Todos os consumidores de dados devem ter acesso às regras documentadas. Esse acesso permite que eles entendam melhor os dados. Também ajuda a garantir que as regras estejam corretas e completas. Garanta que os consumidores tenham meios para fazer perguntas e fornecer feedback sobre as regras.*
 
-* To inform data consumers about levels of quality
-* To manage risk that change may be introduced through changes to business or technical processes
+#### 2.7.2 Medir e Monitorar a Qualidade dos Dados
 
-Some measurements serve both purposes. Measurements should be developed based on findings from data assessment and root cause analysis. Measurements intended to inform data consumers will focus on critical data elements and relationships that, if they are not sound, will directly impact business processes. Measurements related to managing risk should focus on relationships that have gone wrong in the past and may go wrong in the future. For example, if data is derived based on a set of ETL rules and those rules may be impacted by changes to business processes, measurements should be put in place to detect changes to the data.
+Os procedimentos operacionais de Gestão da Qualidade dos Dados dependem da capacidade de mensurar e monitorar a qualidade dos dados. Há dois motivos igualmente importantes para implementar medições operacionais da qualidade dos dados:
 
-Knowledge of past problems should be applied to manage risk. For example, if numerous data issues are associated with complex derivations, then all derivations should be assessed – even those that have not been associated with data issues. In most cases, it is worthwhile to put in place measurements that monitor functions similar to those that have had problems.
+* Informar os consumidores de dados sobre os níveis de qualidade
+* Gerenciar o risco de que mudanças possam ser introduzidas por meio de alterações nos processos comerciais ou técnicos
 
-Measurement results can be described at two levels: the detail related to the execution of individual rules and overall results aggregated from the rules. Each rule should have a standard, target, or threshold index for comparison. This function most often reflects the percentage of correct data or percentage of exceptions depending on the formula used. For example:
+Algumas medições atendem a ambos os propósitos. As medições devem ser desenvolvidas com base nas descobertas da avaliação de dados e da análise da causa raiz. As medições destinadas a informar os consumidores de dados se concentrarão em elementos e relacionamentos críticos de dados que, se não forem sólidos, impactarão diretamente os processos comerciais. As medições relacionadas ao gerenciamento de riscos devem se concentrar em relacionamentos que deram errado no passado e podem dar errado no futuro. Por exemplo, se os dados são derivados com base em um conjunto de regras de ETL e essas regras podem ser impactadas por mudanças nos processos comerciais, as medições devem ser implementadas para detectar alterações nos dados.
 
-$$
+O conhecimento de problemas passados ​​deve ser aplicado para gerenciar riscos. Por exemplo, se vários problemas de dados estiverem associados a derivações complexas, todas as derivações devem ser avaliadas – mesmo aquelas que não foram associadas a problemas de dados. Na maioria dos casos, vale a pena implementar medições que monitorem funções semelhantes àquelas que apresentaram problemas.
+
+Os resultados das medições podem ser descritos em dois níveis: o detalhe relacionado à execução de regras individuais e os resultados gerais agregados a partir das regras. Cada regra deve ter um índice padrão, alvo ou limite para comparação. Essa função geralmente reflete a porcentagem de dados corretos ou a porcentagem de exceções, dependendo da fórmula utilizada. Por exemplo:
+
+<!-- $$
 ValidDQI(r) = \frac{TestExecutions(r) - ExceptionsFound(r)}{TestExecutions(r)}
 $$
 
 $$
 InvalidDQI(r) = \frac{ExceptionsFound(r)}{TestExecutions(r)}
-$$
+$$ -->
 
-`r` represents the rule being tested. For example, 10,000 tests of a business rule (r) found 560 exceptions. In this example, the ValidDQ result would be 9440/10,000 = 94.4%, and the Invalid DQ result would be 560/10,000 = 5.6%.
+![](calc_1.png)
 
-Organizing the metrics and results as shown in Table 30 can help to structure measures, metrics, and indicators across the report, reveal possible rollups, and enhance communications. The report can be more formalized and linked to projects that will remediate the issues. Filtered reports are useful for data stewards looking for trends and contributions. Table 30 provides examples of rules constructed in this manner. Where applicable, results of rules are expressed in both positive percentages (the portion of the data that conforms to rules and expectations) and negative percentages (the portion of the data that does not conform to the rule).
+`r` representa a regra que está sendo testada. Por exemplo, 10.000 testes de uma regra de negócio (r) encontraram 560 exceções. Neste exemplo, o resultado ValidDQ seria 9440/10.000 = 94,4%, e o resultado InvalidDQ seria 560/10.000 = 5,6%.
 
-Data quality rules provide the foundation for operational management of data quality. Rules can be integrated into application services or data services that supplement the data lifecycle, either through Commercial Off The Shelf (COTS) data quality tools, rules engines and reporting tools for monitoring and reporting, or custom-developed applications.
+Organizar as métricas e os resultados conforme mostrado na Tabela 30 pode ajudar a estruturar medidas, métricas e indicadores em todo o relatório, revelar possíveis rollups e aprimorar a comunicação. O relatório pode ser mais formalizado e vinculado a projetos que corrigirão os problemas. Relatórios filtrados são úteis para administradores de dados que buscam tendências e contribuições. A Tabela 30 fornece exemplos de regras construídas dessa maneira. Quando aplicável, os resultados das regras são expressos em porcentagens positivas (a parcela dos dados que está em conformidade com as regras e expectativas) e porcentagens negativas (a parcela dos dados que não está em conformidade com a regra).
 
-Table 30 DQ Metric Examples
+As regras de qualidade de dados fornecem a base para o gerenciamento operacional da qualidade de dados. As regras podem ser integradas a serviços de aplicação ou serviços de dados que complementam o ciclo de vida dos dados, seja por meio de ferramentas de qualidade de dados prontas para uso (COTS), mecanismos de regras e ferramentas de relatórios para monitoramento e geração de relatórios, ou por meio de aplicativos personalizados.
+
+*Tabela 30 Exemplos de Métricas DQ*
 
 <table>
   <thead>
     <tr>
-      <th>Dimension and Business Rule</th>
-      <th>Measure</th>
-      <th>Metrics</th>
-      <th>Status Indicator</th>
+      <th>Dimensão e Regra de Negócio</th>
+      <th>Medida</th>
+      <th>Métrica</th>
+      <th>Indicador de Status</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
-        Completeness Business Rule 1: Population of field is mandatory
+        Regra de Negócios de Completude 1: O preenchimento do campo é obrigatório
       </td>
       <td>
-        Count the number of records where data is populated, compare to the total number of records
+        Conte o número de registros onde os dados são preenchidos e compare com o número total de registros
       </td>
       <td>
-        Divide the obtained number of records where data is populated by the total number of records in the table or database and multiply it by 100 to get to percentage complete
+        Divida o número obtido de registros onde os dados são preenchidos pelo número total de registros na tabela ou banco de dados e multiplique por 100 para obter a porcentagem de preenchimento
       </td>
       <td>
-        Unacceptable: Below 80% populated Above 20% not populated
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Example 1: Postal Code must be populated in the address table
-      </td>
-      <td>
-        Count populated: 700,000 Count not populated: 300,000 Total count: 1,000,000
-      </td>
-      <td>
-        Positive measure: 700,000/1,000,000*100 = 70% populated Negative measure: 300,000/1,000,000 *100 = 30% not populated
-      </td>
-      <td>
-        Example result: Unacceptable
+        Inaceitável: Abaixo de 80% preenchido Acima de 20% não preenchido
       </td>
     </tr>
     <tr>
       <td>
-        Uniqueness Business Rule 2: There should be only one record per entity instance in a table
+        Exemplo 1: O CEP deve ser preenchido na tabela de endereços
       </td>
       <td>
-        Count the number of duplicate records identified; report on the percentage of records that represent duplicates
+        Contagem preenchida: 700.000 Contagem não preenchida: 300.000 Contagem total: 1.000.000
       </td>
       <td>
-        Divide the number of duplicate records by the total number of records in the table or database and multiply it by 100
+        Medida positiva: 700.000/1.000.000*100 = 70% preenchido Medida negativa: 300.000/1.000.000*100 = 30% não preenchido
       </td>
       <td>
-        Unacceptable: Above 0%
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Example 2: There should be one and only one current row per postal code on the Postal Codes master list
-      </td>
-      <td>
-        Count of duplicates: 1,000 Total Count: 1,000,000
-      </td>
-      <td>
-        10,000/1,000,000*100 = 1.0% of postal codes are present on more than one current row
-      </td>
-      <td>
-        Example result: Unacceptable
+        Resultado do exemplo: Inaceitável
       </td>
     </tr>
     <tr>
       <td>
-        Timeliness Business Rule 3: Records must arrive within a scheduled timeframe
+        Regra de Negócios de Unicidade 2: Deve haver apenas um registro por instância de entidade em uma tabela
       </td>
       <td>
-        Count the number of records failing to arrive on time from a data service for business transactions to be completed
+        Conte o número de registros duplicados identificados; Relatório sobre a porcentagem de registros que representam duplicatas
       </td>
       <td>
-        Divide the number of incomplete transactions by the total number of attempted transactions in a time period and multiply by 100
+        Divida o número de registros duplicados pelo número total de registros na tabela ou banco de dados e multiplique por 100
       </td>
       <td>
-        Unacceptable: Below 99% completed on time Above 1% not completed on time
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Example 3: Equity market record should arrive within 5 minutes of being transacted
-      </td>
-      <td>
-        Count of incomplete transactions: 2000 Count of attempted transactions: 1,000,000
-      </td>
-      <td>
-        Positive: (1,000,000 – 2000) / 1,000,000*100 = 99.8% of transaction records arrived within defined timeframe Negative: 2000/1,000,000*100 = 0.20% of transactions did not arrive within defined timeframe
-      </td>
-      <td>
-        Example Result: Acceptable 
+        Inaceitável: Acima de 0%
       </td>
     </tr>
     <tr>
       <td>
-        Validity Business Rule 4: If field X = value 1, then field Y must = value 1-prime
+        Exemplo 2: Deve haver apenas uma linha atual por CEP na lista mestre de CEPs
       </td>
       <td>
-        Count the number of records where the rule is met
+        Contagem de duplicatas: 1.000 Contagem total: 1.000.000
       </td>
       <td>
-        Divide the number of records that meet the condition by the total number of records
+        10.000/1.000.000*100 = 1,0% dos CEPs estão presentes em mais de uma linha atual
       </td>
       <td>
-        Unacceptable: Below 100% adherence to the rule
+        Resultado do exemplo: Inaceitável
       </td>
     </tr>
     <tr>
       <td>
-        Example 4: Only shipped orders should be billed
+        Regra de Negócios de Pontualidade 3: Os registros devem chegar dentro do prazo programado
       </td>
       <td>
-        Count of records where status for shipping = Shipped and status for billing = Billed: 999,000 Count of total records: 1,000,000
+        Conte o número de registros que não chegam a tempo de um serviço de dados para que as transações comerciais sejam concluídas
       </td>
       <td>
-        Positive: 999,000/1,000,000*100 = 99.9% of records conform to the rule Negative: (1,000,000-999,000) / 1,000,000 *100 = 0.10% do not conform to the rule
+        Divida o número de transações incompletas pelo número total de tentativas de transação em um período e multiplique por 100
       </td>
       <td>
-        Example Result: Unacceptable
+        Inaceitável: Abaixo de 99% concluídos no prazo Acima de 1% não concluídos no prazo
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Exemplo 3: O registro do mercado de ações deve chegar em até 5 minutos após a transação.
+      </td>
+      <td>
+        Contagem de transações incompletas: 2.000. Contagem de tentativas de transação: 1.000.000.
+      </td>
+      <td>
+        Positivo: (1.000.000 – 2.000) / 1.000.000 * 100 = 99,8% dos registros de transações chegaram dentro do prazo definido. Negativo: 2.000/1.000.000 * 100 = 0,20% das transações não chegaram dentro do prazo definido.
+      </td>
+      <td>
+        Resultado do Exemplo: Aceitável.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Validade da Regra de Negócios 4: Se o campo X = valor 1, então o campo Y deve = valor 1-primo.
+      </td>
+      <td>
+        Contar o número de registros em que a regra é atendida.
+      </td>
+      <td>
+        Dividir o número de registros que atendem à condição pelo número total de registros.
+      </td>
+      <td>
+        Inaceitável: Abaixo de 100% de adesão à regra.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Exemplo 4: Somente pedidos enviados devem ser faturados.
+      </td>
+      <td>
+        Contagem de registros em que o status de envio = Enviado e o status de faturamento = Faturado. 999.000 Total de registros: 1.000.000
+      </td>
+      <td>
+        Positivo: 999.000/1.000.000*100 = 99,9% dos registros estão em conformidade com a regra Negativo: (1.000.000-999.000) / 1.000.000*100 = 0,10% não estão em conformidade com a regra
+      </td>
+      <td>
+        Resultado de exemplo: Inaceitável
       </td>
     </tr>
   </tbody>
 </table>
 
-Provide continuous monitoring by incorporating control and measurement processes into the information processing flow. Automated monitoring of conformance to data quality rules can be done in-stream or through a batch process. Measurements can be taken at three levels of granularity: the data element value, data instance or record, or the data set. Table 31 describes techniques for collecting data quality measurements. In-stream measurements can be taken while creating data or handing data off between processing stages. Batch queries can be performed on collections of data instances assembled in a data set, usually in persistent storage. Data set measurements generally cannot be taken in-stream, since the measurement may need the entire set. Incorporating the results of the control and measurement processes into both the operational procedures and reporting frameworks enables continuous monitoring of the levels of data quality for feedback and improvement to the data generation/collection activities.
+Forneça monitoramento contínuo incorporando processos de controle e medição ao fluxo de processamento de informações. O monitoramento automatizado da conformidade com as regras de qualidade de dados pode ser feito em fluxo ou por meio de um processo em lote. As medições podem ser realizadas em três níveis de granularidade: o valor do elemento de dados, a instância ou registro de dados ou o conjunto de dados. A Tabela 31 descreve técnicas para coletar medições de qualidade de dados. Medições em fluxo podem ser realizadas durante a criação de dados ou durante a transferência de dados entre os estágios de processamento. Consultas em lote podem ser realizadas em coleções de instâncias de dados reunidas em um conjunto de dados, geralmente em armazenamento persistente. As medições do conjunto de dados geralmente não podem ser realizadas em fluxo, pois a medição pode exigir o conjunto inteiro. A incorporação dos resultados dos processos de controle e medição tanto nos procedimentos operacionais quanto nas estruturas de relatórios permite o monitoramento contínuo dos níveis de qualidade dos dados para feedback e aprimoramento das atividades de geração/coleta de dados.
 
-Table 31 Data Quality Monitoring Techniques
-
+*Tabela 31 Técnicas de Monitoramento da Qualidade de Dados*
 
 <table>
   <thead>
     <tr>
-      <th>Granularity</th>
-      <th>In-stream (In-Process Flow) Treatment</th>
-      <th>Batch Treatment</th>
+      <th>Granularidade</th>
+      <th>Tratamento em Fluxo (Fluxo em Processo)</th>
+      <th>Tratamento em lote</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
-        Data Element
+        Elemento de Dados
       </td>
       <td>
-        Edit checks in application,
-        Data element validation services,
-        Specially programmed applications
+        Verificações de edição em aplicativos, Serviços de validação de elementos de dados, Aplicativos especialmente programados
       </td>
       <td>
-        Direct queries,
-        Data profiling or analyzer tool
+        Consultas diretas, Ferramenta de análise ou criação de perfil de dados
       </td>
     </tr>
     <tr>
       <td>
-        Data Record
+        Registro de Dados
       </td>
       <td>
-        Edit checks in application,
-        Data record validation services,
-        Specially programmed applications
+        Verificações de edição em aplicativos, Serviços de validação de registros de dados, Aplicativos especialmente programados
       </td>
       <td>
-        Direct queries,
-        Data profiling or analyzer tool
+        Consultas diretas, Ferramenta de análise ou criação de perfil de dados
       </td>
     </tr>
     <tr>
       <td>
-        Data set
+        Conjunto de dados
       </td>
       <td>
-        Inspection inserted between processing stages
+        Inspeção inserida entre os estágios de processamento
       </td>
       <td>
-        Direct queries,
-        Data profiling or analyzer tool
+        Consultas diretas, Ferramenta de análise ou criação de perfil de dados
       </td>
     </tr>
   </tbody>
 </table>
 
-#### 2.7.3 Develop Operational Procedures for Managing Data Issues
+#### 2.7.3 Desenvolver Procedimentos Operacionais para Gerenciar Problemas de Dados
 
-Whatever tools are used to monitor data quality, when results are assessed by Data Quality team members, they need to respond to findings in a timely and effective manner. The team must design and implement detailed operational procedures for:
+Independentemente das ferramentas utilizadas para monitorar a qualidade dos dados, quando os resultados são avaliados pelos membros da equipe de Qualidade de Dados, eles precisam responder às descobertas de forma oportuna e eficaz. A equipe deve elaborar e implementar procedimentos operacionais detalhados para:
 
-* **Diagnosing issues:** The objective is to review the symptoms of the data quality incident, trace the lineage of the data in question, identify the problem and where it originated, and pinpoint potential root causes of the problem. The procedure should describe how the Data Quality Operations team would:
-  * Review the data issues in the context of the appropriate information processing flows and isolate the location in the process where the flaw is introduced
-  * Evaluate whether there have been any environmental changes that would cause errors entering into the system
-  * Evaluate whether or not there are any other process issues that contributed to the data quality incident
-  * Determine whether there are issues with external data that have affected the quality of the data
+* **Diagnosticar problemas:** O objetivo é revisar os sintomas do incidente de qualidade de dados, rastrear a origem dos dados em questão, identificar o problema e sua origem, e identificar as potenciais causas-raiz do problema. O procedimento deve descrever como a equipe de Operações de Qualidade de Dados:
+  * Revisar os problemas de dados no contexto dos fluxos de processamento de informações apropriados e isolar o local no processo onde a falha foi introduzida.
+  * Avaliar se houve alguma alteração ambiental que possa causar erros na entrada do sistema.
+  * Avaliar se há outros problemas de processo que contribuíram para o incidente de qualidade dos dados.
+  * Determinar se há problemas com dados externos que afetaram a qualidade dos dados.
 
-> **NOTE:** The work of root cause analysis requires input from technical and business SMEs. While the DQ team may lead and facilitate this kind of work effort, success requires cross-functional collaboration
+> **NOTA:** O trabalho de análise de causa raiz requer a contribuição de especialistas técnicos e de negócios. Embora a equipe de DQ possa liderar e facilitar esse tipo de trabalho, o sucesso requer colaboração multifuncional.
 
-* **Formulating options for remediation:** Based on the diagnosis, evaluate alternatives for addressing the issue. These may include:
-  * Addressing non-technical root causes such as lack of training, lack of leadership support, unclear accountability and ownership, etc.
-  * Modification of the systems to eliminate technical root causes
-  * Developing controls to prevent the issue
-  * Introducing additional inspection and monitoring
-  * Directly correcting flawed data
-  * Taking no action based on the cost and impact of correction versus the value of the data correction
-* **Resolving issues:** Having identified options for resolving the issue, the Data Quality team must confer with the business data owners to determine the best way to resolve the issue. These procedures should detail how the analysts:
-  * Assess the relative costs and merits of the alternatives
-  * Recommend one of the planned alternatives
-  * Provide a plan for developing and implementing the resolution
-  * Implement the resolution
+* **Formulação de opções de remediação:** Com base no diagnóstico, avalie alternativas para lidar com o problema. Estas podem incluir:
+  * Abordar causas-raiz não técnicas, como falta de treinamento, falta de apoio da liderança, responsabilidade e propriedade pouco claras, etc.
+  * Modificar os sistemas para eliminar as causas-raiz técnicas
+  * Desenvolver controles para prevenir o problema
+  * Introduzir inspeção e monitoramento adicionais
+  * Corrigir diretamente os dados falhos
+  * Não tomar nenhuma ação com base no custo e no impacto da correção em comparação com o valor da correção dos dados
+* **Resolução de problemas:** Após identificar as opções para resolver o problema, a equipe de Qualidade de Dados deve consultar os responsáveis ​​pelos dados da empresa para determinar a melhor maneira de resolvê-lo. Esses procedimentos devem detalhar como os analistas:
+  * Avaliar os custos e méritos relativos das alternativas
+  * Recomendar uma das alternativas planejadas
+  * Apresentar um plano para o desenvolvimento e implementação da resolução
+  * Implementar a resolução
 
-Decisions made during the issue management process should be tracked in an incident tracking system. When the data in such a system is managed well, it can provide valuable insight about the causes and costs of data issues. Include a description of the issue and the root causes, options for remediation, and the decision on how to resolve the issue.
+As decisões tomadas durante o processo de gerenciamento de problemas devem ser rastreadas em um sistema de rastreamento de incidentes. Quando os dados nesse sistema são bem gerenciados, eles podem fornecer insights valiosos sobre as causas e os custos dos problemas de dados. Inclua uma descrição do problema e das causas-raiz, opções de remediação e a decisão sobre como resolvê-lo.
 
-The incident tracking system will collect performance data relating to issue resolution, work assignments, volume of issues, frequency of occurrence, as well as the time to respond, diagnose, plan a solution, and resolve issues. These metrics can provide valuable insights into the effectiveness of the current workflow, as well as systems and resource utilization, and they are important management data points that can drive continuous operational improvement for data quality control.
+O sistema de rastreamento de incidentes coletará dados de desempenho relacionados à resolução de problemas, atribuições de trabalho, volume de problemas, frequência de ocorrência, bem como o tempo para responder, diagnosticar, planejar uma solução e resolver problemas. Essas métricas podem fornecer insights valiosos sobre a eficácia do fluxo de trabalho atual, bem como sobre a utilização de sistemas e recursos, e são importantes pontos de dados de gerenciamento que podem impulsionar a melhoria operacional contínua para o controle de qualidade dos dados.
 
-Incident tracking data also helps data consumers. Decisions based upon remediated data should be made with knowledge that it has been changed, why it has been changed, and how it has been changed. That is one reason why it is important to record the methods of modification and the rationale for them. Make this documentation available to data consumers and developers researching code changes. While changes may be obvious to the people who implement them, the history of changes will be lost to future data consumers unless it is documented. Data quality incident tracking requires staff be trained on how issues should be classified, logged, and tracked. To support effective tracking:
+Os dados de rastreamento de incidentes também auxiliam os consumidores de dados. Decisões baseadas em dados remediados devem ser tomadas com o conhecimento de que eles foram alterados, por que foram alterados e como foram alterados. Esse é um dos motivos pelos quais é importante registrar os métodos de modificação e a justificativa para eles. Disponibilize essa documentação para consumidores de dados e desenvolvedores que pesquisam alterações de código. Embora as mudanças possam ser óbvias para as pessoas que as implementam, o histórico das mudanças será perdido para futuros consumidores de dados, a menos que seja documentado. O rastreamento de incidentes de qualidade de dados exige que a equipe seja treinada sobre como os problemas devem ser classificados, registrados e rastreados. Para apoiar o rastreamento eficaz:
 
-* **Standardize data quality issues and activities:** Since the terms used to describe data issues may vary across lines of business, it is valuable to define a standard vocabulary for the concepts used. Doing so will simplify classification and reporting. Standardization also makes it easier to measure the volume of issues and activities, identify patterns and interdependencies between systems and participants, and report on the overall impact of data quality activities. The classification of an issue may change as the investigation deepens and root causes are exposed.
-* **Provide an assignment process for data issues:** The operational procedures direct the analysts to assign data quality incidents to individuals for diagnosis and to provide alternatives for resolution. Drive the assignment process within the incident tracking system by suggesting those individuals with specific areas of expertise.
-* **Manage issue escalation procedures:** Data quality issue handling requires a well-defined system of escalation based on the impact, duration, or urgency of an issue. Specify the sequence of escalation within the data quality Service Level Agreement. The incident tracking system will implement the escalation procedures, which helps expedite efficient handling and resolution of data issues.
-* **Manage data quality resolution workflow:** The data quality SLA specifies objectives for monitoring, control, and resolution, all of which define a collection of operational workflows. The incident tracking system can support workflow management to track progress with issues diagnosis and resolution.
+* **Padronize problemas e atividades de qualidade de dados:** Como os termos usados ​​para descrever problemas de dados podem variar entre as linhas de negócios, é importante definir um vocabulário padrão para os conceitos usados. Isso simplificará a classificação e os relatórios. A padronização também facilita a mensuração do volume de problemas e atividades, a identificação de padrões e interdependências entre sistemas e participantes e a geração de relatórios sobre o impacto geral das atividades de qualidade de dados. A classificação de um problema pode mudar à medida que a investigação se aprofunda e as causas-raiz são expostas.
+* **Forneça um processo de atribuição para problemas de dados:** Os procedimentos operacionais orientam os analistas a atribuir incidentes de qualidade de dados a indivíduos para diagnóstico e a fornecer alternativas de resolução. Conduza o processo de atribuição dentro do sistema de rastreamento de incidentes, sugerindo indivíduos com áreas específicas de especialização. * **Gerenciar procedimentos de escalonamento de problemas:** O tratamento de problemas de qualidade de dados requer um sistema de escalonamento bem definido com base no impacto, duração ou urgência de um problema. Especifique a sequência de escalonamento no Acordo de Nível de Serviço de qualidade de dados. O sistema de rastreamento de incidentes implementará os procedimentos de escalonamento, o que ajuda a agilizar o tratamento e a resolução eficientes de problemas de dados.
+* **Gerenciar fluxo de trabalho de resolução de problemas de qualidade de dados:** O SLA de qualidade de dados especifica objetivos para monitoramento, controle e resolução, todos os quais definem um conjunto de fluxos de trabalho operacionais. O sistema de rastreamento de incidentes pode auxiliar o gerenciamento do fluxo de trabalho para acompanhar o progresso do diagnóstico e da resolução de problemas.
 
-#### 2.7.4 Establish Data Quality Service Level Agreements
+#### 2.7.4 Estabelecer Acordos de Nível de Serviço (ANS) para Qualidade de Dados
 
-A data quality Service Level Agreement (SLA) specifies an organization’s expectations for response and remediation for data quality issues in each system. Data quality inspections as scheduled in the SLA help to identify issues to fix, and over time, reduce the number of issues. While enabling the isolation and root cause analysis of data flaws, there is an expectation that the operational procedures will provide a scheme for remediation of root causes within an agreed timeframe. Having data quality inspection and monitoring in place increases the likelihood of detection and remediation of a data quality issue before a significant business impact can occur. Operational data quality control defined in a data quality SLA includes:
+Um Acordo de Nível de Serviço (ANS) para qualidade de dados especifica as expectativas de uma organização quanto à resposta e à correção de problemas de qualidade de dados em cada sistema. As inspeções de qualidade de dados, conforme programadas no ANS, ajudam a identificar problemas a serem corrigidos e, ao longo do tempo, a reduzir o número de problemas. Ao mesmo tempo em que permitem o isolamento e a análise da causa raiz de falhas de dados, espera-se que os procedimentos operacionais forneçam um esquema para a correção das causas raiz dentro de um prazo acordado. A implementação de inspeção e monitoramento da qualidade de dados aumenta a probabilidade de detecção e correção de um problema de qualidade de dados antes que um impacto significativo nos negócios possa ocorrer. O controle de qualidade de dados operacionais definido em um SLA de qualidade de dados inclui:
 
-* Data elements covered by the agreement
-* Business impacts associated with data flaws
-* Data quality dimensions associated with each data element
-* Expectations for quality for each data element for each of the identified dimensions in each application or system in the data value chain
-* Methods for measuring against those expectations
-* Acceptability threshold for each measurement
-* Steward(s) to be notified in case the acceptability threshold is not met
-* Timelines and deadlines for expected resolution or remediation of the issue
-* Escalation strategy, and possible rewards and penalties
+* Elementos de dados abrangidos pelo acordo
+* Impactos comerciais associados a falhas de dados
+* Dimensões de qualidade de dados associadas a cada elemento de dados
+* Expectativas de qualidade para cada elemento de dados para cada uma das dimensões identificadas em cada aplicativo ou sistema na cadeia de valor de dados
+* Métodos de mensuração em relação a essas expectativas
+* Limite de aceitabilidade para cada medição
+* Administrador(es) a ser(em) notificado(s) caso o limite de aceitabilidade não seja atingido
+* Cronogramas e prazos para resolução ou remediação esperada do problema
+* Estratégia de escalonamento e possíveis recompensas e penalidades
 
-The data quality SLA also defines the roles and responsibilities associated with performance of operational data quality procedures. The operational data quality procedures provide reports in conformance with the defined business rules, as well as monitoring staff performance in reacting to data quality incidents. Data stewards and the operational data quality staff, while upholding the level of data quality service, should consider their data quality SLA constraints and connect data quality to individual performance plans.
+O SLA de qualidade de dados também define as funções e responsabilidades associadas ao desempenho dos procedimentos de qualidade de dados operacionais. Os procedimentos de qualidade de dados operacionais fornecem relatórios em conformidade com as regras comerciais definidas, bem como monitoram o desempenho da equipe na reação a incidentes de qualidade de dados. Os administradores de dados e a equipe de qualidade de dados operacionais, ao mesmo tempo em que mantêm o nível de serviço de qualidade de dados, devem considerar suas restrições de SLA de qualidade de dados e conectar a qualidade de dados a planos de desempenho individuais.
 
-When issues are not addressed within the specified resolution times, an escalation process must exist to communicate non-observance of the level of service up the management and governance chain. The data quality SLA establishes the time limits for notification generation, the names of those in that management chain, and when escalation needs to occur. Given the set of data quality rules, methods for measuring conformance, the acceptability thresholds defined by the business clients, and the service level agreements, the Data Quality team can monitor compliance of the data to the business expectations, as well as how well the Data Quality team performs on the procedures associated with data errors.
+Quando os problemas não são resolvidos dentro dos prazos de resolução especificados, um processo de escalonamento deve existir para comunicar a não observância do nível de serviço na cadeia de gestão e governança. O SLA de qualidade de dados estabelece os prazos para a geração de notificações, os nomes das pessoas nessa cadeia de gestão e quando o escalonamento precisa ocorrer. Dado o conjunto de regras de qualidade de dados, os métodos para medir a conformidade, os limites de aceitabilidade definidos pelos clientes comerciais e os acordos de nível de serviço, a equipe de Qualidade de Dados pode monitorar a conformidade dos dados com as expectativas comerciais, bem como o desempenho da equipe de Qualidade de Dados nos procedimentos associados a erros de dados.
 
-SLA reporting can be on a scheduled basis driven by business and operational requirements. Particular focus will be on report trend analysis in cases focused on periodic rewards and penalties if such concepts are built into the SLA framework.
+Os relatórios de SLA podem ser programados, orientados por requisitos comerciais e operacionais. Um foco particular será na análise de tendências de relatórios em casos focados em recompensas e penalidades periódicas, se tais conceitos forem incorporados à estrutura do SLA.
 
-#### 2.7.5 Develop Data Quality Reporting
+#### 2.7.5 Desenvolver Relatórios de Qualidade de Dados
 
-The work of assessing the quality of data and managing data issues will not benefit the organization unless the information is shared through reporting so that data consumers understand the condition of the data. Reporting should focus around:
+O trabalho de avaliar a qualidade dos dados e gerenciar problemas de dados não beneficiará a organização a menos que as informações sejam compartilhadas por meio de relatórios para que os consumidores de dados entendam a condição dos dados. Os relatórios devem se concentrar em:
 
-* Data quality scorecard, which provides a high-level view of the scores associated with various metrics, reported to different levels of the organization within established thresholds
-* Data quality trends, which show over time how the quality of data is measured, and whether trending is up or down
-* SLA Metrics, such as whether operational data quality staff diagnose and respond to data quality
-* ncidents in a timely manner
-* Data quality issue management, which monitors the status of issues and resolutions
-* Conformance of the Data Quality team to governance policies
-* Conformance of IT and business teams to Data Quality policies
-* Positive effects of improvement projects
+* Scorecard de qualidade de dados, que fornece uma visão geral das pontuações associadas a diversas métricas, reportadas a diferentes níveis da organização dentro dos limites estabelecidos
+* Tendências de qualidade de dados, que mostram ao longo do tempo como a qualidade dos dados é medida e se a tendência é de alta ou baixa
+* Métricas de SLA, como se a equipe de qualidade de dados operacionais diagnostica e responde à qualidade dos dados
+* incidentes em tempo hábil
+* Gerenciamento de problemas de qualidade de dados, que monitora o status dos problemas e suas resoluções
+* Conformidade da equipe de Qualidade de Dados com as políticas de governança
+* Conformidade das equipes de TI e de negócios com as políticas de Qualidade de Dados
+* Efeitos positivos dos projetos de melhoria
 
-Reporting should align to metrics in the data quality SLA as much as possible, so that the team’s goals are aligned with those of its customers. The Data Quality program should also report on the positive effects of improvement projects. It is best to do this in business terms to continually remind the organization of the direct effect that data has on customers.
+Os relatórios devem se alinhar às métricas do SLA de qualidade de dados o máximo possível, para que os objetivos da equipe estejam alinhados com os de seus clientes. O programa de Qualidade de Dados também deve reportar os efeitos positivos dos projetos de melhoria. É melhor fazer isso em termos comerciais para lembrar continuamente a organização do efeito direto que os dados têm sobre os clientes.
 
-## 3. Tools
+## 3. Ferramentas
 
-Tools should be selected and tool architectures should be set in the planning phase of the enterprise Data Quality program. Tools provide a partial rule set starter kit but organizations need to create and input their own context specific rules and actions into any tool.
+As ferramentas devem ser selecionadas e as arquiteturas de ferramentas definidas na fase de planejamento do programa corporativo de Qualidade de Dados. As ferramentas fornecem um kit inicial de regras parcial, mas as organizações precisam criar e inserir suas próprias regras e ações específicas ao contexto em qualquer ferramenta.
 
-### 3.1 Data Profiling Tools
+### 3.1 Ferramentas de Criação de Perfil de Dados
 
-Data profiling tools produce high-level statistics that enable analysts to identify patterns in data and perform initial assessment of quality characteristics. Some tools can be used to perform ongoing monitoring of data. Profiling tools are particularly important for data discovery efforts because they enable assessment of large data sets. Profiling tools augmented with data visualization capabilities will aid in the process of discovery. (See Chapters 5 and 8, and Section 1.3.9.)
+Ferramentas de criação de perfil de dados produzem estatísticas de alto nível que permitem aos analistas identificar padrões nos dados e realizar uma avaliação inicial das características de qualidade. Algumas ferramentas podem ser usadas para realizar o monitoramento contínuo dos dados. Ferramentas de criação de perfil são particularmente importantes para os esforços de descoberta de dados, pois permitem a avaliação de grandes conjuntos de dados. Ferramentas de criação de perfil, complementadas com recursos de visualização de dados, auxiliarão no processo de descoberta. (Consulte os Capítulos 5 e 8 e a Seção 1.3.9.)
 
-### 3.2 Data Querying Tools
+### 3.2 Ferramentas de Consulta de Dados
 
-Data profiling is only the first step in data analysis. It helps identify potential issues. Data Quality team members also need to query data more deeply to answer questions raised by profiling results and find patterns that provide insight into root causes of data issues. For example, querying to discover and quantify other aspects of data quality, such as uniqueness and integrity.
+A criação de perfil de dados é apenas o primeiro passo na análise de dados. Ela ajuda a identificar possíveis problemas. Os membros da equipe de Qualidade de Dados também precisam consultar os dados mais profundamente para responder às perguntas levantadas pelos resultados da criação de perfil e encontrar padrões que forneçam insights sobre as causas-raiz dos problemas de dados. Por exemplo, consultas para descobrir e quantificar outros aspectos da qualidade dos dados, como unicidade e integridade.
 
-### 3.3 Modeling and ETL Tools
+### 3.3 Ferramentas de Modelagem e ETL
 
-The tools used to model data and create ETL processes have a direct impact on the quality of data. If used with the data in mind, these tools can enable higher quality data. If they are used without knowledge of the data, they can have detrimental effects. DQ team members should work with development teams to ensure that data quality risks are addressed and that the organization takes full advantage of the ways in which effective modeling and data processing can enable higher quality data. (See Chapters 5, 8, and 11.)
+As ferramentas usadas para modelar dados e criar processos de ETL têm um impacto direto na qualidade dos dados. Se utilizadas com os dados em mente, essas ferramentas podem permitir dados de maior qualidade. Se utilizadas sem o conhecimento dos dados, podem ter efeitos prejudiciais. Os membros da equipe de DQ devem trabalhar com as equipes de desenvolvimento para garantir que os riscos à qualidade dos dados sejam abordados e que a organização aproveite ao máximo as maneiras pelas quais a modelagem e o processamento de dados eficazes podem permitir dados de maior qualidade. (Consulte os Capítulos 5, 8 e 11.)
 
-### 3.4 Data Quality Rule Templates
+### 3.4 Modelos de Regras de Qualidade de Dados
 
-Rule templates allow analyst to capture expectations for data. Templates also help bridge the communications gap between business and technical teams. Consistent formulation of rules makes it easier to translate business needs into code, whether that code is embedded in a rules engine, the data analyzer component of a data-profiling tool, or a data integration tool. A template can have several sections, one for each type of business rule to implement.
+Os modelos de regras permitem que os analistas capturem as expectativas em relação aos dados. Os modelos também ajudam a preencher a lacuna de comunicação entre as equipes de negócios e técnicas. A formulação consistente de regras facilita a tradução das necessidades de negócios em código, seja esse código incorporado em um mecanismo de regras, no componente analisador de dados de uma ferramenta de criação de perfil de dados ou em uma ferramenta de integração de dados. Um modelo pode ter várias seções, uma para cada tipo de regra de negócios a ser implementada.
 
-### 3.5 Metadata Repositories
+### 3.5 Repositórios de Metadados
 
-As noted in Section 1.3.4, defining data quality requires Metadata and definitions of high quality data are a valuable kind of Metadata. DQ teams should work closely with teams that manage Metadata to ensure that data quality requirements, rules, measurement results, and documentation of issues are made available to data consumers.
+Conforme observado na Seção 1.3.4, definir a qualidade dos dados requer Metadados, e definições de dados de alta qualidade são um tipo valioso de Metadados. As equipes de DQ devem trabalhar em estreita colaboração com as equipes que gerenciam Metadados para garantir que os requisitos de qualidade dos dados, regras, resultados de medições e documentação de problemas sejam disponibilizados aos consumidores de dados.
 
-### 4.1 Preventive Actions
+### 4.1 Ações Preventivas
 
-The best way to create high quality data is to prevent poor quality data from entering an organization. Preventive actions stop known errors from occurring. Inspecting data after it is in production will not improve its quality. Approaches include:
+A melhor maneira de criar dados de alta qualidade é evitar que dados de baixa qualidade entrem na organização. Ações preventivas impedem a ocorrência de erros conhecidos. Inspecionar os dados após a produção não melhorará sua qualidade. As abordagens incluem:
 
-* **Establish data entry controls:** Create data entry rules that prevent invalid or inaccurate data from entering a system.
-* **Train data producers:** Ensure staff in upstream systems understand the impact of their data on downstream users. Give incentives or base evaluations on data accuracy and completeness, rather than just speed.
-* **Define and enforce rules:** Create a ‘data firewall,’ which has a table with all the business data quality rules used to check if the quality of data is good, before being used in an application such a data warehouse. A data firewall can inspect the level of quality of data processed by an application, and if the level of quality is below acceptable levels, analysts can be informed about the problem.
-* **Demand high quality data from data suppliers:** Examine an external data provider’s processes to check their structures, definitions, and data source(s) and data provenance. Doing so enables assessment of how well their data will integrate and helps prevent the use of non-authoritative data or data acquired without permission from the owner.
-* **Implement Data Governance and Stewardship:** Ensure roles and responsibilities are defined that describe and enforce rules of engagement, decision rights, and accountabilities for effective management of data and information assets (McGilvray, 2008). Work with data stewards to revise the process of, and mechanisms for, generating, sending, and receiving data.
-* **Institute formal change control:** Ensure all changes to stored data are defined and tested before being implemented. Prevent changes directly to data outside of normal processing by establishing gating processes.
+* **Estabelecer controles de entrada de dados:** Criar regras de entrada de dados que impeçam a entrada de dados inválidos ou imprecisos no sistema.
+* **Treinar os produtores de dados:** Garantir que a equipe nos sistemas upstream entenda o impacto de seus dados nos usuários downstream. Ofereça incentivos ou baseie as avaliações na precisão e integridade dos dados, em vez de apenas na velocidade.
+* **Definir e aplicar regras:** Criar um "firewall de dados", que possui uma tabela com todas as regras de qualidade de dados corporativos usadas para verificar se a qualidade dos dados é boa, antes de serem usados ​​em uma aplicação como um data warehouse. Um firewall de dados pode inspecionar o nível de qualidade dos dados processados ​​por uma aplicação e, se o nível de qualidade estiver abaixo dos níveis aceitáveis, os analistas podem ser informados sobre o problema.
+* **Exija dados de alta qualidade dos fornecedores de dados:** Examine os processos de um fornecedor de dados externo para verificar suas estruturas, definições, fonte(s) de dados e procedência dos dados. Isso permite avaliar a qualidade da integração dos dados e ajuda a prevenir o uso de dados não autorizados ou adquiridos sem a permissão do proprietário.
+* **Implemente a Governança e a Administração de Dados:** Garanta a definição de funções e responsabilidades que descrevam e apliquem regras de engajamento, direitos de decisão e responsabilidades para o gerenciamento eficaz de dados e ativos de informação (McGilvray, 2008). Trabalhe com os administradores de dados para revisar o processo e os mecanismos de geração, envio e recebimento de dados.
+* **Institua o controle formal de alterações:** Garanta que todas as alterações nos dados armazenados sejam definidas e testadas antes de serem implementadas. Evite alterações diretamente nos dados fora do processamento normal, estabelecendo processos de controle.
 
-### 4.2 Corrective Actions
+### 4.2 Ações Corretivas
 
-Corrective actions are implemented after a problem has occurred and been detected. Data quality issues should be addressed systemically and at their root causes to minimize the costs and risks of corrective actions. ‘Solve the problem where it happens’ is the best practice in Data Quality Management. This generally means that corrective actions should include preventing recurrence of the causes of the quality problems.
+Ações corretivas são implementadas após a ocorrência e detecção de um problema. Problemas de qualidade de dados devem ser tratados sistemicamente e em suas causas-raiz para minimizar os custos e riscos das ações corretivas. "Resolva o problema onde ele ocorre" é a melhor prática em Gestão da Qualidade de Dados. Isso geralmente significa que as ações corretivas devem incluir a prevenção da recorrência das causas dos problemas de qualidade.
 
-Perform data correction in three general ways:
+Execute a correção de dados de três maneiras gerais:
 
-* **Automated correction:** Automated correction techniques include rule-based standardization, normalization, and correction. The modified values are obtained or generated and committed without manual intervention. An example is automated address correction, which submits delivery addresses to an address standardizer that conforms and corrects delivery addresses using rules, parsing,standardization, and reference tables. Automated correction requires an environment with well-defined standards, commonly accepted rules, and known error patterns. The amount of automated correction can be reduced over time if this environment is well-managed and corrected data is shared with upstream systems.
-* **Manually-directed correction:** Use automated tools to remediate and correct data but require manual review before committing the corrections to persistent storage. Apply name and address remediation, identity resolution, and pattern-based corrections automatically, and use some scoring mechanism to propose a level of confidence in the correction. Corrections with scores above a particular level of confidence may be committed without review, but corrections with scores below the level of confidence are presented to the data steward for review and approval. Commit all approved corrections, and review those not approved to understand whether to adjust the applied underlying rules. Environments in which sensitive data sets require human oversight (e.g., MDM) are good examples of where manual-directed correction may be suited.
-* **Manual correction:** Sometimes manual correction is the only option in the absence of tools or automation or if it is determined that the change is better handled through human oversight. Manual corrections are best done through an interface with controls and edits, which provide an audit trail for changes. The alternative of making corrections and committing the updated records directly in production environments is extremely risky. Avoid using this method.
+* **Correção automatizada:** As técnicas de correção automatizada incluem padronização, normalização e correção baseadas em regras. Os valores modificados são obtidos ou gerados e confirmados sem intervenção manual. Um exemplo é a correção automatizada de endereços, que envia endereços de entrega a um padronizador de endereços que os conforma e corrige usando regras, análise sintática, padronização e tabelas de referência. A correção automatizada requer um ambiente com padrões bem definidos, regras comumente aceitas e padrões de erro conhecidos. A quantidade de correção automatizada pode ser reduzida ao longo do tempo se esse ambiente for bem gerenciado e os dados corrigidos forem compartilhados com os sistemas upstream.
 
-### 4.3 Quality Check and Audit Code Modules
+* **Correção direcionada manualmente:** Use ferramentas automatizadas para remediar e corrigir dados, mas exija revisão manual antes de confirmar as correções no armazenamento persistente. Aplique correção de nome e endereço, resolução de identidade e correções baseadas em padrões automaticamente e use algum mecanismo de pontuação para propor um nível de confiança na correção. Correções com pontuações acima de um determinado nível de confiança podem ser confirmadas sem revisão, mas correções com pontuações abaixo do nível de confiança são apresentadas ao administrador de dados para revisão e aprovação. Confirme todas as correções aprovadas e revise as não aprovadas para entender se as regras subjacentes aplicadas devem ser ajustadas. Ambientes nos quais conjuntos de dados sensíveis exigem supervisão humana (por exemplo, MDM) são bons exemplos de onde a correção direcionada manualmente pode ser adequada.
+* **Correção manual:** Às vezes, a correção manual é a única opção na ausência de ferramentas ou automação, ou se for determinado que a alteração é melhor tratada por meio de supervisão humana. As correções manuais são melhor realizadas por meio de uma interface com controles e edições, que fornecem uma trilha de auditoria para as alterações. A alternativa de fazer correções e enviar os registros atualizados diretamente em ambientes de produção é extremamente arriscada. Evite usar esse método.
 
-Create shareable, linkable, and re-usable code modules that execute repeated data quality checks and audit processes that developers can get from a library. If the module needs to change, then all the code linked to that module will get updated. Such modules simplify the maintenance process. Well-engineered code blocks can prevent many data quality problems. As importantly, they ensure processes are executed consistently. Where laws or policy mandate reporting of specific quality results, the lineage of results often needs to be described.
+### 4.3 Módulos de Código de Verificação e Auditoria de Qualidade
 
-Quality check modules can provide this. For data that has any questionable quality dimension and that is highly rated, qualify the information in the shared environments with quality notes, and confidence ratings.
+Crie módulos de código compartilháveis, vinculáveis ​​e reutilizáveis ​​que executem verificações de qualidade de dados e processos de auditoria repetidos, que os desenvolvedores podem obter de uma biblioteca. Se o módulo precisar ser alterado, todo o código vinculado a ele será atualizado. Esses módulos simplificam o processo de manutenção. Blocos de código bem projetados podem evitar muitos problemas de qualidade de dados. Igualmente importante, eles garantem que os processos sejam executados de forma consistente. Quando leis ou políticas exigem o relato de resultados de qualidade específicos, a linhagem dos resultados geralmente precisa ser descrita.
 
-### 4.4 Effective Data Quality Metrics
+Módulos de verificação de qualidade podem fornecer isso. Para dados que tenham qualquer dimensão de qualidade questionável e que sejam altamente classificados, qualifique as informações nos ambientes compartilhados com notas de qualidade e classificações de confiança.
 
-A critical component of managing data quality is developing metrics that inform data consumers about quality characteristics that are important to their uses of data. Many things can be measured, but not all of them are worth the time and effort. In developing metrics, DQ analysts should account for these characteristics:
+### 4.4 Métricas Eficazes de Qualidade de Dados
 
-* **Measurability:** A data quality metric must be measurable – it needs to be something that can be counted. For example, data relevancy is not measurable, unless clear criteria are set for what makes data relevant. Even data completeness needs to be objectively defined in order to be measured. Expected results should be quantifiable within a discrete range.
-* **Business relevance:** While many things are measurable, not all translate into useful metrics. Measurements need to be relevant to data consumers. The value of the metric is limited if it cannot be related to some aspect of business operations or performance. Every data quality metric should correlate with the influence of the data on key business expectations.
-* **Acceptability:** The data quality dimensions frame the business requirements for data quality. Quantifying along the identified dimension provides hard evidence of data quality levels. Determine whether data meets business expectations based on specified acceptability thresholds. If the score is equal to or exceeds the threshold, the quality of the data meets business expectations. If the score is below the threshold, it does not.
-* **Accountability / Stewardship:** Metrics should be understood and approved by key stakeholders (e.g., business owners and Data Stewards). They are notified when the measurement for the metric shows that the quality does not meet expectations. The business data owner is accountable, while a data steward takes appropriate corrective action.
-* **Controllability:** A metric should reflect a controllable aspect of the business. In other words, if the metric is out of range, it should trigger action to improve the data. If there is no way to respond, then the metric is probably not useful.
-* **Trending:** Metrics enable an organization to measure data quality improvement over time. Tracking helps Data Quality team members monitor activities within the scope of a data quality SLA and data sharing agreement, and demonstrate the effectiveness of improvement activities. Once an information process is stable, statistical process control techniques can be applied to detect changes to the predictability of the measurement results and the business and technical processes on which it provides insight.
+Um componente crítico da gestão da qualidade de dados é o desenvolvimento de métricas que informem os consumidores de dados sobre as características de qualidade que são importantes para o uso que fazem dos dados. Muitas coisas podem ser mensuradas, mas nem todas valem o tempo e o esforço investidos. Ao desenvolver métricas, os analistas de Qualidade de Dados devem levar em conta as seguintes características:
 
-### 4.5 Statistical Process Control
+* **Mensurabilidade:** Uma métrica de qualidade de dados deve ser mensurável – precisa ser algo que possa ser contado. Por exemplo, a relevância dos dados não é mensurável, a menos que critérios claros sejam definidos para o que torna os dados relevantes. Até mesmo a completude dos dados precisa ser definida objetivamente para ser mensurada. Os resultados esperados devem ser quantificáveis ​​dentro de uma faixa discreta.
+* **Relevância para os negócios:** Embora muitas coisas sejam mensuráveis, nem todas se traduzem em métricas úteis. As medições precisam ser relevantes para os consumidores de dados. O valor da métrica é limitado se ela não puder ser relacionada a algum aspecto das operações ou do desempenho do negócio. Toda métrica de qualidade de dados deve estar correlacionada com a influência dos dados nas principais expectativas do negócio. * **Aceitabilidade:** As dimensões de qualidade de dados enquadram os requisitos de negócios para a qualidade de dados. A quantificação ao longo da dimensão identificada fornece evidências concretas dos níveis de qualidade dos dados. Determine se os dados atendem às expectativas de negócios com base nos limites de aceitabilidade especificados. Se a pontuação for igual ou superior ao limite, a qualidade dos dados atende às expectativas de negócios. Se a pontuação estiver abaixo do limite, não atende.
+* **Responsabilização/Administração:** As métricas devem ser compreendidas e aprovadas pelas principais partes interessadas (por exemplo, proprietários de negócios e administradores de dados). Eles são notificados quando a medição da métrica mostra que a qualidade não atende às expectativas. O proprietário dos dados de negócios é responsável, enquanto um administrador de dados toma as medidas corretivas apropriadas.
+* **Controlabilidade:** Uma métrica deve refletir um aspecto controlável do negócio. Em outras palavras, se a métrica estiver fora da faixa, ela deve desencadear ações para melhorar os dados. Se não houver como responder, a métrica provavelmente não é útil.
+* **Tendências:** As métricas permitem que uma organização mensure a melhoria da qualidade dos dados ao longo do tempo. O rastreamento ajuda os membros da equipe de Qualidade de Dados a monitorar atividades dentro do escopo de um SLA de qualidade de dados e de um acordo de compartilhamento de dados, além de demonstrar a eficácia das atividades de melhoria. Uma vez que um processo de informação esteja estável, técnicas de controle estatístico de processos podem ser aplicadas para detectar mudanças na previsibilidade dos resultados da medição e nos processos técnicos e de negócios sobre os quais ele fornece insights.
 
-Statistical Process Control (SPC) is a method to manage processes by analyzing measurements of variation in process inputs, outputs, or steps. The technique was developed in the manufacturing sector in the 1920s and has been applied in other industries, in improvement methodologies such as Six Sigma, and in Data Quality Management. [^87] Simply defined, a process is a series of steps executed to turn inputs into outputs. SPC is based on the assumption that when a process with consistent inputs is executed consistently, it will produce consistent outputs. It uses measures of central tendency (how values cluster around a central value, such as a mean, median, or mode) and of variability around a central value (e.g., range, variance, standard deviation), to establish tolerances for variation within a process.
+### 4.5 Controle Estatístico de Processos
 
-The primary tool used for SPC is the control chart (Figure 95), which is a time series graph that includes a central line for the average (the measure of central tendency) and depicts calculated upper and lower control limits (variability around a central value). In a stable process, measurement results outside the control limits indicate a special cause.
+O Controle Estatístico de Processos (CEP) é um método para gerenciar processos por meio da análise de medições de variação nas entradas, saídas ou etapas do processo. A técnica foi desenvolvida no setor manufatureiro na década de 1920 e tem sido aplicada em outras indústrias, em metodologias de melhoria como o Seis Sigma e na Gestão da Qualidade de Dados. [^87] Em termos simples, um processo é uma série de etapas executadas para transformar entradas em saídas. O CEP baseia-se na premissa de que, quando um processo com entradas consistentes é executado consistentemente, ele produzirá saídas consistentes. Ele utiliza medidas de tendência central (como os valores se agrupam em torno de um valor central, como média, mediana ou moda) e de variabilidade em torno de um valor central (por exemplo, amplitude, variância, desvio padrão) para estabelecer tolerâncias para variação dentro de um processo.
 
-![Figure 95 Control Chart of a Process in Statistical Control](figure_95.png)
-Figure 95 Control Chart of a Process in Statistical Control
+A principal ferramenta utilizada para o CEP é o gráfico de controle (Figura 95), que é um gráfico de série temporal que inclui uma linha central para a média (a medida de tendência central) e representa os limites de controle superior e inferior calculados (variabilidade em torno de um valor central). Em um processo estável, os resultados da medição fora dos limites de controle indicam uma causa específica.
 
-SPC measures the predictability of process outcomes by identifying variation within a process. Processes have variation of two types: Common Causes that are inherent in the process and Special Causes that are unpredictable or intermittent. When the only sources of variation are common causes, a system is said to be in (statistical) control and a range of normal variation can be established. This is the baseline against which change can be detected.
+![Figura 95 - Gráfico de Controle de um Processo em Controle Estatístico](figure_95.png)
+Figura 95 - Gráfico de Controle de um Processo em Controle Estatístico
 
-Applying SPC to data quality measurement is based on the working assumption that, like a manufactured product, data is the product of a process. Sometimes the process that creates data is very simple (e.g., a person fills out a form). Other times, processes are quite complex: a set of algorithms aggregates medical claim data in order to follow trends related to the effectiveness of particular clinical protocols. If such a process has consistent inputs and is executed consistently, it will produce consistent results each time it is run. However, if the inputs or execution change, then so will the outputs. Each of these components can be measured. The measurements can be used to detect special causes. Knowledge of the special causes can be used to mitigate risks associated with data collection or processing.
+O CEP mede a previsibilidade dos resultados do processo identificando variações dentro de um processo. Os processos apresentam variações de dois tipos: Causas Comuns, que são inerentes ao processo, e Causas Especiais, que são imprevisíveis ou intermitentes. Quando as únicas fontes de variação são causas comuns, diz-se que um sistema está em controle (estatístico) e uma faixa de variação normal pode ser estabelecida. Esta é a linha de base contra a qual a mudança pode ser detectada.
 
-SPC is used for control, detection, and improvement. The first step is to measure the process in order to identify and eliminate special causes. This activity establishes the control state of the process. Next is to put in place measurements to detect unexpected variation as soon as it is detectable. Early detection of problems simplifies investigation of their root causes. Measurements of the process can also be used to reduce the unwanted effects of common causes of variation, allowing for increased efficiency.
+A aplicação do CEP à medição da qualidade de dados baseia-se na premissa de que, assim como um produto manufaturado, os dados são o produto de um processo. Às vezes, o processo que cria os dados é muito simples (por exemplo, uma pessoa preenche um formulário). Outras vezes, os processos são bastante complexos: um conjunto de algoritmos agrega dados de solicitações médicas para acompanhar tendências relacionadas à eficácia de protocolos clínicos específicos. Se tal processo tiver entradas consistentes e for executado consistentemente, produzirá resultados consistentes sempre que for executado. No entanto, se as entradas ou a execução mudarem, as saídas também mudarão. Cada um desses componentes pode ser medido. As medições podem ser usadas para detectar causas especiais. O conhecimento das causas especiais pode ser usado para mitigar riscos associados à coleta ou processamento de dados.
 
-### 4.6 Root Cause Analysis
+A CEP é usada para controle, detecção e melhoria. O primeiro passo é medir o processo para identificar e eliminar causas especiais. Essa atividade estabelece o estado de controle do processo. Em seguida, é implementar medições para detectar variações inesperadas assim que forem detectáveis. A detecção precoce de problemas simplifica a investigação de suas causas-raiz. As medições do processo também podem ser usadas para reduzir os efeitos indesejados de causas comuns de variação, permitindo maior eficiência.
 
-A root cause of a problem is a factor that, if eliminated, would remove the problem itself. Root cause analysis is a process of understanding factors that contribute to problems and the ways they contribute. Its purpose is to identify underlying conditions that, if eliminated, would mean problems would disappear.
+### 4.6 Análise de Causa Raiz
 
-A data management example may clarify the definition. Let’s say a data process that runs each month requires as input a file of customer information. Measurement of the data shows that in April, July, October, and January, the quality of the data goes down. Inspection of the timing of delivery shows that in March, June, September, and December, the file is delivered on the 30th of the month, whereas at other times it is delivered on the 25th. Further analysis shows that the team responsible for delivering the file is also responsible for closing quarterly financial processes. These processes take precedence over other work and the files are delivered late during those months, impacting the quality. The root cause of the data quality problem turns out to be a process delay caused by a competing priority. It can be addressed by scheduling file delivery and ensuring that resources can deliver within the schedule.
+A causa raiz de um problema é um fator que, se eliminado, removeria o próprio problema. A análise de causa raiz é um processo de compreensão dos fatores que contribuem para os problemas e as maneiras como eles contribuem. Seu objetivo é identificar condições subjacentes que, se eliminadas, fariam com que os problemas desaparecessem.
 
-Common techniques for root cause analysis include Pareto analysis (the 80/20 rule), fishbone diagram analysis, track and trace, process analysis, and the Five Whys (McGilvray, 2008).
+Um exemplo de gerenciamento de dados pode esclarecer a definição. Digamos que um processo de dados executado mensalmente requer como entrada um arquivo com informações do cliente. A mensuração dos dados mostra que em abril, julho, outubro e janeiro, a qualidade dos dados cai. A inspeção do prazo de entrega mostra que em março, junho, setembro e dezembro, o arquivo é entregue no dia 30 do mês, enquanto em outras ocasiões, é entregue no dia 25. Uma análise mais aprofundada mostra que a equipe responsável pela entrega do arquivo também é responsável pelo fechamento dos processos financeiros trimestrais. Esses processos têm precedência sobre outros trabalhos e os arquivos são entregues com atraso durante esses meses, impactando a qualidade. A causa raiz do problema de qualidade dos dados acaba sendo um atraso no processo causado por uma prioridade conflitante. Isso pode ser resolvido agendando a entrega do arquivo e garantindo que os recursos possam entregá-lo dentro do cronograma.
 
-## 5. Implementation Guidelines
+Técnicas comuns para análise de causa raiz incluem análise de Pareto (regra 80/20), análise de diagrama de espinha de peixe, rastreamento, análise de processo e os Cinco Porquês (McGilvray, 2008).
 
-Improving the quality of data within an organization is not an easy task – even when data quality improvement efforts are launched from within a data governance program and with the support of senior management. A classic academic discussion is whether it is better to implement a Data Quality program top-down or bottom-up. Typically, a hybrid approach works best – top-down for sponsorship, consistency, and resources, but bottom-up to discover what is actually broken and to achieve incremental successes.
+## 5. Diretrizes de Implementação
 
-Improving data quality requires changes in how people think about and behave toward data. Cultural change is challenging. It requires planning, training, and reinforcement. (See Chapter 17.) While the specifics of cultural change will differ from organization to organization, most Data Quality program implementations need to plan for:
+Melhorar a qualidade dos dados dentro de uma organização não é uma tarefa fácil – mesmo quando os esforços de melhoria da qualidade dos dados são iniciados a partir de um programa de governança de dados e com o apoio da alta gerência. Uma discussão acadêmica clássica é se é melhor implementar um programa de Qualidade de Dados de cima para baixo ou de baixo para cima. Normalmente, uma abordagem híbrida funciona melhor – de cima para baixo para patrocínio, consistência e recursos, mas de baixo para cima para descobrir o que está realmente quebrado e alcançar sucessos incrementais.
 
-* **Metrics on the value of data and the cost of poor quality data:** One way to raise organizational awareness of the need for Data Quality Management is through metrics that describe the value of data and the return on investment from improvements. These metrics (which differ from data quality scores) provide the basis for funding improvements and changing the behavior of both staff and management. (See Chapter 11.)
-* **Operating model for IT/Business interactions:** Business people know what the important data is, and what it means. Data Custodians from IT understand where and how the data is stored, and so they are well placed to translate definitions of data quality into queries or code that identify specific records that do not comply. (See Chapter 11.)
-* **Changes in how projects are executed:** Project oversight must ensure project funding includes steps related to data quality (e.g., profiling and assessment, definition of quality expectations, data issue remediation, prevention and correction, building controls and measurements). It is prudent to make sure issues are identified early and to build data quality expectations upfront in projects.
-* **Changes to business processes:** Improving data quality depends on improving the processes by which data is produced. The Data Quality team needs to be able to assess and recommend changes to non- technical (as well as technical) processes that impact the quality of data.
-* **Funding for remediation and improvement projects:** Some organizations do not plan for remediating data, even when they are aware of data quality issues. Data will not fix itself. The costs and benefits of remediation and improvement projects should be documented so that work on improving data can be prioritized.
-* **Funding for Data Quality Operations:** Sustaining data quality requires ongoing operations to monitor data quality, report on findings, and continue to manage issues as they are discovered.
+Melhorar a qualidade dos dados requer mudanças na forma como as pessoas pensam e se comportam em relação aos dados. A mudança cultural é desafiadora. Requer planejamento, treinamento e reforço. (Consulte o Capítulo 17.) Embora as especificidades da mudança cultural variem de organização para organização, a maioria das implementações de programas de Qualidade de Dados precisa planejar:
 
-### 5.1 Readiness Assessment / Risk Assessment
+* **Métricas sobre o valor dos dados e o custo de dados de baixa qualidade:** Uma maneira de aumentar a conscientização organizacional sobre a necessidade da Gestão da Qualidade de Dados é por meio de métricas que descrevem o valor dos dados e o retorno sobre o investimento em melhorias. Essas métricas (que diferem das pontuações de qualidade dos dados) fornecem a base para o financiamento de melhorias e para a mudança de comportamento tanto da equipe quanto da gerência. (Consulte o Capítulo 11.)
+* **Modelo operacional para interações entre TI e Negócios:** Os executivos sabem quais são os dados importantes e o que eles significam. Os Custodiantes de Dados da TI entendem onde e como os dados são armazenados e, portanto, estão bem posicionados para traduzir as definições de qualidade dos dados em consultas ou códigos que identifiquem registros específicos que não estejam em conformidade. (Consulte o Capítulo 11.)
+* **Mudanças na forma como os projetos são executados:** A supervisão do projeto deve garantir que o financiamento do projeto inclua etapas relacionadas à qualidade dos dados (por exemplo, criação de perfis e avaliação, definição de expectativas de qualidade, remediação, prevenção e correção de problemas de dados, criação de controles e mensurações). É prudente garantir que os problemas sejam identificados precocemente e criar expectativas de qualidade dos dados antecipadamente nos projetos.
+* **Mudanças nos processos de negócios:** A melhoria da qualidade dos dados depende da melhoria dos processos pelos quais os dados são produzidos. A equipe de Qualidade de Dados precisa ser capaz de avaliar e recomendar mudanças em processos não técnicos (e também técnicos) que impactam a qualidade dos dados.
+* **Financiamento para projetos de remediação e melhoria:** Algumas organizações não planejam remediar dados, mesmo quando estão cientes de problemas de qualidade de dados. Os dados não se corrigem sozinhos. Os custos e benefícios dos projetos de remediação e melhoria devem ser documentados para que o trabalho de melhoria dos dados possa ser priorizado.
+* **Financiamento para Operações de Qualidade de Dados:** Manter a qualidade dos dados requer operações contínuas para monitorar a qualidade dos dados, relatar as descobertas e continuar a gerenciar os problemas à medida que são descobertos.
 
-Most organizations that depend on data have a lot of opportunity for improvement. How formal and well-supported a Data Quality program will be depends on how mature the organization is from a data management perspective. (See Chapter 15.) Organizational readiness to adopt data quality practices can be assessed by considering the following characteristics:
+### 5.1 Avaliação de Prontidão / Avaliação de Risco
 
-* **Management commitment to managing data as a strategic asset:** As part of asking for support for a Data Quality program, it is import to determine how well senior management understands the role that data plays in the organization. To what degree does senior management recognize the value of data to strategic goals? What risks do they associate with poor quality data? How knowledgeable are they about the benefits of data governance? How optimistic about the ability to change culture to support quality improvement?
-* **The organization’s current understanding of the quality of its data:** Before most organizations start their quality improvement journey, they generally understand the obstacles and pain points that signify poor quality data. Gaining knowledge of these is important. Through them, poor quality data can be directly associated with negative effects, including direct and indirect costs, on the organization. An understanding of pain points also helps identify and prioritize improvement projects.
-* **The actual state of the data:** Finding an objective way to describe the condition of data that is causing pain points is the first step to improving the data. Data can be measured and described through profiling and analysis, as well as through quantification of known issues and pain points. If the DQ team does not know the actual state of the data, then it will be difficult to prioritize and act on opportunities for improvement.
-* **Risks associated with data creation, processing, or use:** Identifying what can go wrong with data and the potential damage to an organization from poor quality data provides the basis for mitigating risks. If the organization does not recognize these risks, it may be challenging to get support for the Data Quality program.
-* **Cultural and technical readiness for scalable data quality monitoring:** The quality of data can be negatively impacted by business and technical processes. Improving the quality of data depends on cooperation between business and IT teams. If the relationship between business and IT teams is not collaborative, then it will be difficult to make progress.
+A maioria das organizações que dependem de dados tem muitas oportunidades de melhoria. O nível de formalidade e suporte de um programa de Qualidade de Dados dependerá da maturidade da organização sob a perspectiva da gestão de dados. (Consulte o Capítulo 15.) A prontidão organizacional para adotar práticas de qualidade de dados pode ser avaliada considerando as seguintes características:
 
-Findings from a readiness assessment will help determine where to start and how quickly to proceed. Findings can also provide the basis for road-mapping program goals. If there is strong support for data quality improvement and the organization knows its own data, then it may be possible to launch a full strategic program. If the organization does not know the actual state of its data, then it may be necessary to focus on building that knowledge before developing a full strategy.
+* **Compromisso da gerência com a gestão de dados como um ativo estratégico:** Como parte da solicitação de apoio para um programa de Qualidade de Dados, é importante determinar o quanto a alta gerência compreende o papel que os dados desempenham na organização. Até que ponto a alta gerência reconhece o valor dos dados para os objetivos estratégicos? Quais riscos ela associa a dados de baixa qualidade? Qual o seu nível de conhecimento sobre os benefícios da governança de dados? Qual o seu nível de otimismo em relação à capacidade de mudar a cultura para apoiar a melhoria da qualidade?
+* **A compreensão atual da organização sobre a qualidade de seus dados:** Antes de a maioria das organizações iniciar sua jornada de melhoria da qualidade, elas geralmente entendem os obstáculos e os pontos problemáticos que indicam dados de baixa qualidade. Conhecer esses pontos é importante. Por meio deles, dados de baixa qualidade podem ser diretamente associados a efeitos negativos, incluindo custos diretos e indiretos, para a organização. A compreensão dos pontos problemáticos também ajuda a identificar e priorizar projetos de melhoria.
+* **O estado real dos dados:** Encontrar uma maneira objetiva de descrever a condição dos dados que está causando os pontos problemáticos é o primeiro passo para aprimorá-los. Os dados podem ser mensurados e descritos por meio de perfis e análises, bem como pela quantificação de problemas e pontos problemáticos conhecidos. Se a equipe de DQ não conhece o estado real dos dados, será difícil priorizar e agir em relação às oportunidades de melhoria.
+* **Riscos associados à criação, processamento ou uso de dados:** Identificar o que pode dar errado com os dados e os danos potenciais à organização causados ​​por dados de baixa qualidade fornece a base para a mitigação de riscos. Se a organização não reconhecer esses riscos, pode ser desafiador obter suporte para o programa de Qualidade de Dados.
+* **Prontidão cultural e técnica para monitoramento escalável da qualidade de dados:** A qualidade dos dados pode ser impactada negativamente por processos técnicos e de negócios. A melhoria da qualidade dos dados depende da cooperação entre as equipes de negócios e de TI. Se a relação entre as equipes de negócios e de TI não for colaborativa, será difícil progredir.
 
-### 5.2 Organization and Cultural Change
+Os resultados de uma avaliação de prontidão ajudarão a determinar por onde começar e com que rapidez prosseguir. Os resultados também podem fornecer a base para o planejamento das metas do programa. Se houver forte apoio para a melhoria da qualidade dos dados e a organização conhecer seus próprios dados, poderá ser possível lançar um programa estratégico completo. Se a organização não conhecer o estado real de seus dados, poderá ser necessário concentrar-se na construção desse conhecimento antes de desenvolver uma estratégia completa.
 
-The quality of data will not be improved through a collection of tools and concepts, but through a mindset that helps employees and stakeholders to act while always thinking of the quality of data and what the business and their customers need. Getting an organization to be conscientious about data quality often requires significant cultural change. Such change requires vision and leadership. (See Chapter 17.)
+### 5.2 Mudança Organizacional e Cultural
 
-The first step is promoting awareness about the role and importance of data to the organization. All employees must act responsibly and raise data quality issues, ask for good quality data as consumers, and provide quality information to others. Every person who touches the data can impact the quality of that data. Data quality is not just the responsibility of a DQ team or IT group.
+A qualidade dos dados não será aprimorada por meio de um conjunto de ferramentas e conceitos, mas por meio de uma mentalidade que ajude funcionários e stakeholders a agirem sempre pensando na qualidade dos dados e nas necessidades da empresa e de seus clientes. Tornar uma organização consciente sobre a qualidade dos dados geralmente requer uma mudança cultural significativa. Essa mudança requer visão e liderança. (Consulte o Capítulo 17.)
 
-Just as the employees need to understand the cost to acquire a new customer or retain an existing customer, they also need to know the organizational costs of poor quality data, as well as the conditions that cause data to be of poor quality. For example, if customer data is incomplete, a customer may receive the wrong product, creating direct and indirect costs to an organization. Not only will the customer return the product, but he or she may call and complain, using call center time, with the potential for reputational damage to the organization. If customer data is incomplete because the organization has not established clear requirements, then everyone who uses this data has a stake in clarifying requirements and following standards.
+O primeiro passo é promover a conscientização sobre o papel e a importância dos dados para a organização. Todos os funcionários devem agir com responsabilidade e levantar questões sobre a qualidade dos dados, exigir dados de boa qualidade como consumidores e fornecer informações de qualidade a terceiros. Cada pessoa que acessa os dados pode impactar sua qualidade. A qualidade dos dados não é responsabilidade apenas de uma equipe de DQ ou do grupo de TI.
 
-Ultimately, employees need to think and act differently if they are to produce better quality data and manage data in ways that ensures quality. This requires training and reinforcement. Training should focus on:
+Assim como os funcionários precisam entender o custo para adquirir um novo cliente ou reter um cliente existente, eles também precisam conhecer os custos organizacionais de dados de baixa qualidade, bem como as condições que causam a baixa qualidade dos dados. Por exemplo, se os dados do cliente estiverem incompletos, o cliente poderá receber o produto errado, gerando custos diretos e indiretos para a organização. O cliente não apenas devolverá o produto, como também poderá ligar e reclamar, usando o tempo do call center, com potencial para causar danos à reputação da organização. Se os dados do cliente estiverem incompletos porque a organização não estabeleceu requisitos claros, todos que utilizam esses dados têm interesse em esclarecer os requisitos e seguir os padrões.
 
-* Common causes of data problems
-* Relationships within the organization’s data ecosystem and why improving data quality requires an enterprise approach
-* Consequences of poor quality data
-* Necessity for ongoing improvement (why improvement is not a one-time thing)
-* Becoming ‘data-lingual’, about to articulate the impact of data on organizational strategy and success, regulatory reporting, customer satisfaction
+Em última análise, os funcionários precisam pensar e agir de forma diferente se quiserem produzir dados de melhor qualidade e gerenciá-los de forma a garantir a qualidade. Isso requer treinamento e reforço. O treinamento deve se concentrar em:
 
-Training should also include an introduction to any process changes, with assertions about how the changes improve data quality.
+* Causas comuns de problemas com dados
+* Relacionamentos dentro do ecossistema de dados da organização e por que a melhoria da qualidade dos dados requer uma abordagem corporativa
+* Consequências de dados de baixa qualidade
+* Necessidade de melhoria contínua (por que a melhoria não é algo pontual)
+* Tornar-se "linguístico em dados", pronto para articular o impacto dos dados na estratégia e no sucesso organizacional, relatórios regulatórios e satisfação do cliente
 
-## 6. Data Quality and Data Governance
+O treinamento também deve incluir uma introdução a quaisquer mudanças de processo, com afirmações sobre como as mudanças melhoram a qualidade dos dados.
 
-A Data Quality program is more effective when part of a data governance program. Often data quality issues are the reason for establishing enterprise-wide data governance (see Chapter 3). Incorporating data quality efforts into the overall governance effort enables the Data Quality program team to work with a range of stakeholders and enablers:
+## 6. Qualidade de Dados e Governança de Dados
 
-* Risk and security personnel who can help identify data-related organizational vulnerabilities
-* Business process engineering and training staff who can help teams implement process improvements
-* Business and operational data stewards, and data owners who can identify critical data, define standards and quality expectations, and prioritize remediation of data issues
+Um programa de Qualidade de Dados é mais eficaz quando faz parte de um programa de governança de dados. Muitas vezes, problemas de qualidade de dados são o motivo para o estabelecimento de uma governança de dados em toda a empresa (consulte o Capítulo 3). Incorporar esforços de qualidade de dados ao esforço geral de governança permite que a equipe do programa de Qualidade de Dados trabalhe com uma variedade de partes interessadas e facilitadores:
 
-A Governance Organization can accelerate the work of a Data Quality program by:
+* Equipe de risco e segurança que pode ajudar a identificar vulnerabilidades organizacionais relacionadas a dados
+* Equipe de engenharia e treinamento de processos de negócios que pode ajudar as equipes a implementar melhorias de processo
+* Administradores de dados comerciais e operacionais e proprietários de dados que podem identificar dados críticos, definir padrões e expectativas de qualidade e priorizar a correção de problemas de dados
 
-* Setting priorities
-* Identifying and coordinating access to those who should be involved in various data quality-related decisions and activities
-* Developing and maintaining standards for data quality
-* Reporting relevant measurements of enterprise-wide data quality
-* Providing guidance that facilitates staff involvement
-* Establishing communications mechanisms for knowledge-sharing
-* Developing and applying data quality and compliance policies
-* Monitoring and reporting on performance
-* Sharing data quality inspection results to build awareness, identify opportunities for improvements, and build consensus for improvements
-* Resolving variations and conflicts; providing direction
+Uma Organização de Governança pode acelerar o trabalho de um programa de Qualidade de Dados por meio de:
 
-### 6.1 Data Quality Policy
+* Definição de prioridades
+* Identificação e coordenação do acesso àqueles que devem estar envolvidos em diversas decisões e atividades relacionadas à qualidade de dados
+* Desenvolvimento e manutenção de padrões de qualidade de dados
+* Relatórios de medições relevantes da qualidade de dados em toda a empresa
+* Fornecimento de orientações que facilitem o envolvimento da equipe
+* Estabelecimento de mecanismos de comunicação para compartilhamento de conhecimento
+* Desenvolvimento e aplicação de políticas de qualidade de dados e conformidade
+* Monitoramento e relatórios de desempenho
+* Compartilhamento de resultados de inspeções de qualidade de dados para conscientizar, identificar oportunidades de melhorias e construir consenso para melhorias
+* Resolução de variações e conflitos; fornecimento de orientação
 
-Data Quality efforts should be supported by and should support data governance policies. For example, governance policies can authorize periodic quality audits and mandate compliance to standards and best practices. All Data Management Knowledge Areas require some level of policy, but data quality policies are particularly important as they often touch on regulatory requirements. Each policy should include:
+### 6.1 Política de Qualidade de Dados
 
-* Purpose, scope and applicability of the policy
-* Definitions of terms
-* Responsibilities of the Data Quality program
-* Responsibilities of other stakeholders
-* Reporting
-* Implementation of the policy, including links to risk, preventative measures, compliance, data protection, and data security
+Os esforços de Qualidade de Dados devem ser apoiados e devem apoiar políticas de governança de dados. Por exemplo, políticas de governança podem autorizar auditorias periódicas de qualidade e exigir a conformidade com padrões e melhores práticas. Todas as Áreas de Conhecimento em Gestão de Dados exigem algum nível de política, mas as políticas de qualidade de dados são particularmente importantes, pois frequentemente abordam requisitos regulatórios. Cada política deve incluir:
 
-### 6.2 Metrics
+* Objetivo, escopo e aplicabilidade da política
+* Definições de termos
+* Responsabilidades do programa de Qualidade de Dados
+* Responsabilidades de outras partes interessadas
+* Relatórios
+* Implementação da política, incluindo vínculos com riscos, medidas preventivas, conformidade, proteção de dados e segurança de dados
 
-Much of the work of a Data Quality team will focus on measuring and reporting on quality. High-level
-categories of data quality metrics include:
+### 6.2 Métricas
 
-* **Return on Investment:** Statements on cost of improvement efforts vs. the benefits of improved data quality
-* **Levels of quality:** Measurements of the number and percentage of errors or requirement violations within a data set or across data sets
-* **Data Quality trends:** Quality improvement over time (i.e., a trend) against thresholds and targets, or quality incidents per period
-* **Data issue management metrics:**
-  * Counts of issues by dimensions of data quality
-  * Issues per business function and their statuses (resolved, outstanding, escalated)
-  * Issue by priority and severity
-  * Time to resolve issues
-* **Conformance to service levels:** Organizational units involved and responsible staff, project interventions for data quality assessments, overall process conformance
-* **Data Quality plan rollout:** As-is and roadmap for expansion
+Grande parte do trabalho de uma equipe de Qualidade de Dados se concentrará em mensurar e reportar a qualidade. Categorias
+de alto nível de métricas de qualidade de dados incluem:
 
-## 7. Works Cited / Recommended
+* **Retorno sobre o Investimento:** Declarações sobre o custo dos esforços de melhoria versus os benefícios da melhoria da qualidade dos dados
+* **Níveis de qualidade:** Medições do número e da porcentagem de erros ou violações de requisitos em um conjunto de dados ou entre conjuntos de dados
+* **Tendências de Qualidade de Dados:** Melhoria da qualidade ao longo do tempo (ou seja, uma tendência) em relação a limites e metas, ou incidentes de qualidade por período
+* **Métricas de gerenciamento de problemas de dados:**
+  * Contagem de problemas por dimensões de qualidade de dados
+  * Problemas por função de negócio e seus status (resolvidos, pendentes, escalados)
+  * Problema por prioridade e gravidade
+  * Tempo para resolução de problemas
+* **Conformidade com os níveis de serviço:** Unidades organizacionais envolvidas e equipe responsável, intervenções do projeto para avaliações da qualidade dos dados, conformidade geral do processo
+* **Implementação do plano de qualidade de dados:** Como está e roteiro para expansão
+
+## 7. Trabalhos Citados / Recomendados
 
 Batini, Carlo, and Monica Scannapieco. Data Quality: Concepts, Methodologies and Techniques. Springer, 2006. Print.
 
@@ -1102,22 +1100,20 @@ Tavares, Rossano. Qualidade de Dados em Gerenciamento de Clientes (CRM) e Tecnol
 Witt, Graham. Writing Effective Business Rules: A Practical Method. Morgan Kaufmann, 2012. Print.
 
 
-
-
-[^71]: For the full text of The Leader’s Data Manifesto, see http://bit.ly/2sQhcy7.
-[^72]: In the DAMA-DMBOK2, we have tried to avoid using the words data quality without clarifying their context. For example, referring to high quality data or low quality data, and to data quality work efforts or data quality activities.
-[^73]: See Jugulum (2014), Chapters 6 and 7 for an approach to rationalizing critical data.
-[^74]: In addition to the examples detailed here and numerous academic papers on this topic, see Loshin (2001), Olson (2003), McGilvray (2008), and Sebastian-Coleman (2013) for detailed discussions on data quality dimensions. See Myers (2013) for a comparison of dimensions.
-[^75]: Redman expanded and revised his set of dimensions in Data Quality: The Field Guide (2001).
-[^76]: English expanded and revised his dimensions in Information Quality Applied (2009).
-[^77]: Adapted from Myers (2013), used with permission.
+[^71]: Para o texto completo do Manifesto de Dados do Líder, consulte http://bit.ly/2sQhcy7.
+[^72]: No DAMA-DMBOK2, tentamos evitar o uso da expressão "qualidade de dados" sem esclarecer seu contexto. Por exemplo, referindo-se a dados de alta qualidade ou dados de baixa qualidade, e a esforços de trabalho de qualidade de dados ou atividades de qualidade de dados.
+[^73]: Consulte Jugulum (2014), Capítulos 6 e 7, para uma abordagem à racionalização de dados críticos.
+[^74]: Além dos exemplos detalhados aqui e de inúmeros artigos acadêmicos sobre o tema, consulte Loshin (2001), Olson (2003), McGilvray (2008) e Sebastian-Coleman (2013) para discussões detalhadas sobre as dimensões de qualidade de dados. Consulte Myers (2013) para uma comparação de dimensões.
+[^75]: Redman expandiu e revisou seu conjunto de dimensões em "Data Quality: The Field Guide" (2001).
+[^76]: English expandiu e revisou suas dimensões em "Information Quality Applied" (2009).
+[^77]: Adaptado de Myers (2013), usado com permissão.
 [^78]: http://bit.ly/2ttdiZJ
 [^79]: http://bit.ly/2sANGdi
 [^80]: http://bit.ly/2rV1oWC
 [^81]: http://bit.ly/2rUZyoz
 [^82]: http://bit.ly/2sVik3Q
-[^83]: See Wang (1998), English (1999), Redman (2001), Loshin (2001), and McGilvray (2008). See Pierce (2004) for an overview of literature related to the concept of data as a product.
-[^84]: See American Society for Quality: http://bit.ly/1lelyBK Plan-Do-Check-Act was originated by Walter Shewhart and popularized by W. Edwards Deming. 6 Sigma’s Measure, Analyze, Improve, Control (DMAIC) is a variation on this cycle.
-[^85]: Adapted from The Leader’s Data Manifesto. https://dataleaders.org/
-[^86]: Diagram developed by Danette McGilvray, James Price, and Tom Redman. Used by permission. https://dataleaders.org/
-[^87]: See Redman (1996 and 2001), Loshin (2000), Sebastian-Coleman (2013), Jugulum (2014).
+[^83]: Ver Wang (1998), English (1999), Redman (2001), Loshin (2001) e McGilvray (2008). Ver Pierce (2004) para uma visão geral da literatura relacionada ao conceito de dados como produto.
+[^84]: Ver Sociedade Americana para a Qualidade: http://bit.ly/1lelyBK O ciclo Planejar-Fazer-Verificar-Agir foi criado por Walter Shewhart e popularizado por W. Edwards Deming. O ciclo Medir, Analisar, Melhorar, Controlar (DMAIC) do 6 Sigma é uma variação deste ciclo.
+[^85]: Adaptado do Manifesto de Dados do Líder. https://dataleaders.org/
+[^86]: Diagrama desenvolvido por Danette McGilvray, James Price e Tom Redman. Usado com permissão. https://dataleaders.org/
+[^87]: Ver Redman (1996 e 2001), Loshin (2000), Sebastian-Coleman (2013), Jugulum (2014).
