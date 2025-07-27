@@ -1,4 +1,4 @@
-# CAPÍTULO 1 Gestão de Dados
+# Capítulo 1 - Gestão de Dados
 
 ## 1. Introdução
 

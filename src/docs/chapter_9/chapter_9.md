@@ -1,4 +1,4 @@
-# Gerenciamento de documentos e conteúdo
+# Capítulo 9 - Gerenciamento de documentos e conteúdo
 
 ![](chapter_9.png)
 

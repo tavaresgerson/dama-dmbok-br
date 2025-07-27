@@ -1,4 +1,4 @@
-# Gerenciamento de Metadados
+# Capítulo 12 - Gerenciamento de Metadados
 
 ![](chapter_12.png)
 

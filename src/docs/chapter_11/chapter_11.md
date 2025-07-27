@@ -1,4 +1,4 @@
-# Data Warehousing e Business Intelligence
+# Capítulo 11 - Data Warehousing e Business Intelligence
 
 ![](chapter_11.png)
 

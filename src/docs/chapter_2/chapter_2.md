@@ -1,4 +1,4 @@
-# Ética no tratamento de dados
+# Capítulo 2 - Ética no tratamento de dados
 
 ## 1. Introdução
 

@@ -1,4 +1,4 @@
-# Armazenamento e Operações de Dados
+# Capítulo 6 - Armazenamento e Operações de Dados
 
 ![alt text](chapter_6.png)
 

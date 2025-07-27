@@ -1,4 +1,4 @@
-# Governança de Dados
+# Capítulo 3 - Governança de Dados
 
 ![alt text](chapter_3.png)
 
