@@ -4,7 +4,7 @@
 
 * [Capítulo 1 - Gestão de Dados](/src/docs/chapter_1/chapter_1.md) [Revisado ✅]
 * [Capítulo 2 - Ética no tratamento de dados](/src/docs/chapter_2/chapter_2.md) [Revisado ✅]
-* [Capítulo 3 - Governança de Dados](/src/docs/chapter_3/chapter_3.md)
+* [Capítulo 3 - Governança de Dados](/src/docs/chapter_3/chapter_3.md) [Revisado ✅]
 * [Capítulo 4 - Arquitetura de Dados](/src/docs/chapter_4/chapter_4.md)
 * [Capítulo 5 - Modelagem e Design de Dados](/src/docs/chapter_5/chapter_5.md)
 * [Capítulo 6 - Armazenamento e Operações de Dados](/src/docs/chapter_6/chapter_6.md)
