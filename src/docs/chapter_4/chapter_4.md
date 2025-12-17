@@ -4,49 +4,49 @@
 
 ## 1. Introdução
 
-Arquitetura refere-se à arte e à ciência de construir coisas (especialmente estruturas habitáveis) e aos resultados do processo de construção – os próprios edifícios. Em um sentido mais geral, arquitetura refere-se a um arranjo organizado de elementos componentes com o objetivo de otimizar a função, o desempenho, a viabilidade, o custo e a estética de uma estrutura ou sistema geral.
+Arquitetura refere-se à arte e à ciência de construir coisas (especialmente estruturas habitáveis) e aos resultados desse processo – os edifícios. Em um sentido mais amplo, arquitetura se refere ao arranjo organizado de elementos componentes com o objetivo de otimizar a função, o desempenho, a viabilidade, o custo e a estética de uma estrutura ou sistema.
 
-O termo arquitetura tem sido adotado para descrever diversas facetas do projeto de sistemas de informação. A ISO/IEC 42010:2007 Engenharia de Sistemas e Software – Descrição da Arquitetura (2011) define arquitetura como “a organização fundamental de um sistema, incorporada em seus componentes, suas relações entre si e com o ambiente, e os princípios que regem seu projeto e evolução”. No entanto, dependendo do contexto, a palavra arquitetura pode se referir à descrição do estado atual dos sistemas, dos componentes de um conjunto de sistemas, da disciplina de projeto de sistemas (prática de arquitetura), do projeto intencional de um sistema ou conjunto de sistemas (estado futuro ou arquitetura proposta), dos artefatos que descrevem um sistema (documentação da arquitetura) ou da equipe que realiza o trabalho de projeto (os Arquitetos ou a equipe de Arquitetura).
+O termo arquitetura tem sido adotado para descrever diversas facetas do projeto de sistemas de informação. A ISO/IEC 42010:2007 Engenharia de Sistemas e Software – Descrição da Arquitetura (2011) define arquitetura como “a organização fundamental de um sistema, incorporada em seus componentes, suas relações entre si e com o ambiente, e os princípios que regem seu projeto e evolução”. No entanto, dependendo do contexto, a palavra arquitetura pode se referir à descrição do estado atual de sistemas, dos componentes de um conjunto de sistemas, à disciplina de projeto de sistemas, ao projeto intencional de um sistema ou conjunto de sistemas, aos artefatos que descrevem um sistema (documentação da arquitetura) ou à equipe que realiza o trabalho de projeto (os Arquitetos ou a equipe de Arquitetura).
 
-A prática de arquitetura é realizada em diferentes níveis dentro de uma organização (empresa, domínio, projeto, etc.) e com diferentes áreas de foco (infraestrutura, aplicação e dados). O que exatamente os arquitetos fazem pode ser confuso para pessoas que não são arquitetos e que não reconhecem as distinções implícitas nesses níveis e áreas de foco. Um dos motivos pelos quais os frameworks arquitetônicos são valiosos é que eles permitem que pessoas não arquitetas entendam essas relações.
+A prática da arquitetura se desenvolve em diferentes níveis dentro de uma organização (empresa, domínio, projeto, etc.) e com distintas áreas de foco (infraestrutura, aplicação e dados). O que os arquitetos fazem pode ser confuso para pessoas que não possuem o conhecimento das distinções implícitas nesses níveis e áreas. Os frameworks arquitetônicos são valiosos porque permitem que pessoas não arquitetas compreendam essas relações.
 
-A disciplina de Arquitetura Corporativa abrange arquiteturas de domínio, incluindo negócios, dados, aplicação e tecnologia. Práticas de arquitetura empresarial bem gerenciadas ajudam as organizações a compreender o estado atual de seus sistemas, promover mudanças desejáveis ​​em direção ao estado futuro, permitir a conformidade regulatória e aumentar a eficácia. A gestão eficaz de dados e dos sistemas nos quais os dados são armazenados e utilizados é um objetivo comum da ampla gama de disciplinas de arquitetura.
+A disciplina da Arquitetura Corporativa abrange arquiteturas de domínio, incluindo negócios, dados, aplicação e tecnologia. Práticas de arquitetura empresarial bem gerenciadas auxiliam as organizações a compreender o estado atual de seus sistemas, promover mudanças desejáveis em direção ao estado futuro, garantir a conformidade regulatória e aumentar a eficácia. A gestão eficaz de dados e dos sistemas nos quais esses dados são armazenados e utilizados é um objetivo comum de diversas disciplinas de arquitetura.
 
 Neste capítulo, a Arquitetura de Dados será considerada sob as seguintes perspectivas:
 
-* Resultados da Arquitetura de Dados, como modelos, definições e fluxos de dados em vários níveis, geralmente chamados de artefatos da Arquitetura de Dados
-* Atividades da Arquitetura de Dados, para formar, implementar e cumprir as intenções da Arquitetura de Dados
-* Comportamento da Arquitetura de Dados, como colaborações, mentalidades e habilidades entre as várias funções que afetam a Arquitetura de Dados da empresa
+* Resultados da Arquitetura de Dados, como modelos, definições e fluxos de dados em vários níveis, geralmente chamados de artefatos da Arquitetura de Dados.
+* Atividades da Arquitetura de Dados, para formular, implementar e executar as intenções da Arquitetura de Dados.
+* Comportamento da Arquitetura de Dados, como colaborações, mentalidades e habilidades entre as várias funções que afetam a Arquitetura de Dados da empresa.
 
-Juntos, esses três formam os componentes essenciais da Arquitetura de Dados.
+Juntos, esses três componentes formam a essência da Arquitetura de Dados.
 
-A Arquitetura de Dados é fundamental para o gerenciamento de dados. Como a maioria das organizações possui mais dados do que as pessoas individualmente conseguem compreender, é necessário representar os dados organizacionais em diferentes níveis de abstração para que possam ser compreendidos e a gestão possa tomar decisões sobre eles.
+A Arquitetura de Dados é fundamental para o gerenciamento de dados. Dada a grande quantidade de dados que a maioria das organizações possui, é necessário representar os dados organizacionais em diferentes níveis de abstração para que possam ser compreendidos e a gestão possa tomar decisões sobre eles.
 
-Artefatos da Arquitetura de Dados incluem especificações usadas para descrever o estado existente, definir requisitos de dados, orientar a integração de dados e controlar ativos de dados, conforme estabelecido em uma estratégia de dados. A Arquitetura de Dados de uma organização é descrita por um conjunto integrado de documentos mestres de projeto em diferentes níveis de abstração, incluindo padrões que regem como os dados são coletados, armazenados, organizados, usados ​​e removidos. Ela também é classificada por descrições de todos os contêineres e caminhos que os dados percorrem nos sistemas de uma organização.
+Artefatos da Arquitetura de Dados incluem especificações para descrever o estado existente, definir requisitos de dados, orientar a integração de dados e controlar ativos de dados, conforme estabelecido em uma estratégia de dados. A Arquitetura de Dados de uma organização é descrita por um conjunto integrado de documentos mestres de projeto em diferentes níveis de abstração, incluindo padrões que regem a coleta, armazenamento, organização, uso e remoção de dados. Ela também é classificada por descrições de todos os contêineres e caminhos que os dados percorrem nos sistemas da organização.
 
-O documento de projeto de Arquitetura de Dados mais detalhado é um modelo formal de dados corporativos, contendo nomes de dados, definições abrangentes de dados e Metadados, entidades e relacionamentos conceituais e lógicos, e regras de negócios. Modelos de dados físicos são incluídos, mas como um produto da modelagem e do projeto de dados, e não da Arquitetura de Dados.
+O documento de projeto de Arquitetura de Dados mais detalhado é um modelo formal de dados corporativos, contendo nomes de dados, definições abrangentes de dados e metadados, entidades e relacionamentos conceituais e lógicos, e regras de negócios. Modelos de dados físicos são inclusos, mas como produto da modelagem e do projeto de dados, e não da Arquitetura de Dados.
 
-A Arquitetura de Dados é mais valiosa quando atende totalmente às necessidades de toda a empresa. A Arquitetura de Dados Corporativos permite a padronização e a integração consistentes de dados em toda a empresa.
+A Arquitetura de Dados é mais valiosa quando atende totalmente às necessidades de toda a empresa. A Arquitetura de Dados Corporativos permite a padronização e a integração consistente de dados em toda a empresa.
 
-Os artefatos criados pelos arquitetos constituem Metadados valiosos. Idealmente, os artefatos arquitetônicos devem ser armazenados e gerenciados em um repositório de artefatos de arquitetura corporativa.
+Os artefatos criados pelos arquitetos constituem metadados valiosos. Idealmente, os artefatos arquitetônicos devem ser armazenados e gerenciados em um repositório de artefatos de arquitetura corporativa.
 
-Estamos no meio da terceira onda de digitalização do cliente final. Bancos e transações financeiras vieram primeiro; diversas interações de serviços digitais estavam na segunda onda; e a internet das coisas e a telemática impulsionam a terceira. Indústrias tradicionais, como automotiva, equipamentos para saúde e ferramentas, estão se tornando digitais nesta terceira onda.
+Estamos no meio da terceira onda de digitalização do cliente final. Bancos e transações financeiras lideraram a primeira onda; diversas interações de serviços digitais ocorreram na segunda onda; e a internet das coisas e a telemática impulsionam a terceira. Indústrias tradicionais, como automotiva, equipamentos para saúde e ferramentas, estão se tornando digitais nesta terceira onda.
 
-Isso acontece em quase todos os setores. Os novos carros Volvo agora contam com serviço de plantão 24 horas por dia, 7 dias por semana, não apenas para questões relacionadas ao veículo, mas também para localizar restaurantes e lojas. Pontes rolantes, carregadores de paletes e equipamentos de anestesia estão coletando e enviando dados operacionais que permitem serviços de disponibilidade. As ofertas migraram do fornecimento de equipamentos para contratos de pagamento por uso ou disponibilidade. Muitas dessas empresas têm pouca ou nenhuma experiência nessas áreas, visto que antes eram atendidas por varejistas ou prestadores de serviços de pós-venda.
+Isso ocorre em quase todos os setores. Os novos carros Volvo agora oferecem serviço de plantão 24 horas por dia, 7 dias por semana, não apenas para questões relacionadas ao veículo, mas também para localizar restaurantes e lojas. Pontes rolantes, carregadores de paletes e equipamentos de anestesia estão coletando e enviando dados operacionais que permitem serviços de disponibilidade. As ofertas migraram do fornecimento de equipamentos para contratos de pagamento por uso ou disponibilidade. Muitas dessas empresas têm pouca ou nenhuma experiência nessas áreas, já que antes eram atendidas por varejistas ou prestadores de serviços de pós-venda.
 
-Organizações com visão de futuro devem incluir profissionais de gerenciamento de dados (por exemplo, Arquitetos de Dados Corporativos ou Administradores de Dados estratégicos) ao projetar novas ofertas de mercado, pois hoje em dia elas geralmente incluem hardware, software e serviços que capturam dados, dependem do acesso a dados ou ambos.
+Organizações com visão de futuro devem incluir profissionais de gerenciamento de dados (como Arquitetos de Dados Corporativos ou Administradores de Dados Estratégicos) ao projetar novas ofertas de mercado, pois atualmente elas geralmente incluem hardware, software e serviços que capturam dados, dependem do acesso a dados ou ambos.
 
 ### 1.1 Impulsionadores de Negócios
 
 O objetivo da Arquitetura de Dados é ser uma ponte entre a estratégia de negócios e a execução da tecnologia. Como parte da Arquitetura Corporativa, os Arquitetos de Dados:
 
-* Preparam estrategicamente as organizações para a rápida evolução de seus produtos, serviços e dados, aproveitando as oportunidades de negócios inerentes às tecnologias emergentes;
-* Traduzem as necessidades de negócios em dados e requisitos de sistema para que os processos tenham consistentemente os dados necessários;
+* Preparam as organizações para a rápida evolução de seus produtos, serviços e dados, aproveitando as oportunidades de negócios inerentes às tecnologias emergentes;
+* Traduzem as necessidades de negócios em dados e requisitos de sistema, garantindo a consistência dos dados nos processos;
 * Gerenciam a entrega complexa de dados e informações em toda a empresa;
 * Facilitam o alinhamento entre Negócios e TI;
 * Atuam como agentes de mudança, transformação e agilidade.
 
-Esses impulsionadores de negócios devem influenciar as medidas do valor da Arquitetura de Dados.
+Esses impulsionadores de negócios devem influenciar a avaliação da Arquitetura de Dados.
 
 Os arquitetos de dados criam e mantêm o conhecimento organizacional sobre os dados e os sistemas pelos quais eles se movem. Esse conhecimento permite que uma organização gerencie seus dados como um ativo e aumente o valor obtido com eles, identificando oportunidades de uso de dados, redução de custos e mitigação de riscos.
 
@@ -60,7 +60,7 @@ Os principais resultados da Arquitetura de Dados incluem:
 ![Figura 21 Diagrama de Contexto: Arquitetura de Dados](figure_21.png)
 Figura 21 Diagrama de Contexto: Arquitetura de Dados
 
-Os arquitetos buscam projetar de forma a agregar valor à organização. Esse valor advém de uma estrutura técnica ideal, eficiência operacional e de projeto, e da maior capacidade da organização de utilizar seus dados. Para atingir esse objetivo, é necessário um bom design, planejamento e a capacidade de garantir que os projetos e planos sejam executados de forma eficaz.
+Os arquitetos buscam projetar de forma a agregar valor à organização. Esse valor advém de uma estrutura técnica ideal, eficiência operacional e de projeto, e da maior capacidade da organização de utilizar seus dados. Para atingir esse objetivo, é necessário um bom design, planejamento e a capacidade de garantir a execução eficaz de projetos e planos.
 
 Para atingir esses objetivos, os Arquitetos de Dados definem e mantêm especificações que:
 
@@ -73,15 +73,15 @@ Para atingir esses objetivos, os Arquitetos de Dados definem e mantêm especific
 
 Uma prática geral de Arquitetura de Dados inclui:
 
-* Utilizam artefatos da Arquitetura de Dados (projetos mestres) para definir requisitos de dados e orientar os dados
-* Colaboram, aprendem e influenciam as diversas partes interessadas envolvidas na integração, controlam os ativos de dados e alinham os investimentos em dados com a estratégia de negócios, aprimorando o desenvolvimento de negócios ou sistemas de TI
-* Utilizam a Arquitetura de Dados para estabelecer a semântica de uma empresa, por meio de um vocabulário comercial comum
+* Utilizar artefatos da Arquitetura de Dados (projetos mestres) para definir requisitos de dados e orientar os dados
+* Colaborar, aprender e influenciar as diversas partes interessadas envolvidas na integração, controlar os ativos de dados e alinhar os investimentos em dados com a estratégia de negócios, aprimorando o desenvolvimento de negócios ou sistemas de TI
+* Utilizar a Arquitetura de Dados para estabelecer a semântica de uma empresa, por meio de um vocabulário comercial comum.
 
 ### 1.3 Conceitos Essenciais
 
 #### 1.3.1 Domínios da Arquitetura Corporativa
 
-A Arquitetura de Dados opera no contexto de outros domínios da arquitetura, incluindo arquitetura de negócios, de aplicações e técnica. A Tabela 6 descreve e compara esses domínios. Arquitetos de diferentes domínios devem abordar as direções e os requisitos de desenvolvimento de forma colaborativa, pois cada domínio influencia e impõe restrições aos outros domínios. (Veja também a Figura 22.)
+A Arquitetura de Dados opera no contexto de outros domínios da arquitetura, incluindo a arquitetura de negócios, de aplicações e técnica. A Tabela 6 descreve e compara esses domínios. Arquitetos de diferentes domínios devem abordar as direções e os requisitos de desenvolvimento de forma colaborativa, pois cada domínio influencia e impõe restrições aos outros. (Veja também a Figura 22.)
 
 Tabela 6 Domínios da Arquitetura
 
@@ -169,15 +169,15 @@ Tabela 6 Domínios da Arquitetura
 
 #### 1.3.2 Frameworks de Arquitetura Corporativa
 
-Um framework de arquitetura é uma estrutura fundamental usada para desenvolver uma ampla gama de arquiteturas relacionadas. Frameworks de arquitetura fornecem maneiras de pensar e compreender a arquitetura. Eles representam uma "arquitetura para arquitetura" geral.
+Um framework de arquitetura é uma estrutura fundamental utilizada para desenvolver uma ampla gama de arquiteturas relacionadas. Frameworks de arquitetura fornecem maneiras de pensar e compreender a arquitetura, representando uma "arquitetura para arquitetura" geral.
 
 A IEEE Computer Society mantém um padrão para Frameworks de Arquitetura Corporativa, ISO/IEC/IEEE 42010:2011, Engenharia de Sistemas e Software — Descrição da Arquitetura e uma Tabela Comparativa. [^32] Frameworks e métodos comuns incluem a Arquitetura de Dados como um dos domínios da arquitetura.
 
 #### 1.3.2.1 Framework Zachman para Arquitetura Corporativa
 
-O framework de arquitetura corporativa mais conhecido, o Framework Zachman, foi desenvolvido por John A. Zachman na década de 1980. (Veja a Figura 22.) Ele continuou a evoluir. Zachman reconheceu que, ao criar edifícios, aviões, empresas, cadeias de valor, projetos ou sistemas, há muitos públicos-alvo, e cada um tem uma perspectiva diferente sobre arquitetura. Ele aplicou esse conceito aos requisitos para diferentes tipos e níveis de arquitetura dentro de uma empresa.
+O framework de arquitetura corporativa mais conhecido, o Framework Zachman, foi desenvolvido por John A. Zachman na década de 1980. (Veja a Figura 22.) Ele continuou a evoluir. Zachman reconheceu que, ao criar edifícios, aviões, empresas, cadeias de valor, projetos ou sistemas, há muitos públicos-alvo, e cada um possui uma perspectiva diferente sobre arquitetura. Ele aplicou esse conceito aos requisitos para diferentes tipos e níveis de arquitetura dentro de uma empresa.
 
-O Framework Zachman é uma ontologia – a matriz 6x6 compreende o conjunto completo de modelos necessários para descrever uma empresa e os relacionamentos entre eles. Ela não define como criar os modelos. Ela simplesmente mostra quais modelos devem existir.
+O Framework Zachman é uma ontologia – a matriz 6x6 compreende o conjunto completo de modelos necessários para descrever uma empresa e os relacionamentos entre eles. Ela não define como criar os modelos, apenas mostra quais modelos devem existir.
 
 ![Figura 22 Framework Zachman Simplificado](figure_22.png)
 Figura 22 Framework Zachman Simplificado
